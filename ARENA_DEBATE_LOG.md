@@ -25,3 +25,20 @@ Başlangıç durumu: 104 test PASS, `mypy bot` temiz, `ruff` temiz (commit `c30c
 - 1.4: Etiketle aynı anlamı taşıyan kategori satırı gizleniyor; `COMMUNITY_RUMOR` → "İddia".
 
 **PASS kanıtı:** `108 passed` · `mypy`: temiz · `ruff`: temiz
+
+---
+
+## Tur 2
+
+| # | Rol | Bulgu (`dosya:satır`) | Senaryo / etki | Test |
+|---|---|---|---|---|
+| 2.1 | Red Team | `bot/gemini.py:86` (`_BANNED_ALWAYS` yalnızca `https?://` arıyor) | Telegram `t.me/x`, `www.site.ru`, `site.com/x` ve `@kanal` metinlerini otomatik bağlantıya çevirir. Kaynak metne gömülü bir spam/oltalama bağlantısı modelin özetinden kanala sızabiliyordu. | `test_r2_red_bare_links_and_mentions_rejected` |
+| 2.2 | FinOps/SRE | `bot/telegram_client.py:103` (`retry_after` her değerde 60 sn'ye kırpılıp yeniden deneniyor) | 429 + `retry_after=3600` geldiğinde 3 kez 60 sn uyuyup boşuna yeniden deniyordu: her çalışmada ~3 dakika Actions süresi harcanıyor ve flood kısıtı uzuyordu. | `test_r2_sre_huge_retry_after_is_not_slept_through` |
+| 2.3 | Editör | `bot/gemini.py:137` (`check_banned` emoji denetlemiyor) | "Tek rozet" kuralı yalnızca istemde yazıyordu. Model 🔥😱🚨 eklerse yayınlanıyordu. | `test_r2_editor_emoji_in_generated_text_rejected` |
+| 2.4 | Editör | `bot/gemini.py:144` | Doğrulanmamış haberde soru başlığı ("…PC'ye mi geliyor?") klasik clickbait (Betteridge yasası). | `test_r2_editor_question_headline_on_unverified_claim_held` |
+
+**FAIL kanıtı:** `4 failed, 4 deselected in 0.14s`
+
+**Yamalar:** `_LINKISH` ve `_EMOJI` desenleri → REJECTED. TEK KAYNAK ve İDDİA etiketlerinde `?` ile biten başlık → REVIEW_HELD. `retry_after > 60` → bu çalışmada vazgeç (`MAX_RETRY_AFTER_SECONDS`).
+
+**PASS kanıtı:** `112 passed` · `mypy`: temiz · `ruff`: temiz · simülatörün 5 senaryosu üretimde

@@ -86,6 +86,10 @@ _BANNED_UNLESS_OFFICIAL = re.compile(
 _BANNED_ALWAYS = re.compile(r"(<\s*/?\s*untrusted_source_data|ignore (all|any|the|previous)|system prompt|"
                             r"önceki talimat|https?://|<\s*/?\s*(script|a|b|i)\b|ş[oO]k\s*!|inanılmaz\s*!)",
                             re.I)
+# Telegram'ın otomatik bağlantıya çevirdiği biçimler: çıplak alan adı, www., t.me/, @kullanıcı
+_LINKISH = re.compile(r"(\bwww\.|\bt\.me/|(?<![\w.])@[A-Za-z0-9_]{4,}|\b[a-z0-9-]{2,}\.(com|net|org|ru|io|me|tr|"
+                      r"info|xyz|gg|co|tv|ly|site|online|app)\b)", re.I)
+_EMOJI = re.compile("[\U0001F000-\U0001FAFF\u2600-\u27BF\u2B00-\u2BFF\uFE0F\u200D\u203C\u2049]")
 _LEAK_TR = re.compile(r"s[ıi]zd[ıi]r[ıi]ld[ıi]|s[ıi]z[ıi]nt[ıi]", re.I)
 _PLATFORMS: dict[str, tuple[str, ...]] = {
     "ps5": ("ps5", "playstation 5"), "ps4": ("ps4", "playstation 4"),
@@ -139,6 +143,12 @@ def check_banned(c: GeneratedContent, cluster: list[Item], a: Assessment, s: Set
     text = f"{c.title_tr} {c.summary_tr}"
     if _BANNED_ALWAYS.search(text):
         return _rejected("Yasaklı ifade / enjeksiyon izi", c)
+    if _LINKISH.search(text):
+        return _rejected("Metinde bağlantı/kullanıcı adı (Telegram otomatik bağlar)", c)
+    if _EMOJI.search(text):
+        return _rejected("Metinde emoji (şablonda tek rozet kuralı)", c)
+    if a.label not in (Label.OFFICIAL, Label.MULTI_SOURCE) and c.title_tr.rstrip().endswith("?"):
+        return _held("Doğrulanmamış haberde soru başlığı (clickbait)", c)
     if a.label != Label.OFFICIAL and _BANNED_UNLESS_OFFICIAL.search(text):
         return _held("Kanıtın izin vermediği kesinlik ifadesi", c)
     if c.title_tr.count("!") > 1 or (len(c.title_tr) > 12 and c.title_tr.upper() == c.title_tr):

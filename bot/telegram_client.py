@@ -26,6 +26,7 @@ log = logging.getLogger("gta6bot")
 
 API_BASE = "https://api.telegram.org"
 MAX_MESSAGE_CHARS = 4096
+MAX_RETRY_AFTER_SECONDS = 60  # daha uzun bekleme istenirse bu çalışmada vazgeç, sonraki cron denesin
 
 
 class MessageSender(Protocol):
@@ -97,12 +98,13 @@ class TelegramClient:
             result, err = self._post(method, payload, idempotent)
             if err is None:
                 return result
-            fatal = err.error_class in (ErrorClass.AUTH_PERMISSION, ErrorClass.TELEGRAM_API_ERROR)
+            fatal = err.error_class in (ErrorClass.AUTH_PERMISSION, ErrorClass.TELEGRAM_API_ERROR) or (
+                err.retry_after is not None and err.retry_after > MAX_RETRY_AFTER_SECONDS)
             if fatal or attempt >= self._max_retries or (not idempotent and not err.definitely_not_sent):
                 raise err
             delay = err.retry_after or backoff_delay(attempt)
             log.warning("Telegram %s geçici hata (%s), %.1fs sonra tekrar", method, err.error_class.value, delay)
-            self._sleep(min(float(delay), 60.0))
+            self._sleep(min(float(delay), float(MAX_RETRY_AFTER_SECONDS)))
         raise TelegramError(ErrorClass.UNEXPECTED_ERROR, f"{method}: yeniden deneme döngüsü bitti")  # pragma: no cover
 
     def _interpret(self, method: str, resp: requests.Response, idempotent: bool) -> tuple[Any, TelegramError | None]:

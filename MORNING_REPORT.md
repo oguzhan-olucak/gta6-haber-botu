@@ -12,7 +12,7 @@
 | **Dosyalar** | Bölüm 9'daki yapının tamamı (24 dosya) + `tests/conftest.py` + 8 skill + önizleme aracı + raporlar |
 | **Testler** | **49 / 49 geçti** (14 kabul testi dahil). Komut: `python -m pytest -v`. Gerçek ağ çağrısı yok. |
 | **Güvenlik taraması** | Gerçek formatlı secret yok · `eval/exec/shell=True/verify=False` yok · loglar maskeleniyor |
-| **Yerel git** | 7 commit, `main` dalı. **Push yapılmadı.** |
+| **Yerel git** | 8 commit, `main` dalı. **Push yapılmadı.** |
 
 **Kritik zaman notu:** GTA VI'ın çıkışına 3 gün var (19 Kasım 2026). Resmî Rockstar RSS beslemesi doğrulanamadığı için bot şu an **RESMÎ AÇIKLAMA** etiketini tetikleyemez. Resmî haberler yalnızca bağımsız medya kaynaklarından **ÇOKLU KAYNAK** olarak gelir (bkz. 5.1).
 
@@ -117,7 +117,7 @@ tests/test_storage.py ......       (6)
 
 ## 6. Sabah Senin Yapacakların
 
-1. **Klasörü GitHub'a yükle.** "Haber Sitesi" klasöründe iki şey var: dosyaların açık hâli (`gta6-autonomous-telegram/`) ve gece atılan 7 commit'in tam git geçmişi (`gta6-autonomous-telegram.bundle`). "Haber Sitesi" klasöründe terminal aç:
+1. **Klasörü GitHub'a yükle.** "Haber Sitesi" klasöründe iki şey var: dosyaların açık hâli (`gta6-autonomous-telegram/`) ve gece atılan 8 commit'in tam git geçmişi (`gta6-autonomous-telegram.bundle`). "Haber Sitesi" klasöründe terminal aç:
    ```bash
    git clone gta6-autonomous-telegram.bundle gta6-repo
    cd gta6-repo
@@ -127,7 +127,7 @@ tests/test_storage.py ......       (6)
    git remote set-url origin https://github.com/<kullanıcı-adın>/<repo-adı>.git
    git push -u origin main
    ```
-   Git geçmişine ihtiyacın yoksa `gta6-autonomous-telegram/` klasörünün içeriğini doğrudan da yükleyebilirsin; içerik aynı.
+   **Bundle yolu önerilir:** `.github/` ve `.claude/` klasörleri yalnızca bundle'da doğru adlarıyla bulunur. Uzak dosya aracı bu iki adla bilgisayarına yazamadığı için açık klasörde `_dot_github/` ve `_dot_claude/` olarak duruyorlar. Bundle yerine klasörü doğrudan yüklemek istersen önce bu iki klasörü `.github` ve `.claude` olarak yeniden adlandır. Workflow `.github/workflows/run.yml` yolunda olmazsa bot hiç çalışmaz.
 2. **BotFather:** Telegram'da @BotFather → `/newbot` → bot adını ver. Token'ı yalnızca 4. adımda GitHub Secrets'a yapıştır; sohbete, dosyaya veya koda yazma.
 3. **Kanal:** Herkese açık kanalını oluştur. Botu **yönetici** olarak ekle ve "Mesaj gönderme" iznini ver (reaksiyon ölçümü için yöneticilik şart). İstersen özet ve uyarılar için ayrı bir özel grup kur, botu oraya da ekle.
 4. **Gemini:** [Google AI Studio](https://aistudio.google.com)'da API anahtarı oluştur. **Billing'i açma.** Rate limits sayfasında ücretsiz katmanda olan **stable** bir Flash modelinin kimliğini not al (16 Kasım itibarıyla `gemini-3.5-flash` stable olarak listeleniyordu; yine de güncel listeyi kontrol et).

@@ -72,8 +72,18 @@ def _source_links(sources: list[dict[str, str]]) -> str:
     return " · ".join(links)
 
 
+def verification_note(label: Label, sources: list[dict[str, str]], independent_count: int | None = None) -> str:
+    """Somut doğrulama notu: resmî kaynağın adı veya bağımsız yayın sayısı."""
+    if label == Label.OFFICIAL and sources:
+        return f"{sources[0]['name']} üzerinde doğrudan duyuruldu (resmî alan adı, bağlantı doğrulandı)."
+    if label == Label.MULTI_SOURCE:
+        n = independent_count or len(sources)
+        return f"{n} bağımsız yayın organı aynı gelişmeyi aktarıyor; resmî doğrulama yok."
+    return LABEL_NOTE[label]
+
+
 def render_post(content: GeneratedContent, label: Label, sources: list[dict[str, str]], settings: Settings,
-                now: datetime) -> str:
+                now: datetime, *, independent_count: int | None = None) -> str:
     """Profesyonel bülten düzeni: tek rozet, etiket satırı, kalın başlık, özet, kaynak bloğu, imza.
 
     Telegram HTML parse_mode yalnızca sınırlı etiket destekler (b, i, a, code, blockquote...);
@@ -84,7 +94,7 @@ def render_post(content: GeneratedContent, label: Label, sources: list[dict[str,
     redundant = ((label == Label.OFFICIAL and content.category == "OFFICIAL_ANNOUNCEMENT")
                  or (label in (Label.LEAK_CLAIM, Label.COMMUNITY_CLAIM) and content.category == "COMMUNITY_RUMOR"))
     category_part = "" if redundant else f"  ·  {_e(tr_upper(category))}"
-    note = _e(LABEL_NOTE[label])
+    note = _e(verification_note(label, sources, independent_count))
     if label in (Label.LEAK_CLAIM, Label.COMMUNITY_CLAIM, Label.SINGLE_SOURCE):
         note = f"<i>{note}</i>"
 

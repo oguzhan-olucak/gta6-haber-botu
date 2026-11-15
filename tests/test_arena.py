@@ -6,6 +6,7 @@ from bot.processor import GeneratedContent, Label, assess, build_prompt, injecti
 from bot.publisher import render_post
 from tests.conftest import NOW
 from tests.test_processor import make_item
+from tests.test_publisher import FakeGenerator, FakeTelegram, go, items, make_env
 
 # ===== TUR 1 =====================================================================================
 
@@ -121,3 +122,58 @@ def test_r2_editor_question_headline_on_unverified_claim_held(settings):
     (Betteridge yasası). TEK KAYNAK/İDDİA etiketlerinde soru başlığı incelemeye düşmeli."""
     out = _validated(settings, title_tr="GTA VI için yeni bir fragman mı geliyor?")
     assert not out.ok and out.status == "REVIEW_HELD"
+
+
+# ===== TUR 3 =====================================================================================
+
+def test_r3_red_schema_poisoned_state_does_not_crash(tmp_path):
+    """Red Team: state.json GEÇERLİ JSON ama şekli bozuk ({"seen_items": [], "candidate_pool": "x"})
+    olduğunda bot AttributeError ile çöküyordu (çıkış 3, her 20 dk) → bot fiilen ölü."""
+    import json as _json
+    cfg, data, session = make_env(tmp_path, items(1))
+    (data / "state.json").write_text(_json.dumps({"seen_items": [], "candidate_pool": "x", "digests_sent": {}}))
+    code, s = go(cfg, data, session, FakeTelegram(), FakeGenerator())   # istisna fırlatmamalı
+    assert code == 2 and s["safe_mode"]
+
+
+def test_r3_red_schema_poisoned_history_recovers_from_last_good(tmp_path):
+    """Red Team: history.json'da posts listesine dict olmayan öğe ([123, "x"]) sokulursa döngüler
+    çöküyordu. Şekil bozukluğu da 'bozuk dosya' sayılıp son sağlam kopyadan kurtarılmalı."""
+    import json as _json
+    cfg, data, session = make_env(tmp_path, items(1))
+    tg, gen = FakeTelegram(), FakeGenerator()
+    go(cfg, data, session, tg, gen)
+    (data / "history.json").write_text(_json.dumps({"posts": [123, "x"]}))
+    code, s = go(cfg, data, session, tg, gen, now=NOW + timedelta(minutes=20))
+    assert code == 0 and "history.json" in s["recovered"] and len(tg.channel_posts) == 1
+
+
+def test_r3_sre_collection_respects_run_deadline(settings, sources):
+    """FinOps/SRE: Genel çalışma süresi sınırı yoktu. 11 kaynak × (15 sn zaman aşımı × 4 deneme +
+    backoff) + resmî URL doğrulamaları, 15 dakikalık iş sınırını aşıp işi ortasında öldürebiliyordu.
+    Süre dolunca kalan kaynaklar atlanmalı ve durumları raporlanmalı."""
+    from bot.collector import collect
+    from tests.conftest import rss
+    clock = {"t": 0.0}
+
+    def slow_fetch(url):
+        clock["t"] += 100.0
+        return rss([{"title": "GTA 6 news item for deadline test", "link": "https://www.eurogamer.net/d"}])
+
+    settings.run_deadline_seconds = 250
+    res = collect(sources, settings, None, NOW, fetch=slow_fetch, clock=lambda: clock["t"])
+    skipped = [k for k, v in res.source_status.items() if v.get("skipped") == "deadline"]
+    assert res.sources_checked == 3 and len(skipped) == len(sources) - 3
+
+
+def test_r3_editor_verification_note_is_specific(settings):
+    """Editör: 'Doğrulama' satırı jenerikti: Take-Two IR haberi için bile 'Rockstar Games / Take-Two
+    resmî kanalında' yazıyor, ÇOKLU KAYNAK'ta 'en az iki' deniyordu (gerçek sayı biliniyor)."""
+    c = _content("INDUSTRY_BUSINESS")
+    off = render_post(c, Label.OFFICIAL, [{"name": "Take-Two Interactive", "url": "https://take2games.com/x"}], settings, NOW)
+    note = [line for line in off.split("\n") if line.startswith("<b>Doğrulama:")][0]
+    assert "Take-Two Interactive" in note and "Rockstar Games /" not in note
+    srcs = [{"name": n, "url": f"https://{d}/x"} for n, d in (("IGN", "ign.com"), ("Eurogamer", "eurogamer.net"),
+                                                            ("VGC", "videogameschronicle.com"))]
+    multi = render_post(c, Label.MULTI_SOURCE, srcs, settings, NOW)
+    assert "3 bağımsız yayın" in multi and "en az iki" not in multi

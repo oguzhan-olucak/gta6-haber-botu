@@ -52,10 +52,15 @@ def backup_corrupt(path: Path) -> Path | None:
     return backup
 
 
-def read_json(path: Path | str, default_factory: Callable[[], Any], expect_type: type = dict) -> Any:
+ShapeValidator = Callable[[Any], "str | None"]
+
+
+def read_json(path: Path | str, default_factory: Callable[[], Any], expect_type: type = dict,
+              validator: ShapeValidator | None = None) -> Any:
     """JSON dosyasını oku. Yoksa ``default_factory()`` döner.
 
-    Boş dosya, bozuk JSON veya beklenmeyen kök tipi -> yedek + CorruptDataError.
+    Boş dosya, bozuk JSON, beklenmeyen kök tipi veya ``validator``'ın reddettiği şekil
+    (geçerli JSON ama yanlış yapı) → yedek + CorruptDataError.
     """
     path = Path(path)
     if not path.exists():
@@ -76,6 +81,10 @@ def read_json(path: Path | str, default_factory: Callable[[], Any], expect_type:
     if not isinstance(data, expect_type):
         backup = backup_corrupt(path)
         raise CorruptDataError(path, backup, f"kök tipi {type(data).__name__}, beklenen {expect_type.__name__}")
+    problem = validator(data) if validator else None
+    if problem:
+        backup = backup_corrupt(path)
+        raise CorruptDataError(path, backup, f"şema: {problem}")
     return data
 
 
@@ -140,21 +149,21 @@ def write_if_changed(path: Path | str, data: Any, *, keep_last_good: bool = Fals
     return changed
 
 
-def read_json_recovering(path: Path | str, default_factory: Callable[[], Any],
-                         expect_type: type = dict) -> tuple[Any, CorruptDataError | None]:
+def read_json_recovering(path: Path | str, default_factory: Callable[[], Any], expect_type: type = dict,
+                         validator: ShapeValidator | None = None) -> tuple[Any, CorruptDataError | None]:
     """``read_json`` gibi; ana dosya bozuksa ``<ad>.lastgood.json`` sağlamsa ondan **otomatik
     kurtarır**: bozuk dosyanın yedeği alınır, ana dosya son sağlam içerikle atomik olarak
     yeniden yazılır. Dönüş: (veri, kurtarıldıysa orijinal hata, değilse None).
     Son sağlam kopya da yoksa/bozuksa orijinal ``CorruptDataError`` yükseltilir."""
     path = Path(path)
     try:
-        return read_json(path, default_factory, expect_type), None
+        return read_json(path, default_factory, expect_type, validator), None
     except CorruptDataError as exc:
         lg = lastgood_path(path)
         if not lg.exists():
             raise
         try:
-            data = read_json(lg, default_factory, expect_type)
+            data = read_json(lg, default_factory, expect_type, validator)
         except CorruptDataError:
             raise exc from None
         _atomic_write_text(path, _dump(data))
@@ -233,3 +242,35 @@ def default_history() -> dict:
 def default_insights() -> dict:
     """Nötr insights.json şekli."""
     return {"schema_version": 1, "status": "YETERSİZ VERİ", "prompt_hints": {}}
+
+
+# ---- Yapısal (şema) doğrulayıcılar ------------------------------------------------------
+
+_STATE_TYPES: dict[str, type | tuple[type, ...]] = {
+    "seen_items": dict, "candidate_pool": dict, "digests_sent": list, "alerts_last_sent": dict,
+    "source_status": dict, "run_log": list, "telegram_update_offset": (int, type(None)),
+    "reaction_pipeline_verified": bool,
+}
+
+
+def validate_state_shape(data: Any) -> str | None:
+    """state.json üst düzey alan tiplerini ve aday havuzu kayıtlarını denetler; sorun varsa açıklama."""
+    for key, typ in _STATE_TYPES.items():
+        if key in data and not isinstance(data[key], typ):
+            return f"{key} tipi {type(data[key]).__name__}"
+    for k, v in data.get("candidate_pool", {}).items():
+        if not isinstance(v, dict) or not isinstance(v.get("item"), dict):
+            return f"candidate_pool[{str(k)[:12]}] bozuk"
+    if any(not isinstance(v, dict) for v in data.get("seen_items", {}).values()):
+        return "seen_items kaydı bozuk"
+    return None
+
+
+def validate_history_shape(data: Any) -> str | None:
+    """history.json: ``posts`` bir liste ve her öğesi sözlük olmalı."""
+    posts = data.get("posts")
+    if not isinstance(posts, list):
+        return "posts listesi yok"
+    if any(not isinstance(p, dict) for p in posts):
+        return "posts içinde sözlük olmayan kayıt"
+    return None

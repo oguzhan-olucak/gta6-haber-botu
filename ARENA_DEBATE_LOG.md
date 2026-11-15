@@ -42,3 +42,25 @@ Başlangıç durumu: 104 test PASS, `mypy bot` temiz, `ruff` temiz (commit `c30c
 **Yamalar:** `_LINKISH` ve `_EMOJI` desenleri → REJECTED. TEK KAYNAK ve İDDİA etiketlerinde `?` ile biten başlık → REVIEW_HELD. `retry_after > 60` → bu çalışmada vazgeç (`MAX_RETRY_AFTER_SECONDS`).
 
 **PASS kanıtı:** `112 passed` · `mypy`: temiz · `ruff`: temiz · simülatörün 5 senaryosu üretimde
+
+---
+
+## Tur 3
+
+| # | Rol | Bulgu (`dosya:satır`) | Senaryo / etki | Test |
+|---|---|---|---|---|
+| 3.1 | Red Team | `bot/main.py:194` (state yalnızca kök tipine göre denetleniyordu) | Geçerli JSON ama şekli bozuk bir state (`{"seen_items": [], "candidate_pool": "x"}`) AttributeError ile çöküşe yol açıyordu. Bot her 20 dakikada çıkış 3 veriyor, yani fiilen ölüyordu. | `test_r3_red_schema_poisoned_state_does_not_crash` |
+| 3.2 | Red Team | `bot/main.py:199` (`posts` yalnızca liste mi diye bakılıyordu) | `{"posts": [123, "x"]}` gibi zehirli bir geçmiş `p.get` çağrılarında çöküyordu. Kurtarma yolu da hiç tetiklenmiyordu. | `test_r3_red_schema_poisoned_history_recovers_from_last_good` |
+| 3.3 | FinOps/SRE | `bot/collector.py:444` (çalışma süresi sınırı yok) | 11 kaynak × (15 sn × 4 deneme + backoff) + resmî URL doğrulamaları 15 dakikalık iş sınırını aşabiliyordu. İş ortasında öldürülünce o turun yayın ve ölçüm adımları kayboluyordu. | `test_r3_sre_collection_respects_run_deadline` |
+| 3.4 | Editör | `bot/labels.py:34-35` (jenerik doğrulama notu) | Take-Two IR haberinde bile "Rockstar Games / Take-Two resmî kanalında" yazıyordu. ÇOKLU KAYNAK'ta gerçek sayı bilindiği halde "en az iki" deniyordu. | `test_r3_editor_verification_note_is_specific` |
+
+**FAIL kanıtı:** `4 failed, 8 deselected in 0.14s`
+
+**Yamalar:**
+- 3.1/3.2: `storage.read_json(..., validator=)` ve `validate_state_shape` / `validate_history_shape` eklendi. Şekil bozukluğu artık "bozuk dosya" sayılıyor: önce `.lastgood` kurtarma, o da yoksa güvenli mod (çıkış 2, çöküş yok).
+- 3.3: `run_deadline_seconds = 600`. Süre dolunca kalan kaynaklar `skipped: "deadline"` olarak raporlanıyor, Gemini döngüsü de duruyor.
+- 3.4: `publisher.verification_note`: resmî kaynağın adı veya bağımsız köken sayısı yazılıyor.
+
+**Süreç notu (hakem):** İlk yama denemesinde `ruff --fix`, önceki turda kullanılmayan test importlarını sildiği için 19 test kırmızıya döndü. Importlar geri eklendi, 2. denemede yeşile döndü. `token-budget-guardian` kuralı (en fazla 2 deneme) aşılmadı.
+
+**PASS kanıtı:** `116 passed` · `mypy`: temiz · `ruff`: temiz

@@ -72,6 +72,8 @@ from .storage import (
     default_insights,
     default_state,
     read_json_recovering,
+    validate_history_shape,
+    validate_state_shape,
     write_if_changed,
     write_json_atomic,
 )
@@ -100,6 +102,7 @@ class RunContext:
     safe_mode: bool = False
     gemini_blocked_until: datetime | None = None
     remaining_posts: int = 0
+    started_mono: float = field(default_factory=time.monotonic)
     style_hints: dict[str, list[str]] = field(default_factory=dict)
 
     @property
@@ -181,7 +184,7 @@ def _load_data(summary: dict[str, Any], data_dir: Path) -> tuple[
         dict[str, Any] | None, dict[str, Any], bool]:
     """state/history yükler; bozuksa son sağlam kopyadan kurtarır. (state, history, safe_mode)."""
     try:
-        state, err = read_json_recovering(data_dir / "state.json", default_state)
+        state, err = read_json_recovering(data_dir / "state.json", default_state, validator=validate_state_shape)
         if err:
             summary["recovered"].append("state.json")
             summary["notes"].append(f"state.json bozuktu ({err.reason}); son sağlam kopyadan kurtarıldı")
@@ -195,9 +198,8 @@ def _load_data(summary: dict[str, Any], data_dir: Path) -> tuple[
         state.setdefault(k, v)
     state.setdefault("candidate_pool", {})
     try:
-        history, err = read_json_recovering(data_dir / "history.json", default_history)
-        if not isinstance(history.get("posts"), list):
-            raise CorruptDataError(data_dir / "history.json", None, "posts listesi yok")
+        history, err = read_json_recovering(data_dir / "history.json", default_history,
+                                            validator=validate_history_shape)
         if err:
             summary["recovered"].append("history.json")
             summary["notes"].append(f"history.json bozuktu ({err.reason}); son sağlam kopyadan kurtarıldı")
@@ -286,7 +288,8 @@ def _poll_reactions(ctx: RunContext) -> None:
 
 def _ingest(ctx: RunContext) -> None:
     """Kaynakları toplar, yeni öğeleri aday havuzuna ekler."""
-    result = collect(ctx.sources, ctx.settings, ctx.session, ctx.now, verifier=ctx.verifier)
+    result = collect(ctx.sources, ctx.settings, ctx.session, ctx.now, verifier=ctx.verifier,
+                     deadline_at=ctx.started_mono + ctx.settings.run_deadline_seconds)
     ctx.summary["sources_checked"], ctx.summary["sources_ok"] = result.sources_checked, result.sources_ok
     ctx.summary["error_classes"].extend(result.errors)
     ctx.state.setdefault("source_status", {}).update(result.source_status)
@@ -336,6 +339,8 @@ def _blocked_reason(ctx: RunContext) -> str | None:
     if ctx.remaining_posts <= 0:
         ctx.summary["daily_limit_reached"] = True
         return "günlük limit"
+    if time.monotonic() - ctx.started_mono > ctx.settings.run_deadline_seconds:
+        return "çalışma süresi sınırı"
     since = minutes_since_last_post(ctx.history, ctx.now)
     if since is not None and since < ctx.settings.min_minutes_between_posts:
         return "gönderiler arası minimum süre bekleniyor"
@@ -455,7 +460,8 @@ def _generate_and_publish(ctx: RunContext, cluster: list[Item], a: Assessment) -
     if bad:
         _record_failure(ctx, post, cluster, "REJECTED", f"URL doğrulanamadı ({bad})")
         return
-    text = render_post(outcome.content, a.label, sources_meta, ctx.settings, ctx.now)
+    text = render_post(outcome.content, a.label, sources_meta, ctx.settings, ctx.now,
+                       independent_count=len(a.independent_origins))
     status = publish_post(post=post, text=text, history=ctx.history, chat_id=ctx.secrets.telegram_chat_id,
                           telegram=ctx.telegram, persist=ctx.persist_history, now=ctx.now)
     _after_publish(ctx, cluster, post, status)

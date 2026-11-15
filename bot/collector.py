@@ -425,8 +425,11 @@ def _items_from_source(src: Source, entries: list[dict[str, str]], settings: Set
 
 
 def collect(sources: list[Source], settings: Settings, session: requests.Session | None, now: datetime, *,
-            fetch: Callable[[str], bytes] | None = None, verifier: Verifier | None = None) -> CollectResult:
-    """Tüm etkin kaynakları sırayla toplar; her kaynak hatası izole edilir."""
+            fetch: Callable[[str], bytes] | None = None, verifier: Verifier | None = None,
+            clock: Callable[[], float] = time.monotonic, deadline_at: float | None = None) -> CollectResult:
+    """Tüm etkin kaynakları sırayla toplar; her kaynak hatası izole edilir. Çalışma süresi sınırı
+    (``deadline_at`` veya başlangıç + ``run_deadline_seconds``) dolunca kalan kaynaklar atlanır."""
+    deadline = deadline_at if deadline_at is not None else clock() + settings.run_deadline_seconds
     if fetch is None:
         if session is None:
             raise ValueError("fetch veya session verilmeli")
@@ -443,6 +446,9 @@ def collect(sources: list[Source], settings: Settings, session: requests.Session
     seen_ids: set[str] = set()
     for src in sources:
         if not src.enabled or not src.feed_url:
+            continue
+        if clock() >= deadline:
+            status[src.id] = {"ok": False, "skipped": "deadline", "checked_at": iso(now)}
             continue
         checked += 1
         try:

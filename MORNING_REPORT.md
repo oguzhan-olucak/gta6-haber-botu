@@ -117,16 +117,17 @@ tests/test_storage.py ......       (6)
 
 ## 6. Sabah Senin Yapacakların
 
-1. **Klasörü GitHub'a yükle.** "Haber Sitesi" klasöründeki `gta6-autonomous-telegram` klasörünün içinde terminal aç:
+1. **Klasörü GitHub'a yükle.** "Haber Sitesi" klasöründe iki şey var: dosyaların açık hâli (`gta6-autonomous-telegram/`) ve gece atılan 7 commit'in tam git geçmişi (`gta6-autonomous-telegram.bundle`). "Haber Sitesi" klasöründe terminal aç:
    ```bash
-   git clone gta6-autonomous-telegram.bundle repo && cd repo   # gece atılan 7 commit'lik geçmişle
+   git clone gta6-autonomous-telegram.bundle gta6-repo
+   cd gta6-repo
    ```
    GitHub'da yeni bir **public** repo oluştur (README eklemeden), sonra:
    ```bash
-   git remote add origin https://github.com/<kullanıcı-adın>/<repo-adı>.git
+   git remote set-url origin https://github.com/<kullanıcı-adın>/<repo-adı>.git
    git push -u origin main
    ```
-   Git geçmişi gerekmiyorsa klasördeki dosyaları doğrudan da yükleyebilirsin.
+   Git geçmişine ihtiyacın yoksa `gta6-autonomous-telegram/` klasörünün içeriğini doğrudan da yükleyebilirsin; içerik aynı.
 2. **BotFather:** Telegram'da @BotFather → `/newbot` → bot adını ver. Token'ı yalnızca 4. adımda GitHub Secrets'a yapıştır; sohbete, dosyaya veya koda yazma.
 3. **Kanal:** Herkese açık kanalını oluştur. Botu **yönetici** olarak ekle ve "Mesaj gönderme" iznini ver (reaksiyon ölçümü için yöneticilik şart). İstersen özet ve uyarılar için ayrı bir özel grup kur, botu oraya da ekle.
 4. **Gemini:** [Google AI Studio](https://aistudio.google.com)'da API anahtarı oluştur. **Billing'i açma.** Rate limits sayfasında ücretsiz katmanda olan **stable** bir Flash modelinin kimliğini not al (16 Kasım itibarıyla `gemini-3.5-flash` stable olarak listeleniyordu; yine de güncel listeyi kontrol et).

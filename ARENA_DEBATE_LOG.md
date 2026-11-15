@@ -118,7 +118,7 @@ Başlangıç durumu: 104 test PASS, `mypy bot` temiz, `ruff` temiz (commit `c30c
 | 3 | 2 | 1 | 1 | – | 4 | 4 |
 | 4 | 1 | 1 | 1 | – | 3 | 3 |
 | 5 | 1 | 1 | 1 | 1 | 4 | 4 |
-| 6 | 1 | 1 | 4 | (1.5) | 6 | 6 |
+| 6 | 1 | 1 | 4 | – | 6 | 6 |
 | **Toplam** | **8** | **6** | **10** | **1** | **25** | **25** |
 
 Test sayısı: 104 → 129 (Tur 6 dahil) · Hakem tarafından reddedilen bulgu: 0 · 2 denemeyi aşan hata: 0

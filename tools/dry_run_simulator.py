@@ -198,7 +198,8 @@ def scenarios() -> dict[str, Scenario]:
             "digest", "Günlük yönetici özeti", "06:00 ve 18:00 UTC penceresinde yalnızca yönetici sohbetine gider.",
             "admin", now=datetime(2026, 11, 16, 18, 5, tzinfo=timezone.utc),
             seed_history=[{"content_id": "x1", "publish_status": "PUBLISHED", "published_at": "2026-11-16T09:00:00Z",
-                           "source_urls": ["https://ign.com/a"], "chat_id": CHANNEL, "message_id": 1},
+                           "source_urls": ["https://ign.com/a"], "chat_id": CHANNEL, "message_id": 1,
+                           "label_text": "ÇOKLU KAYNAK", "title_tr": "GTA VI, PlayStation 5'te 150GB alan istiyor"},
                           {"content_id": "x2", "publish_status": "REVIEW_HELD", "created_at": "2026-11-16T12:00:00Z",
                            "source_urls": ["https://ign.com/b"]}]),
         "alert": Scenario(

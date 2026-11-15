@@ -203,8 +203,14 @@ def check_review_flag(c: GeneratedContent, cluster: list[Item], a: Assessment,
 CHECKS: tuple[Check, ...] = (check_lengths, check_urls, check_banned, check_claim, check_facts, check_review_flag)
 
 
+_FENCE_RE = re.compile(r"^\s*```(?:json|JSON)?\s*\n?(.*?)\n?\s*```\s*$", re.S)
+
+
 def parse_output(raw: str) -> GeneratedContent | ValidationOutcome:
-    """Ham model metnini şemaya göre ayrıştırır; başarısızsa REJECTED sonucu döner."""
+    """Ham model metnini şemaya göre ayrıştırır; başarısızsa REJECTED sonucu döner.
+    Yanıt Markdown kod çitine (```json) sarılmışsa çit kaldırılır."""
+    if isinstance(raw, str) and (m := _FENCE_RE.match(raw)):
+        raw = m.group(1)
     try:
         data = json.loads(raw)
     except (json.JSONDecodeError, TypeError):

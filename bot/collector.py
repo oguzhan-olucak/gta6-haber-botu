@@ -79,6 +79,7 @@ class Item:
     cited_origins: list[str] = field(default_factory=list)
     url_verified: bool = False
     via: str = "rss"
+    raw_id: str = ""  # doğrulama öncesi ham bağlantının kimliği (tekrar doğrulamayı önlemek için)
 
     def to_dict(self) -> dict[str, Any]:
         """JSON'a yazılabilir sözlük."""
@@ -93,6 +94,7 @@ class CollectResult:
     sources_checked: int
     sources_ok: int
     errors: list[str]
+    known_skipped: int = 0
 
 
 # ---- URL yardımcıları -------------------------------------------------------------
@@ -400,13 +402,21 @@ def _build_item(src: Source, entry: dict[str, str], settings: Settings, sources:
 
 
 def _items_from_source(src: Source, entries: list[dict[str, str]], settings: Settings, sources: list[Source],
-                       now: datetime, verifier: Verifier | None, seen_ids: set[str]) -> list[Item]:
+                       now: datetime, verifier: Verifier | None, seen_ids: set[str],
+                       known_ids: set[str] | frozenset[str] = frozenset(),
+                       stats: dict[str, int] | None = None) -> list[Item]:
+    stats = stats if stats is not None else {"known": 0}
     items: list[Item] = []
     verifications = 0
     for e in entries:
         draft = _build_item(src, e, settings, sources, now)
         if draft is None:
             continue
+        raw = canonicalize_url(urljoin(src.feed_url or "", e.get("link", "")))
+        draft.raw_id = url_id(raw) if raw else ""
+        if draft.raw_id and draft.raw_id in known_ids:
+            stats["known"] += 1
+            continue  # daha önce görüldü: yeniden ağ doğrulaması yapma
         needs_net = src.trust_class == "OFFICIAL" or src.kind == "google_news"
         if needs_net:
             if verifications >= src.max_verifications_per_run:
@@ -426,7 +436,8 @@ def _items_from_source(src: Source, entries: list[dict[str, str]], settings: Set
 
 def collect(sources: list[Source], settings: Settings, session: requests.Session | None, now: datetime, *,
             fetch: Callable[[str], bytes] | None = None, verifier: Verifier | None = None,
-            clock: Callable[[], float] = time.monotonic, deadline_at: float | None = None) -> CollectResult:
+            clock: Callable[[], float] = time.monotonic, deadline_at: float | None = None,
+            known_ids: set[str] | frozenset[str] = frozenset()) -> CollectResult:
     """Tüm etkin kaynakları sırayla toplar; her kaynak hatası izole edilir. Çalışma süresi sınırı
     (``deadline_at`` veya başlangıç + ``run_deadline_seconds``) dolunca kalan kaynaklar atlanır."""
     deadline = deadline_at if deadline_at is not None else clock() + settings.run_deadline_seconds
@@ -444,6 +455,7 @@ def collect(sources: list[Source], settings: Settings, session: requests.Session
     errors: list[str] = []
     checked = ok = 0
     seen_ids: set[str] = set()
+    stats = {"known": 0}
     for src in sources:
         if not src.enabled or not src.feed_url:
             continue
@@ -453,7 +465,7 @@ def collect(sources: list[Source], settings: Settings, session: requests.Session
         checked += 1
         try:
             entries = entries_for_source(src, fetch(src.feed_url))
-            got = _items_from_source(src, entries, settings, sources, now, verifier, seen_ids)
+            got = _items_from_source(src, entries, settings, sources, now, verifier, seen_ids, known_ids, stats)
         except FetchError as exc:
             status[src.id] = {"ok": False, "error_class": exc.error_class.value, "detail": str(exc)[:120],
                               "http_status": exc.status, "checked_at": iso(now)}
@@ -473,7 +485,7 @@ def collect(sources: list[Source], settings: Settings, session: requests.Session
             status[src.id]["warning"] = "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     items.sort(key=lambda i: i.published_at or "", reverse=True)
     return CollectResult(items=items[: settings.max_rss_items_per_run], source_status=status,
-                         sources_checked=checked, sources_ok=ok, errors=errors)
+                         sources_checked=checked, sources_ok=ok, errors=errors, known_skipped=stats["known"])
 
 
 # ---- SSRF korumalı URL doğrulama ------------------------------------------------------

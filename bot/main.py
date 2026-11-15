@@ -289,9 +289,11 @@ def _poll_reactions(ctx: RunContext) -> None:
 def _ingest(ctx: RunContext) -> None:
     """Kaynakları toplar, yeni öğeleri aday havuzuna ekler."""
     result = collect(ctx.sources, ctx.settings, ctx.session, ctx.now, verifier=ctx.verifier,
-                     deadline_at=ctx.started_mono + ctx.settings.run_deadline_seconds)
+                     deadline_at=ctx.started_mono + ctx.settings.run_deadline_seconds,
+                     known_ids=frozenset(ctx.state.get("seen_items", {})))
     ctx.summary["sources_checked"], ctx.summary["sources_ok"] = result.sources_checked, result.sources_ok
     ctx.summary["error_classes"].extend(result.errors)
+    ctx.summary["duplicates_or_filtered"] += result.known_skipped
     ctx.state.setdefault("source_status", {}).update(result.source_status)
     if result.sources_ok > 0:
         ctx.state["last_successful_fetch_at"] = iso(ctx.now)
@@ -301,6 +303,8 @@ def _ingest(ctx: RunContext) -> None:
             ctx.summary["duplicates_or_filtered"] += 1
             continue
         seen[it.id] = {"first_seen": iso(ctx.now), "status": "NEW", "source": it.source_id}
+        if it.raw_id and it.raw_id != it.id:  # ham bağlantı (ör. Google News) da görüldü say
+            seen[it.raw_id] = {"first_seen": iso(ctx.now), "status": "ALIAS", "source": it.source_id}
         pool[it.id] = {"item": it.to_dict(), "first_seen": iso(ctx.now), "needs_eval": True}
         ctx.summary["new_items"] += 1
 

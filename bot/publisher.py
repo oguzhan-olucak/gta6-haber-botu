@@ -237,7 +237,28 @@ def mark_alert(state: dict, alert_key: str, now: datetime) -> None:
     state.setdefault("alerts_last_sent", {})[alert_key] = iso(now)
 
 
-def render_digest(summary: dict, history: dict, insights: dict, settings: Settings, now: datetime) -> str:
+def _recent_published(history: dict[str, Any], now: datetime, settings: Settings, limit: int = 3) -> list[str]:
+    """Bugün yayınlanan son haberler: "• ETİKET — başlık" (elle kontrol için)."""
+    tz = local_tz(settings)
+    today = now.astimezone(tz).date()
+    rows = [p for p in history.get("posts", []) if p.get("publish_status") == "PUBLISHED"
+            and (t := _post_time(p)) is not None and t.astimezone(tz).date() == today]
+    rows.sort(key=lambda p: p.get("published_at") or "", reverse=True)
+    return [f"• {_e(str(p.get('label_text', '')))} — {_e(truncate(str(p.get('title_tr') or '(başlıksız)'), 90))}"
+            for p in rows[:limit]]
+
+
+def _run_line(summary: dict[str, Any]) -> str:
+    if not summary.get("sources_checked"):
+        reason = "duraklatıldı" if summary.get("paused") else "güvenli mod" if summary.get("safe_mode") else \
+            "etkin kaynak yok"
+        return f"Son çalışma: toplama yapılmadı ({reason})"
+    return (f"Son çalışma: kaynak {summary.get('sources_ok', 0)}/{summary['sources_checked']}, "
+            f"yeni öğe {summary.get('new_items', 0)}, Gemini {summary.get('gemini_calls', 0)} çağrı")
+
+
+def render_digest(summary: dict[str, Any], history: dict[str, Any], insights: dict[str, Any], settings: Settings,
+                  now: datetime) -> str:
     """Günde iki kez gönderilen yönetici özeti metni (Telegram HTML)."""
     published = posts_today(history, now, settings)
     uncertain = sum(1 for p in history.get("posts", []) if p.get("publish_status") == "UNCERTAIN")
@@ -252,13 +273,15 @@ def render_digest(summary: dict, history: dict, insights: dict, settings: Settin
         f"Bugünkü yayın: <b>{published}</b> / {settings.max_daily_posts}",
         f"İncelemeye takılan (yayınlanmadı): {held}",
         f"Belirsiz gönderim (elle kontrol): {uncertain}",
-        f"Son çalışma: kaynak {summary.get('sources_ok', 0)}/{summary.get('sources_checked', 0)}, "
-        f"yeni öğe {summary.get('new_items', 0)}, Gemini {summary.get('gemini_calls', 0)} çağrı",
+        _run_line(summary),
         f"Etkileşim analizi: {_e(str(insights.get('status', 'YETERSİZ VERİ')))}",
         "Görüntülenme/iletilme: Bot API ile ölçülemiyor (unavailable)",
     ]
     if summary.get("error_classes"):
         lines.append(f"Hatalar: {_e(', '.join(sorted(set(summary['error_classes']))))}")
+    recent = _recent_published(history, now, settings)
+    if recent:
+        lines += ["", "<b>Bugün yayınlananlar</b>", *recent]
     return "\n".join(lines)
 
 

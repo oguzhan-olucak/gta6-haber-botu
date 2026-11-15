@@ -69,6 +69,8 @@ _INJECTION_PATTERNS: tuple[re.Pattern[str], ...] = tuple(re.compile(p) for p in 
     r"\bresmi\s+(olarak\s+)?(isaretle|etiketle)\b",
     r"\bjailbreak\b",
 ))
+_OVERRIDE_VERB = re.compile(r"\b(ignore|disregard|forget|override|bypass|yok\s+say|gormezden\s+gel|unut)\b")
+_INSTRUCTION_NOUN = re.compile(r"\b(instructions?|prompts?|directives?|system\s+messages?|talimat\w*|komut\w*)\b")
 _INJECTION_RAW = re.compile(r"<\s*/?\s*(untrusted_source_data|system|instructions?)\b|\[\s*/?\s*INST\s*\]|"
                             r"<\|im_(start|end)\|>", re.I)
 
@@ -81,7 +83,14 @@ def injection_suspect(item: Item) -> bool:
     if _INJECTION_RAW.search(raw):
         return True
     norm = normalize_text(raw)
-    return any(p.search(norm) for p in _INJECTION_PATTERNS)
+    if any(p.search(norm) for p in _INJECTION_PATTERNS):
+        return True
+    # Sıradan ve mesafeden bağımsız: geçersiz kılma fiili + talimat ismi 150 karakter içinde
+    for m in _OVERRIDE_VERB.finditer(norm):
+        window = norm[max(0, m.start() - 150): m.end() + 150]
+        if _INSTRUCTION_NOUN.search(window):
+            return True
+    return False
 
 
 # ---- Kümeleme ve tekrar -----------------------------------------------------------------

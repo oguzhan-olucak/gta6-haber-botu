@@ -1,0 +1,104 @@
+{
+  "_comment": "Kaynak listesi. trust_class kodla doğrulanır; LLM'ye bırakılmaz. rss_verified=false olan beslemeler gece vardiyasında canlı doğrulanamadı (ağ kapalıydı); ilk workflow_dispatch çalışmasının özetinde her kaynağın durumunu kontrol edin. Resmî Rockstar/Take-Two RSS adresi doğrulanamadığı için resmî kaynaklar enabled=false başlar.",
+  "sources": [
+    {
+      "id": "rockstar_newswire",
+      "name": "Rockstar Newswire",
+      "trust_class": "OFFICIAL",
+      "feed_url": "",
+      "enabled": false,
+      "rss_verified": false,
+      "allowed_domains": ["rockstargames.com"],
+      "origin_group": "rockstar",
+      "notes": "Resmî bir RSS adresi doğrulanamadı. Doğrulanmış bir besleme bulunursa feed_url doldurup enabled=true yapın."
+    },
+    {
+      "id": "take_two_ir",
+      "name": "Take-Two Interactive",
+      "trust_class": "OFFICIAL",
+      "feed_url": "",
+      "enabled": false,
+      "rss_verified": false,
+      "allowed_domains": ["take2games.com"],
+      "origin_group": "take_two",
+      "notes": "Yatırımcı ilişkileri basın bültenleri. RSS adresi doğrulanamadı."
+    },
+    {
+      "id": "ign",
+      "name": "IGN",
+      "trust_class": "ESTABLISHED_MEDIA",
+      "feed_url": "https://feeds.feedburner.com/ign/games-all",
+      "enabled": true,
+      "rss_verified": false,
+      "allowed_domains": ["ign.com"],
+      "origin_group": "ign",
+      "notes": "Feedburner üzerinden; bağlantılar ign.com'a çıkmalı."
+    },
+    {
+      "id": "eurogamer",
+      "name": "Eurogamer",
+      "trust_class": "ESTABLISHED_MEDIA",
+      "feed_url": "https://www.eurogamer.net/feed",
+      "enabled": true,
+      "rss_verified": false,
+      "allowed_domains": ["eurogamer.net"],
+      "origin_group": "eurogamer",
+      "notes": ""
+    },
+    {
+      "id": "gamesradar",
+      "name": "GamesRadar+",
+      "trust_class": "ESTABLISHED_MEDIA",
+      "feed_url": "https://www.gamesradar.com/rss/",
+      "enabled": true,
+      "rss_verified": false,
+      "allowed_domains": ["gamesradar.com"],
+      "origin_group": "future_plc",
+      "notes": "PC Gamer ile aynı yayın grubu (Future plc); bağımsız kaynak sayımında tek köken sayılır."
+    },
+    {
+      "id": "pcgamer",
+      "name": "PC Gamer",
+      "trust_class": "ESTABLISHED_MEDIA",
+      "feed_url": "https://www.pcgamer.com/rss/",
+      "enabled": true,
+      "rss_verified": false,
+      "allowed_domains": ["pcgamer.com"],
+      "origin_group": "future_plc",
+      "notes": "GamesRadar+ ile aynı yayın grubu."
+    },
+    {
+      "id": "vgc",
+      "name": "Video Games Chronicle",
+      "trust_class": "ESTABLISHED_MEDIA",
+      "feed_url": "https://www.videogameschronicle.com/feed/",
+      "enabled": true,
+      "rss_verified": false,
+      "allowed_domains": ["videogameschronicle.com"],
+      "origin_group": "vgc",
+      "notes": ""
+    },
+    {
+      "id": "insider_gaming",
+      "name": "Insider Gaming",
+      "trust_class": "ESTABLISHED_MEDIA",
+      "feed_url": "https://insider-gaming.com/feed/",
+      "enabled": true,
+      "rss_verified": false,
+      "allowed_domains": ["insider-gaming.com"],
+      "origin_group": "insider_gaming",
+      "notes": "Sızıntı haberleri de yayımlar; 'leak/sızıntı' içeren başlıklar otomatik olarak İDDİA etiketi alır."
+    },
+    {
+      "id": "reddit_gta6",
+      "name": "r/GTA6",
+      "trust_class": "COMMUNITY",
+      "feed_url": "https://www.reddit.com/r/GTA6/new/.rss",
+      "enabled": true,
+      "rss_verified": false,
+      "allowed_domains": ["reddit.com"],
+      "origin_group": "reddit",
+      "notes": "Her zaman TOPLULUK/SIZINTI İDDİASI. allow_community_rumors=false iken yayınlanmaz. Reddit botlara 429/403 dönebilir."
+    }
+  ]
+}

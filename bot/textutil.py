@@ -96,6 +96,23 @@ def truncate(text: str, max_chars: int, ellipsis: str = "…") -> str:
     return cut.rstrip(" ,;:-–—") + ellipsis
 
 
+# Latin harflere benzeyen Kiril/Yunan harfleri (homoglif). Enjeksiyon dedektörünü atlatmak için kullanılır.
+_CONFUSABLES = str.maketrans({
+    "а": "a", "е": "e", "о": "o", "р": "p", "с": "c", "у": "y", "х": "x", "і": "i", "ј": "j", "ѕ": "s",
+    "ԁ": "d", "һ": "h", "ӏ": "l", "ԛ": "q", "ԝ": "w", "А": "A", "В": "B", "Е": "E", "К": "K", "М": "M",
+    "Н": "H", "О": "O", "Р": "P", "С": "C", "Т": "T", "Х": "X", "І": "I", "Ј": "J", "Ѕ": "S",
+    "α": "a", "ο": "o", "ρ": "p", "ε": "e", "ι": "i", "κ": "k", "ν": "v", "τ": "t", "υ": "u",
+    "Α": "A", "Β": "B", "Ε": "E", "Ι": "I", "Κ": "K", "Μ": "M", "Ν": "N", "Ο": "O", "Ρ": "P", "Τ": "T",
+    "Χ": "X", "Υ": "Y", "Ζ": "Z",
+})
+
+
+def fold_confusables(text: str) -> str:
+    """Kiril/Yunan homogliflerini Latin karşılıklarına çevirir (yalnızca güvenlik denetimi için;
+    yayınlanan metne uygulanmaz)."""
+    return (text or "").translate(_CONFUSABLES)
+
+
 def normalize_text(text: str) -> str:
     """Karşılaştırma için: küçük harf, aksansız, yalnızca a-z0-9 ve boşluk.
     Türkçe İ/ı doğru katlanır (İ → i, ı → i)."""

@@ -523,9 +523,14 @@ def _prune(state: dict[str, Any], history: dict[str, Any], settings: Settings, n
         seen = dict(sorted(seen.items(), key=lambda kv: kv[1].get("first_seen") or "")[-r.seen_items_max_records:])
     state["seen_items"] = seen
     pool_cutoff = now - timedelta(hours=settings.max_item_age_hours)
-    state["candidate_pool"] = {
-        k: v for k, v in state.get("candidate_pool", {}).items()
-        if (parse_iso(v["item"].get("published_at")) or parse_iso(v.get("first_seen")) or now) >= pool_cutoff}
+
+    def pool_time(v: dict[str, Any]) -> datetime:
+        return parse_iso(v["item"].get("published_at")) or parse_iso(v.get("first_seen")) or now
+
+    fresh = {k: v for k, v in state.get("candidate_pool", {}).items() if pool_time(v) >= pool_cutoff}
+    if len(fresh) > r.candidate_pool_max_records:  # en yeniler kalır; state.json şişmez
+        fresh = dict(sorted(fresh.items(), key=lambda kv: pool_time(kv[1]), reverse=True)[:r.candidate_pool_max_records])
+    state["candidate_pool"] = fresh
     hist_cutoff = now - timedelta(days=r.history_max_age_days)
     posts = [p for p in history.get("posts", [])
              if (parse_iso(p.get("published_at") or p.get("created_at")) or now) >= hist_cutoff]

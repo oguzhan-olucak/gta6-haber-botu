@@ -75,6 +75,7 @@ class RetentionLimits(_Strict):
     seen_items_max_age_hours: int = Field(240, ge=24)
     seen_items_max_records: int = Field(5000, ge=100)
     run_log_max_records: int = Field(50, ge=5)
+    candidate_pool_max_records: int = Field(400, ge=20)
 
 
 class Settings(_Strict):

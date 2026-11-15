@@ -14,3 +14,4 @@ Tarih: 2026-11-16 (Pazartesi), çalışma saat dilimi UTC / TSİ (UTC+3)
 | 02:10 | Faz 2 test paketi: test_clustering.py (14), test_injection.py (16), test_resilience.py (23) — injection, UTF-8/Türkçe, kırpma, kurtarma, TRT limit, Google News/HTML resmî kaynak. Yeni bulunan açık: 4096 sınırı aşılabiliyordu → render_post kırpma eklendi | `pytest`: 102 passed (+53) |
 | 02:25 | tools/dry_run_simulator.py (5 senaryo, ağ kalkanı, --interactive/--scenario/--print) + Telegram mobil maketi docs/message_preview.html; render_preview.py kaldırıldı; README güncellendi | `pytest`: 104 passed |
 | 02:35 | **Aşama 3 / Adım 1** — skill ekosistemi: 8 temel skill Faz 2'ye göre güncellendi + 6 yeni (token-budget-guardian, arena-adversarial-review, atomic-json-recovery, rss-anti-poisoning, official-source-verifier, event-clustering-calibrator). Toplam 14, frontmatter doğrulandı | — |
+| 02:50 | Arena Tur 1: 4 bulgu (Red 2, SRE 1, Editör 1) → 4 FAIL → yama → 108 PASS | ✅ |

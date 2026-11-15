@@ -40,7 +40,7 @@ CATEGORY_TR = {
     "GAMEPLAY_TECH": "Oynanış & Teknoloji",
     "RELEASE_PLATFORMS": "Çıkış & Platformlar",
     "INDUSTRY_BUSINESS": "Sektör & İş",
-    "COMMUNITY_RUMOR": "Topluluk",
+    "COMMUNITY_RUMOR": "İddia",
     "OTHER": "Gündem",
 }
 
@@ -81,13 +81,16 @@ def render_post(content: GeneratedContent, label: Label, sources: list[dict[str,
     gerekirse önce kaynak sayısı, sonra özet kısaltılır.
     """
     category = CATEGORY_TR.get(content.category, "Gündem")
+    redundant = ((label == Label.OFFICIAL and content.category == "OFFICIAL_ANNOUNCEMENT")
+                 or (label in (Label.LEAK_CLAIM, Label.COMMUNITY_CLAIM) and content.category == "COMMUNITY_RUMOR"))
+    category_part = "" if redundant else f"  ·  {_e(tr_upper(category))}"
     note = _e(LABEL_NOTE[label])
     if label in (Label.LEAK_CLAIM, Label.COMMUNITY_CLAIM, Label.SINGLE_SOURCE):
         note = f"<i>{note}</i>"
 
     def build(summary: str, srcs: list[dict[str, str]]) -> str:
         return "\n".join([
-            f"{BADGE[label]} <b>{_e(LABEL_TEXT[label])}</b>  ·  {_e(tr_upper(category))}",
+            f"{BADGE[label]} <b>{_e(LABEL_TEXT[label])}</b>{category_part}",
             "",
             f"<b>{_e(content.title_tr)}</b>",
             "",

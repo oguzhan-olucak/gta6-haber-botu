@@ -67,6 +67,7 @@
     "history_max_age_days": 180,
     "seen_items_max_age_hours": 240,
     "seen_items_max_records": 5000,
-    "run_log_max_records": 50
+    "run_log_max_records": 50,
+    "candidate_pool_max_records": 400
   }
 }

@@ -36,7 +36,7 @@ from .gemini import (
     validate_generated,
 )
 from .labels import LABEL_NOTE, LABEL_TEXT, OFFICIAL_DOMAINS, STRENGTH_KEY, Assessment, Label
-from .textutil import normalize_text
+from .textutil import fold_confusables, normalize_text
 
 __all__ = ["Label", "LABEL_TEXT", "LABEL_NOTE", "Assessment", "assess", "cluster_items", "titles_similar",
            "is_duplicate_of_history", "injection_suspect", "GeneratedContent", "RESPONSE_JSON_SCHEMA",
@@ -45,6 +45,13 @@ __all__ = ["Label", "LABEL_TEXT", "LABEL_NOTE", "Assessment", "assess", "cluster
 
 log = logging.getLogger("gta6bot")
 
+_LABEL_TIER: dict[Label, tuple[str, ...]] = {
+    Label.OFFICIAL: ("OFFICIAL",),
+    Label.MULTI_SOURCE: ("ESTABLISHED_MEDIA",),
+    Label.SINGLE_SOURCE: ("ESTABLISHED_MEDIA",),
+    Label.LEAK_CLAIM: ("ESTABLISHED_MEDIA", "COMMUNITY"),
+    Label.COMMUNITY_CLAIM: ("COMMUNITY",),
+}
 _TRUST_RANK: dict[str, int] = {"OFFICIAL": 0, "ESTABLISHED_MEDIA": 1, "COMMUNITY": 2, "UNKNOWN": 3}
 
 # Kaynak verisine gömülmüş talimat kalıpları (İngilizce + Türkçe). Normalize metinde aranır.
@@ -70,7 +77,7 @@ _INJECTION_RAW = re.compile(r"<\s*/?\s*(untrusted_source_data|system|instruction
 
 def injection_suspect(item: Item) -> bool:
     """Öğenin başlık/özetinde LLM'e yönelik gömülü talimat izi var mı?"""
-    raw = f"{item.title} {item.summary}"
+    raw = fold_confusables(f"{item.title} {item.summary}")
     if _INJECTION_RAW.search(raw):
         return True
     norm = normalize_text(raw)
@@ -213,6 +220,10 @@ def assess(cluster: list[Item], settings: Settings, now: datetime) -> Assessment
         return Assessment("REJECT", None, 0, 0, reason, None)
     valid.sort(key=lambda i: (_TRUST_RANK.get(i.trust_class, 9), i.published_at or "~"))
     label, strength, reason, origins = _label_for(valid)
+    # Etiketi belirleyen güven katmanı dışındaki öğeler (ör. Reddit) ne isteme ne kaynak listesine girer.
+    tier = _LABEL_TIER[label]
+    leak_media = label == Label.LEAK_CLAIM and any(i.trust_class == "ESTABLISHED_MEDIA" for i in valid)
+    valid = [i for i in valid if i.trust_class in (("ESTABLISHED_MEDIA",) if leak_media else tier)]
     if suspects:
         reason += f"; {suspects} şüpheli öğe ayıklandı"
     priority = min(100, _recency(valid, settings, now) + _relevance(valid, settings) + round(strength * 0.4))

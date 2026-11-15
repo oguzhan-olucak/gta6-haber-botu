@@ -85,6 +85,13 @@ Farklı sitelerin aynı olayı farklı başlıklarla yazması `bot/clustering.py
 5. **İzinler:** Workflow dosyası `permissions: contents: write` ile kendi iznini açıkça tanımlar. Repo ayarlarını değiştirmeniz genellikle gerekmez. Commit adımı 403 verirse Settings → Actions → General → Workflow permissions bölümünü kontrol edin.
 6. **İlk test:** Actions → `gta6-bot-run` → **Run workflow**. Log'daki JSON özetinde `source_status` ve `error_classes` alanlarını kontrol edin.
 
+## Güvenlik ve kalite katmanları (özet)
+
+- **Prompt injection:** Kaynak metni `<untrusted_source_data>` içinde ve kaçırılmış olarak modele gider. Talimat kalıbı taşıyan öğeler kümeden ayıklanır; dedektör homoglif, görünmez karakter ve dolgu ile atlatma girişimlerine karşı sertleştirildi. Etiketi belirleyen güven katmanı dışındaki öğeler (ör. Reddit) ne isteme ne kaynak listesine girer.
+- **Model çıktısı:** şema (ek alan yasak) → uzunluk → yalnızca kümedeki URL'ler → bağlantı/@kullanıcı/HTML/emoji yasağı → kesinlik dili (yalnızca RESMÎ) → TEK KAYNAK ve İDDİA etiketlerinde atıf zorunluluğu ve soru başlığı yasağı → kaynakta olmayan sayı/platform/ay → `needs_review`.
+- **Dayanıklılık:** çalışma süresi sınırı (`run_deadline_seconds`), görülmüş bağlantıları yeniden doğrulamama, `retry_after > 60` için vazgeçme, yapısal JSON doğrulaması ve `.lastgood` kurtarma, state için saatlik yazım (`state_heartbeat_minutes`).
+- Ayrıntılı saldırı ve düzeltme geçmişi: `ARENA_DEBATE_LOG.md`. Geliştirici skill'leri: `.claude/skills/`.
+
 ## Kill switch
 
 `config/settings.json` içinde `"paused": true` yapıp commit edin. Bu durumda toplama, Gemini çağrısı ve kanal yayını yapılmaz. Reaksiyon ölçümü ve yönetici özeti sürer. Açmak için tekrar `false` yapın.

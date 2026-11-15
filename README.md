@@ -30,8 +30,13 @@ flowchart LR
 | `bot/config.py` | `settings.json` / `sources.json` doğrulama (Pydantic), secret'ları `os.environ`'dan okuma, loglarda secret maskeleme |
 | `bot/storage.py` | Atomik JSON (`tempfile` + `os.replace`), bozuk dosyayı ezmeden `.corrupt.<zaman>.bak` yedeği, dosya kilidi |
 | `bot/telegram_client.py` | Tüm Telegram HTTP çağrıları, token maskeleme, 429/5xx için sınırlı backoff; `sendMessage` zaman aşımında yeniden gönderim yok |
-| `bot/collector.py` | RSS/Atom (defusedxml), URL canonicalization, alan adı eşleşmesi, atıf zinciri tespiti, SSRF korumalı URL doğrulama |
-| `bot/processor.py` | Kümeleme, tekrar önleme, deterministik puanlama ve etiket, Gemini istemi ve çıktı doğrulama |
+| `bot/collector.py` | RSS/Atom (defusedxml, bozuk UTF-8 onarımı), Google News ve HTML liste kaynakları, URL canonicalization, alan adı eşleşmesi, atıf zinciri, SSRF korumalı URL doğrulama |
+| `bot/official.py` | Resmî kaynak yardımcıları: Google News bağlantı çözümü, HTML liste/JSON-LD ayrıştırıcı |
+| `bot/textutil.py` | HTML→metin, mojibake/bozuk UTF-8 onarımı, görünmez karakter temizliği, güvenli kırpma, Türkçe büyük harf |
+| `bot/clustering.py` | Olay kümeleme motoru: TF-IDF kosinüs + karakter 3-gram + özel isim/sayı örtüşmesi, ortalama bağlantı |
+| `bot/labels.py` | Etiketler ve değerlendirme veri tipi |
+| `bot/processor.py` | Kümeleme adaptörü, tekrar önleme, prompt injection şüphelilerini ayıklama, deterministik puanlama ve etiket |
+| `bot/gemini.py` | Çıktı şeması, istem, 6 aşamalı deterministik çıktı doğrulama, `google-genai` istemcisi |
 | `bot/publisher.py` | Mesaj şablonu, idempotent yayın, günlük limit, yönetici özeti, alarm tekilleştirme |
 | `bot/analyzer.py` | Reaksiyon güncellemeleri, ölçüm durumu, kategori/başlık stili analizi |
 | `bot/main.py` | Orkestrasyon ve JSON çalışma özeti |
@@ -46,7 +51,20 @@ flowchart LR
 | 🟥 | SIZINTI İDDİASI | Başlıkta leak/rumor/insider vb. | `allow_community_rumors` (kapalı) |
 | 🟧 | TOPLULUK İDDİASI | Yalnızca Reddit/topluluk | `allow_community_rumors` (kapalı) |
 
-Etiketi model değil Python belirler. Model "resmî" dese bile resmî alan adı yoksa gönderi incelemeye takılır. Şablonların görünümü: `docs/message_preview.html` (`python tools/render_preview.py` ile yeniden üretilir).
+Etiketi model değil Python belirler. Model "resmî" dese bile resmî alan adı yoksa gönderi incelemeye takılır. Şablonların görünümü: `docs/message_preview.html`. Bu sayfa, gerçek ağa bağlanmadan tüm hattı sahte servislerle çalıştıran simülatörle üretilir: `python tools/dry_run_simulator.py` (tek senaryo için `--scenario multi`, menü için `--interactive`, terminale yazdırmak için `--print`).
+
+## Resmî kaynaklar nasıl doğrulanır
+
+Rockstar ve Take-Two için doğrulanmış bir RSS adresi bulunamadığından iki yol kullanılır:
+
+1. **Google News alan adı kısıtlı sorgu** (`kind: "google_news"`). Google News bağlantıları `news.google.com/rss/articles/…` biçimindedir. Bot önce eski biçimi çevrimdışı çözer; olmazsa yönlendirmeyi SSRF korumalı olarak takip eder. **Nihai adres `rockstargames.com` / `take2games.com` değilse öğe atılır.** Yeni (imzalı) Google News bağlantılarının bir kısmı yalnızca JavaScript ile çözülebildiği için bu öğeler kaybolabilir. Bu, bilinçli bir "yanlış resmî etiket yerine eksik haber" tercihidir.
+2. **HTML liste ayrıştırıcı** (`kind: "html_listing"`). Sayfadaki `<a href>` bağlantıları ve JSON-LD verisi, `link_pattern` düzenli ifadesiyle süzülür. Sayfa istemci tarafında çiziliyorsa sonuç boş olur ve kaynak durumuna `warning` yazılır.
+
+Bir öğenin RESMÎ AÇIKLAMA alabilmesi için üç koşul birlikte sağlanmalıdır: `trust_class: OFFICIAL`, `url_verified: true` ve nihai URL'nin resmî alan adında olması. Bu kontrol `collector` ve `processor` içinde iki ayrı kez yapılır.
+
+## Olay kümeleme
+
+Farklı sitelerin aynı olayı farklı başlıklarla yazması `bot/clustering.py` ile tek kümede toplanır. Kümede bağımsız iki yayın kökeni varsa haber otomatik olarak **ÇOKLU KAYNAK** rozetine yükselir. Eşik `cluster_similarity_threshold` (0.27) değeriyle ayarlanır. Bu değer test setinde aynı olay çiftlerini (≥0.35) farklı olay çiftlerinden (≤0.17) ayıracak şekilde kalibre edildi. Yanlış birleştirmeye karşı üç kural var: çelişen sayılar ("Trailer 2" ≠ "Trailer 3"), ayırt edici özel isim çatışması ("Lucia" ↔ "Jason") ve 72 saatten uzun zaman farkı. Kümeler ortalama bağlantıyla oluşur, yani zincirleme birleşme olmaz.
 
 ## Gerçekten ölçülebilen metrikler
 
@@ -77,7 +95,7 @@ Etiketi model değil Python belirler. Model "resmî" dese bile resmî alan adı 
 - Zamanlanmış workflow'lar yalnızca varsayılan dalda (`main`) çalışır.
 - **60 gün kuralı:** Public repoda 60 gün boyunca hiç etkinlik olmazsa GitHub zamanlanmış workflow'u devre dışı bırakır. Bot her çalışmada `data/state.json`'u commit ettiği için normalde repo etkin kalır. Workflow yine de devre dışı kalırsa Actions sekmesindeki sarı uyarıdan **Enable workflow** ile yeniden açın.
 - Gemini 429 alırsa çağrılar `gemini_quota_cooldown_minutes` boyunca durur. Başka bir modele veya ücretli katmana **asla** geçilmez.
-- Günlük gönderi sınırı, kayan 24 saatlik pencerede `max_daily_posts` değeridir.
+- Günlük gönderi sınırı (`max_daily_posts`) varsayılan olarak **Türkiye saatine (TRT, UTC+3) göre takvim günü** üzerinden sayılır: sayaç TRT gece yarısı sıfırlanır, UTC gece yarısı (TRT 03:00) etkilemez. Kayan 24 saat davranışı için `"daily_limit_mode": "rolling_24h"` kullanın.
 
 ## Hata ve güvenli mod
 
@@ -85,8 +103,9 @@ Etiketi model değil Python belirler. Model "resmî" dese bile resmî alan adı 
 |---|---|
 | Bir RSS kaynağı bozuk/erişilemez | Yalnızca o kaynak atlanır, `source_status` güncellenir |
 | 24 saat hiç veri yok / kalıcı 401-403 | Yönetici uyarısı (aynı uyarı 6 saatte bir) |
-| `history.json` bozuk | Yedek alınır, dosya **ezilmez**, yayın ve Gemini durur, uyarı gönderilir, çıkış kodu 2 |
-| `state.json` bozuk | Yedek alınır, hiçbir şey yazılmaz, çıkış kodu 2 (GitHub başarısız çalışma e-postası) |
+| `history.json` / `state.json` bozuk, `*.lastgood.json` sağlam | Bozuk dosyanın yedeği alınır, son sağlam kopyadan **otomatik kurtarılır**, yönetici uyarısı gönderilir, çalışma sürer |
+| `history.json` bozuk ve son sağlam kopya yok/bozuk | Dosya **ezilmez**, yayın ve Gemini durur, uyarı gönderilir, çıkış kodu 2 |
+| `state.json` bozuk ve son sağlam kopya yok/bozuk | Hiçbir şey yazılmaz, çıkış kodu 2 (GitHub başarısız çalışma e-postası gönderir) |
 | `insights.json` bozuk | Nötr varsayılan istemle devam edilir |
 | Telegram zaman aşımı | Gönderi `UNCERTAIN` olarak işaretlenir ve **yeniden gönderilmez** (mükerrer yayın yerine olası tek kayıp) |
 
@@ -96,6 +115,8 @@ Etiketi model değil Python belirler. Model "resmî" dese bile resmî alan adı 
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python -m pytest -q
+mypy bot && ruff check bot tests tools     # tip ve stil denetimi (pyproject.toml)
+python tools/dry_run_simulator.py           # ağsız tam hat simülasyonu → docs/message_preview.html
 ```
 
 Testler gerçek ağa çıkmaz (`tests/conftest.py` engeller) ve yalnızca `DUMMY_..._DO_NOT_USE` sahte sabitlerini kullanır.

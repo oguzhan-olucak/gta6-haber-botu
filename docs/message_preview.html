@@ -3,19 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI Türkiye Bülteni — mesaj şablonları</title>
+<title>GTA VI Türkiye Bülteni · mesaj simülatörü</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --night: #120B2E;
-    --night-2: #1C1442;
-    --bubble: #241A52;
-    --ink: #F4EEFF;
-    --muted: #A99CD6;
-    --pink: #FF4F9A;
-    --teal: #2EE6D6;
-    --sun: #FF9A5A;
+    --night: #120B2E; --night-2: #1C1442; --ink: #F4EEFF; --muted: #A99CD6;
+    --pink: #FF4F9A; --teal: #2EE6D6; --sun: #FF9A5A; --gold: #FFD166;
+    --tg-bubble: #2A1F5C; --tg-bar: #1A1240;
     --display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", sans-serif;
     --body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
   }
@@ -23,113 +18,152 @@
   html { background: var(--night); color: var(--ink); }
   body { margin: 0; font: 400 16px/1.55 var(--body); }
   a { color: var(--teal); text-underline-offset: 3px; }
-  a:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 2px; }
+  :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
 
-  .horizon {
-    position: relative; overflow: hidden; padding: 72px 24px 56px;
+  .horizon { position: relative; overflow: hidden; padding: 64px 24px 48px;
+    background: radial-gradient(120% 90% at 50% 120%, rgba(255,154,90,.5) 0%, rgba(255,79,154,.32) 35%, transparent 65%),
+                linear-gradient(180deg, #0C0722 0%, var(--night) 100%);
+    border-bottom: 1px solid rgba(46,230,214,.25); }
+  .horizon::after { content: ""; position: absolute; right: max(24px, calc(50% - 560px)); bottom: 0;
+    width: min(360px, 56vw); aspect-ratio: 2 / 1; border-radius: 999px 999px 0 0;
+    background: linear-gradient(180deg, transparent 0 52%, var(--night) 52% 56%, transparent 56% 66%,
+                  var(--night) 66% 72%, transparent 72% 80%, var(--night) 80% 88%, transparent 88%),
+                linear-gradient(180deg, var(--gold) 0%, var(--sun) 45%, var(--pink) 100%);
+    box-shadow: 0 0 80px rgba(255,79,154,.35); }
+  .inner { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; }
+  h1 { margin: 0; font: 900 clamp(44px, 8vw, 96px)/.92 var(--display); text-shadow: 0 0 28px rgba(255,79,154,.45); }
+  .lede { max-width: 62ch; margin: 16px 0 0; color: var(--muted); font-size: 17px; }
+
+  nav.chips { position: sticky; top: 0; z-index: 5; display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+    padding: 14px 24px; background: rgba(18,11,46,.88); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(169,156,214,.15); }
+  .chip { font: 600 14px var(--body); color: var(--ink); background: transparent; border: 1px solid rgba(169,156,214,.35);
+    border-radius: 999px; padding: 7px 14px; cursor: pointer; }
+  .chip[aria-pressed="true"] { border-color: var(--teal); color: var(--teal); }
+
+  main { max-width: 1180px; margin: 0 auto; padding: 40px 24px 72px; }
+  .stage { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 48px 32px; justify-items: center; }
+  .device { margin: 0; width: 330px; }
+  .device.dim { opacity: .28; }
+  .screen { position: relative; height: 680px; border-radius: 46px; overflow: hidden; display: flex; flex-direction: column;
+    background: var(--night-2); border: 10px solid #07040F;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 30px 60px rgba(0,0,0,.55), 0 0 60px rgba(255,79,154,.12); }
+  .status { display: flex; justify-content: space-between; align-items: center; padding: 10px 24px 4px; font-size: 13px; font-weight: 600; }
+  .island { width: 92px; height: 24px; border-radius: 999px; background: #07040F; }
+  .sig { letter-spacing: -2px; font-size: 10px; }
+  .bar { display: flex; align-items: center; gap: 10px; padding: 8px 14px 10px; background: var(--tg-bar);
+    border-bottom: 1px solid rgba(255,255,255,.06); }
+  .back { font-size: 30px; line-height: 1; color: var(--teal); }
+  .avatar { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font: 900 16px var(--display);
+    background: linear-gradient(135deg, var(--gold), var(--pink)); color: #1A0F33; }
+  .avatar.bot { background: linear-gradient(135deg, var(--teal), #4FA8FF); }
+  .who { display: flex; flex-direction: column; line-height: 1.2; }
+  .who small { color: var(--muted); font-size: 12px; }
+  .chat { flex: 1; overflow-y: auto; padding: 16px 12px; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px;
     background:
-      radial-gradient(120% 90% at 50% 120%, rgba(255,154,90,.55) 0%, rgba(255,79,154,.35) 35%, transparent 65%),
-      linear-gradient(180deg, #0C0722 0%, var(--night) 100%);
-    border-bottom: 1px solid rgba(46,230,214,.25);
-  }
-  .horizon::after {           /* tek cesur öğe: ufukta batan, şeritli Vice City güneşi */
-    content: ""; position: absolute; right: max(24px, calc(50% - 540px)); bottom: 0;
-    width: min(380px, 60vw); aspect-ratio: 2 / 1; border-radius: 999px 999px 0 0;
-    background:
-      repeating-linear-gradient(180deg, transparent 0 46%, transparent 46%),
-      linear-gradient(180deg, transparent 0 52%, var(--night) 52% 56%, transparent 56% 66%,
-                      var(--night) 66% 72%, transparent 72% 80%, var(--night) 80% 88%, transparent 88%),
-      linear-gradient(180deg, #FFD166 0%, var(--sun) 45%, var(--pink) 100%);
-    box-shadow: 0 0 80px rgba(255,79,154,.35);
-  }
-  .horizon-inner { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; }
-  h1 {
-    margin: 0; font: 900 clamp(48px, 9vw, 104px)/.9 var(--display); letter-spacing: -.01em;
-    color: var(--ink); text-shadow: 0 0 28px rgba(255,79,154,.45);
-  }
-  .lede { max-width: 60ch; margin: 18px 0 0; color: var(--muted); font-size: 17px; }
-
-  main { max-width: 1080px; margin: 0 auto; padding: 48px 24px 80px; }
-  h2 { font: 700 30px/1.1 var(--display); margin: 0 0 6px; }
-  .section-note { color: var(--muted); margin: 0 0 24px; max-width: 70ch; }
-
-  .feed { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px 24px; }
-  .post-head { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; color: var(--accent); margin-bottom: 8px; }
-  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
-  .bubble {
-    position: relative; background: var(--bubble); border-radius: 4px 16px 16px 16px;
-    padding: 14px 16px 26px; font-size: 15px; line-height: 1.5;
-    border-left: 3px solid var(--accent);
-  }
+      radial-gradient(70% 40% at 50% 105%, rgba(255,79,154,.22), transparent 70%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,.018) 0 2px, transparent 2px 14px),
+      linear-gradient(180deg, #160E38, #1F1347); }
+  .bubble { position: relative; max-width: 94%; background: var(--tg-bubble); border-radius: 16px 16px 16px 4px;
+    padding: 10px 12px 20px; font-size: 13.5px; line-height: 1.45; box-shadow: 0 1px 0 rgba(0,0,0,.25); }
   .bubble b { font-weight: 600; }
-  .bubble i { color: var(--muted); }
-  .meta { position: absolute; right: 12px; bottom: 6px; font-size: 12px; color: var(--muted); }
-
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; align-items: start; }
-  .rules { margin: 0; padding-left: 20px; color: var(--ink); }
-  .rules li { margin-bottom: 10px; }
-  .rules li::marker { color: var(--pink); }
-  .admin .bubble { border-left-color: var(--teal); }
-  footer { max-width: 1080px; margin: 0 auto; padding: 0 24px 48px; color: var(--muted); font-size: 14px; }
-
-  @media (max-width: 760px) { .split { grid-template-columns: 1fr; } .horizon { padding-top: 48px; } }
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+  .bubble i { color: #C9BEF0; }
+  .bubble code { font-size: 12px; background: rgba(46,230,214,.12); color: var(--teal); padding: 0 4px; border-radius: 4px; }
+  .stamp { position: absolute; right: 10px; bottom: 4px; font-size: 11px; color: var(--muted); }
+  .empty { color: var(--muted); text-align: center; }
+  .mute { padding: 14px; text-align: center; font-weight: 600; color: var(--teal); background: var(--tg-bar);
+    border-top: 1px solid rgba(255,255,255,.06); }
+  figcaption h3 { margin: 18px 0 4px; font: 700 26px/1.1 var(--display); }
+  figcaption p { margin: 0 0 6px; color: var(--muted); font-size: 14px; max-width: 42ch; }
+  figcaption .verdict { color: var(--ink); font-size: 13px; border-left: 2px solid var(--pink); padding-left: 10px; }
+  footer { max-width: 1180px; margin: 0 auto; padding: 0 24px 48px; color: var(--muted); font-size: 14px; }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
-  <section class="horizon">
-    <div class="horizon-inner">
-      <h1>Gece bülteni,<br>ışıklar açık.</h1>
-      <p class="lede">GTA VI Türkiye Bülteni’nin Telegram kanalına giden mesajların önizlemesi. Her kart,
-      botun gerçekte gönderdiği metni üreten şablonla oluşturuldu; içerikler örnektir, gerçek haber değildir.</p>
-    </div>
-  </section>
-
-  <main>
-    <h2>Kanal gönderileri</h2>
-    <p class="section-note">Her gönderide tek bir renkli rozet, doğrulama düzeyini söyleyen etiket, kalın başlık,
-    iki üç cümlelik özet ve orijinal kaynak bağlantısı bulunur. Rozet rengi doğrulama düzeyini gösterir.</p>
-    <div class="feed">
-      <article class="post" style="--accent:#3DDC97">
-        <header class="post-head"><span class="dot" aria-hidden="true"></span>Resmî açıklama</header>
-        <div class="bubble">🟩 <b>RESMÎ AÇIKLAMA</b>  ·  ÇIKIŞ &amp; PLATFORMLAR<br><br><b>Örnek: Rockstar, resmî duyurusunda yayın takvimini paylaştı</b><br><br>Örnek metin. Rockstar Games resmî Newswire sayfasında bir duyuru yayımladı. Özet yalnızca kaynakta yazan bilgiyi iki üç cümlede aktarır ve her zaman orijinal bağlantıyı verir.<br><br><b>Kaynak:</b> <a href="https://www.rockstargames.com/newswire">Rockstar Newswire</a><br><b>Doğrulama:</b> Rockstar Games / Take-Two resmî kanalında doğrudan duyuruldu.<br><br><i>GTA VI Türkiye Bülteni · 16 Kasım 2026, 21:40 TSİ</i><br>#GTA6 #GTAVI<span class="meta">534 karakter · 21:40</span></div>
-      </article>
-      <article class="post" style="--accent:#4FA8FF">
-        <header class="post-head"><span class="dot" aria-hidden="true"></span>Çoklu kaynak</header>
-        <div class="bubble">🟦 <b>ÇOKLU KAYNAK</b>  ·  FRAGMAN &amp; MEDYA<br><br><b>Örnek: İki bağımsız yayın aynı gelişmeyi aktarıyor</b><br><br>Örnek metin. Birbirinden bağımsız iki yayın organı aynı gelişmeyi bildiriyor. Bot, aynı ilk haberi kopyalayan siteleri tek kaynak sayar; bu etiket yalnızca gerçekten bağımsız kökenler için verilir.<br><br><b>Kaynak:</b> <a href="https://www.ign.com/">IGN</a> · <a href="https://www.eurogamer.net/">Eurogamer</a><br><b>Doğrulama:</b> Birbirinden bağımsız en az iki yayın organıyla destekleniyor.<br><br><i>GTA VI Türkiye Bülteni · 16 Kasım 2026, 21:40 TSİ</i><br>#GTA6 #GTAVI<span class="meta">562 karakter · 21:40</span></div>
-      </article>
-      <article class="post" style="--accent:#FFD166">
-        <header class="post-head"><span class="dot" aria-hidden="true"></span>Tek kaynak</header>
-        <div class="bubble">🟨 <b>TEK KAYNAK</b>  ·  OYNANIŞ &amp; TEKNOLOJİ<br><br><b>Örnek: Tek bir yayın organı yeni ayrıntılar bildiriyor</b><br><br>Örnek metin. Haber tek bir yayın organına dayanıyor ve resmî doğrulama içermiyor. Özet bu belirsizliği korur; kesinlik bildiren ifadeler doğrulama katmanında engellenir.<br><br><b>Kaynak:</b> <a href="https://www.videogameschronicle.com/">Video Games Chronicle</a><br><b>Doğrulama:</b> <i>Tek bir yayın organının haberi; resmî doğrulama yok.</i><br><br><i>GTA VI Türkiye Bülteni · 16 Kasım 2026, 21:40 TSİ</i><br>#GTA6 #GTAVI<span class="meta">519 karakter · 21:40</span></div>
-      </article>
-      <article class="post" style="--accent:#FF5C7A">
-        <header class="post-head"><span class="dot" aria-hidden="true"></span>Sızıntı iddiası</header>
-        <div class="bubble">🟥 <b>SIZINTI İDDİASI</b>  ·  TOPLULUK<br><br><b>Örnek: Doğrulanmamış bir sızıntı iddiası konuşuluyor</b><br><br>Örnek metin. Bu tür içerik yalnızca ayarlarda açıkça izin verildiğinde yayımlanır ve her zaman iddia olarak etiketlenir. Varsayılan ayarda yayımlanmaz.<br><br><b>Kaynak:</b> <a href="https://insider-gaming.com/">Insider Gaming</a><br><b>Doğrulama:</b> <i>Doğrulanmamış sızıntı iddiası; resmî açıklama değildir.</i><br><br><i>GTA VI Türkiye Bülteni · 16 Kasım 2026, 21:40 TSİ</i><br>#GTA6 #GTAVI<span class="meta">476 karakter · 21:40</span></div>
-      </article>
-      <article class="post" style="--accent:#FF9A5A">
-        <header class="post-head"><span class="dot" aria-hidden="true"></span>Topluluk iddiası</header>
-        <div class="bubble">🟧 <b>TOPLULUK İDDİASI</b>  ·  TOPLULUK<br><br><b>Örnek: Topluluk forumunda bir iddia gündemde</b><br><br>Örnek metin. Topluluk kaynaklı içerik asla resmî açıklama etiketi alamaz. Varsayılan ayarda yayımlanmaz; açıldığında belirgin bir uyarı notuyla gönderilir.<br><br><b>Kaynak:</b> <a href="https://www.reddit.com/r/GTA6/">r/GTA6</a><br><b>Doğrulama:</b> <i>Topluluk kaynaklı, doğrulanmamış iddia.</i><br><br><i>GTA VI Türkiye Bülteni · 16 Kasım 2026, 21:40 TSİ</i><br>#GTA6 #GTAVI<span class="meta">452 karakter · 21:40</span></div>
-      </article>
-    </div>
-
-    <div class="split">
-      <section>
-        <h2>Şablon kuralları</h2>
-        <ul class="rules">
-          <li>Gönderi başına tek emoji: renk kodlu rozet. Başka süsleme yok.</li>
-          <li>Etiketi model değil, kaynak doğrulama kuralları belirler.</li>
-          <li>Tek kaynak ve iddia gönderilerinde doğrulama notu italik yazılır.</li>
-          <li>Kaynak bağlantısı her gönderide zorunlu; en fazla üç kaynak gösterilir.</li>
-          <li>Tüm metin Telegram HTML’ine güvenli biçimde kaçırılır, 4096 karakter sınırı denetlenir.</li>
-        </ul>
-      </section>
-      <section class="admin">
-        <h2>Yönetici özeti</h2>
-        <p class="section-note">Günde iki kez, 06:00 ve 18:00 UTC civarında yalnızca yönetici sohbetine gider.</p>
-        <div class="bubble"><b>GTA VI Türkiye Bülteni · Yönetici Özeti</b><br><i>16 Kasım 2026, 21:40 TSİ</i><br><br>Durum: <b>Çalışıyor</b><br>Son 24 saatte yayın: <b>0</b> / 8<br>İncelemeye takılan (yayınlanmadı): 0<br>Belirsiz gönderim (elle kontrol): 0<br>Son çalışma: kaynak 6/7, yeni öğe 4, Gemini 2 çağrı<br>Etkileşim analizi: YETERSİZ VERİ<br>Görüntülenme/iletilme: Bot API ile ölçülemiyor (unavailable)</div>
-      </section>
-    </div>
-  </main>
-  <footer>Önizleme <code>python tools/render_preview.py</code> ile yeniden üretilir.</footer>
+  <section class="horizon"><div class="inner">
+    <h1>Gece bülteni,<br>ışıklar açık.</h1>
+    <p class="lede">Botun beş senaryodaki gerçek çıktısı. Her ekran, sahte servislerle tam hat çalıştırılarak üretildi:
+    toplama, olay kümeleme, kaynak doğrulama, şablon ve yayın kararı. Haber metinleri örnektir.</p>
+  </div></section>
+  <nav class="chips" aria-label="Senaryolar"><button type="button" class="chip" data-target="official" aria-pressed="false">Resmî duyuru</button><button type="button" class="chip" data-target="multi" aria-pressed="false">Çoklu kaynak</button><button type="button" class="chip" data-target="leak" aria-pressed="false">Sızıntı iddiası</button><button type="button" class="chip" data-target="digest" aria-pressed="false">Günlük yönetici özeti</button><button type="button" class="chip" data-target="alert" aria-pressed="false">Acil hata alarmı</button></nav>
+  <main><div class="stage">
+    <figure class="device" data-scenario="official" id="s-official">
+      <div class="screen">
+        <div class="status"><span>21:40</span><span class="island" aria-hidden="true"></span><span class="sig" aria-hidden="true">▮▮▮</span></div>
+        <header class="bar">
+          <span class="back" aria-hidden="true">‹</span>
+          <span class="avatar" aria-hidden="true">VI</span>
+          <span class="who"><b>GTA VI Türkiye Bülteni</b><small>kanal · önizleme</small></span>
+        </header>
+        <div class="chat"><div class="bubble"><div class="msg">🟩 <b>RESMÎ AÇIKLAMA</b>  ·  FRAGMAN &amp; MEDYA<br><br><b>Rockstar, GTA VI&#x27;ın çıkış fragmanını yayımladı</b><br><br>Rockstar Games, Grand Theft Auto VI için çıkış fragmanını resmî Newswire sayfasında paylaştı. Fragman, Newswire üzerinden izlenebiliyor.<br><br><b>Kaynak:</b> <a href="https://rockstargames.com/newswire/article/k1v2/grand-theft-auto-vi-launch-trailer">Rockstar Newswire</a><br><b>Doğrulama:</b> Rockstar Games / Take-Two resmî kanalında doğrudan duyuruldu.<br><br><i>GTA VI Türkiye Bülteni · 16 Kasım 2026, 21:40 TSİ</i><br>#GTA6 #GTAVI</div><span class="stamp">21:40</span></div></div>
+        <div class="mute">Sessize al</div>
+      </div>
+      <figcaption><h3>Resmî duyuru</h3><p>Rockstar Newswire HTML listesinden gelen, URL&#x27;si doğrulanmış duyuru.</p><p class="verdict"><b>RESMÎ AÇIKLAMA</b> · kaynak gücü 95 · öncelik 73<br>Resmî alan adında doğrudan yayın (URL doğrulandı)</p></figcaption>
+    </figure>
+    <figure class="device" data-scenario="multi" id="s-multi">
+      <div class="screen">
+        <div class="status"><span>21:40</span><span class="island" aria-hidden="true"></span><span class="sig" aria-hidden="true">▮▮▮</span></div>
+        <header class="bar">
+          <span class="back" aria-hidden="true">‹</span>
+          <span class="avatar" aria-hidden="true">VI</span>
+          <span class="who"><b>GTA VI Türkiye Bülteni</b><small>kanal · önizleme</small></span>
+        </header>
+        <div class="chat"><div class="bubble"><div class="msg">🟦 <b>ÇOKLU KAYNAK</b>  ·  ÇIKIŞ &amp; PLATFORMLAR<br><br><b>GTA VI, PlayStation 5&#x27;te 150GB alan istiyor</b><br><br>IGN ve Video Games Chronicle, PlayStation Store listesine göre GTA 6&#x27;nın PlayStation 5&#x27;te 150GB depolama alanı gerektirdiğini bildiriyor. Bilgi mağaza sayfasına dayanıyor.<br><br><b>Kaynak:</b> <a href="https://ign.com/articles/gta-6-preload-size">IGN</a> · <a href="https://videogameschronicle.com/news/gta-6-150gb">Video Games Chronicle</a><br><b>Doğrulama:</b> Birbirinden bağımsız en az iki yayın organıyla destekleniyor.<br><br><i>GTA VI Türkiye Bülteni · 16 Kasım 2026, 21:40 TSİ</i><br>#GTA6 #GTAVI</div><span class="stamp">21:40</span></div></div>
+        <div class="mute">Sessize al</div>
+      </div>
+      <figcaption><h3>Çoklu kaynak</h3><p>IGN ve VGC aynı gelişmeyi farklı başlıklarla yazdı; motor tek olayda birleştirdi.</p><p class="verdict"><b>ÇOKLU KAYNAK</b> · kaynak gücü 75 · öncelik 89<br>2 bağımsız yayın kökeni: ign, vgc</p></figcaption>
+    </figure>
+    <figure class="device" data-scenario="leak" id="s-leak">
+      <div class="screen">
+        <div class="status"><span>21:40</span><span class="island" aria-hidden="true"></span><span class="sig" aria-hidden="true">▮▮▮</span></div>
+        <header class="bar">
+          <span class="back" aria-hidden="true">‹</span>
+          <span class="avatar" aria-hidden="true">VI</span>
+          <span class="who"><b>GTA VI Türkiye Bülteni</b><small>kanal · önizleme</small></span>
+        </header>
+        <div class="chat"><div class="bubble"><div class="msg">🟥 <b>SIZINTI İDDİASI</b>  ·  TOPLULUK<br><br><b>Bir sızıntı, GTA VI&#x27;da duyurulmamış bir ada olduğunu iddia ediyor</b><br><br>Insider Gaming&#x27;in aktardığı doğrulanmamış bir sızıntıya göre Leonida&#x27;da henüz duyurulmamış bir ada bulunuyor. Rockstar konu hakkında yorum yapmadı.<br><br><b>Kaynak:</b> <a href="https://insider-gaming.com/gta-6-leak-island">Insider Gaming</a><br><b>Doğrulama:</b> <i>Doğrulanmamış sızıntı iddiası; resmî açıklama değildir.</i><br><br><i>GTA VI Türkiye Bülteni · 16 Kasım 2026, 21:40 TSİ</i><br>#GTA6 #GTAVI</div><span class="stamp">21:40</span></div></div>
+        <div class="mute">Sessize al</div>
+      </div>
+      <figcaption><h3>Sızıntı iddiası</h3><p>Yalnızca allow_community_rumors=true iken yayınlanır; her zaman iddia olarak işaretlenir.</p><p class="verdict"><b>SIZINTI İDDİASI</b> · kaynak gücü 30 · öncelik 71<br>Yayın organında sızıntı/iddia haberi</p></figcaption>
+    </figure>
+    <figure class="device" data-scenario="digest" id="s-digest">
+      <div class="screen">
+        <div class="status"><span>21:40</span><span class="island" aria-hidden="true"></span><span class="sig" aria-hidden="true">▮▮▮</span></div>
+        <header class="bar">
+          <span class="back" aria-hidden="true">‹</span>
+          <span class="avatar bot" aria-hidden="true">VI</span>
+          <span class="who"><b>GTA VI Bot</b><small>yönetici sohbeti</small></span>
+        </header>
+        <div class="chat"><div class="bubble"><div class="msg"><b>GTA VI Türkiye Bülteni · Yönetici Özeti</b><br><i>16 Kasım 2026, 21:05 TSİ</i><br><br>Durum: <b>Çalışıyor</b><br>Bugünkü yayın: <b>1</b> / 8<br>İncelemeye takılan (yayınlanmadı): 1<br>Belirsiz gönderim (elle kontrol): 0<br>Son çalışma: kaynak 0/0, yeni öğe 0, Gemini 0 çağrı<br>Etkileşim analizi: YETERSİZ VERİ<br>Görüntülenme/iletilme: Bot API ile ölçülemiyor (unavailable)</div><span class="stamp">21:05</span></div></div>
+        
+      </div>
+      <figcaption><h3>Günlük yönetici özeti</h3><p>06:00 ve 18:00 UTC penceresinde yalnızca yönetici sohbetine gider.</p><p class="verdict">özet:2026-11-16T18</p></figcaption>
+    </figure>
+    <figure class="device" data-scenario="alert" id="s-alert">
+      <div class="screen">
+        <div class="status"><span>21:40</span><span class="island" aria-hidden="true"></span><span class="sig" aria-hidden="true">▮▮▮</span></div>
+        <header class="bar">
+          <span class="back" aria-hidden="true">‹</span>
+          <span class="avatar bot" aria-hidden="true">VI</span>
+          <span class="who"><b>GTA VI Bot</b><small>yönetici sohbeti</small></span>
+        </header>
+        <div class="chat"><div class="bubble"><div class="msg">⚠️ <b>GTA VI Türkiye Bülteni · ACİL UYARI</b><br>Sınıf: <code>AUTH_PERMISSION</code><br>Telegram token veya bot yetkisi reddedildi (401/403).<br><i>16 Kasım 2026, 15:40 TSİ · aynı uyarı 6 saat tekrarlanmaz</i></div><span class="stamp">21:40</span></div></div>
+        
+      </div>
+      <figcaption><h3>Acil hata alarmı</h3><p>Telegram token reddedildi (401). Aynı uyarı 6 saat içinde tekrar gönderilmez.</p><p class="verdict">alarm:TELEGRAM_AUTH:gönderildi</p></figcaption>
+    </figure>
+  </div></main>
+  <footer>Yeniden üretmek için: <code>python tools/dry_run_simulator.py</code> · tek senaryo: <code>--scenario multi</code> · menü: <code>--interactive</code></footer>
+<script>
+  const chips = document.querySelectorAll('.chip');
+  const devices = document.querySelectorAll('.device');
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    const on = chip.getAttribute('aria-pressed') !== 'true';
+    chips.forEach(c => c.setAttribute('aria-pressed', 'false'));
+    chip.setAttribute('aria-pressed', String(on));
+    devices.forEach(d => d.classList.toggle('dim', on && d.dataset.scenario !== chip.dataset.target));
+    if (on) document.getElementById('s-' + chip.dataset.target).scrollIntoView({behavior: 'smooth', block: 'center'});
+  }));
+</script>
 </body>
 </html>

@@ -45,6 +45,11 @@ TR_MONTHS = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "
              "Kasım", "Aralık"]
 
 
+def tr_upper(text: str) -> str:
+    """Türkçe büyük harf: i -> İ, ı -> I (str.upper() 'i'yi 'I' yapar)."""
+    return (text or "").replace("i", "İ").replace("ı", "I").upper()
+
+
 def _e(text: str) -> str:
     return html.escape(text or "", quote=True)
 
@@ -68,7 +73,7 @@ def render_post(content: GeneratedContent, label: Label, sources: list[dict], se
     if label in (Label.LEAK_CLAIM, Label.COMMUNITY_CLAIM, Label.SINGLE_SOURCE):
         note = f"<i>{note}</i>"
     lines = [
-        f"{BADGE[label]} <b>{_e(LABEL_TEXT[label])}</b>  ·  {_e(category.upper())}",
+        f"{BADGE[label]} <b>{_e(LABEL_TEXT[label])}</b>  ·  {_e(tr_upper(category))}",
         "",
         f"<b>{_e(content.title_tr)}</b>",
         "",

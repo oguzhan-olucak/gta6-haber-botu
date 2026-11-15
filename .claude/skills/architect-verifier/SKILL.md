@@ -14,7 +14,12 @@ description: bot/ modül sınırlarını, atomik JSON yazımını ve determinist
 | `processor.py` | kümeleme, puan, Gemini, çıktı doğrulama | Telegram çağrısı |
 | `publisher.py` | şablon, idempotent yayın, özet/alarm | puanlama |
 | `analyzer.py` | reaksiyon güncellemeleri, ölçüm, içgörü | yayın eşiği değiştirme |
-| `main.py` | orkestrasyon | doğrudan HTTP |
+| `textutil.py` | metin temizleme/kırpma/onarım | ağ, iş kuralı |
+| `official.py` | Google News çözümü, HTML liste ayrıştırma | doğrulama kararı (collector verir) |
+| `clustering.py` | benzerlik motoru | etiket/eşik kararı |
+| `labels.py` | etiket sabitleri, Assessment | mantık |
+| `gemini.py` | şema, istem, çıktı doğrulama, SDK | yayın |
+| `main.py` | `RunContext` ile orkestrasyon | doğrudan HTTP |
 
 ## Kontroller
 - `requests.Session.post` yalnızca `telegram_client.py`'de; `session.get` yalnızca `collector.py`'de.

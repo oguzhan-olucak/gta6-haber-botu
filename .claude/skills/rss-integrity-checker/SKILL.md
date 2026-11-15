@@ -10,5 +10,9 @@ description: RSS/Atom ayrıştırma, URL canonicalization, yönlendirme takibi, 
 - Aynı yayın grubundaki siteler aynı `origin_group` (ör. GamesRadar+ ve PC Gamer = `future_plc`), böylece bağımsız iki kaynak sayılmaz.
 - Canlı doğrulanmamış besleme `rss_verified: false` kalır; ilk `workflow_dispatch` özetindeki `source_status` ile kontrol edilir.
 
+## Resmî kaynaklar
+- `kind: google_news` ve `kind: html_listing` için nihai URL resmî alan adında ve `url_verified=True` olmalı; aksi halde öğe atılır.
+- Google News ara adımı yalnızca `hop_domains=["news.google.com"]` ile izinlidir; nihai adres değil.
+
 ## Testler
 `python -m pytest -q tests/test_collector.py` — XXE reddi, Atom desteği, alan adı nokta sınırı (`evilign.com` ≠ `ign.com`), takip parametresi temizliği, bozuk kaynağın izolasyonu, güvenli yönlendirme ve yabancı canonical reddi.

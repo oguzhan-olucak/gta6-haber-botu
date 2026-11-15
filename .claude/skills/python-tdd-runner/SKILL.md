@@ -14,5 +14,8 @@ description: Her kod değişikliğinden sonra pytest çalıştırır, 14 kabul t
    10 `test_analyzer::test_reaction_count_update_attaches_to_correct_message` · 11 `test_analyzer::test_views_and_forwards_stay_unavailable`
    12 `test_processor::test_corrupt_insights_falls_back_to_neutral` + `test_publisher::test_corrupt_insights_end_to_end`
    13 `test_publisher::test_digest_not_sent_twice_in_same_window` · 14 `test_publisher::test_secrets_never_logged`
+   Faz 2+: `test_clustering.py` (kümeleme kalibrasyonu), `test_injection.py` (saldırı yükleri),
+   `test_resilience.py` (UTF-8, kırpma, kurtarma, TRT limiti, resmî kaynak), `test_simulator.py`, `test_arena.py` (Arena regresyonları).
+   Ayrıca `mypy bot` ve `ruff check bot tests tools` temiz olmalı.
 3. Aynı hata 3 denemede çözülmezse dur, `MORNING_REPORT.md` içinde "İNSAN MÜDAHALESİ GEREKLİ" altına yaz.
 4. Testlerde yalnızca `DUMMY_TEST_TOKEN_DO_NOT_USE` gibi sahte sabitler; gerçek ağ `conftest.py` tarafından engellenir.

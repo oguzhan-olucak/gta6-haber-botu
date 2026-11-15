@@ -81,8 +81,12 @@ class ValidationOutcome(BaseModel):
 # ---- Kontrol tabloları ----------------------------------------------------------------
 
 _BANNED_UNLESS_OFFICIAL = re.compile(
-    r"(resm[iî]\s*olarak|resmen|resm[iî]\s+a[cç][ıi]klama|kesinle[sş]ti|kesin\s+olarak|do[gğ]ruland[ıi]|"
-    r"onayland[ıi]|teyit\s+edildi|son\s+dak[ıi]ka)", re.I)
+    r"(resm[iî]\s*olarak|resmen|resm[iî]\s+a[cç][ıi]klama|resm[iî]le[sş]|kesinle[sş]|kesin\s+(olarak|bilgi)|"
+    r"do[gğ]ruland[ıi]|do[gğ]rulanm[ıi][sş]|onayland[ıi]|onaylanm[ıi][sş]|teyit\s+edil|teyitli|"
+    r"son\s+dak[ıi]ka|%\s*100|y[üu]zde\s+y[üu]z)", re.I)
+# Doğrulanmamış haberde iddianın kaynağa atfedildiğini gösteren ifadeler
+_ATTRIBUTION = re.compile(r"(bildir|iddia|g[öo]re|aktar|[öo]ne\s+s[üu]r[üu]l|ileri\s+s[üu]r[üu]l|belirt|yaz[ıi]yor|"
+                          r"s[öo]yl|raporl|ileri\s+s[üu]r)", re.I)
 _BANNED_ALWAYS = re.compile(r"(<\s*/?\s*untrusted_source_data|ignore (all|any|the|previous)|system prompt|"
                             r"önceki talimat|https?://|<\s*/?\s*(script|a|b|i)\b|ş[oO]k\s*!|inanılmaz\s*!)",
                             re.I)
@@ -164,6 +168,9 @@ def check_claim(c: GeneratedContent, cluster: list[Item], a: Assessment, s: Sett
     text = f"{c.title_tr} {c.summary_tr}"
     if _LEAK_TR.search(text) and a.label != Label.LEAK_CLAIM and not LEAK_WORDS.search(normalize_text(src)):
         return _held("Kaynakta olmayan sızıntı ifadesi", c)
+    unverified = a.label in (Label.SINGLE_SOURCE, Label.LEAK_CLAIM, Label.COMMUNITY_CLAIM)
+    if unverified and not _ATTRIBUTION.search(c.summary_tr):
+        return _held("Doğrulanmamış haberde iddia kaynağa atfedilmemiş", c)
     return None
 
 

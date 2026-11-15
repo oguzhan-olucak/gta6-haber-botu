@@ -101,6 +101,7 @@ class Settings(_Strict):
     daily_limit_mode: Literal["calendar_day_local", "rolling_24h"] = "calendar_day_local"
     reject_injection_suspects: bool = True
     run_deadline_seconds: int = Field(600, ge=30, le=3000)
+    state_heartbeat_minutes: int = Field(60, ge=0, le=1440)
     http_timeout_seconds: float = Field(15, gt=0, le=120)
     http_max_retries: int = Field(3, ge=0, le=6)
     http_max_response_bytes: int = Field(2_000_000, ge=10_000)

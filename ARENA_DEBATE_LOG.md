@@ -64,3 +64,22 @@ Başlangıç durumu: 104 test PASS, `mypy bot` temiz, `ruff` temiz (commit `c30c
 **Süreç notu (hakem):** İlk yama denemesinde `ruff --fix`, önceki turda kullanılmayan test importlarını sildiği için 19 test kırmızıya döndü. Importlar geri eklendi, 2. denemede yeşile döndü. `token-budget-guardian` kuralı (en fazla 2 deneme) aşılmadı.
 
 **PASS kanıtı:** `116 passed` · `mypy`: temiz · `ruff`: temiz
+
+---
+
+## Tur 4
+
+| # | Rol | Bulgu (`dosya:satır`) | Senaryo / etki | Test |
+|---|---|---|---|---|
+| 4.1 | FinOps/SRE | `bot/main.py:520` (state her çalışmada yazılıyor) | `last_run_at`, `run_log` ve `checked_at` her çalışmada değiştiği için boşta bile günde ~72 commit oluşuyordu. Sonuç: repo şişmesi ve gürültülü geçmiş. | `test_r4_sre_idle_runs_do_not_rewrite_state_every_time` |
+| 4.2 | Editör | `bot/gemini.py:159` (`check_claim`) | TEK KAYNAK veya İDDİA haberinin özeti, iddiayı kaynağa atfetmeden ("bildiriyor", "…e göre") düz gerçek gibi yazıldığında geçiyordu. | `test_r4_editor_unverified_summary_must_attribute` |
+| 4.3 | Red Team | `bot/gemini.py:83` (kesinlik sözlüğü) | "doğrulanmış", "kesinleşmiş", "resmileşti", "teyitli", "kesin bilgi", "%100" kaçıyordu. Enjeksiyonla yönlendirilen bir model tek kaynaklı haberi kesinmiş gibi sunabiliyordu. | `test_r4_red_certainty_lexicon_gaps` |
+
+**FAIL kanıtı:** `3 failed, 12 deselected in 0.20s`
+
+**Yamalar:**
+- 4.1: `state_needs_write`: oynak alanlar (`VOLATILE_STATE_KEYS`) dışında bir değişiklik yoksa state en fazla `state_heartbeat_minutes` (60) dakikada bir yazılıyor. Boşta commit sayısı ~72'den ~24'e düşüyor; 60 gün kuralı için günlük etkinlik korunuyor.
+- 4.2: `_ATTRIBUTION`: TEK KAYNAK ve İDDİA etiketlerinde özet bir atıf ifadesi içermiyorsa → REVIEW_HELD.
+- 4.3: Sözlük çekimlerle ve eş anlamlılarla genişletildi (`resmîleş-`, `kesinleş-`, `doğrulanmış`, `onaylanmış`, `teyitli`, `%100`, `yüzde yüz`).
+
+**PASS kanıtı:** `119 passed` · `mypy`: temiz · `ruff`: temiz · simülatörün 5 senaryosu üretimde

@@ -177,3 +177,39 @@ def test_r3_editor_verification_note_is_specific(settings):
                                                             ("VGC", "videogameschronicle.com"))]
     multi = render_post(c, Label.MULTI_SOURCE, srcs, settings, NOW)
     assert "3 bağımsız yayın" in multi and "en az iki" not in multi
+
+
+# ===== TUR 4 =====================================================================================
+
+def test_r4_sre_idle_runs_do_not_rewrite_state_every_time(tmp_path):
+    """FinOps/SRE: state.json her çalışmada (last_run_at, run_log, checked_at) değiştiği için boşta
+    bile günde ~72 commit oluşuyordu → repo şişmesi, gürültülü geçmiş. Yalnızca oynak alanlar
+    değiştiyse state en fazla saatte bir (heartbeat) yazılmalı; 60 gün kuralı için etkinlik korunur."""
+    cfg, data, session = make_env(tmp_path, [])
+    tg, gen = FakeTelegram(), FakeGenerator()
+    t0 = NOW.replace(hour=12)
+    go(cfg, data, session, tg, gen, now=t0)
+    first = (data / "state.json").read_text()
+    go(cfg, data, session, tg, gen, now=t0 + timedelta(minutes=20))
+    assert (data / "state.json").read_text() == first          # boşta: yazım yok
+    go(cfg, data, session, tg, gen, now=t0 + timedelta(minutes=80))
+    assert (data / "state.json").read_text() != first          # heartbeat: yazıldı
+
+
+def test_r4_editor_unverified_summary_must_attribute(settings):
+    """Editör: TEK KAYNAK/İDDİA haberinde özet, iddiayı kaynağa atfetmeden ('bildiriyor', 'iddia
+    ediliyor', '...e göre') düz gerçek gibi yazınca geçiyordu → okur doğrulanmış bilgi sanıyor."""
+    out = _validated(settings, summary_tr="GTA VI için yeni bir fragman yayımlandı. Fragmanda oyunun dünyası "
+                                           "ve karakterleri gösteriliyor, ayrıntılar heyecan verici.")
+    assert not out.ok and out.status == "REVIEW_HELD"
+    assert _validated(settings).ok    # "…bildiriyor" içeren özet geçer
+
+
+def test_r4_red_certainty_lexicon_gaps(settings):
+    """Red Team: Kesinlik sözlüğü 'doğrulandı'yı yakalıyor ama 'doğrulanmış', 'kesinleşmiş',
+    'resmileşti', 'teyitli', 'kesin bilgi', '%100' gibi çekim/eş anlamlıları kaçırıyordu; enjeksiyonla
+    yönlendirilen model tek kaynaklı haberi kesinmiş gibi sunabiliyordu."""
+    for phrase in ("doğrulanmış bilgilere göre", "kesinleşmiş görünüyor", "artık resmileşti",
+                   "teyitli kaynaklara göre", "kesin bilgi olarak", "%100 gerçek"):
+        out = _validated(settings, summary_tr=BASE_SUMMARY + f" Bu {phrase}.")
+        assert not out.ok, phrase

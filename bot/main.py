@@ -517,7 +517,33 @@ def _save(ctx: RunContext) -> None:
                                                               "gemini_calls", "error_classes")})
     if not ctx.safe_mode:
         write_if_changed(ctx.history_path, ctx.history, keep_last_good=True)
-    write_if_changed(ctx.state_path, ctx.state, keep_last_good=True)
+    if state_needs_write(ctx.state_path, ctx.state, ctx.now, ctx.settings.state_heartbeat_minutes):
+        ctx.state["persisted_at"] = iso(ctx.now)
+        write_if_changed(ctx.state_path, ctx.state, keep_last_good=True)
+
+
+VOLATILE_STATE_KEYS = frozenset({"last_run_at", "run_log", "source_status", "last_successful_fetch_at",
+                                 "persisted_at"})
+
+
+def state_needs_write(path: Path, state: dict[str, Any], now: datetime, heartbeat_minutes: int) -> bool:
+    """Yalnızca oynak alanlar değiştiyse state en fazla ``heartbeat_minutes`` dakikada bir yazılır
+    (commit gürültüsünü ~3 kat azaltır). Kalıcı alanlarda (seen_items, havuz, özet/alarm kayıtları,
+    offset...) herhangi bir değişiklik varsa hemen yazılır."""
+    try:
+        old = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return True
+    if not isinstance(old, dict):
+        return True
+
+    def stable(d: dict[str, Any]) -> dict[str, Any]:
+        return {k: v for k, v in d.items() if k not in VOLATILE_STATE_KEYS}
+
+    if stable(old) != stable(state):
+        return True
+    last = parse_iso(old.get("persisted_at"))
+    return last is None or now - last >= timedelta(minutes=heartbeat_minutes)
 
 
 def _prune(state: dict[str, Any], history: dict[str, Any], settings: Settings, now: datetime) -> None:

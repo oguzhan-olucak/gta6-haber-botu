@@ -1,0 +1,10 @@
+# Çalışma zamanı
+requests>=2.31,<3
+defusedxml>=0.7.1,<1
+pydantic>=2.6,<3
+# Resmî Google Gen AI SDK (Structured Outputs: response_mime_type + response_json_schema).
+# Not: Gece vardiyasında ağ kapalı olduğu için bu paket yerelde kurulamadı/denenemedi;
+# testler SDK'yı sahte istemciyle (mock) doğrular. İlk workflow çalışmasında kurulacaktır.
+google-genai>=1.30
+# Test
+pytest>=8

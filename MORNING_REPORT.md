@@ -1,6 +1,6 @@
 # MORNING_REPORT — Gece Vardiyası Sonuç Raporu
 
-**Tarih:** 16 Kasım 2026, Pazartesi · Vardiya: 00:51–04:10 TSİ (Faz 1 + Faz 2 + Aşama 3 Arena)
+**Tarih:** 16 Kasım 2026, Pazartesi · Vardiya: 00:51 – sabah (Faz 1 + Faz 2 + Aşama 3 Arena + Aşama 4 Haber Sitesi)
 
 ---
 
@@ -8,12 +8,13 @@
 
 | | |
 |---|---|
-| **Genel durum** | **KISMİ HAZIR.** Kod, testler, workflow, simülatör ve dokümanlar tamam. Canlıya çıkmadan önce senin yapman gereken 7 adım ve canlıda doğrulanması gereken 3 dış varsayım var (bkz. bölüm 6). |
-| **Testler** | **123 / 123 geçti.** Gece başındaki 49 testin üzerine 74 yeni test eklendi: Faz 2'de 55, Arena'da 19. Komut: `python -m pytest -v`. Gerçek ağ çağrısı yok. |
-| **Tip ve stil** | `mypy bot` (disallow-untyped-defs + pydantic eklentisi): **temiz** · `ruff` (F, B, C901 ≤ 12, isort): **temiz** · tüm genel fonksiyonlarda docstring var |
-| **Arena** | 5 tur, 4 rol, **19 kanıtlanmış açık**. Her biri önce FAIL eden bir teste çevrildi, sonra yamalanıp PASS'e döndü (`ARENA_DEBATE_LOG.md`). |
-| **Skill'ler** | **14 skill** (8 temel + 6 yeni), `.claude/skills/` |
-| **Yerel git** | 18 commit, `main` dalı. **Push yapılmadı.** |
+| **Genel durum** | **KISMİ HAZIR.** Bot, haber sitesi, testler, workflow ve dokümanlar tamam. Canlıya çıkmadan önce senin yapman gereken 8 adım ve canlıda doğrulanması gereken 3 dış varsayım var (bkz. bölüm 6–7). |
+| **Haber sitesi** | `docs/index.html`: Vice City gece temalı, 0 TL GitHub Pages portalı. Manşet, doğrulama süzgeçleri, kategori sekmeleri, canlı arama, detay çekmecesi, canlı durum bandı, mobil uyumlu. Bot her çalışmada `docs/data/feed.json`'u günceller. Şu an 12 haberlik **örnek veri** yüklü. |
+| **Testler** | **160 / 160 geçti.** Gece başında 49 testti: Faz 2'de 55, Arena'da 25, Aşama 4'te 31 test eklendi. Komut: `python -m pytest -v`. Gerçek ağ çağrısı yok. |
+| **Tip ve stil** | `mypy bot` (15 modül): **temiz** · `ruff`: **temiz** · tüm genel fonksiyonlarda docstring var |
+| **Arena** | 6 tur, 4 rol, **25 kanıtlanmış açık**. Her biri önce FAIL eden bir teste çevrildi, sonra yamalanıp PASS'e döndü (`ARENA_DEBATE_LOG.md`). |
+| **Skill'ler** | **15 skill**, `tools/skill_audit.py` ile **15/15 doğrulandı** (`SKILL_AUDIT_REPORT.md`) |
+| **Yerel git** | 22 commit, `main` dalı. **Push yapılmadı.** |
 
 **Çıkışa 3 gün var (19 Kasım).** Bu gece resmî kaynak açığı kapatıldı: Rockstar Newswire ve Take-Two artık Google News alan adı sorgusu ve HTML liste ayrıştırıcıyla izleniyor. Ancak bu iki yolun canlı çalıştığı bu oturumda doğrulanamadı (ağ kapalıydı). İlk elle çalıştırmada kontrol et (bölüm 6, adım 6).
 
@@ -49,9 +50,23 @@
 
 ---
 
+## 3b. Aşama 4 — Haber Sitesi ve Skill Doğrulama
+
+| Alan | Sonuç |
+|---|---|
+| **Site** | `docs/index.html` + `docs/assets/style.css` + `docs/assets/app.js`. Renkler: gece `#090A0F`, neon pembe `#FF2A85`, elektrik turkuaz `#00F0FF`, gün batımı altını `#FFB800`. Gün batımı ve neon ufuk ızgaralı manşet, editoryal ızgara (2 vitrin + 3 sütun), sticky başlık. Mobil, tablet ve masaüstü başsız Chrome ile ekran görüntüsü alınarak kontrol edildi. |
+| **Etkileşim** | Doğrulama düzeyi süzgeçleri (sayaçlı), kategori sekmeleri (Fragman, Oynanış, Çıkış/Platform, Sızıntı, Analiz), Türkçe karakter duyarsız canlı arama, `#haber-<id>` derin bağlantılı detay çekmecesi (tam özet, "Neden bu etiket?", kaynak gücü, kaynak bağlantıları, Telegram'da aç/paylaş, bağlantı kopyala), canlı durum bandı (çalışıyor/gecikmeli/duraklatıldı, son güncelleme, kaynak sayısı, doğrulanmış haber sayısı) |
+| **Köprü** | `bot/site_exporter.py`: yalnızca `PUBLISHED` haberler, beyaz liste alanlar (chat_id ve iç alanlar yok), çift kodlanmış HTML dahil temizlik, yalnızca https bağlantı. Manşet en yeni resmî haber; vitrinde önce doğrulanmış haberler. `feed.js` sayesinde site `file://` ile de açılıyor. `main.py` her çalışmada üretiyor; bir hata olursa bile yayını durdurmuyor. |
+| **Demo** | `tools/dry_run_simulator.py` → `tools/demo_site.py`: 12 haber elle yazılmadı. Her biri kendi saatinde **gerçek bot hattından** geçti: toplama, kümeleme, etiket, doğrulama, yayın, dışa aktarım. Dağılım: 3 resmî, 3 çoklu, 4 tek kaynak, 1 sızıntı, 1 topluluk. Kaynak bağlantıları uydurma makale adresi değil, yayınların ana sayfaları. |
+| **Telegram önizleme** | `docs/message_preview.html` korundu; sitenin üst menüsünden erişiliyor, kendi menüsünden de haberlere geri dönülüyor. |
+| **Skill doğrulama** | `tools/skill_audit.py` her skill'i yapısal (8 kontrol) ve işlevsel olarak denetliyor; işlevsel kısım skill kurallarını kod, ayar ve testlere karşı çalıştırıyor. İlk koşuda denetleyicinin kendisinde 5 yanlış alarm çıktı (kendi desenlerini ve yorum satırlarını yakalıyordu); düzeltildi → **15/15**. |
+| **Arena Tur 6** | 6 açık bulundu. 2'si demo üretiminden çıktı: olumsuz kesinlik ifadesi ve "PC Gamer" yayın adı yanlış alarmı, 12 haberden 2'sini haksız yere düşürüyordu. Diğerleri: çift kodlu HTML'nin beslemeye sızması, iç kimliklerin okura gösterilmesi, vitrinde iddia haberleri, workflow'un site beslemesini commit etmemesi. |
+
+---
+
 ## 4. Kurulan Tüm Skill'ler ve Arena Tartışmasında Çözülen Kritik Açıklar
 
-### 4.1 Skill'ler (`.claude/skills/`, 14 adet)
+### 4.1 Skill'ler (`.claude/skills/`, 15 adet — doğrulama: `SKILL_AUDIT_REPORT.md`)
 
 | Skill | Görev |
 |---|---|
@@ -69,10 +84,11 @@
 | **`rss-anti-poisoning`** (yeni) | 7 katmanlı zehirli içerik savunması ve saldırı yükü kütüphanesi |
 | **`official-source-verifier`** (yeni) | RESMÎ etiketin üç koşulu, Google News ve HTML kuralları |
 | **`event-clustering-calibrator`** (yeni) | Eşik ve ağırlık kalibrasyon prosedürü |
+| **`static-site-guardian`** (Aşama 4) | Site ve besleme güvenliği: beyaz liste, XSS, CSP, gizli veri, yalnızca yayınlanmış haber |
 
 > Not: Roller ayrı alt ajanlar olarak değil, token tasarrufu için tek bağlamda sırayla oynandı (`token-budget-guardian` kuralı). `/doctor`, `/skill-doctor`, `/code-review`, `/verify` komutları bu oturumda yoktu. Eşdeğerleri elle yapıldı: frontmatter doğrulama betiği, mypy, ruff, mutasyon kontrolü.
 
-### 4.2 Arena: 5 tur, 19 açık (hepsi FAIL → PASS)
+### 4.2 Arena: 6 tur, 25 açık (hepsi FAIL → PASS) — Tur 6 için bkz. 3b
 
 En kritik 10 açık:
 
@@ -99,14 +115,17 @@ Diğer 9 açık (1.3 aday havuzu sınırı, 1.4 yanıltıcı "TOPLULUK" kategori
 
 ```
 $ python -m pytest -v
-tests/test_analyzer.py     6    tests/test_injection.py    16
-tests/test_arena.py       19    tests/test_processor.py    11
-tests/test_clustering.py  15    tests/test_publisher.py    15
-tests/test_collector.py   11    tests/test_resilience.py   22
-tests/test_simulator.py    2    tests/test_storage.py       6
-============================== 123 passed ==============================
-$ mypy bot          → Success: no issues found in 14 source files
-$ ruff check bot tests tools → All checks passed!
+tests/test_analyzer.py      6    tests/test_injection.py      16
+tests/test_arena.py        25    tests/test_processor.py      11
+tests/test_clustering.py   15    tests/test_publisher.py      15
+tests/test_collector.py    11    tests/test_resilience.py     22
+tests/test_simulator.py     2    tests/test_site_exporter.py  31
+tests/test_storage.py       6
+============================== 160 passed ==============================
+$ mypy bot                          → Success: no issues found in 15 source files
+$ ruff check bot tests tools        → All checks passed!
+$ python tools/skill_audit.py       → 15/15 skill tüm denetimlerden geçti
+$ chrome --headless --dump-dom docs/index.html → 11 kart + 1 manşet JS ile çizildi
 ```
 
 14 kabul testinin eşlemesi değişmedi (`.claude/skills/python-tdd-runner/SKILL.md`).
@@ -119,7 +138,8 @@ $ ruff check bot tests tools → All checks passed!
 2. **RSS adresleri ve `google-genai` SDK canlı denenmedi** (paket kurulumu ve ağ kapalıydı).
 3. **Doğrulama katmanı bilinçli olarak temkinli.** Atıf zorunluluğu, sayı/ay kontrolü ve soru başlığı yasağı bazı geçerli haberleri incelemeye alabilir. İlk hafta özetteki "İncelemeye takılan" sayısını izle.
 4. **Kümeleme eşiği** 9 etiketli çiftle kalibre edildi. Gerçek akışta yanlış birleşme veya ayrılma görürsen örneği `tests/test_clustering.py`'ye ekleyip `event-clustering-calibrator` adımlarını izle.
-5. **`.github` ve `.claude` klasörleri bilgisayarına kendi adlarıyla yazılamadı** (uzak araç bu adları korumaya alıyor). Doğru hâlleri bundle'da. Açık klasörde `_dot_github/` ve `_dot_claude/` olarak duruyorlar.
+5. **Site demo verisiyle teslim edildi.** İlk bot çalışmasında `feed.json` gerçek haberlerle değişir. O ana kadar sitede "Örnek veri" rozeti görünür.
+6. **`.github` ve `.claude` klasörleri bilgisayarına kendi adlarıyla yazılamadı** (uzak araç bu adları korumaya alıyor). Doğru hâlleri bundle'da. Açık klasörde `_dot_github/` ve `_dot_claude/` olarak duruyorlar.
 
 **İNSAN MÜDAHALESİ GEREKLİ** başlığı altında kayıt yok: 2 denemede çözülemeyen hata olmadı.
 
@@ -149,7 +169,8 @@ $ ruff check bot tests tools → All checks passed!
    - `data/state.json` → `source_status` içinde `rockstar_newswire_html`, `rockstar_google_news`, `take_two_*` satırları: `relevant` > 0 mı, yoksa `warning` mı var?
    - `gemini_errors` 0 olmalı
    - `error_classes` içinde `AUTH_PERMISSION` olmamalı
-7. **Görünüm:** `docs/message_preview.html` dosyasını tarayıcıda aç (beş senaryonun telefon maketi). Kanaldaki ilk gönderiyle karşılaştır. Botu durdurmak gerekirse `config/settings.json` → `"paused": true` yapıp commit et.
+7. **Görünüm:** `docs/index.html` dosyasını tarayıcıda aç (12 haberlik demo site). Üst menüdeki "Telegram önizleme" sayfasında beş senaryonun telefon maketi var. Kanaldaki ilk gönderiyle karşılaştır. Botu durdurmak gerekirse `config/settings.json` → `"paused": true` yapıp commit et.
+8. **Haber sitesini yayına al (tek seferlik):** Repo → **Settings → Pages → Source: "Deploy from a branch" → `main` / `/docs` → Save.** Kanal herkese açıksa `config/settings.json` → `"public_channel_username"` alanına kanal adını yaz (site "Telegram'da aç" düğmesini gönderiye bağlar).
 
 ---
 

@@ -39,6 +39,7 @@ flowchart LR
 | `bot/gemini.py` | Çıktı şeması, istem, 6 aşamalı deterministik çıktı doğrulama, `google-genai` istemcisi |
 | `bot/publisher.py` | Mesaj şablonu, idempotent yayın, günlük limit, yönetici özeti, alarm tekilleştirme |
 | `bot/analyzer.py` | Reaksiyon güncellemeleri, ölçüm durumu, kategori/başlık stili analizi |
+| `bot/site_exporter.py` | Statik site beslemesi (`docs/data/feed.json` + `feed.js`): beyaz liste alanlar, XSS temizliği, manşet ve vitrin seçimi |
 | `bot/main.py` | Orkestrasyon ve JSON çalışma özeti |
 
 ## Yayın etiketleri
@@ -92,6 +93,17 @@ Farklı sitelerin aynı olayı farklı başlıklarla yazması `bot/clustering.py
 - **Dayanıklılık:** çalışma süresi sınırı (`run_deadline_seconds`), görülmüş bağlantıları yeniden doğrulamama, `retry_after > 60` için vazgeçme, yapısal JSON doğrulaması ve `.lastgood` kurtarma, state için saatlik yazım (`state_heartbeat_minutes`).
 - Ayrıntılı saldırı ve düzeltme geçmişi: `ARENA_DEBATE_LOG.md`. Geliştirici skill'leri: `.claude/skills/`.
 
+## Haber sitesi (GitHub Pages, 0 TL)
+
+`docs/` klasörü kendi başına çalışan statik bir haber portalıdır: manşet, doğrulama düzeyi süzgeçleri, kategori sekmeleri, canlı arama, haber detay çekmecesi, canlı sistem durum bandı ve Telegram önizleme sayfası. Sunucu ve derleme adımı yoktur.
+
+- **Veri köprüsü:** Bot her çalışmada `bot/site_exporter.py` ile `docs/data/feed.json` ve `docs/data/feed.js` dosyalarını üretir. Yalnızca yayınlanmış haberler, temizlenmiş metinler ve https bağlantılar yazılır; chat_id ve iç alanlar yazılmaz. Workflow bu iki dosyayı da commit eder, böylece site kendiliğinden güncellenir.
+- **Tek seferlik açılış:** Repo → **Settings → Pages → Build and deployment → Source: "Deploy from a branch" → Branch: `main`, klasör: `/docs` → Save**. Birkaç dakika sonra site `https://<kullanıcı-adın>.github.io/<repo-adı>/` adresinde yayında olur. Public repolarda GitHub Pages ücretsizdir.
+- **Yerelde açma:** `docs/index.html` dosyasını tarayıcıda açmak yeterli. `feed.js` sayesinde `file://` ile de çalışır.
+- **Demo verisi:** Repodaki `feed.json` 12 haberlik örnek veridir (`"demo": true`, sitede "Örnek veri" rozeti görünür). Bot ilk çalıştığında gerçek haberlerle değişir. Yeniden üretmek için: `python tools/dry_run_simulator.py`.
+- **Telegram mesaj bağlantıları:** Kanal herkese açıksa `config/settings.json` → `"public_channel_username": "kanaladi"` yaz; sitedeki "Telegram'da aç" düğmesi gönderiye gider. Boşsa düğme paylaşım bağlantısına döner.
+- **Güvenlik:** CSP meta etiketi (yalnızca kendi betikleri), veriler yalnızca `textContent` ile basılır, bağlantılar https denetiminden geçer. Kuralların tamamı: `.claude/skills/static-site-guardian/SKILL.md`.
+
 ## Kill switch
 
 `config/settings.json` içinde `"paused": true` yapıp commit edin. Bu durumda toplama, Gemini çağrısı ve kanal yayını yapılmaz. Reaksiyon ölçümü ve yönetici özeti sürer. Açmak için tekrar `false` yapın.
@@ -123,7 +135,8 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python -m pytest -q
 mypy bot && ruff check bot tests tools     # tip ve stil denetimi (pyproject.toml)
-python tools/dry_run_simulator.py           # ağsız tam hat simülasyonu → docs/message_preview.html
+python tools/dry_run_simulator.py           # ağsız tam hat simülasyonu → docs/message_preview.html + docs/data/feed.json (12 demo haber)
+python tools/skill_audit.py                 # 15 skill'in kurallarını koda karşı çalıştırır → SKILL_AUDIT_REPORT.md
 ```
 
 Testler gerçek ağa çıkmaz (`tests/conftest.py` engeller) ve yalnızca `DUMMY_..._DO_NOT_USE` sahte sabitlerini kullanır.

@@ -305,6 +305,9 @@ PAGE = """<!DOCTYPE html>
   a { color: var(--teal); text-underline-offset: 3px; }
   :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
 
+  .sitenav { display: flex; gap: 18px; align-items: center; padding: 14px 24px; border-bottom: 1px solid rgba(169,156,214,.15); font-weight: 600; }
+  .sitenav a { color: var(--teal); text-decoration: none; }
+  .sitenav span { color: var(--ink); box-shadow: inset 0 -2px 0 var(--pink); padding-bottom: 2px; }
   .horizon { position: relative; overflow: hidden; padding: 64px 24px 48px;
     background: radial-gradient(120% 90% at 50% 120%, rgba(255,154,90,.5) 0%, rgba(255,79,154,.32) 35%, transparent 65%),
                 linear-gradient(180deg, #0C0722 0%, var(--night) 100%);
@@ -365,6 +368,7 @@ PAGE = """<!DOCTYPE html>
 </style>
 </head>
 <body>
+  <nav class="sitenav" aria-label="Site"><a href="index.html">‹ Haberler</a><span aria-current="page">Telegram önizleme</span></nav>
   <section class="horizon"><div class="inner">
     <h1>Gece bülteni,<br>ışıklar açık.</h1>
     <p class="lede">Botun beş senaryodaki gerçek çıktısı. Her ekran, sahte servislerle tam hat çalıştırılarak üretildi:

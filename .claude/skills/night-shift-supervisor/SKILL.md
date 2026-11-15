@@ -15,3 +15,12 @@ description: Gece vardiyası görev sırasını yönetir, her adımı NIGHT_PROG
 - Gerçek Telegram kanalına mesaj yok; gerçek API anahtarı okuma/yazma yok; ücretli servis yok; proje dışı dosya yok.
 - Aynı hata 3 denemede çözülmezse: "İNSAN MÜDAHALESİ GEREKLİ" başlığıyla kaydet, bağımsız sonraki göreve geç.
 - Paralel alt ajan açma; tek bağlamda sıralı çalış; yalnızca üzerinde çalışılan dosyayı oku.
+
+## Ne zaman tetiklenir
+Otonom/uzun oturum başlarken ve biterken.
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill night-shift-supervisor
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

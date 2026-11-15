@@ -18,3 +18,12 @@ description: Uzun/otonom oturumlarda token ve kota tasarrufu kuralları; gereksi
 - [ ] Bu adımda aynı dosya 2'den fazla okundu mu?
 - [ ] 200 satırdan uzun araç çıktısı üretildi mi? Üretildiyse bir sonraki adımda filtrele.
 - [ ] Başarısız deneme sayısı ≤ 2 mi?
+
+## Ne zaman tetiklenir
+Her uzun oturumun başında; her büyük adımın sonunda (bütçe kontrol listesi).
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill token-budget-guardian
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

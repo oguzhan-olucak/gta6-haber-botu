@@ -26,3 +26,12 @@ description: bot/ modül sınırlarını, atomik JSON yazımını ve determinist
 - Tüm `data/*.json` yazımları `storage.write_json_atomic` / `write_if_changed` üzerinden (`grep -rn "open(.*'w'" bot/` boş).
 - Yayın kararı `processor.assess` (Python) ile verilir; LLM çıktısındaki hiçbir alan etiket/eşik değiştirmez.
 - `insights.json` yalnızca `prompt_hints.preferred_title_styles` üzerinden ve enum'a karşı doğrulanarak okunur.
+
+## Ne zaman tetiklenir
+Yeni modül eklendiğinde, modüller arası import veya HTTP çağrısı değiştiğinde.
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill architect-verifier
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

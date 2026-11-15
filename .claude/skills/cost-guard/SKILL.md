@@ -14,3 +14,12 @@ description: Gemini, RSS ve Telegram çağrılarının ücretsiz katmanda kaldı
 - Testlerde gerçek API çağrısı yok (`tests/conftest.py` ağ erişimini engeller).
 
 İlgili testler: `test_gemini_quota_stops_calls_and_never_switches_model`, `test_paused_means_no_publish_and_no_gemini`, `test_daily_post_limit_not_exceeded`.
+
+## Ne zaman tetiklenir
+settings.json limitleri, Gemini/Telegram çağrı mantığı veya workflow zamanlaması değiştiğinde.
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill cost-guard
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

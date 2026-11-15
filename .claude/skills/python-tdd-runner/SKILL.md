@@ -19,3 +19,12 @@ description: Her kod değişikliğinden sonra pytest çalıştırır, 14 kabul t
    Ayrıca `mypy bot` ve `ruff check bot tests tools` temiz olmalı.
 3. Aynı hata 3 denemede çözülmezse dur, `MORNING_REPORT.md` içinde "İNSAN MÜDAHALESİ GEREKLİ" altına yaz.
 4. Testlerde yalnızca `DUMMY_TEST_TOKEN_DO_NOT_USE` gibi sahte sabitler; gerçek ağ `conftest.py` tarafından engellenir.
+
+## Ne zaman tetiklenir
+Her kod değişikliğinden sonra; commit öncesi.
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill python-tdd-runner
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

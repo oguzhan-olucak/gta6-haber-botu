@@ -9,3 +9,12 @@ description: bot/clustering.py benzerlik ağırlıklarını ve cluster_similarit
 3. Eşik, iki grubun arasındaki boşluğun ortasına yakın seçilir; **öncelik yanlış birleştirmeyi sıfırda tutmak** (sahte ÇOKLU KAYNAK, eksik birleştirmeden daha zararlıdır).
 4. Sert engeller (çelişen sayı, varlık çatışması, 72 saat) puandan bağımsızdır; değiştirirsen negatif testleri yeniden çalıştır.
 5. Kayıt: kalibrasyon sonucu ve tarih `NIGHT_PROGRESS.md`'ye.
+
+## Ne zaman tetiklenir
+Kümeleme eşiği/ağırlıkları değiştirilmeden önce; yanlış birleşme raporlandığında.
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill event-clustering-calibrator
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

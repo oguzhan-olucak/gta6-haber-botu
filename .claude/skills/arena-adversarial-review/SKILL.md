@@ -22,3 +22,12 @@ description: Dört rollü (Red Team, FinOps/SRE, Oyun Medyası Editörü, Test &
 - Bir bulgu reddedilecekse (yanlış alarm) hakem gerekçesini tek satırla yazar; sayıma girmez.
 - Aynı yama 2 denemede yeşile dönmezse: geri al, "İNSAN MÜDAHALESİ GEREKLİ" olarak kaydet.
 - Turlar arasında önceki turların testleri her zaman çalışır (regresyon kalkanı).
+
+## Ne zaman tetiklenir
+Büyük bir özellik tamamlandığında veya kullanıcı 'Arena turu' istediğinde.
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill arena-adversarial-review
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

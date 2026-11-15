@@ -15,3 +15,12 @@ description: data/*.json dosyalarının atomik yazımı, bozulma tespiti, .lastg
 
 ## Elle kurtarma
 `git log -- data/history.json` → son sağlam commit'ten `git checkout <sha> -- data/history.json`.
+
+## Ne zaman tetiklenir
+storage.py veya data/*.json şeması değiştiğinde.
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill atomic-json-recovery
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

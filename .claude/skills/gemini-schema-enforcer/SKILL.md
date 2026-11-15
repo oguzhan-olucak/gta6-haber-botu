@@ -10,3 +10,12 @@ description: google-genai Structured Outputs kullanımı, untrusted_source_data 
 - Çıktı her zaman `bot/gemini.py::validate_generated` ile denetlenir; kontroller `CHECKS` demetinde sıralı ve bağımsızdır (yeni kural = yeni `check_*` fonksiyonu + test): JSON/şema → REJECTED; uydurma URL → REJECTED; kaynakta olmayan sayı/platform/ay, yasaklı kesinlik ifadesi, resmî olmayanı resmî sayma, `needs_review=true` → REVIEW_HELD (yayın yok).
 - Prompt: kaynak kayıtları `<untrusted_source_data>` içinde JSON olarak; `<`/`>` → `‹`/`›` kaçırılır.
 - Testler: `tests/test_processor.py`.
+
+## Ne zaman tetiklenir
+gemini.py, istem metni veya çıktı şeması değiştiğinde; model kimliği güncellendiğinde.
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill gemini-schema-enforcer
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

@@ -14,3 +14,12 @@ Kurallar:
 - `sendMessage` için ReadTimeout/5xx = belirsiz → `UNCERTAIN`, yeniden gönderim yok.
 - Özet anahtarı `YYYY-MM-DDTHH` ile `state.digests_sent`; alarm tekilleştirme `state.alerts_last_sent` (varsayılan 6 saat).
 - Mesaj ≤ 4096 karakter (`render_post` gerekirse kaynak sayısını, sonra özeti kısaltır), `parse_mode=HTML`, tüm dinamik metin `html.escape`.
+
+## Ne zaman tetiklenir
+telegram_client.py, publisher.py veya analyzer.py değiştiğinde.
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill telegram-api-guard
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

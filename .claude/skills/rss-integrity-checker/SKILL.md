@@ -16,3 +16,12 @@ description: RSS/Atom ayrıştırma, URL canonicalization, yönlendirme takibi, 
 
 ## Testler
 `python -m pytest -q tests/test_collector.py` — XXE reddi, Atom desteği, alan adı nokta sınırı (`evilign.com` ≠ `ign.com`), takip parametresi temizliği, bozuk kaynağın izolasyonu, güvenli yönlendirme ve yabancı canonical reddi.
+
+## Ne zaman tetiklenir
+config/sources.json veya collector.py / official.py / textutil.py değiştiğinde.
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill rss-integrity-checker
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

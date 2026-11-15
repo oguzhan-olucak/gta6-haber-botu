@@ -19,3 +19,12 @@ Yalnızca proje klasörü içinde çalış. Gerçek secret okuma; `.env`, `~/.ss
 6. Workflow: tetikleyiciler yalnızca `schedule` + `workflow_dispatch`; `permissions: contents: write`; secret'lar yalnızca "Botu çalıştır" adımında.
 
 Bulguları `NIGHT_PROGRESS.md`'ye tek satırlık sonuçla yaz.
+
+## Ne zaman tetiklenir
+Her commit öncesi; bot/, tools/ veya workflow değiştiğinde; yeni bağımlılık eklendiğinde.
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill security-auditor
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

@@ -15,3 +15,12 @@ description: Kötü niyetli veya bozuk RSS/HTML içeriğine (prompt injection, h
 
 ## Saldırı yükü kütüphanesi
 `tests/test_injection.py::PAYLOADS` ve `tests/test_arena.py` — yeni bir saldırı türü bulunduğunda önce buraya başarısız test olarak eklenir.
+
+## Ne zaman tetiklenir
+Yeni kaynak eklendiğinde; processor/gemini doğrulama kuralları değiştiğinde.
+
+## Otomatik doğrulama
+```bash
+python tools/skill_audit.py --skill rss-anti-poisoning
+```
+Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.

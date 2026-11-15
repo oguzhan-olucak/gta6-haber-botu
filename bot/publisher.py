@@ -18,8 +18,8 @@ from . import ErrorClass, iso, parse_iso
 from .config import Settings
 from .gemini import GeneratedContent
 from .labels import LABEL_NOTE, LABEL_TEXT, Label
-from .telegram_client import TelegramError, TelegramUncertainError
-from .textutil import tr_upper
+from .telegram_client import MAX_MESSAGE_CHARS, TelegramError, TelegramUncertainError
+from .textutil import tr_upper, truncate
 
 if TYPE_CHECKING:
     from .telegram_client import MessageSender
@@ -61,32 +61,54 @@ def format_local(dt: datetime, offset_hours: int) -> str:
     return f"{local.day} {TR_MONTHS[local.month - 1]} {local.year}, {local:%H:%M} {suffix}"
 
 
-def render_post(content: GeneratedContent, label: Label, sources: list[dict], settings: Settings,
+MAX_SOURCE_NAME_CHARS = 40
+MAX_SOURCE_URL_CHARS = 600
+
+
+def _source_links(sources: list[dict[str, str]]) -> str:
+    """En fazla 3 kaynak; aşırı uzun URL'ler atlanır, adlar kırpılır."""
+    links = [f'<a href="{_e(s["url"])}">{_e(truncate(s["name"], MAX_SOURCE_NAME_CHARS))}</a>'
+             for s in sources if len(s.get("url", "")) <= MAX_SOURCE_URL_CHARS][:3]
+    return " · ".join(links)
+
+
+def render_post(content: GeneratedContent, label: Label, sources: list[dict[str, str]], settings: Settings,
                 now: datetime) -> str:
     """Profesyonel bülten düzeni: tek rozet, etiket satırı, kalın başlık, özet, kaynak bloğu, imza.
 
     Telegram HTML parse_mode yalnızca sınırlı etiket destekler (b, i, a, code, blockquote...);
-    tüm dinamik metin html.escape ile kaçırılır.
+    tüm dinamik metin html.escape ile kaçırılır. Sonuç hiçbir koşulda 4096 karakteri aşmaz:
+    gerekirse önce kaynak sayısı, sonra özet kısaltılır.
     """
     category = CATEGORY_TR.get(content.category, "Gündem")
-    src_links = " · ".join(f'<a href="{_e(s["url"])}">{_e(s["name"])}</a>' for s in sources[:3])
     note = _e(LABEL_NOTE[label])
     if label in (Label.LEAK_CLAIM, Label.COMMUNITY_CLAIM, Label.SINGLE_SOURCE):
         note = f"<i>{note}</i>"
-    lines = [
-        f"{BADGE[label]} <b>{_e(LABEL_TEXT[label])}</b>  ·  {_e(tr_upper(category))}",
-        "",
-        f"<b>{_e(content.title_tr)}</b>",
-        "",
-        _e(content.summary_tr),
-        "",
-        f"<b>Kaynak:</b> {src_links}",
-        f"<b>Doğrulama:</b> {note}",
-        "",
-        f"<i>{_e(settings.brand_name)} · {_e(format_local(now, settings.display_utc_offset_hours))}</i>",
-        "#GTA6 #GTAVI",
-    ]
-    return "\n".join(lines)
+
+    def build(summary: str, srcs: list[dict[str, str]]) -> str:
+        return "\n".join([
+            f"{BADGE[label]} <b>{_e(LABEL_TEXT[label])}</b>  ·  {_e(tr_upper(category))}",
+            "",
+            f"<b>{_e(content.title_tr)}</b>",
+            "",
+            _e(summary),
+            "",
+            f"<b>Kaynak:</b> {_source_links(srcs)}",
+            f"<b>Doğrulama:</b> {note}",
+            "",
+            f"<i>{_e(settings.brand_name)} · {_e(format_local(now, settings.display_utc_offset_hours))}</i>",
+            "#GTA6 #GTAVI",
+        ])
+
+    text = build(content.summary_tr, sources)
+    srcs = list(sources)
+    while len(text) > MAX_MESSAGE_CHARS and len(srcs) > 1:
+        srcs.pop()
+        text = build(content.summary_tr, srcs)
+    if len(text) > MAX_MESSAGE_CHARS:
+        excess = len(text) - MAX_MESSAGE_CHARS
+        text = build(truncate(content.summary_tr, max(40, len(content.summary_tr) - excess - 10)), srcs)
+    return text[:MAX_MESSAGE_CHARS]
 
 
 # ---- Limitler -----------------------------------------------------------------------------

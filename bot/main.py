@@ -1,11 +1,13 @@
 """Tek çalışma (GitHub Actions her ~20 dakikada bir çağırır).
 
-Sıra: ayar doğrulama -> veri dosyaları (bozuksa güvenli mod) -> secret kontrolü ->
-reaksiyon güncellemeleri -> [paused değilse] toplama -> kümeleme/tekrar -> deterministik
-değerlendirme -> Gemini (limitli) -> çıktı doğrulama -> idempotent yayın -> analiz ->
-sağlık/alarmlar -> yönetici özeti -> saklama sınırları -> atomik kayıt -> JSON çalışma özeti.
+Sıra: ayar doğrulama → veri dosyaları (bozuksa son sağlam kopyadan otomatik kurtarma, o da
+yoksa güvenli mod) → secret kontrolü → reaksiyon güncellemeleri → [paused değilse] toplama →
+olay kümeleme/tekrar → deterministik değerlendirme → Gemini (limitli) → çıktı doğrulama →
+idempotent yayın → analiz → sağlık/alarmlar → yönetici özeti → saklama sınırları → atomik kayıt
+→ JSON çalışma özeti.
 
-Çıkış kodları: 0 normal, 1 yapılandırma/secret eksik, 2 güvenli mod (bozuk veri).
+Çıkış kodları: 0 normal, 1 yapılandırma/secret eksik, 2 güvenli mod (kurtarılamayan bozuk veri),
+3 beklenmeyen hata.
 """
 from __future__ import annotations
 
@@ -13,33 +15,128 @@ import json
 import logging
 import sys
 import time
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Callable, Mapping
+from typing import Any, Mapping, Sequence
 
 import requests
 
 from . import ErrorClass, iso, parse_iso, utcnow
 from .analyzer import ALLOWED_UPDATES, analyze, apply_updates, update_measurement_status
-from .collector import Item, collect, verify_source_url
-from .config import (CONFIG_DIR, DATA_DIR, ConfigError, load_secrets, load_settings, load_sources, redact,
-                     setup_logging)
-from .processor import (LABEL_TEXT, RESPONSE_JSON_SCHEMA, SYSTEM_INSTRUCTION, GeminiError, GeminiGenerator,
-                        Generator, assess, build_prompt, cluster_items, is_duplicate_of_history,
-                        load_style_hints, validate_generated)
-from .publisher import (due_digest_key, mark_alert, mark_digest_sent, minutes_since_last_post,
-                        posts_in_last_24h, publish_post, render_alert, render_digest, render_post, send_admin,
-                        should_alert)
-from .storage import (CorruptDataError, FileLock, LockError, default_history, default_insights, default_state,
-                      read_json, write_if_changed, write_json_atomic)
-from .telegram_client import TelegramClient, TelegramError
+from .collector import Item, Verifier, collect, verify_source_url
+from .config import (
+    CONFIG_DIR,
+    DATA_DIR,
+    ConfigError,
+    Secrets,
+    Settings,
+    Source,
+    load_secrets,
+    load_settings,
+    load_sources,
+    redact,
+    setup_logging,
+)
+from .gemini import (
+    RESPONSE_JSON_SCHEMA,
+    SYSTEM_INSTRUCTION,
+    GeminiError,
+    GeminiGenerator,
+    Generator,
+    ValidationOutcome,
+    build_prompt,
+    load_style_hints,
+    validate_generated,
+)
+from .labels import LABEL_TEXT, Assessment
+from .processor import assess, cluster_items, is_duplicate_of_history
+from .publisher import (
+    due_digest_key,
+    mark_alert,
+    mark_digest_sent,
+    minutes_since_last_post,
+    posts_today,
+    publish_post,
+    render_alert,
+    render_digest,
+    render_post,
+    send_admin,
+    should_alert,
+)
+from .storage import (
+    CorruptDataError,
+    FileLock,
+    LockError,
+    default_history,
+    default_insights,
+    default_state,
+    read_json_recovering,
+    write_if_changed,
+    write_json_atomic,
+)
+from .telegram_client import MessageSender, TelegramClient, TelegramError
+
+__all__ = ["run", "main", "ErrorClass", "TelegramError", "load_secrets"]
 
 log = logging.getLogger("gta6bot")
 
 
-def _new_summary(now: datetime) -> dict:
+@dataclass
+class RunContext:
+    """Bir çalışmanın paylaşılan durumu (fonksiyonlar arasında açık bağımlılık)."""
+    settings: Settings
+    sources: list[Source]
+    now: datetime
+    data_dir: Path
+    state: dict[str, Any]
+    history: dict[str, Any]
+    summary: dict[str, Any]
+    telegram: MessageSender | None = None
+    secrets: Secrets | None = None
+    session: requests.Session | None = None
+    generator: Generator | None = None
+    verifier: Verifier | None = None
+    safe_mode: bool = False
+    gemini_blocked_until: datetime | None = None
+    remaining_posts: int = 0
+    style_hints: dict[str, list[str]] = field(default_factory=dict)
+
+    @property
+    def state_path(self) -> Path:
+        """data/state.json yolu."""
+        return self.data_dir / "state.json"
+
+    @property
+    def history_path(self) -> Path:
+        """data/history.json yolu."""
+        return self.data_dir / "history.json"
+
+    @property
+    def insights_path(self) -> Path:
+        """data/insights.json yolu."""
+        return self.data_dir / "insights.json"
+
+    @property
+    def admin(self) -> str | None:
+        """Yönetici sohbet kimliği (tanımlı değilse None)."""
+        return self.secrets.admin_chat_id if self.secrets else None
+
+    def persist_history(self) -> None:
+        """history.json'u (ve son sağlam kopyasını) hemen atomik yazar."""
+        write_json_atomic(self.history_path, self.history, keep_last_good=True)
+
+    def alert(self, key: str, error_class: str, detail: str) -> None:
+        """Tekilleştirilmiş yönetici uyarısı (aynı anahtar ``alert_dedup_hours`` içinde bir kez)."""
+        if should_alert(self.state, key, self.settings, self.now):
+            sent = send_admin(self.telegram, self.admin, render_alert(error_class, detail, self.settings, self.now))
+            mark_alert(self.state, key, self.now)
+            self.summary["notes"].append(f"alarm:{key}:{'gönderildi' if sent else 'log'}")
+
+
+def _new_summary(now: datetime) -> dict[str, Any]:
     return {
-        "started_at": iso(now), "finished_at": None, "paused": False, "safe_mode": False,
+        "started_at": iso(now), "finished_at": None, "paused": False, "safe_mode": False, "recovered": [],
         "sources_checked": 0, "sources_ok": 0, "new_items": 0, "duplicates_or_filtered": 0,
         "held": 0, "rejected": 0, "gemini_calls": 0, "gemini_errors": 0, "published": 0,
         "review_held": 0, "uncertain": 0, "measurements_updated": 0, "measurements_pending": 0,
@@ -47,44 +144,18 @@ def _new_summary(now: datetime) -> dict:
     }
 
 
-def _prune(state: dict, history: dict, settings, now: datetime) -> None:
-    r = settings.retention_limits
-    seen_age = max(r.seen_items_max_age_hours, settings.max_item_age_hours + 24)
-    cutoff = now - timedelta(hours=seen_age)
-    seen = state.get("seen_items", {})
-    seen = {k: v for k, v in seen.items() if (parse_iso(v.get("first_seen")) or now) >= cutoff}
-    if len(seen) > r.seen_items_max_records:
-        seen = dict(sorted(seen.items(), key=lambda kv: kv[1].get("first_seen") or "")[-r.seen_items_max_records:])
-    state["seen_items"] = seen
-    pool_cutoff = now - timedelta(hours=settings.max_item_age_hours)
-    state["candidate_pool"] = {
-        k: v for k, v in state.get("candidate_pool", {}).items()
-        if (parse_iso(v["item"].get("published_at")) or parse_iso(v.get("first_seen")) or now) >= pool_cutoff
-    }
-    hist_cutoff = now - timedelta(days=r.history_max_age_days)
-    posts = [p for p in history.get("posts", [])
-             if (parse_iso(p.get("published_at") or p.get("created_at")) or now) >= hist_cutoff]
-    history["posts"] = posts[-r.history_max_records:]
-    state["run_log"] = state.get("run_log", [])[-r.run_log_max_records:]
-
-
-def _alert(state, settings, telegram, admin_chat_id, key: str, error_class: str, detail: str, now, summary) -> None:
-    if should_alert(state, key, settings, now):
-        sent = send_admin(telegram, admin_chat_id, render_alert(error_class, detail, settings, now))
-        mark_alert(state, key, now)
-        summary["notes"].append(f"alarm:{key}:{'gönderildi' if sent else 'log'}")
-
+# ---- Giriş noktası ---------------------------------------------------------------------
 
 def run(*, now: datetime | None = None, env: Mapping[str, str] | None = None,
-        session: requests.Session | None = None, telegram: TelegramClient | None = None,
+        session: requests.Session | None = None, telegram: MessageSender | None = None,
         generator: Generator | None = None, data_dir: Path | None = None, config_dir: Path | None = None,
-        url_verifier: Callable[[str, list[str]], tuple[bool, str]] | None = None) -> tuple[int, dict]:
+        url_verifier: Verifier | None = None) -> tuple[int, dict[str, Any]]:
+    """Bir çalışmayı yürütür. Tüm dış bağımlılıklar test için enjekte edilebilir."""
     setup_logging()
     now = now or utcnow()
     data_dir = Path(data_dir or DATA_DIR)
     config_dir = Path(config_dir or CONFIG_DIR)
     summary = _new_summary(now)
-
     try:
         settings = load_settings(config_dir / "settings.json")
         sources = load_sources(config_dir / "sources.json")
@@ -93,7 +164,6 @@ def run(*, now: datetime | None = None, env: Mapping[str, str] | None = None,
         summary["notes"].append(str(exc))
         log.error("Yapılandırma hatası: %s", exc)
         return 1, _finish(summary)
-
     lock = FileLock(data_dir / ".run.lock")
     try:
         lock.acquire()
@@ -107,32 +177,45 @@ def run(*, now: datetime | None = None, env: Mapping[str, str] | None = None,
         lock.release()
 
 
-def _run_locked(settings, sources, now, env, session, telegram, generator, data_dir, summary, url_verifier):
-    state_path, history_path, insights_path = data_dir / "state.json", data_dir / "history.json", \
-        data_dir / "insights.json"
+def _load_data(summary: dict[str, Any], data_dir: Path) -> tuple[
+        dict[str, Any] | None, dict[str, Any], bool]:
+    """state/history yükler; bozuksa son sağlam kopyadan kurtarır. (state, history, safe_mode)."""
     try:
-        state = read_json(state_path, default_state)
+        state, err = read_json_recovering(data_dir / "state.json", default_state)
+        if err:
+            summary["recovered"].append("state.json")
+            summary["notes"].append(f"state.json bozuktu ({err.reason}); son sağlam kopyadan kurtarıldı")
     except CorruptDataError as exc:
         summary["safe_mode"] = True
         summary["error_classes"].append(ErrorClass.DATA_SCHEMA_ERROR.value)
         summary["notes"].append(f"{exc} — yedek: {exc.backup.name if exc.backup else '-'}; GÜVENLİ MOD")
-        log.error("state.json bozuk; güvenli mod. İnsan müdahalesi gerekli.")
-        return 2, _finish(summary)
+        log.error("state.json bozuk ve kurtarılamadı; güvenli mod. İnsan müdahalesi gerekli.")
+        return None, {"posts": []}, True
     for k, v in default_state().items():
         state.setdefault(k, v)
     state.setdefault("candidate_pool", {})
-
-    safe_mode = False
     try:
-        history = read_json(history_path, default_history)
+        history, err = read_json_recovering(data_dir / "history.json", default_history)
         if not isinstance(history.get("posts"), list):
-            raise CorruptDataError(history_path, None, "posts listesi yok")
+            raise CorruptDataError(data_dir / "history.json", None, "posts listesi yok")
+        if err:
+            summary["recovered"].append("history.json")
+            summary["notes"].append(f"history.json bozuktu ({err.reason}); son sağlam kopyadan kurtarıldı")
+        return state, history, False
     except CorruptDataError as exc:
-        safe_mode = True
-        history = {"posts": []}
         summary["safe_mode"] = True
         summary["error_classes"].append(ErrorClass.DATA_SCHEMA_ERROR.value)
         summary["notes"].append(f"{exc}; yayın ve Gemini devre dışı (GÜVENLİ MOD)")
+        return state, {"posts": []}, True
+
+
+def _run_locked(settings: Settings, sources: list[Source], now: datetime, env: Mapping[str, str] | None,
+                session: requests.Session | None, telegram: MessageSender | None, generator: Generator | None,
+                data_dir: Path, summary: dict[str, Any], url_verifier: Verifier | None) -> tuple[int, dict[str, Any]]:
+    state, history, safe_mode = _load_data(summary, data_dir)
+    if state is None:
+        return 2, _finish(summary)
+    ctx = RunContext(settings, sources, now, data_dir, state, history, summary, safe_mode=safe_mode)
 
     secrets, missing = load_secrets(env)
     if secrets is None:
@@ -140,267 +223,337 @@ def _run_locked(settings, sources, now, env, session, telegram, generator, data_
         summary["notes"].append("Eksik ortam değişkeni: " + ", ".join(missing))
         log.error("Eksik ortam değişkenleri: %s", ", ".join(missing))
         state["last_run_at"] = iso(now)
-        write_if_changed(state_path, state)
+        write_if_changed(ctx.state_path, state)
         return 1, _finish(summary)
 
-    session = session or requests.Session()
-    telegram = telegram or TelegramClient(secrets.telegram_bot_token, session=session,
-                                          timeout=settings.http_timeout_seconds,
-                                          max_retries=settings.http_max_retries)
-    admin = secrets.admin_chat_id
+    ctx.secrets = secrets
+    ctx.session = session or requests.Session()
+    ctx.telegram = telegram or TelegramClient(secrets.telegram_bot_token, session=ctx.session,
+                                              timeout=settings.http_timeout_seconds,
+                                              max_retries=settings.http_max_retries)
+    ctx.generator = generator
+    ctx.verifier = url_verifier or _default_verifier(ctx.session, settings)
     state["first_run_at"] = state.get("first_run_at") or iso(now)
 
     if safe_mode:
-        _alert(state, settings, telegram, admin, "SAFE_MODE_HISTORY", ErrorClass.DATA_SCHEMA_ERROR.value,
-               "history.json bozuk; yedeği alındı, yayın durduruldu. Dosyayı düzeltin veya yedekten geri yükleyin.",
-               now, summary)
-
-    # ---- 1) Reaksiyon güncellemeleri (paused iken de ölçüm sürer; içerik yayınlanmaz) ----
+        ctx.alert("SAFE_MODE_HISTORY", ErrorClass.DATA_SCHEMA_ERROR.value,
+                  "history.json bozuk ve son sağlam kopya yok/bozuk; yayın durduruldu. Yedekten geri yükleyin.")
+    if summary["recovered"]:
+        ctx.alert("DATA_RECOVERED", ErrorClass.DATA_SCHEMA_ERROR.value,
+                  "Bozuk veri dosyası son sağlam kopyadan otomatik kurtarıldı: " + ", ".join(summary["recovered"]))
     if not safe_mode:
-        try:
-            updates = telegram.get_updates(state.get("telegram_update_offset"), ALLOWED_UPDATES)
-            st = apply_updates(updates, history, state)
-            summary["reaction_updates"] = st["matched"]
-        except TelegramError as exc:
-            summary["error_classes"].append(exc.error_class.value)
-            if exc.error_class == ErrorClass.AUTH_PERMISSION:
-                _alert(state, settings, telegram, admin, "TELEGRAM_AUTH", exc.error_class.value,
-                       "Telegram token veya bot yetkisi reddedildi (401/403).", now, summary)
-            elif exc.status == 409:
-                _alert(state, settings, telegram, admin, "TELEGRAM_WEBHOOK", exc.error_class.value,
-                       "getUpdates 409: botta webhook ayarlı olabilir. deleteWebhook gerekli.", now, summary)
-        mc = update_measurement_status(history, state, settings, now)
-        summary["measurements_updated"] = mc["updated"]
-        summary["measurements_pending"] = mc["PENDING"] + mc["PARTIAL"]
-
-    # ---- 2) İçerik hattı ----
+        _poll_reactions(ctx)
     if settings.paused:
         summary["paused"] = True
         summary["notes"].append("paused=true: toplama, Gemini ve yayın atlandı")
     elif not safe_mode:
-        _content_pipeline(settings, sources, state, history, insights_path, history_path, session, telegram,
-                          generator, secrets, summary, now, url_verifier)
-
-    # ---- 3) Analiz ----
+        _content_pipeline(ctx)
+    insights = analyze(history, settings, now) if not safe_mode else default_insights()
     if not safe_mode:
-        insights = analyze(history, settings, now)
-        write_if_changed(insights_path, insights)
-    else:
-        insights = default_insights()
-
-    # ---- 4) Sağlık ----
-    last_ok = parse_iso(state.get("last_successful_fetch_at")) or parse_iso(state.get("first_run_at")) or now
-    if not settings.paused and now - last_ok >= timedelta(hours=settings.health_alert_hours):
-        _alert(state, settings, telegram, admin, "NO_DATA_24H", ErrorClass.NETWORK_TRANSIENT.value,
-               f"{settings.health_alert_hours} saattir hiçbir kaynaktan veri alınamadı.", now, summary)
-    for sid, st in state.get("source_status", {}).items():
-        if st.get("error_class") == ErrorClass.AUTH_PERMISSION.value:
-            _alert(state, settings, telegram, admin, f"SOURCE_AUTH_{sid}", ErrorClass.AUTH_PERMISSION.value,
-                   f"Kaynak {sid} 401/403 döndürüyor.", now, summary)
-
-    # ---- 5) Yönetici özeti ----
-    key = due_digest_key(settings, state, now)
-    if key:
-        send_admin(telegram, admin, render_digest(summary, history, insights, settings, now))
-        mark_digest_sent(state, key)  # admin yoksa da işaretle: aynı pencerede tekrar denenmez
-        summary["notes"].append(f"özet:{key}")
-
-    # ---- 6) Kayıt ----
-    state["last_run_at"] = iso(now)
-    _prune(state, history, settings, now)
-    state["run_log"].append({k: summary[k] for k in ("started_at", "sources_ok", "new_items", "published",
-                                                      "gemini_calls", "error_classes")})
-    if not safe_mode:
-        write_if_changed(history_path, history)
-    write_if_changed(state_path, state)
+        write_if_changed(ctx.insights_path, insights)
+    _health_checks(ctx)
+    _maybe_digest(ctx, insights)
+    _save(ctx)
     return (2 if safe_mode else 0), _finish(summary)
 
 
-def _content_pipeline(settings, sources, state, history, insights_path, history_path, session, telegram,
-                      generator, secrets, summary, now, url_verifier):
-    result = collect(sources, settings, session, now)
-    summary["sources_checked"], summary["sources_ok"] = result.sources_checked, result.sources_ok
-    summary["error_classes"].extend(result.errors)
-    state.setdefault("source_status", {}).update(result.source_status)
-    if result.sources_ok > 0:
-        state["last_successful_fetch_at"] = iso(now)
+def _default_verifier(session: requests.Session, settings: Settings) -> Verifier:
+    def verifier(url: str, allowed: Sequence[str], hop_domains: Sequence[str]) -> tuple[bool, str]:
+        """Gerçek ağ üzerinden SSRF korumalı URL doğrulaması."""
+        return verify_source_url(url, allowed, session, settings, hop_domains=hop_domains)
+    return verifier
 
-    seen = state.setdefault("seen_items", {})
-    pool = state.setdefault("candidate_pool", {})
-    new_ids: set[str] = set()
+
+# ---- Adımlar -------------------------------------------------------------------------------
+
+def _poll_reactions(ctx: RunContext) -> None:
+    """getUpdates ile reaksiyon sayılarını alır (paused iken de çalışır)."""
+    assert ctx.telegram is not None
+    try:
+        updates = ctx.telegram.get_updates(ctx.state.get("telegram_update_offset"), ALLOWED_UPDATES)
+        ctx.summary["reaction_updates"] = apply_updates(updates, ctx.history, ctx.state)["matched"]
+    except TelegramError as exc:
+        ctx.summary["error_classes"].append(exc.error_class.value)
+        if exc.error_class == ErrorClass.AUTH_PERMISSION:
+            ctx.alert("TELEGRAM_AUTH", exc.error_class.value, "Telegram token veya bot yetkisi reddedildi (401/403).")
+        elif exc.status == 409:
+            ctx.alert("TELEGRAM_WEBHOOK", exc.error_class.value,
+                      "getUpdates 409: botta webhook ayarlı olabilir. deleteWebhook gerekli.")
+    mc = update_measurement_status(ctx.history, ctx.state, ctx.settings, ctx.now)
+    ctx.summary["measurements_updated"] = mc["updated"]
+    ctx.summary["measurements_pending"] = mc["PENDING"] + mc["PARTIAL"]
+
+
+def _ingest(ctx: RunContext) -> None:
+    """Kaynakları toplar, yeni öğeleri aday havuzuna ekler."""
+    result = collect(ctx.sources, ctx.settings, ctx.session, ctx.now, verifier=ctx.verifier)
+    ctx.summary["sources_checked"], ctx.summary["sources_ok"] = result.sources_checked, result.sources_ok
+    ctx.summary["error_classes"].extend(result.errors)
+    ctx.state.setdefault("source_status", {}).update(result.source_status)
+    if result.sources_ok > 0:
+        ctx.state["last_successful_fetch_at"] = iso(ctx.now)
+    seen, pool = ctx.state.setdefault("seen_items", {}), ctx.state.setdefault("candidate_pool", {})
     for it in result.items:
         if it.id in seen:
-            summary["duplicates_or_filtered"] += 1
+            ctx.summary["duplicates_or_filtered"] += 1
             continue
-        seen[it.id] = {"first_seen": iso(now), "status": "NEW", "source": it.source_id}
-        pool[it.id] = {"item": it.to_dict(), "first_seen": iso(now), "needs_eval": True}
-        new_ids.add(it.id)
-    summary["new_items"] = len(new_ids)
+        seen[it.id] = {"first_seen": iso(ctx.now), "status": "NEW", "source": it.source_id}
+        pool[it.id] = {"item": it.to_dict(), "first_seen": iso(ctx.now), "needs_eval": True}
+        ctx.summary["new_items"] += 1
 
-    pool_items = [Item(**v["item"]) for v in pool.values()]
-    to_eval = []
-    for cluster in cluster_items(pool_items, settings.title_similarity_threshold):
+
+def _evaluate(ctx: RunContext) -> list[tuple[list[Item], Assessment]]:
+    """Havuzu olay kümelerine ayırır, değerlendirir; adayları öncelik sırasıyla döndürür."""
+    pool, seen = ctx.state["candidate_pool"], ctx.state["seen_items"]
+    items = [Item(**v["item"]) for v in pool.values()]
+    candidates: list[tuple[list[Item], Assessment]] = []
+    for cluster in cluster_items(items, ctx.settings.cluster_similarity_threshold, ctx.settings.cluster_max_gap_hours):
         if not any(pool[i.id].get("needs_eval") for i in cluster):
             continue
         for i in cluster:
             pool[i.id]["needs_eval"] = False
-        if is_duplicate_of_history(cluster, history, settings, now):
+        if is_duplicate_of_history(cluster, ctx.history, ctx.settings, ctx.now):
             _retire(cluster, pool, seen, "DUPLICATE")
-            summary["duplicates_or_filtered"] += len(cluster)
+            ctx.summary["duplicates_or_filtered"] += len(cluster)
             continue
-        a = assess(cluster, settings, now)
+        a = assess(cluster, ctx.settings, ctx.now)
         if a.decision == "REJECT":
             _retire(cluster, pool, seen, "REJECTED")
-            summary["rejected"] += 1
+            ctx.summary["rejected"] += 1
+            ctx.summary["notes"].append(f"red: {a.reason}"[:160])
         elif a.decision == "HOLD":
             for i in cluster:
                 seen[i.id]["status"] = "HELD"
-            summary["held"] += 1
+            ctx.summary["held"] += 1
         else:
-            to_eval.append((cluster, a))
-    to_eval.sort(key=lambda ca: ca[1].editorial_priority, reverse=True)
+            candidates.append((cluster, a))
+    candidates.sort(key=lambda ca: ca[1].editorial_priority, reverse=True)
+    return candidates
 
-    remaining = settings.max_daily_posts - posts_in_last_24h(history, now)
-    blocked_until = parse_iso(state.get("gemini_quota_blocked_until"))
-    style_hints = load_style_hints(insights_path)
-    generator = generator or GeminiGenerator(secrets.gemini_api_key, secrets.gemini_model)
-    verifier = url_verifier or (lambda url, domains: verify_source_url(url, domains, session, settings))
-    domains_by_source = {s.id: s.allowed_domains for s in sources}
 
-    def persist() -> None:
-        write_json_atomic(history_path, history)
+def _blocked_reason(ctx: RunContext) -> str | None:
+    """Bu çalışmada yeni bir Gemini çağrısı/yayın yapılamıyorsa nedeni."""
+    if ctx.remaining_posts <= 0:
+        ctx.summary["daily_limit_reached"] = True
+        return "günlük limit"
+    since = minutes_since_last_post(ctx.history, ctx.now)
+    if since is not None and since < ctx.settings.min_minutes_between_posts:
+        return "gönderiler arası minimum süre bekleniyor"
+    if ctx.gemini_blocked_until and ctx.now < ctx.gemini_blocked_until:
+        return "Gemini kotası soğuma süresinde"
+    if ctx.summary["gemini_calls"] >= ctx.settings.max_gemini_calls_per_run:
+        return "çalışma başına Gemini limiti"
+    return None
 
-    for cluster, a in to_eval:
-        if remaining <= 0:
-            summary["daily_limit_reached"] = True
+
+def _content_pipeline(ctx: RunContext) -> None:
+    """Toplama → değerlendirme → üretim → yayın."""
+    assert ctx.secrets is not None
+    _ingest(ctx)
+    candidates = _evaluate(ctx)
+    ctx.remaining_posts = ctx.settings.max_daily_posts - posts_today(ctx.history, ctx.now, ctx.settings)
+    ctx.gemini_blocked_until = parse_iso(ctx.state.get("gemini_quota_blocked_until"))
+    ctx.style_hints = load_style_hints(ctx.insights_path)
+    if ctx.generator is None:
+        ctx.generator = GeminiGenerator(ctx.secrets.gemini_api_key, ctx.secrets.gemini_model)
+    pool = ctx.state["candidate_pool"]
+    for cluster, a in candidates:
+        reason = _blocked_reason(ctx)
+        if reason:
+            if reason not in ctx.summary["notes"]:
+                ctx.summary["notes"].append(reason)
             _requeue(cluster, pool)
             continue
-        since = minutes_since_last_post(history, now)
-        if since is not None and since < settings.min_minutes_between_posts:
-            summary["notes"].append("gönderiler arası minimum süre bekleniyor")
-            _requeue(cluster, pool)
-            continue
-        if blocked_until and now < blocked_until:
-            summary["notes"].append("Gemini kotası soğuma süresinde")
-            _requeue(cluster, pool)
-            continue
-        if summary["gemini_calls"] >= settings.max_gemini_calls_per_run:
-            _requeue(cluster, pool)
-            continue
-
-        summary["gemini_calls"] += 1
-        try:
-            raw = generator.generate(SYSTEM_INSTRUCTION, build_prompt(cluster, a, style_hints, settings),
-                                     RESPONSE_JSON_SCHEMA)
-        except GeminiError as exc:
-            summary["gemini_errors"] += 1
-            summary["error_classes"].append(exc.error_class.value)
-            log.warning("Gemini hatası: %s", exc.error_class.value)
-            _requeue(cluster, pool)
-            if exc.error_class == ErrorClass.RATE_LIMIT_QUOTA:
-                blocked_until = now + timedelta(minutes=settings.gemini_quota_cooldown_minutes)
-                state["gemini_quota_blocked_until"] = iso(blocked_until)
-            elif exc.error_class == ErrorClass.AUTH_PERMISSION:
-                blocked_until = now + timedelta(minutes=settings.gemini_quota_cooldown_minutes)
-                state["gemini_quota_blocked_until"] = iso(blocked_until)
-                _alert(state, settings, telegram, secrets.admin_chat_id, "GEMINI_AUTH", exc.error_class.value,
-                       "Gemini anahtarı/model erişimi reddedildi. GEMINI_MODEL ve anahtarı kontrol edin. "
-                       "Ücretli modele otomatik geçiş yapılmaz.", now, summary)
-            continue
-
-        outcome = validate_generated(raw, cluster, a, settings)
-        sources_meta = []
-        for i in sorted(cluster, key=lambda x: {"OFFICIAL": 0, "ESTABLISHED_MEDIA": 1}.get(x.trust_class, 2)):
-            if i.url not in {s["url"] for s in sources_meta}:
-                sources_meta.append({"name": i.source_name, "url": i.url, "source_id": i.source_id})
-        post = {
-            "content_id": a.primary.id,
-            "label": a.label.value,
-            "label_text": LABEL_TEXT[a.label],
-            "category": outcome.content.category if outcome.content else None,
-            "title_style": outcome.content.title_style if outcome.content else None,
-            "title_tr": outcome.content.title_tr if outcome.content else None,
-            "source_strength": a.source_strength,
-            "editorial_priority": a.editorial_priority,
-            "publish_reason": a.reason,
-            "independent_origins": a.independent_origins,
-            "source_urls": [s["url"] for s in sources_meta],
-            "source_titles": [i.title for i in cluster],
-            "content_hashes": sorted({i.content_hash for i in cluster}),
-            "measurement_status": "PENDING",
-            "metrics": {"views": "unavailable", "forwards": "unavailable", "reaction_snapshots": []},
-        }
-        if not outcome.ok:
-            if outcome.error_class:
-                summary["error_classes"].append(outcome.error_class)
-                summary["gemini_errors"] += 1
-            post.update({"publish_status": outcome.status, "publish_error": outcome.reason, "created_at": iso(now),
-                         "measurement_status": "UNAVAILABLE"})
-            history["posts"].append(post)
-            _retire(cluster, pool, seen, outcome.status)
-            summary["review_held" if outcome.status == "REVIEW_HELD" else "rejected"] += 1
-            continue
-
-        if settings.verify_source_urls:
-            bad = None
-            for s in sources_meta[:3]:
-                ok, info = verifier(s["url"], domains_by_source.get(s["source_id"], []))
-                if not ok:
-                    bad = f"{s['source_id']}: {info}"
-                    break
-            if bad:
-                post.update({"publish_status": "REJECTED", "publish_error": f"URL doğrulanamadı ({bad})",
-                             "created_at": iso(now), "measurement_status": "UNAVAILABLE"})
-                history["posts"].append(post)
-                _retire(cluster, pool, seen, "REJECTED")
-                summary["rejected"] += 1
-                continue
-
-        text = render_post(outcome.content, a.label, sources_meta, settings, now)
-        status = publish_post(post=post, text=text, history=history, chat_id=secrets.telegram_chat_id,
-                              telegram=telegram, persist=persist, now=now)
-        if status in ("PUBLISHED", "UNCERTAIN", "SKIPPED_DUPLICATE"):
-            _retire(cluster, pool, seen, "USED")
-            if status == "PUBLISHED":
-                summary["published"] += 1
-                remaining -= 1
-            elif status == "UNCERTAIN":
-                summary["uncertain"] += 1
-                remaining -= 1
-                summary["error_classes"].append(ErrorClass.TELEGRAM_API_ERROR.value)
-        else:  # FAILED / REJECTED: Telegram açıkça reddetti -> sonraki çalışmada yeniden değerlendirilebilir
-            summary["error_classes"].append(ErrorClass.TELEGRAM_API_ERROR.value)
-            if post.get("publish_status") == "FAILED" and "AUTH" in str(post.get("publish_error")):
-                _alert(state, settings, telegram, secrets.admin_chat_id, "TELEGRAM_AUTH",
-                       ErrorClass.AUTH_PERMISSION.value, "Kanala gönderim yetkisi reddedildi.", now, summary)
-            failures = sum(1 for p in history["posts"] if p.get("content_id") == post["content_id"]
-                           and p.get("publish_status") == "FAILED")
-            if failures >= 2:  # sonsuz yeniden deneme ve kota israfı yok
-                _retire(cluster, pool, seen, "FAILED")
-            else:
-                _requeue(cluster, pool)
+        _generate_and_publish(ctx, cluster, a)
 
 
-def _retire(cluster, pool, seen, status: str) -> None:
+def _call_gemini(ctx: RunContext, cluster: list[Item], a: Assessment) -> str | None:
+    """Tek Gemini çağrısı; hata sınıfına göre soğuma/alarm. Başarısızsa None."""
+    assert ctx.generator is not None and ctx.secrets is not None
+    ctx.summary["gemini_calls"] += 1
+    try:
+        return ctx.generator.generate(SYSTEM_INSTRUCTION, build_prompt(a.items or cluster, a, ctx.style_hints,
+                                                                       ctx.settings), RESPONSE_JSON_SCHEMA)
+    except GeminiError as exc:
+        ctx.summary["gemini_errors"] += 1
+        ctx.summary["error_classes"].append(exc.error_class.value)
+        log.warning("Gemini hatası: %s", exc.error_class.value)
+        _requeue(cluster, ctx.state["candidate_pool"])
+        if exc.error_class in (ErrorClass.RATE_LIMIT_QUOTA, ErrorClass.AUTH_PERMISSION):
+            ctx.gemini_blocked_until = ctx.now + timedelta(minutes=ctx.settings.gemini_quota_cooldown_minutes)
+            ctx.state["gemini_quota_blocked_until"] = iso(ctx.gemini_blocked_until)
+        if exc.error_class == ErrorClass.AUTH_PERMISSION:
+            ctx.alert("GEMINI_AUTH", exc.error_class.value,
+                      "Gemini anahtarı/model erişimi reddedildi. GEMINI_MODEL ve anahtarı kontrol edin. "
+                      "Ücretli modele otomatik geçiş yapılmaz.")
+        return None
+
+
+def _sources_meta(items: list[Item]) -> list[dict[str, str]]:
+    """Gösterilecek kaynaklar: önce resmî, sonra medya; URL başına bir kez."""
+    out: list[dict[str, str]] = []
+    rank = {"OFFICIAL": 0, "ESTABLISHED_MEDIA": 1}
+    for i in sorted(items, key=lambda x: rank.get(x.trust_class, 2)):
+        if i.url not in {s["url"] for s in out}:
+            out.append({"name": i.source_name, "url": i.url, "source_id": i.source_id})
+    return out
+
+
+def _post_record(a: Assessment, cluster: list[Item], outcome: ValidationOutcome,
+                 sources_meta: list[dict[str, str]]) -> dict[str, Any]:
+    assert a.label is not None and a.primary is not None
+    c = outcome.content
+    return {
+        "content_id": a.primary.id, "label": a.label.value, "label_text": LABEL_TEXT[a.label],
+        "category": c.category if c else None, "title_style": c.title_style if c else None,
+        "title_tr": c.title_tr if c else None, "source_strength": a.source_strength,
+        "editorial_priority": a.editorial_priority, "publish_reason": a.reason,
+        "independent_origins": a.independent_origins, "source_urls": [s["url"] for s in sources_meta],
+        "source_titles": [i.title for i in cluster], "content_hashes": sorted({i.content_hash for i in cluster}),
+        "measurement_status": "PENDING",
+        "metrics": {"views": "unavailable", "forwards": "unavailable", "reaction_snapshots": []},
+    }
+
+
+def _record_failure(ctx: RunContext, post: dict[str, Any], cluster: list[Item], status: str, reason: str) -> None:
+    post.update({"publish_status": status, "publish_error": reason, "created_at": iso(ctx.now),
+                 "measurement_status": "UNAVAILABLE"})
+    ctx.history["posts"].append(post)
+    _retire(cluster, ctx.state["candidate_pool"], ctx.state["seen_items"], status)
+    ctx.summary["review_held" if status == "REVIEW_HELD" else "rejected"] += 1
+
+
+def _verify_urls(ctx: RunContext, sources_meta: list[dict[str, str]]) -> str | None:
+    """Yayın öncesi kaynak URL doğrulaması; sorun varsa açıklama döner."""
+    if not ctx.settings.verify_source_urls or ctx.verifier is None:
+        return None
+    domains = {s.id: s.allowed_domains for s in ctx.sources}
+    for s in sources_meta[:3]:
+        ok, info = ctx.verifier(s["url"], domains.get(s["source_id"], []), [])
+        if not ok:
+            return f"{s['source_id']}: {info}"
+    return None
+
+
+def _generate_and_publish(ctx: RunContext, cluster: list[Item], a: Assessment) -> None:
+    """Bir aday kümeyi üretir, doğrular ve yayınlar."""
+    assert ctx.secrets is not None and ctx.telegram is not None and a.label is not None
+    raw = _call_gemini(ctx, cluster, a)
+    if raw is None:
+        return
+    used = a.items or cluster
+    outcome = validate_generated(raw, used, a, ctx.settings)
+    sources_meta = _sources_meta(used)
+    post = _post_record(a, cluster, outcome, sources_meta)
+    if not outcome.ok or outcome.content is None:
+        if outcome.error_class:
+            ctx.summary["error_classes"].append(outcome.error_class)
+            ctx.summary["gemini_errors"] += 1
+        _record_failure(ctx, post, cluster, outcome.status, outcome.reason)
+        return
+    bad = _verify_urls(ctx, sources_meta)
+    if bad:
+        _record_failure(ctx, post, cluster, "REJECTED", f"URL doğrulanamadı ({bad})")
+        return
+    text = render_post(outcome.content, a.label, sources_meta, ctx.settings, ctx.now)
+    status = publish_post(post=post, text=text, history=ctx.history, chat_id=ctx.secrets.telegram_chat_id,
+                          telegram=ctx.telegram, persist=ctx.persist_history, now=ctx.now)
+    _after_publish(ctx, cluster, post, status)
+
+
+def _after_publish(ctx: RunContext, cluster: list[Item], post: dict[str, Any], status: str) -> None:
+    pool, seen = ctx.state["candidate_pool"], ctx.state["seen_items"]
+    if status in ("PUBLISHED", "UNCERTAIN", "SKIPPED_DUPLICATE"):
+        _retire(cluster, pool, seen, "USED")
+        if status == "PUBLISHED":
+            ctx.summary["published"] += 1
+            ctx.remaining_posts -= 1
+        elif status == "UNCERTAIN":
+            ctx.summary["uncertain"] += 1
+            ctx.remaining_posts -= 1
+            ctx.summary["error_classes"].append(ErrorClass.TELEGRAM_API_ERROR.value)
+        return
+    ctx.summary["error_classes"].append(ErrorClass.TELEGRAM_API_ERROR.value)
+    if post.get("publish_status") == "FAILED" and "AUTH" in str(post.get("publish_error")):
+        ctx.alert("TELEGRAM_AUTH", ErrorClass.AUTH_PERMISSION.value, "Kanala gönderim yetkisi reddedildi.")
+    failures = sum(1 for p in ctx.history["posts"] if p.get("content_id") == post["content_id"]
+                   and p.get("publish_status") == "FAILED")
+    if failures >= 2:  # sonsuz yeniden deneme ve kota israfı yok
+        _retire(cluster, pool, seen, "FAILED")
+    else:
+        _requeue(cluster, pool)
+
+
+def _health_checks(ctx: RunContext) -> None:
+    """24 saat veri yok ve kalıcı kaynak yetki hataları için tekilleştirilmiş uyarı."""
+    last_ok = (parse_iso(ctx.state.get("last_successful_fetch_at")) or parse_iso(ctx.state.get("first_run_at"))
+               or ctx.now)
+    if not ctx.settings.paused and ctx.now - last_ok >= timedelta(hours=ctx.settings.health_alert_hours):
+        ctx.alert("NO_DATA_24H", ErrorClass.NETWORK_TRANSIENT.value,
+                  f"{ctx.settings.health_alert_hours} saattir hiçbir kaynaktan veri alınamadı.")
+    for sid, st in ctx.state.get("source_status", {}).items():
+        if st.get("error_class") == ErrorClass.AUTH_PERMISSION.value:
+            ctx.alert(f"SOURCE_AUTH_{sid}", ErrorClass.AUTH_PERMISSION.value, f"Kaynak {sid} 401/403 döndürüyor.")
+
+
+def _maybe_digest(ctx: RunContext, insights: dict[str, Any]) -> None:
+    key = due_digest_key(ctx.settings, ctx.state, ctx.now)
+    if key:
+        send_admin(ctx.telegram, ctx.admin, render_digest(ctx.summary, ctx.history, insights, ctx.settings, ctx.now))
+        mark_digest_sent(ctx.state, key)  # admin yoksa da işaretle: aynı pencerede tekrar denenmez
+        ctx.summary["notes"].append(f"özet:{key}")
+
+
+def _save(ctx: RunContext) -> None:
+    ctx.state["last_run_at"] = iso(ctx.now)
+    _prune(ctx.state, ctx.history, ctx.settings, ctx.now)
+    ctx.state["run_log"].append({k: ctx.summary[k] for k in ("started_at", "sources_ok", "new_items", "published",
+                                                              "gemini_calls", "error_classes")})
+    if not ctx.safe_mode:
+        write_if_changed(ctx.history_path, ctx.history, keep_last_good=True)
+    write_if_changed(ctx.state_path, ctx.state, keep_last_good=True)
+
+
+def _prune(state: dict[str, Any], history: dict[str, Any], settings: Settings, now: datetime) -> None:
+    """Saklama sınırları: seen_items, aday havuzu, geçmiş ve çalışma günlüğü."""
+    r = settings.retention_limits
+    cutoff = now - timedelta(hours=max(r.seen_items_max_age_hours, settings.max_item_age_hours + 24))
+    seen = {k: v for k, v in state.get("seen_items", {}).items() if (parse_iso(v.get("first_seen")) or now) >= cutoff}
+    if len(seen) > r.seen_items_max_records:
+        seen = dict(sorted(seen.items(), key=lambda kv: kv[1].get("first_seen") or "")[-r.seen_items_max_records:])
+    state["seen_items"] = seen
+    pool_cutoff = now - timedelta(hours=settings.max_item_age_hours)
+    state["candidate_pool"] = {
+        k: v for k, v in state.get("candidate_pool", {}).items()
+        if (parse_iso(v["item"].get("published_at")) or parse_iso(v.get("first_seen")) or now) >= pool_cutoff}
+    hist_cutoff = now - timedelta(days=r.history_max_age_days)
+    posts = [p for p in history.get("posts", [])
+             if (parse_iso(p.get("published_at") or p.get("created_at")) or now) >= hist_cutoff]
+    history["posts"] = posts[-r.history_max_records:]
+    state["run_log"] = state.get("run_log", [])[-r.run_log_max_records:]
+
+
+def _retire(cluster: list[Item], pool: dict[str, Any], seen: dict[str, Any], status: str) -> None:
     for i in cluster:
         pool.pop(i.id, None)
         if i.id in seen:
             seen[i.id]["status"] = status
 
 
-def _requeue(cluster, pool) -> None:
+def _requeue(cluster: list[Item], pool: dict[str, Any]) -> None:
     for i in cluster:
         if i.id in pool:
             pool[i.id]["needs_eval"] = True
 
 
-def _finish(summary: dict) -> dict:
+def _finish(summary: dict[str, Any]) -> dict[str, Any]:
     summary["finished_at"] = iso(utcnow())
     summary["error_classes"] = sorted(set(summary["error_classes"]))
     return summary
 
 
 def main() -> int:
+    """CLI giriş noktası: ``python -m bot.main``."""
     t0 = time.monotonic()
     try:
         code, summary = run()

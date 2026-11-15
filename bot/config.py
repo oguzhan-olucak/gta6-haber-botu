@@ -30,6 +30,7 @@ _GOOGLE_KEY_RE = re.compile(r"\bAIza[0-9A-Za-z_-]{20,}\b")
 
 
 class ConfigError(Exception):
+    """Ayar dosyası doğrulanamadı."""
     pass
 
 
@@ -40,6 +41,7 @@ class _Strict(BaseModel):
 
 
 class MinSourceStrength(_Strict):
+    """Etiket türüne göre minimum kaynak gücü eşikleri."""
     OFFICIAL: int = Field(90, ge=0, le=100)
     MULTI_SOURCE: int = Field(70, ge=0, le=100)
     SINGLE_SOURCE: int = Field(50, ge=0, le=100)
@@ -47,6 +49,7 @@ class MinSourceStrength(_Strict):
 
 
 class RelevanceKeywords(_Strict):
+    """GTA VI ilgi anahtar kelimeleri (strong: zorunlu, context: ek puan)."""
     strong: list[str] = Field(min_length=1)
     context: list[str] = Field(default_factory=list)
 
@@ -57,6 +60,7 @@ class RelevanceKeywords(_Strict):
 
 
 class ContentLimits(_Strict):
+    """Başlık/özet ve kaynak metni karakter sınırları."""
     title_min_chars: int = Field(15, ge=5)
     title_max_chars: int = Field(110, le=200)
     summary_min_chars: int = Field(60, ge=20)
@@ -65,6 +69,7 @@ class ContentLimits(_Strict):
 
 
 class RetentionLimits(_Strict):
+    """Veri dosyaları saklama sınırları."""
     history_max_records: int = Field(2000, ge=50)
     history_max_age_days: int = Field(180, ge=7)
     seen_items_max_age_hours: int = Field(240, ge=24)
@@ -73,6 +78,7 @@ class RetentionLimits(_Strict):
 
 
 class Settings(_Strict):
+    """config/settings.json şeması (bilinmeyen alan yasak)."""
     paused: bool = False
     brand_name: str = "GTA VI Türkiye Bülteni"
     display_utc_offset_hours: int = Field(3, ge=-12, le=14)
@@ -88,7 +94,11 @@ class Settings(_Strict):
     allow_community_rumors: bool = False
     verify_source_urls: bool = True
     dedup_lookback_hours: int = Field(72, ge=1)
-    title_similarity_threshold: float = Field(0.6, gt=0, le=1)
+    title_similarity_threshold: float = Field(0.45, gt=0, le=1)
+    cluster_similarity_threshold: float = Field(0.27, gt=0, le=1)
+    cluster_max_gap_hours: float = Field(72, gt=0)
+    daily_limit_mode: Literal["calendar_day_local", "rolling_24h"] = "calendar_day_local"
+    reject_injection_suspects: bool = True
     http_timeout_seconds: float = Field(15, gt=0, le=120)
     http_max_retries: int = Field(3, ge=0, le=6)
     http_max_response_bytes: int = Field(2_000_000, ge=10_000)
@@ -112,6 +122,7 @@ class Settings(_Strict):
 
 
 class Source(_Strict):
+    """config/sources.json içindeki tek kaynak."""
     id: str = Field(pattern=r"^[a-z0-9_]{2,40}$")
     name: str
     trust_class: TrustClass
@@ -121,6 +132,16 @@ class Source(_Strict):
     allowed_domains: list[str] = Field(min_length=1)
     origin_group: str
     notes: str = ""
+    kind: Literal["rss", "google_news", "html_listing"] = "rss"
+    link_pattern: str = ""
+    max_verifications_per_run: int = Field(8, ge=1, le=50)
+
+    @field_validator("link_pattern")
+    @classmethod
+    def _regex(cls, v: str) -> str:
+        if v:
+            re.compile(v)
+        return v
 
     @field_validator("feed_url")
     @classmethod
@@ -139,6 +160,7 @@ class Source(_Strict):
 
 
 class SourcesFile(BaseModel):
+    """config/sources.json kök şeması."""
     model_config = ConfigDict(extra="allow")
     sources: list[Source]
 
@@ -152,6 +174,7 @@ class SourcesFile(BaseModel):
 
 
 def load_settings(path: Path | None = None) -> Settings:
+    """settings.json'u okuyup doğrular."""
     path = path or CONFIG_DIR / "settings.json"
     try:
         return Settings.model_validate(read_json(path, dict))
@@ -160,6 +183,7 @@ def load_settings(path: Path | None = None) -> Settings:
 
 
 def load_sources(path: Path | None = None) -> list[Source]:
+    """sources.json'u okuyup doğrular."""
     path = path or CONFIG_DIR / "sources.json"
     try:
         return SourcesFile.model_validate(read_json(path, dict)).sources
@@ -171,6 +195,7 @@ def load_sources(path: Path | None = None) -> list[Source]:
 
 @dataclass(frozen=True)
 class Secrets:
+    """Ortam değişkenlerinden gelen gizli değerler (repr maskeli)."""
     gemini_api_key: str
     telegram_bot_token: str
     telegram_chat_id: str
@@ -205,6 +230,7 @@ def load_secrets(env: Mapping[str, str] | None = None) -> tuple[Secrets | None, 
 # ---- Secret maskeleyen loglama ------------------------------------------------------
 
 def redact(text: str, extra_secrets: list[str] | None = None) -> str:
+    """Metindeki bilinen secret değerlerini ve token/anahtar biçimlerini *** ile maskeler."""
     if not text:
         return text
     secrets = [os.environ.get(n, "") for n in SECRET_ENV_NAMES]
@@ -218,7 +244,9 @@ def redact(text: str, extra_secrets: list[str] | None = None) -> str:
 
 
 class RedactingFilter(logging.Filter):
+    """Her log kaydını (traceback dahil) maskeleyen logging filtresi."""
     def filter(self, record: logging.LogRecord) -> bool:
+        """Kaydı maskeler; her zaman True döner."""
         try:
             msg = record.getMessage()
         except Exception:  # pragma: no cover - bozuk format
@@ -235,6 +263,7 @@ class RedactingFilter(logging.Filter):
 
 
 def setup_logging(level: int = logging.INFO) -> logging.Logger:
+    """gta6bot logger'ını maskeleme filtresiyle kurar."""
     logger = logging.getLogger("gta6bot")
     logger.setLevel(level)
     if not any(isinstance(f, RedactingFilter) for f in logger.filters):

@@ -12,6 +12,7 @@ __version__ = "1.0.0"
 
 
 class ErrorClass(str, Enum):
+    """Brifteki hata sınıfları."""
     NETWORK_TRANSIENT = "NETWORK_TRANSIENT"
     RATE_LIMIT_QUOTA = "RATE_LIMIT_QUOTA"
     AUTH_PERMISSION = "AUTH_PERMISSION"
@@ -29,16 +30,19 @@ def backoff_delay(attempt: int, base: float = 1.0, cap: float = 30.0, rng: rando
 
 
 def utcnow() -> datetime:
+    """Şu anki UTC zamanı."""
     return datetime.now(timezone.utc)
 
 
 def iso(dt: datetime | None) -> str | None:
+    """Datetime → saniye hassasiyetinde ISO 8601 UTC (Z) dizesi."""
     if dt is None:
         return None
     return dt.astimezone(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
 def parse_iso(value: str | None) -> datetime | None:
+    """ISO 8601 dizesini UTC datetime'a çevirir; geçersizse None."""
     if not value:
         return None
     try:

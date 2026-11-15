@@ -3,8 +3,15 @@ import socket
 
 import pytest
 
-from bot.collector import (FetchError, canonicalize_url, collect, detect_cited_origins, domain_allowed,
-                           parse_feed, verify_source_url)
+from bot.collector import (
+    FetchError,
+    canonicalize_url,
+    collect,
+    detect_cited_origins,
+    domain_allowed,
+    parse_feed,
+    verify_source_url,
+)
 from tests.conftest import NOW, FakeResponse, rss
 
 

@@ -33,6 +33,7 @@ def _reaction_key(r: dict) -> str:
 
 
 def ensure_metrics(post: dict) -> dict:
+    """Gönderide metrik alanlarını (views/forwards = unavailable) garanti eder."""
     m = post.setdefault("metrics", {})
     m.setdefault("views", UNAVAILABLE)
     m.setdefault("forwards", UNAVAILABLE)
@@ -86,16 +87,18 @@ def apply_updates(updates: list[dict], history: dict, state: dict) -> dict:
 
 
 def reactions_at_window(post: dict, window_hours: int) -> int | None:
+    """Yayından sonraki ölçüm penceresi sonundaki son toplam reaksiyon sayısı."""
     published = parse_iso(post.get("published_at"))
     snaps = (post.get("metrics") or {}).get("reaction_snapshots") or []
     if not published or not snaps:
         return None
     limit = published + timedelta(hours=window_hours)
-    eligible = [s for s in snaps if s.get("at") and parse_iso(s["at"]) <= limit]
+    eligible = [s for s in snaps if (t := parse_iso(s.get("at"))) is not None and t <= limit]
     return eligible[-1]["total"] if eligible else None
 
 
 def update_measurement_status(history: dict, state: dict, settings: Settings, now: datetime) -> dict:
+    """Yayınlanan gönderilerin ölçüm durumunu (PENDING/PARTIAL/COMPLETE/UNAVAILABLE) günceller."""
     counts = {"PENDING": 0, "PARTIAL": 0, "COMPLETE": 0, "UNAVAILABLE": 0, "updated": 0}
     for p in history.get("posts", []):
         if p.get("publish_status") != "PUBLISHED":
@@ -112,8 +115,8 @@ def update_measurement_status(history: dict, state: dict, settings: Settings, no
             elif m["reaction_snapshots"]:
                 # Pencere içinde snapshot yok ama sonradan var: ilk değer pencereyi temsil etmez.
                 status = "PARTIAL"
-            elif state.get("reaction_pipeline_verified") and parse_iso(state.get("reaction_pipeline_since") or "") \
-                    and parse_iso(state["reaction_pipeline_since"]) <= published:
+            elif state.get("reaction_pipeline_verified") and (since := parse_iso(state.get("reaction_pipeline_since"))) \
+                    and since <= published:
                 # Kanal için reaksiyon akışı kanıtlanmış ve bu gönderi için hiç güncelleme gelmemiş:
                 # 0 reaksiyon olarak çıkarsanır, açıkça işaretlenir.
                 status, m["reactions_24h"], m["reactions_24h_inferred_zero"] = "COMPLETE", 0, True
@@ -132,6 +135,7 @@ def _group_stats(values: list[int]) -> dict:
 
 
 def analyze(history: dict, settings: Settings, now: datetime) -> dict:
+    """Kategori ve başlık stiline göre etkileşim analizi; yetersiz örneklemde kazanan ilan etmez."""
     measured = [p for p in history.get("posts", []) if p.get("measurement_status") == "COMPLETE"
                 and isinstance((p.get("metrics") or {}).get("reactions_24h"), int)]
     by_cat: dict[str, list[int]] = defaultdict(list)
@@ -142,10 +146,10 @@ def analyze(history: dict, settings: Settings, now: datetime) -> dict:
         by_cat[p.get("category", "OTHER")].append(v)
         by_style[p.get("title_style", "FACTUAL")].append(v)
         cross[p.get("category", "OTHER")][p.get("title_style", "FACTUAL")] += 1
-    published_times = [parse_iso(p.get("published_at")) for p in measured]
-    published_times = [t for t in published_times if t]
+    published_times = [t for t in (parse_iso(p.get("published_at")) for p in measured) if t is not None]
 
     def rank(groups: dict[str, list[int]]) -> dict:
+        """Gruplar arasında medyana göre sıralama (her grupta n ≥ min_sample_per_group şartıyla)."""
         eligible = {k: v for k, v in groups.items() if len(v) >= settings.min_sample_per_group}
         if len(eligible) < 2:
             return {"result": "YETERSİZ VERİ",

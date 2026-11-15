@@ -2,8 +2,15 @@ import json
 
 import pytest
 
-from bot.storage import (CorruptDataError, FileLock, LockError, default_state, read_json,
-                         write_if_changed, write_json_atomic)
+from bot.storage import (
+    CorruptDataError,
+    FileLock,
+    LockError,
+    default_state,
+    read_json,
+    write_if_changed,
+    write_json_atomic,
+)
 
 
 def test_atomic_write_and_read_roundtrip(tmp_path):

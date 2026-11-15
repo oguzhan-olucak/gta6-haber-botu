@@ -1,18 +1,15 @@
 """Uçtan uca (mock) testler: kabul #1, #5, #7, #8, #9, #12, #13, #14 + şablon ve Telegram istemcisi."""
 import json
 import logging
-import shutil
 from datetime import timedelta
-from pathlib import Path
 
 import pytest
 import requests
 
 from bot import main as bot_main
-from bot.config import RedactingFilter, redact
+from bot.config import redact
 from bot.processor import GeminiError, GeneratedContent, Label
 from bot.publisher import due_digest_key, mark_digest_sent, publish_post, render_post
-from bot.storage import write_json_atomic
 from bot.telegram_client import TelegramClient, TelegramUncertainError
 from tests.conftest import DUMMY_GEMINI_KEY, DUMMY_TELEGRAM_TOKEN, NOW, ROOT, FakeResponse, rss
 
@@ -109,12 +106,22 @@ def make_env(tmp_path, feed_items, **settings_over):
     return cfg, data, FakeSession(feeds)
 
 
+HEADLINES = [
+    ("GTA 6 preload size is 150GB on PlayStation 5", "Storage requirement listed on the store page."),
+    ("Take-Two CEO Strauss Zelnick talks GTA 6 marketing budget", "Zelnick spoke at an investor conference."),
+    ("GTA 6 soundtrack features licensed Miami radio stations", "Radio stations and music licensing details."),
+    ("Rockstar union files new tribunal claim over GTA 6 dismissals", "The IWGB union filed another claim."),
+    ("GTA 6 physical edition box art spotted at retailer", "A retailer displayed the boxed edition."),
+    ("Lucia voice actress interviewed about GTA 6 role", "The performer discussed motion capture sessions."),
+    ("GTA 6 accessibility options detailed in support page", "Subtitles, colour filters and controls listed."),
+    ("Xbox Series S performance target for GTA 6 discussed", "Digital Foundry analysed resolution targets."),
+]
+
+
 def items(n, prefix="Story"):
-    words = ["alpha", "bravo", "charlie", "delta", "echo", "foxtrot", "golf", "hotel", "india", "juliet",
-             "kilo", "lima"]
-    return [{"title": f"GTA 6 {words[i]} {prefix} unique headline {words[-1 - i]} topic",
+    return [{"title": t if prefix == "Story" else f"{t} ({prefix})",
              "link": f"https://www.eurogamer.net/gta-6-{prefix.lower()}-{i}",
-             "description": f"GTA 6 report about {words[i]}."} for i in range(n)]
+             "description": f"GTA 6: {d}"} for i, (t, d) in enumerate(HEADLINES[:n])]
 
 
 def go(cfg, data, session, tg, gen, now=NOW, env=ENV):

@@ -30,6 +30,7 @@ class CorruptDataError(Exception):
 
 
 class LockError(Exception):
+    """Başka bir çalışma kilidi tutuyor."""
     pass
 
 
@@ -38,6 +39,7 @@ def _utc_stamp() -> str:
 
 
 def backup_corrupt(path: Path) -> Path | None:
+    """Bozuk dosyanın zaman damgalı .corrupt.<ts>.bak kopyasını alır."""
     path = Path(path)
     if not path.exists():
         return None
@@ -77,11 +79,18 @@ def read_json(path: Path | str, default_factory: Callable[[], Any], expect_type:
     return data
 
 
-def write_json_atomic(path: Path | str, data: Any) -> None:
-    """Geçici dosya + fsync + os.replace ile atomik yazım."""
+def lastgood_path(path: Path | str) -> Path:
+    """Son sağlam kopyanın yolu: ``state.json`` → ``state.lastgood.json``."""
     path = Path(path)
+    return path.with_name(f"{path.stem}.lastgood{path.suffix}")
+
+
+def _dump(data: Any) -> str:
+    return json.dumps(data, ensure_ascii=False, indent=2, sort_keys=False) + "\n"
+
+
+def _atomic_write_text(path: Path, payload: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    payload = json.dumps(data, ensure_ascii=False, indent=2, sort_keys=False) + "\n"
     fd, tmp_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=str(path.parent))
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as fh:
@@ -97,18 +106,59 @@ def write_json_atomic(path: Path | str, data: Any) -> None:
         raise
 
 
-def write_if_changed(path: Path | str, data: Any) -> bool:
-    """Yalnızca içerik değiştiyse yaz (gereksiz git commit'lerini önler)."""
+def write_json_atomic(path: Path | str, data: Any, *, keep_last_good: bool = False) -> None:
+    """Geçici dosya + fsync + os.replace ile atomik yazım. ``keep_last_good`` ise aynı içerik
+    ``<ad>.lastgood.json`` dosyasına da atomik yazılır (otomatik kurtarma kaynağı)."""
     path = Path(path)
-    new_payload = json.dumps(data, ensure_ascii=False, indent=2, sort_keys=False) + "\n"
+    payload = _dump(data)
+    _atomic_write_text(path, payload)
+    if keep_last_good:
+        _atomic_write_text(lastgood_path(path), payload)
+
+
+def write_if_changed(path: Path | str, data: Any, *, keep_last_good: bool = False) -> bool:
+    """Yalnızca içerik değiştiyse yaz (gereksiz git commit'lerini önler).
+    ``keep_last_good`` ise son sağlam kopya eksik/farklı olduğunda onu da günceller."""
+    path = Path(path)
+    new_payload = _dump(data)
+    changed = True
     if path.exists():
         try:
-            if path.read_text(encoding="utf-8") == new_payload:
-                return False
+            changed = path.read_text(encoding="utf-8") != new_payload
         except (OSError, UnicodeDecodeError):
-            pass
-    write_json_atomic(path, data)
-    return True
+            changed = True
+    if changed:
+        _atomic_write_text(path, new_payload)
+    if keep_last_good:
+        lg = lastgood_path(path)
+        try:
+            same = lg.exists() and lg.read_text(encoding="utf-8") == new_payload
+        except (OSError, UnicodeDecodeError):
+            same = False
+        if not same:
+            _atomic_write_text(lg, new_payload)
+    return changed
+
+
+def read_json_recovering(path: Path | str, default_factory: Callable[[], Any],
+                         expect_type: type = dict) -> tuple[Any, CorruptDataError | None]:
+    """``read_json`` gibi; ana dosya bozuksa ``<ad>.lastgood.json`` sağlamsa ondan **otomatik
+    kurtarır**: bozuk dosyanın yedeği alınır, ana dosya son sağlam içerikle atomik olarak
+    yeniden yazılır. Dönüş: (veri, kurtarıldıysa orijinal hata, değilse None).
+    Son sağlam kopya da yoksa/bozuksa orijinal ``CorruptDataError`` yükseltilir."""
+    path = Path(path)
+    try:
+        return read_json(path, default_factory, expect_type), None
+    except CorruptDataError as exc:
+        lg = lastgood_path(path)
+        if not lg.exists():
+            raise
+        try:
+            data = read_json(lg, default_factory, expect_type)
+        except CorruptDataError:
+            raise exc from None
+        _atomic_write_text(path, _dump(data))
+        return data, exc
 
 
 class FileLock:
@@ -121,6 +171,7 @@ class FileLock:
         self._held = False
 
     def acquire(self) -> None:
+        """Kilidi alır; eski (bayat) kilit dosyasını temizler."""
         self.path.parent.mkdir(parents=True, exist_ok=True)
         for _ in range(2):
             try:
@@ -137,10 +188,11 @@ class FileLock:
                 if age > self.stale_after:
                     self.path.unlink(missing_ok=True)
                     continue
-                raise LockError("Başka bir çalışma sürüyor (kilit dosyası mevcut).")
+                raise LockError("Başka bir çalışma sürüyor (kilit dosyası mevcut).") from None
         raise LockError("Kilit alınamadı.")
 
     def release(self) -> None:
+        """Kilidi bırakır."""
         if self._held:
             self.path.unlink(missing_ok=True)
             self._held = False
@@ -156,6 +208,7 @@ class FileLock:
 # ---- Varsayılan veri şekilleri -------------------------------------------------
 
 def default_state() -> dict:
+    """Boş state.json şekli."""
     return {
         "schema_version": 1,
         "last_run_at": None,
@@ -173,8 +226,10 @@ def default_state() -> dict:
 
 
 def default_history() -> dict:
+    """Boş history.json şekli."""
     return {"schema_version": 1, "posts": []}
 
 
 def default_insights() -> dict:
+    """Nötr insights.json şekli."""
     return {"schema_version": 1, "status": "YETERSİZ VERİ", "prompt_hints": {}}

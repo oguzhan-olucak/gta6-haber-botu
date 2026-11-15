@@ -7,6 +7,7 @@
   "max_gemini_calls_per_run": 4,
   "gemini_quota_cooldown_minutes": 60,
   "max_daily_posts": 8,
+  "daily_limit_mode": "calendar_day_local",
   "min_minutes_between_posts": 30,
   "min_publish_threshold": 55,
   "min_source_strength": {
@@ -17,13 +18,19 @@
   },
   "allow_single_source_media": true,
   "allow_community_rumors": false,
+  "reject_injection_suspects": true,
   "verify_source_urls": true,
   "dedup_lookback_hours": 72,
-  "title_similarity_threshold": 0.6,
+  "title_similarity_threshold": 0.45,
+  "cluster_similarity_threshold": 0.27,
+  "cluster_max_gap_hours": 72,
   "http_timeout_seconds": 15,
   "http_max_retries": 3,
   "http_max_response_bytes": 2000000,
-  "digest_hours_utc": [6, 18],
+  "digest_hours_utc": [
+    6,
+    18
+  ],
   "digest_window_minutes": 90,
   "health_alert_hours": 24,
   "alert_dedup_hours": 6,
@@ -31,8 +38,22 @@
   "min_sample_per_group": 5,
   "early_signal_below_n": 15,
   "relevance_keywords": {
-    "strong": ["gta vi", "gta 6", "gta6", "grand theft auto vi", "grand theft auto 6"],
-    "context": ["leonida", "vice city", "lucia", "jason", "rockstar", "take-two", "take two"]
+    "strong": [
+      "gta vi",
+      "gta 6",
+      "gta6",
+      "grand theft auto vi",
+      "grand theft auto 6"
+    ],
+    "context": [
+      "leonida",
+      "vice city",
+      "lucia",
+      "jason",
+      "rockstar",
+      "take-two",
+      "take two"
+    ]
   },
   "content_limits": {
     "title_min_chars": 15,

@@ -12,12 +12,17 @@ from __future__ import annotations
 import html
 import logging
 from datetime import datetime, timedelta, timezone
-from typing import Callable
+from typing import TYPE_CHECKING, Any, Callable
 
 from . import ErrorClass, iso, parse_iso
 from .config import Settings
-from .processor import LABEL_NOTE, LABEL_TEXT, GeneratedContent, Label
-from .telegram_client import TelegramClient, TelegramError, TelegramUncertainError
+from .gemini import GeneratedContent
+from .labels import LABEL_NOTE, LABEL_TEXT, Label
+from .telegram_client import TelegramError, TelegramUncertainError
+from .textutil import tr_upper
+
+if TYPE_CHECKING:
+    from .telegram_client import MessageSender
 
 log = logging.getLogger("gta6bot")
 
@@ -45,16 +50,12 @@ TR_MONTHS = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "
              "Kasım", "Aralık"]
 
 
-def tr_upper(text: str) -> str:
-    """Türkçe büyük harf: i -> İ, ı -> I (str.upper() 'i'yi 'I' yapar)."""
-    return (text or "").replace("i", "İ").replace("ı", "I").upper()
-
-
 def _e(text: str) -> str:
     return html.escape(text or "", quote=True)
 
 
 def format_local(dt: datetime, offset_hours: int) -> str:
+    """Tarihi Türkçe ay adlarıyla yerel saat diliminde biçimlendirir (ör. 16 Kasım 2026, 21:40 TSİ)."""
     local = dt.astimezone(timezone(timedelta(hours=offset_hours)))
     suffix = "TSİ" if offset_hours == 3 else f"UTC{offset_hours:+d}"
     return f"{local.day} {TR_MONTHS[local.month - 1]} {local.year}, {local:%H:%M} {suffix}"
@@ -90,34 +91,51 @@ def render_post(content: GeneratedContent, label: Label, sources: list[dict], se
 
 # ---- Limitler -----------------------------------------------------------------------------
 
-def posts_in_last_24h(history: dict, now: datetime) -> int:
+def _post_time(p: dict[str, Any]) -> datetime | None:
+    return parse_iso(p.get("published_at") or p.get("created_at"))
+
+
+def local_tz(settings: Settings) -> timezone:
+    """Yerel saat dilimi (varsayılan TRT, UTC+3; Türkiye 2016'dan beri yaz saati uygulamıyor)."""
+    return timezone(timedelta(hours=settings.display_utc_offset_hours))
+
+
+def posts_in_last_24h(history: dict[str, Any], now: datetime) -> int:
+    """Kayan 24 saatlik pencerede etkin (gönderilmiş/belirsiz) gönderi sayısı."""
     cutoff = now - timedelta(hours=24)
-    n = 0
-    for p in history.get("posts", []):
-        if p.get("publish_status") in ACTIVE_STATUSES:
-            t = parse_iso(p.get("published_at") or p.get("created_at"))
-            if t and t >= cutoff:
-                n += 1
-    return n
+    return sum(1 for p in history.get("posts", []) if p.get("publish_status") in ACTIVE_STATUSES
+               and (t := _post_time(p)) is not None and t >= cutoff)
 
 
-def minutes_since_last_post(history: dict, now: datetime) -> float | None:
-    times = [parse_iso(p.get("published_at") or p.get("created_at")) for p in history.get("posts", [])
-             if p.get("publish_status") in ACTIVE_STATUSES]
-    times = [t for t in times if t]
+def posts_today(history: dict[str, Any], now: datetime, settings: Settings) -> int:
+    """Günlük limit sayacı. ``calendar_day_local``: yerel (TRT) takvim günü — sayaç yerel
+    gece yarısı sıfırlanır, UTC gece yarısı (TRT 03:00) etkilemez. ``rolling_24h``: kayan pencere."""
+    if settings.daily_limit_mode == "rolling_24h":
+        return posts_in_last_24h(history, now)
+    tz = local_tz(settings)
+    today = now.astimezone(tz).date()
+    return sum(1 for p in history.get("posts", []) if p.get("publish_status") in ACTIVE_STATUSES
+               and (t := _post_time(p)) is not None and t.astimezone(tz).date() == today)
+
+
+def minutes_since_last_post(history: dict[str, Any], now: datetime) -> float | None:
+    """Son etkin gönderiden bu yana geçen dakika (yoksa None)."""
+    times = [t for p in history.get("posts", []) if p.get("publish_status") in ACTIVE_STATUSES
+             and (t := _post_time(p)) is not None]
     if not times:
         return None
     return (now - max(times)).total_seconds() / 60
 
 
 def already_handled(history: dict, content_id: str) -> bool:
+    """Bu içerik kimliği daha önce gönderildi/gönderiliyor/belirsiz mi?"""
     return any(p.get("content_id") == content_id and p.get("publish_status") in ACTIVE_STATUSES
                for p in history.get("posts", []))
 
 
 # ---- Yayın --------------------------------------------------------------------------------
 
-def publish_post(*, post: dict, text: str, history: dict, chat_id: str, telegram: TelegramClient,
+def publish_post(*, post: dict, text: str, history: dict, chat_id: str, telegram: "MessageSender",
                  persist: Callable[[], None], now: datetime) -> str:
     """Tek gönderiyi idempotent yayınlar. Dönen değer: yeni publish_status."""
     if not post.get("source_urls"):
@@ -167,22 +185,26 @@ def due_digest_key(settings: Settings, state: dict, now: datetime) -> str | None
 
 
 def mark_digest_sent(state: dict, key: str) -> None:
+    """Özet anahtarını kaydeder (son 20 anahtar tutulur)."""
     sent = state.setdefault("digests_sent", [])
     sent.append(key)
     del sent[:-20]
 
 
 def should_alert(state: dict, alert_key: str, settings: Settings, now: datetime) -> bool:
+    """Aynı uyarı anahtarı son alert_dedup_hours içinde gönderilmediyse True."""
     last = parse_iso(state.get("alerts_last_sent", {}).get(alert_key))
     return last is None or now - last >= timedelta(hours=settings.alert_dedup_hours)
 
 
 def mark_alert(state: dict, alert_key: str, now: datetime) -> None:
+    """Uyarı anahtarının son gönderim zamanını kaydeder."""
     state.setdefault("alerts_last_sent", {})[alert_key] = iso(now)
 
 
 def render_digest(summary: dict, history: dict, insights: dict, settings: Settings, now: datetime) -> str:
-    published = posts_in_last_24h(history, now)
+    """Günde iki kez gönderilen yönetici özeti metni (Telegram HTML)."""
+    published = posts_today(history, now, settings)
     uncertain = sum(1 for p in history.get("posts", []) if p.get("publish_status") == "UNCERTAIN")
     held = sum(1 for p in history.get("posts", []) if p.get("publish_status") == "REVIEW_HELD"
                and (parse_iso(p.get("created_at")) or now) >= now - timedelta(hours=24))
@@ -192,7 +214,7 @@ def render_digest(summary: dict, history: dict, insights: dict, settings: Settin
         f"<i>{_e(format_local(now, settings.display_utc_offset_hours))}</i>",
         "",
         f"Durum: <b>{_e(state_line)}</b>",
-        f"Son 24 saatte yayın: <b>{published}</b> / {settings.max_daily_posts}",
+        f"Bugünkü yayın: <b>{published}</b> / {settings.max_daily_posts}",
         f"İncelemeye takılan (yayınlanmadı): {held}",
         f"Belirsiz gönderim (elle kontrol): {uncertain}",
         f"Son çalışma: kaynak {summary.get('sources_ok', 0)}/{summary.get('sources_checked', 0)}, "
@@ -206,13 +228,15 @@ def render_digest(summary: dict, history: dict, insights: dict, settings: Settin
 
 
 def render_alert(error_class: str, detail: str, settings: Settings, now: datetime) -> str:
+    """Acil uyarı metni (Telegram HTML)."""
     return (f"⚠️ <b>{_e(settings.brand_name)} · ACİL UYARI</b>\n"
             f"Sınıf: <code>{_e(error_class)}</code>\n{_e(detail)}\n"
             f"<i>{_e(format_local(now, settings.display_utc_offset_hours))} · aynı uyarı "
             f"{settings.alert_dedup_hours} saat tekrarlanmaz</i>")
 
 
-def send_admin(telegram: TelegramClient | None, admin_chat_id: str | None, text: str) -> bool:
+def send_admin(telegram: "MessageSender | None", admin_chat_id: str | None, text: str) -> bool:
+    """Yönetici sohbetine mesaj gönderir; tanımlı değilse yalnızca loglar."""
     if not telegram or not admin_chat_id:
         log.info("ADMIN_CHAT_ID tanımlı değil; yönetici mesajı yalnızca loglandı")
         return False
@@ -224,6 +248,6 @@ def send_admin(telegram: TelegramClient | None, admin_chat_id: str | None, text:
         return False
 
 
-__all__ = ["render_post", "publish_post", "posts_in_last_24h", "minutes_since_last_post", "due_digest_key",
+__all__ = ["render_post", "publish_post", "posts_in_last_24h", "posts_today", "minutes_since_last_post", "due_digest_key",
            "mark_digest_sent", "should_alert", "mark_alert", "render_digest", "render_alert", "send_admin",
            "ErrorClass"]

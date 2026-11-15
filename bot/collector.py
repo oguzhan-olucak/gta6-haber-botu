@@ -1,9 +1,12 @@
-"""RSS/Atom toplama, URL canonicalization, alan adı eşleşmesi ve SSRF korumalı URL doğrulama.
+"""Kaynak toplama: RSS/Atom, Google News (alan adı kısıtlı) ve HTML liste sayfaları.
 
-- XML ``defusedxml`` ile ayrıştırılır (XXE / billion laughs koruması).
+- XML ``defusedxml`` ile ayrıştırılır (XXE / billion laughs koruması). Geçersiz UTF-8 baytları
+  içeren besleme reddedilmez; bayt düzeyinde onarılıp yeniden ayrıştırılır.
 - Her kaynak izole işlenir: bir kaynağın hatası diğerlerini durdurmaz.
 - Öğe bağlantısı, kaynağın ``allowed_domains`` listesine uymuyorsa atılır.
-- Kaynak sınıfı (trust_class) yalnızca sources.json'dan gelir; LLM'ye sorulmaz.
+- Kaynak sınıfı (``trust_class``) yalnızca ``sources.json``'dan gelir; LLM'ye sorulmaz.
+- ``OFFICIAL`` sınıfındaki her öğenin URL'si SSRF korumalı olarak doğrulanır; nihai URL resmî
+  alan adında değilse öğe atılır (``url_verified=True`` yalnızca bu kontrolden geçenlere verilir).
 """
 from __future__ import annotations
 
@@ -14,12 +17,10 @@ import logging
 import re
 import socket
 import time
-import unicodedata
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
-from html.parser import HTMLParser
-from typing import Callable, Iterable
+from typing import Any, Callable, Iterable, Sequence
 from urllib.parse import parse_qsl, urlencode, urljoin, urlsplit, urlunsplit
 
 import requests
@@ -28,6 +29,17 @@ from defusedxml.common import DefusedXmlException
 
 from . import ErrorClass, backoff_delay, iso
 from .config import Settings, Source
+from .official import (
+    clean_google_news_title,
+    decode_google_news_offline,
+    google_news_source_url,
+    is_google_news_url,
+    parse_html_listing,
+)
+from .textutil import normalize_text, repair_feed_bytes, strip_html, truncate
+
+__all__ = ["Item", "CollectResult", "FetchError", "canonicalize_url", "domain_allowed", "collect", "parse_feed",
+           "verify_source_url", "strip_html", "normalize_text", "content_hash", "url_id", "detect_cited_origins"]
 
 log = logging.getLogger("gta6bot")
 
@@ -35,9 +47,16 @@ USER_AGENT = "GTA6-TR-NewsBot/1.0 (+RSS reader; contact via repository)"
 TRACKING_PARAMS = {"fbclid", "gclid", "dclid", "mc_cid", "mc_eid", "igshid", "ref", "ref_src", "cmpid", "icid",
                    "ito", "taid", "ocid", "_ga"}
 ATOM_NS = "{http://www.w3.org/2005/Atom}"
+TITLE_MAX_CHARS = 300
+
+
+Verifier = Callable[[str, Sequence[str], Sequence[str]], tuple[bool, str]]
+"""URL doğrulayıcı: (url, nihai izinli alan adları, ara adım alan adları) → (geçti mi, nihai URL/neden)."""
 
 
 class FetchError(Exception):
+    """Kaynak alınamadı veya ayrıştırılamadı."""
+
     def __init__(self, error_class: ErrorClass, message: str, status: int | None = None):
         self.error_class = error_class
         self.status = status
@@ -46,26 +65,31 @@ class FetchError(Exception):
 
 @dataclass
 class Item:
-    id: str                 # canonical URL'nin sha256'sı
+    """Toplanan tek haber öğesi (normalize edilmiş)."""
+    id: str
     source_id: str
     source_name: str
     trust_class: str
     origin_group: str
     title: str
-    url: str                # canonical URL
+    url: str
     summary: str
     published_at: str | None
     content_hash: str
     cited_origins: list[str] = field(default_factory=list)
+    url_verified: bool = False
+    via: str = "rss"
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
+        """JSON'a yazılabilir sözlük."""
         return asdict(self)
 
 
 @dataclass
 class CollectResult:
+    """Bir toplama turunun sonucu."""
     items: list[Item]
-    source_status: dict[str, dict]
+    source_status: dict[str, dict[str, Any]]
     sources_checked: int
     sources_ok: int
     errors: list[str]
@@ -74,18 +98,20 @@ class CollectResult:
 # ---- URL yardımcıları -------------------------------------------------------------
 
 def canonicalize_url(url: str) -> str:
-    """Şema/host küçük harf, https'e zorla, fragment ve takip parametrelerini at, sorguyu sırala."""
-    url = (url or "").strip()
-    parts = urlsplit(url)
-    scheme = parts.scheme.lower()
-    if scheme not in ("http", "https"):
+    """Şema/host küçük harf, https'e zorla, ``www.`` ve fragment'i at, takip parametrelerini sil,
+    sorguyu sırala. Geçersiz/desteklenmeyen şemada boş dize döner."""
+    parts = urlsplit((url or "").strip())
+    if parts.scheme.lower() not in ("http", "https"):
         return ""
     host = (parts.hostname or "").lower().rstrip(".")
     if not host:
         return ""
     if host.startswith("www."):
         host = host[4:]
-    port = parts.port
+    try:
+        port = parts.port
+    except ValueError:
+        return ""
     netloc = host if port in (None, 80, 443) else f"{host}:{port}"
     query = [(k, v) for k, v in parse_qsl(parts.query, keep_blank_values=False)
              if not k.lower().startswith("utm_") and k.lower() not in TRACKING_PARAMS]
@@ -96,11 +122,13 @@ def canonicalize_url(url: str) -> str:
 
 
 def host_of(url: str) -> str:
+    """``www.`` öneki atılmış küçük harfli host."""
     h = (urlsplit(url).hostname or "").lower().rstrip(".")
     return h[4:] if h.startswith("www.") else h
 
 
 def domain_allowed(url: str, allowed_domains: Iterable[str]) -> bool:
+    """Host, izinli alan adlarından birine eşit veya onun alt alan adı mı (nokta sınırıyla)?"""
     host = host_of(url)
     if not host:
         return False
@@ -112,60 +140,21 @@ def domain_allowed(url: str, allowed_domains: Iterable[str]) -> bool:
 
 
 def url_id(canonical_url: str) -> str:
+    """Canonical URL'nin kısa sha256 özeti (öğe kimliği)."""
     return hashlib.sha256(canonical_url.encode("utf-8")).hexdigest()[:24]
 
 
-# ---- Metin yardımcıları ---------------------------------------------------------
-
-class _TextExtractor(HTMLParser):
-    def __init__(self) -> None:
-        super().__init__(convert_charrefs=True)
-        self.parts: list[str] = []
-        self._skip = 0
-
-    def handle_starttag(self, tag, attrs):
-        if tag in ("script", "style"):
-            self._skip += 1
-
-    def handle_endtag(self, tag):
-        if tag in ("script", "style") and self._skip:
-            self._skip -= 1
-
-    def handle_data(self, data):
-        if not self._skip:
-            self.parts.append(data)
-
-
-def strip_html(text: str) -> str:
-    if not text:
-        return ""
-    p = _TextExtractor()
-    try:
-        p.feed(text)
-        p.close()
-        out = " ".join(p.parts)
-    except Exception:
-        out = re.sub(r"<[^>]+>", " ", text)
-    out = html.unescape(out)
-    out = unicodedata.normalize("NFC", out)
-    out = "".join(ch for ch in out if ch in "\n\t" or unicodedata.category(ch)[0] != "C")
-    return re.sub(r"\s+", " ", out).strip()
-
-
-def normalize_text(text: str) -> str:
-    text = unicodedata.normalize("NFKD", text.lower())
-    text = "".join(ch for ch in text if not unicodedata.combining(ch))
-    return re.sub(r"[^a-z0-9 ]+", " ", text).strip()
-
-
 def content_hash(title: str, summary: str) -> str:
+    """Başlık + özet başından normalize edilmiş içerik özeti."""
     return hashlib.sha256(f"{normalize_text(title)}|{normalize_text(summary)[:300]}".encode()).hexdigest()[:24]
 
 
 def parse_date(value: str | None) -> datetime | None:
+    """RFC 822 (RSS) veya ISO 8601 (Atom) tarihini UTC datetime'a çevirir."""
     if not value:
         return None
     value = value.strip()
+    dt: datetime | None
     try:
         dt = parsedate_to_datetime(value)
     except (TypeError, ValueError, IndexError):
@@ -190,36 +179,34 @@ _CITE_PATTERNS = [
     r"\b{name}\s+(?:has\s+)?(?:learned|reports|claims)\b",
     r"\bkaynak:\s*{name}\b",
 ]
+_EXTRA_ORIGINS = (("bloomberg", "bloomberg"), ("jason schreier", "bloomberg"), ("kotaku", "kotaku"),
+                  ("the verge", "the_verge"), ("reuters", "reuters"), ("rockstar games", "rockstar"),
+                  ("rockstar newswire", "rockstar"), ("take-two", "take_two"), ("ign", "ign"),
+                  ("insider gaming", "insider_gaming"), ("tom henderson", "insider_gaming"))
 
 
 def detect_cited_origins(text: str, known_sources: list[Source], own_group: str) -> list[str]:
-    """Metinde başka bir kaynağa atıf varsa (\"via IGN\", \"according to Bloomberg\") o kaynağın
-    origin_group'unu döndürür. Böylece aynı ilk haberi kopyalayan siteler tek köken sayılır."""
-    found: list[str] = []
+    """Metinde başka bir yayına atıf varsa ("via IGN", "according to Bloomberg") o kaynağın
+    ``origin_group`` değerini döndürür. Aynı ilk haberi kopyalayan siteler tek köken sayılır."""
     low = text.lower()
-    names: dict[str, str] = {}
-    for s in known_sources:
-        names[s.name.lower()] = s.origin_group
-    # Kaynak listesinde olmayan ama sık atıf yapılan birincil kaynaklar
-    for extra, group in (("bloomberg", "bloomberg"), ("jason schreier", "bloomberg"), ("kotaku", "kotaku"),
-                         ("the verge", "the_verge"), ("reuters", "reuters"), ("rockstar games", "rockstar"),
-                         ("rockstar newswire", "rockstar"), ("take-two", "take_two"), ("ign", "ign"),
-                         ("insider gaming", "insider_gaming"), ("tom henderson", "insider_gaming")):
+    names: dict[str, str] = {s.name.lower(): s.origin_group for s in known_sources}
+    for extra, group in _EXTRA_ORIGINS:
         names.setdefault(extra, group)
+    found: list[str] = []
     for name, group in names.items():
-        if group == own_group:
+        if group == own_group or group in found:
             continue
         esc = re.escape(name)
         if any(re.search(p.format(name=esc), low) for p in _CITE_PATTERNS):
-            if group not in found:
-                found.append(group)
+            found.append(group)
     return found
 
 
 # ---- HTTP -------------------------------------------------------------------------
 
 def _read_limited(resp: requests.Response, max_bytes: int) -> bytes:
-    chunks, total = [], 0
+    chunks: list[bytes] = []
+    total = 0
     for chunk in resp.iter_content(chunk_size=65536):
         if not chunk:
             continue
@@ -230,15 +217,28 @@ def _read_limited(resp: requests.Response, max_bytes: int) -> bytes:
     return b"".join(chunks)
 
 
+def _classify_status(status: int) -> FetchError:
+    if status in (401, 403):
+        return FetchError(ErrorClass.AUTH_PERMISSION, f"HTTP {status}", status)
+    if status == 429:
+        return FetchError(ErrorClass.RATE_LIMIT_QUOTA, "HTTP 429", status)
+    if 500 <= status < 600:
+        return FetchError(ErrorClass.NETWORK_TRANSIENT, f"HTTP {status}", status)
+    return FetchError(ErrorClass.RSS_PARSE_ERROR, f"HTTP {status}", status)
+
+
 def http_get(session: requests.Session, url: str, settings: Settings, *,
              sleep: Callable[[float], None] = time.sleep) -> bytes:
-    """Geçici hatalarda (429/5xx/timeout) backoff + jitter ile sınırlı yeniden deneme."""
+    """Besleme/sayfa indirir. 429/5xx/zaman aşımında backoff + jitter ile sınırlı yeniden deneme;
+    401/403 ve diğer 4xx için yeniden deneme yok."""
     attempt = 0
     while True:
+        err: FetchError
         try:
-            resp = session.get(url, timeout=settings.http_timeout_seconds, stream=True,
-                               headers={"User-Agent": USER_AGENT, "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.5"},
-                               allow_redirects=True)
+            resp = session.get(url, timeout=settings.http_timeout_seconds, stream=True, allow_redirects=True,
+                               headers={"User-Agent": USER_AGENT,
+                                        "Accept": "application/rss+xml, application/atom+xml, application/xml, "
+                                                  "text/xml;q=0.9, text/html;q=0.8, */*;q=0.5"})
         except requests.exceptions.Timeout:
             err = FetchError(ErrorClass.NETWORK_TRANSIENT, "zaman aşımı")
         except requests.exceptions.ConnectionError:
@@ -247,19 +247,13 @@ def http_get(session: requests.Session, url: str, settings: Settings, *,
             raise FetchError(ErrorClass.UNEXPECTED_ERROR, type(exc).__name__) from None
         else:
             try:
-                status = resp.status_code
-                if status == 200:
+                if resp.status_code == 200:
                     return _read_limited(resp, settings.http_max_response_bytes)
-                if status in (401, 403):
-                    raise FetchError(ErrorClass.AUTH_PERMISSION, f"HTTP {status}", status)
-                if status == 429:
-                    err = FetchError(ErrorClass.RATE_LIMIT_QUOTA, "HTTP 429", status)
-                elif 500 <= status < 600:
-                    err = FetchError(ErrorClass.NETWORK_TRANSIENT, f"HTTP {status}", status)
-                else:
-                    raise FetchError(ErrorClass.RSS_PARSE_ERROR, f"HTTP {status}", status)
+                err = _classify_status(resp.status_code)
             finally:
                 resp.close()
+            if err.error_class not in (ErrorClass.RATE_LIMIT_QUOTA, ErrorClass.NETWORK_TRANSIENT):
+                raise err
         if attempt >= settings.http_max_retries:
             raise err
         sleep(backoff_delay(attempt))
@@ -268,73 +262,192 @@ def http_get(session: requests.Session, url: str, settings: Settings, *,
 
 # ---- Ayrıştırma ---------------------------------------------------------------------
 
-def _text(el) -> str:
+def _text(el: Any) -> str:
     return (el.text or "").strip() if el is not None else ""
 
 
-def parse_feed(content: bytes) -> list[dict]:
-    """RSS 2.0 ve Atom destekler. Bozuk XML -> FetchError(RSS_PARSE_ERROR)."""
+def _child(parent: Any, name: str) -> Any:
+    for c in parent:
+        if c.tag == name or str(c.tag).endswith("}" + name):
+            return c
+    return None
+
+
+def _parse_xml(content: bytes) -> Any:
+    """Önce baytları olduğu gibi, olmazsa onarılmış metni ayrıştırır."""
     try:
-        root = DET.fromstring(content, forbid_dtd=True)
+        return DET.fromstring(content, forbid_dtd=True)
+    except DefusedXmlException as exc:
+        raise FetchError(ErrorClass.RSS_PARSE_ERROR, f"güvensiz XML: {type(exc).__name__}") from None
+    except (DET.ParseError, ValueError):
+        pass
+    try:
+        return DET.fromstring(repair_feed_bytes(content), forbid_dtd=True)
     except (DET.ParseError, DefusedXmlException, ValueError) as exc:
         raise FetchError(ErrorClass.RSS_PARSE_ERROR, f"XML ayrıştırılamadı: {type(exc).__name__}") from None
-    entries: list[dict] = []
-    tag = root.tag.lower()
+
+
+def _rss_entries(root: Any) -> list[dict[str, str]]:
+    entries: list[dict[str, str]] = []
+    for it in root.iter():
+        if not (it.tag == "item" or str(it.tag).endswith("}item")):
+            continue
+        link = _text(_child(it, "link"))
+        guid = _child(it, "guid")
+        if not link and guid is not None and guid.get("isPermaLink", "true").lower() == "true":
+            link = _text(guid)
+        entries.append({"title": _text(_child(it, "title")), "link": link,
+                        "summary": _text(_child(it, "description")) or _text(_child(it, "encoded")),
+                        "published": _text(_child(it, "pubDate")) or _text(_child(it, "date")),
+                        "source_url": google_news_source_url(it)})
+    return entries
+
+
+def _atom_entries(root: Any) -> list[dict[str, str]]:
+    entries: list[dict[str, str]] = []
+    for e in root.findall(f"{ATOM_NS}entry"):
+        link = ""
+        for ln in e.findall(f"{ATOM_NS}link"):
+            if ln.get("rel", "alternate") == "alternate" and ln.get("href"):
+                link = ln.get("href")
+                break
+        entries.append({"title": _text(e.find(f"{ATOM_NS}title")), "link": link,
+                        "summary": _text(e.find(f"{ATOM_NS}summary")) or _text(e.find(f"{ATOM_NS}content")),
+                        "published": _text(e.find(f"{ATOM_NS}published")) or _text(e.find(f"{ATOM_NS}updated")),
+                        "source_url": ""})
+    return entries
+
+
+def parse_feed(content: bytes) -> list[dict[str, str]]:
+    """RSS 2.0 / RDF / Atom ayrıştırır. Bozuk XML → ``FetchError(RSS_PARSE_ERROR)``."""
+    root = _parse_xml(content)
+    tag = str(root.tag).lower()
     if tag.endswith("rss") or tag.endswith("rdf"):
-        for it in root.iter():
-            if not (it.tag == "item" or it.tag.endswith("}item")):
+        return _rss_entries(root)
+    if root.tag == f"{ATOM_NS}feed":
+        return _atom_entries(root)
+    raise FetchError(ErrorClass.RSS_PARSE_ERROR, "RSS/Atom kök öğesi bulunamadı")
+
+
+def entries_for_source(src: Source, content: bytes) -> list[dict[str, str]]:
+    """Kaynak türüne göre ham girdileri çıkarır."""
+    if src.kind == "html_listing":
+        return parse_html_listing(content, src.feed_url, src.link_pattern)
+    entries = parse_feed(content)
+    if src.kind == "google_news":
+        kept = []
+        for e in entries:
+            # Google News yayıncı etiketi resmî alan adını göstermiyorsa baştan ele
+            if e.get("source_url") and not domain_allowed(e["source_url"], src.allowed_domains):
                 continue
-            def child(name):
-                for c in it:
-                    if c.tag == name or c.tag.endswith("}" + name):
-                        return c
-                return None
-            link = _text(child("link"))
-            if not link:
-                guid = child("guid")
-                if guid is not None and (guid.get("isPermaLink", "true").lower() == "true"):
-                    link = _text(guid)
-            desc = _text(child("description")) or _text(child("encoded"))
-            entries.append({"title": _text(child("title")), "link": link, "summary": desc,
-                            "published": _text(child("pubDate")) or _text(child("date"))})
-    elif root.tag == f"{ATOM_NS}feed":
-        for e in root.findall(f"{ATOM_NS}entry"):
-            link = ""
-            for l in e.findall(f"{ATOM_NS}link"):
-                if l.get("rel", "alternate") == "alternate" and l.get("href"):
-                    link = l.get("href")
-                    break
-            summary = _text(e.find(f"{ATOM_NS}summary")) or _text(e.find(f"{ATOM_NS}content"))
-            entries.append({"title": _text(e.find(f"{ATOM_NS}title")), "link": link, "summary": summary,
-                            "published": _text(e.find(f"{ATOM_NS}published")) or _text(e.find(f"{ATOM_NS}updated"))})
-    else:
-        raise FetchError(ErrorClass.RSS_PARSE_ERROR, "RSS/Atom kök öğesi bulunamadı")
+            e["title"] = clean_google_news_title(e.get("title", ""))
+            kept.append(e)
+        return kept
     return entries
 
 
 def is_relevant(title: str, summary: str, settings: Settings) -> bool:
+    """Güçlü GTA VI anahtar kelimelerinden biri başlıkta veya özette geçiyor mu?"""
     text = f" {normalize_text(title)} {normalize_text(summary)} "
-    for kw in settings.relevance_keywords.strong:
-        if f" {normalize_text(kw)} " in text:
-            return True
-    return False
+    return any(f" {normalize_text(kw)} " in text for kw in settings.relevance_keywords.strong)
 
 
-def collect(sources: list[Source], settings: Settings, session: requests.Session, now: datetime, *,
-            fetch: Callable[[str], bytes] | None = None) -> CollectResult:
-    fetch = fetch or (lambda url: http_get(session, url, settings))
+# ---- Öğe oluşturma ---------------------------------------------------------------------
+
+def _resolve_link(src: Source, raw_link: str, verifier: Verifier | None) -> tuple[str, bool] | None:
+    """Ham bağlantıyı canonical hale getirir; gerekiyorsa (resmî kaynak veya Google News)
+    doğrular. Dönüş: (canonical_url, doğrulandı_mı) ya da atılacaksa None."""
+    link = canonicalize_url(urljoin(src.feed_url or "", raw_link))
+    if not link:
+        return None
+    if is_google_news_url(link):
+        decoded = decode_google_news_offline(link)
+        if decoded and domain_allowed(decoded, src.allowed_domains):
+            link = canonicalize_url(decoded)
+        elif verifier is None:
+            return None
+        else:
+            ok, final = verifier(link, src.allowed_domains, ["news.google.com"])
+            return (final, True) if ok and domain_allowed(final, src.allowed_domains) else None
+    if not domain_allowed(link, src.allowed_domains):
+        return None
+    if src.trust_class == "OFFICIAL":
+        if verifier is None:
+            return None
+        ok, final = verifier(link, src.allowed_domains, [])
+        return (final, True) if ok and domain_allowed(final, src.allowed_domains) else None
+    return link, False
+
+
+def _build_item(src: Source, entry: dict[str, str], settings: Settings, sources: list[Source],
+                now: datetime) -> Item | None:
+    """Filtrelerden (başlık, tarih, ilgi) geçen girdiden URL çözümlemesi ÖNCESİ taslak öğe üretir."""
+    title = truncate(strip_html(entry.get("title", "")), TITLE_MAX_CHARS)
+    if not title:
+        return None
+    summary = truncate(strip_html(entry.get("summary", "")), settings.content_limits.source_text_max_chars)
+    pub = parse_date(entry.get("published"))
+    min_dt = now - timedelta(hours=settings.max_item_age_hours)
+    if pub is not None and (pub < min_dt or pub > now + timedelta(hours=1)):
+        return None
+    if not is_relevant(title, summary, settings):
+        return None
+    return Item(id="", source_id=src.id, source_name=src.name, trust_class=src.trust_class,
+                origin_group=src.origin_group, title=title, url="", summary=summary, published_at=iso(pub),
+                content_hash=content_hash(title, summary),
+                cited_origins=detect_cited_origins(f"{title} {summary}", sources, src.origin_group),
+                via=src.kind)
+
+
+def _items_from_source(src: Source, entries: list[dict[str, str]], settings: Settings, sources: list[Source],
+                       now: datetime, verifier: Verifier | None, seen_ids: set[str]) -> list[Item]:
     items: list[Item] = []
-    status: dict[str, dict] = {}
+    verifications = 0
+    for e in entries:
+        draft = _build_item(src, e, settings, sources, now)
+        if draft is None:
+            continue
+        needs_net = src.trust_class == "OFFICIAL" or src.kind == "google_news"
+        if needs_net:
+            if verifications >= src.max_verifications_per_run:
+                break
+            verifications += 1
+        resolved = _resolve_link(src, e.get("link", ""), verifier)
+        if resolved is None:
+            continue
+        draft.url, draft.url_verified = resolved
+        draft.id = url_id(draft.url)
+        if draft.id in seen_ids:
+            continue
+        seen_ids.add(draft.id)
+        items.append(draft)
+    return items
+
+
+def collect(sources: list[Source], settings: Settings, session: requests.Session | None, now: datetime, *,
+            fetch: Callable[[str], bytes] | None = None, verifier: Verifier | None = None) -> CollectResult:
+    """Tüm etkin kaynakları sırayla toplar; her kaynak hatası izole edilir."""
+    if fetch is None:
+        if session is None:
+            raise ValueError("fetch veya session verilmeli")
+        sess = session
+
+        def fetch(url: str) -> bytes:
+            """Kaynağı HTTP ile indirir."""
+            return http_get(sess, url, settings)
+
+    items: list[Item] = []
+    status: dict[str, dict[str, Any]] = {}
     errors: list[str] = []
     checked = ok = 0
-    min_dt = now - timedelta(hours=settings.max_item_age_hours)
     seen_ids: set[str] = set()
     for src in sources:
         if not src.enabled or not src.feed_url:
             continue
         checked += 1
         try:
-            raw_entries = parse_feed(fetch(src.feed_url))
+            entries = entries_for_source(src, fetch(src.feed_url))
+            got = _items_from_source(src, entries, settings, sources, now, verifier, seen_ids)
         except FetchError as exc:
             status[src.id] = {"ok": False, "error_class": exc.error_class.value, "detail": str(exc)[:120],
                               "http_status": exc.status, "checked_at": iso(now)}
@@ -348,30 +461,10 @@ def collect(sources: list[Source], settings: Settings, session: requests.Session
             log.warning("Kaynak %s beklenmeyen hata: %s", src.id, type(exc).__name__)
             continue
         ok += 1
-        kept = 0
-        for e in raw_entries:
-            title = strip_html(e.get("title", ""))[:300]
-            link = canonicalize_url(urljoin(src.feed_url, e.get("link", "")))
-            if not title or not link:
-                continue
-            if not domain_allowed(link, src.allowed_domains):
-                continue
-            summary = strip_html(e.get("summary", ""))[: settings.content_limits.source_text_max_chars]
-            pub = parse_date(e.get("published"))
-            if pub is not None and (pub < min_dt or pub > now + timedelta(hours=1)):
-                continue
-            if not is_relevant(title, summary, settings):
-                continue
-            iid = url_id(link)
-            if iid in seen_ids:
-                continue
-            seen_ids.add(iid)
-            items.append(Item(id=iid, source_id=src.id, source_name=src.name, trust_class=src.trust_class,
-                              origin_group=src.origin_group, title=title, url=link, summary=summary,
-                              published_at=iso(pub), content_hash=content_hash(title, summary),
-                              cited_origins=detect_cited_origins(f"{title} {summary}", sources, src.origin_group)))
-            kept += 1
-        status[src.id] = {"ok": True, "entries": len(raw_entries), "relevant": kept, "checked_at": iso(now)}
+        items.extend(got)
+        status[src.id] = {"ok": True, "entries": len(entries), "relevant": len(got), "checked_at": iso(now)}
+        if not entries:
+            status[src.id]["warning"] = "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     items.sort(key=lambda i: i.published_at or "", reverse=True)
     return CollectResult(items=items[: settings.max_rss_items_per_run], source_status=status,
                          sources_checked=checked, sources_ok=ok, errors=errors)
@@ -379,7 +472,11 @@ def collect(sources: list[Source], settings: Settings, session: requests.Session
 
 # ---- SSRF korumalı URL doğrulama ------------------------------------------------------
 
-def _is_public_host(host: str, resolver: Callable = socket.getaddrinfo) -> bool:
+Resolver = Callable[..., list[tuple[Any, ...]]]
+
+
+def _is_public_host(host: str, resolver: Resolver = socket.getaddrinfo) -> bool:
+    """Host'un çözüldüğü TÜM adresler genel (public) IP mi?"""
     try:
         infos = resolver(host, 443, proto=socket.IPPROTO_TCP)
     except (socket.gaierror, UnicodeError, OSError):
@@ -398,18 +495,32 @@ _CANON_RE = re.compile(rb"<link[^>]+rel=[\"']canonical[\"'][^>]*>", re.I)
 _HREF_RE = re.compile(rb"href=[\"']([^\"']+)[\"']", re.I)
 
 
-def verify_source_url(url: str, allowed_domains: list[str], session: requests.Session, settings: Settings, *,
-                      resolver: Callable = socket.getaddrinfo, max_redirects: int = 3) -> tuple[bool, str]:
-    """URL'nin erişilebilir olduğunu ve her yönlendirme adımının + canonical bağlantının izinli
-    alan adında kaldığını doğrular. Yalnızca https; özel/iç ağ IP'lerine giden host reddedilir.
+def _canonical_ok(head: bytes, current: str, allowed_domains: Sequence[str]) -> bool:
+    m = _CANON_RE.search(head)
+    if not m:
+        return True
+    h = _HREF_RE.search(m.group(0))
+    if not h:
+        return True
+    canonical = urljoin(current, html.unescape(h.group(1).decode("utf-8", "ignore")))
+    return domain_allowed(canonical, allowed_domains)
+
+
+def verify_source_url(url: str, allowed_domains: Sequence[str], session: requests.Session, settings: Settings, *,
+                      hop_domains: Sequence[str] = (), resolver: Resolver = socket.getaddrinfo,
+                      max_redirects: int = 3) -> tuple[bool, str]:
+    """URL'nin erişilebilir olduğunu ve **nihai** adresin + canonical bağlantının izinli alan adında
+    olduğunu doğrular. Ara yönlendirme adımları ``allowed_domains`` veya ``hop_domains`` içinde
+    olmalıdır (ör. Google News için ``news.google.com``). Yalnızca https; özel/iç ağ IP'lerine
+    çözülen host reddedilir. Başarılıysa (True, nihai canonical URL) döner.
 
     Kalan risk: DNS çözümü ile bağlantı arasındaki DNS rebinding penceresi tamamen kapatılamaz;
-    alan adı allowlist'i bu riski büyük ölçüde sınırlar.
-    """
+    alan adı allowlist'i bu riski büyük ölçüde sınırlar."""
     current = url
     for _ in range(max_redirects + 1):
         parts = urlsplit(current)
-        if parts.scheme != "https" or not domain_allowed(current, allowed_domains):
+        final_ok = domain_allowed(current, allowed_domains)
+        if parts.scheme != "https" or not (final_ok or domain_allowed(current, hop_domains)):
             return False, "izinli olmayan şema/alan adı"
         if not _is_public_host(parts.hostname or "", resolver):
             return False, "host genel IP'ye çözülmedi"
@@ -427,6 +538,8 @@ def verify_source_url(url: str, allowed_domains: list[str], session: requests.Se
                 continue
             if resp.status_code != 200:
                 return False, f"HTTP {resp.status_code}"
+            if not final_ok:
+                return False, "nihai adres izinli alan adında değil"
             head = b""
             for chunk in resp.iter_content(chunk_size=65536):
                 head += chunk
@@ -434,12 +547,7 @@ def verify_source_url(url: str, allowed_domains: list[str], session: requests.Se
                     break
         finally:
             resp.close()
-        m = _CANON_RE.search(head)
-        if m:
-            h = _HREF_RE.search(m.group(0))
-            if h:
-                canonical = urljoin(current, html.unescape(h.group(1).decode("utf-8", "ignore")))
-                if not domain_allowed(canonical, allowed_domains):
-                    return False, "canonical bağlantı izinli alan adı dışında"
+        if not _canonical_ok(head, current, allowed_domains):
+            return False, "canonical bağlantı izinli alan adı dışında"
         return True, canonicalize_url(current)
     return False, "çok fazla yönlendirme"

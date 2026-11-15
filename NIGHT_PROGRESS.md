@@ -20,3 +20,4 @@ Tarih: 2026-11-16 (Pazartesi), çalışma saat dilimi UTC / TSİ (UTC+3)
 | 03:35 | Arena Tur 4: 3 bulgu (SRE 1, Editör 1, Red 1) → 3 FAIL → yama → 119 PASS | ✅ |
 | 03:55 | Arena Tur 5: 4 bulgu (Kaos 1, SRE 1, Red 1, Editör 1) → 4 FAIL → yama (2. denemede) → 123 PASS. Arena toplamı: 19 bulgu, 19 regresyon testi | ✅ |
 | 04:10 | README güvenlik özeti, MORNING_REPORT yeniden yazıldı (Faz 2 + skill'ler + Arena), mutasyon kontrolü 5/5 yakalandı, bundle + klasöre teslim | `pytest`: 123 passed · mypy/ruff temiz |
+| 02:45 | **Aşama 4** — bot/site_exporter.py, main entegrasyonu, docs/ sitesi (index.html, assets/style.css, assets/app.js), tools/demo_site.py (12 haber gerçek hattan). Arena Tur 6: 6 bulgu → 6 FAIL → yama → 129 PASS, demo 12/12 | ✅ |

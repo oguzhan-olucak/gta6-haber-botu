@@ -118,6 +118,34 @@ Başlangıç durumu: 104 test PASS, `mypy bot` temiz, `ruff` temiz (commit `c30c
 | 3 | 2 | 1 | 1 | – | 4 | 4 |
 | 4 | 1 | 1 | 1 | – | 3 | 3 |
 | 5 | 1 | 1 | 1 | 1 | 4 | 4 |
-| **Toplam** | **7** | **5** | **6** | **1** | **19** | **19** |
+| 6 | 1 | 1 | 4 | (1.5) | 6 | 6 |
+| **Toplam** | **8** | **6** | **10** | **1** | **25** | **25** |
 
-Test sayısı: 104 → 123 · Hakem tarafından reddedilen bulgu: 0 · 2 denemeyi aşan hata: 0
+Test sayısı: 104 → 129 (Tur 6 dahil) · Hakem tarafından reddedilen bulgu: 0 · 2 denemeyi aşan hata: 0
+
+---
+
+## Tur 6 — Haber sitesi ve köprü (Aşama 4)
+
+Hedef: yeni `bot/site_exporter.py`, `docs/` sitesi ve demo hattı. Bulguların ikisi doğrudan demo üretiminden çıktı: 12 haberden 2'si doğrulamada haksız yere tutuldu.
+
+| # | Rol | Bulgu (`dosya:satır`) | Senaryo / etki | Test |
+|---|---|---|---|---|
+| 6.1 | Editör | `bot/gemini.py:156` | "teyit edilmiş değil" gibi olumsuz (temkinli) ifadeler kesinlik dili sanılıyordu. Doğru yazılmış r/GTA6 iddia haberi yayından düştü. | `test_r6_editor_negated_certainty_is_not_flagged` |
+| 6.2 | Editör / Kaos | `bot/gemini.py:188` | Özetteki "PC Gamer" yayın adı "PC" platformu sanıldı. Xbox 145GB haberi "kaynakta olmayan platform" gerekçesiyle tutuldu. | `test_r6_editor_outlet_name_is_not_a_platform_claim` |
+| 6.3 | Editör | `bot/processor.py:198` | Sitedeki "Neden bu etiket?" satırı okura iç kimlikleri gösteriyordu ("eurogamer, future_plc"). | `test_r6_editor_label_reason_is_reader_friendly` |
+| 6.4 | Red Team | `bot/site_exporter.py:112` | Çift kodlanmış HTML (`&amp;lt;img onerror=…&amp;gt;`) temizlikten sonra gerçek `<img …>` metnine dönüşüp feed.json'a giriyordu. Site `textContent` kullandığı için güvende, ama beslemeyi tüketen üçüncü taraf istemciler için XSS yükü oluşuyordu. | `test_r6_red_double_encoded_html_cannot_reach_feed` |
+| 6.5 | Editör | `docs/assets/app.js:152` | İki büyük vitrin kartı yalnızca en yeni iki habere gidiyordu. Tek kaynak ve sızıntı haberleri, daha önemli doğrulanmış haberlerin önüne çıkıyordu (ekran görüntüsünde iki "TEK KAYNAK" vitrinde). | `test_r6_editor_feature_slots_prefer_verified_news` |
+| 6.6 | FinOps/SRE | `.github/workflows/run.yml:61` | Workflow yalnızca `data/*.json`'u commit ediyordu. Bot `docs/data/feed.json` üretse de GitHub Pages sitesi ilk demo verisinde donup kalırdı. | `test_r6_sre_workflow_commits_site_feed` |
+
+**FAIL kanıtı:** `6 failed, 19 deselected in 0.20s`
+
+**Yamalar:**
+- 6.1: `_asserts_certainty` eklendi. Eşleşmeden hemen sonra "değil" geliyorsa ifade olumsuz sayılıyor; olumlu kullanım hâlâ engelleniyor.
+- 6.2: Platform kontrolünden önce kümedeki yayın adları metinden çıkarılıyor.
+- 6.3: `_display_names`: gerekçe artık "2 bağımsız yayın: PC Gamer, IGN" biçiminde.
+- 6.4: `clean_text` temizlikten sonra kalan `<` ve `>` karakterlerini `‹ ›` yapıyor.
+- 6.5: Vitrin seçimi Python'a (`pick_featured`, `feed.featured_ids`) taşındı: önce resmî/çoklu, sonra tek kaynak, en son iddia. `app.js` bu listeyi kullanıyor.
+- 6.6: Commit adımına `docs/data/feed.json` ve `docs/data/feed.js` eklendi.
+
+**PASS kanıtı:** `129 passed` · `mypy`: temiz · `ruff`: temiz · demo: **12/12 haber** yayınlandı (yamadan önce 10/12)

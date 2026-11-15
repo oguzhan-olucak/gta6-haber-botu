@@ -102,6 +102,9 @@ class Settings(_Strict):
     reject_injection_suspects: bool = True
     run_deadline_seconds: int = Field(600, ge=30, le=3000)
     state_heartbeat_minutes: int = Field(60, ge=0, le=1440)
+    public_channel_username: str = Field("", pattern=r"^@?([A-Za-z][A-Za-z0-9_]{4,31})?$")
+    site_max_items: int = Field(60, ge=1, le=500)
+    export_site_feed: bool = True
     http_timeout_seconds: float = Field(15, gt=0, le=120)
     http_max_retries: int = Field(3, ge=0, le=6)
     http_max_response_bytes: int = Field(2_000_000, ge=10_000)

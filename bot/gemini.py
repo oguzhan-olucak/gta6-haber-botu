@@ -121,6 +121,17 @@ def _rejected(reason: str, c: GeneratedContent | None = None, error_class: str |
     return ValidationOutcome(ok=False, status="REJECTED", reason=reason, content=c, error_class=error_class)
 
 
+_NEGATION_TAIL = re.compile(r"^\w*\s+de[gğ]il\b", re.I)
+
+
+def _asserts_certainty(text: str) -> bool:
+    """Kesinlik ifadesi OLUMLU kullanılmış mı? "teyit edilmiş değil" gibi olumsuzlar sayılmaz."""
+    for m in _BANNED_UNLESS_OFFICIAL.finditer(text):
+        if not _NEGATION_TAIL.match(text[m.end():m.end() + 24]):
+            return True
+    return False
+
+
 Check = Callable[[GeneratedContent, list[Item], Assessment, Settings], "ValidationOutcome | None"]
 
 
@@ -153,7 +164,7 @@ def check_banned(c: GeneratedContent, cluster: list[Item], a: Assessment, s: Set
         return _rejected("Metinde emoji (şablonda tek rozet kuralı)", c)
     if a.label not in (Label.OFFICIAL, Label.MULTI_SOURCE) and c.title_tr.rstrip().endswith("?"):
         return _held("Doğrulanmamış haberde soru başlığı (clickbait)", c)
-    if a.label != Label.OFFICIAL and _BANNED_UNLESS_OFFICIAL.search(text):
+    if a.label != Label.OFFICIAL and _asserts_certainty(text):
         return _held("Kanıtın izin vermediği kesinlik ifadesi", c)
     if c.title_tr.count("!") > 1 or (len(c.title_tr) > 12 and c.title_tr.upper() == c.title_tr):
         return _held("Sansasyonel başlık biçimi", c)
@@ -178,6 +189,8 @@ def check_facts(c: GeneratedContent, cluster: list[Item], a: Assessment, s: Sett
     """Kaynakta olmayan sayı/tarih, platform veya ay adı → incelemeye."""
     src = _source_blob(cluster)
     text = f"{c.title_tr} {c.summary_tr}"
+    for name in {i.source_name for i in cluster if i.source_name}:   # "PC Gamer" bir platform iddiası değildir
+        text = re.sub(re.escape(name), " ", text, flags=re.I)
     low = text.lower()
     src_numbers = set(re.findall(r"\d+", src))
     if re.search(r"\b(gta|grand theft auto)\b", src):

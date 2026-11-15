@@ -59,11 +59,12 @@ jobs:
           git config user.name "gta6-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/*.json
+          git add docs/data/feed.json docs/data/feed.js 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "Veri değişikliği yok, commit atlanıyor."
             exit 0
           fi
-          git commit -m "data: bot çalışması $(date -u +%Y-%m-%dT%H:%MZ)"
+          git commit -m "data: bot çalışması $(date -u +%Y-%m-%dT%H:%MZ) [site beslemesi dahil]"
           for i in 1 2 3; do
             git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
             sleep $((i * 5))

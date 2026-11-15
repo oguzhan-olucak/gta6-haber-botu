@@ -64,6 +64,7 @@ from .publisher import (
     send_admin,
     should_alert,
 )
+from .site_exporter import build_feed, export_site_feed
 from .storage import (
     CorruptDataError,
     FileLock,
@@ -256,6 +257,8 @@ def _run_locked(settings: Settings, sources: list[Source], now: datetime, env: M
     _health_checks(ctx)
     _maybe_digest(ctx, insights)
     _save(ctx)
+    if not safe_mode and settings.export_site_feed:
+        _export_site(ctx)
     return (2 if safe_mode else 0), _finish(summary)
 
 
@@ -415,7 +418,9 @@ def _post_record(a: Assessment, cluster: list[Item], outcome: ValidationOutcome,
     return {
         "content_id": a.primary.id, "label": a.label.value, "label_text": LABEL_TEXT[a.label],
         "category": c.category if c else None, "title_style": c.title_style if c else None,
-        "title_tr": c.title_tr if c else None, "source_strength": a.source_strength,
+        "title_tr": c.title_tr if c else None, "summary_tr": c.summary_tr if c else None,
+        "why_this_label": a.reason, "source_names": {s["url"]: s["name"] for s in sources_meta},
+        "source_strength": a.source_strength,
         "editorial_priority": a.editorial_priority, "publish_reason": a.reason,
         "independent_origins": a.independent_origins, "source_urls": [s["url"] for s in sources_meta],
         "source_titles": [i.title for i in cluster], "content_hashes": sorted({i.content_hash for i in cluster}),
@@ -548,6 +553,17 @@ def state_needs_write(path: Path, state: dict[str, Any], now: datetime, heartbea
         return True
     last = parse_iso(old.get("persisted_at"))
     return last is None or now - last >= timedelta(minutes=heartbeat_minutes)
+
+
+def _export_site(ctx: RunContext) -> None:
+    """Statik site beslemesini (docs/data/feed.json + feed.js) günceller; hata çalışmayı durdurmaz."""
+    try:
+        feed = build_feed(ctx.history, ctx.state, ctx.settings, ctx.sources, ctx.now)
+        if export_site_feed(feed, ctx.data_dir.parent / "docs" / "data"):
+            ctx.summary["notes"].append("site beslemesi güncellendi")
+    except Exception as exc:  # site, botun asıl işini (yayın) asla durdurmaz
+        ctx.summary["error_classes"].append(ErrorClass.UNEXPECTED_ERROR.value)
+        log.warning("Site beslemesi üretilemedi: %s", type(exc).__name__)
 
 
 def _prune(state: dict[str, Any], history: dict[str, Any], settings: Settings, now: datetime) -> None:

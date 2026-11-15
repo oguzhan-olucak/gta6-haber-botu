@@ -282,3 +282,78 @@ def test_r5_editor_digest_is_actionable(settings):
                          settings, NOW)
     assert "GTA VI ön yükleme boyutu açıklandı" in text
     assert "kaynak 0/0" not in text
+
+
+# ===== TUR 6 (site + köprü) =========================================================================
+
+def test_r6_editor_negated_certainty_is_not_flagged(settings):
+    """Editör: 'teyit edilmiş değil', 'doğrulanmış değil' gibi OLUMSUZ (temkinli) ifadeler kesinlik
+    dili sanılıp incelemeye alınıyordu → doğru yazılmış iddia haberleri yayından düşüyordu (demo'da
+    r/GTA6 haberi bu yüzden kayboldu). Olumlu kesinlik dili hâlâ engellenmeli."""
+    ok = _validated(settings, summary_tr=BASE_SUMMARY + " Bu bilgi Rockstar tarafından teyit edilmiş değil.")
+    assert ok.ok, ok.reason
+    assert not _validated(settings, summary_tr=BASE_SUMMARY + " Bilgi teyit edilmiş durumda.").ok
+
+
+def test_r6_editor_outlet_name_is_not_a_platform_claim(settings):
+    """Editör/Kaos: Özetteki 'PC Gamer' yayın adı 'PC' platformu sanılıp 'kaynakta olmayan platform'
+    gerekçesiyle tutuluyordu (demo'da Xbox 145GB haberi düştü)."""
+    from bot.processor import validate_generated
+    from tests.test_processor import good_output
+    a1 = make_item("ign", "ESTABLISHED_MEDIA", "ign", "GTA 6 needs 145GB on Xbox Series X", "https://www.ign.com/x",
+                   "The Xbox Series X version of GTA 6 is a 145GB download.")
+    a2 = make_item("pcgamer", "ESTABLISHED_MEDIA", "future_plc", "GTA 6's Xbox Series X download weighs in at 145GB",
+                   "https://www.pcgamer.com/x", "Microsoft Store lists the Xbox Series X download of GTA 6 at 145GB.",
+                   name="PC Gamer")
+    a = assess([a1, a2], settings, NOW)
+    out = validate_generated(good_output(a1.url, summary_tr="IGN ve PC Gamer, GTA 6'nın Xbox Series X sürümünün "
+                                                          "145GB indirme boyutunda olduğunu bildiriyor."),
+                             [a1, a2], a, settings)
+    assert out.ok, out.reason
+
+
+def test_r6_editor_label_reason_is_reader_friendly(settings):
+    """Editör: Sitede 'Neden bu etiket?' satırı okura iç kimlikleri gösteriyordu
+    ('2 bağımsız yayın kökeni: eurogamer, future_plc')."""
+    b1 = make_item("eurogamer", "ESTABLISHED_MEDIA", "eurogamer", "GTA 6 reviews will go live on November 18",
+                   "https://www.eurogamer.net/r", name="Eurogamer")
+    b2 = make_item("gamesradar", "ESTABLISHED_MEDIA", "future_plc", "GTA 6 review embargo set for November 18",
+                   "https://www.gamesradar.com/r", name="GamesRadar+")
+    a = assess([b1, b2], settings, NOW)
+    assert "future_plc" not in a.reason and "GamesRadar+" in a.reason and "Eurogamer" in a.reason
+
+
+def test_r6_red_double_encoded_html_cannot_reach_feed(settings):
+    """Red Team: Çift kodlanmış HTML ('&amp;lt;img src=x onerror=…&amp;gt;') temizlikten sonra
+    gerçek '<img …>' metnine dönüşüp feed.json'a giriyordu. Site textContent kullansa da beslemeyi
+    tüketen üçüncü taraf istemciler için XSS yükü."""
+    from bot.site_exporter import build_item
+    post = {"publish_status": "PUBLISHED", "label": "SINGLE_SOURCE", "content_id": "abcd1234",
+            "title_tr": "GTA VI &amp;lt;img src=x onerror=alert(1)&amp;gt; haberi",
+            "summary_tr": "Özet &amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;",
+            "published_at": "2026-11-16T10:00:00Z", "source_urls": ["https://ign.com/a"]}
+    item = build_item(post, settings, {})
+    assert item is not None and "<" not in item.title + item.summary and ">" not in item.title + item.summary
+
+
+def test_r6_editor_feature_slots_prefer_verified_news(settings):
+    """Editör: Sitenin iki büyük vitrin kartı yalnızca en yeni iki habere gidiyordu; tek kaynaklı
+    veya sızıntı haberleri, daha önemli doğrulanmış haberlerin önüne vitrine çıkıyordu."""
+    from bot.site_exporter import build_feed
+    def post(i, label, prio, hours):
+        return {"publish_status": "PUBLISHED", "label": label, "content_id": f"id{i:04d}", "title_tr": f"Haber {i}",
+                "summary_tr": "Özet", "published_at": (NOW - timedelta(hours=hours)).isoformat(),
+                "source_urls": [f"https://ign.com/{i}"], "editorial_priority": prio}
+    history = {"posts": [post(1, "OFFICIAL", 90, 1), post(2, "LEAK_CLAIM", 60, 2), post(3, "SINGLE_SOURCE", 55, 3),
+                         post(4, "MULTI_SOURCE", 80, 6), post(5, "MULTI_SOURCE", 75, 8)]}
+    feed = build_feed(history, {}, settings, [], NOW)
+    assert feed.hero_id == "id0001"
+    assert feed.featured_ids == ["id0004", "id0005"]
+
+
+def test_r6_sre_workflow_commits_site_feed():
+    """FinOps/SRE: Workflow yalnızca data/*.json'u commit ediyordu; bot docs/data/feed.json üretse de
+    GitHub Pages sitesi hiç güncellenmezdi (site ilk demo verisinde donup kalırdı)."""
+    from tests.conftest import ROOT
+    wf = (ROOT / ".github" / "workflows" / "run.yml").read_text(encoding="utf-8")
+    assert "docs/data/feed.json" in wf and "docs/data/feed.js" in wf

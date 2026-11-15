@@ -183,6 +183,14 @@ def _usable(cluster: list[Item], settings: Settings) -> tuple[list[Item], int]:
     return usable, suspects
 
 
+def _display_names(items: list[Item], origins: list[str]) -> str:
+    """Köken kimliklerini okura gösterilebilir yayın adlarına çevirir (iç kimlik sızmaz)."""
+    by_group: dict[str, str] = {}
+    for i in items:
+        by_group.setdefault(i.origin_group, i.source_name)
+    return ", ".join(by_group.get(o) or o.replace("_", " ").title() for o in origins)
+
+
 def _label_for(valid: list[Item]) -> tuple[Label, int, str, list[str]]:
     """Etiket, kaynak gücü, gerekçe ve bağımsız kökenler."""
     official = [i for i in valid if i.trust_class == "OFFICIAL"]
@@ -195,10 +203,11 @@ def _label_for(valid: list[Item]) -> tuple[Label, int, str, list[str]]:
         origins = sorted(_origins(media))
         if len(origins) >= 2:
             return (Label.MULTI_SOURCE, min(90, 75 + 5 * (len(origins) - 2)),
-                    f"{len(origins)} bağımsız yayın kökeni: {', '.join(origins)}", origins)
+                    f"{len(origins)} bağımsız yayın: {_display_names(media, origins)}", origins)
         cites_official = any({"rockstar", "take_two"} & set(i.cited_origins) for i in media)
         return (Label.SINGLE_SOURCE, 55 + (10 if cites_official else 0),
-                f"Tek yayın kökeni: {origins[0]}" + (" (resmî açıklamaya atıf)" if cites_official else ""), origins)
+                f"Tek yayın: {_display_names(media, origins)}" + (" (resmî açıklamaya atıf)" if cites_official else ""),
+                origins)
     if media:
         return Label.LEAK_CLAIM, 30, "Yayın organında sızıntı/iddia haberi", sorted(_origins(media))
     label = Label.LEAK_CLAIM if leaky else Label.COMMUNITY_CLAIM

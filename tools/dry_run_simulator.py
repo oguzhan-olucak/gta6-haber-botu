@@ -27,6 +27,7 @@ from typing import Any, Callable
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "tools"))
 
 from bot import main as bot_main  # noqa: E402
 from bot.telegram_client import TelegramError  # noqa: E402
@@ -413,6 +414,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--interactive", action="store_true")
     ap.add_argument("--print", dest="echo", action="store_true", help="mesajları terminale de yaz")
     ap.add_argument("--out", type=Path, default=ROOT / "docs" / "message_preview.html")
+    ap.add_argument("--site-data", type=Path, default=ROOT / "docs" / "data",
+                    help="12 haberlik demo site beslemesinin yazılacağı klasör")
+    ap.add_argument("--no-site", action="store_true", help="demo site beslemesini üretme")
     args = ap.parse_args(argv)
     block_network()
     keys = choose_interactively(all_keys) if args.interactive else all_keys if args.scenario == "all" else [args.scenario]
@@ -426,6 +430,10 @@ def main(argv: list[str] | None = None) -> int:
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(render_page(results), encoding="utf-8")
     print(f"Yazıldı: {args.out}")
+    if not args.no_site:
+        from demo_site import build_demo_feed
+        feed = build_demo_feed(args.site_data, CapturingTelegram, FakeSession, ENV)
+        print(f"Demo site beslemesi: {len(feed.items)} haber, manşet={feed.hero_id} → {args.site_data / 'feed.json'}")
     missing = [r["scenario"].key for r in results if not r["messages"]]
     return 1 if missing else 0
 

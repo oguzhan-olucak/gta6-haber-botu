@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="description" content="GTA VI hakkında kaynağı doğrulanmış Türkçe haberler. Her haberde doğrulama düzeyi ve orijinal kaynak bağlantısı.">
+<meta name="theme-color" content="#090A0F">
+<title>GTA VI Türkiye Bülteni · Doğrulanmış GTA VI haberleri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#akis">Haberlere geç</a>
+
+<div class="statusbar" role="status" aria-live="polite">
+  <div class="wrap statusbar__in">
+    <span class="pulse" aria-hidden="true"></span>
+    <span id="st-state">Bülten yükleniyor…</span>
+    <span class="statusbar__sep" aria-hidden="true"></span>
+    <span id="st-updated"></span>
+    <span class="statusbar__sep" aria-hidden="true"></span>
+    <span id="st-sources"></span>
+    <span class="statusbar__sep" aria-hidden="true"></span>
+    <span id="st-total"></span>
+    <span id="st-demo" class="demo-flag" hidden>Örnek veri</span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap masthead__in">
+    <a class="brand" href="./" aria-label="GTA VI Türkiye Bülteni ana sayfa">
+      <span class="brand__sun" aria-hidden="true"></span>
+      <span class="brand__name">GTA VI <em>Türkiye Bülteni</em></span>
+    </a>
+    <nav class="mainnav" aria-label="Site">
+      <a href="./" aria-current="page">Haberler</a>
+      <a href="message_preview.html">Telegram önizleme</a>
+      <a href="#yontem">Nasıl doğruluyoruz</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero-wrap" aria-label="Manşet">
+    <article id="hero" class="hero" hidden></article>
+  </section>
+
+  <section class="wrap controls" aria-label="Haberleri süz">
+    <div class="trustbar" role="group" aria-label="Doğrulama düzeyi">
+      <button type="button" class="tchip" data-trust="all" aria-pressed="true">Tümü <span class="n" data-count="all"></span></button>
+      <button type="button" class="tchip" data-trust="official" aria-pressed="false"><i class="dot dot--official" aria-hidden="true"></i>Resmî açıklama <span class="n" data-count="official"></span></button>
+      <button type="button" class="tchip" data-trust="multi" aria-pressed="false"><i class="dot dot--multi" aria-hidden="true"></i>Çoklu kaynak <span class="n" data-count="multi"></span></button>
+      <button type="button" class="tchip" data-trust="single" aria-pressed="false"><i class="dot dot--single" aria-hidden="true"></i>Tek kaynak <span class="n" data-count="single"></span></button>
+      <button type="button" class="tchip" data-trust="claim" aria-pressed="false"><i class="dot dot--claim" aria-hidden="true"></i>Topluluk / sızıntı <span class="n" data-count="claim"></span></button>
+    </div>
+    <div class="controls__row">
+      <div class="tabs" role="tablist" aria-label="Kategori">
+        <button type="button" role="tab" class="tab" data-cat="all" aria-selected="true">Tümü</button>
+        <button type="button" role="tab" class="tab" data-cat="TRAILER_MEDIA" aria-selected="false">Fragman</button>
+        <button type="button" role="tab" class="tab" data-cat="GAMEPLAY_TECH" aria-selected="false">Oynanış</button>
+        <button type="button" role="tab" class="tab" data-cat="RELEASE_PLATFORMS" aria-selected="false">Çıkış/Platform</button>
+        <button type="button" role="tab" class="tab" data-cat="COMMUNITY_RUMOR" aria-selected="false">Sızıntı</button>
+        <button type="button" role="tab" class="tab" data-cat="INDUSTRY_BUSINESS" aria-selected="false">Analiz</button>
+      </div>
+      <label class="search">
+        <span class="visually-hidden">Haberlerde ara</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/></svg>
+        <input id="q" type="search" placeholder="Başlık veya özette ara" autocomplete="off" spellcheck="false">
+      </label>
+    </div>
+  </section>
+
+  <section id="akis" class="wrap feed" aria-label="Haber akışı">
+    <p id="result-line" class="result-line" aria-live="polite"></p>
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty" hidden>
+      <p class="empty__title">Bu süzgeçle eşleşen haber yok.</p>
+      <button type="button" class="linkbtn" id="reset">Süzgeçleri temizle</button>
+    </div>
+  </section>
+
+  <section id="yontem" class="wrap method" aria-labelledby="yontem-h">
+    <h2 id="yontem-h">Nasıl doğruluyoruz</h2>
+    <div class="method__grid">
+      <div><h3><i class="dot dot--official" aria-hidden="true"></i>Resmî açıklama</h3><p>Haber Rockstar Games veya Take-Two'nun kendi alan adında yayımlandı. Bağlantı ve yönlendirme zinciri otomatik olarak doğrulandı.</p></div>
+      <div><h3><i class="dot dot--multi" aria-hidden="true"></i>Çoklu kaynak</h3><p>Birbirinden bağımsız en az iki yayın organı aynı gelişmeyi aktarıyor. Aynı ilk haberi kopyalayan siteler tek kaynak sayılır.</p></div>
+      <div><h3><i class="dot dot--single" aria-hidden="true"></i>Tek kaynak</h3><p>Tek bir yayın organının haberi. Resmî doğrulama yok; özet, iddiayı kaynağa atfederek yazılır.</p></div>
+      <div><h3><i class="dot dot--claim" aria-hidden="true"></i>Topluluk / sızıntı</h3><p>Doğrulanmamış iddia. Hiçbir zaman resmî bilgi gibi sunulmaz.</p></div>
+    </div>
+    <p class="method__note">Etiketi yapay zekâ değil, kaynak kuralları belirler. Yapay zekâ yalnızca kısa Türkçe özeti yazar; özet kaynakta olmayan tarih, sayı veya platform içerirse yayınlanmaz. <span id="measure-note"></span></p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <p>GTA VI Türkiye Bülteni bağımsız bir hayran bültenidir; Rockstar Games veya Take-Two Interactive ile bağlantılı değildir. Haberler kısa özetlerdir; ayrıntılar için her zaman orijinal kaynağı okuyun.</p>
+    <p class="footer__small">GitHub Pages üzerinde statik olarak yayınlanır. Veri: <a href="data/feed.json">feed.json</a></p>
+  </div>
+</footer>
+
+<dialog id="drawer" class="drawer" aria-labelledby="d-title">
+  <div class="drawer__panel">
+    <header class="drawer__head">
+      <div id="d-badges" class="badges"></div>
+      <button type="button" class="drawer__close" id="d-close" aria-label="Kapat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </header>
+    <h2 id="d-title" class="drawer__title"></h2>
+    <p id="d-meta" class="drawer__meta"></p>
+    <p id="d-summary" class="drawer__summary"></p>
+    <section class="drawer__block">
+      <h3>Neden bu etiket?</h3>
+      <p id="d-why"></p>
+      <dl class="scores">
+        <div><dt>Kaynak gücü</dt><dd><span id="d-strength"></span><span class="bar"><span id="d-strength-bar"></span></span></dd></div>
+        <div><dt>Bağımsız köken</dt><dd id="d-origins"></dd></div>
+      </dl>
+    </section>
+    <section class="drawer__block">
+      <h3>Kaynaklar</h3>
+      <ul id="d-sources" class="sources"></ul>
+    </section>
+    <div class="drawer__actions">
+      <a id="d-telegram" class="btn btn--primary" target="_blank" rel="noopener noreferrer"></a>
+      <button type="button" class="btn" id="d-copy">Bağlantıyı kopyala</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="data/feed.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

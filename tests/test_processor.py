@@ -147,3 +147,42 @@ def test_hold_when_single_source_disabled(settings):
     it = make_item("ign", "ESTABLISHED_MEDIA", "ign", "GTA 6 trailer three is out now",
                    "https://www.ign.com/gta-6-trailer-3")
     assert assess([it], settings, NOW).decision == "HOLD"
+
+
+class _FakeModels:
+    def __init__(self, behavior):
+        self.behavior = behavior
+        self.calls = []
+
+    def generate_content(self, model, contents, config):
+        self.calls.append({"model": model, "config": config})
+        if isinstance(self.behavior, Exception):
+            raise self.behavior
+        return type("R", (), {"text": self.behavior})()
+
+
+class _FakeClient:
+    def __init__(self, behavior):
+        self.models = _FakeModels(behavior)
+
+
+def test_gemini_generator_uses_env_model_structured_output_and_no_fallback():
+    from bot import ErrorClass
+    from bot.processor import RESPONSE_JSON_SCHEMA, GeminiError, GeminiGenerator
+    client = _FakeClient('{"ok": true}')
+    g = GeminiGenerator("DUMMY_GEMINI_KEY_DO_NOT_USE", "model-from-env", client=client)
+    assert g.generate("sys", "prompt", RESPONSE_JSON_SCHEMA) == '{"ok": true}'
+    call = client.models.calls[0]
+    assert call["model"] == "model-from-env"
+    assert call["config"]["response_mime_type"] == "application/json"
+    assert call["config"]["response_json_schema"] is RESPONSE_JSON_SCHEMA
+    # 429 -> RATE_LIMIT_QUOTA; tek çağrı, başka modele geçiş yok
+    err = Exception("quota")
+    err.code = 429
+    client2 = _FakeClient(err)
+    g2 = GeminiGenerator("DUMMY_GEMINI_KEY_DO_NOT_USE", "model-from-env", client=client2)
+    try:
+        g2.generate("sys", "p", RESPONSE_JSON_SCHEMA)
+    except GeminiError as e:
+        assert e.error_class == ErrorClass.RATE_LIMIT_QUOTA
+    assert [c["model"] for c in client2.models.calls] == ["model-from-env"]

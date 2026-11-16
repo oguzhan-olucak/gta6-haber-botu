@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-16T17:17:16Z",
-  "last_successful_fetch_at": "2026-11-16T17:17:16Z",
+  "last_run_at": "2026-11-16T17:21:04Z",
+  "last_successful_fetch_at": "2026-11-16T17:21:04Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -268,7 +268,7 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T17:17:16Z",
+      "checked_at": "2026-11-16T17:21:04Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
@@ -276,70 +276,70 @@
       "entries": 24,
       "relevant": 18,
       "new": 0,
-      "checked_at": "2026-11-16T17:17:16Z"
+      "checked_at": "2026-11-16T17:21:04Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T17:17:16Z"
+      "checked_at": "2026-11-16T17:21:04Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 4,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T17:17:16Z"
+      "checked_at": "2026-11-16T17:21:04Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
       "relevant": 7,
-      "new": 3,
-      "checked_at": "2026-11-16T17:17:16Z"
+      "new": 0,
+      "checked_at": "2026-11-16T17:21:04Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
       "relevant": 18,
       "new": 0,
-      "checked_at": "2026-11-16T17:17:16Z"
+      "checked_at": "2026-11-16T17:21:04Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
       "relevant": 11,
-      "new": 4,
-      "checked_at": "2026-11-16T17:17:16Z"
+      "new": 0,
+      "checked_at": "2026-11-16T17:21:04Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
       "relevant": 4,
       "new": 0,
-      "checked_at": "2026-11-16T17:17:16Z"
+      "checked_at": "2026-11-16T17:21:04Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 1,
-      "new": 1,
-      "checked_at": "2026-11-16T17:17:16Z"
+      "new": 0,
+      "checked_at": "2026-11-16T17:21:04Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
       "relevant": 5,
-      "new": 4,
-      "checked_at": "2026-11-16T17:17:16Z"
+      "new": 0,
+      "checked_at": "2026-11-16T17:21:04Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
       "relevant": 11,
-      "new": 5,
-      "checked_at": "2026-11-16T17:17:16Z"
+      "new": 0,
+      "checked_at": "2026-11-16T17:21:04Z"
     }
   },
   "run_log": [
@@ -367,6 +367,19 @@
       "started_at": "2026-11-16T17:17:16Z",
       "sources_ok": 11,
       "new_items": 17,
+      "published": 0,
+      "gemini_calls": 4,
+      "error_classes": [
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT"
+      ]
+    },
+    {
+      "started_at": "2026-11-16T17:21:04Z",
+      "sources_ok": 11,
+      "new_items": 0,
       "published": 0,
       "gemini_calls": 4,
       "error_classes": [
@@ -734,26 +747,6 @@
         "url_verified": false,
         "via": "rss",
         "raw_id": "4590118cc6b6eff36422657e"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "0ad94dbec5859dbf80957db6": {
-      "item": {
-        "id": "0ad94dbec5859dbf80957db6",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "GTA 6 Will Do Something the Franchise Has Never Done Before: Encourage Empathy",
-        "url": "https://ign.com/articles/gta-6-will-do-something-the-franchise-has-never-done-before-encourage-empathy",
-        "summary": "Rockstar has confirmed GTA 6 features something the franchise has never had before: mechanisms that encourage empathy.",
-        "published_at": "2026-11-14T17:19:13Z",
-        "content_hash": "855b051f5caba380230e597d",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "0ad94dbec5859dbf80957db6"
       },
       "first_seen": "2026-11-16T06:35:35Z",
       "needs_eval": false
@@ -1376,6 +1369,7 @@
       "needs_eval": true
     }
   },
-  "persisted_at": "2026-11-16T17:17:16Z",
-  "gemini_client_rev": "rest-v1beta-xgoog-2"
+  "persisted_at": "2026-11-16T17:21:04Z",
+  "gemini_client_rev": "rest-v1beta-xgoog-2",
+  "gemini_quota_blocked_until": null
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-16T18:38:15Z",
-  "last_successful_fetch_at": "2026-11-16T18:38:15Z",
+  "last_run_at": "2026-11-16T18:54:11Z",
+  "last_successful_fetch_at": "2026-11-16T18:54:11Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -305,6 +305,11 @@
       "first_seen": "2026-11-16T18:38:15Z",
       "status": "NEW",
       "source": "ign"
+    },
+    "29c8377d7b90a90287cd5728": {
+      "first_seen": "2026-11-16T18:54:11Z",
+      "status": "HELD",
+      "source": "eurogamer"
     }
   },
   "digests_sent": [
@@ -318,7 +323,7 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T18:38:15Z",
+      "checked_at": "2026-11-16T18:54:11Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
@@ -326,70 +331,70 @@
       "entries": 24,
       "relevant": 19,
       "new": 0,
-      "checked_at": "2026-11-16T18:38:15Z"
+      "checked_at": "2026-11-16T18:54:11Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T18:38:15Z"
+      "checked_at": "2026-11-16T18:54:11Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 4,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T18:38:15Z"
+      "checked_at": "2026-11-16T18:54:11Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
       "relevant": 8,
-      "new": 4,
-      "checked_at": "2026-11-16T18:38:15Z"
+      "new": 0,
+      "checked_at": "2026-11-16T18:54:11Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
-      "relevant": 19,
+      "relevant": 20,
       "new": 1,
-      "checked_at": "2026-11-16T18:38:15Z"
+      "checked_at": "2026-11-16T18:54:11Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
       "relevant": 11,
-      "new": 2,
-      "checked_at": "2026-11-16T18:38:15Z"
+      "new": 0,
+      "checked_at": "2026-11-16T18:54:11Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
       "relevant": 4,
       "new": 0,
-      "checked_at": "2026-11-16T18:38:15Z"
+      "checked_at": "2026-11-16T18:54:11Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 1,
       "new": 0,
-      "checked_at": "2026-11-16T18:38:15Z"
+      "checked_at": "2026-11-16T18:54:11Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
       "relevant": 4,
       "new": 0,
-      "checked_at": "2026-11-16T18:38:15Z"
+      "checked_at": "2026-11-16T18:54:11Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
       "relevant": 11,
-      "new": 3,
-      "checked_at": "2026-11-16T18:38:15Z"
+      "new": 0,
+      "checked_at": "2026-11-16T18:54:11Z"
     }
   },
   "run_log": [
@@ -443,6 +448,19 @@
       "started_at": "2026-11-16T18:38:15Z",
       "sources_ok": 11,
       "new_items": 10,
+      "published": 0,
+      "gemini_calls": 4,
+      "error_classes": [
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT"
+      ]
+    },
+    {
+      "started_at": "2026-11-16T18:54:11Z",
+      "sources_ok": 11,
+      "new_items": 1,
       "published": 0,
       "gemini_calls": 4,
       "error_classes": [
@@ -1580,9 +1598,30 @@
       },
       "first_seen": "2026-11-16T18:38:15Z",
       "needs_eval": true
+    },
+    "29c8377d7b90a90287cd5728": {
+      "item": {
+        "id": "29c8377d7b90a90287cd5728",
+        "source_id": "eurogamer",
+        "source_name": "Eurogamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "eurogamer",
+        "title": "Original GTA 6 leaker pleads guilty to hacking Rockstar Games, years after first revealing Lucia",
+        "url": "https://eurogamer.net/gta-6-leaker-pleads-guilty",
+        "summary": "The 21-year-old responsible for hacking Rockstar Games and leaking in-development GTA 6 footage in 2022 has pleaded guilty to a number of offenses. Read more",
+        "published_at": "2026-11-16T18:51:40Z",
+        "content_hash": "5c95846fe63d2f3793f340cf",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "29c8377d7b90a90287cd5728",
+        "image_url": "https://assetsio.gnwcdn.com/gta-6-rockstar-art-jason-and-lucia-burning-car.jpg?width=690&quality=85&format=jpg&auto=webp"
+      },
+      "first_seen": "2026-11-16T18:54:11Z",
+      "needs_eval": false
     }
   },
-  "persisted_at": "2026-11-16T18:38:15Z",
+  "persisted_at": "2026-11-16T18:54:11Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": null
 }

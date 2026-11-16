@@ -67,6 +67,12 @@ def pytest(*args: str) -> Check:
     return Check(f"pytest {' '.join(args)}", proc.returncode == 0 and "passed" in last, last)
 
 
+def _line(hit: str) -> str:
+    """``dosya:satır`` isabetinin satır metni."""
+    path, n = hit.rsplit(":", 1)
+    return (ROOT / path).read_text(encoding="utf-8").splitlines()[int(n) - 1]
+
+
 def grep(pattern: str, files: list[Path]) -> list[str]:
     rx = re.compile(pattern)
     hits = []
@@ -157,13 +163,14 @@ def c_cost() -> list[Check]:
 
 def c_architect() -> list[Check]:
     bot = py_files("bot")
-    posts = [h for h in grep(r"\.post\(", bot) if not h.startswith("bot/telegram_client.py")]
+    posts = [h for h in grep(r"\.post\(", bot) if not h.startswith("bot/telegram_client.py")
+             and not (h.startswith("bot/collector.py") and "GN_BATCHEXECUTE_URL" in _line(h))]
     gets = [h for h in grep(r"session\.get\(", bot) if not h.startswith("bot/collector.py")]
     writes = [h for h in grep(r"open\([^)]*['\"]w|write_text\(", bot)
               if not h.startswith(("bot/storage.py", "bot/site_exporter.py"))]
     proc = subprocess.run([sys.executable, "-m", "mypy", "bot"], cwd=ROOT, capture_output=True, text=True)
     return [
-        Check("HTTP POST yalnızca telegram_client.py", not posts, ", ".join(posts) or "uyumlu"),
+        Check("HTTP POST yalnızca telegram_client.py (+ collector: Google News çözümü)", not posts, ", ".join(posts) or "uyumlu"),
         Check("HTTP GET yalnızca collector.py", not gets, ", ".join(gets) or "uyumlu"),
         Check("dosya yazımı yalnızca storage/site_exporter", not writes, ", ".join(writes) or "uyumlu"),
         Check("mypy bot temiz", proc.returncode == 0, (proc.stdout.strip().splitlines() or [""])[-1]),

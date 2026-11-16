@@ -47,8 +47,11 @@
       "gta vi",
       "gta 6",
       "gta6",
+      "gtavi",
+      "gta vı",
       "grand theft auto vi",
-      "grand theft auto 6"
+      "grand theft auto 6",
+      "leonida"
     ],
     "context": [
       "leonida",
@@ -58,6 +61,37 @@
       "rockstar",
       "take-two",
       "take two"
+    ],
+    "specific": [
+      "vice city",
+      "lucia",
+      "jason",
+      "jason duval",
+      "lucia caminos",
+      "port gellhorn",
+      "grassrivers",
+      "ambrosia",
+      "leonida keys",
+      "mount kalaga"
+    ],
+    "brand": [
+      "rockstar",
+      "rockstar games",
+      "rockstar newswire",
+      "take two",
+      "take-two",
+      "take two interactive"
+    ],
+    "exclude": [
+      "gta online",
+      "red dead",
+      "definitive edition",
+      "gta trilogy",
+      "gta v",
+      "gta 5",
+      "gta iv",
+      "gta san andreas",
+      "vice city stories"
     ]
   },
   "content_limits": {

@@ -30,8 +30,13 @@ from defusedxml.common import DefusedXmlException
 from . import ErrorClass, backoff_delay, iso
 from .config import Settings, Source
 from .official import (
+    GN_BATCHEXECUTE_URL,
     clean_google_news_title,
     decode_google_news_offline,
+    gn_article_id,
+    gn_batch_form,
+    gn_parse_batch_response,
+    gn_signature,
     google_news_source_url,
     is_google_news_url,
     parse_html_listing,
@@ -348,10 +353,24 @@ def entries_for_source(src: Source, content: bytes) -> list[dict[str, str]]:
     return entries
 
 
-def is_relevant(title: str, summary: str, settings: Settings) -> bool:
-    """Güçlü GTA VI anahtar kelimelerinden biri başlıkta veya özette geçiyor mu?"""
+def is_relevant(title: str, summary: str, settings: Settings, *, official: bool = False) -> bool:
+    """Haber GTA VI ile ilgili mi?
+
+    1. Güçlü terim (GTA VI / GTA 6 / Grand Theft Auto VI / Leonida...) → ilgili.
+    2. Güçlü terim yokken dışlama terimi (GTA Online, Definitive Edition...) → ilgisiz.
+    3. Özgül terim (Vice City, Lucia, Jason...) + marka (Rockstar/Take-Two) veya resmî kaynak → ilgili.
+    """
+    kw = settings.relevance_keywords
     text = f" {normalize_text(title)} {normalize_text(summary)} "
-    return any(f" {normalize_text(kw)} " in text for kw in settings.relevance_keywords.strong)
+
+    def hit(terms: list[str]) -> bool:
+        return any(f" {normalize_text(t)} " in text for t in terms if normalize_text(t))
+
+    if hit(kw.strong):
+        return True
+    if hit(kw.exclude):
+        return False
+    return hit(kw.specific) and (official or hit(kw.brand))
 
 
 # ---- Öğe oluşturma ---------------------------------------------------------------------
@@ -382,17 +401,21 @@ def _resolve_link(src: Source, raw_link: str, verifier: Verifier | None) -> tupl
 
 
 def _build_item(src: Source, entry: dict[str, str], settings: Settings, sources: list[Source],
-                now: datetime) -> Item | None:
-    """Filtrelerden (başlık, tarih, ilgi) geçen girdiden URL çözümlemesi ÖNCESİ taslak öğe üretir."""
+                now: datetime, stats: dict[str, int] | None = None) -> Item | None:
+    """Filtrelerden (başlık, ilgi, tarih) geçen girdiden URL çözümlemesi ÖNCESİ taslak öğe üretir.
+    ``stats["matched"]`` tarihten bağımsız olarak ilgili bulunan girdileri sayar (tanılama için)."""
     title = truncate(strip_html(entry.get("title", "")), TITLE_MAX_CHARS)
     if not title:
         return None
     summary = truncate(strip_html(entry.get("summary", "")), settings.content_limits.source_text_max_chars)
-    pub = parse_date(entry.get("published"))
-    min_dt = now - timedelta(hours=settings.max_item_age_hours)
-    if pub is not None and (pub < min_dt or pub > now + timedelta(hours=1)):
+    if not is_relevant(title, summary, settings, official=src.trust_class == "OFFICIAL"):
         return None
-    if not is_relevant(title, summary, settings):
+    if stats is not None:
+        stats["matched"] = stats.get("matched", 0) + 1
+    pub = parse_date(entry.get("published"))
+    max_age = src.max_item_age_hours or settings.max_item_age_hours
+    min_dt = now - timedelta(hours=max_age)
+    if pub is not None and (pub < min_dt or pub > now + timedelta(hours=1)):
         return None
     return Item(id="", source_id=src.id, source_name=src.name, trust_class=src.trust_class,
                 origin_group=src.origin_group, title=title, url="", summary=summary, published_at=iso(pub),
@@ -409,7 +432,7 @@ def _items_from_source(src: Source, entries: list[dict[str, str]], settings: Set
     items: list[Item] = []
     verifications = 0
     for e in entries:
-        draft = _build_item(src, e, settings, sources, now)
+        draft = _build_item(src, e, settings, sources, now, stats)
         if draft is None:
             continue
         raw = canonicalize_url(urljoin(src.feed_url or "", e.get("link", "")))
@@ -465,6 +488,7 @@ def collect(sources: list[Source], settings: Settings, session: requests.Session
         checked += 1
         try:
             entries = entries_for_source(src, fetch(src.feed_url))
+            stats["matched"] = 0
             got = _items_from_source(src, entries, settings, sources, now, verifier, seen_ids, known_ids, stats)
         except FetchError as exc:
             status[src.id] = {"ok": False, "error_class": exc.error_class.value, "detail": str(exc)[:120],
@@ -480,7 +504,9 @@ def collect(sources: list[Source], settings: Settings, session: requests.Session
             continue
         ok += 1
         items.extend(got)
-        status[src.id] = {"ok": True, "entries": len(entries), "relevant": len(got), "checked_at": iso(now)}
+        # relevant: GTA VI ile ilgili bulunan girdi (tarihten bağımsız) · new: bu çalışmada eklenen yeni öğe
+        status[src.id] = {"ok": True, "entries": len(entries), "relevant": stats["matched"], "new": len(got),
+                          "checked_at": iso(now)}
         if not entries:
             status[src.id]["warning"] = "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     items.sort(key=lambda i: i.published_at or "", reverse=True)
@@ -524,6 +550,54 @@ def _canonical_ok(head: bytes, current: str, allowed_domains: Sequence[str]) -> 
     return domain_allowed(canonical, allowed_domains)
 
 
+def _gn_resolve_signed(url: str, resp: Any, session: requests.Session, settings: Settings) -> str | None:
+    """İmzalı Google News makale sayfası (HTTP 200, JavaScript yönlendirmesi) için yayıncı URL'sini
+    ``batchexecute`` uç noktasından ister. Yalnızca news.google.com sayfalarında çalışır; sonuç
+    çağıran döngüde yeniden alan adı/IP/canonical denetiminden geçer."""
+    article_id = gn_article_id(url)
+    if article_id is None:
+        return None
+    page = b""
+    for chunk in resp.iter_content(chunk_size=65536):
+        page += chunk
+        if len(page) >= 524_288:
+            break
+    sig = gn_signature(page)
+    if sig is None:
+        return None
+    signature, timestamp = sig
+    try:
+        r = session.post(GN_BATCHEXECUTE_URL, data=gn_batch_form(article_id, timestamp, signature),
+                         timeout=settings.http_timeout_seconds, allow_redirects=False,
+                         headers={"User-Agent": USER_AGENT,
+                                  "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"})
+    except requests.exceptions.RequestException:
+        return None
+    try:
+        if r.status_code != 200:
+            return None
+        body = _read_limited(r, 262_144)
+    except FetchError:
+        return None
+    finally:
+        r.close()
+    return gn_parse_batch_response(body.decode("utf-8", "replace"))
+
+
+def _hop(current: str, resp: Any, final_ok: bool, session: requests.Session,
+         settings: Settings) -> tuple[str, str]:
+    """Tek doğrulama adımının sonucu: ("next", yeni_url) | ("fail", neden) | ("final", "")."""
+    if resp.status_code in (301, 302, 303, 307, 308):
+        loc = resp.headers.get("Location", "")
+        return ("next", urljoin(current, loc)) if loc else ("fail", "boş yönlendirme")
+    if resp.status_code != 200:
+        return "fail", f"HTTP {resp.status_code}"
+    if not final_ok:
+        decoded = _gn_resolve_signed(current, resp, session, settings)
+        return ("next", decoded) if decoded else ("fail", "nihai adres izinli alan adında değil")
+    return "final", ""
+
+
 def verify_source_url(url: str, allowed_domains: Sequence[str], session: requests.Session, settings: Settings, *,
                       hop_domains: Sequence[str] = (), resolver: Resolver = socket.getaddrinfo,
                       max_redirects: int = 3) -> tuple[bool, str]:
@@ -548,16 +622,12 @@ def verify_source_url(url: str, allowed_domains: Sequence[str], session: request
         except requests.exceptions.RequestException as exc:
             return False, f"erişilemedi: {type(exc).__name__}"
         try:
-            if resp.status_code in (301, 302, 303, 307, 308):
-                loc = resp.headers.get("Location", "")
-                if not loc:
-                    return False, "boş yönlendirme"
-                current = urljoin(current, loc)
+            step, value = _hop(current, resp, final_ok, session, settings)
+            if step == "fail":
+                return False, value
+            if step == "next":
+                current = value
                 continue
-            if resp.status_code != 200:
-                return False, f"HTTP {resp.status_code}"
-            if not final_ok:
-                return False, "nihai adres izinli alan adında değil"
             head = b""
             for chunk in resp.iter_content(chunk_size=65536):
                 head += chunk

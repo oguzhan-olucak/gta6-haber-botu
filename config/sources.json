@@ -15,14 +15,15 @@
       ],
       "origin_group": "rockstar",
       "max_verifications_per_run": 6,
-      "notes": "HTML liste ayrıştırıcı (bağlantılar + JSON-LD). Sayfa istemci tarafında çiziliyorsa entries=0 döner; o durumda Google News kaynağı devrededir."
+      "notes": "İstemci tarafında çizilen sayfa: <a> bağlantısı yoksa gömülü JSON/betik içindeki /newswire/article/ yolları yakalanır, başlık adres kısaltmasından türetilir ve sayfa doğrulanır. Yine 0 dönerse Google News kaynağı devrededir.",
+      "max_item_age_hours": 168
     },
     {
       "id": "rockstar_google_news",
       "name": "Rockstar Games",
       "trust_class": "OFFICIAL",
       "kind": "google_news",
-      "feed_url": "https://news.google.com/rss/search?q=site:rockstargames.com+%22Grand+Theft+Auto+VI%22&hl=en-US&gl=US&ceid=US:en",
+      "feed_url": "https://news.google.com/rss/search?q=site:rockstargames.com+(%22GTA+VI%22+OR+%22Grand+Theft+Auto+VI%22+OR+%22GTA+6%22+OR+Leonida)+when:14d&hl=en-US&gl=US&ceid=US:en",
       "enabled": true,
       "rss_verified": false,
       "allowed_domains": [
@@ -30,7 +31,8 @@
       ],
       "origin_group": "rockstar",
       "max_verifications_per_run": 6,
-      "notes": "Google News alan adı kısıtlı sorgu. Bağlantı yalnızca nihai adres rockstargames.com ise kabul edilir; çözülemeyen imzalı Google News bağlantıları atılır."
+      "notes": "Google News alan adı kısıtlı sorgu (son 14 gün). İmzalı Google News bağlantıları batchexecute ile çözülür; nihai adres rockstargames.com değilse öğe atılır.",
+      "max_item_age_hours": 168
     },
     {
       "id": "take_two_ir_html",
@@ -46,14 +48,15 @@
       ],
       "origin_group": "take_two",
       "max_verifications_per_run": 4,
-      "notes": "Yatırımcı ilişkileri basın bültenleri listesi."
+      "notes": "Yatırımcı ilişkileri basın bültenleri listesi.",
+      "max_item_age_hours": 168
     },
     {
       "id": "take_two_google_news",
       "name": "Take-Two Interactive",
       "trust_class": "OFFICIAL",
       "kind": "google_news",
-      "feed_url": "https://news.google.com/rss/search?q=site:ir.take2games.com+%22Grand+Theft+Auto%22&hl=en-US&gl=US&ceid=US:en",
+      "feed_url": "https://news.google.com/rss/search?q=site:take2games.com+(%22Grand+Theft+Auto%22+OR+%22GTA%22+OR+Rockstar)+when:14d&hl=en-US&gl=US&ceid=US:en",
       "enabled": true,
       "rss_verified": false,
       "allowed_domains": [
@@ -61,7 +64,8 @@
       ],
       "origin_group": "take_two",
       "max_verifications_per_run": 4,
-      "notes": "Google News alan adı kısıtlı sorgu (ir.take2games.com)."
+      "notes": "Google News alan adı kısıtlı sorgu (take2games.com, son 14 gün).",
+      "max_item_age_hours": 168
     },
     {
       "id": "ign",

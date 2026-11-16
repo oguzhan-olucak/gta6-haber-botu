@@ -1,6 +1,6 @@
 # SKILL_AUDIT_REPORT — Skill Ekosistemi Denetimi
 
-Üretim: `python tools/skill_audit.py` · 2026-11-16 06:23 UTC · **18/18 skill tüm denetimlerden geçti**
+Üretim: `python tools/skill_audit.py` · 2026-11-16 06:37 UTC · **18/18 skill tüm denetimlerden geçti**
 
 Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu mu, tetiklenme ve otomatik doğrulama bölümleri, gizli kabuk komutu yok; (2) **işlevsel** — skill'in koyduğu kurallar koda, ayarlara ve testlere karşı gerçekten çalıştırılır.
 
@@ -39,7 +39,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ 'Otomatik doğrulama' bölümü
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
-- ✅ HTTP POST yalnızca telegram_client.py — uyumlu
+- ✅ HTTP POST yalnızca telegram_client.py (+ collector: Google News çözümü) — uyumlu
 - ✅ HTTP GET yalnızca collector.py — uyumlu
 - ✅ dosya yazımı yalnızca storage/site_exporter — uyumlu
 - ✅ mypy bot temiz — Success: no issues found in 15 source files
@@ -57,7 +57,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ her tur ≥ 3 regresyon testi — {"1": 4, "2": 4, "3": 4, "4": 3, "5": 4, "6": 6}
 - ✅ her turda FAIL ve PASS kanıtı
 - ✅ tablo satırlarında dosya:satır
-- ✅ pytest tests/test_arena.py — 25 passed in 0.21s
+- ✅ pytest tests/test_arena.py — 25 passed in 0.20s
 
 ### `atomic-json-recovery` — ✅ (26 satır)
 
@@ -70,7 +70,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ lastgood + şema doğrulayıcılar mevcut
-- ✅ pytest tests/test_storage.py tests/test_resilience.py -k storage or recover or corrupt or half — 10 passed, 18 deselected in 0.17s
+- ✅ pytest tests/test_storage.py tests/test_resilience.py -k storage or recover or corrupt or half — 10 passed, 18 deselected in 0.23s
 
 ### `cost-guard` — ✅ (25 satır)
 
@@ -87,7 +87,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ run_deadline_seconds < iş zaman aşımı (15 dk)
 - ✅ kodda sabit Gemini model kimliği yok — bulunamadı
 - ✅ standart ubuntu-latest runner
-- ✅ pytest tests/test_publisher.py::test_gemini_quota_stops_calls_and_never_switches_model tests/test_arena.py::test_r2_sre_huge_retry_after_is_not_slept_through — 2 passed in 0.15s
+- ✅ pytest tests/test_publisher.py::test_gemini_quota_stops_calls_and_never_switches_model tests/test_arena.py::test_r2_sre_huge_retry_after_is_not_slept_through — 2 passed in 0.16s
 
 ### `event-clustering-calibrator` — ✅ (20 satır)
 
@@ -100,7 +100,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ eşik pozitif/negatif boşluğun içinde — en yüksek negatif 0.157 < eşik 0.27 ≤ en düşük pozitif 0.340
-- ✅ pytest tests/test_clustering.py — 15 passed in 0.14s
+- ✅ pytest tests/test_clustering.py — 15 passed in 0.12s
 
 ### `gemini-schema-enforcer` — ✅ (21 satır)
 
@@ -116,7 +116,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ ≥ 6 bağımsız doğrulama kontrolü — 6
 - ✅ sistem talimatı untrusted_source_data'yı tanımlar
 - ✅ SDK çağrısı response_json_schema kullanır
-- ✅ pytest tests/test_processor.py — 11 passed in 0.11s
+- ✅ pytest tests/test_processor.py — 11 passed in 0.10s
 
 ### `night-shift-supervisor` — ✅ (26 satır)
 
@@ -145,7 +145,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ resmî kaynak sayısı ≥ 2 ve etkin — 4 etkin
 - ✅ resmî kaynak alan adları yalnızca rockstargames.com / take2games.com — uyumlu
 - ✅ üçlü koşul (OFFICIAL + url_verified + alan adı) kodda
-- ✅ pytest tests/test_resilience.py tests/test_injection.py tests/test_arena.py -k official or google_news or html_listing or reverified — 14 passed, 49 deselected in 0.17s
+- ✅ pytest tests/test_resilience.py tests/test_injection.py tests/test_arena.py -k official or google_news or html_listing or reverified — 14 passed, 49 deselected in 0.14s
 
 ### `python-tdd-runner` — ✅ (30 satır)
 
@@ -158,7 +158,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ 14 kabul testi tanımlı — 14/14
-- ✅ pytest  — 162 passed in 1.11s
+- ✅ pytest  — 177 passed in 1.00s
 - ✅ ruff temiz — All checks passed!
 
 ### `rss-anti-poisoning` — ✅ (26 satır)
@@ -187,7 +187,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ tüm feed_url https
 - ✅ her kaynakta allowed_domains
-- ✅ pytest tests/test_collector.py tests/test_resilience.py — 33 passed in 0.27s
+- ✅ pytest tests/test_collector.py tests/test_resilience.py — 33 passed in 0.23s
 
 ### `security-auditor` — ✅ (30 satır)
 
@@ -204,7 +204,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ workflow yalnızca schedule + workflow_dispatch — schedule, workflow_dispatch
 - ✅ secret'lar yalnızca bot adımında
 - ✅ XML yalnızca defusedxml
-- ✅ pytest tests/test_publisher.py::test_secrets_never_logged — 1 passed in 0.13s
+- ✅ pytest tests/test_publisher.py::test_secrets_never_logged — 1 passed in 0.14s
 
 ### `static-site-guardian` — ✅ (32 satır)
 
@@ -221,7 +221,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ index.html'de satır içi betik yok
 - ✅ feed.json'da hassas alan yok
 - ✅ feed.json yalnızca https bağlantı
-- ✅ pytest tests/test_site_exporter.py — 33 passed in 0.16s
+- ✅ pytest tests/test_site_exporter.py — 33 passed in 0.17s
 
 ### `telegram-api-guard` — ✅ (25 satır)
 
@@ -236,7 +236,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ allowed_updates yalnızca message_reaction_count
 - ✅ views/forwards yalnızca 'unavailable' — 2 yer
 - ✅ 4096 sınırı ve retry_after üst sınırı
-- ✅ pytest tests/test_analyzer.py tests/test_publisher.py — 21 passed in 0.30s
+- ✅ pytest tests/test_analyzer.py tests/test_publisher.py — 21 passed in 0.25s
 
 ### `token-budget-guardian` — ✅ (29 satır)
 

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-16T17:21:04Z",
-  "last_successful_fetch_at": "2026-11-16T17:21:04Z",
+  "last_run_at": "2026-11-16T18:38:15Z",
+  "last_successful_fetch_at": "2026-11-16T18:38:15Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -255,6 +255,56 @@
       "first_seen": "2026-11-16T17:17:16Z",
       "status": "NEW",
       "source": "ign"
+    },
+    "b91a1127ebab1eeed192aadc": {
+      "first_seen": "2026-11-16T18:38:15Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "f7a1a7180f5a4a20e7f0b519": {
+      "first_seen": "2026-11-16T18:38:15Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "11cae06e7651d0ad9f76c2f3": {
+      "first_seen": "2026-11-16T18:38:15Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "fe43696d57e027fcd91eb185": {
+      "first_seen": "2026-11-16T18:38:15Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "41e72db5ba1798618ca16e87": {
+      "first_seen": "2026-11-16T18:38:15Z",
+      "status": "NEW",
+      "source": "eurogamer"
+    },
+    "1fc367fe5ed51062e8ab2e34": {
+      "first_seen": "2026-11-16T18:38:15Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "551dc7af0f13284236cf072b": {
+      "first_seen": "2026-11-16T18:38:15Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "67dc27cffa0554f9f7a156b1": {
+      "first_seen": "2026-11-16T18:38:15Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "93e72b7643b53c229397125f": {
+      "first_seen": "2026-11-16T18:38:15Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "e04f3151cad612480562ff5e": {
+      "first_seen": "2026-11-16T18:38:15Z",
+      "status": "NEW",
+      "source": "ign"
     }
   },
   "digests_sent": [
@@ -268,78 +318,78 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T17:21:04Z",
+      "checked_at": "2026-11-16T18:38:15Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
       "entries": 24,
-      "relevant": 18,
+      "relevant": 19,
       "new": 0,
-      "checked_at": "2026-11-16T17:21:04Z"
+      "checked_at": "2026-11-16T18:38:15Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T17:21:04Z"
+      "checked_at": "2026-11-16T18:38:15Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 4,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T17:21:04Z"
+      "checked_at": "2026-11-16T18:38:15Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
-      "relevant": 7,
-      "new": 0,
-      "checked_at": "2026-11-16T17:21:04Z"
+      "relevant": 8,
+      "new": 4,
+      "checked_at": "2026-11-16T18:38:15Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
-      "relevant": 18,
-      "new": 0,
-      "checked_at": "2026-11-16T17:21:04Z"
+      "relevant": 19,
+      "new": 1,
+      "checked_at": "2026-11-16T18:38:15Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
       "relevant": 11,
-      "new": 0,
-      "checked_at": "2026-11-16T17:21:04Z"
+      "new": 2,
+      "checked_at": "2026-11-16T18:38:15Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
       "relevant": 4,
       "new": 0,
-      "checked_at": "2026-11-16T17:21:04Z"
+      "checked_at": "2026-11-16T18:38:15Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 1,
       "new": 0,
-      "checked_at": "2026-11-16T17:21:04Z"
+      "checked_at": "2026-11-16T18:38:15Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 5,
+      "relevant": 4,
       "new": 0,
-      "checked_at": "2026-11-16T17:21:04Z"
+      "checked_at": "2026-11-16T18:38:15Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
       "relevant": 11,
-      "new": 0,
-      "checked_at": "2026-11-16T17:21:04Z"
+      "new": 3,
+      "checked_at": "2026-11-16T18:38:15Z"
     }
   },
   "run_log": [
@@ -380,6 +430,19 @@
       "started_at": "2026-11-16T17:21:04Z",
       "sources_ok": 11,
       "new_items": 0,
+      "published": 0,
+      "gemini_calls": 4,
+      "error_classes": [
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT"
+      ]
+    },
+    {
+      "started_at": "2026-11-16T18:38:15Z",
+      "sources_ok": 11,
+      "new_items": 10,
       "published": 0,
       "gemini_calls": 4,
       "error_classes": [
@@ -687,66 +750,6 @@
         "url_verified": false,
         "via": "rss",
         "raw_id": "8f6557a25e81fbf284fc3f6c"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "c4488f0d2b7be8e8eb4376c8": {
-      "item": {
-        "id": "c4488f0d2b7be8e8eb4376c8",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6 will \"provide mechanisms that encourage\" empathy \"for the first time in a GTA\"",
-        "url": "https://gamesradar.com/games/grand-theft-auto/rockstar-knows-people-want-to-play-gta-6-for-the-chaos-but-the-studio-will-also-provide-mechanisms-that-encourage-empathy-for-the-first-time-in-a-gta",
-        "summary": "Shoot and smooch",
-        "published_at": "2026-11-14T18:24:35Z",
-        "content_hash": "086180a0b7bec74f6cf17c88",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "c4488f0d2b7be8e8eb4376c8"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "ec6bccf692a17c40380bbeeb": {
-      "item": {
-        "id": "ec6bccf692a17c40380bbeeb",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "As the 13-year wait for GTA 6 ends, it’s time to remember the first 10 games released in 12 years",
-        "url": "https://gamesradar.com/games/grand-theft-auto/with-the-13-year-wait-for-gta-6-finally-ending-its-time-to-remember-that-rockstar-released-the-first-10-grand-theft-auto-games-in-just-12-years",
-        "summary": "The wait for GTA 6 is even more astounding when you remember how things used to be",
-        "published_at": "2026-11-14T18:00:00Z",
-        "content_hash": "b74fa79827f975625c816c07",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "ec6bccf692a17c40380bbeeb"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": true
-    },
-    "4590118cc6b6eff36422657e": {
-      "item": {
-        "id": "4590118cc6b6eff36422657e",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6: The Album seemingly leaks with Dua Lipa and Lana Del Rey as part of the 34-song tracklist",
-        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-the-album-seemingly-leaks-with-dua-lipa-and-lana-del-rey-as-part-of-the-full-34-song-tracklist",
-        "summary": "Starting from zero",
-        "published_at": "2026-11-14T17:47:21Z",
-        "content_hash": "2a8b4349ac148c68443296c5",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "4590118cc6b6eff36422657e"
       },
       "first_seen": "2026-11-16T06:35:35Z",
       "needs_eval": false
@@ -1367,9 +1370,219 @@
       },
       "first_seen": "2026-11-16T17:17:16Z",
       "needs_eval": true
+    },
+    "b91a1127ebab1eeed192aadc": {
+      "item": {
+        "id": "b91a1127ebab1eeed192aadc",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "UK NHS (National Health Service) getting on the GTA 6 hype",
+        "url": "https://reddit.com/r/GTA6/comments/1xxwwzg/uk_nhs_national_health_service_getting_on_the_gta",
+        "summary": "The NHS is the United Kingdom's universal healthcare system. This game is HUGE. Excellent tips from the NHS, as per. 😅😂 submitted by /u/YTK9000 [link] [comments]",
+        "published_at": "2026-11-16T18:23:22Z",
+        "content_hash": "5fbed9ad43da3e9d112672df",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "b91a1127ebab1eeed192aadc",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T18:38:15Z",
+      "needs_eval": false
+    },
+    "f7a1a7180f5a4a20e7f0b519": {
+      "item": {
+        "id": "f7a1a7180f5a4a20e7f0b519",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 studio head: \"I'd never want to rebuild a city, I think that would be a lot less satisfying\"",
+        "url": "https://gamesradar.com/games/grand-theft-auto/quote-of-the-day-by-gta-6-studio-head-id-never-want-to-rebuild-a-city-i-think-that-would-be-a-lot-less-satisfying",
+        "summary": "Aaron Garbutt explains how GTA 5 bought LA to life",
+        "published_at": "2026-11-16T18:00:00Z",
+        "content_hash": "0c2cf478ea4b0d114abe90dd",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "f7a1a7180f5a4a20e7f0b519",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/envnaX7DmYi2WKwX2tihaE-1920-80.jpg"
+      },
+      "first_seen": "2026-11-16T18:38:15Z",
+      "needs_eval": true
+    },
+    "11cae06e7651d0ad9f76c2f3": {
+      "item": {
+        "id": "11cae06e7651d0ad9f76c2f3",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "The old GTA Fandom Wiki has been caught using AI to create GTA 6 articles",
+        "url": "https://reddit.com/r/GTA6/comments/1xxw8z3/the_old_gta_fandom_wiki_has_been_caught_using_ai",
+        "summary": "Since the GTA Wiki migrated away from Fandom earlier this year , the old Fandom-hosted GTA Wiki has relied on questionable employee contributions to keep it alive in an effort to preserve its ad revenue and search rankings. Back in July, Fandom was caught plagiarizing GTA Online pages from gta.wiki , with substantial evidence to back up those claims . If you want to avoid Fandom's AI slop about GTA 6 in Google search results, you are welcome to install the Indie Wiki Buddy browser extension at getindie.wiki to replace all Fandom links with their independent wiki alternatives, such as gta.wiki . Thank you r/GTA6 for your continued support of the GTA Wiki![](…",
+        "published_at": "2026-11-16T17:58:42Z",
+        "content_hash": "c603e640b48a887729deceb4",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "11cae06e7651d0ad9f76c2f3",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T18:38:15Z",
+      "needs_eval": false
+    },
+    "fe43696d57e027fcd91eb185": {
+      "item": {
+        "id": "fe43696d57e027fcd91eb185",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "New GTA 6 screenshot of the Grotti Cheetah spotted on a billboard in Miami.",
+        "url": "https://reddit.com/r/GTA6/comments/1xxw5vo/new_gta_6_screenshot_of_the_grotti_cheetah",
+        "summary": "submitted by /u/peqc [link] [comments]",
+        "published_at": "2026-11-16T17:55:21Z",
+        "content_hash": "823ec02685e1502039f5c97e",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "fe43696d57e027fcd91eb185",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T18:38:15Z",
+      "needs_eval": false
+    },
+    "41e72db5ba1798618ca16e87": {
+      "item": {
+        "id": "41e72db5ba1798618ca16e87",
+        "source_id": "eurogamer",
+        "source_name": "Eurogamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "eurogamer",
+        "title": "UK Conservative leader Kemi Badenoch is more worried \"about the amount of time\" people will spend on GTA 6 than the game's violent content",
+        "url": "https://eurogamer.net/uk-conservative-kemi-badenoch-gta-6",
+        "summary": "Leader of the UK Conservative Party (and former Mortal Kombat player) Kemi Badenoch is more worried about the amount of time people will spend playing GTA 6 rather than the game itself. Read more",
+        "published_at": "2026-11-16T17:48:40Z",
+        "content_hash": "c8c97668bd07f63180bf664b",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "41e72db5ba1798618ca16e87",
+        "image_url": "https://assetsio.gnwcdn.com/nz-gta.jpg?width=690&quality=85&format=jpg&auto=webp"
+      },
+      "first_seen": "2026-11-16T18:38:15Z",
+      "needs_eval": true
+    },
+    "1fc367fe5ed51062e8ab2e34": {
+      "item": {
+        "id": "1fc367fe5ed51062e8ab2e34",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "The DualSense Edge is taking a very rare discount as GTA 6 downloads onto your console",
+        "url": "https://gamesradar.com/hardware/gaming-controllers/the-dualsense-edge-is-taking-a-very-rare-discount-as-gta-6-downloads-onto-your-console",
+        "summary": "The DualSense Edge is probably going to be the best controller to experience GTA 6 with when it launches, and it's taken a very rare discount.",
+        "published_at": "2026-11-16T17:20:38Z",
+        "content_hash": "4bd3ee56ce9d3e9a8ae5e35c",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "1fc367fe5ed51062e8ab2e34",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/QZJcsEmSXn8SWeEMZ2wcdk-1920-80.jpg"
+      },
+      "first_seen": "2026-11-16T18:38:15Z",
+      "needs_eval": true
+    },
+    "551dc7af0f13284236cf072b": {
+      "item": {
+        "id": "551dc7af0f13284236cf072b",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "NBA 2K27 Is Adding Vice City, GTA 6-Themed Cosmetics, and Much More as Part of Massive Rockstar Games Collaboration",
+        "url": "https://ign.com/articles/nba-2k27-is-adding-vice-city-gta-6-themed-cosmetics-and-much-more-as-part-of-massive-rockstar-games-collaboration",
+        "summary": "Vice City is coming to NBA 2K27 as part of a massive crossover with GTA 6.",
+        "published_at": "2026-11-16T16:45:15Z",
+        "content_hash": "9c471b9b0c1980253fae9ce4",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "551dc7af0f13284236cf072b",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/16/nbathumb-1794845245723.png"
+      },
+      "first_seen": "2026-11-16T18:38:15Z",
+      "needs_eval": true
+    },
+    "67dc27cffa0554f9f7a156b1": {
+      "item": {
+        "id": "67dc27cffa0554f9f7a156b1",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "'This Is Akin to a Moon Landing': How Gaming's Top Content Creators Are Preparing for GTA 6's Launch and Beyond",
+        "url": "https://ign.com/articles/this-is-akin-to-a-moon-landing-how-gamings-top-content-creators-are-preparing-for-gta-6s-launch-and-beyond",
+        "summary": "GTA 6 is finally almost here, and the world's biggest content creators are trying to figure out how to handle this behemoth.",
+        "published_at": "2026-11-16T16:44:23Z",
+        "content_hash": "a9d02668bd4b2f6bebc50c71",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "67dc27cffa0554f9f7a156b1",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/10/gta-6-pre-load-art-1794330386826.jpg"
+      },
+      "first_seen": "2026-11-16T18:38:15Z",
+      "needs_eval": true
+    },
+    "93e72b7643b53c229397125f": {
+      "item": {
+        "id": "93e72b7643b53c229397125f",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Xbox Offers Doctor’s Note for Undefined Gaming Session Definitely Not Linked to GTA 6",
+        "url": "https://ign.com/articles/xbox-offers-doctors-note-for-not-gta-6",
+        "summary": "Xbox has kicked off its marketing for the game it’s not allowed to mention in its marketing. Like the weird alligator-shaped Xbox recently announced, Microsoft is doing its best to get Xbox players excited about GTA 6 without saying the game’s name.",
+        "published_at": "2026-11-16T15:54:18Z",
+        "content_hash": "c9f8b175d03fb21c65dc3e05",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "93e72b7643b53c229397125f",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/10/ultimate-edition-vice-city-style-03-1794326189563.jpg"
+      },
+      "first_seen": "2026-11-16T18:38:15Z",
+      "needs_eval": true
+    },
+    "e04f3151cad612480562ff5e": {
+      "item": {
+        "id": "e04f3151cad612480562ff5e",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Fox News Talked About GTA 6, and It Went as Well as You'd Expect",
+        "url": "https://ign.com/articles/fox-news-talked-about-gta-6-and-it-went-as-well-as-youd-expect",
+        "summary": "Fox & Friends discusses GTA 6 ahead of launch, saying it won't be a good thing for \"our culture and society.\"",
+        "published_at": "2026-11-16T15:40:13Z",
+        "content_hash": "712505c0b07efb7fc1c88012",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "e04f3151cad612480562ff5e",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/05/lucia-caminos-14-1793891731331.jpg"
+      },
+      "first_seen": "2026-11-16T18:38:15Z",
+      "needs_eval": true
     }
   },
-  "persisted_at": "2026-11-16T17:21:04Z",
+  "persisted_at": "2026-11-16T18:38:15Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": null
 }

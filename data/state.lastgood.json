@@ -1,113 +1,113 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-16T05:54:05Z",
-  "last_successful_fetch_at": "2026-11-16T05:54:05Z",
-  "first_run_at": "2026-11-16T05:43:37Z",
+  "last_run_at": "2026-11-16T06:06:23Z",
+  "last_successful_fetch_at": "2026-11-16T06:06:23Z",
+  "first_run_at": "2026-11-16T06:06:23Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
   "seen_items": {
     "2b8b87d43a1be409a8067ab2": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "reddit_gta6"
     },
     "f729a2144f6f13176fbe526f": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "reddit_gta6"
     },
     "4564061e2d248ceba56e3d6a": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "reddit_gta6"
     },
     "d679772e39c557e9b9452501": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "reddit_gta6"
     },
     "d86101e04c6aff5367841c74": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "reddit_gta6"
     },
     "57ff0c674424a3da8eb9aa37": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "reddit_gta6"
     },
     "dc8afa8a57b87a383f509743": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "NEW",
       "source": "ign"
     },
     "d3be7ca7db1f8950133ad5e8": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "reddit_gta6"
     },
     "2336fc43beb184c4c4f23645": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "reddit_gta6"
     },
     "0b52d2076cd4fdf19ab12286": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "NEW",
       "source": "ign"
     },
     "b20ff4ab7f1cc32d30653794": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "eurogamer"
     },
     "8769ca2c09f395ccb7a2f11a": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "NEW",
       "source": "insider_gaming"
     },
     "27fa97f7f32882508d0cca63": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "eurogamer"
     },
     "112c1ad1b5e9188d93412b67": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "NEW",
       "source": "insider_gaming"
     },
     "b0bf835cdba28c5cfc4e07a6": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "pcgamer"
     },
     "8f6557a25e81fbf284fc3f6c": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "ign"
     },
     "c4488f0d2b7be8e8eb4376c8": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "NEW",
       "source": "gamesradar"
     },
     "ec6bccf692a17c40380bbeeb": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "NEW",
       "source": "gamesradar"
     },
     "4590118cc6b6eff36422657e": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "gamesradar"
     },
     "0ad94dbec5859dbf80957db6": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "NEW",
       "source": "ign"
     },
     "051f7fbcc77e186c202ee8eb": {
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "status": "HELD",
       "source": "gamesradar"
     }
@@ -116,97 +116,83 @@
     "2026-11-16T06"
   ],
   "alerts_last_sent": {
-    "GEMINI_AUTH": "2026-11-16T05:54:05Z"
+    "GEMINI_AUTH": "2026-11-16T06:06:23Z"
   },
-  "gemini_quota_blocked_until": "2026-11-16T06:54:05Z",
+  "gemini_quota_blocked_until": "2026-11-16T07:06:23Z",
   "source_status": {
     "rockstar_newswire_html": {
       "ok": true,
       "entries": 0,
       "relevant": 0,
-      "checked_at": "2026-11-16T05:54:05Z",
+      "checked_at": "2026-11-16T06:06:23Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
       "entries": 100,
       "relevant": 0,
-      "checked_at": "2026-11-16T05:54:05Z"
+      "checked_at": "2026-11-16T06:06:23Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
-      "checked_at": "2026-11-16T05:54:05Z"
+      "checked_at": "2026-11-16T06:06:23Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 54,
       "relevant": 0,
-      "checked_at": "2026-11-16T05:54:05Z"
+      "checked_at": "2026-11-16T06:06:23Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
-      "relevant": 0,
-      "checked_at": "2026-11-16T05:54:05Z"
+      "relevant": 4,
+      "checked_at": "2026-11-16T06:06:23Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
-      "relevant": 0,
-      "checked_at": "2026-11-16T05:54:05Z"
+      "relevant": 2,
+      "checked_at": "2026-11-16T06:06:23Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 0,
-      "checked_at": "2026-11-16T05:54:05Z"
+      "relevant": 4,
+      "checked_at": "2026-11-16T06:06:23Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
-      "relevant": 0,
-      "checked_at": "2026-11-16T05:54:05Z"
+      "relevant": 1,
+      "checked_at": "2026-11-16T06:06:23Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 0,
-      "checked_at": "2026-11-16T05:54:05Z"
+      "checked_at": "2026-11-16T06:06:23Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 0,
-      "checked_at": "2026-11-16T05:54:05Z"
+      "relevant": 2,
+      "checked_at": "2026-11-16T06:06:23Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
-      "relevant": 0,
-      "checked_at": "2026-11-16T05:54:05Z"
+      "relevant": 8,
+      "checked_at": "2026-11-16T06:06:23Z"
     }
   },
   "run_log": [
     {
-      "started_at": "2026-11-16T05:43:37Z",
+      "started_at": "2026-11-16T06:06:23Z",
       "sources_ok": 11,
       "new_items": 21,
-      "published": 0,
-      "gemini_calls": 4,
-      "error_classes": [
-        "TELEGRAM_API_ERROR",
-        "UNEXPECTED_ERROR",
-        "UNEXPECTED_ERROR",
-        "UNEXPECTED_ERROR",
-        "UNEXPECTED_ERROR"
-      ]
-    },
-    {
-      "started_at": "2026-11-16T05:54:05Z",
-      "sources_ok": 11,
-      "new_items": 0,
       "published": 0,
       "gemini_calls": 1,
       "error_classes": [
@@ -232,7 +218,7 @@
         "via": "rss",
         "raw_id": "2b8b87d43a1be409a8067ab2"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "f729a2144f6f13176fbe526f": {
@@ -252,7 +238,7 @@
         "via": "rss",
         "raw_id": "f729a2144f6f13176fbe526f"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "4564061e2d248ceba56e3d6a": {
@@ -272,7 +258,7 @@
         "via": "rss",
         "raw_id": "4564061e2d248ceba56e3d6a"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "d679772e39c557e9b9452501": {
@@ -292,7 +278,7 @@
         "via": "rss",
         "raw_id": "d679772e39c557e9b9452501"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "d86101e04c6aff5367841c74": {
@@ -312,7 +298,7 @@
         "via": "rss",
         "raw_id": "d86101e04c6aff5367841c74"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "57ff0c674424a3da8eb9aa37": {
@@ -332,7 +318,7 @@
         "via": "rss",
         "raw_id": "57ff0c674424a3da8eb9aa37"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "dc8afa8a57b87a383f509743": {
@@ -352,7 +338,7 @@
         "via": "rss",
         "raw_id": "dc8afa8a57b87a383f509743"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": true
     },
     "d3be7ca7db1f8950133ad5e8": {
@@ -372,7 +358,7 @@
         "via": "rss",
         "raw_id": "d3be7ca7db1f8950133ad5e8"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "2336fc43beb184c4c4f23645": {
@@ -392,7 +378,7 @@
         "via": "rss",
         "raw_id": "2336fc43beb184c4c4f23645"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "0b52d2076cd4fdf19ab12286": {
@@ -412,7 +398,7 @@
         "via": "rss",
         "raw_id": "0b52d2076cd4fdf19ab12286"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": true
     },
     "b20ff4ab7f1cc32d30653794": {
@@ -432,7 +418,7 @@
         "via": "rss",
         "raw_id": "b20ff4ab7f1cc32d30653794"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "8769ca2c09f395ccb7a2f11a": {
@@ -452,7 +438,7 @@
         "via": "rss",
         "raw_id": "8769ca2c09f395ccb7a2f11a"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": true
     },
     "27fa97f7f32882508d0cca63": {
@@ -472,7 +458,7 @@
         "via": "rss",
         "raw_id": "27fa97f7f32882508d0cca63"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "112c1ad1b5e9188d93412b67": {
@@ -492,7 +478,7 @@
         "via": "rss",
         "raw_id": "112c1ad1b5e9188d93412b67"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": true
     },
     "b0bf835cdba28c5cfc4e07a6": {
@@ -512,7 +498,7 @@
         "via": "rss",
         "raw_id": "b0bf835cdba28c5cfc4e07a6"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "8f6557a25e81fbf284fc3f6c": {
@@ -532,7 +518,7 @@
         "via": "rss",
         "raw_id": "8f6557a25e81fbf284fc3f6c"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "c4488f0d2b7be8e8eb4376c8": {
@@ -552,7 +538,7 @@
         "via": "rss",
         "raw_id": "c4488f0d2b7be8e8eb4376c8"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": true
     },
     "ec6bccf692a17c40380bbeeb": {
@@ -572,7 +558,7 @@
         "via": "rss",
         "raw_id": "ec6bccf692a17c40380bbeeb"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": true
     },
     "4590118cc6b6eff36422657e": {
@@ -592,7 +578,7 @@
         "via": "rss",
         "raw_id": "4590118cc6b6eff36422657e"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     },
     "0ad94dbec5859dbf80957db6": {
@@ -612,7 +598,7 @@
         "via": "rss",
         "raw_id": "0ad94dbec5859dbf80957db6"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": true
     },
     "051f7fbcc77e186c202ee8eb": {
@@ -632,9 +618,9 @@
         "via": "rss",
         "raw_id": "051f7fbcc77e186c202ee8eb"
       },
-      "first_seen": "2026-11-16T05:43:37Z",
+      "first_seen": "2026-11-16T06:06:23Z",
       "needs_eval": false
     }
   },
-  "persisted_at": "2026-11-16T05:54:05Z"
+  "persisted_at": "2026-11-16T06:06:23Z"
 }

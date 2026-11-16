@@ -183,7 +183,7 @@ def publish_post(*, post: dict, text: str, history: dict, chat_id: str, telegram
     history.setdefault("posts", []).append(post)
     persist()  # gönderimden önce kalıcı kayıt
     try:
-        result = telegram.send_message(chat_id, text)
+        result = telegram.send_message(chat_id, text, preview_url=post["source_urls"][0])
     except TelegramUncertainError as exc:
         post["publish_status"] = "UNCERTAIN"
         post["publish_error"] = exc.error_class.value

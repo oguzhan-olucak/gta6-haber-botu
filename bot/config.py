@@ -96,6 +96,11 @@ class Settings(_Strict):
     display_utc_offset_hours: int = Field(3, ge=-12, le=14)
     max_rss_items_per_run: int = Field(60, ge=1, le=500)
     max_item_age_hours: int = Field(48, ge=1, le=336)
+    # Haber görselleri yalnızca kaynağın kendi alan adından veya bu yayıncı CDN'lerinden alınır (hotlink, indirilmez)
+    image_host_allowlist: list[str] = Field(default_factory=lambda: [
+        "media-rockstargames-com.akamaized.net", "rockstargames.com", "take2games.com", "ignimgs.com", "ign.com",
+        "gnwcdn.com", "eurogamer.net", "futurecdn.net", "gamesradar.com", "pcgamer.com",
+        "videogameschronicle.com", "insider-gaming.com", "wp.com"])
     max_gemini_calls_per_run: int = Field(4, ge=0, le=50)
     gemini_quota_cooldown_minutes: int = Field(60, ge=5)
     max_daily_posts: int = Field(8, ge=0, le=50)

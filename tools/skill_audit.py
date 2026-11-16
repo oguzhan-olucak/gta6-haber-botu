@@ -326,6 +326,9 @@ def c_site() -> list[Check]:
             Check("index.html'de satır içi betik yok", not re.search(r"<script>(?!\s*</script>)", page)),
             Check("feed.json'da hassas alan yok", not re.search(r"chat_id|content_hashes|publish_error|source_titles|"
                                                                  r"telegram_update_offset|-100\d{6,}", blob)),
+            Check("görsel güvenliği: safe_image_url + no-referrer + atıf",
+                  "def safe_image_url" in read("bot/collector.py") and "no-referrer" in read("docs/assets/app.js")
+                  and "Görsel: " in read("docs/assets/app.js")),
             Check("feed.json yalnızca https bağlantı", all(s["url"].startswith("https://") for i in feed["items"]
                                                             for s in i["sources"])),
             pytest("tests/test_site_exporter.py")]

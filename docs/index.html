@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="GTA VI hakkında kaynağı doğrulanmış Türkçe haberler, etkileşimli Leonida haritası üzerinde: her haberde doğrulama düzeyi, kaynak bağlantısı ve çıkışa kalan süre.">
 <meta name="theme-color" content="#05060f">
@@ -317,7 +317,11 @@
 <dialog id="drawer" class="sheet" aria-labelledby="d-title">
   <div class="sheet__panel" id="drawer-panel">
     <div class="sheet__progress" aria-hidden="true"><span id="d-progress"></span></div>
-    <svg class="sheet__cover" viewBox="0 0 320 140" aria-hidden="true"><use id="d-cover" href="#cover-vice_city"/></svg>
+    <figure class="sheet__media">
+      <svg class="sheet__cover" viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use id="d-cover" href="#cover-vice_city"/></svg>
+      <img id="d-image" class="sheet__img" alt="" hidden referrerpolicy="no-referrer" decoding="async">
+      <figcaption id="d-credit" class="credit" hidden></figcaption>
+    </figure>
     <header class="sheet__head">
       <div id="d-badges" class="badges"></div>
       <button type="button" class="iconbtn" data-close aria-label="Kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>

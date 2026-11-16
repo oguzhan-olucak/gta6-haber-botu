@@ -32,7 +32,8 @@ MAX_RETRY_AFTER_SECONDS = 60  # daha uzun bekleme istenirse bu çalışmada vazg
 class MessageSender(Protocol):
     """Telegram'a mesaj gönderen ve güncelleme alan nesne (gerçek istemci veya test sahtesi)."""
 
-    def send_message(self, chat_id: str | int, text: str, *, disable_preview: bool = False) -> dict[str, Any]: ...
+    def send_message(self, chat_id: str | int, text: str, *, disable_preview: bool = False,
+                     preview_url: str | None = None) -> dict[str, Any]: ...
 
     def get_updates(self, offset: int | None, allowed_updates: list[str], limit: int = 100) -> list[dict[str, Any]]: ...
 
@@ -138,8 +139,12 @@ class TelegramClient:
 
     # ---- Genel metotlar ---------------------------------------------------------
 
-    def send_message(self, chat_id: str | int, text: str, *, disable_preview: bool = False) -> dict[str, Any]:
-        """HTML parse_mode ile mesaj gönderir; 4096 karakter sınırı önceden denetlenir."""
+    def send_message(self, chat_id: str | int, text: str, *, disable_preview: bool = False,
+                     preview_url: str | None = None) -> dict[str, Any]:
+        """HTML parse_mode ile mesaj gönderir; 4096 karakter sınırı önceden denetlenir.
+
+        ``preview_url`` verilirse Telegram bağlantı önizlemesi o kaynağın sayfasından büyük görselle,
+        metnin üstünde gösterilir (görseli Telegram kendi çeker; bot görsel indirmez/yüklemez)."""
         if len(text) > MAX_MESSAGE_CHARS:
             raise TelegramError(ErrorClass.TELEGRAM_API_ERROR, "Mesaj 4096 karakter sınırını aşıyor",
                                 definitely_not_sent=True)
@@ -149,6 +154,8 @@ class TelegramClient:
             "parse_mode": "HTML",
             "link_preview_options": {"is_disabled": disable_preview, "prefer_small_media": True},
         }
+        if preview_url and not disable_preview and preview_url.startswith("https://"):
+            payload["link_preview_options"] = {"url": preview_url, "prefer_large_media": True, "show_above_text": True}
         result = self._call("sendMessage", payload, idempotent=False)
         return result if isinstance(result, dict) else {}
 

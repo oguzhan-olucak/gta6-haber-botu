@@ -27,12 +27,12 @@ class FakeTelegram:
         self.updates = updates or []
         self.next_id = 100
 
-    def send_message(self, chat_id, text, disable_preview=False):
+    def send_message(self, chat_id, text, disable_preview=False, preview_url=None):
         if self.fail_with and str(chat_id) == CHAT:
             exc, self.fail_with = self.fail_with, None
             raise exc
         self.next_id += 1
-        self.sent.append({"chat_id": str(chat_id), "text": text, "message_id": self.next_id})
+        self.sent.append({"chat_id": str(chat_id), "text": text, "message_id": self.next_id, "preview_url": preview_url})
         return {"message_id": self.next_id, "chat": {"id": int(chat_id)}}
 
     def get_updates(self, offset, allowed_updates, limit=100):

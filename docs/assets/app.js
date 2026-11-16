@@ -67,6 +67,19 @@
   var ICON_COPY = ["M9 9h10v10H9z", "M5 15V5h10"];
   var ICON_PIN = ["M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11z", "M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"];
 
+  /* Kaynağın kendi görseli: yalnızca https, yönlendiren bilgisi gönderilmez; yüklenemezse SVG kapak kalır. */
+  function photo(it, cls) {
+    var u = safeHttps(it.image);
+    if (!u) return null;
+    var img = el("img", cls);
+    img.alt = ""; img.loading = "lazy"; img.decoding = "async"; img.referrerPolicy = "no-referrer";
+    img.addEventListener("load", function () { img.classList.add("is-loaded"); });
+    img.addEventListener("error", function () { img.remove(); });
+    img.src = u;
+    return img;
+  }
+  function credit(it) { return "Görsel: " + (it.image_credit || domain(it.image) || "kaynak"); }
+
   function safeHttps(u) {
     try { var x = new URL(String(u)); return x.protocol === "https:" ? x.href : null; } catch (e) { return null; }
   }
@@ -494,6 +507,8 @@
     c.setAttribute("data-region", it._loc);
     var cv = el("div", "card__cover");
     cv.appendChild(cover(it._loc));
+    var ph = photo(it, "card__img");
+    if (ph) { cv.appendChild(ph); var cr = el("p", "credit", credit(it)); cv.appendChild(cr); ph.addEventListener("error", function () { cr.remove(); }); }
     cv.appendChild(badge(it.trust_group));
     cv.appendChild(el("span", "card__loc", REGION[it._loc] ? REGION[it._loc].name : ""));
     c.appendChild(cv);
@@ -595,6 +610,13 @@
   function openItem(id, fromHash) {
     var it = state.byId[id]; if (!it) return;
     $("#d-cover").setAttribute("href", "#cover-" + (REGION[it._loc] ? it._loc : "vice_city"));
+    var dimg = $("#d-image"), dcr = $("#d-credit"), du = safeHttps(it.image);
+    dimg.classList.remove("is-loaded"); dimg.hidden = !du; dcr.hidden = !du;
+    if (du) {
+      dimg.onload = function () { dimg.classList.add("is-loaded"); };
+      dimg.onerror = function () { dimg.hidden = true; dcr.hidden = true; };
+      dimg.src = du; dcr.textContent = credit(it);
+    } else { dimg.removeAttribute("src"); }
     var b = $("#d-badges"); b.textContent = ""; b.appendChild(badge(it.trust_group));
     b.appendChild(el("span", "loc", REGION[it._loc] ? REGION[it._loc].name : ""));
     $("#d-title").textContent = it.title;
@@ -639,6 +661,8 @@
 
   function bubble(it) {
     var b = el("div", "bubble");
+    var bp = photo(it, "bubble__img");   // Telegram önizlemesi: kaynak sayfasının büyük görseli metnin üstünde
+    if (bp) b.appendChild(bp);
     var line1 = el("div");
     line1.appendChild(document.createTextNode((TG_BADGE[it.label] || "▪️") + " "));
     line1.appendChild(el("b", null, it.label_text || TRUST[it.trust_group].name.toLocaleUpperCase("tr")));

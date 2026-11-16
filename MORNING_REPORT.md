@@ -94,6 +94,10 @@
 - **Gemini:** varsayılan istemci REST (`v1beta generateContent`, yalnızca `x-goog-api-key`); `AQ.` auth key'leriyle
   uyumlu. Eski istemcinin koyduğu soğuma kilidi ilk çalışmada bir kez kendiliğinden temizlenir. Alarm, Google'ın hata
   kodunu (anahtarsız) gösterir.
+- **Otomatik haber görselleri:** yayından önce doğrulanan kaynak sayfasının `og:image` görseli (yoksa RSS
+  `media:content`/enclosure) haberle kaydedilir. Görsel yalnızca kaynağın alan adından veya bilinen yayıncı
+  CDN'lerinden kabul edilir; topluluk kaynaklarından alınmaz; indirilmez, kaynağa atıfla bağlantı olarak gösterilir.
+  Telegram gönderisi kaynak sayfasının büyük önizleme görseliyle (metnin üstünde) gider.
 - **Doğrulama:** `python tools/site_check.py` (Playwright: 390/820/1440 × yalnız gerçek/varsayılan, bölge tıklama,
   çekmeceler, sıfır JS hatası).
 

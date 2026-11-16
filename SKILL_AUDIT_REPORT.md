@@ -1,6 +1,6 @@
 # SKILL_AUDIT_REPORT — Skill Ekosistemi Denetimi
 
-Üretim: `python tools/skill_audit.py` · 2026-11-16 06:59 UTC · **18/18 skill tüm denetimlerden geçti**
+Üretim: `python tools/skill_audit.py` · 2026-11-16 07:12 UTC · **18/18 skill tüm denetimlerden geçti**
 
 Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu mu, tetiklenme ve otomatik doğrulama bölümleri, gizli kabuk komutu yok; (2) **işlevsel** — skill'in koyduğu kurallar koda, ayarlara ve testlere karşı gerçekten çalıştırılır.
 
@@ -20,7 +20,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 | `rss-anti-poisoning` | Kötü niyetli veya bozuk RSS/HTML içeriğine (prompt injection, homoglif, görünmez karakter, XML bombası, aşırı uzun alan, sahte resmî kaynak, topluluk metninin doğrulanmış habere karışması) karşı savunmaları denetler | Yeni kaynak eklendiğinde; processor/gemini doğrulama kuralları değiştiğinde. | 11/11 | ✅ DOĞRULANDI |
 | `rss-integrity-checker` | RSS/Atom ayrıştırma, URL canonicalization, yönlendirme takibi, kaynak sınıfı eşleşmesi ve bozuk XML izolasyonunu test eder | config/sources.json veya collector.py / official.py / textutil.py değiştiğinde. | 11/11 | ✅ DOĞRULANDI |
 | `security-auditor` | GTA6 bot kodunda, testlerde ve GitHub Actions dosyalarında secret sızıntısı, SSRF, güvensiz eval/exec ve RSS kaynaklı prompt injection denetimi | Her commit öncesi; bot/, tools/ veya workflow değiştiğinde; yeni bağımlılık eklendiğinde. | 14/14 | ✅ DOĞRULANDI |
-| `static-site-guardian` | docs/ altındaki GitHub Pages haber sitesinin ve feed.json köprüsünün güvenliğini, gizlilik ve şema kurallarını denetler (XSS, CSP, gizli veri sızıntısı, yalnızca yayınlanmış haber) | Site, exporter veya demo beslemesi değiştiğinde; yayına almadan önce. | 14/14 | ✅ DOĞRULANDI |
+| `static-site-guardian` | docs/ altındaki GitHub Pages haber sitesinin ve feed.json köprüsünün güvenliğini, gizlilik ve şema kurallarını denetler (XSS, CSP, gizli veri sızıntısı, yalnızca yayınlanmış haber) | Site, exporter veya demo beslemesi değiştiğinde; yayına almadan önce. | 15/15 | ✅ DOĞRULANDI |
 | `telegram-api-guard` | Telegram Bot API kısıtlarını korur; views/forwards uydurulmaz, message_reaction_count idempotent işlenir, yönetici özeti spam yapmaz, sendMessage zaman aşımında tekrar gönderilmez | telegram_client.py, publisher.py veya analyzer.py değiştiğinde. | 12/12 | ✅ DOĞRULANDI |
 | `token-budget-guardian` | Uzun/otonom oturumlarda token ve kota tasarrufu kuralları; gereksiz yeniden okumayı, büyük çıktıları ve sonsuz deneme-yanılmayı keser | Her uzun oturumun başında; her büyük adımın sonunda (bütçe kontrol listesi). | 11/11 | ✅ DOĞRULANDI |
 | `ui-ux-interaction-standards` | docs/ sitesindeki etkileşim kuralları — süzgeç/sekme/arama anında çalışır, çekmece ve modallar <dialog> ile erişilebilir açılır, boş durum yönlendirir, gerçek veri örnek bültenin önündedir | `docs/assets/app.js` veya `docs/index.html` etkileşim yapısı değiştiğinde. | 17/17 | ✅ DOĞRULANDI |
@@ -57,7 +57,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ her tur ≥ 3 regresyon testi — {"1": 4, "2": 4, "3": 4, "4": 3, "5": 4, "6": 6}
 - ✅ her turda FAIL ve PASS kanıtı
 - ✅ tablo satırlarında dosya:satır
-- ✅ pytest tests/test_arena.py — 25 passed in 0.21s
+- ✅ pytest tests/test_arena.py — 25 passed in 0.25s
 
 ### `atomic-json-recovery` — ✅ (26 satır)
 
@@ -70,7 +70,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ lastgood + şema doğrulayıcılar mevcut
-- ✅ pytest tests/test_storage.py tests/test_resilience.py -k storage or recover or corrupt or half — 10 passed, 18 deselected in 0.19s
+- ✅ pytest tests/test_storage.py tests/test_resilience.py -k storage or recover or corrupt or half — 10 passed, 18 deselected in 0.18s
 
 ### `cost-guard` — ✅ (25 satır)
 
@@ -100,7 +100,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ eşik pozitif/negatif boşluğun içinde — en yüksek negatif 0.157 < eşik 0.27 ≤ en düşük pozitif 0.340
-- ✅ pytest tests/test_clustering.py — 15 passed in 0.16s
+- ✅ pytest tests/test_clustering.py — 15 passed in 0.12s
 
 ### `gemini-schema-enforcer` — ✅ (22 satır)
 
@@ -145,7 +145,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ resmî kaynak sayısı ≥ 2 ve etkin — 4 etkin
 - ✅ resmî kaynak alan adları yalnızca rockstargames.com / take2games.com — uyumlu
 - ✅ üçlü koşul (OFFICIAL + url_verified + alan adı) kodda
-- ✅ pytest tests/test_resilience.py tests/test_injection.py tests/test_arena.py -k official or google_news or html_listing or reverified — 14 passed, 49 deselected in 0.16s
+- ✅ pytest tests/test_resilience.py tests/test_injection.py tests/test_arena.py -k official or google_news or html_listing or reverified — 14 passed, 49 deselected in 0.17s
 
 ### `python-tdd-runner` — ✅ (30 satır)
 
@@ -158,7 +158,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ 14 kabul testi tanımlı — 14/14
-- ✅ pytest  — 190 passed in 1.14s
+- ✅ pytest  — 196 passed in 0.99s
 - ✅ ruff temiz — All checks passed!
 
 ### `rss-anti-poisoning` — ✅ (26 satır)
@@ -173,7 +173,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ saldırı yükü kütüphanesi ≥ 8 — 8
 - ✅ homoglif katlama aktif
-- ✅ pytest tests/test_injection.py tests/test_arena.py -k injection or homoglyph or padded or blend or links — 21 passed, 20 deselected in 0.15s
+- ✅ pytest tests/test_injection.py tests/test_arena.py -k injection or homoglyph or padded or blend or links — 21 passed, 20 deselected in 0.16s
 
 ### `rss-integrity-checker` — ✅ (27 satır)
 
@@ -187,7 +187,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ tüm feed_url https
 - ✅ her kaynakta allowed_domains
-- ✅ pytest tests/test_collector.py tests/test_resilience.py — 33 passed in 0.25s
+- ✅ pytest tests/test_collector.py tests/test_resilience.py — 33 passed in 0.22s
 
 ### `security-auditor` — ✅ (30 satır)
 
@@ -204,9 +204,9 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ workflow yalnızca schedule + workflow_dispatch — schedule, workflow_dispatch
 - ✅ secret'lar yalnızca bot adımında
 - ✅ XML yalnızca defusedxml
-- ✅ pytest tests/test_publisher.py::test_secrets_never_logged — 1 passed in 0.18s
+- ✅ pytest tests/test_publisher.py::test_secrets_never_logged — 1 passed in 0.15s
 
-### `static-site-guardian` — ✅ (32 satır)
+### `static-site-guardian` — ✅ (37 satır)
 
 - ✅ frontmatter (name + description)
 - ✅ ad klasörle aynı
@@ -220,8 +220,9 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ CSP: script-src 'self', object-src 'none', base-uri 'none'
 - ✅ index.html'de satır içi betik yok
 - ✅ feed.json'da hassas alan yok
+- ✅ görsel güvenliği: safe_image_url + no-referrer + atıf
 - ✅ feed.json yalnızca https bağlantı
-- ✅ pytest tests/test_site_exporter.py — 35 passed in 0.19s
+- ✅ pytest tests/test_site_exporter.py — 35 passed in 0.20s
 
 ### `telegram-api-guard` — ✅ (25 satır)
 

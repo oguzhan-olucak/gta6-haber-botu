@@ -13,6 +13,11 @@ description: docs/ altındaki GitHub Pages haber sitesinin ve feed.json köprüs
 6. **CSP:** `index.html` meta CSP'si `script-src 'self'` (satır içi betik yok), `object-src 'none'`, `base-uri 'none'`.
 7. **feed.js:** `<`, `>`, `&` ve U+2028/2029 kaçırılır; `</script>` kırılması olmaz.
 8. **Ölçüm dürüstlüğü:** görüntülenme/iletilme dışa aktarılmaz. Reaksiyon yalnızca ölçülmüşse verilir (çıkarsanan 0 gösterilmez).
+10. **Haber görselleri:** yalnızca kaynağın kendi paylaşım görseli (og:image / RSS media). Bot görseli indirmez ya da
+   yeniden barındırmaz; `collector.safe_image_url` ile yalnızca https, kimlik bilgisi/port içermeyen ve kaynağın alan adı
+   veya `image_host_allowlist` (yayıncı CDN'leri) ana makinesindeki adresler kabul edilir. Topluluk kaynaklarından görsel
+   alınmaz. Sitede `referrerpolicy="no-referrer"`, `loading="lazy"`, "Görsel: <kaynak>" atfı; yüklenemezse SVG kapak.
+   CSP `img-src 'self' data: https:` (betik kuralları değişmez).
 9. **Telegram bağlantısı:** yalnızca `public_channel_username` ayarlıysa `https://t.me/<ad>/<id>`; sayısal chat_id asla kullanılmaz.
 
 ## Ne zaman tetiklenir

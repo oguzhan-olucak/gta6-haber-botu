@@ -86,9 +86,10 @@ class CapturingTelegram:
         self.sent: list[dict[str, Any]] = []
         self.fail_updates = fail_updates
 
-    def send_message(self, chat_id: str | int, text: str, *, disable_preview: bool = False) -> dict[str, Any]:
+    def send_message(self, chat_id: str | int, text: str, *, disable_preview: bool = False,
+                     preview_url: str | None = None) -> dict[str, Any]:
         """Mesajı kaydeder."""
-        self.sent.append({"chat_id": str(chat_id), "text": text})
+        self.sent.append({"chat_id": str(chat_id), "text": text, "preview_url": preview_url or ""})
         return {"message_id": len(self.sent), "chat": {"id": int(chat_id)}}
 
     def get_updates(self, offset: int | None, allowed_updates: list[str], limit: int = 100) -> list[dict[str, Any]]:

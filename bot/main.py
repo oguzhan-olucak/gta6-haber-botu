@@ -24,7 +24,7 @@ import requests
 
 from . import ErrorClass, iso, parse_iso, utcnow
 from .analyzer import ALLOWED_UPDATES, analyze, apply_updates, update_measurement_status
-from .collector import Item, Verifier, collect, verify_source_url
+from .collector import Item, Verifier, collect, safe_image_url, verify_source_url
 from .config import (
     CONFIG_DIR,
     DATA_DIR,
@@ -103,6 +103,7 @@ class RunContext:
     verifier: Verifier | None = None
     safe_mode: bool = False
     gemini_blocked_until: datetime | None = None
+    page_images: dict[str, str] = field(default_factory=dict)  # doğrulanan sayfa → og:image
     remaining_posts: int = 0
     started_mono: float = field(default_factory=time.monotonic)
     style_hints: dict[str, list[str]] = field(default_factory=dict)
@@ -236,7 +237,7 @@ def _run_locked(settings: Settings, sources: list[Source], now: datetime, env: M
                                               timeout=settings.http_timeout_seconds,
                                               max_retries=settings.http_max_retries)
     ctx.generator = generator
-    ctx.verifier = url_verifier or _default_verifier(ctx.session, settings)
+    ctx.verifier = url_verifier or _default_verifier(ctx.session, settings, ctx.page_images)
     state["first_run_at"] = state.get("first_run_at") or iso(now)
 
     if safe_mode:
@@ -263,10 +264,15 @@ def _run_locked(settings: Settings, sources: list[Source], now: datetime, env: M
     return (2 if safe_mode else 0), _finish(summary)
 
 
-def _default_verifier(session: requests.Session, settings: Settings) -> Verifier:
+def _default_verifier(session: requests.Session, settings: Settings,
+                      page_images: dict[str, str] | None = None) -> Verifier:
     def verifier(url: str, allowed: Sequence[str], hop_domains: Sequence[str]) -> tuple[bool, str]:
-        """Gerçek ağ üzerinden SSRF korumalı URL doğrulaması."""
-        return verify_source_url(url, allowed, session, settings, hop_domains=hop_domains)
+        """Gerçek ağ üzerinden SSRF korumalı URL doğrulaması; sayfanın og:image adayını da kaydeder."""
+        meta: dict[str, str] = {}
+        ok, final = verify_source_url(url, allowed, session, settings, hop_domains=hop_domains, meta=meta)
+        if ok and page_images is not None and meta.get("image"):
+            page_images[final] = meta["image"]
+        return ok, final
     return verifier
 
 
@@ -464,7 +470,27 @@ def _verify_urls(ctx: RunContext, sources_meta: list[dict[str, str]]) -> str | N
         ok, info = ctx.verifier(s["url"], domains.get(s["source_id"], []), [])
         if not ok:
             return f"{s['source_id']}: {info}"
+        s["final_url"] = info
     return None
+
+
+def _pick_image(ctx: RunContext, used: list[Item], sources_meta: list[dict[str, str]]) -> tuple[str, str]:
+    """Haber görseli: önce doğrulanan kaynak sayfasının og:image'ı (resmî → medya sırasıyla), yoksa
+    beslemedeki görsel. Topluluk kaynakları atlanır. Dönüş: (url, kaynak adı) ya da ("", "")."""
+    trust = {s.id: s.trust_class for s in ctx.sources}
+    domains = {s.id: s.allowed_domains for s in ctx.sources}
+    for s in sources_meta:
+        if trust.get(s["source_id"]) not in ("OFFICIAL", "ESTABLISHED_MEDIA"):
+            continue
+        cand = ctx.page_images.get(s.get("final_url", "")) or ctx.page_images.get(s["url"], "")
+        img = safe_image_url(cand, domains.get(s["source_id"], []), ctx.settings)
+        if img:
+            return img, s["name"]
+    rank = {"OFFICIAL": 0, "ESTABLISHED_MEDIA": 1}
+    for i in sorted(used, key=lambda x: rank.get(x.trust_class, 2)):
+        if i.image_url and i.trust_class in rank:
+            return i.image_url, i.source_name
+    return "", ""
 
 
 def _generate_and_publish(ctx: RunContext, cluster: list[Item], a: Assessment) -> None:
@@ -487,6 +513,9 @@ def _generate_and_publish(ctx: RunContext, cluster: list[Item], a: Assessment) -
     if bad:
         _record_failure(ctx, post, cluster, "REJECTED", f"URL doğrulanamadı ({bad})")
         return
+    image, credit = _pick_image(ctx, used, sources_meta)
+    if image:
+        post["image_url"], post["image_credit"] = image, credit
     text = render_post(outcome.content, a.label, sources_meta, ctx.settings, ctx.now,
                        independent_count=len(a.independent_origins))
     status = publish_post(post=post, text=text, history=ctx.history, chat_id=ctx.secrets.telegram_chat_id,

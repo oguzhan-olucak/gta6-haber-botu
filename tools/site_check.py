@@ -135,9 +135,63 @@ def run_playwright(shots: Path | None = None) -> list[str]:
                         errors += _interact(page, tag, shots, mode, w)
                     errors += js_errors
                     page.close()
+            errors += _image_check(browser, base, shots)
             browser.close()
     finally:
         server.shutdown()
+    return errors
+
+
+def _png() -> bytes:
+    """Ağ gerektirmeyen 64×36 düz renkli PNG (sahte kaynak görseli)."""
+    import struct
+    import zlib
+    w, h = 64, 36
+    raw = b"".join(b"\x00" + bytes((255, 80 + y * 3, 120)) * w for y in range(h))
+
+    def chunk(t: bytes, d: bytes) -> bytes:
+        return struct.pack(">I", len(d)) + t + d + struct.pack(">I", zlib.crc32(t + d) & 0xFFFFFFFF)
+    return (b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", w, h, 8, 2, 0, 0, 0))
+            + chunk(b"IDAT", zlib.compress(raw)) + chunk(b"IEND", b""))
+
+
+def _image_check(browser: Any, base: str, shots: Path | None) -> list[str]:
+    """Görselli besleme: kaynak görseli kartta ve çekmecede görünür; bozuk görselde SVG kapağa düşülür."""
+    demo = json.loads((DOCS / "data" / "demo-feed.json").read_text(encoding="utf-8"))
+    demo["demo"] = False
+    for i, it in enumerate(demo["items"]):
+        if i % 2 == 0:
+            it["image"] = f"https://media-rockstargames-com.akamaized.net/test/{i}.png"
+            it["image_credit"] = it["sources"][0]["name"]
+        elif i % 3 == 1:
+            it["image"] = f"https://assets-prd.ignimgs.com/broken/{i}.png"
+    body = "window.__GTA6_FEED__ = " + json.dumps(demo, ensure_ascii=False) + ";"
+    page = browser.new_page(viewport={"width": 1440, "height": 900})
+    page.route("**/data/feed.js*", lambda r: r.fulfill(status=200, content_type="application/javascript", body=body))
+    page.route("**/data/feed.json*", lambda r: r.fulfill(status=404, body=""))
+    page.route("https://media-rockstargames-com.akamaized.net/**",
+               lambda r: r.fulfill(status=200, content_type="image/png", body=_png()))
+    page.route("https://assets-prd.ignimgs.com/**", lambda r: r.fulfill(status=404, body=""))
+    errors: list[str] = []
+    page.goto(base + "?selftest=1")
+    page.wait_for_timeout(1800)
+    res = page.evaluate("""() => ({
+        loaded: document.querySelectorAll('#grid .card__img.is-loaded').length,
+        imgs: document.querySelectorAll('#grid .card__img').length,
+        credits: document.querySelectorAll('#grid .card__cover .credit').length,
+        mode: JSON.parse(document.documentElement.getAttribute('data-selftest') || '{}').mode })""")
+    if res["mode"] != "real":
+        errors.append(f"görsel: gerçek besleme seçilmedi ({res['mode']})")
+    if res["loaded"] < 3:
+        errors.append(f"görsel: kartlarda yüklenen kaynak görseli az ({res['loaded']})")
+    if res["imgs"] != res["loaded"] or res["credits"] != res["loaded"]:
+        errors.append(f"görsel: bozuk görsel SVG kapağa düşmedi ({res})")
+    if shots is not None:
+        shots.mkdir(parents=True, exist_ok=True)
+        page.evaluate("document.getElementById('akis').scrollIntoView()")
+        page.wait_for_timeout(400)
+        page.screenshot(path=str(shots / "images-1440.png"))
+    page.close()
     return errors
 
 

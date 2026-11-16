@@ -138,6 +138,9 @@ class FeedItem(BaseModel):
     # Opsiyonel (şema v1 ile geriye uyumlu): Leonida haritası konumu
     location_id: LocationId | None = None
     region: str | None = Field(default=None, max_length=60)
+    # Opsiyonel: kaynağın kendi paylaşım görseli (hotlink; sitede kaynağa atıfla gösterilir)
+    image: str | None = Field(default=None, pattern=r"^https://[^\s<>\"'\\]+$", max_length=600)
+    image_credit: str | None = Field(default=None, max_length=80)
 
 
 class FeedSourceStatus(BaseModel):
@@ -256,7 +259,17 @@ def build_item(post: dict[str, Any], settings: Settings, names: dict[str, str]) 
         reactions_total=_reactions(post),
         location_id=location,
         region=REGION_NAME[location],
+        **_image_fields(post),
     )
+
+
+def _image_fields(post: dict[str, Any]) -> dict[str, str]:
+    """Kayıttaki görseli (bot tarafında alan adı allowlist'inden geçmiş) yeniden biçim denetiminden geçirir."""
+    url = post.get("image_url")
+    if not isinstance(url, str) or not re.fullmatch(r"https://[^\s<>\"'\\]{4,592}", url):
+        return {}
+    credit = clean_text(post.get("image_credit"), 80)
+    return {"image": url, "image_credit": credit} if credit else {"image": url}
 
 
 def pick_hero(items: list[FeedItem], now: datetime, fresh_hours: int = 48) -> str | None:

@@ -85,6 +85,7 @@ class Item:
     url_verified: bool = False
     via: str = "rss"
     raw_id: str = ""  # doğrulama öncesi ham bağlantının kimliği (tekrar doğrulamayı önlemek için)
+    image_url: str = ""  # beslemedeki görsel (media:content / enclosure / ilk <img>); yalnızca güvenli https
 
     def to_dict(self) -> dict[str, Any]:
         """JSON'a yazılabilir sözlük."""
@@ -303,11 +304,55 @@ def _rss_entries(root: Any) -> list[dict[str, str]]:
         guid = _child(it, "guid")
         if not link and guid is not None and guid.get("isPermaLink", "true").lower() == "true":
             link = _text(guid)
-        entries.append({"title": _text(_child(it, "title")), "link": link,
-                        "summary": _text(_child(it, "description")) or _text(_child(it, "encoded")),
+        summary = _text(_child(it, "description")) or _text(_child(it, "encoded"))
+        entries.append({"title": _text(_child(it, "title")), "link": link, "summary": summary,
                         "published": _text(_child(it, "pubDate")) or _text(_child(it, "date")),
-                        "source_url": google_news_source_url(it)})
+                        "source_url": google_news_source_url(it),
+                        "image": _entry_image(it, summary or _text(_child(it, "encoded")))})
     return entries
+
+
+_IMG_TAG_RE = re.compile(r"""<img\b[^>]*?\bsrc\s*=\s*["']([^"'<>\s]{8,600})["']""", re.I)
+
+
+def _entry_image(el: Any, html_text: str = "") -> str:
+    """RSS/Atom öğesindeki görsel adayı: media:content (görsel), media:thumbnail, görsel enclosure,
+    yoksa özet HTML'indeki ilk <img>. Doğrulama ``safe_image_url`` ile ayrıca yapılır."""
+    best = ""
+    for c in el.iter():
+        tag = str(c.tag).rsplit("}", 1)[-1].lower()
+        url = c.get("url") or c.get("href") or ""
+        if not url:
+            continue
+        kind = (c.get("type") or "").lower()
+        medium = (c.get("medium") or "").lower()
+        if tag == "content" and (medium == "image" or kind.startswith("image/")):
+            return url
+        if tag == "thumbnail" and not best:
+            best = url
+        if tag in ("enclosure", "link") and kind.startswith("image/") and (tag == "enclosure" or c.get("rel") == "enclosure"):
+            return url
+    if best:
+        return best
+    m = _IMG_TAG_RE.search(html_text or "")
+    return html.unescape(m.group(1)) if m else ""
+
+
+def safe_image_url(url: str, domains: Sequence[str], settings: Settings) -> str:
+    """Görsel URL'si güvenli mi? Yalnızca https, kimlik bilgisi/port yok, makul uzunluk ve ana makine
+    kaynağın kendi alan adında ya da ``settings.image_host_allowlist`` (bilinen yayıncı CDN'leri) içinde.
+    Görsel sunucumuz tarafından indirilmez; yalnızca bağlantı olarak (okurun tarayıcısı / Telegram) kullanılır."""
+    url = (url or "").strip()
+    if not url or len(url) > 600 or any(ch in url for ch in "<>\"' \n\r\t\\"):
+        return ""
+    if url.startswith("//"):
+        url = "https:" + url
+    parts = urlsplit(url)
+    if parts.scheme != "https" or not parts.hostname or parts.username or parts.password or parts.port:
+        return ""
+    if not (domain_allowed(url, domains) or domain_allowed(url, settings.image_host_allowlist)):
+        return ""
+    return url
 
 
 def _atom_entries(root: Any) -> list[dict[str, str]]:
@@ -318,10 +363,10 @@ def _atom_entries(root: Any) -> list[dict[str, str]]:
             if ln.get("rel", "alternate") == "alternate" and ln.get("href"):
                 link = ln.get("href")
                 break
-        entries.append({"title": _text(e.find(f"{ATOM_NS}title")), "link": link,
-                        "summary": _text(e.find(f"{ATOM_NS}summary")) or _text(e.find(f"{ATOM_NS}content")),
+        summary = _text(e.find(f"{ATOM_NS}summary")) or _text(e.find(f"{ATOM_NS}content"))
+        entries.append({"title": _text(e.find(f"{ATOM_NS}title")), "link": link, "summary": summary,
                         "published": _text(e.find(f"{ATOM_NS}published")) or _text(e.find(f"{ATOM_NS}updated")),
-                        "source_url": ""})
+                        "source_url": "", "image": _entry_image(e, _text(e.find(f"{ATOM_NS}content")) or summary)})
     return entries
 
 
@@ -417,8 +462,12 @@ def _build_item(src: Source, entry: dict[str, str], settings: Settings, sources:
     min_dt = now - timedelta(hours=max_age)
     if pub is not None and (pub < min_dt or pub > now + timedelta(hours=1)):
         return None
+    # Topluluk kaynaklarından (kullanıcı yüklemesi) görsel alınmaz
+    image = safe_image_url(entry.get("image", ""), src.allowed_domains, settings) \
+        if src.trust_class in ("OFFICIAL", "ESTABLISHED_MEDIA") else ""
     return Item(id="", source_id=src.id, source_name=src.name, trust_class=src.trust_class,
                 origin_group=src.origin_group, title=title, url="", summary=summary, published_at=iso(pub),
+                image_url=image,
                 content_hash=content_hash(title, summary),
                 cited_origins=detect_cited_origins(f"{title} {summary}", sources, src.origin_group),
                 via=src.kind)
@@ -539,6 +588,21 @@ _CANON_RE = re.compile(rb"<link[^>]+rel=[\"']canonical[\"'][^>]*>", re.I)
 _HREF_RE = re.compile(rb"href=[\"']([^\"']+)[\"']", re.I)
 
 
+_META_TAG_RE = re.compile(rb"<meta\b[^>]{0,600}>", re.I)
+_META_KEY_RE = re.compile(rb"""(?:property|name)\s*=\s*["'](og:image(?::secure_url|:url)?|twitter:image(?::src)?)["']""", re.I)
+_META_CONTENT_RE = re.compile(rb"""content\s*=\s*["']([^"'<>]{4,600})["']""", re.I)
+
+
+def page_image(head: bytes, base_url: str) -> str:
+    """Sayfa başındaki og:image / twitter:image adayı (ilk bulunan; secure_url önceliksiz)."""
+    for tag in _META_TAG_RE.findall(head):
+        if _META_KEY_RE.search(tag):
+            c = _META_CONTENT_RE.search(tag)
+            if c:
+                return urljoin(base_url, html.unescape(c.group(1).decode("utf-8", "ignore")).strip())
+    return ""
+
+
 def _canonical_ok(head: bytes, current: str, allowed_domains: Sequence[str]) -> bool:
     m = _CANON_RE.search(head)
     if not m:
@@ -600,7 +664,7 @@ def _hop(current: str, resp: Any, final_ok: bool, session: requests.Session,
 
 def verify_source_url(url: str, allowed_domains: Sequence[str], session: requests.Session, settings: Settings, *,
                       hop_domains: Sequence[str] = (), resolver: Resolver = socket.getaddrinfo,
-                      max_redirects: int = 3) -> tuple[bool, str]:
+                      max_redirects: int = 3, meta: dict[str, str] | None = None) -> tuple[bool, str]:
     """URL'nin erişilebilir olduğunu ve **nihai** adresin + canonical bağlantının izinli alan adında
     olduğunu doğrular. Ara yönlendirme adımları ``allowed_domains`` veya ``hop_domains`` içinde
     olmalıdır (ör. Google News için ``news.google.com``). Yalnızca https; özel/iç ağ IP'lerine
@@ -637,5 +701,7 @@ def verify_source_url(url: str, allowed_domains: Sequence[str], session: request
             resp.close()
         if not _canonical_ok(head, current, allowed_domains):
             return False, "canonical bağlantı izinli alan adı dışında"
+        if meta is not None:  # sayfanın kendi paylaşım görseli (og:image); doğrulaması çağıranda
+            meta["image"] = page_image(head, current)
         return True, canonicalize_url(current)
     return False, "çok fazla yönlendirme"

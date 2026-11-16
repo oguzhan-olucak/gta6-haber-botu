@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import sys
 import time
 from dataclasses import dataclass, field
@@ -51,6 +52,7 @@ from .gemini import (
     validate_generated,
 )
 from .labels import LABEL_TEXT, Assessment
+from .llm import build_generator
 from .processor import assess, cluster_items, is_duplicate_of_history
 from .publisher import (
     due_digest_key,
@@ -104,6 +106,7 @@ class RunContext:
     safe_mode: bool = False
     gemini_blocked_until: datetime | None = None
     page_images: dict[str, str] = field(default_factory=dict)  # doğrulanan sayfa → og:image
+    last_provider: str = "gemini"  # son başarılı özeti üreten LLM sağlayıcısı
     remaining_posts: int = 0
     started_mono: float = field(default_factory=time.monotonic)
     style_hints: dict[str, list[str]] = field(default_factory=dict)
@@ -375,8 +378,10 @@ def _content_pipeline(ctx: RunContext) -> None:
     ctx.gemini_blocked_until = parse_iso(ctx.state.get("gemini_quota_blocked_until"))
     ctx.style_hints = load_style_hints(ctx.insights_path)
     if ctx.generator is None:
-        ctx.generator = GeminiRestGenerator(ctx.secrets.gemini_api_key, ctx.secrets.gemini_model,
-                                            session=ctx.session)
+        gemini = GeminiRestGenerator(ctx.secrets.gemini_api_key, ctx.secrets.gemini_model, session=ctx.session)
+        ctx.generator = build_generator(gemini, os.environ, session=ctx.session)
+        names = [n for n, _ in ctx.generator.providers]
+        log.info("LLM sağlayıcı sırası: %s", " → ".join(names))
     pool = ctx.state["candidate_pool"]
     for cluster, a in candidates:
         reason = _blocked_reason(ctx)
@@ -408,6 +413,8 @@ def _call_gemini(ctx: RunContext, cluster: list[Item], a: Assessment) -> str | N
     try:
         out = ctx.generator.generate(SYSTEM_INSTRUCTION, build_prompt(a.items or cluster, a, ctx.style_hints,
                                                                       ctx.settings), RESPONSE_JSON_SCHEMA)
+        provider = getattr(ctx.generator, "last_provider", None) or "gemini"
+        ctx.last_provider = provider
         fallback = getattr(ctx.generator, "resolved_model", None)
         if fallback and not ctx.summary.get("gemini_model_fallback"):
             ctx.summary["gemini_model_fallback"] = fallback
@@ -511,6 +518,10 @@ def _generate_and_publish(ctx: RunContext, cluster: list[Item], a: Assessment) -
     outcome = validate_generated(raw, used, a, ctx.settings)
     sources_meta = _sources_meta(used)
     post = _post_record(a, cluster, outcome, sources_meta)
+    post["llm_provider"] = ctx.last_provider   # özeti üreten sağlayıcı: gemini | groq | openrouter
+    ctx.summary.setdefault("llm_providers", {})
+    ctx.summary["llm_providers"][post["content_id"][:12]] = ctx.last_provider
+    log.info("Özet sağlayıcısı: %s (%s)", ctx.last_provider, post["content_id"][:12])
     if not outcome.ok or outcome.content is None:
         if outcome.error_class:
             ctx.summary["error_classes"].append(outcome.error_class)

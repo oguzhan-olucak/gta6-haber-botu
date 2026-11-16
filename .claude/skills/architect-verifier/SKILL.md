@@ -22,7 +22,7 @@ description: bot/ modül sınırlarını, atomik JSON yazımını ve determinist
 | `main.py` | `RunContext` ile orkestrasyon | doğrudan HTTP |
 
 ## Kontroller
-- `requests.Session.post` yalnızca `telegram_client.py`'de (tek istisna: `collector._gn_resolve_signed` → sabit `GN_BATCHEXECUTE_URL`, imzalı Google News bağlantısını çözmek için; ve `gemini.GeminiRestGenerator` → yalnızca `GEMINI_REST_BASE`; GET yalnızca `GEMINI_REST_BASE/models` ile 404 sonrası model keşfi); `session.get` yalnızca `collector.py`'de.
+- `requests.Session.post` yalnızca `telegram_client.py`'de (tek istisna: `collector._gn_resolve_signed` → sabit `GN_BATCHEXECUTE_URL`, imzalı Google News bağlantısını çözmek için; ve `gemini.GeminiRestGenerator` → yalnızca `GEMINI_REST_BASE`; GET yalnızca `GEMINI_REST_BASE/models` ile 404 sonrası model keşfi; `llm.OpenAICompatGenerator` → yalnızca sabit `GROQ_URL` / `OPENROUTER_URL`); `session.get` yalnızca `collector.py`'de.
 - Tüm `data/*.json` yazımları `storage.write_json_atomic` / `write_if_changed` üzerinden (`grep -rn "open(.*'w'" bot/` boş).
 - Yayın kararı `processor.assess` (Python) ile verilir; LLM çıktısındaki hiçbir alan etiket/eşik değiştirmez.
 - `insights.json` yalnızca `prompt_hints.preferred_title_styles` üzerinden ve enum'a karşı doğrulanarak okunur.

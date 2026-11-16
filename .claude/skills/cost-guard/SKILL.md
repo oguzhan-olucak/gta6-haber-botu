@@ -23,3 +23,9 @@ settings.json limitleri, Gemini/Telegram çağrı mantığı veya workflow zaman
 python tools/skill_audit.py --skill cost-guard
 ```
 Denetleyici bu skill'in kurallarını koda karşı çalıştırır; sonuç `SKILL_AUDIT_REPORT.md` dosyasına yazılır.
+
+## Yedek LLM sağlayıcıları (Groq, OpenRouter)
+- Yalnızca `GROQ_API_KEY` / `OPENROUTER_API_KEY` tanımlıysa devreye girer; tanımsızsa sessizce atlanır.
+- OpenRouter'da yalnızca `:free` ile biten modeller veya `openrouter/free`; başka ad verilirse sağlayıcı devre dışı kalır.
+- Gemini'de Pro modele asla geçilmez; yedeğe yalnızca geçici hatada (503/500, 429, zaman aşımı) ve yetki hatasında geçilir.
+- Çalışma başına çağrı sınırı (`max_gemini_calls_per_run`) tüm sağlayıcıları kapsar.

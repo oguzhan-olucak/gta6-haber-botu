@@ -5,6 +5,10 @@ description: google-genai Structured Outputs kullanımı, untrusted_source_data 
 # gemini-schema-enforcer
 
 - **Varsayılan çağrı (REST):** `GeminiRestGenerator` → `POST https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent`, kimlik **yalnızca** `x-goog-api-key` başlığında (AI Studio `AQ.` auth key'leri ve eski `AIza` anahtarları için aynı). `Authorization: Bearer` ve `?key=` yasak; gövdede `generationConfig.responseMimeType` + `responseJsonSchema`. Hata tanısında yalnızca büyük harfli `status`/`reason` kodları (ör. `UNAUTHENTICATED/ACCESS_TOKEN_TYPE_UNSUPPORTED`) loglanır.
+- **Yedek sağlayıcılar (`bot/llm.py`):** Gemini geçici hata verirse Groq (`openai/gpt-oss-120b`), sonra OpenRouter
+  (`openrouter/free`). Aynı sistem talimatı, aynı `untrusted_source_data` istemi ve aynı JSON şeması
+  (`response_format: json_schema`, desteklenmezse `json_object` + şema talimatı) gider; çıktı aynı Pydantic ve
+  halüsinasyon denetiminden geçer. Kullanılan sağlayıcı `post.llm_provider` ve çalışma özetinde `llm_providers`.
 - Yedek SDK çağrısı: `client.models.generate_content(model=GEMINI_MODEL, contents=prompt, config={"system_instruction", "response_mime_type": "application/json", "response_json_schema": RESPONSE_JSON_SCHEMA})` (resmî Structured outputs sayfası, son güncelleme 2026-10-19: Python SDK `response_mime_type` + `response_json_schema`).
 - Şemada yalnızca dokümanda desteklenen anahtar kelimeler: type, properties, required, enum, items, minItems, maxItems, description. Uzunluk sınırları Python'da (`content_limits`) uygulanır.
 - Model adı koda gömülmez; değişince yalnızca `GEMINI_MODEL` Actions Variable güncellenir.

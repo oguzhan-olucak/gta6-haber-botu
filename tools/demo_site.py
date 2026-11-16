@@ -95,13 +95,13 @@ STORIES: list[Story] = [
           "Bir sızıntı, GTA VI'da duyurulmamış bir ada olduğunu iddia ediyor",
           "Insider Gaming'in aktardığı doğrulanmamış bir sızıntıya göre Leonida'da henüz duyurulmamış bir ada "
           "bulunuyor. Rockstar konu hakkında yorum yapmadı.", "COMMUNITY_RUMOR", "RUMOR"),
-    Story(26, [Report("gamesradar", "GTA 6 accessibility options listed on Rockstar support page",
-                      "/gta-6-accessibility-options",
-                      "GamesRadar spotted subtitle size, colour filter and control remapping options for GTA 6 on "
-                      "Rockstar's support site.")],
-          "GTA VI'ın erişilebilirlik seçenekleri destek sayfasında listelendi",
-          "GamesRadar+'ın aktardığına göre Rockstar destek sitesinde GTA 6 için altyazı boyutu, renk filtresi ve "
-          "tuş atama seçenekleri yer alıyor.", "GAMEPLAY_TECH"),
+    Story(26, [Report("gamesradar", "GTA 6 story: what we know about Jason and Lucia",
+                      "/gta-6-jason-lucia-story",
+                      "GamesRadar rounds up what Rockstar has shown of Jason and Lucia's story in Port Gellhorn and "
+                      "Ambrosia across the trailers.")],
+          "GTA VI'ın hikâyesi: Jason ve Lucia hakkında bilinenler",
+          "GamesRadar+'ın derlemesine göre Rockstar, fragmanlarda Jason ve Lucia'nın Port Gellhorn ve Ambrosia'daki "
+          "hikâyesinden kesitler gösterdi. Derleme yeni bir resmî bilgi içermiyor.", "GAMEPLAY_TECH"),
     Story(22, [Report("reddit_gta6", "Fans think they spotted Ocean Drive in the GTA 6 launch trailer",
                       "/r/GTA6/comments/ocean-drive",
                       "Users on r/GTA6 compared frames from the launch trailer with real Ocean Drive photos.")],

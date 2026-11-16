@@ -34,7 +34,7 @@ from .collector import canonicalize_url
 from .config import Settings, Source
 from .labels import LABEL_TEXT, Label
 from .storage import write_if_changed
-from .textutil import strip_html, truncate
+from .textutil import normalize_text, strip_html, truncate
 
 FEED_SCHEMA_VERSION = 1
 MAX_TITLE = 160
@@ -52,6 +52,58 @@ TRUST_GROUP: dict[str, str] = {
     "OFFICIAL": "official", "MULTI_SOURCE": "multi", "SINGLE_SOURCE": "single",
     "LEAK_CLAIM": "claim", "COMMUNITY_CLAIM": "claim",
 }
+
+# ---- Leonida haritası: haber → konum eşlemesi ------------------------------------------------
+LocationId = Literal["vice_city", "leonida_keys", "grassrivers", "port_gellhorn", "mount_kalaga"]
+REGION_NAME: dict[str, str] = {
+    "vice_city": "Vice City", "leonida_keys": "Leonida Keys", "grassrivers": "Grassrivers",
+    "port_gellhorn": "Port Gellhorn & Ambrosia", "mount_kalaga": "Mount Kalaga · Genel Merkez",
+}
+_CATEGORY_REGION: dict[str, str] = {
+    "TRAILER_MEDIA": "vice_city", "GAMEPLAY_TECH": "leonida_keys", "COMMUNITY_RUMOR": "grassrivers",
+    "RELEASE_PLATFORMS": "mount_kalaga", "OFFICIAL_ANNOUNCEMENT": "mount_kalaga",
+    "INDUSTRY_BUSINESS": "mount_kalaga", "OTHER": "vice_city",
+}
+# Başlık/özette geçen terimler (normalize_text sonrası, Türkçe + İngilizce). Eşleşme kategori varsayılanını ezer.
+_REGION_TERMS: dict[str, tuple[str, ...]] = {
+    "vice_city": ("vice city", "ocean drive", "fragman", "trailer", "ekran goruntu", "screenshot", "neon",
+                  "plaj", "beach", "radyo", "radio", "soundtrack", "muzik"),
+    "leonida_keys": ("leonida keys", "oynanis", "gameplay", "arac", "vehicle", "araba", "tekne", "boat",
+                     "fizik", "physics", "surus", "driving", "fotograf modu", "photo mode", "erisilebilirlik",
+                     "accessibility", "silah", "weapon"),
+    "grassrivers": ("grassrivers", "bataklik", "swamp", "harita", "map", "timsah", "alligator", "vahsi",
+                    "wildlife", "ada", "island", "kesif", "exploration", "dunya boyutu", "world size"),
+    "port_gellhorn": ("port gellhorn", "ambrosia", "jason", "lucia", "hikaye", "story", "karakter", "character",
+                      "gorev", "mission", "seslendir", "voice actor", "oyuncu kadro", "cast"),
+    "mount_kalaga": ("mount kalaga", "cikis tarihi", "release date", "on yukleme", "preload", "pre-load",
+                     "on siparis", "pre-order", "preorder", "fiyat", "price", "ps5", "playstation", "xbox",
+                     "pc", "platform", "gb", "boyut", "file size", "take two", "take-two", "gelir", "earnings",
+                     "inceleme", "review", "erteleme", "delay"),
+}
+
+
+def classify_location(title: str, summary: str, category: str) -> str:
+    """Haberi beş Leonida konumundan birine bağlar (deterministik).
+
+    Başlıktaki eşleşme 2, özetteki 1 puan; en yüksek puanlı konum seçilir. Eşitlikte veya hiç eşleşme
+    yoksa kategori varsayılanı kazanır. Yapay zekâ kullanılmaz."""
+    default = _CATEGORY_REGION.get(category, "vice_city")
+    t, sm = f" {normalize_text(title)} ", f" {normalize_text(summary)} "
+    scores = {loc: 0 for loc in REGION_NAME}
+    for loc, terms in _REGION_TERMS.items():
+        for term in terms:
+            word = normalize_text(term)
+            if not word:
+                continue
+            # 5+ harfli terimlerde Türkçe ekleri yakalamak için kelime başı eşleşmesi (radyo → radyolarını)
+            needle = f" {word}" if len(word) >= 5 else f" {word} "
+            if needle in t:
+                scores[loc] += 2
+            elif needle in sm:
+                scores[loc] += 1
+    scores[default] += 1  # kategori eşitliği bozar
+    return max(scores, key=lambda k: (scores[k], k == default))
+
 
 LabelName = Literal["OFFICIAL", "MULTI_SOURCE", "SINGLE_SOURCE", "LEAK_CLAIM", "COMMUNITY_CLAIM"]
 
@@ -83,6 +135,9 @@ class FeedItem(BaseModel):
     sources: list[FeedSource] = Field(min_length=1, max_length=MAX_SOURCES)
     telegram_url: str | None = Field(default=None, pattern=r"^https://t\.me/[A-Za-z0-9_]{5,32}/\d+$")
     reactions_total: int | None = None
+    # Opsiyonel (şema v1 ile geriye uyumlu): Leonida haritası konumu
+    location_id: LocationId | None = None
+    region: str | None = Field(default=None, max_length=60)
 
 
 class FeedSourceStatus(BaseModel):
@@ -184,8 +239,10 @@ def build_item(post: dict[str, Any], settings: Settings, names: dict[str, str]) 
     if not title or not published or not sources or len(item_id) < 4:
         return None
     category = post.get("category") if post.get("category") in CATEGORY_TR else "OTHER"
+    summary = clean_text(post.get("summary_tr"), MAX_SUMMARY)
+    location = classify_location(title, summary, str(category))
     return FeedItem(
-        id=item_id, title=title, summary=clean_text(post.get("summary_tr"), MAX_SUMMARY),
+        id=item_id, title=title, summary=summary,
         label=label, label_text=LABEL_TEXT[Label(label)], trust_group=TRUST_GROUP[label],
         category=str(category), category_tr=CATEGORY_TR[str(category)],
         title_style=clean_text(post.get("title_style"), 20) or "FACTUAL",
@@ -197,6 +254,8 @@ def build_item(post: dict[str, Any], settings: Settings, names: dict[str, str]) 
         sources=sources,
         telegram_url=telegram_url(settings.public_channel_username, post.get("message_id")),
         reactions_total=_reactions(post),
+        location_id=location,
+        region=REGION_NAME[location],
     )
 
 

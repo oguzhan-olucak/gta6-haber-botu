@@ -164,13 +164,14 @@ def c_cost() -> list[Check]:
 def c_architect() -> list[Check]:
     bot = py_files("bot")
     posts = [h for h in grep(r"\.post\(", bot) if not h.startswith("bot/telegram_client.py")
-             and not (h.startswith("bot/collector.py") and "GN_BATCHEXECUTE_URL" in _line(h))]
+             and not (h.startswith("bot/collector.py") and "GN_BATCHEXECUTE_URL" in _line(h))
+             and not (h.startswith("bot/gemini.py") and "self._session.post(url" in _line(h))]
     gets = [h for h in grep(r"session\.get\(", bot) if not h.startswith("bot/collector.py")]
     writes = [h for h in grep(r"open\([^)]*['\"]w|write_text\(", bot)
               if not h.startswith(("bot/storage.py", "bot/site_exporter.py"))]
     proc = subprocess.run([sys.executable, "-m", "mypy", "bot"], cwd=ROOT, capture_output=True, text=True)
     return [
-        Check("HTTP POST yalnızca telegram_client.py (+ collector: Google News çözümü)", not posts, ", ".join(posts) or "uyumlu"),
+        Check("HTTP POST yalnızca telegram_client.py (+ collector: Google News çözümü, gemini: REST)", not posts, ", ".join(posts) or "uyumlu"),
         Check("HTTP GET yalnızca collector.py", not gets, ", ".join(gets) or "uyumlu"),
         Check("dosya yazımı yalnızca storage/site_exporter", not writes, ", ".join(writes) or "uyumlu"),
         Check("mypy bot temiz", proc.returncode == 0, (proc.stdout.strip().splitlines() or [""])[-1]),

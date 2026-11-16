@@ -1,6 +1,6 @@
 # SKILL_AUDIT_REPORT — Skill Ekosistemi Denetimi
 
-Üretim: `python tools/skill_audit.py` · 2026-11-16 06:37 UTC · **18/18 skill tüm denetimlerden geçti**
+Üretim: `python tools/skill_audit.py` · 2026-11-16 06:41 UTC · **18/18 skill tüm denetimlerden geçti**
 
 Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu mu, tetiklenme ve otomatik doğrulama bölümleri, gizli kabuk komutu yok; (2) **işlevsel** — skill'in koyduğu kurallar koda, ayarlara ve testlere karşı gerçekten çalıştırılır.
 
@@ -39,7 +39,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ 'Otomatik doğrulama' bölümü
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
-- ✅ HTTP POST yalnızca telegram_client.py (+ collector: Google News çözümü) — uyumlu
+- ✅ HTTP POST yalnızca telegram_client.py (+ collector: Google News çözümü, gemini: REST) — uyumlu
 - ✅ HTTP GET yalnızca collector.py — uyumlu
 - ✅ dosya yazımı yalnızca storage/site_exporter — uyumlu
 - ✅ mypy bot temiz — Success: no issues found in 15 source files
@@ -57,7 +57,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ her tur ≥ 3 regresyon testi — {"1": 4, "2": 4, "3": 4, "4": 3, "5": 4, "6": 6}
 - ✅ her turda FAIL ve PASS kanıtı
 - ✅ tablo satırlarında dosya:satır
-- ✅ pytest tests/test_arena.py — 25 passed in 0.20s
+- ✅ pytest tests/test_arena.py — 25 passed in 0.26s
 
 ### `atomic-json-recovery` — ✅ (26 satır)
 
@@ -70,7 +70,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ lastgood + şema doğrulayıcılar mevcut
-- ✅ pytest tests/test_storage.py tests/test_resilience.py -k storage or recover or corrupt or half — 10 passed, 18 deselected in 0.23s
+- ✅ pytest tests/test_storage.py tests/test_resilience.py -k storage or recover or corrupt or half — 10 passed, 18 deselected in 0.17s
 
 ### `cost-guard` — ✅ (25 satır)
 
@@ -116,7 +116,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ ≥ 6 bağımsız doğrulama kontrolü — 6
 - ✅ sistem talimatı untrusted_source_data'yı tanımlar
 - ✅ SDK çağrısı response_json_schema kullanır
-- ✅ pytest tests/test_processor.py — 11 passed in 0.10s
+- ✅ pytest tests/test_processor.py — 11 passed in 0.11s
 
 ### `night-shift-supervisor` — ✅ (26 satır)
 
@@ -145,7 +145,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ resmî kaynak sayısı ≥ 2 ve etkin — 4 etkin
 - ✅ resmî kaynak alan adları yalnızca rockstargames.com / take2games.com — uyumlu
 - ✅ üçlü koşul (OFFICIAL + url_verified + alan adı) kodda
-- ✅ pytest tests/test_resilience.py tests/test_injection.py tests/test_arena.py -k official or google_news or html_listing or reverified — 14 passed, 49 deselected in 0.14s
+- ✅ pytest tests/test_resilience.py tests/test_injection.py tests/test_arena.py -k official or google_news or html_listing or reverified — 14 passed, 49 deselected in 0.20s
 
 ### `python-tdd-runner` — ✅ (30 satır)
 
@@ -158,7 +158,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ 14 kabul testi tanımlı — 14/14
-- ✅ pytest  — 177 passed in 1.00s
+- ✅ pytest  — 188 passed in 0.98s
 - ✅ ruff temiz — All checks passed!
 
 ### `rss-anti-poisoning` — ✅ (26 satır)
@@ -173,7 +173,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ saldırı yükü kütüphanesi ≥ 8 — 8
 - ✅ homoglif katlama aktif
-- ✅ pytest tests/test_injection.py tests/test_arena.py -k injection or homoglyph or padded or blend or links — 21 passed, 20 deselected in 0.15s
+- ✅ pytest tests/test_injection.py tests/test_arena.py -k injection or homoglyph or padded or blend or links — 21 passed, 20 deselected in 0.16s
 
 ### `rss-integrity-checker` — ✅ (27 satır)
 
@@ -204,7 +204,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ workflow yalnızca schedule + workflow_dispatch — schedule, workflow_dispatch
 - ✅ secret'lar yalnızca bot adımında
 - ✅ XML yalnızca defusedxml
-- ✅ pytest tests/test_publisher.py::test_secrets_never_logged — 1 passed in 0.14s
+- ✅ pytest tests/test_publisher.py::test_secrets_never_logged — 1 passed in 0.13s
 
 ### `static-site-guardian` — ✅ (32 satır)
 
@@ -236,7 +236,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ allowed_updates yalnızca message_reaction_count
 - ✅ views/forwards yalnızca 'unavailable' — 2 yer
 - ✅ 4096 sınırı ve retry_after üst sınırı
-- ✅ pytest tests/test_analyzer.py tests/test_publisher.py — 21 passed in 0.25s
+- ✅ pytest tests/test_analyzer.py tests/test_publisher.py — 21 passed in 0.29s
 
 ### `token-budget-guardian` — ✅ (29 satır)
 

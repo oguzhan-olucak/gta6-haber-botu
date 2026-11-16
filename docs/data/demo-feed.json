@@ -18,7 +18,7 @@
         "trust_class": "OFFICIAL",
         "state": "ok",
         "entries": 2,
-        "relevant": 1,
+        "relevant": 2,
         "checked_at": "2026-11-16T17:05:00Z"
       },
       {
@@ -27,7 +27,7 @@
         "trust_class": "OFFICIAL",
         "state": "ok",
         "entries": 1,
-        "relevant": 0,
+        "relevant": 1,
         "checked_at": "2026-11-16T17:05:00Z"
       },
       {
@@ -36,7 +36,7 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 3,
-        "relevant": 0,
+        "relevant": 3,
         "checked_at": "2026-11-16T17:05:00Z"
       },
       {
@@ -45,7 +45,7 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 2,
-        "relevant": 0,
+        "relevant": 2,
         "checked_at": "2026-11-16T17:05:00Z"
       },
       {
@@ -54,7 +54,7 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 2,
-        "relevant": 0,
+        "relevant": 2,
         "checked_at": "2026-11-16T17:05:00Z"
       },
       {
@@ -63,7 +63,7 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 1,
-        "relevant": 0,
+        "relevant": 1,
         "checked_at": "2026-11-16T17:05:00Z"
       },
       {
@@ -72,7 +72,7 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 2,
-        "relevant": 0,
+        "relevant": 2,
         "checked_at": "2026-11-16T17:05:00Z"
       },
       {
@@ -81,7 +81,7 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 1,
-        "relevant": 0,
+        "relevant": 1,
         "checked_at": "2026-11-16T17:05:00Z"
       },
       {
@@ -90,7 +90,7 @@
         "trust_class": "COMMUNITY",
         "state": "ok",
         "entries": 1,
-        "relevant": 0,
+        "relevant": 1,
         "checked_at": "2026-11-16T17:05:00Z"
       }
     ]
@@ -123,7 +123,9 @@
         }
       ],
       "telegram_url": "https://t.me/gta6turkiyebulteni/15",
-      "reactions_total": null
+      "reactions_total": null,
+      "location_id": "vice_city",
+      "region": "Vice City"
     },
     {
       "id": "a1f734db0f8074f223a4869c",
@@ -147,7 +149,9 @@
         }
       ],
       "telegram_url": "https://t.me/gta6turkiyebulteni/14",
-      "reactions_total": null
+      "reactions_total": null,
+      "location_id": "leonida_keys",
+      "region": "Leonida Keys"
     },
     {
       "id": "74e20527bb78f5902395cb50",
@@ -175,7 +179,9 @@
         }
       ],
       "telegram_url": "https://t.me/gta6turkiyebulteni/13",
-      "reactions_total": null
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez"
     },
     {
       "id": "911c7c29085e54c9cf5a1e25",
@@ -199,7 +205,9 @@
         }
       ],
       "telegram_url": "https://t.me/gta6turkiyebulteni/12",
-      "reactions_total": null
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez"
     },
     {
       "id": "05899868e176cbd0ae5f3007",
@@ -227,7 +235,9 @@
         }
       ],
       "telegram_url": "https://t.me/gta6turkiyebulteni/10",
-      "reactions_total": null
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez"
     },
     {
       "id": "8117bd8083de09756b00b824",
@@ -251,7 +261,9 @@
         }
       ],
       "telegram_url": "https://t.me/gta6turkiyebulteni/9",
-      "reactions_total": null
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez"
     },
     {
       "id": "c07ee7936c20b33a6b85d12d",
@@ -275,12 +287,14 @@
         }
       ],
       "telegram_url": "https://t.me/gta6turkiyebulteni/8",
-      "reactions_total": null
+      "reactions_total": null,
+      "location_id": "vice_city",
+      "region": "Vice City"
     },
     {
-      "id": "974163f631faa564c6b8971d",
-      "title": "GTA VI'ın erişilebilirlik seçenekleri destek sayfasında listelendi",
-      "summary": "GamesRadar+'ın aktardığına göre Rockstar destek sitesinde GTA 6 için altyazı boyutu, renk filtresi ve tuş atama seçenekleri yer alıyor.",
+      "id": "107b6a40a2b420db7a8c9873",
+      "title": "GTA VI'ın hikâyesi: Jason ve Lucia hakkında bilinenler",
+      "summary": "GamesRadar+'ın derlemesine göre Rockstar, fragmanlarda Jason ve Lucia'nın Port Gellhorn ve Ambrosia'daki hikâyesinden kesitler gösterdi. Derleme yeni bir resmî bilgi içermiyor.",
       "label": "SINGLE_SOURCE",
       "label_text": "TEK KAYNAK",
       "trust_group": "single",
@@ -295,11 +309,13 @@
       "sources": [
         {
           "name": "GamesRadar+",
-          "url": "https://gamesradar.com/gta-6-accessibility-options"
+          "url": "https://gamesradar.com/gta-6-jason-lucia-story"
         }
       ],
       "telegram_url": "https://t.me/gta6turkiyebulteni/6",
-      "reactions_total": null
+      "reactions_total": null,
+      "location_id": "port_gellhorn",
+      "region": "Port Gellhorn & Ambrosia"
     },
     {
       "id": "a4594242d78294e4f6963729",
@@ -323,7 +339,9 @@
         }
       ],
       "telegram_url": "https://t.me/gta6turkiyebulteni/5",
-      "reactions_total": null
+      "reactions_total": null,
+      "location_id": "grassrivers",
+      "region": "Grassrivers"
     },
     {
       "id": "1a52027ca9f415621974f680",
@@ -347,7 +365,9 @@
         }
       ],
       "telegram_url": "https://t.me/gta6turkiyebulteni/3",
-      "reactions_total": null
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez"
     },
     {
       "id": "a3345458cfad57af3fccd0a9",
@@ -375,7 +395,9 @@
         }
       ],
       "telegram_url": "https://t.me/gta6turkiyebulteni/2",
-      "reactions_total": null
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez"
     },
     {
       "id": "187eed4d2024893a114b9749",
@@ -399,7 +421,9 @@
         }
       ],
       "telegram_url": "https://t.me/gta6turkiyebulteni/1",
-      "reactions_total": null
+      "reactions_total": null,
+      "location_id": "vice_city",
+      "region": "Vice City"
     }
   ]
 }

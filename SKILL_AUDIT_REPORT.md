@@ -1,6 +1,6 @@
 # SKILL_AUDIT_REPORT — Skill Ekosistemi Denetimi
 
-Üretim: `python tools/skill_audit.py` · 2026-11-16 17:05 UTC · **18/18 skill tüm denetimlerden geçti**
+Üretim: `python tools/skill_audit.py` · 2026-11-16 17:19 UTC · **18/18 skill tüm denetimlerden geçti**
 
 Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu mu, tetiklenme ve otomatik doğrulama bölümleri, gizli kabuk komutu yok; (2) **işlevsel** — skill'in koyduğu kurallar koda, ayarlara ve testlere karşı gerçekten çalıştırılır.
 
@@ -57,7 +57,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ her tur ≥ 3 regresyon testi — {"1": 4, "2": 4, "3": 4, "4": 3, "5": 4, "6": 6}
 - ✅ her turda FAIL ve PASS kanıtı
 - ✅ tablo satırlarında dosya:satır
-- ✅ pytest tests/test_arena.py — 25 passed in 0.21s
+- ✅ pytest tests/test_arena.py — 25 passed in 0.29s
 
 ### `atomic-json-recovery` — ✅ (26 satır)
 
@@ -70,7 +70,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ lastgood + şema doğrulayıcılar mevcut
-- ✅ pytest tests/test_storage.py tests/test_resilience.py -k storage or recover or corrupt or half — 10 passed, 18 deselected in 0.17s
+- ✅ pytest tests/test_storage.py tests/test_resilience.py -k storage or recover or corrupt or half — 10 passed, 18 deselected in 0.22s
 
 ### `cost-guard` — ✅ (25 satır)
 
@@ -87,7 +87,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ run_deadline_seconds < iş zaman aşımı (15 dk)
 - ✅ kodda sabit Gemini model kimliği yok — bulunamadı
 - ✅ standart ubuntu-latest runner
-- ✅ pytest tests/test_publisher.py::test_gemini_quota_stops_calls_and_never_switches_model tests/test_arena.py::test_r2_sre_huge_retry_after_is_not_slept_through — 2 passed in 0.20s
+- ✅ pytest tests/test_publisher.py::test_gemini_quota_stops_calls_and_never_switches_model tests/test_arena.py::test_r2_sre_huge_retry_after_is_not_slept_through — 2 passed in 0.17s
 
 ### `event-clustering-calibrator` — ✅ (20 satır)
 
@@ -116,7 +116,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ ≥ 6 bağımsız doğrulama kontrolü — 6
 - ✅ sistem talimatı untrusted_source_data'yı tanımlar
 - ✅ SDK çağrısı response_json_schema kullanır
-- ✅ pytest tests/test_processor.py — 11 passed in 0.19s
+- ✅ pytest tests/test_processor.py — 11 passed in 0.12s
 
 ### `night-shift-supervisor` — ✅ (26 satır)
 
@@ -158,7 +158,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ 14 kabul testi tanımlı — 14/14
-- ✅ pytest  — 198 passed in 1.01s
+- ✅ pytest  — 200 passed in 0.90s
 - ✅ ruff temiz — All checks passed!
 
 ### `rss-anti-poisoning` — ✅ (26 satır)
@@ -173,7 +173,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ saldırı yükü kütüphanesi ≥ 8 — 8
 - ✅ homoglif katlama aktif
-- ✅ pytest tests/test_injection.py tests/test_arena.py -k injection or homoglyph or padded or blend or links — 21 passed, 20 deselected in 0.15s
+- ✅ pytest tests/test_injection.py tests/test_arena.py -k injection or homoglyph or padded or blend or links — 21 passed, 20 deselected in 0.16s
 
 ### `rss-integrity-checker` — ✅ (27 satır)
 
@@ -187,7 +187,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ tüm feed_url https
 - ✅ her kaynakta allowed_domains
-- ✅ pytest tests/test_collector.py tests/test_resilience.py — 33 passed in 0.26s
+- ✅ pytest tests/test_collector.py tests/test_resilience.py — 33 passed in 0.23s
 
 ### `security-auditor` — ✅ (30 satır)
 
@@ -204,7 +204,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ workflow yalnızca schedule + workflow_dispatch — schedule, workflow_dispatch
 - ✅ secret'lar yalnızca bot adımında
 - ✅ XML yalnızca defusedxml
-- ✅ pytest tests/test_publisher.py::test_secrets_never_logged — 1 passed in 0.17s
+- ✅ pytest tests/test_publisher.py::test_secrets_never_logged — 1 passed in 0.14s
 
 ### `static-site-guardian` — ✅ (37 satır)
 
@@ -222,7 +222,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ feed.json'da hassas alan yok
 - ✅ görsel güvenliği: safe_image_url + no-referrer + atıf
 - ✅ feed.json yalnızca https bağlantı
-- ✅ pytest tests/test_site_exporter.py — 35 passed in 0.21s
+- ✅ pytest tests/test_site_exporter.py — 35 passed in 0.18s
 
 ### `telegram-api-guard` — ✅ (25 satır)
 
@@ -237,7 +237,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ allowed_updates yalnızca message_reaction_count
 - ✅ views/forwards yalnızca 'unavailable' — 2 yer
 - ✅ 4096 sınırı ve retry_after üst sınırı
-- ✅ pytest tests/test_analyzer.py tests/test_publisher.py — 21 passed in 0.30s
+- ✅ pytest tests/test_analyzer.py tests/test_publisher.py — 21 passed in 0.27s
 
 ### `token-budget-guardian` — ✅ (29 satır)
 

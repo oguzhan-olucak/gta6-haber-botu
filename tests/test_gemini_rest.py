@@ -131,3 +131,32 @@ def test_missing_model_falls_back_once_to_free_flash():
     assert s.posts[-1].endswith("/models/gemini-3.5-flash:generateContent") and len(s.posts) == 2
     gen.generate("s", "p", {})                    # sonraki çağrılar doğrudan yeni modelle
     assert len(s.posts) == 3
+
+
+class _BusySession(_ModelSession):
+    """Yapılandırılan model 503 (aşırı yüklü) → başka Flash modeline geçilir; yapılandırılan model listede olsa da seçilmez."""
+
+    def post(self, url, **kw):
+        self.posts.append(url)
+        if "gemini-3.5-flash:" in url:
+            return FakeResponse(503, json.dumps({"error": {"status": "UNAVAILABLE"}}).encode())
+        return _ok()
+
+    def get(self, url, **kw):
+        return FakeResponse(200, json.dumps({"models": [
+            {"name": "models/gemini-3.5-flash", "supportedGenerationMethods": ["generateContent"]},
+            {"name": "models/gemini-3.5-flash-lite", "supportedGenerationMethods": ["generateContent"]}]}).encode())
+
+
+def test_overloaded_model_falls_back_once():
+    s = _BusySession()
+    gen = GeminiRestGenerator(AQ_KEY, "gemini-3.5-flash", session=s)
+    assert gen.generate("s", "p", {}) == '{"title_tr":"x"}'
+    assert gen.resolved_model == "gemini-3.5-flash-lite" and len(s.posts) == 2
+
+
+def test_other_errors_do_not_trigger_model_discovery():
+    s = _Session(FakeResponse(429, b"{}"))
+    with pytest.raises(GeminiError):
+        GeminiRestGenerator(AQ_KEY, "gemini-3.5-flash", session=s).generate("s", "p", {})
+    assert all("/models?" not in c[0] and not c[0].endswith("/models") for c in s.calls)

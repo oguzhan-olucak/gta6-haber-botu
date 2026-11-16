@@ -416,16 +416,17 @@ class GeminiRestGenerator:
         try:
             return self._call(system_instruction, prompt, schema)
         except GeminiError as exc:
-            if self._last_status != 404 or self._discovered:
+            # 404: model yok · 503/zaman aşımı: model aşırı yüklü → bir kez başka ücretsiz Flash modeline geç
+            if self._last_status not in (404, 500, 503, -1) or self._discovered:
                 raise
             self._discovered = True
-            model = self.discover_model()
+            model = self.discover_model(exclude=self._model)
             if not model or model == self._model:
                 raise GeminiError(exc.error_class, str(exc) + " ve erişilebilir ücretsiz Flash modeli bulunamadı") from None
             self._model, self.resolved_model = model, model
             return self._call(system_instruction, prompt, schema)
 
-    def discover_model(self) -> str | None:
+    def discover_model(self, exclude: str | None = None) -> str | None:
         """Anahtarın erişebildiği modellerden ``generateContent`` destekleyen en uygun Flash modeli."""
         try:
             resp = self._session.get(f"{GEMINI_REST_BASE}/models", params={"pageSize": 200},
@@ -438,7 +439,7 @@ class GeminiRestGenerator:
         for m in (data or {}).get("models", []) if isinstance(data, dict) else []:
             if isinstance(m, dict) and "generateContent" in (m.get("supportedGenerationMethods") or []):
                 name = str(m.get("name", "")).removeprefix("models/")
-                if _MODEL_RE.match(name):
+                if _MODEL_RE.match(name) and name != exclude:
                     names.append(name)
         return pick_free_flash_model(names)
 
@@ -450,6 +451,7 @@ class GeminiRestGenerator:
             resp = self._session.post(url, headers=headers, json=body, timeout=self._timeout,
                                       allow_redirects=False)
         except requests.exceptions.Timeout:
+            self._last_status = -1
             raise GeminiError(ErrorClass.NETWORK_TRANSIENT, "Gemini zaman aşımı") from None
         except requests.exceptions.RequestException as exc:
             raise GeminiError(ErrorClass.NETWORK_TRANSIENT, f"Gemini bağlantı hatası {type(exc).__name__}") from None

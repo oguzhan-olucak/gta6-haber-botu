@@ -411,10 +411,10 @@ def _call_gemini(ctx: RunContext, cluster: list[Item], a: Assessment) -> str | N
         fallback = getattr(ctx.generator, "resolved_model", None)
         if fallback and not ctx.summary.get("gemini_model_fallback"):
             ctx.summary["gemini_model_fallback"] = fallback
-            log.warning("GEMINI_MODEL bu anahtar için bulunamadı; ücretsiz Flash modeli kullanılıyor: %s", fallback)
+            log.warning("GEMINI_MODEL yanıt vermedi (yok/aşırı yüklü); ücretsiz Flash modeli kullanılıyor: %s", fallback)
             ctx.alert("GEMINI_MODEL", "MODEL_FALLBACK",
-                      f"GEMINI_MODEL secret'ındaki model bulunamadı; bot otomatik olarak '{fallback}' kullanıyor. "
-                      f"Kalıcı çözüm: GitHub → Settings → Secrets → GEMINI_MODEL = {fallback}")
+                      f"GEMINI_MODEL secret'ındaki model yanıt vermedi (bulunamadı veya aşırı yüklü); bot bu çalışmada "
+                      f"'{fallback}' kullandı. Sürekli olursa: GitHub → Settings → Secrets → GEMINI_MODEL = {fallback}")
         return out
     except GeminiError as exc:
         ctx.summary["gemini_errors"] += 1

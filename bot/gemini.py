@@ -8,6 +8,7 @@ from __future__ import annotations
 import json
 import logging
 import re
+import time
 from pathlib import Path
 from typing import Any, Callable, Literal, Protocol
 
@@ -380,13 +381,15 @@ class GeminiRestGenerator:
     """
 
     def __init__(self, api_key: str, model: str, *, session: requests.Session | None = None,
-                 timeout: float = 45.0):
+                 timeout: float = 45.0, sleep: Callable[[float], None] | None = None):
         self._api_key = api_key.strip().strip('"').strip("'")
         self._model = model.strip().removeprefix("models/")
         self._session = session or requests.Session()
         self._timeout = timeout
         self._last_status = 0
         self._discovered = False
+        self._retried = False
+        self._sleep = sleep or time.sleep
         self.resolved_model: str | None = None   # 404 sonrası otomatik seçilen model (varsa)
 
     def __repr__(self) -> str:
@@ -416,6 +419,14 @@ class GeminiRestGenerator:
         try:
             return self._call(system_instruction, prompt, schema)
         except GeminiError as exc:
+            if self._last_status in (500, 503) and not self._retried:
+                # Google tarafında anlık aşırı yük: aynı modeli kısa bir beklemeyle bir kez daha dene
+                self._retried = True
+                self._sleep(8.0)
+                try:
+                    return self._call(system_instruction, prompt, schema)
+                except GeminiError:
+                    pass
             # 404: model yok · 503/zaman aşımı: model aşırı yüklü → bir kez başka ücretsiz Flash modeline geç
             if self._last_status not in (404, 500, 503, -1) or self._discovered:
                 raise

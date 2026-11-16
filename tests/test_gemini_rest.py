@@ -55,7 +55,8 @@ def test_aq_key_sent_only_in_x_goog_api_key_header():
 def test_errors_are_classified_with_safe_reason(code, cls):
     body = {"error": {"code": code, "status": "UNAUTHENTICATED", "message": f"bad key {AQ_KEY}",
                       "details": [{"reason": "ACCESS_TOKEN_TYPE_UNSUPPORTED"}]}}
-    gen = GeminiRestGenerator(AQ_KEY, "gemini-2.5-flash", session=_Session(FakeResponse(code, json.dumps(body).encode())))
+    gen = GeminiRestGenerator(AQ_KEY, "gemini-2.5-flash", session=_Session(FakeResponse(code, json.dumps(body).encode())),
+                              sleep=lambda d: None)
     with pytest.raises(GeminiError) as ei:
         gen.generate("s", "p", {})
     assert ei.value.error_class == cls
@@ -150,9 +151,11 @@ class _BusySession(_ModelSession):
 
 def test_overloaded_model_falls_back_once():
     s = _BusySession()
-    gen = GeminiRestGenerator(AQ_KEY, "gemini-3.5-flash", session=s)
+    slept = []
+    gen = GeminiRestGenerator(AQ_KEY, "gemini-3.5-flash", session=s, sleep=slept.append)
     assert gen.generate("s", "p", {}) == '{"title_tr":"x"}'
-    assert gen.resolved_model == "gemini-3.5-flash-lite" and len(s.posts) == 2
+    # önce aynı model 8 sn sonra bir kez daha, sonra başka Flash modeli
+    assert slept == [8.0] and gen.resolved_model == "gemini-3.5-flash-lite" and len(s.posts) == 3
 
 
 def test_other_errors_do_not_trigger_model_discovery():

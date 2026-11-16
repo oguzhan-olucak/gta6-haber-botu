@@ -346,9 +346,13 @@ def c_uix() -> list[Check]:
     js = read("docs/assets/app.js")
     page = read("docs/index.html")
     ids = ("hero", "grid", "empty", "demo-toggle", "q", "drawer", "telegram", "method", "pulse-list", "milestones",
-           "st-demo", "nomatch")
+           "nomatch", "map", "pins", "region-panel", "region-chips", "map-camera")
     return [Check("örnek bülten tembel yüklenir", "data/demo-feed.js" in js and "demo-feed.js" not in page),
             Check("gerçek veri önceliği (realItems.length)", "!realItems.length &&" in js),
+            Check("harita: bölge verisi + konum yedeği", "location_id" in js and "__LEONIDA__" in js
+                  and (ROOT / "docs" / "assets" / "leonida.js").exists()),
+            Check("animasyonlar transform/opacity (left/top/width animasyonu yok)",
+                  not re.search(r"transition:[^;]*\b(left|top|width|height)\b", read("docs/assets/style.css"))),
             Check("diyaloglar showModal ile", "showModal" in js),
             Check("safeHttps ve textContent", "function safeHttps" in js and "textContent" in js),
             Check("localStorage try/catch", bool(re.search(r"try \{ (if \(v == null\) )?localStorage", js))),

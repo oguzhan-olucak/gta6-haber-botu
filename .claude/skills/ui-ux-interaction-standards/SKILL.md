@@ -5,10 +5,16 @@ description: docs/ sitesindeki etkileşim kuralları — süzgeç/sekme/arama an
 # ui-ux-interaction-standards
 
 ## Kurallar
-1. **Gerçek veri önceliklidir.** `feed.json`'da en az bir haber varsa örnek bülten (`data/demo-feed.js`) hiç gösterilmez;
-   kullanıcı anahtarı açık bıraksa bile. Örnek veri yalnızca istek üzerine tembel yüklenir ve şeritte "Örnek bülten" yazar.
-2. **Boş durum bir davettir.** Boş akışta manşet "İlk doğrulanmış haber yolda" der, iskelet kartlar ve
-   "Örnek bülten önizlemesini göster" anahtarı görünür. Hata durumunda ne olduğu ve ne yapılacağı yazılır.
+1. **Gerçek veri önceliklidir.** `feed.json`'da en az bir haber varsa örnek bülten (`data/demo-feed.js`) hiç yüklenmez
+   ve gösterilmez. Gerçek akış boşken örnek bülten **varsayılan olarak açıktır** (site asla boş görünmez); kullanıcı
+   anahtarı kapatırsa (`localStorage gta6.demo = "0"` veya `?demo=0`) kapalı kalır. Örnekler açıkken üst durumda
+   "Örnek bülten" ve akışın üstünde açıklama notu görünür.
+2. **Boş durum bir davettir.** Örnek kapalıyken boş akışta manşet "İlk doğrulanmış haber yolda" der, iskelet kartlar ve
+   "Örnek bülteni göster" düğmesi görünür. Hata durumunda ne olduğu ve ne yapılacağı yazılır.
+8. **Leonida haritası.** Her haber bir bölgeye bağlıdır (`location_id`; eski veride `leonida.js` anahtar kelime yedeği).
+   İğneye/bölge çipine tıklamak (veya odak + Enter) kamerayı o bölgeye uçurur, bölge panelini açar ve akışı süzer; aynı
+   bölgeye ya da × düğmesine basmak sıfırlar. Kart üzerine gelmek haritayı yalnızca *önizler* (süzgeç değişmez);
+   "Haritada göster" haritaya kaydırır ve iğneyi parlatır. Kamera ve paralaks yalnızca `transform` kullanır.
 3. **Anında süzgeç.** Güven çipleri (`aria-pressed`), kategori sekmeleri (`role=tab`, `aria-selected`) ve arama
    (Türkçe harf katlamalı, çok kelimeli VE) her tuşta yeniden çizer; gecikme/debounce yok. `/` aramaya odaklar, `Esc` temizler.
 4. **Diyaloglar** `<dialog>.showModal()` ile açılır (odak tuzağı + Esc tarayıcıdan); arka plana tıklama kapatır.

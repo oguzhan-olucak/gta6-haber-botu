@@ -78,6 +78,25 @@
 - Yeni skill'ler: `vice-city-design-system`, `ui-ux-interaction-standards`, `webapp-testing-site` + `.claude/skills/README.md` dizini.
   `python tools/site_check.py` 390/820/1440 × gerçek/örnek matrisini headless Chrome ile sınar (taşma yok).
 
+## 3d. Leonida Komuta Merkezi + kaynak ve Gemini düzeltmeleri
+
+- **Site:** üst kısım etkileşimli, özgün ve stilize bir Leonida haritası (SVG). Beş nabız atan bölge var: Vice City,
+  Leonida Keys, Grassrivers, Port Gellhorn & Ambrosia, Mount Kalaga. Bir bölgeye tıklayınca kamera yakınlaşır, bölge
+  paneli açılır ve akış süzülür. Kartın üzerine gelmek haritayı önizler; "Haritada göster" haritaya götürür.
+  Sayfada fare/kaydırma paralaksı, projektör hüzmeleri, tarama çizgisi dokusu, kademeli açılış, neon dijital geri
+  sayım, bölgeye özgü SVG kapaklar, 3B kart eğimi ve okuma ilerleme çubukları var. Telegram önizleme ve "Nasıl
+  doğruluyoruz" cam efektli yan çekmeceler. Gerçek akış boşken örnek bülten varsayılan olarak açılır.
+- **feed.json:** opsiyonel `location_id` + `region` (eski veriyle geriye uyumlu; `bot/site_exporter.classify_location`).
+- **Kaynaklar:** GTA VI ilgi filtresi genişletildi (Leonida, GTAVI, Vice City/Lucia/Jason + Rockstar...). Resmî
+  kaynaklara 7 günlük pencere verildi. İmzalı Google News bağlantıları `batchexecute` ile çözülüyor. İstemci tarafında
+  çizilen Newswire sayfasında gömülü bağlantılar yakalanıyor. Kaynak durumunda `relevant` (eşleşen) ve `new` (eklenen)
+  ayrı tutuluyor.
+- **Gemini:** varsayılan istemci REST (`v1beta generateContent`, yalnızca `x-goog-api-key`); `AQ.` auth key'leriyle
+  uyumlu. Eski istemcinin koyduğu soğuma kilidi ilk çalışmada bir kez kendiliğinden temizlenir. Alarm, Google'ın hata
+  kodunu (anahtarsız) gösterir.
+- **Doğrulama:** `python tools/site_check.py` (Playwright: 390/820/1440 × yalnız gerçek/varsayılan, bölge tıklama,
+  çekmeceler, sıfır JS hatası).
+
 ## 4. Kurulan Tüm Skill'ler ve Arena Tartışmasında Çözülen Kritik Açıklar
 
 ### 4.1 Skill'ler (`.claude/skills/`, 15 adet — doğrulama: `SKILL_AUDIT_REPORT.md`)

@@ -4,8 +4,9 @@ description: docs/ sitesinin "Leonida Night" tasarım sistemi — renk, tipograf
 ---
 # vice-city-design-system
 
-Kimlik: Leonida'da gün batımından geceye geçiş. Tek cesur öğe **sinematik manşettir** (güneş, ızgara ufku, palmiye
-silueti); geri kalan her şey sakin ve disiplinli kalır.
+Kimlik: Leonida komuta merkezi — gece çöken bir eyaletin taktik haritası. Tek cesur öğe **etkileşimli Leonida
+haritasıdır** (neon kıyı çizgisi, nabız atan iğneler, projektör hüzmeleri, tarama çizgisi dokusu); geri kalan her şey
+sakin ve disiplinli kalır. Amblem ve harita özgün çizimdir; resmî GTA VI logosu veya oyun haritası kopyalanmaz.
 
 ## Token'lar (`docs/assets/style.css` → `:root`)
 | Token | Değer | Rol |
@@ -21,13 +22,16 @@ silueti); geri kalan her şey sakin ve disiplinli kalır.
 Güven renkleri sabittir ve başka anlamda kullanılmaz: resmî = altın, çoklu = nane, tek = mor, topluluk/sızıntı = pembe.
 
 ## Tipografi
-- Başlık: **Big Shoulders Display** 800–900 (manşet `clamp(40px, 5.6vw, 84px)`, satır yüksekliği .92).
-- Gövde: **Instrument Sans** 400–700, 16px / 1.6; satır uzunluğu ≤ 75 karakter (`max-width: 60–70ch`).
-- Tümü büyük harf etiket yok; Türkçe büyük harf gerekiyorsa `toLocaleUpperCase("tr")`.
+- Başlık: **Anton** (`--display`; manşet `clamp(52px, 6.4vw, 104px)`), ara başlık/sekme: **Oswald** (`--sub`).
+- Gövde: **Plus Jakarta Sans** (`--body`) 16px / 1.6; satır uzunluğu ≤ 75 karakter.
+- Sayaç, koordinat ve meta verisi: **JetBrains Mono** (`--mono`).
+- Büyük harf yalnızca Oswald ara başlıklarda; Türkçe metin `lang="tr"` ile (İ/ı doğru). Özel adlar (Vice City) büyük harfe çevrilmez.
 
 ## Yüzeyler
 - Cam: `.glass` → yarı saydam lacivert + `backdrop-filter: saturate(140%) blur(18px)` + 1px açık kenar.
-- Kart: üstte güven renginde 2px ışık çizgisi; hover'da 4px yükselme + degrade kenar (`::before`). Başka efekt yok.
+- Kart: bölgeye özgü SVG kapak (`#cover-<bölge>` sembolü), güven renginde neon kenar parıltısı, ince işaretçilerde
+  fare açısına göre 3B eğim (±4–5°). Başka efekt yok.
+- Bölge renkleri: Vice City pembe · Leonida Keys nane · Grassrivers yeşil `#6BE38E` · Port Gellhorn mor · Mount Kalaga altın.
 - Yarıçap hiyerarşisi: çip 999px · kart 16px · panel/modal 24px.
 
 ## Kırılımlar

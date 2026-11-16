@@ -1,88 +1,226 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="is-loading">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="description" content="GTA VI hakkında kaynağı doğrulanmış Türkçe haberler: her haberde doğrulama düzeyi, kaynak bağlantısı ve çıkışa kalan süre.">
-<meta name="theme-color" content="#060914">
-<meta property="og:title" content="GTA VI Türkiye Bülteni">
-<meta property="og:description" content="Kaynağı doğrulanmış Türkçe GTA VI haberleri.">
-<title>GTA VI Türkiye Bülteni · Doğrulanmış GTA VI haberleri</title>
+<meta name="description" content="GTA VI hakkında kaynağı doğrulanmış Türkçe haberler, etkileşimli Leonida haritası üzerinde: her haberde doğrulama düzeyi, kaynak bağlantısı ve çıkışa kalan süre.">
+<meta name="theme-color" content="#05060f">
+<meta property="og:title" content="GTA VI Türkiye Bülteni · Leonida Komuta Merkezi">
+<meta property="og:description" content="Kaynağı doğrulanmış Türkçe GTA VI haberleri, Leonida haritasında.">
+<title>GTA VI Türkiye Bülteni · Leonida Komuta Merkezi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <a class="skip" href="#akis">Haberlere geç</a>
+<div class="readbar" aria-hidden="true"><span id="readbar"></span></div>
 
-<!-- Canlı durum şeridi -->
-<div class="ribbon" role="status" aria-live="polite">
-  <div class="wrap ribbon__in">
-    <span class="pulse" id="st-pulse" aria-hidden="true"></span>
-    <b id="st-state">Bülten yükleniyor…</b>
-    <span class="ribbon__item" id="st-updated"></span>
-    <span class="ribbon__item" id="st-sources"></span>
-    <span class="ribbon__item" id="st-total"></span>
-    <button type="button" class="ribbon__demo" id="st-demo" hidden>Örnek bülten gösteriliyor · Gizle</button>
-  </div>
-</div>
+<!-- Ortak SVG tanımları: amblem ve kapak illüstrasyonları -->
+<svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g-chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#c9d2ff"/>
+      <stop offset=".55" stop-color="#6f78b8"/><stop offset="1" stop-color="#e9ecff"/>
+    </linearGradient>
+    <linearGradient id="g-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#ff6b2c"/><stop offset="1" stop-color="#ff2e88"/>
+    </linearGradient>
+    <linearGradient id="g-dusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#140b3a"/><stop offset=".55" stop-color="#4a1260"/><stop offset="1" stop-color="#b8325a"/>
+    </linearGradient>
+    <linearGradient id="g-sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d2a52"/><stop offset="1" stop-color="#04101f"/>
+    </linearGradient>
+    <linearGradient id="g-night" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#061024"/><stop offset="1" stop-color="#0b2b2a"/>
+    </linearGradient>
+  </defs>
 
-<header class="masthead">
-  <div class="wrap masthead__in">
+  <symbol id="emblem" viewBox="0 0 64 64">
+    <path d="M32 2 58 17v30L32 62 6 47V17z" fill="#090b1c" stroke="url(#g-chrome)" stroke-width="2"/>
+    <path d="M32 7 53.5 19.5v25L32 57 10.5 44.5v-25z" fill="none" stroke="#ff2e88" stroke-width="1" opacity=".75"/>
+    <circle cx="32" cy="38" r="13" fill="url(#g-sun)" opacity=".9"/>
+    <path d="M17 39h30M18 43h28M20 47h24" stroke="#090b1c" stroke-width="2"/>
+    <path d="M17 15h6l5 20 5-20h6l-8.5 28h-5zM42 15h6v28h-6z" fill="#090b1c" stroke="url(#g-chrome)" stroke-width="1.6" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- Kapak illüstrasyonları (özgün, bölgeye göre) -->
+  <symbol id="cover-vice_city" viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice">
+    <rect width="320" height="140" fill="url(#g-dusk)"/>
+    <circle cx="232" cy="92" r="44" fill="url(#g-sun)"/>
+    <path d="M188 84h88M190 94h84M194 104h76" stroke="#4a1260" stroke-width="4"/>
+    <path d="M0 140V96h14V70h10v26h8V58h16v38h6V80h12v16h10V64l8-8 8 8v32h10V86h14v54zM300 140V90h8V74h12v66z" fill="#0b0618"/>
+    <path d="M24 70h10M40 60h8M78 64h12" stroke="#35f0e0" stroke-width="2" opacity=".8"/>
+    <rect y="118" width="320" height="22" fill="#0b0618" opacity=".85"/>
+    <path d="M0 122h320" stroke="#ff2e88" stroke-width="2" opacity=".7"/>
+    <path d="M150 140c2-24 4-40 10-60M160 80c-12-8-28-6-38 2m38-2c4-12 16-18 28-16m-28 16c14 0 24 8 28 18" stroke="#0b0618" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="cover-leonida_keys" viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice">
+    <rect width="320" height="140" fill="url(#g-sea)"/>
+    <rect width="320" height="62" fill="#ff8a4c" opacity=".25"/>
+    <circle cx="64" cy="54" r="22" fill="url(#g-sun)" opacity=".9"/>
+    <path d="M0 62h320" stroke="#ffc94a" stroke-width="1.5" opacity=".6"/>
+    <path d="M30 96c20-10 50-10 70 0zM140 84c18-8 40-8 58 0zM236 102c22-12 56-12 78 0z" fill="#0f3b3a"/>
+    <path d="M60 72h200" stroke="#35f0e0" stroke-width="2" stroke-dasharray="2 10" opacity=".6"/>
+    <path d="M178 118l40-6 24 6z" fill="#f4f2ff"/><path d="M190 112l18-26v24" fill="#f4f2ff" opacity=".85"/>
+    <path d="M150 124c30 4 70 4 110-4" stroke="#35f0e0" stroke-width="1.5" fill="none" opacity=".7"/>
+  </symbol>
+  <symbol id="cover-grassrivers" viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice">
+    <rect width="320" height="140" fill="url(#g-night)"/>
+    <circle cx="250" cy="38" r="16" fill="#e9f7d8" opacity=".9"/>
+    <circle cx="256" cy="34" r="14" fill="#061024"/>
+    <rect y="96" width="320" height="44" fill="#0a2a24"/>
+    <path d="M0 104h320" stroke="#35f0e0" stroke-width="1" opacity=".35"/>
+    <g stroke="#123d2e" stroke-width="3" stroke-linecap="round">
+      <path d="M20 104V70M30 104V60M40 104V76M56 104V64M70 104V82M250 104V66M262 104V58M276 104V74M292 104V62M306 104V80"/>
+    </g>
+    <path d="M110 112c10-6 30-6 50-2 10 2 22 2 30-2" stroke="#2f6b4f" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <circle cx="186" cy="108" r="2" fill="#ffc94a"/><circle cx="194" cy="108" r="2" fill="#ffc94a"/>
+  </symbol>
+  <symbol id="cover-port_gellhorn" viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice">
+    <rect width="320" height="140" fill="url(#g-dusk)"/>
+    <rect y="100" width="320" height="40" fill="#0b1230"/>
+    <g fill="#0b0618">
+      <path d="M40 100V40h6v60zM20 40h60v5H20zM70 45v18"/>
+      <path d="M210 100V30h6v70zM180 30h70v5h-70zM244 35v22"/>
+      <rect x="100" y="78" width="70" height="22"/><rect x="110" y="66" width="22" height="12"/><rect x="250" y="84" width="60" height="16"/>
+    </g>
+    <path d="M70 45v18M244 35v22" stroke="#0b0618" stroke-width="2"/>
+    <circle cx="246" cy="58" r="3" fill="#ff2e88"/><circle cx="72" cy="64" r="3" fill="#ffc94a"/>
+    <path d="M0 110h320M0 120h320" stroke="#a99bff" stroke-width="1" opacity=".3"/>
+  </symbol>
+  <symbol id="cover-mount_kalaga" viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice">
+    <rect width="320" height="140" fill="#0b1230"/>
+    <rect width="320" height="140" fill="url(#g-dusk)" opacity=".55"/>
+    <path d="M0 140 80 62l30 22 50-56 60 52 30-20 70 80z" fill="#120a2e"/>
+    <path d="M160 28 176 46l-10-4-6 8-6-8-10 4z" fill="#e9ecff" opacity=".85"/>
+    <path d="M160 28v-18" stroke="#35f0e0" stroke-width="2"/><circle cx="160" cy="9" r="3" fill="#ff2e88"/>
+    <path d="M140 14a28 28 0 0 1 40 0M132 6a40 40 0 0 1 56 0" stroke="#35f0e0" stroke-width="1.5" fill="none" opacity=".6"/>
+    <path d="M0 118h320" stroke="#ffc94a" stroke-width="1" stroke-dasharray="4 6" opacity=".5"/>
+  </symbol>
+</svg>
+
+<header class="topbar" id="top">
+  <div class="topbar__in">
     <a class="brand" href="./" aria-label="GTA VI Türkiye Bülteni ana sayfa">
-      <span class="brand__sun" aria-hidden="true"></span>
-      <span class="brand__name">GTA VI <em>Türkiye Bülteni</em></span>
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#emblem"/></svg>
+      <span class="brand__text"><b>GTA VI</b><small>Türkiye Bülteni</small></span>
     </a>
     <nav class="mainnav" aria-label="Site">
-      <a href="./" aria-current="page">Haberler</a>
-      <button type="button" class="navbtn" data-open="telegram" aria-haspopup="dialog">Telegram önizleme</button>
-      <button type="button" class="navbtn" data-open="method" aria-haspopup="dialog">Nasıl doğruluyoruz</button>
+      <a href="#harita" class="mainnav__link">Harita</a>
+      <a href="#akis" class="mainnav__link">Haberler</a>
+      <button type="button" class="mainnav__link" data-open="telegram" aria-haspopup="dialog">Telegram önizleme</button>
+      <button type="button" class="mainnav__link" data-open="method" aria-haspopup="dialog">Nasıl doğruluyoruz</button>
     </nav>
+    <div class="status" role="status" aria-live="polite">
+      <span class="pulse" id="st-pulse" aria-hidden="true"></span>
+      <b id="st-state">Bağlanıyor…</b>
+      <span id="st-updated" class="status__sub"></span>
+    </div>
   </div>
 </header>
 
 <main>
-  <!-- Sinematik manşet -->
-  <section class="sky" aria-label="Manşet">
-    <div class="sky__art" aria-hidden="true">
-      <span class="sky__sun"></span>
-      <span class="sky__grid"></span>
-      <svg class="sky__palms" viewBox="0 0 1440 360" preserveAspectRatio="xMidYMax slice">
-        <g fill="#05060F">
-          <path d="M118 360c6-70 10-150 30-238l9 2c-16 86-19 166-23 236z"/>
-          <path d="M152 124c-34-30-88-38-130-22 40-2 86 10 118 34zM154 120c-12-44-50-78-96-86 36 20 66 52 82 92zM158 120c22-40 66-62 110-60-40 10-78 34-100 70zM156 126c40-14 92-6 126 26-36-18-82-24-120-12zM150 128c-44 6-80 38-92 82 20-38 54-64 96-72z"/>
-          <path d="M1268 360c-4-90-2-180-24-262l9-3c24 84 23 176 27 265z"/>
-          <path d="M1246 100c-38-24-92-24-130 0 40-8 84 0 120 18zM1248 96c-4-46-34-86-78-102 32 26 56 62 66 104zM1252 96c28-36 76-52 118-44-42 6-82 26-108 58zM1250 104c42-8 92 8 120 44-34-24-78-36-118-30zM1244 104c-44 14-74 52-78 98 14-40 44-72 84-86z"/>
-          <path d="M1352 360c2-60 8-120 26-180l8 3c-16 60-20 118-22 177z"/>
-          <path d="M1378 184c-26-20-66-22-94-4 30-4 62 2 88 16zM1382 180c6-34-10-68-40-86 20 24 30 54 30 86zM1384 182c26-22 62-28 92-14-32 0-62 10-86 26zM1380 188c28 0 62 18 76 48-20-22-48-36-78-38z"/>
-        </g>
-      </svg>
+  <!-- 1. Etkileşimli Leonida haritası -->
+  <section class="stage" id="harita" aria-labelledby="stage-title">
+    <div class="stage__sky" aria-hidden="true">
+      <span class="beam beam--a"></span><span class="beam beam--b"></span>
+      <span class="stage__glow"></span>
     </div>
 
-    <div class="wrap sky__in">
-      <article id="hero" class="feature" aria-live="polite"></article>
+    <div class="stage__viewport" id="map-viewport">
+      <div class="stage__camera" id="map-camera">
+        <svg class="map" id="map" viewBox="0 0 1000 700" role="img" aria-labelledby="map-title map-desc">
+          <title id="map-title">Leonida eyaletinin stilize haritası</title>
+          <desc id="map-desc">Beş bölge işaretli: Vice City, Leonida Keys, Grassrivers, Port Gellhorn ve Ambrosia, Mount Kalaga.</desc>
+          <defs>
+            <pattern id="p-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#35f0e0" stroke-opacity=".07"/></pattern>
+            <pattern id="p-swamp" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><path d="M0 7h7" stroke="#3fa77a" stroke-opacity=".45" stroke-width="1.4"/></pattern>
+            <pattern id="p-city" width="9" height="9" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#ff2e88" fill-opacity=".35"/></pattern>
+            <radialGradient id="g-land" cx=".55" cy=".35" r=".8">
+              <stop offset="0" stop-color="#1d1850"/><stop offset="1" stop-color="#0e0c2c"/>
+            </radialGradient>
+            <filter id="f-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter>
+          </defs>
+          <g class="map__coast-glow" filter="url(#f-glow)">
+            <path class="leonida" d="M48 132C120 112 220 104 330 108L470 98C522 94 556 108 574 140C600 196 616 262 640 328C664 392 698 444 714 498C726 540 718 580 690 604C664 624 630 622 606 600C582 578 566 548 548 512C524 466 498 420 478 372C466 342 462 306 452 274C442 246 420 222 392 210C340 196 280 198 220 204C160 210 100 212 52 202C36 192 32 148 48 132Z"/>
+          </g>
+          <path class="leonida leonida--land" d="M48 132C120 112 220 104 330 108L470 98C522 94 556 108 574 140C600 196 616 262 640 328C664 392 698 444 714 498C726 540 718 580 690 604C664 624 630 622 606 600C582 578 566 548 548 512C524 466 498 420 478 372C466 342 462 306 452 274C442 246 420 222 392 210C340 196 280 198 220 204C160 210 100 212 52 202C36 192 32 148 48 132Z" fill="url(#g-land)"/>
+          <!-- Bölge dokuları -->
+          <path d="M560 470C580 448 612 452 634 470C652 500 664 540 650 572C630 590 604 584 590 560C576 534 566 504 560 470Z" fill="url(#p-swamp)"/>
+          <path d="M662 444 698 470 708 528 684 540 664 500z" fill="url(#p-city)"/>
+          <ellipse cx="600" cy="392" rx="30" ry="22" fill="#0b2a52" stroke="#35f0e0" stroke-opacity=".4"/>
+          <g class="map__contour" fill="none" stroke="#a99bff" stroke-opacity=".35">
+            <ellipse cx="470" cy="150" rx="46" ry="26"/><ellipse cx="470" cy="150" rx="30" ry="16"/><ellipse cx="470" cy="150" rx="14" ry="8"/>
+          </g>
+          <!-- Takımadalar -->
+          <g class="map__keys" fill="#16163f" stroke="#35f0e0" stroke-opacity=".7">
+            <ellipse cx="640" cy="628" rx="14" ry="5" transform="rotate(-18 640 628)"/>
+            <ellipse cx="610" cy="642" rx="12" ry="4" transform="rotate(-12 610 642)"/>
+            <ellipse cx="578" cy="652" rx="13" ry="4" transform="rotate(-8 578 652)"/>
+            <ellipse cx="544" cy="660" rx="11" ry="4"/>
+            <ellipse cx="510" cy="664" rx="12" ry="4"/>
+            <ellipse cx="474" cy="664" rx="9" ry="3"/>
+          </g>
+          <path d="M650 622C600 650 540 664 470 664" fill="none" stroke="#ffc94a" stroke-opacity=".5" stroke-dasharray="3 6"/>
+          <!-- Otoyollar -->
+          <g class="map__roads" fill="none" stroke="#ffc94a" stroke-opacity=".28" stroke-width="2" stroke-dasharray="6 7">
+            <path d="M90 168C200 160 330 150 470 150"/><path d="M470 150C520 220 560 300 600 392C630 450 660 470 684 492"/>
+            <path d="M600 392C590 440 596 500 612 540"/>
+          </g>
+          <g class="map__labels" aria-hidden="true">
+            <text x="56" y="236">PANHANDLE</text><text x="410" y="300">LEONIDA</text><text x="760" y="320">ATLANTİK</text><text x="300" y="470">KÖRFEZ</text>
+          </g>
+          <g id="pins"></g>
+        </svg>
+      </div>
+      <div class="stage__scan" aria-hidden="true"></div>
+      <div class="stage__vignette" aria-hidden="true"></div>
+    </div>
 
-      <aside class="side" aria-label="Çıkış ve kaynaklar">
-        <section class="glass countdown" aria-labelledby="cd-h">
-          <h2 id="cd-h" class="eyebrowless">Çıkışa kalan</h2>
-          <div class="countdown__clock" id="cd-clock" role="timer" aria-live="off">
-            <div><b id="cd-d">–</b><span>gün</span></div>
-            <div><b id="cd-h2">–</b><span>saat</span></div>
-            <div><b id="cd-m">–</b><span>dakika</span></div>
-            <div><b id="cd-s">–</b><span>saniye</span></div>
+    <!-- HUD -->
+    <div class="hud">
+      <div class="hud__title">
+        <p class="hud__coords" id="hud-coords" aria-hidden="true">25.774° K · 80.193° B</p>
+        <h1 id="stage-title" class="hud__h1"><span>Leonida</span> <span>komuta merkezi</span></h1>
+        <p class="hud__lead">Doğrulanmış GTA VI haberleri, ait oldukları yerde. Bir bölgeye dokun; akış o konuma göre süzülsün.</p>
+        <div class="regions" id="region-chips" role="group" aria-label="Bölge seç"></div>
+      </div>
+
+      <aside class="hud__panel glass" id="region-panel" hidden aria-live="polite">
+        <button type="button" class="iconbtn hud__close" id="region-close" aria-label="Haritayı sıfırla"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        <p class="hud__mono" id="rp-coords"></p>
+        <h2 id="rp-name"></h2>
+        <p id="rp-desc" class="hud__desc"></p>
+        <ul id="rp-list" class="rp-list"></ul>
+        <button type="button" class="btn btn--glow" id="rp-go"></button>
+      </aside>
+
+      <div class="hud__dock">
+        <article class="feature glass" id="hero" aria-live="polite"></article>
+        <section class="countdown glass" aria-labelledby="cd-h">
+          <h2 id="cd-h" class="countdown__h">Çıkışa kalan</h2>
+          <div class="countdown__clock" role="timer" aria-live="off">
+            <div><b id="cd-d">––</b><span>gün</span></div><i aria-hidden="true">:</i>
+            <div><b id="cd-h2">––</b><span>saat</span></div><i aria-hidden="true">:</i>
+            <div><b id="cd-m">––</b><span>dk</span></div><i aria-hidden="true">:</i>
+            <div><b id="cd-s">––</b><span>sn</span></div>
           </div>
           <p class="countdown__meta"><span id="cd-date"></span> · <span id="cd-plat"></span></p>
           <div class="progress" aria-hidden="true"><span id="cd-bar"></span></div>
           <ol class="milestones" id="milestones"></ol>
-          <p class="fine">Geri sayım TSİ gece yarısına göredir; mağaza açılış saati bölgeye göre değişebilir.</p>
         </section>
-      </aside>
+      </div>
     </div>
+  </section>
 
-    <div class="wrap pulsebar" aria-labelledby="pulse-h">
+  <!-- Kaynak nabzı -->
+  <section class="pulsebar" aria-labelledby="pulse-h">
+    <div class="wrap pulsebar__in">
       <div class="pulsebar__head">
         <h2 id="pulse-h">Kaynak nabzı</h2>
         <p id="pulse-sum" class="pulsebar__sum"></p>
@@ -91,24 +229,16 @@
     </div>
   </section>
 
-  <!-- Süzgeç çubuğu -->
+  <!-- Süzgeçler -->
   <section class="filters" aria-label="Haberleri süz">
     <div class="wrap filters__in">
-      <div class="trustbar" role="group" aria-label="Doğrulama düzeyi">
-        <button type="button" class="tchip" data-trust="all" aria-pressed="true">Tümü <span class="n" data-count="all"></span></button>
-        <button type="button" class="tchip" data-trust="official" aria-pressed="false"><i class="dot dot--official" aria-hidden="true"></i>Resmî Açıklama <span class="n" data-count="official"></span></button>
-        <button type="button" class="tchip" data-trust="multi" aria-pressed="false"><i class="dot dot--multi" aria-hidden="true"></i>Çoklu Kaynak <span class="n" data-count="multi"></span></button>
-        <button type="button" class="tchip" data-trust="single" aria-pressed="false"><i class="dot dot--single" aria-hidden="true"></i>Tek Kaynak <span class="n" data-count="single"></span></button>
-        <button type="button" class="tchip" data-trust="claim" aria-pressed="false"><i class="dot dot--claim" aria-hidden="true"></i>Topluluk / Sızıntı <span class="n" data-count="claim"></span></button>
-      </div>
       <div class="filters__row">
-        <div class="tabs" role="tablist" aria-label="Kategori">
-          <button type="button" role="tab" class="tab" data-cat="all" aria-selected="true">Tümü</button>
-          <button type="button" role="tab" class="tab" data-cat="TRAILER_MEDIA" aria-selected="false">Fragman</button>
-          <button type="button" role="tab" class="tab" data-cat="GAMEPLAY_TECH" aria-selected="false">Oynanış</button>
-          <button type="button" role="tab" class="tab" data-cat="RELEASE_PLATFORMS" aria-selected="false">Çıkış/Platform</button>
-          <button type="button" role="tab" class="tab" data-cat="COMMUNITY_RUMOR" aria-selected="false">Sızıntı</button>
-          <button type="button" role="tab" class="tab" data-cat="INDUSTRY_BUSINESS" aria-selected="false">Analiz</button>
+        <div class="trustbar" role="group" aria-label="Doğrulama düzeyi">
+          <button type="button" class="tchip" data-trust="all" aria-pressed="true">Tümü <span class="n" data-count="all"></span></button>
+          <button type="button" class="tchip" data-trust="official" aria-pressed="false"><i class="dot dot--official" aria-hidden="true"></i>Resmî Açıklama <span class="n" data-count="official"></span></button>
+          <button type="button" class="tchip" data-trust="multi" aria-pressed="false"><i class="dot dot--multi" aria-hidden="true"></i>Çoklu Kaynak <span class="n" data-count="multi"></span></button>
+          <button type="button" class="tchip" data-trust="single" aria-pressed="false"><i class="dot dot--single" aria-hidden="true"></i>Tek Kaynak <span class="n" data-count="single"></span></button>
+          <button type="button" class="tchip" data-trust="claim" aria-pressed="false"><i class="dot dot--claim" aria-hidden="true"></i>Topluluk / Sızıntı <span class="n" data-count="claim"></span></button>
         </div>
         <label class="search">
           <span class="visually-hidden">Haberlerde ara</span>
@@ -117,25 +247,40 @@
           <kbd aria-hidden="true">/</kbd>
         </label>
       </div>
+      <div class="tabs" role="tablist" aria-label="Kategori">
+        <button type="button" role="tab" class="tab" data-cat="all" aria-selected="true">Tümü</button>
+        <button type="button" role="tab" class="tab" data-cat="TRAILER_MEDIA" aria-selected="false">Fragman</button>
+        <button type="button" role="tab" class="tab" data-cat="GAMEPLAY_TECH" aria-selected="false">Oynanış</button>
+        <button type="button" role="tab" class="tab" data-cat="RELEASE_PLATFORMS" aria-selected="false">Çıkış/Platform</button>
+        <button type="button" role="tab" class="tab" data-cat="COMMUNITY_RUMOR" aria-selected="false">Sızıntı</button>
+        <button type="button" role="tab" class="tab" data-cat="INDUSTRY_BUSINESS" aria-selected="false">Analiz</button>
+      </div>
     </div>
   </section>
 
   <section id="akis" class="wrap feed" aria-label="Haber akışı">
     <div class="feed__head">
-      <h2 id="feed-title" class="feed__title">Son haberler</h2>
-      <p id="result-line" class="result-line" aria-live="polite"></p>
+      <div>
+        <h2 id="feed-title" class="feed__title">Son haberler</h2>
+        <p id="result-line" class="result-line" aria-live="polite"></p>
+      </div>
+      <div class="feed__tools">
+        <button type="button" class="regionpill" id="region-pill" hidden></button>
+        <label class="switch" id="demo-switch" hidden>
+          <input type="checkbox" id="demo-toggle">
+          <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+          <span>Örnek bülten önizlemesi</span>
+        </label>
+      </div>
     </div>
+    <p class="demo-note" id="demo-note" hidden></p>
     <div id="grid" class="grid"></div>
 
     <div id="empty" class="emptystate" hidden>
       <div class="emptystate__card glass">
         <h3 id="empty-title">Henüz doğrulanmış haber yok</h3>
         <p id="empty-text"></p>
-        <label class="switch">
-          <input type="checkbox" id="demo-toggle">
-          <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
-          <span>Örnek bülten önizlemesini göster</span>
-        </label>
+        <button type="button" class="btn btn--glow" id="empty-demo">Örnek bülteni göster</button>
       </div>
       <div class="skeletons" aria-hidden="true">
         <div class="sk"><i></i><i></i><i></i><i></i></div>
@@ -163,22 +308,24 @@
 
 <footer class="footer">
   <div class="wrap footer__in">
-    <p>GTA VI Türkiye Bülteni bağımsız bir hayran bültenidir; Rockstar Games veya Take-Two Interactive ile bağlantılı değildir. Haberler kısa özetlerdir; ayrıntılar için her zaman orijinal kaynağı okuyun.</p>
+    <p>GTA VI Türkiye Bülteni bağımsız bir hayran bültenidir; Rockstar Games veya Take-Two Interactive ile bağlantılı değildir. Harita, bölge adlarından esinlenen özgün ve stilize bir çizimdir; oyundaki haritayı birebir göstermez. Haberler kısa özetlerdir; ayrıntılar için her zaman orijinal kaynağı okuyun.</p>
     <p class="footer__small">GitHub Pages üzerinde statik olarak yayınlanır · Veri: <a href="data/feed.json">feed.json</a> · <a href="message_preview.html">Telegram simülasyonu</a></p>
   </div>
 </footer>
 
 <!-- Haber detay çekmecesi -->
-<dialog id="drawer" class="drawer" aria-labelledby="d-title">
-  <div class="drawer__panel">
-    <header class="drawer__head">
+<dialog id="drawer" class="sheet" aria-labelledby="d-title">
+  <div class="sheet__panel" id="drawer-panel">
+    <div class="sheet__progress" aria-hidden="true"><span id="d-progress"></span></div>
+    <svg class="sheet__cover" viewBox="0 0 320 140" aria-hidden="true"><use id="d-cover" href="#cover-vice_city"/></svg>
+    <header class="sheet__head">
       <div id="d-badges" class="badges"></div>
       <button type="button" class="iconbtn" data-close aria-label="Kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     </header>
-    <h2 id="d-title" class="drawer__title"></h2>
-    <p id="d-meta" class="drawer__meta"></p>
-    <p id="d-summary" class="drawer__summary"></p>
-    <section class="drawer__block">
+    <h2 id="d-title" class="sheet__title"></h2>
+    <p id="d-meta" class="sheet__meta"></p>
+    <p id="d-summary" class="sheet__summary"></p>
+    <section class="sheet__block">
       <h3>Neden bu etiket?</h3>
       <p id="d-why"></p>
       <dl class="scores">
@@ -186,57 +333,53 @@
         <div><dt>Bağımsız yayın</dt><dd id="d-origins"></dd></div>
       </dl>
     </section>
-    <section class="drawer__block">
+    <section class="sheet__block">
       <h3>Kaynaklar</h3>
       <ul id="d-sources" class="sourcelist"></ul>
     </section>
-    <div class="drawer__actions">
+    <div class="sheet__actions">
       <a id="d-telegram" class="btn btn--glow" target="_blank" rel="noopener noreferrer"></a>
       <button type="button" class="btn" id="d-copy">Bağlantıyı kopyala</button>
+      <button type="button" class="btn" id="d-map">Haritada göster</button>
     </div>
   </div>
 </dialog>
 
 <!-- Telegram önizleme -->
-<dialog id="telegram" class="modal" aria-labelledby="tg-title">
-  <div class="modal__panel modal__panel--split">
-    <header class="modal__head">
+<dialog id="telegram" class="sheet" aria-labelledby="tg-title">
+  <div class="sheet__panel">
+    <header class="sheet__head">
       <div>
-        <h2 id="tg-title">Telegram önizleme</h2>
-        <p class="modal__sub" id="tg-sub">Kanala giden gönderilerin birebir şablonu.</p>
+        <h2 id="tg-title" class="sheet__title">Telegram önizleme</h2>
+        <p class="sheet__meta" id="tg-sub">Kanala giden gönderilerin birebir şablonu.</p>
       </div>
       <button type="button" class="iconbtn" data-close aria-label="Kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     </header>
-    <div class="tg">
-      <div class="phone" aria-label="Telegram kanal görünümü">
-        <div class="phone__bar">
-          <span class="phone__avatar" aria-hidden="true">VI</span>
-          <span class="phone__who"><b>GTA VI Türkiye Bülteni</b><small>kanal</small></span>
-        </div>
-        <div class="phone__chat" id="tg-chat"></div>
-        <div class="phone__mute">Sessize al</div>
+    <div class="phone" aria-label="Telegram kanal görünümü">
+      <div class="phone__bar">
+        <svg class="phone__avatar" viewBox="0 0 64 64" aria-hidden="true"><use href="#emblem"/></svg>
+        <span class="phone__who"><b>GTA VI Türkiye Bülteni</b><small>kanal</small></span>
       </div>
-      <div class="tg__notes">
-        <h3>Şablon kuralları</h3>
-        <ul>
-          <li>Gönderi başına tek renkli rozet; başka emoji yok.</li>
-          <li>Etiket ve kategori satırı, kalın başlık, 2–3 cümlelik özet.</li>
-          <li>Her gönderide orijinal kaynak bağlantısı ve doğrulama notu.</li>
-          <li>Doğrulanmamış haberlerde iddia kaynağa atfedilir.</li>
-        </ul>
-        <a class="btn" href="message_preview.html">Tüm senaryoları görüntüle</a>
-      </div>
+      <div class="phone__chat" id="tg-chat"></div>
+      <div class="phone__mute">Sessize al</div>
     </div>
+    <ul class="tg-rules">
+      <li>Gönderi başına tek renkli rozet; başka emoji yok.</li>
+      <li>Etiket ve kategori satırı, kalın başlık, 2–3 cümlelik özet.</li>
+      <li>Her gönderide orijinal kaynak bağlantısı ve doğrulama notu.</li>
+      <li>Doğrulanmamış haberlerde iddia kaynağa atfedilir.</li>
+    </ul>
+    <a class="btn" href="message_preview.html">Tüm senaryoları görüntüle</a>
   </div>
 </dialog>
 
 <!-- Nasıl doğruluyoruz -->
-<dialog id="method" class="modal" aria-labelledby="m-title">
-  <div class="modal__panel">
-    <header class="modal__head">
+<dialog id="method" class="sheet sheet--wide" aria-labelledby="m-title">
+  <div class="sheet__panel">
+    <header class="sheet__head">
       <div>
-        <h2 id="m-title">Nasıl doğruluyoruz</h2>
-        <p class="modal__sub" id="m-sub"></p>
+        <h2 id="m-title" class="sheet__title">Nasıl doğruluyoruz</h2>
+        <p class="sheet__meta" id="m-sub"></p>
       </div>
       <button type="button" class="iconbtn" data-close aria-label="Kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     </header>
@@ -246,7 +389,7 @@
       <li><b>Etiket</b><span>Etiketi kod belirler: resmî alan adı, bağımsız yayın sayısı ve kaynak türü. Yapay zekâ etiketi değiştiremez.</span></li>
       <li><b>Özet</b><span>Yapay zekâ kaynak metninden 2–3 cümlelik Türkçe özet yazar. Kaynak metni ona talimat olarak değil, yalnızca veri olarak verilir.</span></li>
       <li><b>Denetim</b><span>Özet kaynakta olmayan bir tarih, sayı, platform ya da kesinlik ifadesi içeriyorsa yayınlanmaz ve incelemeye alınır.</span></li>
-      <li><b>Yayın</b><span>Kanala ve bu siteye yalnızca tüm kontrollerden geçen haberler çıkar. Aynı haber iki kez yayınlanmaz.</span></li>
+      <li><b>Yayın ve konum</b><span>Kontrollerden geçen haber kanala ve siteye çıkar; başlık ve kategorisine göre haritadaki bölgesine iğnelenir.</span></li>
     </ol>
     <div class="legend">
       <div><span class="badge badge--official">Resmî Açıklama</span><p>Rockstar Games veya Take-Two'nun kendi alan adında yayımlandı; bağlantı doğrulandı.</p></div>
@@ -262,6 +405,7 @@
 
 <script src="data/feed.js"></script>
 <script src="assets/milestones.js"></script>
+<script src="assets/leonida.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

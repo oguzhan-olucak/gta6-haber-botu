@@ -3,9 +3,9 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-16T06:06:23Z",
-    "last_run_at": "2026-11-16T06:06:23Z",
-    "last_successful_fetch_at": "2026-11-16T06:06:23Z",
+    "generated_at": "2026-11-16T06:35:35Z",
+    "last_run_at": "2026-11-16T06:35:35Z",
+    "last_successful_fetch_at": "2026-11-16T06:35:35Z",
     "active_sources": 11,
     "sources_ok_last_run": 11,
     "verified_total": 0,

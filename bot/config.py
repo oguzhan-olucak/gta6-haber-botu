@@ -22,11 +22,12 @@ DATA_DIR = ROOT / "data"
 
 TrustClass = Literal["OFFICIAL", "ESTABLISHED_MEDIA", "COMMUNITY", "UNKNOWN"]
 
-SECRET_ENV_NAMES = ("GEMINI_API_KEY", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "ADMIN_CHAT_ID")
+SECRET_ENV_NAMES = ("GEMINI_API_KEY", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "ADMIN_CHAT_ID",
+                    "GROQ_API_KEY", "OPENROUTER_API_KEY")
 # Telegram bot token biçimi: <sayı>:<35 civarı karakter>. Biçime uyan her şey maskelenir.
 _BOT_TOKEN_RE = re.compile(r"\b\d{6,12}:[A-Za-z0-9_-]{30,}\b")
 _BOT_URL_RE = re.compile(r"(api\.telegram\.org/bot)[^/\s]+")
-_GOOGLE_KEY_RE = re.compile(r"\bAIza[0-9A-Za-z_-]{20,}\b|\bAQ\.[0-9A-Za-z_.-]{20,}")
+_GOOGLE_KEY_RE = re.compile(r"\bAIza[0-9A-Za-z_-]{20,}\b|\bAQ\.[0-9A-Za-z_.-]{20,}|\bgsk_[0-9A-Za-z]{20,}|\bsk-or-[0-9A-Za-z_-]{20,}")
 
 
 class ConfigError(Exception):

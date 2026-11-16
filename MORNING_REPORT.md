@@ -102,6 +102,11 @@
   anahtar için yok (HTTP 404 NOT_FOUND). Bot artık 404'te bir kez `models.list` ile erişilebilir modelleri okuyup
   ücretsiz katmandaki bir Flash modeline (asla Pro) geçiyor ve yönetici alarmında hangi modeli kullandığını yazıyor.
   Kalıcı çözüm: `GEMINI_MODEL` secret'ını alarmda yazan model adıyla güncellemek.
+- **Çoklu LLM sağlayıcısı (`bot/llm.py`):** Gemini geçici hata verirse (503/429/zaman aşımı/yetki) sırayla Groq
+  (`GROQ_API_KEY`, varsayılan `openai/gpt-oss-120b`) ve OpenRouter (`OPENROUTER_API_KEY`, varsayılan
+  `openrouter/free`) denenir. Tanımsız secret atlanır. Aynı şema ve aynı doğrulama; sağlayıcı `post.llm_provider`
+  ve özet `llm_providers` alanında. Not: Groq `llama-3.3-70b-versatile`'ı 16 Ağustos 2026'da ücretsiz katmandan
+  kaldırdı; OpenRouter'daki `deepseek-chat:free` de artık ücretsiz değil. Bu yüzden varsayılanlar farklı.
 - **Doğrulama:** `python tools/site_check.py` (Playwright: 390/820/1440 × yalnız gerçek/varsayılan, bölge tıklama,
   çekmeceler, sıfır JS hatası).
 

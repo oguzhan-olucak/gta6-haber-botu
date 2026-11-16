@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-16T18:54:11Z",
-  "last_successful_fetch_at": "2026-11-16T18:54:11Z",
+  "last_run_at": "2026-11-16T23:02:41Z",
+  "last_successful_fetch_at": "2026-11-16T23:02:41Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -68,7 +68,7 @@
     },
     "112c1ad1b5e9188d93412b67": {
       "first_seen": "2026-11-16T06:35:35Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "b0bf835cdba28c5cfc4e07a6": {
@@ -310,6 +310,86 @@
       "first_seen": "2026-11-16T18:54:11Z",
       "status": "HELD",
       "source": "eurogamer"
+    },
+    "15b66edbd0b58bae351c328d": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "269f00aa2a23b6840c0308a8": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "52b81e3f4bb2014396fa570f": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "720f95f57ffc27cff22dfe58": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "4585dda70dc7b16c35c04141": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "318fc476235177ffb355f215": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "7b20f8d50ad94fbce3b6e668": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "4c2589f1f36b414ba7e590cd": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "b5070493c2243caa861c27e7": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "40620555783f4878e2474da3": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "2bf96f3368c053fa5a1a898e": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "NEW",
+      "source": "reddit_gta6"
+    },
+    "f301f7b8142428a76ac7189f": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "NEW",
+      "source": "pcgamer"
+    },
+    "0e5ed08bd4c8ab66c9f1b6e4": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "36e7f643f60e162df9f913fb": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "HELD",
+      "source": "pcgamer"
+    },
+    "b4f26e78bbb3a4c85dca96bd": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "96104f0919298d66c1b24423": {
+      "first_seen": "2026-11-16T23:02:41Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
     }
   },
   "digests_sent": [
@@ -323,78 +403,78 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T18:54:11Z",
+      "checked_at": "2026-11-16T23:02:41Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
-      "entries": 24,
-      "relevant": 19,
+      "entries": 22,
+      "relevant": 17,
       "new": 0,
-      "checked_at": "2026-11-16T18:54:11Z"
+      "checked_at": "2026-11-16T23:02:41Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T18:54:11Z"
+      "checked_at": "2026-11-16T23:02:41Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 4,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T18:54:11Z"
+      "checked_at": "2026-11-16T23:02:41Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
-      "relevant": 8,
+      "relevant": 6,
       "new": 0,
-      "checked_at": "2026-11-16T18:54:11Z"
+      "checked_at": "2026-11-16T23:02:41Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
       "relevant": 20,
-      "new": 1,
-      "checked_at": "2026-11-16T18:54:11Z"
+      "new": 0,
+      "checked_at": "2026-11-16T23:02:41Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 11,
-      "new": 0,
-      "checked_at": "2026-11-16T18:54:11Z"
+      "relevant": 8,
+      "new": 1,
+      "checked_at": "2026-11-16T23:02:41Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
-      "relevant": 4,
-      "new": 0,
-      "checked_at": "2026-11-16T18:54:11Z"
+      "relevant": 5,
+      "new": 2,
+      "checked_at": "2026-11-16T23:02:41Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 1,
       "new": 0,
-      "checked_at": "2026-11-16T18:54:11Z"
+      "checked_at": "2026-11-16T23:02:41Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 4,
-      "new": 0,
-      "checked_at": "2026-11-16T18:54:11Z"
+      "relevant": 1,
+      "new": 1,
+      "checked_at": "2026-11-16T23:02:41Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
-      "relevant": 11,
-      "new": 0,
-      "checked_at": "2026-11-16T18:54:11Z"
+      "relevant": 15,
+      "new": 12,
+      "checked_at": "2026-11-16T23:02:41Z"
     }
   },
   "run_log": [
@@ -461,6 +541,19 @@
       "started_at": "2026-11-16T18:54:11Z",
       "sources_ok": 11,
       "new_items": 1,
+      "published": 0,
+      "gemini_calls": 4,
+      "error_classes": [
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT"
+      ]
+    },
+    {
+      "started_at": "2026-11-16T23:02:41Z",
+      "sources_ok": 11,
+      "new_items": 16,
       "published": 0,
       "gemini_calls": 4,
       "error_classes": [
@@ -730,7 +823,7 @@
         "raw_id": "112c1ad1b5e9188d93412b67"
       },
       "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "b0bf835cdba28c5cfc4e07a6": {
       "item": {
@@ -748,26 +841,6 @@
         "url_verified": false,
         "via": "rss",
         "raw_id": "b0bf835cdba28c5cfc4e07a6"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "8f6557a25e81fbf284fc3f6c": {
-      "item": {
-        "id": "8f6557a25e81fbf284fc3f6c",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "GTA 6 Leak Seemingly Reveals Official Album's Full Track List Days Before Launch",
-        "url": "https://ign.com/articles/gta-6-leak-seemingly-reveals-full-track-list-days-before-launch",
-        "summary": "The full track list for Grand Theft Auto VI: The Album seems to have leaked online just days before GTA 6's launch.",
-        "published_at": "2026-11-14T23:00:09Z",
-        "content_hash": "d789d1d230d332ccabfdf178",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "8f6557a25e81fbf284fc3f6c"
       },
       "first_seen": "2026-11-16T06:35:35Z",
       "needs_eval": false
@@ -1619,9 +1692,345 @@
       },
       "first_seen": "2026-11-16T18:54:11Z",
       "needs_eval": false
+    },
+    "15b66edbd0b58bae351c328d": {
+      "item": {
+        "id": "15b66edbd0b58bae351c328d",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA VI Marketing around Vice City (Miami,FL Downtown Area)",
+        "url": "https://reddit.com/r/GTA6/comments/1xy3x1z/gta_vi_marketing_around_vice_city_miamifl",
+        "summary": "submitted by /u/Gregorioz15 [link] [comments]",
+        "published_at": "2026-11-16T22:52:51Z",
+        "content_hash": "808c6e19f23ed36d323ab953",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "15b66edbd0b58bae351c328d",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": false
+    },
+    "269f00aa2a23b6840c0308a8": {
+      "item": {
+        "id": "269f00aa2a23b6840c0308a8",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA 6 Has Interactive Light Switches… The Attention to Detail",
+        "url": "https://reddit.com/r/GTA6/comments/1xy3u9f/gta_6_has_interactive_light_switches_the",
+        "summary": "submitted by /u/HellBay1 [link] [comments]",
+        "published_at": "2026-11-16T22:49:30Z",
+        "content_hash": "38847950b9c3e2862644d84d",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "269f00aa2a23b6840c0308a8",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": false
+    },
+    "52b81e3f4bb2014396fa570f": {
+      "item": {
+        "id": "52b81e3f4bb2014396fa570f",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA 6 themed PlayStation app icon is back!",
+        "url": "https://reddit.com/r/GTA6/comments/1xy3qx5/gta_6_themed_playstation_app_icon_is_back",
+        "summary": "submitted by /u/ButterflyUsed6723 [link] [comments]",
+        "published_at": "2026-11-16T22:45:35Z",
+        "content_hash": "2517034db4cdc06a816ddb4d",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "52b81e3f4bb2014396fa570f",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": false
+    },
+    "720f95f57ffc27cff22dfe58": {
+      "item": {
+        "id": "720f95f57ffc27cff22dfe58",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "Rockstar is so confident in GTA 6's weather it has The Weather Channel itself sharing screenshots",
+        "url": "https://gamesradar.com/games/grand-theft-auto/rockstar-is-so-confident-in-gta-6s-weather-system-that-it-has-the-weather-channel-itself-sharing-new-screenshots",
+        "summary": "Grand Theft Auto weather has never looked so good",
+        "published_at": "2026-11-16T22:04:48Z",
+        "content_hash": "2498f587c207bdc71b356119",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "720f95f57ffc27cff22dfe58",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/uApsAyeVZ7UzBF3CSkzzb8-1920-80.jpg"
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": true
+    },
+    "4585dda70dc7b16c35c04141": {
+      "item": {
+        "id": "4585dda70dc7b16c35c04141",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "New GTA 6 Screenshots Showcase Intense Weather Systems",
+        "url": "https://insider-gaming.com/new-gta-6-screenshots-showcase-intense-weather-systems",
+        "summary": "On social media, six new GTA 6 screenshots have surfaced, focusing specifically on the game's incredible weather systems. The post New GTA 6 Screenshots Showcase Intense Weather Systems appeared first on Insider Gaming .",
+        "published_at": "2026-11-16T21:27:02Z",
+        "content_hash": "90c65ddf7f40b43cfb8c6ae3",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "4585dda70dc7b16c35c04141",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": true
+    },
+    "318fc476235177ffb355f215": {
+      "item": {
+        "id": "318fc476235177ffb355f215",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Circle K is celebrating GTA VI launch day",
+        "url": "https://reddit.com/r/GTA6/comments/1xy1nak/circle_k_is_celebrating_gta_vi_launch_day",
+        "summary": "Make sure to fill up on GTA VI day to save some money. submitted by /u/Shadowcreeper15 [link] [comments]",
+        "published_at": "2026-11-16T21:20:44Z",
+        "content_hash": "8f50810cb0b1cd921246e26d",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "318fc476235177ffb355f215",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": false
+    },
+    "7b20f8d50ad94fbce3b6e668": {
+      "item": {
+        "id": "7b20f8d50ad94fbce3b6e668",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "New Details About GTA 6 Weather system via Weather Channel",
+        "url": "https://reddit.com/r/GTA6/comments/1xy1n9c/new_details_about_gta_6_weather_system_via",
+        "summary": "- Completely reimagined dynamic weather system - Localized and persistent weather conditions - Tropical storms with rough ocean waters - Heavy rain and moisture reducing driving visibility - Road reflectors to help drivers in poor visibility Storms affecting water clarity in swamps - Sea fog rolling in from the ocean - High humidity creating low-lying mist - Towering cumulonimbus clouds - Hunting season mentioned in Gambit Bay - Locations including Pelican Valley, South Ocean Beach, Gambit Bay and Key Lento submitted by /u/PastaCheed [link] [comments]",
+        "published_at": "2026-11-16T21:20:41Z",
+        "content_hash": "a5dfae31b6891a84646a48f4",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "7b20f8d50ad94fbce3b6e668",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": false
+    },
+    "4c2589f1f36b414ba7e590cd": {
+      "item": {
+        "id": "4c2589f1f36b414ba7e590cd",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Survey: What excites you the most about GTA 6?",
+        "url": "https://reddit.com/r/GTA6/comments/1xy1afj/survey_what_excites_you_the_most_about_gta_6",
+        "summary": "View Poll submitted by /u/Sengin96 [link] [comments]",
+        "published_at": "2026-11-16T21:07:07Z",
+        "content_hash": "df6f574bd85b1a2b9f3e5955",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "4c2589f1f36b414ba7e590cd",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": false
+    },
+    "b5070493c2243caa861c27e7": {
+      "item": {
+        "id": "b5070493c2243caa861c27e7",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Do you think that Grand Theft Auto 6 will crash online store servers?",
+        "url": "https://reddit.com/r/GTA6/comments/1xy18m2/do_you_think_that_grand_theft_auto_6_will_crash",
+        "summary": "View Poll submitted by /u/te-paleking [link] [comments]",
+        "published_at": "2026-11-16T21:05:07Z",
+        "content_hash": "0b4b0f2e0d8b7fe531ea146b",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "b5070493c2243caa861c27e7",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": false
+    },
+    "40620555783f4878e2474da3": {
+      "item": {
+        "id": "40620555783f4878e2474da3",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Weather channel posts about GTA 6",
+        "url": "https://reddit.com/r/GTA6/comments/1xy16cf/weather_channel_posts_about_gta_6",
+        "summary": "submitted by /u/CryptographerHot6198 [link] [comments]",
+        "published_at": "2026-11-16T21:02:44Z",
+        "content_hash": "2a56a2390bed4295ba1eefb1",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "40620555783f4878e2474da3",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": false
+    },
+    "2bf96f3368c053fa5a1a898e": {
+      "item": {
+        "id": "2bf96f3368c053fa5a1a898e",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "New GTA 6 Screenshots shared by the weather channel",
+        "url": "https://reddit.com/r/GTA6/comments/1xy16b4/new_gta_6_screenshots_shared_by_the_weather",
+        "summary": "submitted by /u/PastaCheed [link] [comments]",
+        "published_at": "2026-11-16T21:02:41Z",
+        "content_hash": "5293ec0eb70ca3b02e1f2a3a",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "2bf96f3368c053fa5a1a898e",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": true
+    },
+    "f301f7b8142428a76ac7189f": {
+      "item": {
+        "id": "f301f7b8142428a76ac7189f",
+        "source_id": "pcgamer",
+        "source_name": "PC Gamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 online rumors: When might the inevitable multiplayer launch happen?",
+        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-online-multiplayer",
+        "summary": "Despite no official word on the subject, we aren't buying that there's no GTA 6 online.",
+        "published_at": "2026-11-16T20:57:03Z",
+        "content_hash": "6b7433ec87f8aa87e0333dcf",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "f301f7b8142428a76ac7189f",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/9SieU3JpSSPX34eMduXqsW-1920-80.jpg"
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": true
+    },
+    "0e5ed08bd4c8ab66c9f1b6e4": {
+      "item": {
+        "id": "0e5ed08bd4c8ab66c9f1b6e4",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Will GTA6 have a companion app?",
+        "url": "https://reddit.com/r/GTA6/comments/1xy0ogn/will_gta6_have_a_companion_app",
+        "summary": "Just curious if it will have an app you can download to your device to be used with GTA6? I remember GTA5 had something where you could access some information from the game submitted by /u/Raytec1 [link] [comments]",
+        "published_at": "2026-11-16T20:43:54Z",
+        "content_hash": "0d591f4a1f67bef6a571385a",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "0e5ed08bd4c8ab66c9f1b6e4",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": false
+    },
+    "36e7f643f60e162df9f913fb": {
+      "item": {
+        "id": "36e7f643f60e162df9f913fb",
+        "source_id": "pcgamer",
+        "source_name": "PC Gamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "Grand Theft Auto 6 hacker pleads guilty to all charges",
+        "url": "https://pcgamer.com/games/grand-theft-auto/grand-theft-auto-6-hacker-pleads-guilty-to-all-charges",
+        "summary": "Arion Kurtaj released dozens of GTA 6 videos to the public more than a year before the game was formally revealed.",
+        "published_at": "2026-11-16T19:40:15Z",
+        "content_hash": "cdfc1bce082879696453e022",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "36e7f643f60e162df9f913fb",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/Zb9knsapKKuVr4cW9QJkc8-1920-80.jpg"
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": false
+    },
+    "b4f26e78bbb3a4c85dca96bd": {
+      "item": {
+        "id": "b4f26e78bbb3a4c85dca96bd",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA 6 trailer is being shown in Piccadilly Circus, London",
+        "url": "https://reddit.com/r/GTA6/comments/1xxym5o/gta_6_trailer_is_being_shown_in_piccadilly_circus",
+        "summary": "submitted by /u/Pow67 [link] [comments]",
+        "published_at": "2026-11-16T19:27:03Z",
+        "content_hash": "02293d5b327d93ea38d46598",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "b4f26e78bbb3a4c85dca96bd",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": false
+    },
+    "96104f0919298d66c1b24423": {
+      "item": {
+        "id": "96104f0919298d66c1b24423",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "You can now use GTA 6 avatars on your Rockstar Games account.",
+        "url": "https://reddit.com/r/GTA6/comments/1xxxxe9/you_can_now_use_gta_6_avatars_on_your_rockstar",
+        "summary": "We really need these on PSN. submitted by /u/YYY31 [link] [comments]",
+        "published_at": "2026-11-16T19:01:04Z",
+        "content_hash": "fc7741bb1526585236142628",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "96104f0919298d66c1b24423",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T23:02:41Z",
+      "needs_eval": false
     }
   },
-  "persisted_at": "2026-11-16T18:54:11Z",
+  "persisted_at": "2026-11-16T23:02:41Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": null
 }

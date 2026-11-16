@@ -242,3 +242,27 @@ def test_feed_js_custom_variable_name_is_validated():
     assert feed_js("{}", "__GTA6_DEMO_FEED__").startswith("window.__GTA6_DEMO_FEED__ = ")
     with pytest.raises(ValueError):
         feed_js("{}", "alert(1);x")
+
+
+def test_location_classifier_maps_news_to_leonida_regions():
+    from bot.site_exporter import classify_location
+    assert classify_location("Rockstar, GTA VI'ın çıkış fragmanını yayımladı", "", "TRAILER_MEDIA") == "vice_city"
+    assert classify_location("GTA VI için ön yükleme başladı", "", "RELEASE_PLATFORMS") == "mount_kalaga"
+    assert classify_location("GTA VI'ın fotoğraf modu ayrıntılandı", "", "GAMEPLAY_TECH") == "leonida_keys"
+    assert classify_location("Sızıntı: Leonida'da duyurulmamış bir ada", "", "COMMUNITY_RUMOR") == "grassrivers"
+    assert classify_location("Jason ve Lucia'nın hikâyesi", "", "OTHER") == "port_gellhorn"
+    assert classify_location("Belirsiz başlık", "", "UNKNOWN_CAT") == "vice_city"
+
+
+def test_demo_feed_covers_all_five_regions_and_old_items_stay_valid():
+    import json as _json
+    from pathlib import Path as _P
+
+    from bot.site_exporter import FeedItem
+    demo = _json.loads((_P(__file__).resolve().parent.parent / "docs" / "data" / "demo-feed.json").read_text("utf-8"))
+    assert {i["location_id"] for i in demo["items"]} == {"vice_city", "leonida_keys", "grassrivers",
+                                                         "port_gellhorn", "mount_kalaga"}
+    old = dict(demo["items"][0])
+    old.pop("location_id")
+    old.pop("region")
+    assert FeedItem.model_validate(old).location_id is None   # eski veri geriye uyumlu

@@ -240,5 +240,5 @@ def build_demo_feed(out_dir: Path, telegram_factory: Any, session_cls: Any, env:
         state = json.loads((data / "state.json").read_text(encoding="utf-8"))
         s = Settings.model_validate(settings)
         feed = build_feed(history, state, s, load_sources(cfg / "sources.json"), END + timedelta(minutes=5), demo=True)
-    export_site_feed(feed, out_dir)
+    export_site_feed(feed, out_dir, basename="demo-feed", var_name="__GTA6_DEMO_FEED__")
     return feed

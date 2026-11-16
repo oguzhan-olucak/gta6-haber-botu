@@ -85,6 +85,18 @@ class FeedItem(BaseModel):
     reactions_total: int | None = None
 
 
+class FeedSourceStatus(BaseModel):
+    """Kaynak nabzı: tek kaynağın son çalışmadaki durumu (iç hata ayrıntısı içermez)."""
+    model_config = ConfigDict(extra="forbid")
+    id: str = Field(pattern=r"^[a-z0-9_]{2,40}$")
+    name: str = Field(max_length=80)
+    trust_class: Literal["OFFICIAL", "ESTABLISHED_MEDIA", "COMMUNITY", "UNKNOWN"]
+    state: Literal["ok", "empty", "error", "pending"]
+    entries: int = Field(ge=0)
+    relevant: int = Field(ge=0)
+    checked_at: str | None = None
+
+
 class FeedStatus(BaseModel):
     """Site üstündeki canlı sistem durum bandı."""
     model_config = ConfigDict(extra="forbid")
@@ -96,6 +108,7 @@ class FeedStatus(BaseModel):
     verified_total: int
     paused: bool
     measurement_note: str
+    sources: list[FeedSourceStatus] = Field(default_factory=list)
 
 
 class Feed(BaseModel):
@@ -221,6 +234,32 @@ def _neg_time(value: str) -> float:
     return -t.timestamp() if t else 0.0
 
 
+def source_pulse(sources: list[Source], status_map: dict[str, Any]) -> list[FeedSourceStatus]:
+    """Etkin kaynakların son çalışma durumu. Hata ayrıntısı/HTTP kodu dışa aktarılmaz; yalnızca
+    ok / empty (yanıt verdi ama liste boş) / error / pending (henüz denenmedi)."""
+    out: list[FeedSourceStatus] = []
+    for s in sources:
+        if not s.enabled or not s.feed_url:
+            continue
+        st = status_map.get(s.id)
+        st = st if isinstance(st, dict) else {}
+        raw_entries, raw_relevant = st.get("entries"), st.get("relevant")
+        entries = raw_entries if isinstance(raw_entries, int) else 0
+        relevant = raw_relevant if isinstance(raw_relevant, int) else 0
+        if not st:
+            state = "pending"
+        elif st.get("ok") is not True:
+            state = "error"
+        elif st.get("warning") or entries == 0:
+            state = "empty"
+        else:
+            state = "ok"
+        checked = st.get("checked_at") if isinstance(st.get("checked_at"), str) else None
+        out.append(FeedSourceStatus(id=s.id, name=clean_text(s.name, 80), trust_class=s.trust_class, state=state,
+                                    entries=max(0, entries), relevant=max(0, relevant), checked_at=checked))
+    return out
+
+
 def build_feed(history: dict[str, Any], state: dict[str, Any], settings: Settings, sources: list[Source],
                now: datetime, *, demo: bool = False) -> Feed:
     """history/state'ten doğrulanmış site beslemesini oluşturur."""
@@ -242,6 +281,7 @@ def build_feed(history: dict[str, Any], state: dict[str, Any], settings: Setting
                            and p.get("publish_status") == "PUBLISHED"),
         paused=settings.paused,
         measurement_note="Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
+        sources=source_pulse(sources, status_map),
     )
     hero = pick_hero(items, now)
     return Feed(schema_version=FEED_SCHEMA_VERSION, demo=demo, brand=clean_text(settings.brand_name, 60),
@@ -259,19 +299,22 @@ def _source_names(history: dict[str, Any]) -> dict[str, str]:
     return names
 
 
-def feed_js(feed_json: str) -> str:
+def feed_js(feed_json: str, var_name: str = "__GTA6_FEED__") -> str:
     """``file://`` ile açılış için JS sarmalayıcı; ``<``, ``>``, ``&`` ve U+2028/2029 kaçırılır."""
+    if not re.fullmatch(r"__[A-Z0-9_]+__", var_name):
+        raise ValueError("geçersiz değişken adı")
     safe = (feed_json.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
             .replace("\u2028", "\\u2028").replace("\u2029", "\\u2029"))
-    return f"window.__GTA6_FEED__ = {safe};\n"
+    return f"window.{var_name} = {safe};\n"
 
 
-def export_site_feed(feed: Feed, site_data_dir: Path) -> bool:
+def export_site_feed(feed: Feed, site_data_dir: Path, *, basename: str = "feed",
+                     var_name: str = "__GTA6_FEED__") -> bool:
     """feed.json ve feed.js dosyalarını atomik yazar (değişmediyse dokunmaz). Değişti mi döner.
     ``generated_at`` her çalışmada değiştiği için karşılaştırma bu alan hariç yapılır."""
     site_data_dir.mkdir(parents=True, exist_ok=True)
     data = feed.model_dump(mode="json")
-    target = site_data_dir / "feed.json"
+    target = site_data_dir / f"{basename}.json"
     try:
         old = json.loads(target.read_text(encoding="utf-8"))
         old.get("status", {}).pop("generated_at", None)
@@ -282,8 +325,8 @@ def export_site_feed(feed: Feed, site_data_dir: Path) -> bool:
     except (OSError, ValueError, AttributeError):
         pass
     write_if_changed(target, data)
-    js_path = site_data_dir / "feed.js"
-    payload = feed_js(json.dumps(data, ensure_ascii=False, separators=(",", ":")))
+    js_path = site_data_dir / f"{basename}.js"
+    payload = feed_js(json.dumps(data, ensure_ascii=False, separators=(",", ":")), var_name)
     tmp = js_path.with_suffix(".js.tmp")
     tmp.write_text(payload, encoding="utf-8")
     tmp.replace(js_path)

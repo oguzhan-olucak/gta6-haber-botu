@@ -323,12 +323,52 @@ def c_site() -> list[Check]:
             pytest("tests/test_site_exporter.py")]
 
 
+def c_design() -> list[Check]:
+    css = read("docs/assets/style.css")
+    tokens = ("--night", "--sunset", "--pink", "--gold", "--mint", "--violet", "--t-official", "--t-multi",
+              "--t-single", "--t-claim", "--display", "--body")
+    return [Check("tasarım token'ları tanımlı", all(re.search(re.escape(t) + r"\s*:", css) for t in tokens)),
+            Check("[hidden] her zaman gizler", "[hidden] { display: none !important; }" in css),
+            Check("prefers-reduced-motion bloğu", "prefers-reduced-motion: reduce" in css),
+            Check("kırılımlar 760px ve 1100px", "max-width: 760px" in css and "max-width: 1100px" in css),
+            Check("güven rozeti sınıfları", all(f".badge--{g}" in css for g in ("official", "multi", "single", "claim")))]
+
+
+def c_uix() -> list[Check]:
+    js = read("docs/assets/app.js")
+    page = read("docs/index.html")
+    ids = ("hero", "grid", "empty", "demo-toggle", "q", "drawer", "telegram", "method", "pulse-list", "milestones",
+           "st-demo", "nomatch")
+    return [Check("örnek bülten tembel yüklenir", "data/demo-feed.js" in js and "demo-feed.js" not in page),
+            Check("gerçek veri önceliği (realItems.length)", "!realItems.length &&" in js),
+            Check("diyaloglar showModal ile", "showModal" in js),
+            Check("safeHttps ve textContent", "function safeHttps" in js and "textContent" in js),
+            Check("localStorage try/catch", bool(re.search(r"try \{ (if \(v == null\) )?localStorage", js))),
+            Check("index.html gerekli kimlikler", all(f'id="{i}"' in page for i in ids)),
+            Check("dört güven rozeti adı", all(n in js for n in ("Resmî Açıklama", "Çoklu Kaynak Doğrulamalı",
+                                                                 "Tek Kaynak", "Topluluk / Sızıntı")))]
+
+
+def c_webtest() -> list[Check]:
+    checks = [Check("tools/site_check.py var", (ROOT / "tools" / "site_check.py").exists()),
+              Check("app.js selftest kancası", "data-selftest" in read("docs/assets/app.js"))]
+    sys.path.insert(0, str(ROOT / "tools"))
+    import site_check  # noqa: PLC0415 - isteğe bağlı ağır denetim
+    if site_check.find_chrome() is None:
+        checks.append(Check("tarayıcı matrisi", True, "Chrome yok; atlandı"))
+    else:
+        errs = site_check.run()
+        checks.append(Check("tarayıcı matrisi 3×2", not errs, "; ".join(errs[:3])))
+    return checks
+
+
 FUNCS: dict[str, Callable[[], list[Check]]] = {
     "security-auditor": c_security, "cost-guard": c_cost, "architect-verifier": c_architect,
     "python-tdd-runner": c_tdd, "rss-integrity-checker": c_rss, "telegram-api-guard": c_telegram,
     "gemini-schema-enforcer": c_gemini, "night-shift-supervisor": c_night, "token-budget-guardian": c_token,
     "arena-adversarial-review": c_arena, "atomic-json-recovery": c_atomic, "rss-anti-poisoning": c_poison,
     "official-source-verifier": c_official, "event-clustering-calibrator": c_cluster, "static-site-guardian": c_site,
+    "vice-city-design-system": c_design, "ui-ux-interaction-standards": c_uix, "webapp-testing-site": c_webtest,
 }
 
 

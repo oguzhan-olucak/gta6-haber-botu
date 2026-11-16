@@ -419,7 +419,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--print", dest="echo", action="store_true", help="mesajları terminale de yaz")
     ap.add_argument("--out", type=Path, default=ROOT / "docs" / "message_preview.html")
     ap.add_argument("--site-data", type=Path, default=ROOT / "docs" / "data",
-                    help="12 haberlik demo site beslemesinin yazılacağı klasör")
+                    help="12 haberlik demo beslemesinin (demo-feed.json/.js) yazılacağı klasör; "
+                         "botun gerçek feed.json dosyasına asla dokunulmaz")
     ap.add_argument("--no-site", action="store_true", help="demo site beslemesini üretme")
     args = ap.parse_args(argv)
     block_network()
@@ -437,7 +438,7 @@ def main(argv: list[str] | None = None) -> int:
     if not args.no_site:
         from demo_site import build_demo_feed
         feed = build_demo_feed(args.site_data, CapturingTelegram, FakeSession, ENV)
-        print(f"Demo site beslemesi: {len(feed.items)} haber, manşet={feed.hero_id} → {args.site_data / 'feed.json'}")
+        print(f"Demo site beslemesi: {len(feed.items)} haber, manşet={feed.hero_id} → {args.site_data / 'demo-feed.json'}")
     missing = [r["scenario"].key for r in results if not r["messages"]]
     return 1 if missing else 0
 

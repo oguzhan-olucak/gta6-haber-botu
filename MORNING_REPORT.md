@@ -64,6 +64,20 @@
 
 ---
 
+## 3c. Site Yenileme — "Leonida Night"
+
+- `docs/` baştan tasarlandı: sinematik gün batımı manşeti (öne çıkan haber), 19 Kasım 2026 geri sayımı + kilometre taşları,
+  11 kaynaklık **kaynak nabzı**, dört güven rozeti, okuma süresi, kaynak alan adı önizlemesi, tek tıkla Telegram'da
+  paylaş / bağlantı kopyala, anında güven/kategori süzgeci ve arama (`/`), haber çekmecesi, "Telegram önizleme" ve
+  "Nasıl doğruluyoruz" modalları (derin bağlantı: `#haber-<id>`, `#telegram`, `#yontem`).
+- Boş akışta: "İlk doğrulanmış haber yolda" manşeti, iskelet kartlar ve **Örnek bülten önizlemesini göster/gizle** anahtarı.
+  Örnek veri ayrı dosyada (`docs/data/demo-feed.*`) ve yalnızca istek üzerine yüklenir; gerçek haber gelince her zaman gerçek veri görünür.
+- Şema geriye uyumlu: `status.sources` (kaynak nabzı) eklendi, eski alanlar aynen duruyor. Bot bir sonraki çalışmada
+  bu alanı doldurur; o zamana kadar nabız yalnızca "11/11 kaynak yanıt verdi" özetini gösterir.
+- Simülatör artık `feed.json`'un üzerine yazmıyor (önceden test çalıştırmak canlı beslemeyi örnekle değiştirebiliyordu).
+- Yeni skill'ler: `vice-city-design-system`, `ui-ux-interaction-standards`, `webapp-testing-site` + `.claude/skills/README.md` dizini.
+  `python tools/site_check.py` 390/820/1440 × gerçek/örnek matrisini headless Chrome ile sınar (taşma yok).
+
 ## 4. Kurulan Tüm Skill'ler ve Arena Tartışmasında Çözülen Kritik Açıklar
 
 ### 4.1 Skill'ler (`.claude/skills/`, 15 adet — doğrulama: `SKILL_AUDIT_REPORT.md`)

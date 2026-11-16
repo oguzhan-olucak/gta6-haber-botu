@@ -349,7 +349,7 @@ def classify_sdk_error(exc: Exception, api_key: str) -> GeminiError:
 
 
 GEMINI_REST_BASE = "https://generativelanguage.googleapis.com/v1beta"
-GEMINI_CLIENT_REV = "rest-v1beta-xgoog-1"   # değişince eski AUTH soğuması bir kez temizlenir (main.py)
+GEMINI_CLIENT_REV = "rest-v1beta-xgoog-2"   # değişince eski AUTH soğuması bir kez temizlenir (main.py)
 _MODEL_RE = re.compile(r"^[a-z0-9][a-z0-9.\-]{1,80}$")
 
 
@@ -385,6 +385,9 @@ class GeminiRestGenerator:
         self._model = model.strip().removeprefix("models/")
         self._session = session or requests.Session()
         self._timeout = timeout
+        self._last_status = 0
+        self._discovered = False
+        self.resolved_model: str | None = None   # 404 sonrası otomatik seçilen model (varsa)
 
     def __repr__(self) -> str:
         return f"GeminiRestGenerator(model={self._model!r})"
@@ -405,7 +408,43 @@ class GeminiRestGenerator:
         return url, headers, body
 
     def generate(self, system_instruction: str, prompt: str, schema: dict[str, Any]) -> str:
-        """Tek çağrı; modelin JSON metnini döndürür."""
+        """Modelin JSON metnini döndürür.
+
+        ``GEMINI_MODEL`` bu anahtar için yoksa (HTTP 404) **bir kez** ``models.list`` ile erişilebilir
+        modeller okunur ve ücretsiz katmandaki bir Flash modeline (asla Pro) geçilip istek bir kez
+        yinelenir. Seçilen model ``resolved_model`` olarak dışarı verilir (alarmda gösterilir)."""
+        try:
+            return self._call(system_instruction, prompt, schema)
+        except GeminiError as exc:
+            if self._last_status != 404 or self._discovered:
+                raise
+            self._discovered = True
+            model = self.discover_model()
+            if not model or model == self._model:
+                raise GeminiError(exc.error_class, str(exc) + " ve erişilebilir ücretsiz Flash modeli bulunamadı") from None
+            self._model, self.resolved_model = model, model
+            return self._call(system_instruction, prompt, schema)
+
+    def discover_model(self) -> str | None:
+        """Anahtarın erişebildiği modellerden ``generateContent`` destekleyen en uygun Flash modeli."""
+        try:
+            resp = self._session.get(f"{GEMINI_REST_BASE}/models", params={"pageSize": 200},
+                                     headers={"x-goog-api-key": self._api_key},
+                                     timeout=self._timeout, allow_redirects=False)
+            data = resp.json() if resp.status_code == 200 else None
+        except (requests.exceptions.RequestException, ValueError):
+            return None
+        names = []
+        for m in (data or {}).get("models", []) if isinstance(data, dict) else []:
+            if isinstance(m, dict) and "generateContent" in (m.get("supportedGenerationMethods") or []):
+                name = str(m.get("name", "")).removeprefix("models/")
+                if _MODEL_RE.match(name):
+                    names.append(name)
+        return pick_free_flash_model(names)
+
+    def _call(self, system_instruction: str, prompt: str, schema: dict[str, Any]) -> str:
+        """Tek generateContent çağrısı."""
+        self._last_status = 0
         url, headers, body = self.request_parts(system_instruction, prompt, schema)
         try:
             resp = self._session.post(url, headers=headers, json=body, timeout=self._timeout,
@@ -419,6 +458,7 @@ class GeminiRestGenerator:
         except ValueError:
             data = None
         code = resp.status_code
+        self._last_status = code
         if code != 200:
             reason = gemini_error_reason(data)
             msg = redact(f"Gemini HTTP {code} {reason}".strip(), [self._api_key])
@@ -435,6 +475,26 @@ class GeminiRestGenerator:
         if not text:
             raise GeminiError(ErrorClass.GEMINI_SCHEMA_ERROR, "Gemini boş yanıt döndürdü")
         return text
+
+
+# Ücretsiz katmanda kalmak için yalnızca Flash ailesi; Pro, görsel/ses/canlı ve özel modeller asla seçilmez.
+_FLASH_PREFERENCE = ("gemini-flash-latest", "gemini-flash-lite-latest")
+_EXCLUDE = ("pro", "image", "tts", "audio", "live", "embedding", "thinking", "exp", "computer", "robotics", "native")
+
+
+def pick_free_flash_model(names: list[str]) -> str | None:
+    """Model listesinden tercih: önce kararlı takma adlar (gemini-flash-latest), sonra sürüm numarası en
+    yüksek kararlı ``gemini-X-flash`` / ``-flash-lite``; önizleme sürümleri en sona kalır."""
+    pool = [n for n in names if "flash" in n and not any(x in n.split("flash", 1)[0] + n for x in _EXCLUDE)]
+    for pref in _FLASH_PREFERENCE:
+        if pref in pool:
+            return pref
+
+    def key(n: str) -> tuple[int, float, int, int]:
+        m = re.match(r"gemini-(\d+(?:\.\d+)?)-flash(-lite)?", n)
+        ver = float(m.group(1)) if m else 0.0
+        return (0 if "preview" in n else 1, ver, 0 if (m and m.group(2)) else 1, -len(n))
+    return max(pool, key=key) if pool else None
 
 
 def _candidate_text(data: Any) -> str:

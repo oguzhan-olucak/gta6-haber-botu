@@ -406,8 +406,16 @@ def _call_gemini(ctx: RunContext, cluster: list[Item], a: Assessment) -> str | N
     assert ctx.generator is not None and ctx.secrets is not None
     ctx.summary["gemini_calls"] += 1
     try:
-        return ctx.generator.generate(SYSTEM_INSTRUCTION, build_prompt(a.items or cluster, a, ctx.style_hints,
-                                                                       ctx.settings), RESPONSE_JSON_SCHEMA)
+        out = ctx.generator.generate(SYSTEM_INSTRUCTION, build_prompt(a.items or cluster, a, ctx.style_hints,
+                                                                      ctx.settings), RESPONSE_JSON_SCHEMA)
+        fallback = getattr(ctx.generator, "resolved_model", None)
+        if fallback and not ctx.summary.get("gemini_model_fallback"):
+            ctx.summary["gemini_model_fallback"] = fallback
+            log.warning("GEMINI_MODEL bu anahtar için bulunamadı; ücretsiz Flash modeli kullanılıyor: %s", fallback)
+            ctx.alert("GEMINI_MODEL", "MODEL_FALLBACK",
+                      f"GEMINI_MODEL secret'ındaki model bulunamadı; bot otomatik olarak '{fallback}' kullanıyor. "
+                      f"Kalıcı çözüm: GitHub → Settings → Secrets → GEMINI_MODEL = {fallback}")
+        return out
     except GeminiError as exc:
         ctx.summary["gemini_errors"] += 1
         ctx.summary["error_classes"].append(exc.error_class.value)

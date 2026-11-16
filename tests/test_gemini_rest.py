@@ -24,6 +24,10 @@ class _Session:
         self.calls.append((url, kw))
         return self.resp
 
+    def get(self, url, **kw):          # models.list: model bulunamazsa boş liste
+        self.calls.append((url, kw))
+        return FakeResponse(404, b"{}")
+
 
 def _ok(text='{"title_tr":"x"}'):
     return FakeResponse(200, content=json.dumps({"candidates": [{"content": {"parts": [
@@ -87,3 +91,43 @@ def test_stale_cooldown_from_old_client_is_cleared_once():
     # yeni istemcinin koyduğu kilit korunur
     state["gemini_quota_blocked_until"] = "2026-11-16T09:00:00Z"
     assert not reset_stale_gemini_block(state) and state["gemini_quota_blocked_until"]
+
+
+def test_pick_free_flash_model_never_picks_pro_or_special_models():
+    from bot.gemini import pick_free_flash_model
+    names = ["gemini-3.1-pro", "gemini-2.5-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3-flash-preview",
+             "gemini-2.5-flash-image", "gemini-3.5-flash-tts", "gemini-2.5-flash-live", "imagen-4"]
+    assert pick_free_flash_model(names) == "gemini-3.5-flash"
+    assert pick_free_flash_model(names + ["gemini-flash-latest"]) == "gemini-flash-latest"
+    assert pick_free_flash_model(["gemini-3.1-pro", "gemini-2.5-flash-image"]) is None
+    assert pick_free_flash_model(["gemini-3-flash-preview"]) == "gemini-3-flash-preview"
+
+
+class _ModelSession:
+    """İlk generateContent 404 → models.list → ikinci çağrı yeni modelle 200."""
+
+    def __init__(self):
+        self.posts = []
+
+    def post(self, url, **kw):
+        self.posts.append(url)
+        if "gemini-retired" in url:
+            return FakeResponse(404, json.dumps({"error": {"status": "NOT_FOUND"}}).encode())
+        return _ok()
+
+    def get(self, url, **kw):
+        assert kw["headers"] == {"x-goog-api-key": AQ_KEY} and "key=" not in url
+        return FakeResponse(200, json.dumps({"models": [
+            {"name": "models/gemini-3.1-pro", "supportedGenerationMethods": ["generateContent"]},
+            {"name": "models/gemini-3.5-flash", "supportedGenerationMethods": ["generateContent", "countTokens"]},
+            {"name": "models/text-embedding-004", "supportedGenerationMethods": ["embedContent"]}]}).encode())
+
+
+def test_missing_model_falls_back_once_to_free_flash():
+    s = _ModelSession()
+    gen = GeminiRestGenerator(AQ_KEY, "gemini-retired", session=s)
+    assert gen.generate("s", "p", {}) == '{"title_tr":"x"}'
+    assert gen.resolved_model == "gemini-3.5-flash"
+    assert s.posts[-1].endswith("/models/gemini-3.5-flash:generateContent") and len(s.posts) == 2
+    gen.generate("s", "p", {})                    # sonraki çağrılar doğrudan yeni modelle
+    assert len(s.posts) == 3

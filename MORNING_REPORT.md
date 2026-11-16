@@ -98,6 +98,10 @@
   `media:content`/enclosure) haberle kaydedilir. Görsel yalnızca kaynağın alan adından veya bilinen yayıncı
   CDN'lerinden kabul edilir; topluluk kaynaklarından alınmaz; indirilmez, kaynağa atıfla bağlantı olarak gösterilir.
   Telegram gönderisi kaynak sayfasının büyük önizleme görseliyle (metnin üstünde) gider.
+- **Gemini 404 (16 Kasım 13:31 çalışması):** anahtar artık kabul ediliyor, ama `GEMINI_MODEL` secret'ındaki model bu
+  anahtar için yok (HTTP 404 NOT_FOUND). Bot artık 404'te bir kez `models.list` ile erişilebilir modelleri okuyup
+  ücretsiz katmandaki bir Flash modeline (asla Pro) geçiyor ve yönetici alarmında hangi modeli kullandığını yazıyor.
+  Kalıcı çözüm: `GEMINI_MODEL` secret'ını alarmda yazan model adıyla güncellemek.
 - **Doğrulama:** `python tools/site_check.py` (Playwright: 390/820/1440 × yalnız gerçek/varsayılan, bölge tıklama,
   çekmeceler, sıfır JS hatası).
 

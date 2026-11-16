@@ -411,6 +411,8 @@ dialog { color: var(--ink); }
   .skeletons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .skeletons .sk:nth-child(3) { display: none; }
   .mainnav [data-open="method"] { display: none; }
+  .status__sub { display: none; }
+  .mainnav__link { padding: 8px 10px; }
 }
 @media (max-width: 760px) {
   :root { --topbar: 58px; }

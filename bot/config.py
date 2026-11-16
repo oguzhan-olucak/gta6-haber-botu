@@ -26,7 +26,7 @@ SECRET_ENV_NAMES = ("GEMINI_API_KEY", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", 
 # Telegram bot token biçimi: <sayı>:<35 civarı karakter>. Biçime uyan her şey maskelenir.
 _BOT_TOKEN_RE = re.compile(r"\b\d{6,12}:[A-Za-z0-9_-]{30,}\b")
 _BOT_URL_RE = re.compile(r"(api\.telegram\.org/bot)[^/\s]+")
-_GOOGLE_KEY_RE = re.compile(r"\bAIza[0-9A-Za-z_-]{20,}\b")
+_GOOGLE_KEY_RE = re.compile(r"\bAIza[0-9A-Za-z_-]{20,}\b|\bAQ\.[0-9A-Za-z_.-]{20,}")
 
 
 class ConfigError(Exception):
@@ -49,11 +49,22 @@ class MinSourceStrength(_Strict):
 
 
 class RelevanceKeywords(_Strict):
-    """GTA VI ilgi anahtar kelimeleri (strong: zorunlu, context: ek puan)."""
+    """GTA VI ilgi anahtar kelimeleri.
+
+    - ``strong``: tek başına yeterli (GTA VI, Leonida...).
+    - ``specific``: GTA VI'ya özgü ama tek başına belirsiz (Vice City, Lucia, Jason); bir ``brand``
+      terimiyle birlikte ya da resmî kaynakta geçerse yeterli.
+    - ``brand``: Rockstar / Take-Two.
+    - ``exclude``: güçlü terim yoksa haberi eler (GTA Online, Definitive Edition...).
+    - ``context``: yalnızca öncelik puanına katkı.
+    """
     strong: list[str] = Field(min_length=1)
     context: list[str] = Field(default_factory=list)
+    specific: list[str] = Field(default_factory=list)
+    brand: list[str] = Field(default_factory=list)
+    exclude: list[str] = Field(default_factory=list)
 
-    @field_validator("strong", "context")
+    @field_validator("strong", "context", "specific", "brand", "exclude")
     @classmethod
     def _lower(cls, v: list[str]) -> list[str]:
         return [s.strip().lower() for s in v if s.strip()]
@@ -141,6 +152,7 @@ class Source(_Strict):
     kind: Literal["rss", "google_news", "html_listing"] = "rss"
     link_pattern: str = ""
     max_verifications_per_run: int = Field(8, ge=1, le=50)
+    max_item_age_hours: int | None = Field(None, ge=1, le=336)
 
     @field_validator("link_pattern")
     @classmethod

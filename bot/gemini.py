@@ -11,6 +11,7 @@ import re
 from pathlib import Path
 from typing import Any, Callable, Literal, Protocol
 
+import requests
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from . import ErrorClass
@@ -347,8 +348,108 @@ def classify_sdk_error(exc: Exception, api_key: str) -> GeminiError:
     return GeminiError(ErrorClass.UNEXPECTED_ERROR, msg)
 
 
+GEMINI_REST_BASE = "https://generativelanguage.googleapis.com/v1beta"
+GEMINI_CLIENT_REV = "rest-v1beta-xgoog-1"   # değişince eski AUTH soğuması bir kez temizlenir (main.py)
+_MODEL_RE = re.compile(r"^[a-z0-9][a-z0-9.\-]{1,80}$")
+
+
+def gemini_error_reason(body: Any) -> str:
+    """Google hata gövdesinden güvenli tanı metni: ``UNAUTHENTICATED/ACCESS_TOKEN_TYPE_UNSUPPORTED``.
+    Yalnızca büyük harfli durum/neden kodları alınır; serbest metin (anahtar parçası içerebilir) alınmaz."""
+    err = body.get("error") if isinstance(body, dict) else None
+    if not isinstance(err, dict):
+        return ""
+    codes = [err.get("status")]
+    for d in err.get("details") or []:
+        if isinstance(d, dict):
+            codes.append(d.get("reason"))
+    return "/".join(c for c in codes if isinstance(c, str) and re.fullmatch(r"[A-Z0-9_]{3,60}", c))
+
+
+class GeminiRestGenerator:
+    """Gemini Developer API'ye doğrudan REST çağrısı (``generateContent``, Structured Outputs).
+
+    Yeni AI Studio **auth key**'leri (``AQ.`` önekli) ve eski standart anahtarlar (``AIza``) aynı yolla
+    gönderilir: **yalnızca** ``x-goog-api-key`` başlığı. ``Authorization: Bearer`` ve ``?key=`` sorgu
+    parametresi kullanılmaz; ``AQ.`` anahtarın OAuth erişim belirteci sanılıp
+    ``ACCESS_TOKEN_TYPE_UNSUPPORTED`` ile reddedilmesinin ve "birden çok kimlik bilgisi" hatasının
+    önüne geçer. SDK'nın ortamdan ``GOOGLE_API_KEY``/Vertex ayarı okuma riski de ortadan kalkar.
+
+    - Model adı ``GEMINI_MODEL``'den gelir (``models/`` öneki kabul edilir); başka modele geçiş yoktur.
+    - Yeniden deneme yapılmaz; hata sınıflandırılır, tanı metni anahtarı içermez.
+    """
+
+    def __init__(self, api_key: str, model: str, *, session: requests.Session | None = None,
+                 timeout: float = 45.0):
+        self._api_key = api_key.strip().strip('"').strip("'")
+        self._model = model.strip().removeprefix("models/")
+        self._session = session or requests.Session()
+        self._timeout = timeout
+
+    def __repr__(self) -> str:
+        return f"GeminiRestGenerator(model={self._model!r})"
+
+    def request_parts(self, system_instruction: str, prompt: str,
+                      schema: dict[str, Any]) -> tuple[str, dict[str, str], dict[str, Any]]:
+        """(URL, başlıklar, gövde) — testler ve tanı için ağdan bağımsız."""
+        if not _MODEL_RE.match(self._model):
+            raise GeminiError(ErrorClass.AUTH_PERMISSION, "GEMINI_MODEL geçersiz biçimde (ör. gemini-2.5-flash)")
+        url = f"{GEMINI_REST_BASE}/models/{self._model}:generateContent"
+        headers = {"Content-Type": "application/json", "x-goog-api-key": self._api_key}
+        body = {
+            "systemInstruction": {"parts": [{"text": system_instruction}]},
+            "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+            "generationConfig": {"responseMimeType": "application/json", "responseJsonSchema": schema,
+                                 "temperature": 0.2, "maxOutputTokens": 1024},
+        }
+        return url, headers, body
+
+    def generate(self, system_instruction: str, prompt: str, schema: dict[str, Any]) -> str:
+        """Tek çağrı; modelin JSON metnini döndürür."""
+        url, headers, body = self.request_parts(system_instruction, prompt, schema)
+        try:
+            resp = self._session.post(url, headers=headers, json=body, timeout=self._timeout,
+                                      allow_redirects=False)
+        except requests.exceptions.Timeout:
+            raise GeminiError(ErrorClass.NETWORK_TRANSIENT, "Gemini zaman aşımı") from None
+        except requests.exceptions.RequestException as exc:
+            raise GeminiError(ErrorClass.NETWORK_TRANSIENT, f"Gemini bağlantı hatası {type(exc).__name__}") from None
+        try:
+            data = resp.json()
+        except ValueError:
+            data = None
+        code = resp.status_code
+        if code != 200:
+            reason = gemini_error_reason(data)
+            msg = redact(f"Gemini HTTP {code} {reason}".strip(), [self._api_key])
+            if code == 429:
+                raise GeminiError(ErrorClass.RATE_LIMIT_QUOTA, msg)
+            if code in (401, 403):
+                raise GeminiError(ErrorClass.AUTH_PERMISSION, msg)
+            if code == 404:
+                raise GeminiError(ErrorClass.AUTH_PERMISSION, msg + " (model bulunamadı: GEMINI_MODEL)")
+            if 500 <= code < 600:
+                raise GeminiError(ErrorClass.NETWORK_TRANSIENT, msg)
+            raise GeminiError(ErrorClass.UNEXPECTED_ERROR, msg)
+        text = _candidate_text(data)
+        if not text:
+            raise GeminiError(ErrorClass.GEMINI_SCHEMA_ERROR, "Gemini boş yanıt döndürdü")
+        return text
+
+
+def _candidate_text(data: Any) -> str:
+    """``candidates[0].content.parts[*].text`` birleşimi (düşünce parçaları hariç)."""
+    try:
+        parts = data["candidates"][0]["content"]["parts"]
+    except (KeyError, IndexError, TypeError):
+        return ""
+    return "".join(p.get("text", "") for p in parts
+                   if isinstance(p, dict) and isinstance(p.get("text"), str) and not p.get("thought"))
+
+
 class GeminiGenerator:
-    """Resmî ``google-genai`` SDK'sı ile Structured Outputs çağrısı.
+    """Resmî ``google-genai`` SDK'sı ile Structured Outputs çağrısı (yedek yol; varsayılan
+    üretici artık :class:`GeminiRestGenerator`).
 
     - Model adı koda gömülmez; ``GEMINI_MODEL`` ortam değişkeninden gelir.
     - Hata durumunda başka/ücretli modele geçiş YOKTUR.

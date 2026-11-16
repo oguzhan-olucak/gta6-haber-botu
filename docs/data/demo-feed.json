@@ -1,0 +1,429 @@
+{
+  "schema_version": 1,
+  "demo": true,
+  "brand": "GTA VI Türkiye Bülteni",
+  "status": {
+    "generated_at": "2026-11-16T19:05:00Z",
+    "last_run_at": "2026-11-16T17:05:00Z",
+    "last_successful_fetch_at": "2026-11-16T17:05:00Z",
+    "active_sources": 9,
+    "sources_ok_last_run": 9,
+    "verified_total": 12,
+    "paused": false,
+    "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
+    "sources": [
+      {
+        "id": "rockstar_newswire_html",
+        "name": "Rockstar Newswire",
+        "trust_class": "OFFICIAL",
+        "state": "ok",
+        "entries": 2,
+        "relevant": 2,
+        "checked_at": "2026-11-16T17:05:00Z"
+      },
+      {
+        "id": "take_two_ir_html",
+        "name": "Take-Two Interactive",
+        "trust_class": "OFFICIAL",
+        "state": "ok",
+        "entries": 1,
+        "relevant": 1,
+        "checked_at": "2026-11-16T17:05:00Z"
+      },
+      {
+        "id": "ign",
+        "name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "state": "ok",
+        "entries": 3,
+        "relevant": 3,
+        "checked_at": "2026-11-16T17:05:00Z"
+      },
+      {
+        "id": "eurogamer",
+        "name": "Eurogamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "state": "ok",
+        "entries": 2,
+        "relevant": 2,
+        "checked_at": "2026-11-16T17:05:00Z"
+      },
+      {
+        "id": "gamesradar",
+        "name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "state": "ok",
+        "entries": 2,
+        "relevant": 2,
+        "checked_at": "2026-11-16T17:05:00Z"
+      },
+      {
+        "id": "pcgamer",
+        "name": "PC Gamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "state": "ok",
+        "entries": 1,
+        "relevant": 1,
+        "checked_at": "2026-11-16T17:05:00Z"
+      },
+      {
+        "id": "vgc",
+        "name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "state": "ok",
+        "entries": 2,
+        "relevant": 2,
+        "checked_at": "2026-11-16T17:05:00Z"
+      },
+      {
+        "id": "insider_gaming",
+        "name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "state": "ok",
+        "entries": 1,
+        "relevant": 1,
+        "checked_at": "2026-11-16T17:05:00Z"
+      },
+      {
+        "id": "reddit_gta6",
+        "name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "state": "ok",
+        "entries": 1,
+        "relevant": 1,
+        "checked_at": "2026-11-16T17:05:00Z"
+      }
+    ]
+  },
+  "hero_id": "5a55813b035df4918d0e6185",
+  "featured_ids": [
+    "8117bd8083de09756b00b824",
+    "74e20527bb78f5902395cb50"
+  ],
+  "items": [
+    {
+      "id": "5a55813b035df4918d0e6185",
+      "title": "Rockstar, GTA VI'ın çıkış fragmanını yayımladı",
+      "summary": "Rockstar Games, Grand Theft Auto VI için çıkış fragmanını Newswire'da paylaştı. Oyun 19 Kasım'da PlayStation 5 ve Xbox Series X|S için çıkacak.",
+      "label": "OFFICIAL",
+      "label_text": "RESMÎ AÇIKLAMA",
+      "trust_group": "official",
+      "category": "TRAILER_MEDIA",
+      "category_tr": "Fragman",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-16T17:05:00Z",
+      "why_this_label": "Resmî alan adında doğrudan yayın (URL doğrulandı)",
+      "source_strength": 95,
+      "editorial_priority": 98,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "Rockstar Newswire",
+          "url": "https://rockstargames.com/newswire/article/lt19/grand-theft-auto-vi-launch-trailer"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/15",
+      "reactions_total": null,
+      "location_id": "vice_city",
+      "region": "Vice City"
+    },
+    {
+      "id": "a1f734db0f8074f223a4869c",
+      "title": "GTA VI'ın fotoğraf modu ön incelemede ayrıntılandı",
+      "summary": "IGN'in ön inceleme yazısına göre GTA 6'daki fotoğraf modu, filtre ve lens seçenekleri sunuyor.",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "trust_group": "single",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-16T15:05:00Z",
+      "why_this_label": "Tek yayın: IGN",
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/gta-6-photo-mode-preview"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/14",
+      "reactions_total": null,
+      "location_id": "leonida_keys",
+      "region": "Leonida Keys"
+    },
+    {
+      "id": "74e20527bb78f5902395cb50",
+      "title": "GTA VI, Xbox Series X'te 145GB yer kaplayacak",
+      "summary": "IGN ve PC Gamer, Microsoft Store listesine göre GTA 6'nın Xbox Series X sürümünün 145GB indirme boyutunda olduğunu bildiriyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "RELEASE_PLATFORMS",
+      "category_tr": "Çıkış/Platform",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-16T12:05:00Z",
+      "why_this_label": "2 bağımsız yayın: PC Gamer, IGN",
+      "source_strength": 75,
+      "editorial_priority": 90,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "PC Gamer",
+          "url": "https://pcgamer.com/gta-6-xbox-series-x-145gb"
+        },
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/gta-6-xbox-size"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/13",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez"
+    },
+    {
+      "id": "911c7c29085e54c9cf5a1e25",
+      "title": "GTA VI'ın kutulu sürümü İngiltere'de raflarda görüldü",
+      "summary": "Video Games Chronicle'ın haberine göre GTA 6'nın kutulu kopyaları, çıkıştan önce İngiltere'deki bir perakendecide raflara çıktı.",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "trust_group": "single",
+      "category": "RELEASE_PLATFORMS",
+      "category_tr": "Çıkış/Platform",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-16T09:05:00Z",
+      "why_this_label": "Tek yayın: Video Games Chronicle",
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/news/gta-6-boxed-copies"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/12",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez"
+    },
+    {
+      "id": "05899868e176cbd0ae5f3007",
+      "title": "GTA VI incelemeleri 18 Kasım'da yayımlanacak",
+      "summary": "Eurogamer ve GamesRadar+, GTA 6 inceleme yasağının 18 Kasım'da, çıkıştan bir gün önce kalkacağını bildiriyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "OTHER",
+      "category_tr": "Gündem",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-16T05:05:00Z",
+      "why_this_label": "2 bağımsız yayın: Eurogamer, GamesRadar+",
+      "source_strength": 75,
+      "editorial_priority": 90,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/gta-6-review-embargo-date"
+        },
+        {
+          "name": "Eurogamer",
+          "url": "https://eurogamer.net/gta-6-review-embargo"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/10",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez"
+    },
+    {
+      "id": "8117bd8083de09756b00b824",
+      "title": "GTA VI için ön yükleme başladı",
+      "summary": "Rockstar Games, Grand Theft Auto VI'ın 19 Kasım çıkışı öncesinde PlayStation 5 ve Xbox Series X|S için ön yüklemenin açıldığını duyurdu.",
+      "label": "OFFICIAL",
+      "label_text": "RESMÎ AÇIKLAMA",
+      "trust_group": "official",
+      "category": "RELEASE_PLATFORMS",
+      "category_tr": "Çıkış/Platform",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-16T01:05:00Z",
+      "why_this_label": "Resmî alan adında doğrudan yayın (URL doğrulandı)",
+      "source_strength": 95,
+      "editorial_priority": 98,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "Rockstar Newswire",
+          "url": "https://rockstargames.com/newswire/article/pl19/grand-theft-auto-vi-pre-load"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/9",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez"
+    },
+    {
+      "id": "c07ee7936c20b33a6b85d12d",
+      "title": "Hayranlar GTA VI fragmanında Ocean Drive'ı gördüklerini düşünüyor",
+      "summary": "r/GTA6 kullanıcıları, fragmandaki kareleri gerçek Ocean Drive fotoğraflarıyla karşılaştırdıklarını iddia ediyor; benzerlik Rockstar tarafından teyit edilmiş değil.",
+      "label": "COMMUNITY_CLAIM",
+      "label_text": "TOPLULUK İDDİASI",
+      "trust_group": "claim",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-15T21:05:00Z",
+      "why_this_label": "Yalnızca topluluk kaynağı",
+      "source_strength": 20,
+      "editorial_priority": 68,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "r/GTA6",
+          "url": "https://reddit.com/r/GTA6/comments/ocean-drive"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/8",
+      "reactions_total": null,
+      "location_id": "vice_city",
+      "region": "Vice City"
+    },
+    {
+      "id": "107b6a40a2b420db7a8c9873",
+      "title": "GTA VI'ın hikâyesi: Jason ve Lucia hakkında bilinenler",
+      "summary": "GamesRadar+'ın derlemesine göre Rockstar, fragmanlarda Jason ve Lucia'nın Port Gellhorn ve Ambrosia'daki hikâyesinden kesitler gösterdi. Derleme yeni bir resmî bilgi içermiyor.",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "trust_group": "single",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-15T17:05:00Z",
+      "why_this_label": "Tek yayın: GamesRadar+",
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/gta-6-jason-lucia-story"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/6",
+      "reactions_total": null,
+      "location_id": "port_gellhorn",
+      "region": "Port Gellhorn & Ambrosia"
+    },
+    {
+      "id": "a4594242d78294e4f6963729",
+      "title": "Bir sızıntı, GTA VI'da duyurulmamış bir ada olduğunu iddia ediyor",
+      "summary": "Insider Gaming'in aktardığı doğrulanmamış bir sızıntıya göre Leonida'da henüz duyurulmamış bir ada bulunuyor. Rockstar konu hakkında yorum yapmadı.",
+      "label": "LEAK_CLAIM",
+      "label_text": "SIZINTI İDDİASI",
+      "trust_group": "claim",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-15T13:05:00Z",
+      "why_this_label": "Yayın organında sızıntı/iddia haberi",
+      "source_strength": 30,
+      "editorial_priority": 72,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "Insider Gaming",
+          "url": "https://insider-gaming.com/gta-6-leak-island"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/5",
+      "reactions_total": null,
+      "location_id": "grassrivers",
+      "region": "Grassrivers"
+    },
+    {
+      "id": "1a52027ca9f415621974f680",
+      "title": "Take-Two, GTA VI'ın 19 Kasım takviminin sürdüğünü açıkladı",
+      "summary": "Take-Two Interactive, ikinci çeyrek sonuçlarını duyurduğu bültende Grand Theft Auto VI'ın 19 Kasım 2026 çıkışı için takvimde olduğunu bildirdi.",
+      "label": "OFFICIAL",
+      "label_text": "RESMÎ AÇIKLAMA",
+      "trust_group": "official",
+      "category": "INDUSTRY_BUSINESS",
+      "category_tr": "Analiz",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-15T07:05:00Z",
+      "why_this_label": "Resmî alan adında doğrudan yayın (URL doğrulandı)",
+      "source_strength": 95,
+      "editorial_priority": 88,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "Take-Two Interactive",
+          "url": "https://ir.take2games.com/news-releases/news-release-details/fiscal-second-quarter"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/3",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez"
+    },
+    {
+      "id": "a3345458cfad57af3fccd0a9",
+      "title": "GTA VI, PlayStation 5'te 150GB alan istiyor",
+      "summary": "IGN ve Video Games Chronicle, PlayStation Store listesine göre GTA 6'nın PlayStation 5'te 150GB depolama alanı gerektirdiğini bildiriyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "RELEASE_PLATFORMS",
+      "category_tr": "Çıkış/Platform",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-15T03:05:00Z",
+      "why_this_label": "2 bağımsız yayın: IGN, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 90,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/news/gta-6-150gb"
+        },
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/gta-6-preload-size"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/2",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez"
+    },
+    {
+      "id": "187eed4d2024893a114b9749",
+      "title": "Rockstar ses yönetmeni GTA VI radyolarını anlattı",
+      "summary": "Eurogamer'a konuşan Rockstar ses yönetmeni, GTA 6'da GTA 5'ten daha fazla radyo istasyonu bulunduğunu belirtti. Röportajda istasyon sayısına dair net bir rakam verilmedi.",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "trust_group": "single",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-14T23:05:00Z",
+      "why_this_label": "Tek yayın: Eurogamer",
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "Eurogamer",
+          "url": "https://eurogamer.net/gta-6-radio-interview"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/1",
+      "reactions_total": null,
+      "location_id": "vice_city",
+      "region": "Vice City"
+    }
+  ]
+}

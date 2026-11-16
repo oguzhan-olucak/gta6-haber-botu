@@ -39,10 +39,11 @@ from .config import (
     setup_logging,
 )
 from .gemini import (
+    GEMINI_CLIENT_REV,
     RESPONSE_JSON_SCHEMA,
     SYSTEM_INSTRUCTION,
     GeminiError,
-    GeminiGenerator,
+    GeminiRestGenerator,
     Generator,
     ValidationOutcome,
     build_prompt,
@@ -364,10 +365,12 @@ def _content_pipeline(ctx: RunContext) -> None:
     _ingest(ctx)
     candidates = _evaluate(ctx)
     ctx.remaining_posts = ctx.settings.max_daily_posts - posts_today(ctx.history, ctx.now, ctx.settings)
+    reset_stale_gemini_block(ctx.state)
     ctx.gemini_blocked_until = parse_iso(ctx.state.get("gemini_quota_blocked_until"))
     ctx.style_hints = load_style_hints(ctx.insights_path)
     if ctx.generator is None:
-        ctx.generator = GeminiGenerator(ctx.secrets.gemini_api_key, ctx.secrets.gemini_model)
+        ctx.generator = GeminiRestGenerator(ctx.secrets.gemini_api_key, ctx.secrets.gemini_model,
+                                            session=ctx.session)
     pool = ctx.state["candidate_pool"]
     for cluster, a in candidates:
         reason = _blocked_reason(ctx)
@@ -377,6 +380,19 @@ def _content_pipeline(ctx: RunContext) -> None:
             _requeue(cluster, pool)
             continue
         _generate_and_publish(ctx, cluster, a)
+
+
+def reset_stale_gemini_block(state: dict[str, Any]) -> bool:
+    """Soğuma kilidi önceki bir Gemini istemci sürümünde konduysa (ör. SDK ile alınan AUTH hatası)
+    kilidi ve GEMINI_AUTH alarm tekrar kaydını bir kez temizler. Temizlediyse True."""
+    if not state.get("gemini_quota_blocked_until") or state.get("gemini_client_rev") == GEMINI_CLIENT_REV:
+        return False
+    state.pop("gemini_quota_blocked_until", None)
+    alerts = state.get("alerts_last_sent")
+    if isinstance(alerts, dict):
+        alerts.pop("GEMINI_AUTH", None)
+    state["gemini_client_rev"] = GEMINI_CLIENT_REV
+    return True
 
 
 def _call_gemini(ctx: RunContext, cluster: list[Item], a: Assessment) -> str | None:
@@ -389,14 +405,16 @@ def _call_gemini(ctx: RunContext, cluster: list[Item], a: Assessment) -> str | N
     except GeminiError as exc:
         ctx.summary["gemini_errors"] += 1
         ctx.summary["error_classes"].append(exc.error_class.value)
-        log.warning("Gemini hatası: %s", exc.error_class.value)
+        log.warning("Gemini hatası: %s (%s)", exc.error_class.value, redact(str(exc), [ctx.secrets.gemini_api_key]))
         _requeue(cluster, ctx.state["candidate_pool"])
         if exc.error_class in (ErrorClass.RATE_LIMIT_QUOTA, ErrorClass.AUTH_PERMISSION):
             ctx.gemini_blocked_until = ctx.now + timedelta(minutes=ctx.settings.gemini_quota_cooldown_minutes)
             ctx.state["gemini_quota_blocked_until"] = iso(ctx.gemini_blocked_until)
+            ctx.state["gemini_client_rev"] = GEMINI_CLIENT_REV
         if exc.error_class == ErrorClass.AUTH_PERMISSION:
             ctx.alert("GEMINI_AUTH", exc.error_class.value,
-                      "Gemini anahtarı/model erişimi reddedildi. GEMINI_MODEL ve anahtarı kontrol edin. "
+                      "Gemini anahtarı/model erişimi reddedildi "
+                      f"[{redact(str(exc), [ctx.secrets.gemini_api_key])}]. GEMINI_MODEL ve anahtarı kontrol edin. "
                       "Ücretli modele otomatik geçiş yapılmaz.")
         return None
 

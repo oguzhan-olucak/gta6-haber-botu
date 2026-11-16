@@ -34,7 +34,7 @@ from .collector import canonicalize_url
 from .config import Settings, Source
 from .labels import LABEL_TEXT, Label
 from .storage import write_if_changed
-from .textutil import strip_html, truncate
+from .textutil import normalize_text, strip_html, truncate
 
 FEED_SCHEMA_VERSION = 1
 MAX_TITLE = 160
@@ -52,6 +52,58 @@ TRUST_GROUP: dict[str, str] = {
     "OFFICIAL": "official", "MULTI_SOURCE": "multi", "SINGLE_SOURCE": "single",
     "LEAK_CLAIM": "claim", "COMMUNITY_CLAIM": "claim",
 }
+
+# ---- Leonida haritası: haber → konum eşlemesi ------------------------------------------------
+LocationId = Literal["vice_city", "leonida_keys", "grassrivers", "port_gellhorn", "mount_kalaga"]
+REGION_NAME: dict[str, str] = {
+    "vice_city": "Vice City", "leonida_keys": "Leonida Keys", "grassrivers": "Grassrivers",
+    "port_gellhorn": "Port Gellhorn & Ambrosia", "mount_kalaga": "Mount Kalaga · Genel Merkez",
+}
+_CATEGORY_REGION: dict[str, str] = {
+    "TRAILER_MEDIA": "vice_city", "GAMEPLAY_TECH": "leonida_keys", "COMMUNITY_RUMOR": "grassrivers",
+    "RELEASE_PLATFORMS": "mount_kalaga", "OFFICIAL_ANNOUNCEMENT": "mount_kalaga",
+    "INDUSTRY_BUSINESS": "mount_kalaga", "OTHER": "vice_city",
+}
+# Başlık/özette geçen terimler (normalize_text sonrası, Türkçe + İngilizce). Eşleşme kategori varsayılanını ezer.
+_REGION_TERMS: dict[str, tuple[str, ...]] = {
+    "vice_city": ("vice city", "ocean drive", "fragman", "trailer", "ekran goruntu", "screenshot", "neon",
+                  "plaj", "beach", "radyo", "radio", "soundtrack", "muzik"),
+    "leonida_keys": ("leonida keys", "oynanis", "gameplay", "arac", "vehicle", "araba", "tekne", "boat",
+                     "fizik", "physics", "surus", "driving", "fotograf modu", "photo mode", "erisilebilirlik",
+                     "accessibility", "silah", "weapon"),
+    "grassrivers": ("grassrivers", "bataklik", "swamp", "harita", "map", "timsah", "alligator", "vahsi",
+                    "wildlife", "ada", "island", "kesif", "exploration", "dunya boyutu", "world size"),
+    "port_gellhorn": ("port gellhorn", "ambrosia", "jason", "lucia", "hikaye", "story", "karakter", "character",
+                      "gorev", "mission", "seslendir", "voice actor", "oyuncu kadro", "cast"),
+    "mount_kalaga": ("mount kalaga", "cikis tarihi", "release date", "on yukleme", "preload", "pre-load",
+                     "on siparis", "pre-order", "preorder", "fiyat", "price", "ps5", "playstation", "xbox",
+                     "pc", "platform", "gb", "boyut", "file size", "take two", "take-two", "gelir", "earnings",
+                     "inceleme", "review", "erteleme", "delay"),
+}
+
+
+def classify_location(title: str, summary: str, category: str) -> str:
+    """Haberi beş Leonida konumundan birine bağlar (deterministik).
+
+    Başlıktaki eşleşme 2, özetteki 1 puan; en yüksek puanlı konum seçilir. Eşitlikte veya hiç eşleşme
+    yoksa kategori varsayılanı kazanır. Yapay zekâ kullanılmaz."""
+    default = _CATEGORY_REGION.get(category, "vice_city")
+    t, sm = f" {normalize_text(title)} ", f" {normalize_text(summary)} "
+    scores = {loc: 0 for loc in REGION_NAME}
+    for loc, terms in _REGION_TERMS.items():
+        for term in terms:
+            word = normalize_text(term)
+            if not word:
+                continue
+            # 5+ harfli terimlerde Türkçe ekleri yakalamak için kelime başı eşleşmesi (radyo → radyolarını)
+            needle = f" {word}" if len(word) >= 5 else f" {word} "
+            if needle in t:
+                scores[loc] += 2
+            elif needle in sm:
+                scores[loc] += 1
+    scores[default] += 1  # kategori eşitliği bozar
+    return max(scores, key=lambda k: (scores[k], k == default))
+
 
 LabelName = Literal["OFFICIAL", "MULTI_SOURCE", "SINGLE_SOURCE", "LEAK_CLAIM", "COMMUNITY_CLAIM"]
 
@@ -83,6 +135,21 @@ class FeedItem(BaseModel):
     sources: list[FeedSource] = Field(min_length=1, max_length=MAX_SOURCES)
     telegram_url: str | None = Field(default=None, pattern=r"^https://t\.me/[A-Za-z0-9_]{5,32}/\d+$")
     reactions_total: int | None = None
+    # Opsiyonel (şema v1 ile geriye uyumlu): Leonida haritası konumu
+    location_id: LocationId | None = None
+    region: str | None = Field(default=None, max_length=60)
+
+
+class FeedSourceStatus(BaseModel):
+    """Kaynak nabzı: tek kaynağın son çalışmadaki durumu (iç hata ayrıntısı içermez)."""
+    model_config = ConfigDict(extra="forbid")
+    id: str = Field(pattern=r"^[a-z0-9_]{2,40}$")
+    name: str = Field(max_length=80)
+    trust_class: Literal["OFFICIAL", "ESTABLISHED_MEDIA", "COMMUNITY", "UNKNOWN"]
+    state: Literal["ok", "empty", "error", "pending"]
+    entries: int = Field(ge=0)
+    relevant: int = Field(ge=0)
+    checked_at: str | None = None
 
 
 class FeedStatus(BaseModel):
@@ -96,6 +163,7 @@ class FeedStatus(BaseModel):
     verified_total: int
     paused: bool
     measurement_note: str
+    sources: list[FeedSourceStatus] = Field(default_factory=list)
 
 
 class Feed(BaseModel):
@@ -171,8 +239,10 @@ def build_item(post: dict[str, Any], settings: Settings, names: dict[str, str]) 
     if not title or not published or not sources or len(item_id) < 4:
         return None
     category = post.get("category") if post.get("category") in CATEGORY_TR else "OTHER"
+    summary = clean_text(post.get("summary_tr"), MAX_SUMMARY)
+    location = classify_location(title, summary, str(category))
     return FeedItem(
-        id=item_id, title=title, summary=clean_text(post.get("summary_tr"), MAX_SUMMARY),
+        id=item_id, title=title, summary=summary,
         label=label, label_text=LABEL_TEXT[Label(label)], trust_group=TRUST_GROUP[label],
         category=str(category), category_tr=CATEGORY_TR[str(category)],
         title_style=clean_text(post.get("title_style"), 20) or "FACTUAL",
@@ -184,6 +254,8 @@ def build_item(post: dict[str, Any], settings: Settings, names: dict[str, str]) 
         sources=sources,
         telegram_url=telegram_url(settings.public_channel_username, post.get("message_id")),
         reactions_total=_reactions(post),
+        location_id=location,
+        region=REGION_NAME[location],
     )
 
 
@@ -221,6 +293,32 @@ def _neg_time(value: str) -> float:
     return -t.timestamp() if t else 0.0
 
 
+def source_pulse(sources: list[Source], status_map: dict[str, Any]) -> list[FeedSourceStatus]:
+    """Etkin kaynakların son çalışma durumu. Hata ayrıntısı/HTTP kodu dışa aktarılmaz; yalnızca
+    ok / empty (yanıt verdi ama liste boş) / error / pending (henüz denenmedi)."""
+    out: list[FeedSourceStatus] = []
+    for s in sources:
+        if not s.enabled or not s.feed_url:
+            continue
+        st = status_map.get(s.id)
+        st = st if isinstance(st, dict) else {}
+        raw_entries, raw_relevant = st.get("entries"), st.get("relevant")
+        entries = raw_entries if isinstance(raw_entries, int) else 0
+        relevant = raw_relevant if isinstance(raw_relevant, int) else 0
+        if not st:
+            state = "pending"
+        elif st.get("ok") is not True:
+            state = "error"
+        elif st.get("warning") or entries == 0:
+            state = "empty"
+        else:
+            state = "ok"
+        checked = st.get("checked_at") if isinstance(st.get("checked_at"), str) else None
+        out.append(FeedSourceStatus(id=s.id, name=clean_text(s.name, 80), trust_class=s.trust_class, state=state,
+                                    entries=max(0, entries), relevant=max(0, relevant), checked_at=checked))
+    return out
+
+
 def build_feed(history: dict[str, Any], state: dict[str, Any], settings: Settings, sources: list[Source],
                now: datetime, *, demo: bool = False) -> Feed:
     """history/state'ten doğrulanmış site beslemesini oluşturur."""
@@ -242,6 +340,7 @@ def build_feed(history: dict[str, Any], state: dict[str, Any], settings: Setting
                            and p.get("publish_status") == "PUBLISHED"),
         paused=settings.paused,
         measurement_note="Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
+        sources=source_pulse(sources, status_map),
     )
     hero = pick_hero(items, now)
     return Feed(schema_version=FEED_SCHEMA_VERSION, demo=demo, brand=clean_text(settings.brand_name, 60),
@@ -259,19 +358,22 @@ def _source_names(history: dict[str, Any]) -> dict[str, str]:
     return names
 
 
-def feed_js(feed_json: str) -> str:
+def feed_js(feed_json: str, var_name: str = "__GTA6_FEED__") -> str:
     """``file://`` ile açılış için JS sarmalayıcı; ``<``, ``>``, ``&`` ve U+2028/2029 kaçırılır."""
+    if not re.fullmatch(r"__[A-Z0-9_]+__", var_name):
+        raise ValueError("geçersiz değişken adı")
     safe = (feed_json.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
             .replace("\u2028", "\\u2028").replace("\u2029", "\\u2029"))
-    return f"window.__GTA6_FEED__ = {safe};\n"
+    return f"window.{var_name} = {safe};\n"
 
 
-def export_site_feed(feed: Feed, site_data_dir: Path) -> bool:
+def export_site_feed(feed: Feed, site_data_dir: Path, *, basename: str = "feed",
+                     var_name: str = "__GTA6_FEED__") -> bool:
     """feed.json ve feed.js dosyalarını atomik yazar (değişmediyse dokunmaz). Değişti mi döner.
     ``generated_at`` her çalışmada değiştiği için karşılaştırma bu alan hariç yapılır."""
     site_data_dir.mkdir(parents=True, exist_ok=True)
     data = feed.model_dump(mode="json")
-    target = site_data_dir / "feed.json"
+    target = site_data_dir / f"{basename}.json"
     try:
         old = json.loads(target.read_text(encoding="utf-8"))
         old.get("status", {}).pop("generated_at", None)
@@ -282,8 +384,8 @@ def export_site_feed(feed: Feed, site_data_dir: Path) -> bool:
     except (OSError, ValueError, AttributeError):
         pass
     write_if_changed(target, data)
-    js_path = site_data_dir / "feed.js"
-    payload = feed_js(json.dumps(data, ensure_ascii=False, separators=(",", ":")))
+    js_path = site_data_dir / f"{basename}.js"
+    payload = feed_js(json.dumps(data, ensure_ascii=False, separators=(",", ":")), var_name)
     tmp = js_path.with_suffix(".js.tmp")
     tmp.write_text(payload, encoding="utf-8")
     tmp.replace(js_path)

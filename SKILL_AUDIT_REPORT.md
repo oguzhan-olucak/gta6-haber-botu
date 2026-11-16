@@ -1,6 +1,6 @@
 # SKILL_AUDIT_REPORT — Skill Ekosistemi Denetimi
 
-Üretim: `python tools/skill_audit.py` · 2026-11-15 23:05 UTC · **15/15 skill tüm denetimlerden geçti**
+Üretim: `python tools/skill_audit.py` · 2026-11-16 06:41 UTC · **18/18 skill tüm denetimlerden geçti**
 
 Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu mu, tetiklenme ve otomatik doğrulama bölümleri, gizli kabuk komutu yok; (2) **işlevsel** — skill'in koyduğu kurallar koda, ayarlara ve testlere karşı gerçekten çalıştırılır.
 
@@ -23,6 +23,9 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 | `static-site-guardian` | docs/ altındaki GitHub Pages haber sitesinin ve feed.json köprüsünün güvenliğini, gizlilik ve şema kurallarını denetler (XSS, CSP, gizli veri sızıntısı, yalnızca yayınlanmış haber) | Site, exporter veya demo beslemesi değiştiğinde; yayına almadan önce. | 14/14 | ✅ DOĞRULANDI |
 | `telegram-api-guard` | Telegram Bot API kısıtlarını korur; views/forwards uydurulmaz, message_reaction_count idempotent işlenir, yönetici özeti spam yapmaz, sendMessage zaman aşımında tekrar gönderilmez | telegram_client.py, publisher.py veya analyzer.py değiştiğinde. | 12/12 | ✅ DOĞRULANDI |
 | `token-budget-guardian` | Uzun/otonom oturumlarda token ve kota tasarrufu kuralları; gereksiz yeniden okumayı, büyük çıktıları ve sonsuz deneme-yanılmayı keser | Her uzun oturumun başında; her büyük adımın sonunda (bütçe kontrol listesi). | 11/11 | ✅ DOĞRULANDI |
+| `ui-ux-interaction-standards` | docs/ sitesindeki etkileşim kuralları — süzgeç/sekme/arama anında çalışır, çekmece ve modallar <dialog> ile erişilebilir açılır, boş durum yönlendirir, gerçek veri örnek bültenin önündedir | `docs/assets/app.js` veya `docs/index.html` etkileşim yapısı değiştiğinde. | 15/15 | ✅ DOĞRULANDI |
+| `vice-city-design-system` | docs/ sitesinin "Leonida Night" tasarım sistemi — renk, tipografi, cam yüzeyler, güven rozeti renkleri ve kırılımlar | `docs/assets/style.css`, `docs/index.html` görsel yapısı veya yeni bir site bileşeni değiştiğinde. | 13/13 | ✅ DOĞRULANDI |
+| `webapp-testing-site` | docs/ sitesini headless Chrome ile 390/820/1440 genişlikte, gerçek (boş olabilir) ve örnek veriyle uçtan uca sınar; yatay taşma, boş durum ve gerçek-veri önceliğini doğrular | `docs/` altındaki HTML/CSS/JS veya `bot/site_exporter.py` çıktısı değiştiğinde; yayına almadan önce. | 11/11 | ✅ DOĞRULANDI |
 
 ## Ayrıntılı sonuçlar
 
@@ -36,7 +39,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ 'Otomatik doğrulama' bölümü
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
-- ✅ HTTP POST yalnızca telegram_client.py — uyumlu
+- ✅ HTTP POST yalnızca telegram_client.py (+ collector: Google News çözümü, gemini: REST) — uyumlu
 - ✅ HTTP GET yalnızca collector.py — uyumlu
 - ✅ dosya yazımı yalnızca storage/site_exporter — uyumlu
 - ✅ mypy bot temiz — Success: no issues found in 15 source files
@@ -54,7 +57,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ her tur ≥ 3 regresyon testi — {"1": 4, "2": 4, "3": 4, "4": 3, "5": 4, "6": 6}
 - ✅ her turda FAIL ve PASS kanıtı
 - ✅ tablo satırlarında dosya:satır
-- ✅ pytest tests/test_arena.py — 25 passed in 0.16s
+- ✅ pytest tests/test_arena.py — 25 passed in 0.26s
 
 ### `atomic-json-recovery` — ✅ (26 satır)
 
@@ -67,7 +70,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ lastgood + şema doğrulayıcılar mevcut
-- ✅ pytest tests/test_storage.py tests/test_resilience.py -k storage or recover or corrupt or half — 10 passed, 18 deselected in 0.12s
+- ✅ pytest tests/test_storage.py tests/test_resilience.py -k storage or recover or corrupt or half — 10 passed, 18 deselected in 0.17s
 
 ### `cost-guard` — ✅ (25 satır)
 
@@ -84,7 +87,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ run_deadline_seconds < iş zaman aşımı (15 dk)
 - ✅ kodda sabit Gemini model kimliği yok — bulunamadı
 - ✅ standart ubuntu-latest runner
-- ✅ pytest tests/test_publisher.py::test_gemini_quota_stops_calls_and_never_switches_model tests/test_arena.py::test_r2_sre_huge_retry_after_is_not_slept_through — 2 passed in 0.12s
+- ✅ pytest tests/test_publisher.py::test_gemini_quota_stops_calls_and_never_switches_model tests/test_arena.py::test_r2_sre_huge_retry_after_is_not_slept_through — 2 passed in 0.16s
 
 ### `event-clustering-calibrator` — ✅ (20 satır)
 
@@ -97,7 +100,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ eşik pozitif/negatif boşluğun içinde — en yüksek negatif 0.157 < eşik 0.27 ≤ en düşük pozitif 0.340
-- ✅ pytest tests/test_clustering.py — 15 passed in 0.11s
+- ✅ pytest tests/test_clustering.py — 15 passed in 0.12s
 
 ### `gemini-schema-enforcer` — ✅ (21 satır)
 
@@ -113,7 +116,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ ≥ 6 bağımsız doğrulama kontrolü — 6
 - ✅ sistem talimatı untrusted_source_data'yı tanımlar
 - ✅ SDK çağrısı response_json_schema kullanır
-- ✅ pytest tests/test_processor.py — 11 passed in 0.13s
+- ✅ pytest tests/test_processor.py — 11 passed in 0.11s
 
 ### `night-shift-supervisor` — ✅ (26 satır)
 
@@ -142,7 +145,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ resmî kaynak sayısı ≥ 2 ve etkin — 4 etkin
 - ✅ resmî kaynak alan adları yalnızca rockstargames.com / take2games.com — uyumlu
 - ✅ üçlü koşul (OFFICIAL + url_verified + alan adı) kodda
-- ✅ pytest tests/test_resilience.py tests/test_injection.py tests/test_arena.py -k official or google_news or html_listing or reverified — 14 passed, 49 deselected in 0.15s
+- ✅ pytest tests/test_resilience.py tests/test_injection.py tests/test_arena.py -k official or google_news or html_listing or reverified — 14 passed, 49 deselected in 0.20s
 
 ### `python-tdd-runner` — ✅ (30 satır)
 
@@ -155,7 +158,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ 14 kabul testi tanımlı — 14/14
-- ✅ pytest  — 160 passed in 1.01s
+- ✅ pytest  — 188 passed in 0.98s
 - ✅ ruff temiz — All checks passed!
 
 ### `rss-anti-poisoning` — ✅ (26 satır)
@@ -184,7 +187,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ tüm feed_url https
 - ✅ her kaynakta allowed_domains
-- ✅ pytest tests/test_collector.py tests/test_resilience.py — 33 passed in 0.21s
+- ✅ pytest tests/test_collector.py tests/test_resilience.py — 33 passed in 0.23s
 
 ### `security-auditor` — ✅ (30 satır)
 
@@ -218,7 +221,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ index.html'de satır içi betik yok
 - ✅ feed.json'da hassas alan yok
 - ✅ feed.json yalnızca https bağlantı
-- ✅ pytest tests/test_site_exporter.py — 31 passed in 0.14s
+- ✅ pytest tests/test_site_exporter.py — 33 passed in 0.17s
 
 ### `telegram-api-guard` — ✅ (25 satır)
 
@@ -233,7 +236,7 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ allowed_updates yalnızca message_reaction_count
 - ✅ views/forwards yalnızca 'unavailable' — 2 yer
 - ✅ 4096 sınırı ve retry_after üst sınırı
-- ✅ pytest tests/test_analyzer.py tests/test_publisher.py — 21 passed in 0.27s
+- ✅ pytest tests/test_analyzer.py tests/test_publisher.py — 21 passed in 0.29s
 
 ### `token-budget-guardian` — ✅ (29 satır)
 
@@ -247,7 +250,55 @@ Her skill iki katmanda denetlenir: (1) **yapısal** — frontmatter, gövde dolu
 - ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
 - ✅ hiçbir hata 2 denemeyi aşmadı (kayıtlara göre) — kayıtlı denemeler: 2, 2, 1, 2, 2
 - ✅ alt ajan açılmadı (roller tek bağlamda)
-- ✅ ilerleme kaydı tek satırlık adımlarla tutuluyor — 19 satır
+- ✅ ilerleme kaydı tek satırlık adımlarla tutuluyor — 21 satır
+
+### `ui-ux-interaction-standards` — ✅ (28 satır)
+
+- ✅ frontmatter (name + description)
+- ✅ ad klasörle aynı
+- ✅ açıklama 30–1024 karakter — 254 karakter
+- ✅ gövde ≥ 8 anlamlı satır (taslak değil)
+- ✅ 'Ne zaman tetiklenir' bölümü
+- ✅ 'Otomatik doğrulama' bölümü
+- ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
+- ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
+- ✅ örnek bülten tembel yüklenir
+- ✅ gerçek veri önceliği (realItems.length)
+- ✅ diyaloglar showModal ile
+- ✅ safeHttps ve textContent
+- ✅ localStorage try/catch
+- ✅ index.html gerekli kimlikler
+- ✅ dört güven rozeti adı
+
+### `vice-city-design-system` — ✅ (44 satır)
+
+- ✅ frontmatter (name + description)
+- ✅ ad klasörle aynı
+- ✅ açıklama 30–1024 karakter — 270 karakter
+- ✅ gövde ≥ 8 anlamlı satır (taslak değil)
+- ✅ 'Ne zaman tetiklenir' bölümü
+- ✅ 'Otomatik doğrulama' bölümü
+- ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
+- ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
+- ✅ tasarım token'ları tanımlı
+- ✅ [hidden] her zaman gizler
+- ✅ prefers-reduced-motion bloğu
+- ✅ kırılımlar 760px ve 1100px
+- ✅ güven rozeti sınıfları
+
+### `webapp-testing-site` — ✅ (27 satır)
+
+- ✅ frontmatter (name + description)
+- ✅ ad klasörle aynı
+- ✅ açıklama 30–1024 karakter — 240 karakter
+- ✅ gövde ≥ 8 anlamlı satır (taslak değil)
+- ✅ 'Ne zaman tetiklenir' bölümü
+- ✅ 'Otomatik doğrulama' bölümü
+- ✅ gizli kabuk komutu yok (curl|sh, base64 -d)
+- ✅ proje dışı yol yok (~/.ssh, ~/.aws, /etc)
+- ✅ tools/site_check.py var
+- ✅ app.js selftest kancası
+- ✅ tarayıcı matrisi 3×2
 
 ## Bu oturumda aktif uygulanan skill'ler
 

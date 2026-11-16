@@ -1,0 +1,628 @@
+{
+  "schema_version": 1,
+  "last_run_at": "2026-11-16T05:43:37Z",
+  "last_successful_fetch_at": "2026-11-16T05:43:37Z",
+  "first_run_at": "2026-11-16T05:43:37Z",
+  "telegram_update_offset": null,
+  "reaction_pipeline_verified": false,
+  "seen_items": {
+    "2b8b87d43a1be409a8067ab2": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "f729a2144f6f13176fbe526f": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "4564061e2d248ceba56e3d6a": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "d679772e39c557e9b9452501": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "d86101e04c6aff5367841c74": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "57ff0c674424a3da8eb9aa37": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "dc8afa8a57b87a383f509743": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "d3be7ca7db1f8950133ad5e8": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "2336fc43beb184c4c4f23645": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "0b52d2076cd4fdf19ab12286": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "b20ff4ab7f1cc32d30653794": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "eurogamer"
+    },
+    "8769ca2c09f395ccb7a2f11a": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "27fa97f7f32882508d0cca63": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "NEW",
+      "source": "eurogamer"
+    },
+    "112c1ad1b5e9188d93412b67": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "b0bf835cdba28c5cfc4e07a6": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "pcgamer"
+    },
+    "8f6557a25e81fbf284fc3f6c": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "ign"
+    },
+    "c4488f0d2b7be8e8eb4376c8": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "ec6bccf692a17c40380bbeeb": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "4590118cc6b6eff36422657e": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "gamesradar"
+    },
+    "0ad94dbec5859dbf80957db6": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "051f7fbcc77e186c202ee8eb": {
+      "first_seen": "2026-11-16T05:43:37Z",
+      "status": "HELD",
+      "source": "gamesradar"
+    }
+  },
+  "digests_sent": [
+    "2026-11-16T06"
+  ],
+  "alerts_last_sent": {},
+  "gemini_quota_blocked_until": null,
+  "source_status": {
+    "rockstar_newswire_html": {
+      "ok": true,
+      "entries": 0,
+      "relevant": 0,
+      "checked_at": "2026-11-16T05:43:37Z",
+      "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
+    },
+    "rockstar_google_news": {
+      "ok": true,
+      "entries": 100,
+      "relevant": 0,
+      "checked_at": "2026-11-16T05:43:37Z"
+    },
+    "take_two_ir_html": {
+      "ok": true,
+      "entries": 1,
+      "relevant": 0,
+      "checked_at": "2026-11-16T05:43:37Z"
+    },
+    "take_two_google_news": {
+      "ok": true,
+      "entries": 54,
+      "relevant": 0,
+      "checked_at": "2026-11-16T05:43:37Z"
+    },
+    "ign": {
+      "ok": true,
+      "entries": 20,
+      "relevant": 4,
+      "checked_at": "2026-11-16T05:43:37Z"
+    },
+    "eurogamer": {
+      "ok": true,
+      "entries": 100,
+      "relevant": 2,
+      "checked_at": "2026-11-16T05:43:37Z"
+    },
+    "gamesradar": {
+      "ok": true,
+      "entries": 50,
+      "relevant": 4,
+      "checked_at": "2026-11-16T05:43:37Z"
+    },
+    "pcgamer": {
+      "ok": true,
+      "entries": 50,
+      "relevant": 1,
+      "checked_at": "2026-11-16T05:43:37Z"
+    },
+    "vgc": {
+      "ok": true,
+      "entries": 10,
+      "relevant": 0,
+      "checked_at": "2026-11-16T05:43:37Z"
+    },
+    "insider_gaming": {
+      "ok": true,
+      "entries": 10,
+      "relevant": 2,
+      "checked_at": "2026-11-16T05:43:37Z"
+    },
+    "reddit_gta6": {
+      "ok": true,
+      "entries": 25,
+      "relevant": 8,
+      "checked_at": "2026-11-16T05:43:37Z"
+    }
+  },
+  "run_log": [
+    {
+      "started_at": "2026-11-16T05:43:37Z",
+      "sources_ok": 11,
+      "new_items": 21,
+      "published": 0,
+      "gemini_calls": 4,
+      "error_classes": [
+        "TELEGRAM_API_ERROR",
+        "UNEXPECTED_ERROR",
+        "UNEXPECTED_ERROR",
+        "UNEXPECTED_ERROR",
+        "UNEXPECTED_ERROR"
+      ]
+    }
+  ],
+  "candidate_pool": {
+    "2b8b87d43a1be409a8067ab2": {
+      "item": {
+        "id": "2b8b87d43a1be409a8067ab2",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Rockstar's marketing is on another level",
+        "url": "https://reddit.com/r/GTA6/comments/1xxens0/rockstars_marketing_is_on_another_level",
+        "summary": "A GTA6 artwork being painted in Miami, with a crocodile at the wheel and Vice City lettering. Only Rockstar could turn a random wall in Miami into massive GTA VI mural. Their marketing is unmatched, when compared with other studios. submitted by /u/A-Ghost-Cat [link] [comments]",
+        "published_at": "2026-11-16T03:10:17Z",
+        "content_hash": "b0a0e4973e5cdc1d9b9968d0",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "2b8b87d43a1be409a8067ab2"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    },
+    "f729a2144f6f13176fbe526f": {
+      "item": {
+        "id": "f729a2144f6f13176fbe526f",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA 6 Marketing in Cape Town, South Africa",
+        "url": "https://reddit.com/r/GTA6/comments/1xxcsly/gta_6_marketing_in_cape_town_south_africa",
+        "summary": "submitted by /u/panner1234 [link] [comments]",
+        "published_at": "2026-11-16T01:37:24Z",
+        "content_hash": "f7cd282e8d74f294cea11a03",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "f729a2144f6f13176fbe526f"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    },
+    "4564061e2d248ceba56e3d6a": {
+      "item": {
+        "id": "4564061e2d248ceba56e3d6a",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA 6 Marketing - Shoreditch (London)",
+        "url": "https://reddit.com/r/GTA6/comments/1xxa68o/gta_6_marketing_shoreditch_london",
+        "summary": "Finally seen GTA Marketing in person, driving through Shoreditch, London tonight. Told my wife to quickly grab the phone to get the shot. Feels like the perfect way to sign off my weekend before GTA 6 week! The excitement is real. submitted by /u/babagroovy [link] [comments]",
+        "published_at": "2026-11-15T23:34:25Z",
+        "content_hash": "ad24d570f6e2c53413652117",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "4564061e2d248ceba56e3d6a"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    },
+    "d679772e39c557e9b9452501": {
+      "item": {
+        "id": "d679772e39c557e9b9452501",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA 6 popup coming to Shoreditch? 👀",
+        "url": "https://reddit.com/r/GTA6/comments/1xx95ii/gta_6_popup_coming_to_shoreditch",
+        "summary": "Spotted today, not seen anyone post about this yet... could this be another mw4 style immersive experience coming soon? submitted by /u/juicecarton8301 [link] [comments]",
+        "published_at": "2026-11-15T22:48:48Z",
+        "content_hash": "4e9fb235c720e164cd27eb53",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "d679772e39c557e9b9452501"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    },
+    "d86101e04c6aff5367841c74": {
+      "item": {
+        "id": "d86101e04c6aff5367841c74",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "3 insiders hyping GTA 6",
+        "url": "https://reddit.com/r/GTA6/comments/1xx7qum/3_insiders_hyping_gta_6",
+        "summary": "so Shinobi, a prominant insider on resetera originally predicted a 97-98 metacritic score. He then quoted that post a few days later saying \"Yeah im going with 98\" another resetera poster quoted that post with the eye emoji and said that \"hes heard many many great things in the last few days \" and went with a 97 score then NatetheHate responding to a question asking if he things Zelda or GTA 6 will win GOTY, a couple days later after revealing that he has heard impressions on the game said \" I havn't played GTA 6 yet but the odds are in its favor \" hes a big nintendo guy too Again take this as not definite or anything, but if you read between the lines it really tells what we are going to…",
+        "published_at": "2026-11-15T21:47:34Z",
+        "content_hash": "9c793d9a972506952ea44fc0",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "d86101e04c6aff5367841c74"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    },
+    "57ff0c674424a3da8eb9aa37": {
+      "item": {
+        "id": "57ff0c674424a3da8eb9aa37",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "How are you planning to pace GTA 6 next week? (50h story vs. 200h for 100%)",
+        "url": "https://reddit.com/r/GTA6/comments/1xx6kys/how_are_you_planning_to_pace_gta_6_next_week_50h",
+        "summary": "With early reports saying the main story is around 50 hours and a full 100% run takes roughly 200 hours, I’m curious how everyone is approaching their first playthrough on November 19. Are you focusing straight on the main campaign to dodge spoilers, or taking your time exploring Leonida and knocking out side content along the way? Also, is anyone going straight for the Platinum/100% on their first run? submitted by /u/costlesscomb48 [link] [comments]",
+        "published_at": "2026-11-15T20:58:40Z",
+        "content_hash": "f5a9e0621beb114c9be4e583",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "57ff0c674424a3da8eb9aa37"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    },
+    "dc8afa8a57b87a383f509743": {
+      "item": {
+        "id": "dc8afa8a57b87a383f509743",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 6's Jason and Lucia Will Start as Small-Time Criminals Who Have to Work Up to High-Value Jobs",
+        "url": "https://ign.com/articles/gta-6s-jason-and-lucia-will-start-as-small-time-criminals-who-have-to-work-up-to-high-value-jobs",
+        "summary": "GTA 6 will let Jason and Lucia pull off high-value jobs, but Rockstar Games asks players to work up from being small-time criminals first.",
+        "published_at": "2026-11-15T19:41:28Z",
+        "content_hash": "7865c706885e75fbc6975247",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "dc8afa8a57b87a383f509743"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": true
+    },
+    "d3be7ca7db1f8950133ad5e8": {
+      "item": {
+        "id": "d3be7ca7db1f8950133ad5e8",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "On which radio station do you imagine each music from the GTA 6 trailers will be played in game?",
+        "url": "https://reddit.com/r/GTA6/comments/1xx4m38/on_which_radio_station_do_you_imagine_each_music",
+        "summary": "I remember what it felt like to hear Sleepwalking for the first time in GTA 5, and I hope to have the same feeling when I hear \"Love is a long road\" in GTA 6 submitted by /u/Puzzleheaded_Goal689 [link] [comments]",
+        "published_at": "2026-11-15T19:38:52Z",
+        "content_hash": "eb1779f80d9ed54cb5ff4010",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "d3be7ca7db1f8950133ad5e8"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    },
+    "2336fc43beb184c4c4f23645": {
+      "item": {
+        "id": "2336fc43beb184c4c4f23645",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Article of the Day #72: GTA 6 Marketing",
+        "url": "https://reddit.com/r/GTA6/comments/1xx1nsg/article_of_the_day_72_gta_6_marketing",
+        "summary": "submitted by /u/gtawiki [link] [comments]",
+        "published_at": "2026-11-15T17:42:17Z",
+        "content_hash": "15995b3dd88ac34234c05b5c",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "2336fc43beb184c4c4f23645"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    },
+    "0b52d2076cd4fdf19ab12286": {
+      "item": {
+        "id": "0b52d2076cd4fdf19ab12286",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "EA Adds 'Don't Delete' Message to Madden NFL 27 in Bid to Keep Players From Making Room Ahead of GTA 6",
+        "url": "https://ign.com/articles/ea-adds-dont-delete-message-to-madden-nfl-27-in-bid-to-keep-players-from-making-room-ahead-of-gta-6",
+        "summary": "EA has added a \"don't delete\" pop-up message to Madden NFL 27, and players can't help but feel the company is begging them not to make room for Grand Theft Auto 6.",
+        "published_at": "2026-11-15T17:22:20Z",
+        "content_hash": "d6ef3b7464f7e9cfaffc27e7",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "0b52d2076cd4fdf19ab12286"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": true
+    },
+    "b20ff4ab7f1cc32d30653794": {
+      "item": {
+        "id": "b20ff4ab7f1cc32d30653794",
+        "source_id": "eurogamer",
+        "source_name": "Eurogamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "eurogamer",
+        "title": "The latest GTA 6 leak comes in the form of a 34-song tracklist for GTA 6: The Album, featuring Dua Lipa, Lana Del Rey, Rina Sawayama, and more",
+        "url": "https://eurogamer.net/gta-6-tracklist-leak",
+        "summary": "We are now just four days away from the release of GTA 6 on Xbox Series X/S and PS5, but the proximity to the much-anticipated launch date isn't stemming the tide of leaks that has been plaguing the game for much of the past year. Yesterday, a new video - seemingly from a record store that received vinyl records of the soundtrack early - showed off the full 34-song tracklist for the game. Read more",
+        "published_at": "2026-11-15T14:03:50Z",
+        "content_hash": "f348b7951c859c31d914663e",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "b20ff4ab7f1cc32d30653794"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    },
+    "8769ca2c09f395ccb7a2f11a": {
+      "item": {
+        "id": "8769ca2c09f395ccb7a2f11a",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "How Long Will It Take to Complete GTA 6? Platinum Trophy & Mythic Achievement Time Explained",
+        "url": "https://insider-gaming.com/how-long-to-complete-gta",
+        "summary": "How long will it take to complete GTA 6? Insider Gaming has the stats on how many hours it will take to complete Grant Theft Auto 6's Platinum Trophy. The post How Long Will It Take to Complete GTA 6? Platinum Trophy & Mythic Achievement Time Explained appeared first on Insider Gaming .",
+        "published_at": "2026-11-15T13:55:27Z",
+        "content_hash": "bfe431f94ef795c83e9519ef",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "8769ca2c09f395ccb7a2f11a"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": true
+    },
+    "27fa97f7f32882508d0cca63": {
+      "item": {
+        "id": "27fa97f7f32882508d0cca63",
+        "source_id": "eurogamer",
+        "source_name": "Eurogamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "eurogamer",
+        "title": "What's the best GTA?",
+        "url": "https://eurogamer.net/the-big-question-whats-the-best-gta",
+        "summary": "As we teeter on the brink of gaming's biggest launch of 2026 - perhaps even decade - so many questions swirl: which GTA 6 cars will make the best vrrrrm? Is it possible for me to be any more obsessed with that Justice theme song ? On a scale of one to ten, how many dongs ? Answers will inevitably come, but for now - as we crank up the Phil Collins and roar deeper into Eurogamer's GTA Week - there's only one question we're concerned with. Yes, it's the return of our irregular series The Big Question , in which we ponder another topical talking point before wafting it lovingly over to you. And this time around we're asking, what's the best GTA? Read more",
+        "published_at": "2026-11-15T10:00:00Z",
+        "content_hash": "34564740ae32ee51df259bc5",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "27fa97f7f32882508d0cca63"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": true
+    },
+    "112c1ad1b5e9188d93412b67": {
+      "item": {
+        "id": "112c1ad1b5e9188d93412b67",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Is GTA 6 Out Now? Grand Theft Auto 6 Launch Day Tracker",
+        "url": "https://insider-gaming.com/is-gta-6-out-now-launch-day-tracker",
+        "summary": "Is Grand Theft Auto 6 out yet? Good question. Find out the answer to everything you want to ask in this guide. The post Is GTA 6 Out Now? Grand Theft Auto 6 Launch Day Tracker appeared first on Insider Gaming .",
+        "published_at": "2026-11-15T08:14:07Z",
+        "content_hash": "91671b61d4ed0be03b9cd400",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "112c1ad1b5e9188d93412b67"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": true
+    },
+    "b0bf835cdba28c5cfc4e07a6": {
+      "item": {
+        "id": "b0bf835cdba28c5cfc4e07a6",
+        "source_id": "pcgamer",
+        "source_name": "PC Gamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 soundtrack leak confirmed accurate with new songs from Lana Del Rey, Playboi Carti, and Keith Richards",
+        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-soundtrack-leak-confirmed-accurate-with-new-songs-from-lana-del-rey-playboi-carti-and-keith-richards",
+        "summary": "What, no Sideways Hank O'Mally?",
+        "published_at": "2026-11-15T04:52:26Z",
+        "content_hash": "5b616993fdbae4a54e070e0d",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "b0bf835cdba28c5cfc4e07a6"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    },
+    "8f6557a25e81fbf284fc3f6c": {
+      "item": {
+        "id": "8f6557a25e81fbf284fc3f6c",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 6 Leak Seemingly Reveals Official Album's Full Track List Days Before Launch",
+        "url": "https://ign.com/articles/gta-6-leak-seemingly-reveals-full-track-list-days-before-launch",
+        "summary": "The full track list for Grand Theft Auto VI: The Album seems to have leaked online just days before GTA 6's launch.",
+        "published_at": "2026-11-14T23:00:09Z",
+        "content_hash": "d789d1d230d332ccabfdf178",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "8f6557a25e81fbf284fc3f6c"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    },
+    "c4488f0d2b7be8e8eb4376c8": {
+      "item": {
+        "id": "c4488f0d2b7be8e8eb4376c8",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 will \"provide mechanisms that encourage\" empathy \"for the first time in a GTA\"",
+        "url": "https://gamesradar.com/games/grand-theft-auto/rockstar-knows-people-want-to-play-gta-6-for-the-chaos-but-the-studio-will-also-provide-mechanisms-that-encourage-empathy-for-the-first-time-in-a-gta",
+        "summary": "Shoot and smooch",
+        "published_at": "2026-11-14T18:24:35Z",
+        "content_hash": "086180a0b7bec74f6cf17c88",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "c4488f0d2b7be8e8eb4376c8"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": true
+    },
+    "ec6bccf692a17c40380bbeeb": {
+      "item": {
+        "id": "ec6bccf692a17c40380bbeeb",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "As the 13-year wait for GTA 6 ends, it’s time to remember the first 10 games released in 12 years",
+        "url": "https://gamesradar.com/games/grand-theft-auto/with-the-13-year-wait-for-gta-6-finally-ending-its-time-to-remember-that-rockstar-released-the-first-10-grand-theft-auto-games-in-just-12-years",
+        "summary": "The wait for GTA 6 is even more astounding when you remember how things used to be",
+        "published_at": "2026-11-14T18:00:00Z",
+        "content_hash": "b74fa79827f975625c816c07",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "ec6bccf692a17c40380bbeeb"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": true
+    },
+    "4590118cc6b6eff36422657e": {
+      "item": {
+        "id": "4590118cc6b6eff36422657e",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6: The Album seemingly leaks with Dua Lipa and Lana Del Rey as part of the 34-song tracklist",
+        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-the-album-seemingly-leaks-with-dua-lipa-and-lana-del-rey-as-part-of-the-full-34-song-tracklist",
+        "summary": "Starting from zero",
+        "published_at": "2026-11-14T17:47:21Z",
+        "content_hash": "2a8b4349ac148c68443296c5",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "4590118cc6b6eff36422657e"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    },
+    "0ad94dbec5859dbf80957db6": {
+      "item": {
+        "id": "0ad94dbec5859dbf80957db6",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 6 Will Do Something the Franchise Has Never Done Before: Encourage Empathy",
+        "url": "https://ign.com/articles/gta-6-will-do-something-the-franchise-has-never-done-before-encourage-empathy",
+        "summary": "Rockstar has confirmed GTA 6 features something the franchise has never had before: mechanisms that encourage empathy.",
+        "published_at": "2026-11-14T17:19:13Z",
+        "content_hash": "855b051f5caba380230e597d",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "0ad94dbec5859dbf80957db6"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": true
+    },
+    "051f7fbcc77e186c202ee8eb": {
+      "item": {
+        "id": "051f7fbcc77e186c202ee8eb",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "Ahead of GTA 6, Take-Two CEO calls out Anthropic and OpenAI over AI game clones",
+        "url": "https://gamesradar.com/games/grand-theft-auto/ahead-of-gta-6-take-two-ceo-calls-out-anthropic-and-openai-over-ai-game-clones-as-its-ironic-to-stomp-on-someone-elses-ip",
+        "summary": "After Claude blocked users from \"recreating someone else's specific game\"",
+        "published_at": "2026-11-14T13:10:08Z",
+        "content_hash": "5471e84b11122e243c4be427",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "051f7fbcc77e186c202ee8eb"
+      },
+      "first_seen": "2026-11-16T05:43:37Z",
+      "needs_eval": false
+    }
+  },
+  "persisted_at": "2026-11-16T05:43:37Z"
+}

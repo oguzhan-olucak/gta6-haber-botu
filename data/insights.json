@@ -1,5 +1,33 @@
 {
   "schema_version": 1,
+  "generated_at": "2026-11-16T05:43:37Z",
   "status": "YETERSİZ VERİ",
+  "measurement_window_hours": 24,
+  "period": {
+    "from": null,
+    "to": null
+  },
+  "metric_source": "Telegram Bot API message_reaction_count (anonim toplam reaksiyon)",
+  "metrics_available": [
+    "reactions_total"
+  ],
+  "metrics_unavailable": {
+    "views": "unavailable",
+    "forwards": "unavailable"
+  },
+  "sample_size": 0,
+  "inferred_zero_count": 0,
+  "by_category": {},
+  "by_title_style": {},
+  "category_x_style_counts": {},
+  "category_ranking": {
+    "result": "YETERSİZ VERİ",
+    "note": "Karşılaştırma için en az 2 grupta n≥5 gerekir."
+  },
+  "title_style_ranking": {
+    "result": "YETERSİZ VERİ",
+    "note": "Karşılaştırma için en az 2 grupta n≥5 gerekir."
+  },
+  "uncertainty_note": "Görüntülenme paydası olmadığı için reaksiyon ORANI hesaplanmaz; yalnızca mutlak reaksiyon sayısı 'etkileşim' olarak raporlanır. Küçük örneklemde sonuçlar erken sinyaldir. Reaksiyon gelmeyen gönderiler, akış kanıtlanmışsa 0 sayılır.",
   "prompt_hints": {}
 }

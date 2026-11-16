@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-16T05:43:37Z",
-  "last_successful_fetch_at": "2026-11-16T05:43:37Z",
+  "last_run_at": "2026-11-16T05:54:05Z",
+  "last_successful_fetch_at": "2026-11-16T05:54:05Z",
   "first_run_at": "2026-11-16T05:43:37Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -68,7 +68,7 @@
     },
     "27fa97f7f32882508d0cca63": {
       "first_seen": "2026-11-16T05:43:37Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "eurogamer"
     },
     "112c1ad1b5e9188d93412b67": {
@@ -115,75 +115,77 @@
   "digests_sent": [
     "2026-11-16T06"
   ],
-  "alerts_last_sent": {},
-  "gemini_quota_blocked_until": null,
+  "alerts_last_sent": {
+    "GEMINI_AUTH": "2026-11-16T05:54:05Z"
+  },
+  "gemini_quota_blocked_until": "2026-11-16T06:54:05Z",
   "source_status": {
     "rockstar_newswire_html": {
       "ok": true,
       "entries": 0,
       "relevant": 0,
-      "checked_at": "2026-11-16T05:43:37Z",
+      "checked_at": "2026-11-16T05:54:05Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
       "entries": 100,
       "relevant": 0,
-      "checked_at": "2026-11-16T05:43:37Z"
+      "checked_at": "2026-11-16T05:54:05Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
-      "checked_at": "2026-11-16T05:43:37Z"
+      "checked_at": "2026-11-16T05:54:05Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 54,
       "relevant": 0,
-      "checked_at": "2026-11-16T05:43:37Z"
+      "checked_at": "2026-11-16T05:54:05Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
-      "relevant": 4,
-      "checked_at": "2026-11-16T05:43:37Z"
+      "relevant": 0,
+      "checked_at": "2026-11-16T05:54:05Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
-      "relevant": 2,
-      "checked_at": "2026-11-16T05:43:37Z"
+      "relevant": 0,
+      "checked_at": "2026-11-16T05:54:05Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 4,
-      "checked_at": "2026-11-16T05:43:37Z"
+      "relevant": 0,
+      "checked_at": "2026-11-16T05:54:05Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
-      "relevant": 1,
-      "checked_at": "2026-11-16T05:43:37Z"
+      "relevant": 0,
+      "checked_at": "2026-11-16T05:54:05Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 0,
-      "checked_at": "2026-11-16T05:43:37Z"
+      "checked_at": "2026-11-16T05:54:05Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 2,
-      "checked_at": "2026-11-16T05:43:37Z"
+      "relevant": 0,
+      "checked_at": "2026-11-16T05:54:05Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
-      "relevant": 8,
-      "checked_at": "2026-11-16T05:43:37Z"
+      "relevant": 0,
+      "checked_at": "2026-11-16T05:54:05Z"
     }
   },
   "run_log": [
@@ -199,6 +201,16 @@
         "UNEXPECTED_ERROR",
         "UNEXPECTED_ERROR",
         "UNEXPECTED_ERROR"
+      ]
+    },
+    {
+      "started_at": "2026-11-16T05:54:05Z",
+      "sources_ok": 11,
+      "new_items": 0,
+      "published": 0,
+      "gemini_calls": 1,
+      "error_classes": [
+        "AUTH_PERMISSION"
       ]
     }
   ],
@@ -461,7 +473,7 @@
         "raw_id": "27fa97f7f32882508d0cca63"
       },
       "first_seen": "2026-11-16T05:43:37Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "112c1ad1b5e9188d93412b67": {
       "item": {
@@ -624,5 +636,5 @@
       "needs_eval": false
     }
   },
-  "persisted_at": "2026-11-16T05:43:37Z"
+  "persisted_at": "2026-11-16T05:54:05Z"
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-16T13:31:49Z",
-  "last_successful_fetch_at": "2026-11-16T13:31:49Z",
+  "last_run_at": "2026-11-16T17:17:16Z",
+  "last_successful_fetch_at": "2026-11-16T17:17:16Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -170,92 +170,176 @@
       "first_seen": "2026-11-16T13:31:49Z",
       "status": "HELD",
       "source": "reddit_gta6"
+    },
+    "f83ef57f657b3e8b211f9019": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "653a4d153bd8ca48f0dd507d": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "NEW",
+      "source": "vgc"
+    },
+    "75700d788408c12df1910692": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "fcd30475c660e233f60e9e8b": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "81e2321e855ab6f83ffe3be3": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "d7bf38d0df24af530f9cd638": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "e74afbefd074d2fbf37b7b2a": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "HELD",
+      "source": "gamesradar"
+    },
+    "451e40dc5171feb49c91b916": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "1447879c7fba730c6ba82c2f": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "567c39e30389ac43f4feb4cb": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "4a05e298f4dd223b8b00d899": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "c9ff683f6e76a9cc4b27c41a": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "f23af9dc9a81c84483093ae2": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "c70b58ce79f8f23a19f3be15": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "bdfae2eb878a6667cf7eb2a9": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "9b752e438c68fdc741d85f74": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "5c46665d691b93b5043e3c9a": {
+      "first_seen": "2026-11-16T17:17:16Z",
+      "status": "NEW",
+      "source": "ign"
     }
   },
   "digests_sent": [
-    "2026-11-16T06"
+    "2026-11-16T06",
+    "2026-11-16T18"
   ],
-  "alerts_last_sent": {
-    "GEMINI_AUTH": "2026-11-16T13:31:49Z"
-  },
+  "alerts_last_sent": {},
   "source_status": {
     "rockstar_newswire_html": {
       "ok": true,
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T13:31:49Z",
+      "checked_at": "2026-11-16T17:17:16Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
-      "entries": 23,
-      "relevant": 15,
+      "entries": 24,
+      "relevant": 18,
       "new": 0,
-      "checked_at": "2026-11-16T13:31:49Z"
+      "checked_at": "2026-11-16T17:17:16Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T13:31:49Z"
+      "checked_at": "2026-11-16T17:17:16Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 4,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T13:31:49Z"
+      "checked_at": "2026-11-16T17:17:16Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
-      "relevant": 6,
-      "new": 0,
-      "checked_at": "2026-11-16T13:31:49Z"
+      "relevant": 7,
+      "new": 3,
+      "checked_at": "2026-11-16T17:17:16Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
-      "relevant": 19,
-      "new": 1,
-      "checked_at": "2026-11-16T13:31:49Z"
+      "relevant": 18,
+      "new": 0,
+      "checked_at": "2026-11-16T17:17:16Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 8,
-      "new": 1,
-      "checked_at": "2026-11-16T13:31:49Z"
+      "relevant": 11,
+      "new": 4,
+      "checked_at": "2026-11-16T17:17:16Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
-      "relevant": 5,
+      "relevant": 4,
       "new": 0,
-      "checked_at": "2026-11-16T13:31:49Z"
+      "checked_at": "2026-11-16T17:17:16Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
-      "relevant": 0,
-      "new": 0,
-      "checked_at": "2026-11-16T13:31:49Z"
+      "relevant": 1,
+      "new": 1,
+      "checked_at": "2026-11-16T17:17:16Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 4,
-      "new": 3,
-      "checked_at": "2026-11-16T13:31:49Z"
+      "relevant": 5,
+      "new": 4,
+      "checked_at": "2026-11-16T17:17:16Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
-      "relevant": 10,
-      "new": 8,
-      "checked_at": "2026-11-16T13:31:49Z"
+      "relevant": 11,
+      "new": 5,
+      "checked_at": "2026-11-16T17:17:16Z"
     }
   },
   "run_log": [
@@ -277,6 +361,19 @@
       "gemini_calls": 1,
       "error_classes": [
         "AUTH_PERMISSION"
+      ]
+    },
+    {
+      "started_at": "2026-11-16T17:17:16Z",
+      "sources_ok": 11,
+      "new_items": 17,
+      "published": 0,
+      "gemini_calls": 4,
+      "error_classes": [
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT"
       ]
     }
   ],
@@ -619,7 +716,7 @@
         "raw_id": "ec6bccf692a17c40380bbeeb"
       },
       "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
+      "needs_eval": true
     },
     "4590118cc6b6eff36422657e": {
       "item": {
@@ -920,9 +1017,365 @@
       },
       "first_seen": "2026-11-16T13:31:49Z",
       "needs_eval": false
+    },
+    "f83ef57f657b3e8b211f9019": {
+      "item": {
+        "id": "f83ef57f657b3e8b211f9019",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "How similar do you think gta 6 will be to Max payne 3",
+        "url": "https://reddit.com/r/GTA6/comments/1xxub6n/how_similar_do_you_think_gta_6_will_be_to_max",
+        "summary": "submitted by /u/Final-Association-65 [link] [comments]",
+        "published_at": "2026-11-16T16:47:00Z",
+        "content_hash": "8ae0c35e0ab8b35fef3f4655",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "f83ef57f657b3e8b211f9019",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": false
+    },
+    "653a4d153bd8ca48f0dd507d": {
+      "item": {
+        "id": "653a4d153bd8ca48f0dd507d",
+        "source_id": "vgc",
+        "source_name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "vgc",
+        "title": "NBA 2K27 is getting a Vice City Edition, as well as numerous GTA 6 themed items in Season 3",
+        "url": "https://videogameschronicle.com/news/nba-2k27-is-getting-a-vice-city-edition-as-well-as-numerous-gta-6-themed-items-in-season-3",
+        "summary": "The game will reflect the real-life Vice City takeover coming to Miami Heat this week",
+        "published_at": "2026-11-16T16:45:23Z",
+        "content_hash": "97b1e2144b55d9c1ac36dd15",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "653a4d153bd8ca48f0dd507d",
+        "image_url": "https://www.videogameschronicle.com/files/2026/11/nba-2k27-vice-city-edition.jpg"
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": true
+    },
+    "75700d788408c12df1910692": {
+      "item": {
+        "id": "75700d788408c12df1910692",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "The ultimate GTA 6 kit list, top tech to help Leonida shine",
+        "url": "https://gamesradar.com/hardware/the-ultimate-gta-6-kit-list-top-tech-to-help-leonida-shine",
+        "summary": "We're rounding up everything you need to get GTA 6 looking and feeling its best.",
+        "published_at": "2026-11-16T16:32:05Z",
+        "content_hash": "6ef3b5e6fc10632e46557522",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "75700d788408c12df1910692",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/674Tz3ikRVJC2YCUYQUZKC-1920-80.jpg"
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": true
+    },
+    "fcd30475c660e233f60e9e8b": {
+      "item": {
+        "id": "fcd30475c660e233f60e9e8b",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Escape from Tarkov Joins The GTA 6 Action With a New Campaign",
+        "url": "https://insider-gaming.com/escape-from-tarkov-gta-6-hype-new-campaign",
+        "summary": "If you're an Escape from Tarkov fan, you can participate in a new campaign to earn exclusive in-game items themed around GTA 6. The post Escape from Tarkov Joins The GTA 6 Action With a New Campaign appeared first on Insider Gaming .",
+        "published_at": "2026-11-16T16:26:37Z",
+        "content_hash": "158752047e7755f28d14baff",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "fcd30475c660e233f60e9e8b",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": true
+    },
+    "81e2321e855ab6f83ffe3be3": {
+      "item": {
+        "id": "81e2321e855ab6f83ffe3be3",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Xbox Shows Off Alligator-Themed Controller Before GTA 6 Release",
+        "url": "https://insider-gaming.com/xbox-alligator-controller-gta-6",
+        "summary": "With the Grand Theft Auto 6 launch here, Xbox has gotten in on the heavy promotion with an alligator-themed GTA 6 controller. The post Xbox Shows Off Alligator-Themed Controller Before GTA 6 Release appeared first on Insider Gaming .",
+        "published_at": "2026-11-16T16:21:39Z",
+        "content_hash": "83d1ab201f20b339103c7c81",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "81e2321e855ab6f83ffe3be3",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": true
+    },
+    "d7bf38d0df24af530f9cd638": {
+      "item": {
+        "id": "d7bf38d0df24af530f9cd638",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "NBA 2K27 announced a collaboration with GTA 6 And you can play NBA 2K27 with GTA+ from Nov 27 to Jan 15",
+        "url": "https://reddit.com/r/GTA6/comments/1xxtjnz/nba_2k27_announced_a_collaboration_with_gta_6_and",
+        "summary": "submitted by /u/peqc [link] [comments]",
+        "published_at": "2026-11-16T16:18:10Z",
+        "content_hash": "7902fc315393d63d181d0937",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "d7bf38d0df24af530f9cd638",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": false
+    },
+    "e74afbefd074d2fbf37b7b2a": {
+      "item": {
+        "id": "e74afbefd074d2fbf37b7b2a",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 hacker who reportedly cost Rockstar $5 million pleads guilty to everything",
+        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-hacker-who-reportedly-cost-rockstar-usd5-million-pleads-guilty-to-everything",
+        "summary": "Arion Kurtaj, the hacker behind the 2022 leaks, hasn't been sentenced yet",
+        "published_at": "2026-11-16T16:15:55Z",
+        "content_hash": "675a9d5374b8620165e44789",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "e74afbefd074d2fbf37b7b2a",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/LWTLYA8aF4Laf5GqW2xdqf-1920-80.png"
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": false
+    },
+    "451e40dc5171feb49c91b916": {
+      "item": {
+        "id": "451e40dc5171feb49c91b916",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "The last post speculating if GTA6 was gonna get announced or not.",
+        "url": "https://reddit.com/r/GTA6/comments/1xxsxaj/the_last_post_speculating_if_gta6_was_gonna_get",
+        "summary": "Hello all, im an OG member of this group(still have my flair) been here since about 60k people were on this subreddit. Im so happy finally GTA6 is releasing. Since the game is just around the corner, i wanned to share one of the last posts(i made this) that was posted here that was still speculating if the announcement for GTA6 trailer 1 was coming or not. Since i cant repost the post that was posted here(tongue twister moment), I'll post the meme again here. submitted by /u/Chinis_Flouwa [link] [comments]",
+        "published_at": "2026-11-16T15:54:36Z",
+        "content_hash": "9e75dc1147cd0d23fa8ee1ca",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "451e40dc5171feb49c91b916",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": false
+    },
+    "1447879c7fba730c6ba82c2f": {
+      "item": {
+        "id": "1447879c7fba730c6ba82c2f",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "13-year wait for GTA 6 ends with a community-run event in GTA 5's Los Santos",
+        "url": "https://gamesradar.com/games/grand-theft-auto/13-year-wait-for-gta-6-ends-with-players-planning-one-last-drive-through-gta-5s-los-santos-for-a-lot-of-us-this-game-wasnt-just-a-game-it-was-years-of-memories",
+        "summary": "Rockstar's follow-up is a true changing of the times",
+        "published_at": "2026-11-16T15:28:41Z",
+        "content_hash": "7aea5c1faee095f9974e5a47",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "1447879c7fba730c6ba82c2f",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/6wkBw7S8q9nKY7VCzXrD3L-1920-80.jpg"
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": true
+    },
+    "567c39e30389ac43f4feb4cb": {
+      "item": {
+        "id": "567c39e30389ac43f4feb4cb",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "UK Politician Downplays Fears Around GTA 6 Content For Kids, Says She's More Concerned About The Amount of Time They'll Likely Play It",
+        "url": "https://ign.com/articles/uk-politician-downplays-fears-around-gta-6-content-for-kids-says-shes-more-concerned-about-the-amount-of-time-theyll-likely-play-it",
+        "summary": "Prominent U.K. politician Kemi Badenoch has downplayed parents' fears over the violent content found in GTA 6, and said she's more concerned by how long many kids will likely spend in their bedrooms playing it.",
+        "published_at": "2026-11-16T14:59:11Z",
+        "content_hash": "87c631055a7e0dc1c043035c",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "567c39e30389ac43f4feb4cb",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/16/gettyimages-2305345380-1794840593773.jpg"
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": true
+    },
+    "4a05e298f4dd223b8b00d899": {
+      "item": {
+        "id": "4a05e298f4dd223b8b00d899",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 won't make kids violent, UK Conservative Party leader says",
+        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-wont-make-kids-violent-uk-conservative-party-leader-thinks-mortal-kombat-and-street-fighter-i-didnt-hit-anybody-after-playing-those",
+        "summary": "Tory leader Kemi Badenoch is more worried about screen time",
+        "published_at": "2026-11-16T14:57:03Z",
+        "content_hash": "f0661547e96f04fb1d6f523d",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "4a05e298f4dd223b8b00d899",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/p5xXjN4jhguPenWLzWb6rh-1920-80.jpg"
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": true
+    },
+    "c9ff683f6e76a9cc4b27c41a": {
+      "item": {
+        "id": "c9ff683f6e76a9cc4b27c41a",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "GTA 6 ‘Physical Copy Code Flaw’ Controversy, Explained",
+        "url": "https://insider-gaming.com/gta-6-physical-copy-code-flaw",
+        "summary": "GTA 6's physical edition has already been met with criticism for having no disc, but some aren't getting game codes either. The post GTA 6 ‘Physical Copy Code Flaw’ Controversy, Explained appeared first on Insider Gaming .",
+        "published_at": "2026-11-16T14:49:06Z",
+        "content_hash": "e94bedac4d9895924983a47b",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "c9ff683f6e76a9cc4b27c41a",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": true
+    },
+    "f23af9dc9a81c84483093ae2": {
+      "item": {
+        "id": "f23af9dc9a81c84483093ae2",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Original GTA 6 Hacker Pleads Guilty to 2022 Breach",
+        "url": "https://insider-gaming.com/original-gta-6-hacker-pleads-guilty-to-2022-breach",
+        "summary": "Before the 2026 leaks, a shocking GTA 6 breach happened in 2022, and it has resulted in the leaker now pleading guilty to their crimes. The post Original GTA 6 Hacker Pleads Guilty to 2022 Breach appeared first on Insider Gaming .",
+        "published_at": "2026-11-16T14:42:22Z",
+        "content_hash": "fd90489325d3445a78993b8e",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "f23af9dc9a81c84483093ae2",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": true
+    },
+    "c70b58ce79f8f23a19f3be15": {
+      "item": {
+        "id": "c70b58ce79f8f23a19f3be15",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "This is the best GTA 6 edit that I’ve ever seen! -2 Days",
+        "url": "https://reddit.com/r/GTA6/comments/1xxq1bz/this_is_the_best_gta_6_edit_that_ive_ever_seen_2",
+        "summary": "Credit to @fedgratis2005 for his edit on TikTok submitted by /u/Maruan-007 [link] [comments]",
+        "published_at": "2026-11-16T13:59:37Z",
+        "content_hash": "edecdd8ee059f2617b744083",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "c70b58ce79f8f23a19f3be15",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": false
+    },
+    "bdfae2eb878a6667cf7eb2a9": {
+      "item": {
+        "id": "bdfae2eb878a6667cf7eb2a9",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "How close do you think we can get to doing vigilantism in vice city",
+        "url": "https://reddit.com/r/GTA6/comments/1xxpt9p/how_close_do_you_think_we_can_get_to_doing",
+        "summary": "Ik its not the point of the game but there have been instances in rdr2 where you can do shit to ppl who do fucked up things. can we stop crimes, fight ppl who commit crimes at night (ironic considering we're a criminal ourselves). not like batman but more like the punisher or smth. I like crime but only when im the one doing it /s. Gotta keep the streets clean yk. I just wanna be a cool ass dude hunting down criminals in gta 6. Would be badass to make them scared also we get to see how everyone reacts. Cool rp scenario submitted by /u/HistorVical [link] [comments]",
+        "published_at": "2026-11-16T13:49:42Z",
+        "content_hash": "c61d9c91299396e4de54773d",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "bdfae2eb878a6667cf7eb2a9",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": false
+    },
+    "9b752e438c68fdc741d85f74": {
+      "item": {
+        "id": "9b752e438c68fdc741d85f74",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 6 Gets Another Day One Patch, and It's 1GB Bigger on Xbox",
+        "url": "https://ign.com/articles/gta-6-gets-another-day-one-patch-bigger-on-xbox",
+        "summary": "GTA 6 is finally almost here. With the November 19 launch date just around the corner, Rockstar is preparing the game for its public showing.",
+        "published_at": "2026-11-16T12:26:44Z",
+        "content_hash": "5c21425fe19b7683c172b265",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "9b752e438c68fdc741d85f74",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/12/vintage-vice-city-pack-exclusive-looks-01-1794487245980.jpg"
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": true
+    },
+    "5c46665d691b93b5043e3c9a": {
+      "item": {
+        "id": "5c46665d691b93b5043e3c9a",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Grand Theft Auto VI Limited-Edition PS5 DualSense Controllers Are Out This Week",
+        "url": "https://ign.com/articles/grand-theft-auto-6-limited-edition-ps5-dualsense-controllers-where-to-buy",
+        "summary": "Preorders are live for Grand Theft Auto VI Limited-Edition PS5 DualSense Controllers, but stock is limited. Hurry if you want one.",
+        "published_at": "2026-11-16T05:00:45Z",
+        "content_hash": "92a25fbc61ce0c48aad985ba",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "5c46665d691b93b5043e3c9a",
+        "image_url": "https://assets-prd.ignimgs.com/2026/09/09/untitled-design-1788967060376.png"
+      },
+      "first_seen": "2026-11-16T17:17:16Z",
+      "needs_eval": true
     }
   },
-  "persisted_at": "2026-11-16T13:31:49Z",
-  "gemini_client_rev": "rest-v1beta-xgoog-1",
-  "gemini_quota_blocked_until": "2026-11-16T14:31:49Z"
+  "persisted_at": "2026-11-16T17:17:16Z",
+  "gemini_client_rev": "rest-v1beta-xgoog-2"
 }

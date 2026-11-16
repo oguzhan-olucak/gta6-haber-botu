@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_run_at": null,
+  "last_run_at": "2026-11-16T05:30:55Z",
   "last_successful_fetch_at": null,
   "first_run_at": null,
   "telegram_update_offset": null,
@@ -10,5 +10,6 @@
   "alerts_last_sent": {},
   "gemini_quota_blocked_until": null,
   "source_status": {},
-  "run_log": []
+  "run_log": [],
+  "candidate_pool": {}
 }

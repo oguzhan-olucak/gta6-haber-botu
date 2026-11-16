@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-16T06:35:35Z",
-  "last_successful_fetch_at": "2026-11-16T06:35:35Z",
+  "last_run_at": "2026-11-16T13:31:49Z",
+  "last_successful_fetch_at": "2026-11-16T13:31:49Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -83,12 +83,12 @@
     },
     "c4488f0d2b7be8e8eb4376c8": {
       "first_seen": "2026-11-16T06:35:35Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "ec6bccf692a17c40380bbeeb": {
       "first_seen": "2026-11-16T06:35:35Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "4590118cc6b6eff36422657e": {
@@ -98,89 +98,164 @@
     },
     "0ad94dbec5859dbf80957db6": {
       "first_seen": "2026-11-16T06:35:35Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "051f7fbcc77e186c202ee8eb": {
       "first_seen": "2026-11-16T06:35:35Z",
       "status": "HELD",
       "source": "gamesradar"
+    },
+    "557a19b05a29533eaf9f5872": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "ef1e3e3583b0a1a95495926a": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "aa7447283c77ba008d208df0": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "NEW",
+      "source": "eurogamer"
+    },
+    "a2a76076e84ef1d04208696e": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "f6d21a4be1f4a958c30f87b3": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "5183b745d0d3874517e16918": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "b12490aec4bf9b3f1497f1eb": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "31257a2778661f85ed017384": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "c9864d1338600832f0c7ab12": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "f8c69fbc91f732e3378a025e": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "cd553b307f6d1efb6e994141": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "c6efa41456e8953a34b5627c": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "421d5a1c406962fabd6e329e": {
+      "first_seen": "2026-11-16T13:31:49Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
     }
   },
   "digests_sent": [
     "2026-11-16T06"
   ],
   "alerts_last_sent": {
-    "GEMINI_AUTH": "2026-11-16T06:35:35Z"
+    "GEMINI_AUTH": "2026-11-16T13:31:49Z"
   },
-  "gemini_quota_blocked_until": "2026-11-16T07:35:35Z",
   "source_status": {
     "rockstar_newswire_html": {
       "ok": true,
       "entries": 0,
       "relevant": 0,
-      "checked_at": "2026-11-16T06:35:35Z",
+      "new": 0,
+      "checked_at": "2026-11-16T13:31:49Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
-      "entries": 100,
-      "relevant": 0,
-      "checked_at": "2026-11-16T06:35:35Z"
+      "entries": 23,
+      "relevant": 15,
+      "new": 0,
+      "checked_at": "2026-11-16T13:31:49Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
-      "checked_at": "2026-11-16T06:35:35Z"
+      "new": 0,
+      "checked_at": "2026-11-16T13:31:49Z"
     },
     "take_two_google_news": {
       "ok": true,
-      "entries": 54,
+      "entries": 4,
       "relevant": 0,
-      "checked_at": "2026-11-16T06:35:35Z"
+      "new": 0,
+      "checked_at": "2026-11-16T13:31:49Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
-      "relevant": 4,
-      "checked_at": "2026-11-16T06:35:35Z"
+      "relevant": 6,
+      "new": 0,
+      "checked_at": "2026-11-16T13:31:49Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
-      "relevant": 2,
-      "checked_at": "2026-11-16T06:35:35Z"
+      "relevant": 19,
+      "new": 1,
+      "checked_at": "2026-11-16T13:31:49Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 4,
-      "checked_at": "2026-11-16T06:35:35Z"
+      "relevant": 8,
+      "new": 1,
+      "checked_at": "2026-11-16T13:31:49Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
-      "relevant": 1,
-      "checked_at": "2026-11-16T06:35:35Z"
+      "relevant": 5,
+      "new": 0,
+      "checked_at": "2026-11-16T13:31:49Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 0,
-      "checked_at": "2026-11-16T06:35:35Z"
+      "new": 0,
+      "checked_at": "2026-11-16T13:31:49Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 2,
-      "checked_at": "2026-11-16T06:35:35Z"
+      "relevant": 4,
+      "new": 3,
+      "checked_at": "2026-11-16T13:31:49Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
-      "relevant": 7,
-      "checked_at": "2026-11-16T06:35:35Z"
+      "relevant": 10,
+      "new": 8,
+      "checked_at": "2026-11-16T13:31:49Z"
     }
   },
   "run_log": [
@@ -188,6 +263,16 @@
       "started_at": "2026-11-16T06:35:35Z",
       "sources_ok": 11,
       "new_items": 20,
+      "published": 0,
+      "gemini_calls": 1,
+      "error_classes": [
+        "AUTH_PERMISSION"
+      ]
+    },
+    {
+      "started_at": "2026-11-16T13:31:49Z",
+      "sources_ok": 11,
+      "new_items": 13,
       "published": 0,
       "gemini_calls": 1,
       "error_classes": [
@@ -514,7 +599,7 @@
         "raw_id": "c4488f0d2b7be8e8eb4376c8"
       },
       "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "ec6bccf692a17c40380bbeeb": {
       "item": {
@@ -534,7 +619,7 @@
         "raw_id": "ec6bccf692a17c40380bbeeb"
       },
       "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "4590118cc6b6eff36422657e": {
       "item": {
@@ -574,28 +659,270 @@
         "raw_id": "0ad94dbec5859dbf80957db6"
       },
       "first_seen": "2026-11-16T06:35:35Z",
+      "needs_eval": false
+    },
+    "557a19b05a29533eaf9f5872": {
+      "item": {
+        "id": "557a19b05a29533eaf9f5872",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "WE LOVE TO SEE IT",
+        "url": "https://reddit.com/r/GTA6/comments/1xxpb5c/we_love_to_see_it",
+        "summary": "https://www.theguardian.com/games/ng-interactive/2026/nov/15/grand-theft-auto-vi-inside-rockstar-games submitted by /u/Pistoluislero [link] [comments]",
+        "published_at": "2026-11-16T13:26:46Z",
+        "content_hash": "9cb28d89238a5963db57b504",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "557a19b05a29533eaf9f5872"
+      },
+      "first_seen": "2026-11-16T13:31:49Z",
+      "needs_eval": false
+    },
+    "ef1e3e3583b0a1a95495926a": {
+      "item": {
+        "id": "ef1e3e3583b0a1a95495926a",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA 6: 3 days left 156 Reviews - 4.91 on PSNBest seller everywhere apart from Japan and Saudi Arabia",
+        "url": "https://reddit.com/r/GTA6/comments/1xxpa5a/gta_6_3_days_left_156_reviews_491_on_psnbest",
+        "summary": "submitted by /u/iByCris [link] [comments]",
+        "published_at": "2026-11-16T13:25:31Z",
+        "content_hash": "9dd4708e6efbfc8f1388ae2a",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "ef1e3e3583b0a1a95495926a"
+      },
+      "first_seen": "2026-11-16T13:31:49Z",
+      "needs_eval": false
+    },
+    "aa7447283c77ba008d208df0": {
+      "item": {
+        "id": "aa7447283c77ba008d208df0",
+        "source_id": "eurogamer",
+        "source_name": "Eurogamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "eurogamer",
+        "title": "Can GTA 6 make $2 billion in its opening weekend? One industry analyst has run the numbers, and seems to think so",
+        "url": "https://eurogamer.net/can-gta-6-make-2-billion-in-its-opening-weekend-one-industry-analyst-has-run-the-numbers-and-seems-to-think-so",
+        "summary": "We all know the story of GTA 5 making more than $1 billion in the first three days it was on sale , right? At the time, Take-Two believed this to be the fastest any entertainment property had achieved the impressive milestone - music and films included. It made history, and with ease. And it looks like GTA 6 is going to do even better. Read more",
+        "published_at": "2026-11-16T13:20:30Z",
+        "content_hash": "4ab0a3f01cbe8b9b19d0937e",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "aa7447283c77ba008d208df0"
+      },
+      "first_seen": "2026-11-16T13:31:49Z",
       "needs_eval": true
     },
-    "051f7fbcc77e186c202ee8eb": {
+    "a2a76076e84ef1d04208696e": {
       "item": {
-        "id": "051f7fbcc77e186c202ee8eb",
+        "id": "a2a76076e84ef1d04208696e",
         "source_id": "gamesradar",
         "source_name": "GamesRadar+",
         "trust_class": "ESTABLISHED_MEDIA",
         "origin_group": "future_plc",
-        "title": "Ahead of GTA 6, Take-Two CEO calls out Anthropic and OpenAI over AI game clones",
-        "url": "https://gamesradar.com/games/grand-theft-auto/ahead-of-gta-6-take-two-ceo-calls-out-anthropic-and-openai-over-ai-game-clones-as-its-ironic-to-stomp-on-someone-elses-ip",
-        "summary": "After Claude blocked users from \"recreating someone else's specific game\"",
-        "published_at": "2026-11-14T13:10:08Z",
-        "content_hash": "5471e84b11122e243c4be427",
+        "title": "GTA 6 streaming restrictions in China apparently don't allow any grand theft auto",
+        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-streaming-restrictions-in-china-apparently-dont-allow-any-grand-theft-auto",
+        "summary": "Or violence, or most forms of debauchery, really",
+        "published_at": "2026-11-16T13:01:57Z",
+        "content_hash": "abbee4368edd48607c7e580f",
         "cited_origins": [],
         "url_verified": false,
         "via": "rss",
-        "raw_id": "051f7fbcc77e186c202ee8eb"
+        "raw_id": "a2a76076e84ef1d04208696e"
       },
-      "first_seen": "2026-11-16T06:35:35Z",
+      "first_seen": "2026-11-16T13:31:49Z",
+      "needs_eval": true
+    },
+    "f6d21a4be1f4a958c30f87b3": {
+      "item": {
+        "id": "f6d21a4be1f4a958c30f87b3",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "How Much Money Has GTA 6 Made in Pre-Orders?",
+        "url": "https://insider-gaming.com/gta-6-pre-orders",
+        "summary": "Grand Theft Auto 6 made a ridiculous amount of money before the game came out, so check out the latest on GTA 6 pre-order sales. The post How Much Money Has GTA 6 Made in Pre-Orders? appeared first on Insider Gaming .",
+        "published_at": "2026-11-16T12:56:06Z",
+        "content_hash": "0afca51ee8543ebc90a4f1e1",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "f6d21a4be1f4a958c30f87b3"
+      },
+      "first_seen": "2026-11-16T13:31:49Z",
+      "needs_eval": true
+    },
+    "5183b745d0d3874517e16918": {
+      "item": {
+        "id": "5183b745d0d3874517e16918",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "So... GOTY nominations are getting announced tomorrow. How's Geoff gonna deal with the secrecy around GTA's voice actors?",
+        "url": "https://reddit.com/r/GTA6/comments/1xxo87j/so_goty_nominations_are_getting_announced",
+        "summary": "They're definitely giving a goty worthy performance. So, if they are going to nominate gta 6 for voice acting, they're going to have to finally reveal their names tomorrow right? submitted by /u/Illustrious_Panic_48 [link] [comments]",
+        "published_at": "2026-11-16T12:33:27Z",
+        "content_hash": "4c46efb99e31c689d51a8e56",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "5183b745d0d3874517e16918"
+      },
+      "first_seen": "2026-11-16T13:31:49Z",
+      "needs_eval": false
+    },
+    "b12490aec4bf9b3f1497f1eb": {
+      "item": {
+        "id": "b12490aec4bf9b3f1497f1eb",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Do you guys think GTA 6 will have a completely different control scheme?",
+        "url": "https://reddit.com/r/GTA6/comments/1xxnrq0/do_you_guys_think_gta_6_will_have_a_completely",
+        "summary": "I feel like not many people have talked about this, but how much do you guys think the controls will change in GTA 6? We’ve heard some things about sprinting with L3 instead of spamming X/A, but I’m curious how different everything else might be. One thing that caught my attention in the Extended Look was the livestream scene, when the guy gets out of the trunk and talks to Lucia. There’s an R3 prompt to watch the stream, even though R3 is usually used to quickly look behind you. It’s a small detail, but it got me wondering. Do you guys expect a major overhaul or mostly the same controls we’re used to? submitted by /u/Shot-Lavishness-1695 [link] [comments]",
+        "published_at": "2026-11-16T12:10:03Z",
+        "content_hash": "f64aa8e69da9634d58cae626",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "b12490aec4bf9b3f1497f1eb"
+      },
+      "first_seen": "2026-11-16T13:31:49Z",
+      "needs_eval": false
+    },
+    "31257a2778661f85ed017384": {
+      "item": {
+        "id": "31257a2778661f85ed017384",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Is there anything GTA 6 related happening on Nov 18 ?",
+        "url": "https://reddit.com/r/GTA6/comments/1xxn5uc/is_there_anything_gta_6_related_happening_on_nov",
+        "summary": "Like an official livestream or something like that that we can watch? For example, the Youtube livestream would be one example except it starts when I'm asleep so i'm gonna miss it, and when I wake up it's already gonna be the 19th - (I'm going to be rewatching all the trailers and some youtube videos (no spoilers), but I want more stuff to make a day out of it) submitted by /u/Visara57 [link] [comments]",
+        "published_at": "2026-11-16T11:35:51Z",
+        "content_hash": "1d1efd7ae91fb3b2a57366ec",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "31257a2778661f85ed017384"
+      },
+      "first_seen": "2026-11-16T13:31:49Z",
+      "needs_eval": false
+    },
+    "c9864d1338600832f0c7ab12": {
+      "item": {
+        "id": "c9864d1338600832f0c7ab12",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "New GTA VI patch is live, check your consoles!",
+        "url": "https://reddit.com/r/GTA6/comments/1xxlsnt/new_gta_vi_patch_is_live_check_your_consoles",
+        "summary": "submitted by /u/Primary_Journalist_2 [link] [comments]",
+        "published_at": "2026-11-16T10:13:31Z",
+        "content_hash": "203aa316b9e606191c863fd3",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "c9864d1338600832f0c7ab12"
+      },
+      "first_seen": "2026-11-16T13:31:49Z",
+      "needs_eval": false
+    },
+    "f8c69fbc91f732e3378a025e": {
+      "item": {
+        "id": "f8c69fbc91f732e3378a025e",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA 6 better have a feature where I can ignore my responsibilities",
+        "url": "https://reddit.com/r/GTA6/comments/1xxlmd4/gta_6_better_have_a_feature_where_i_can_ignore_my",
+        "summary": "Imagine spending 10 minutes customizing a car, driving for 2 minutes, then crashing it into a palm tree because I was looking at the scenery. Rockstar really needs to understand that some of us aren't playing the missions. We're just trying to cause unnecessary chaos in Vice City. 💀 submitted by /u/adrianvalee [link] [comments]",
+        "published_at": "2026-11-16T10:02:30Z",
+        "content_hash": "600c5039fe12a8f55edb705d",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "f8c69fbc91f732e3378a025e"
+      },
+      "first_seen": "2026-11-16T13:31:49Z",
+      "needs_eval": false
+    },
+    "cd553b307f6d1efb6e994141": {
+      "item": {
+        "id": "cd553b307f6d1efb6e994141",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "How to Play GTA 6 Early on XBOX With New Zealand Trick—All Time Zones, Explained",
+        "url": "https://insider-gaming.com/how-to-play-gta-6-early-xbox-new-zealand-trick",
+        "summary": "If you want to get the earliest access possible to GTA 6 on XBOX, you'll want to make full use of the New Zealand trick. Here's how it works. The post How to Play GTA 6 Early on XBOX With New Zealand Trick—All Time Zones, Explained appeared first on Insider Gaming .",
+        "published_at": "2026-11-16T08:13:19Z",
+        "content_hash": "645799e42f410a71270fad16",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "cd553b307f6d1efb6e994141"
+      },
+      "first_seen": "2026-11-16T13:31:49Z",
+      "needs_eval": true
+    },
+    "c6efa41456e8953a34b5627c": {
+      "item": {
+        "id": "c6efa41456e8953a34b5627c",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "How to Play GTA 6 Early on PS5 With New Zealand Trick—All Time Zones, Explained",
+        "url": "https://insider-gaming.com/how-to-gta-6-early-new-zealand-trick-playstation-5",
+        "summary": "Learn how to play GTA 6 early on PS5 using the New Zealand trick with this super handy, short-form guide, complete with time zone breakdown. The post How to Play GTA 6 Early on PS5 With New Zealand Trick—All Time Zones, Explained appeared first on Insider Gaming .",
+        "published_at": "2026-11-16T08:13:15Z",
+        "content_hash": "16372bd308a5d47ee0e68dd1",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "c6efa41456e8953a34b5627c"
+      },
+      "first_seen": "2026-11-16T13:31:49Z",
+      "needs_eval": true
+    },
+    "421d5a1c406962fabd6e329e": {
+      "item": {
+        "id": "421d5a1c406962fabd6e329e",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Vice City digital painting",
+        "url": "https://reddit.com/r/GTA6/comments/1xxigga/vice_city_digital_painting",
+        "summary": "Digital painting made on Procreate on iPad. I’m excited for GTA VI. I wanted to replay GTA Vice City in commemoration for the release of GTA VI. It’s more dated and janky than I remember. I got fed up and annoyed with the gameplay so I made this digital painting instead. submitted by /u/gabesalvador91 [link] [comments]",
+        "published_at": "2026-11-16T06:40:49Z",
+        "content_hash": "7352876bba5066ac000bb74f",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "421d5a1c406962fabd6e329e"
+      },
+      "first_seen": "2026-11-16T13:31:49Z",
       "needs_eval": false
     }
   },
-  "persisted_at": "2026-11-16T06:35:35Z"
+  "persisted_at": "2026-11-16T13:31:49Z",
+  "gemini_client_rev": "rest-v1beta-xgoog-1",
+  "gemini_quota_blocked_until": "2026-11-16T14:31:49Z"
 }

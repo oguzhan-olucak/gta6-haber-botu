@@ -71,6 +71,7 @@ jobs:
           git add data/*.json
           git add docs/data/feed.json docs/data/feed.js docs/data/monetization.json docs/data/monetization.js 2>/dev/null || true
           git add docs/haber docs/sitemap.xml docs/rss.xml 2>/dev/null || true
+          git add docs/guides docs/tr docs/privacy.html docs/about.html docs/ads.txt 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "Veri değişikliği yok, commit atlanıyor."
             exit 0

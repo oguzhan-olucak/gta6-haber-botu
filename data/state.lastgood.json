@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-17T12:02:46Z",
-  "last_successful_fetch_at": "2026-11-17T12:02:46Z",
+  "last_run_at": "2026-11-17T14:17:14Z",
+  "last_successful_fetch_at": "2026-11-17T14:17:14Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -513,7 +513,7 @@
     },
     "8f1b7b8a692ea3b56a392913": {
       "first_seen": "2026-11-17T12:02:46Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "reddit_gta6"
     },
     "d805648e220ba70296cfbed0": {
@@ -528,6 +528,61 @@
     },
     "330f72889ae36207ad9fb336": {
       "first_seen": "2026-11-17T12:02:46Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "96d464a30c53d9bcb4d7aa11": {
+      "first_seen": "2026-11-17T14:17:14Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "400056d06d70085d01889dc9": {
+      "first_seen": "2026-11-17T14:17:14Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "1082583305cb2f498b47bfd0": {
+      "first_seen": "2026-11-17T14:17:14Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "2d1ad3e17f9a7b6f041dc5f5": {
+      "first_seen": "2026-11-17T14:17:14Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "64dac2e260fc3f6fb6d1d454": {
+      "first_seen": "2026-11-17T14:17:14Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "ea2d3b8d92f8d875cc983fa1": {
+      "first_seen": "2026-11-17T14:17:14Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "3ab283a3bc08797f642c7357": {
+      "first_seen": "2026-11-17T14:17:14Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "c56f97cc6414514029d7fd91": {
+      "first_seen": "2026-11-17T14:17:14Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "38cfa0788a0c2426d603fcd6": {
+      "first_seen": "2026-11-17T14:17:14Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "de108e6c7fdc9919b2ab8147": {
+      "first_seen": "2026-11-17T14:17:14Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "361d489ff0cb52c2dbbe8a83": {
+      "first_seen": "2026-11-17T14:17:14Z",
       "status": "HELD",
       "source": "reddit_gta6"
     }
@@ -547,78 +602,78 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T12:02:46Z",
+      "checked_at": "2026-11-17T14:17:14Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
-      "entries": 20,
-      "relevant": 16,
+      "entries": 21,
+      "relevant": 15,
       "new": 0,
-      "checked_at": "2026-11-17T12:02:46Z"
+      "checked_at": "2026-11-17T14:17:14Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T12:02:46Z"
+      "checked_at": "2026-11-17T14:17:14Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 4,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T12:02:46Z"
+      "checked_at": "2026-11-17T14:17:14Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
       "relevant": 8,
       "new": 1,
-      "checked_at": "2026-11-17T12:02:46Z"
+      "checked_at": "2026-11-17T14:17:14Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
       "relevant": 23,
-      "new": 4,
-      "checked_at": "2026-11-17T12:02:46Z"
+      "new": 0,
+      "checked_at": "2026-11-17T14:17:14Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 9,
-      "new": 1,
-      "checked_at": "2026-11-17T12:02:46Z"
+      "relevant": 10,
+      "new": 2,
+      "checked_at": "2026-11-17T14:17:14Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
       "relevant": 6,
-      "new": 2,
-      "checked_at": "2026-11-17T12:02:46Z"
+      "new": 0,
+      "checked_at": "2026-11-17T14:17:14Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 2,
-      "new": 1,
-      "checked_at": "2026-11-17T12:02:46Z"
+      "new": 0,
+      "checked_at": "2026-11-17T14:17:14Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 4,
-      "new": 0,
-      "checked_at": "2026-11-17T12:02:46Z"
+      "relevant": 7,
+      "new": 3,
+      "checked_at": "2026-11-17T14:17:14Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
       "relevant": 9,
-      "new": 9,
-      "checked_at": "2026-11-17T12:02:46Z"
+      "new": 5,
+      "checked_at": "2026-11-17T14:17:14Z"
     }
   },
   "run_log": [
@@ -728,6 +783,19 @@
       "error_classes": [
         "GEMINI_SCHEMA_ERROR",
         "UNEXPECTED_ERROR",
+        "TELEGRAM_API_ERROR",
+        "TELEGRAM_API_ERROR"
+      ]
+    },
+    {
+      "started_at": "2026-11-17T14:17:14Z",
+      "sources_ok": 11,
+      "new_items": 11,
+      "published": 0,
+      "gemini_calls": 4,
+      "error_classes": [
+        "TELEGRAM_API_ERROR",
+        "TELEGRAM_API_ERROR",
         "TELEGRAM_API_ERROR",
         "TELEGRAM_API_ERROR"
       ]
@@ -890,46 +958,6 @@
         "url_verified": false,
         "via": "rss",
         "raw_id": "d3be7ca7db1f8950133ad5e8"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "b20ff4ab7f1cc32d30653794": {
-      "item": {
-        "id": "b20ff4ab7f1cc32d30653794",
-        "source_id": "eurogamer",
-        "source_name": "Eurogamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "eurogamer",
-        "title": "The latest GTA 6 leak comes in the form of a 34-song tracklist for GTA 6: The Album, featuring Dua Lipa, Lana Del Rey, Rina Sawayama, and more",
-        "url": "https://eurogamer.net/gta-6-tracklist-leak",
-        "summary": "We are now just four days away from the release of GTA 6 on Xbox Series X/S and PS5, but the proximity to the much-anticipated launch date isn't stemming the tide of leaks that has been plaguing the game for much of the past year. Yesterday, a new video - seemingly from a record store that received vinyl records of the soundtrack early - showed off the full 34-song tracklist for the game. Read more",
-        "published_at": "2026-11-15T14:03:50Z",
-        "content_hash": "f348b7951c859c31d914663e",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "b20ff4ab7f1cc32d30653794"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "8769ca2c09f395ccb7a2f11a": {
-      "item": {
-        "id": "8769ca2c09f395ccb7a2f11a",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "How Long Will It Take to Complete GTA 6? Platinum Trophy & Mythic Achievement Time Explained",
-        "url": "https://insider-gaming.com/how-long-to-complete-gta",
-        "summary": "How long will it take to complete GTA 6? Insider Gaming has the stats on how many hours it will take to complete Grant Theft Auto 6's Platinum Trophy. The post How Long Will It Take to Complete GTA 6? Platinum Trophy & Mythic Achievement Time Explained appeared first on Insider Gaming .",
-        "published_at": "2026-11-15T13:55:27Z",
-        "content_hash": "bfe431f94ef795c83e9519ef",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "8769ca2c09f395ccb7a2f11a"
       },
       "first_seen": "2026-11-16T06:35:35Z",
       "needs_eval": false
@@ -2641,7 +2669,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-17T12:02:46Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "d805648e220ba70296cfbed0": {
       "item": {
@@ -2684,9 +2712,240 @@
       },
       "first_seen": "2026-11-17T12:02:46Z",
       "needs_eval": false
+    },
+    "96d464a30c53d9bcb4d7aa11": {
+      "item": {
+        "id": "96d464a30c53d9bcb4d7aa11",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "All GTA 6 Screenshots By Rockstar Games",
+        "url": "https://insider-gaming.com/gta-6-screenshots",
+        "summary": "It took a while for Rockstar Games to start properly advertising GTA 6, but now we have hundreds of screenshots to enjoy. The post All GTA 6 Screenshots By Rockstar Games appeared first on Insider Gaming .",
+        "published_at": "2026-11-17T13:41:57Z",
+        "content_hash": "46cc3cf5849a47bec85bfd40",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "96d464a30c53d9bcb4d7aa11",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T14:17:14Z",
+      "needs_eval": true
+    },
+    "400056d06d70085d01889dc9": {
+      "item": {
+        "id": "400056d06d70085d01889dc9",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "The fact GTA6 launches basically tomorrow, feels absolutely insane. The launch of this game feels larger than life, and bigger than anything we’ve ever experienced in gaming. And idk if it’ll ever happen again.",
+        "url": "https://reddit.com/r/GTA6/comments/1xyk36x/the_fact_gta6_launches_basically_tomorrow_feels",
+        "summary": "Where the fuck has the time gone? It seems like yesterday we were at trailer one, begging for more, waiting for more. Being pissed we weren’t getting any new info. Then we get trailer 2, and then more silence. The leaks….the leaks….man oh man. We finally get the reveal. And now we’re here. It seems like one big blur. I’ve had so much change in my life during these years. Also feels weird to say, but it’s like we all bonded collectively together over the years of constant wait and silence on the game. We’ve all stuck this out together here as one big group. Kept up on the mapping project! I’ve never been apart of a fan base for something where so many people have so much passion for this…",
+        "published_at": "2026-11-17T13:12:00Z",
+        "content_hash": "e3f7409be915a538f46fb1ac",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "400056d06d70085d01889dc9",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T14:17:14Z",
+      "needs_eval": false
+    },
+    "1082583305cb2f498b47bfd0": {
+      "item": {
+        "id": "1082583305cb2f498b47bfd0",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 could have released sooner, Rockstar leads admit, but there's no point rushing out \"GTA 5.5\"",
+        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-could-have-released-sooner-rockstar-leads-admit-but-theres-no-point-rushing-out-gta-5-5-because-you-have-to-take-big-swings",
+        "summary": "\"They would never stop working on this game if they had the choice\"",
+        "published_at": "2026-11-17T12:59:18Z",
+        "content_hash": "da8d536bf956b7f28a3f145b",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "1082583305cb2f498b47bfd0",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/oFV96Lzam6D6cjSoxVEn9h-1920-80.jpg"
+      },
+      "first_seen": "2026-11-17T14:17:14Z",
+      "needs_eval": true
+    },
+    "2d1ad3e17f9a7b6f041dc5f5": {
+      "item": {
+        "id": "2d1ad3e17f9a7b6f041dc5f5",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "As GTA 6 finally nears release, analysts estimate Rockstar has already made $1.45 billion",
+        "url": "https://gamesradar.com/games/grand-theft-auto/as-gta-6-finally-nears-release-analysts-estimate-rockstar-has-already-made-usd1-45-billion-helped-by-nearly-90-percent-of-fans-buying-the-controversial-usd100-ultimate-edition",
+        "summary": "It's estimated that almost 15 million copies of GTA 6 have been sold",
+        "published_at": "2026-11-17T12:59:12Z",
+        "content_hash": "67f68acceea42077f5b10e59",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "2d1ad3e17f9a7b6f041dc5f5",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/vjhuxMoHHegu4pbVVvLzxg-1920-80.jpg"
+      },
+      "first_seen": "2026-11-17T14:17:14Z",
+      "needs_eval": true
+    },
+    "64dac2e260fc3f6fb6d1d454": {
+      "item": {
+        "id": "64dac2e260fc3f6fb6d1d454",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "I was inspired by the GTA VI advertisements in Miami and gave a shot at making my own, here’s the results!",
+        "url": "https://reddit.com/r/GTA6/comments/1xyjq2n/i_was_inspired_by_the_gta_vi_advertisements_in",
+        "summary": "Xbox Series X Lightroom PicsArt submitted by /u/Apenerd [link] [comments]",
+        "published_at": "2026-11-17T12:55:21Z",
+        "content_hash": "5fbca62af178261c7ebcca4e",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "64dac2e260fc3f6fb6d1d454",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T14:17:14Z",
+      "needs_eval": false
+    },
+    "ea2d3b8d92f8d875cc983fa1": {
+      "item": {
+        "id": "ea2d3b8d92f8d875cc983fa1",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "As we approach the big day tommorow, what has been your favourite theory about gta 6?",
+        "url": "https://reddit.com/r/GTA6/comments/1xyjh54/as_we_approach_the_big_day_tommorow_what_has_been",
+        "summary": "My favourite has been the moon theory, I still remember the whole subreddit going crazy with the phases of the moon. Close to that, is the 27 theory. submitted by /u/ArachnidLive159 [link] [comments]",
+        "published_at": "2026-11-17T12:42:52Z",
+        "content_hash": "2b7473753f69a73dbbd489ea",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "ea2d3b8d92f8d875cc983fa1",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T14:17:14Z",
+      "needs_eval": false
+    },
+    "3ab283a3bc08797f642c7357": {
+      "item": {
+        "id": "3ab283a3bc08797f642c7357",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "PS5 Gets Another Security Update For GTA 6 Launch In 14.23 Patch",
+        "url": "https://insider-gaming.com/ps5-gets-another-security-update-for-gta-6-launch-in-14-23-patch",
+        "summary": "The PlayStation 5 has seen yet another firmware update, once again improving the console's security ahead of GTA 6's release. The post PS5 Gets Another Security Update For GTA 6 Launch In 14.23 Patch appeared first on Insider Gaming .",
+        "published_at": "2026-11-17T12:30:39Z",
+        "content_hash": "7a5d416b8559e2e89550e764",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "3ab283a3bc08797f642c7357",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T14:17:14Z",
+      "needs_eval": true
+    },
+    "c56f97cc6414514029d7fd91": {
+      "item": {
+        "id": "c56f97cc6414514029d7fd91",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "GTA 6 Has 62 Bird Types, Confirms Rockstar Games",
+        "url": "https://insider-gaming.com/gta-6-has-62-bird-types-confirms-rockstar-games",
+        "summary": "Rockstar Games has already revealed how many different species GTA 6 has, and you'll be searching far and wide for them. The post GTA 6 Has 62 Bird Types, Confirms Rockstar Games appeared first on Insider Gaming .",
+        "published_at": "2026-11-17T12:29:15Z",
+        "content_hash": "9d850761062344f23df646be",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "c56f97cc6414514029d7fd91",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T14:17:14Z",
+      "needs_eval": true
+    },
+    "38cfa0788a0c2426d603fcd6": {
+      "item": {
+        "id": "38cfa0788a0c2426d603fcd6",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Sony Squeezes in Last-Minute PS5 Firmware Security Update Ahead of GTA 6 Release Date, Amid Fresh Hacker Claim",
+        "url": "https://ign.com/articles/sony-squeezes-in-last-minute-ps5-firmware-security-update-ahead-of-gta-6-release-date-amid-fresh-hacker-claim",
+        "summary": "Sony has released a new PS5 firmware security update just a day before the release of GTA 6, and hot on the heels of a new claim from a prominent hacker around the console.",
+        "published_at": "2026-11-17T10:26:26Z",
+        "content_hash": "8bcdf7a16dcb8352d6a570b5",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "38cfa0788a0c2426d603fcd6",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/17/vintage-vice-city-pack-exclusive-looks-05-1794910948115.jpg"
+      },
+      "first_seen": "2026-11-17T14:17:14Z",
+      "needs_eval": true
+    },
+    "de108e6c7fdc9919b2ab8147": {
+      "item": {
+        "id": "de108e6c7fdc9919b2ab8147",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Internet trolls are already trying to review bomb GTA 6 before the game even comes out. Some people just hate seeing something heavily anticipated be successful",
+        "url": "https://reddit.com/r/GTA6/comments/1xydtmx/internet_trolls_are_already_trying_to_review_bomb",
+        "summary": "submitted by /u/BorderDispute [link] [comments]",
+        "published_at": "2026-11-17T07:04:26Z",
+        "content_hash": "df4b529309b61af5ff212e77",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "de108e6c7fdc9919b2ab8147",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T14:17:14Z",
+      "needs_eval": false
+    },
+    "361d489ff0cb52c2dbbe8a83": {
+      "item": {
+        "id": "361d489ff0cb52c2dbbe8a83",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Vice City Discord theme and icon are live!!",
+        "url": "https://reddit.com/r/GTA6/comments/1xycnrp/vice_city_discord_theme_and_icon_are_live",
+        "summary": "two Quests are also live, complete both the GTA 6 quests which is just watching the pre load and launch trailers to get some orbs submitted by /u/JosephStalin1953 [link] [comments]",
+        "published_at": "2026-11-17T05:55:53Z",
+        "content_hash": "6a90bf366647d437c478d855",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "361d489ff0cb52c2dbbe8a83",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T14:17:14Z",
+      "needs_eval": false
     }
   },
-  "persisted_at": "2026-11-17T12:02:46Z",
+  "persisted_at": "2026-11-17T14:17:14Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": "2026-11-17T06:01:55Z"
 }

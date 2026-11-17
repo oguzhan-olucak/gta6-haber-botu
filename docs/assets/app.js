@@ -343,8 +343,8 @@
       // Genel görünüm: gerçek Florida/Leonida sınırlarını (x ≈ 220–880, y ≈ 30–670) boş alana sığdır.
       // Masaüstünde boş alan başlığın sağı ve alt panellerin üstüdür.
       var aw = g.wide ? g.W * 0.5 : g.W * 0.8, ah = g.wide ? g.H * 0.56 : g.H * 0.86;
-      s = Math.min(aw / (660 * g.k), ah / (640 * g.k), 1.15);
-      px = g.ox + 550 * g.k; py = g.oy + 350 * g.k;
+      s = Math.min(aw / (430 * g.k), ah / (690 * g.k), 1.15);
+      px = g.ox + 485 * g.k; py = g.oy + 352 * g.k;
       cx = g.wide ? g.W * 0.70 : g.W * 0.5; cy = g.wide ? g.H * 0.35 : g.H * 0.5;
     } else {
       var r = REGION[regionId];

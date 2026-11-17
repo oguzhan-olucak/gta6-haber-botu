@@ -582,3 +582,65 @@ a { color: #8FE9DF; }
   .sponsorbar__tag { white-space: normal; }
 }
 .stage { background: radial-gradient(90% 70% at 70% 55%, #0a1520 0%, #070d15 55%, var(--sea) 100%); }
+
+/* =====================================================================================
+   v5 · LANSMAN HAVASI — koyu mor zemin, pastel gün batımı, krem dar başlıklar, oyun haritası
+   ===================================================================================== */
+:root {
+  --night: #15132E; --sea: #121030; --cream: #FFF1C9;
+  --pink: #FF8FB8; --peach: #FFC7A1; --lilac: #C9A6F2;
+  --v5-display: "Big Shoulders Display", "Anton", "Arial Narrow", Impact, sans-serif;
+  --v5-body: "Manrope", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+html, body { background: var(--night); }
+body { font-family: var(--v5-body); }
+.topbar { background: rgba(21, 19, 46, .82); }
+.stage { background: radial-gradient(70% 80% at 62% 48%, #1E2A5A 0%, #17183D 45%, var(--night) 100%); }
+.stage__sky { background: radial-gradient(55% 40% at 70% -8%, rgba(255, 143, 184, .35), transparent 70%),
+  radial-gradient(45% 35% at 20% -8%, rgba(201, 166, 242, .25), transparent 70%); }
+.beam, .stage__glow { display: none; }
+.geo__halo { fill: #3EA8CF; opacity: .22; filter: blur(40px); }
+.hud__h1 span:first-child { background: linear-gradient(180deg, #FFE7BF, #FF9A62 52%, #FF5E8F); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: var(--v5-display); font-weight: 900; }
+.hud__h1 span:last-child { font-family: var(--v5-display); font-weight: 800; color: var(--cream); }
+.pin__label { font-family: var(--v5-display); font-weight: 900; letter-spacing: .08em; text-transform: uppercase; fill: #fff; stroke: #15132E; stroke-width: 5px; font-size: 22px; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 22px; margin: 0 0 22px; }
+.sec-title { margin: 0; font: 900 clamp(44px, 5vw, 68px)/.95 var(--v5-display); text-transform: uppercase; color: var(--cream); letter-spacing: .005em; }
+.sec-link { font-weight: 800; color: var(--peach); text-decoration: none; }
+.sec-link:hover { color: #fff; }
+.guides-sec, .trailers { padding: 56px 0 8px; }
+.gcards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+.gcard { display: flex; flex-direction: column; gap: 12px; min-height: 250px; padding: 26px; border-radius: 28px; text-decoration: none; color: #2A1846; transition: transform .25s var(--ease, ease); }
+.gcard:hover { transform: translateY(-3px); color: #2A1846; }
+.gcard small { font: 800 13px var(--v5-body); letter-spacing: .16em; text-transform: uppercase; opacity: .8; }
+.gcard b { font: 900 40px/.95 var(--v5-display); text-transform: uppercase; }
+.gcard__go { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #15132E; color: var(--cream); font-weight: 800; font-size: 14px; }
+.gcard--g0 { background: linear-gradient(160deg, #FF8FB8, #C46BD8); }
+.gcard--g1 { background: linear-gradient(160deg, #FFC7A1, #FF8FB8); }
+.gcard--g2 { background: linear-gradient(160deg, #C9A6F2, #7C6BE0); color: #15132E; }
+.gcard--g3 { background: linear-gradient(160deg, #8FE3E0, #5AA8E8); color: #15132E; }
+.gcard--g4 { background: linear-gradient(160deg, #FFE29A, #FFAD6B); }
+.gcard--g5 { background: linear-gradient(160deg, #FF9F8F, #E0567A); }
+.vcards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+.vcard { position: relative; display: block; aspect-ratio: 4 / 5; border-radius: 28px; overflow: hidden; border: 0; padding: 0; cursor: pointer; text-decoration: none; color: var(--cream); font: inherit; text-align: center;
+  background: radial-gradient(60% 50% at 60% 30%, rgba(255, 170, 120, .85), transparent 70%), linear-gradient(170deg, #B0508A, #2A1846 72%); }
+.vcard--t2 { background: radial-gradient(60% 50% at 60% 30%, rgba(140, 200, 255, .8), transparent 70%), linear-gradient(170deg, #5A5AB8, #2A1846 72%); }
+.vcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.vcard::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(21, 19, 46, .9)); }
+.vcard__play { position: absolute; left: 50%; top: 42%; z-index: 1; width: 76px; height: 76px; margin: -38px; border-radius: 50%; background: #fff; }
+.vcard__play::before { content: ""; position: absolute; left: 31px; top: 24px; border-left: 22px solid #15132E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+.vcard__txt { position: absolute; left: 0; right: 0; bottom: 28px; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.vcard__txt small { font: 800 18px var(--v5-display); letter-spacing: .14em; text-transform: uppercase; color: #FFD3E4; }
+.vcard__txt b { font: 900 52px/.92 var(--v5-display); text-transform: uppercase; }
+.vcard__txt em { font-style: normal; font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, .78); }
+.vcard__frame { width: 100%; aspect-ratio: 4 / 5; border: 0; border-radius: 28px; background: #000; }
+.ad-slot { position: relative; min-height: 120px; margin: 36px 0 0; border-radius: 16px; background: rgba(255, 255, 255, .03); }
+.ad-slot__label { position: absolute; top: -18px; left: 2px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.fine { color: var(--muted); font-size: 13px; }
+.hud__h1 span:first-child { font-size: clamp(48px, 6vw, 84px); }
+.hud__h1 span:last-child { font-size: clamp(18px, 2vw, 26px); letter-spacing: .3em; }
+.geo__frame { fill: none; stroke: rgba(255, 241, 201, .22); stroke-width: 1.5; }
+.geo__halo { opacity: .28; }
+@media (max-width: 720px) { .pin__label { font-size: 17px; stroke-width: 4px; } }
+@media (min-width: 1000px) { .gcards, .vcards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 1240px) { .mainnav__link[href="#fragmanlar"], .mainnav__link[data-open="method"] { display: none; } }
+@media (max-width: 1000px) { .mainnav__link[href="#rehberler"] { display: none; } }

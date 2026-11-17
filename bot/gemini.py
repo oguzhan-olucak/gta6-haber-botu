@@ -48,6 +48,9 @@ class GeneratedContent(BaseModel):
     why_this_label: str = Field(max_length=300)
     needs_review: bool
     translations: dict[str, Any] = Field(default_factory=dict)
+    # Global (İngilizce) sürüm: aynı çağrıda üretilir; isteğe bağlı, eski kayıtlarla uyumlu
+    title_en: str = ""
+    summary_en: str = ""
 
 
 # Structured Outputs JSON Schema — yalnızca resmî dokümanda desteklenen anahtar kelimeler.
@@ -63,6 +66,8 @@ RESPONSE_JSON_SCHEMA: dict[str, Any] = {
         "why_this_label": {"type": "string"},
         "needs_review": {"type": "boolean"},
         "translations": {"type": "object", "properties": {}},
+        "title_en": {"type": "string", "description": "Same headline in natural English; factual, no clickbait."},
+        "summary_en": {"type": "string", "description": "Same 2-3 sentence summary in natural English; keep uncertainty."},
     },
     "required": ["title_tr", "summary_tr", "category", "title_style", "claim_type", "source_urls",
                  "why_this_label", "needs_review"],
@@ -221,20 +226,74 @@ CHECKS: tuple[Check, ...] = (check_lengths, check_urls, check_banned, check_clai
 _FENCE_RE = re.compile(r"^\s*```(?:json|JSON)?\s*\n?(.*?)\n?\s*```\s*$", re.S)
 
 
+_ENUM_DEFAULTS = {"category": (CATEGORIES, "OTHER"), "title_style": (TITLE_STYLES, "FACTUAL"),
+                  "claim_type": (("OFFICIAL", "REPORTED", "RUMOR", "UNCLEAR"), "UNCLEAR")}
+_FIELDS = set(GeneratedContent.model_fields)
+# Modelin yetkisi olmayan alanlar: bunları üretmesi enjeksiyon belirtisidir → atılmaz, REDDEDİLİR
+_FORBIDDEN_KEYS = {"label", "label_text", "trust_class", "trust_group", "source_strength", "editorial_priority",
+                   "publish", "publish_status", "chat_id", "official", "verified", "priority"}
+
+
+def _coerce(data: Any) -> Any:  # noqa: C901 - düz alan alan normalleştirme
+    """Ücretsiz modellerin tipik şema sapmalarını güvenli biçimde düzeltir (içerik uydurmaz):
+    bilinmeyen alanları atar, enum'ları büyük harfe çevirir / bilinmeyeni güvenli varsayılana çeker,
+    ``needs_review`` metnini bool'a çevirir, uzun alanları kırpar, URL listesini 5 ile sınırlar.
+    Zorunlu metin alanları (başlık, özet, kaynak) eksikse dokunmaz → şema hatası korunur."""
+    if not isinstance(data, dict):
+        return data
+    out = {k: v for k, v in data.items() if k in _FIELDS}
+    for key, (allowed, default) in _ENUM_DEFAULTS.items():
+        val = out.get(key)
+        if isinstance(val, str):
+            val = val.strip().upper().replace(" ", "_").replace("-", "_")
+        out[key] = val if val in allowed else default
+    nr = out.get("needs_review")
+    if isinstance(nr, str):
+        out["needs_review"] = nr.strip().lower() in ("true", "1", "yes", "evet")
+    elif not isinstance(nr, bool):
+        out["needs_review"] = True if nr is None else bool(nr)
+    if isinstance(out.get("source_urls"), str):
+        out["source_urls"] = [out["source_urls"]]
+    if isinstance(out.get("source_urls"), list):
+        out["source_urls"] = [u for u in out["source_urls"] if isinstance(u, str)][:5]
+    if isinstance(out.get("why_this_label"), str):
+        out["why_this_label"] = out["why_this_label"][:300]
+    elif "why_this_label" not in out:
+        out["why_this_label"] = ""
+    for k in ("title_en", "summary_en"):
+        if not isinstance(out.get(k, ""), str):
+            out.pop(k, None)
+    if not isinstance(out.get("translations", {}), dict):
+        out.pop("translations", None)
+    return out
+
+
 def parse_output(raw: str) -> GeneratedContent | ValidationOutcome:
     """Ham model metnini şemaya göre ayrıştırır; başarısızsa REJECTED sonucu döner.
-    Yanıt Markdown kod çitine (```json) sarılmışsa çit kaldırılır."""
+    Yanıt Markdown kod çitine (```json) sarılmışsa çit kaldırılır; metnin içine gömülü tek JSON
+    nesnesi de kurtarılır. Ardından güvenli tip düzeltmeleri (_coerce) uygulanır."""
     if isinstance(raw, str) and (m := _FENCE_RE.match(raw)):
         raw = m.group(1)
     try:
         data = json.loads(raw)
     except (json.JSONDecodeError, TypeError):
-        return _rejected("Model geçerli JSON döndürmedi", error_class=ErrorClass.GEMINI_SCHEMA_ERROR.value)
+        data = None
+        if isinstance(raw, str) and "{" in raw and "}" in raw:
+            try:
+                data = json.loads(raw[raw.index("{"):raw.rindex("}") + 1])
+            except json.JSONDecodeError:
+                data = None
+        if data is None:
+            return _rejected("Model geçerli JSON döndürmedi", error_class=ErrorClass.GEMINI_SCHEMA_ERROR.value)
+    if isinstance(data, dict) and _FORBIDDEN_KEYS & {str(k).lower() for k in data}:
+        return _rejected("Model yetkisiz alan döndürdü (enjeksiyon şüphesi)",
+                         error_class=ErrorClass.GEMINI_SCHEMA_ERROR.value)
     try:
-        c = GeneratedContent.model_validate(data)
+        c = GeneratedContent.model_validate(_coerce(data))
     except ValidationError as exc:
         return _rejected(f"Şema hatası ({exc.error_count()})", error_class=ErrorClass.GEMINI_SCHEMA_ERROR.value)
     c.title_tr, c.summary_tr = c.title_tr.strip(), c.summary_tr.strip()
+    c.title_en, c.summary_en = c.title_en.strip()[:160], c.summary_en.strip()[:700]
     return c
 
 
@@ -247,7 +306,31 @@ def validate_generated(raw: str, cluster: list[Item], assessment: Assessment, se
         outcome = check(parsed, cluster, assessment, settings)
         if outcome is not None:
             return outcome
+    if not english_ok(parsed, cluster, assessment):
+        parsed.title_en, parsed.summary_en = "", ""   # Türkçe yayın sürer; İngilizce sürüm atlanır
     return ValidationOutcome(ok=True, status="READY", reason="Doğrulandı", content=parsed)
+
+
+_EN_CERTAIN = re.compile(r"\b(officially (confirmed|announced)|confirmed|breaking|leaked|it'?s official)\b", re.I)
+_EN_URL_HTML = re.compile(r"(https?://|www\.|<[^>]+>)", re.I)
+
+
+def english_ok(c: GeneratedContent, cluster: list[Item], a: Assessment) -> bool:
+    """İngilizce sürüm için Türkçe denetimlerin aynası: uzunluk, URL/HTML yok, kaynakta olmayan sayı yok,
+    resmî olmayan haberde kesinlik ifadesi yok. Geçemezse yalnızca İngilizce alanlar boşaltılır."""
+    title, summary = c.title_en, c.summary_en
+    if not (12 <= len(title) <= 160 and 40 <= len(summary) <= 700):
+        return False
+    text = f"{title} {summary}"
+    if _EN_URL_HTML.search(text):
+        return False
+    if a.label != Label.OFFICIAL and _EN_CERTAIN.search(text):
+        return False
+    src = _source_blob(cluster)
+    src_numbers = set(re.findall(r"\d+", src))
+    if re.search(r"\b(gta|grand theft auto)\b", src):
+        src_numbers.add("6")
+    return not (set(re.findall(r"\d+", text)) - src_numbers)
 
 
 # ---- İçgörüler (yalnızca sunum tarzı) ------------------------------------------------------
@@ -281,7 +364,8 @@ KESİN KURALLAR:
 6. Kaynak metinden uzun alıntı yapma; kendi cümlelerinle yaz.
 7. source_urls alanına YALNIZCA verideki url değerlerini aynen yaz.
 8. Kaynak yetersiz, çelişkili veya konu GTA VI ile ilgili değilse needs_review=true döndür.
-9. Yalnızca şemaya uyan JSON döndür; başka açıklama yazma."""
+9. Yalnızca şemaya uyan JSON döndür; başka açıklama yazma.
+10. title_en ve summary_en alanlarına aynı başlığı ve özeti doğal İngilizceyle yaz; aynı kurallar geçerli (kaynakta olmayan bilgi yok, belirsizlik korunur)."""
 
 
 def escape_untrusted(text: str) -> str:

@@ -141,6 +141,9 @@ class FeedItem(BaseModel):
     # Opsiyonel: kaynağın kendi paylaşım görseli (hotlink; sitede kaynağa atıfla gösterilir)
     image: str | None = Field(default=None, pattern=r"^https://[^\s<>\"'\\]+$", max_length=600)
     image_credit: str | None = Field(default=None, max_length=80)
+    # Opsiyonel (global sürüm): aynı haberin İngilizce başlığı ve özeti; yoksa alan hiç yazılmaz
+    title_en: str | None = Field(default=None, max_length=MAX_TITLE)
+    summary_en: str | None = Field(default=None, max_length=MAX_SUMMARY)
 
 
 class FeedSourceStatus(BaseModel):
@@ -228,6 +231,13 @@ def _reactions(post: dict[str, Any]) -> int | None:
     return last if isinstance(last, int) else None
 
 
+def _english_fields(post: dict[str, Any]) -> dict[str, str]:
+    """İngilizce alanlar yalnızca ikisi de doluysa eklenir (feed.json eski okuyucularla uyumlu kalır)."""
+    title = clean_text(post.get("title_en"), MAX_TITLE)
+    summary = clean_text(post.get("summary_en"), MAX_SUMMARY)
+    return {"title_en": title, "summary_en": summary} if title and summary else {}
+
+
 def build_item(post: dict[str, Any], settings: Settings, names: dict[str, str]) -> FeedItem | None:
     """Tek geçmiş kaydını güvenli site öğesine çevirir; uygun değilse None."""
     if post.get("publish_status") != "PUBLISHED":
@@ -260,6 +270,7 @@ def build_item(post: dict[str, Any], settings: Settings, names: dict[str, str]) 
         location_id=location,
         region=REGION_NAME[location],
         **_image_fields(post),
+        **_english_fields(post),
     )
 
 

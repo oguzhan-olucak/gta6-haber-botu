@@ -340,17 +340,15 @@
     var g = geometry();
     var s, px, py, cx, cy;
     if (!regionId) {
-      // Genel görünüm: gerçek Florida/Leonida sınırlarını (x ≈ 220–880, y ≈ 30–670) boş alana sığdır.
-      // Masaüstünde boş alan başlığın sağı ve alt panellerin üstüdür.
-      var aw = g.wide ? g.W * 0.5 : g.W * 0.8, ah = g.wide ? g.H * 0.56 : g.H * 0.86;
-      s = Math.min(aw / (430 * g.k), ah / (690 * g.k), 1.15);
-      px = g.ox + 485 * g.k; py = g.oy + 352 * g.k;
-      cx = g.wide ? g.W * 0.70 : g.W * 0.5; cy = g.wide ? g.H * 0.35 : g.H * 0.5;
+      // Genel görünüm (v5): haritanın tamamı kartın içine sığar; masaüstünde sol üstteki kartın sağında durur.
+      s = Math.min((g.H * 0.94) / (700 * g.k), (g.W * (g.wide ? 0.62 : 0.78)) / (583 * g.k));
+      px = g.ox + 500 * g.k; py = g.oy + 350 * g.k;
+      cx = g.wide ? g.W * 0.6 : g.W * 0.5; cy = g.H * 0.5;
     } else {
       var r = REGION[regionId];
-      s = g.wide ? 2.1 : 1.9;
+      s = Math.min((g.H * 0.94) / (700 * g.k), (g.W * 0.94) / (583 * g.k)) * 1.9;
       px = g.ox + r.x * g.k; py = g.oy + r.y * g.k;
-      cx = g.wide ? g.W * 0.46 : g.W * 0.5; cy = g.wide ? g.H * 0.4 : g.H * 0.5;
+      cx = g.wide ? g.W * 0.64 : g.W * 0.5; cy = g.H * 0.5;
     }
     var tx = cx - px * s, ty = cy - py * s;
     state.cam = { region: regionId, tx: tx, ty: ty, s: s };

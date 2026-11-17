@@ -17,3 +17,10 @@
     });
   }
 })();
+
+/* Lansman bandı: çıkıştan sonra metni kendiliğinden değiştir (Türkiye 19 Kasım 00.00 = 18 Kasım 21.00 UTC). */
+(function () {
+  var a = document.getElementById("lb-a"), b = document.getElementById("lb-b");
+  if (!a || !b) return;
+  if (Date.now() >= Date.UTC(2026, 10, 18, 21, 0, 0)) { a.textContent = "Çıktı"; b.textContent = "Şimdi oynanabilir"; }
+})();

@@ -174,7 +174,12 @@ def _image_check(browser: Any, base: str, shots: Path | None) -> list[str]:
     page.route("https://assets-prd.ignimgs.com/**", lambda r: r.fulfill(status=404, body=""))
     errors: list[str] = []
     page.goto(base + "?selftest=1")
-    page.wait_for_timeout(1800)
+    page.wait_for_timeout(600)
+    # Akış artık haritanın, videoların ve rehberlerin altında: tembel yüklenen görseller görünür alana gelsin.
+    page.evaluate("() => { const g = document.querySelector('#grid'); if (g) g.scrollIntoView(); }")
+    page.wait_for_timeout(600)
+    page.evaluate("() => window.scrollBy(0, 1200)")
+    page.wait_for_timeout(1200)
     res = page.evaluate("""() => ({
         loaded: document.querySelectorAll('#grid .card__img.is-loaded').length,
         imgs: document.querySelectorAll('#grid .card__img').length,

@@ -95,21 +95,20 @@
   </symbol>
 </svg>
 
+<div class="launchband" id="launchband"><span id="lb-a">Ön yükleme açık</span><span aria-hidden="true">·</span><span id="lb-b">19 Kasım</span></div>
 <header class="topbar" id="top">
   <div class="topbar__in">
     <a class="brand" href="./" aria-label="GTA VI Türkiye Bülteni ana sayfa">
-      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#emblem"/></svg>
-      <span class="brand__text"><b>GTA VI</b><small>Türkiye Bülteni</small></span>
+      <span class="wordmark"><b>GTA</b><span>Türkiye Bülteni</span></span>
     </a>
     <nav class="mainnav" aria-label="Site">
       <a href="#harita" class="mainnav__link">Harita</a>
-      <a href="#akis" class="mainnav__link">Haberler</a>
+      <a href="#fragmanlar" class="mainnav__link">Videolar</a>
       <a href="#rehberler" class="mainnav__link">Rehberler</a>
-      <a href="#fragmanlar" class="mainnav__link">Fragmanlar</a>
+      <a href="#akis" class="mainnav__link">Haberler</a>
       <a href="guides/index.html" class="mainnav__link" hreflang="en" lang="en">English</a>
-      <button type="button" class="mainnav__link" data-open="method" aria-haspopup="dialog">Nasıl doğruluyoruz</button>
     </nav>
-    <a class="tgpill" id="tg-pill" hidden target="_blank" rel="noopener"><span class="tgpill__ico" aria-hidden="true"></span><span>Kanala katıl</span></a>
+    <a class="tgpill" id="tg-pill" hidden target="_blank" rel="noopener"><span class="tgpill__ico" aria-hidden="true"></span><span>Telegram'a katıl</span></a>
     <div class="status" role="status" aria-live="polite">
       <span class="pulse" id="st-pulse" aria-hidden="true"></span>
       <b id="st-state">Bağlanıyor…</b>
@@ -131,10 +130,10 @@
         <svg class="map" id="map" viewBox="0 0 1000 700" role="img" aria-labelledby="map-title map-desc">
           <title id="map-title">Leonida haritası</title>
           <desc id="map-desc">Leonida eyaletinin özgün çizimi: doğu kıyısında Vice City, güneyde Leonida Keys, ortada Grassrivers bataklığı, batıda Port Gellhorn ve Ambrosia, kuzeyde Mount Kalaga. Oyunun resmî haritası değildir.</desc>
-<defs><clipPath id="map-card"><rect x="208" y="0" width="583" height="700" rx="30"/></clipPath></defs>
+<defs><filter id="map-feather" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="14"/></filter><mask id="map-card" maskUnits="userSpaceOnUse" x="150" y="-60" width="700" height="820"><rect x="226" y="18" width="547" height="664" rx="40" fill="#fff" filter="url(#map-feather)"/></mask></defs>
 <g class="geo" aria-hidden="true">
   <ellipse class="geo__halo" cx="500" cy="350" rx="380" ry="420"/>
-  <image href="assets/leonida-v5.webp" x="208" y="0" width="583" height="700" preserveAspectRatio="none" clip-path="url(#map-card)"/>
+  <image href="assets/leonida-v5.webp" x="208" y="0" width="583" height="700" preserveAspectRatio="none" mask="url(#map-card)"/>
   <rect class="geo__frame" x="208" y="0" width="583" height="700" rx="30"/>
 </g>
           <g id="pins" lang="en"></g>
@@ -156,7 +155,7 @@
       <aside class="hud__panel glass" id="region-panel" hidden aria-live="polite">
         <button type="button" class="iconbtn hud__close" id="region-close" aria-label="Haritayı sıfırla"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
         <p class="hud__mono" id="rp-coords"></p>
-        <h2 id="rp-name"></h2>
+        <h2 id="rp-name" lang="en"></h2>
         <p id="rp-desc" class="hud__desc"></p>
         <ul id="rp-list" class="rp-list"></ul>
         <button type="button" class="btn btn--glow" id="rp-go"></button>
@@ -179,6 +178,31 @@
       </div>
     </div>
   </section>
+
+  <section class="wrap trailers" id="fragmanlar" aria-labelledby="tr-h">
+    <div class="sec-head"><h2 id="tr-h" class="sec-title">Fragmanlar</h2></div>
+    <div class="vcards">
+      <a class="vcard vcard--launch" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener"><span class="vcard__play" aria-hidden="true"></span><span class="vcard__txt"><small>İzle</small><b>Çıkış Fragmanı</b><em>15 Ekim 2026 · Rockstar'ın sitesinde</em></span></a>
+      <a class="vcard vcard--t2" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener"><span class="vcard__play" aria-hidden="true"></span><span class="vcard__txt"><small>İzle</small><b>Fragman 2</b><em>Mayıs 2025 · Rockstar'ın sitesinde</em></span></a>
+      <button type="button" class="vcard vcard--t1 yt" data-yt="QdBZY2fkU-0" aria-label="Fragman 1'i oynat (YouTube, Rockstar Games)"><img src="https://i.ytimg.com/vi/QdBZY2fkU-0/hqdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="vcard__play" aria-hidden="true"></span><span class="vcard__txt"><small>İzle</small><b>Fragman 1</b><em>Aralık 2023 · YouTube</em></span></button>
+    </div>
+    <p class="fine">Videolar Rockstar Games'in resmî kanallarından oynatılır.</p>
+  </section>
+
+
+  <section class="wrap guides-sec" id="rehberler" aria-labelledby="rg-h">
+    <div class="sec-head"><h2 id="rg-h" class="sec-title">Herkesin aradığı</h2><a class="sec-link" href="tr/rehber/index.html">Tüm rehberler →</a><a class="sec-link" href="guides/index.html" hreflang="en" lang="en">English guides →</a></div>
+    <div class="gcards">
+      <a class="gcard gcard--g0" href="tr/rehber/gta-6-hile-kodlari.html"><small>Hileler</small><b>GTA 6 hile kodları</b><span class="gcard__go">Oku →</span></a>
+      <a class="gcard gcard--g1" href="tr/rehber/gta-6-en-iyi-ayarlar.html"><small>Ayarlar</small><b>En iyi ayarlar: PS5 ve Xbox</b><span class="gcard__go">Oku →</span></a>
+      <a class="gcard gcard--g2" href="tr/rehber/gta-6-baslamadan-once.html"><small>Başlarken</small><b>Bunu yapmadan başlama</b><span class="gcard__go">Oku →</span></a>
+      <a class="gcard gcard--g3" href="tr/rehber/gta-6-kac-gb-on-yukleme.html"><small>Depolama</small><b>GTA 6 kaç GB?</b><span class="gcard__go">Oku →</span></a>
+      <a class="gcard gcard--g4" href="tr/rehber/gta-6-turkiye-fiyati.html"><small>Fiyat</small><b>Türkiye fiyatı: Standard mı Ultimate mı?</b><span class="gcard__go">Oku →</span></a>
+      <a class="gcard gcard--g5" href="tr/rehber/gta-6-saat-kacta-cikiyor.html"><small>Çıkış</small><b>Türkiye'de saat kaçta açılıyor?</b><span class="gcard__go">Oku →</span></a>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="ad-slot" data-slot="home-mid" hidden><span class="ad-slot__label">Reklam</span></div></div>
 
   <!-- Kaynak nabzı -->
   <section class="pulsebar" aria-labelledby="pulse-h">
@@ -258,30 +282,6 @@
     </div>
   </section>
 
-  <section class="wrap guides-sec" id="rehberler" aria-labelledby="rg-h">
-    <div class="sec-head"><h2 id="rg-h" class="sec-title">Herkesin aradığı</h2><a class="sec-link" href="tr/rehber/index.html">Tüm rehberler →</a><a class="sec-link" href="guides/index.html" hreflang="en" lang="en">English guides →</a></div>
-    <div class="gcards">
-      <a class="gcard gcard--g0" href="tr/rehber/gta-6-hile-kodlari.html"><small>Hileler</small><b>GTA 6 hile kodları</b><span class="gcard__go">Oku →</span></a>
-      <a class="gcard gcard--g1" href="tr/rehber/gta-6-en-iyi-ayarlar.html"><small>Ayarlar</small><b>En iyi ayarlar: PS5 ve Xbox</b><span class="gcard__go">Oku →</span></a>
-      <a class="gcard gcard--g2" href="tr/rehber/gta-6-baslamadan-once.html"><small>Başlarken</small><b>Bunu yapmadan başlama</b><span class="gcard__go">Oku →</span></a>
-      <a class="gcard gcard--g3" href="tr/rehber/gta-6-kac-gb-on-yukleme.html"><small>Depolama</small><b>GTA 6 kaç GB?</b><span class="gcard__go">Oku →</span></a>
-      <a class="gcard gcard--g4" href="tr/rehber/gta-6-turkiye-fiyati.html"><small>Fiyat</small><b>Türkiye fiyatı: Standard mı Ultimate mı?</b><span class="gcard__go">Oku →</span></a>
-      <a class="gcard gcard--g5" href="tr/rehber/gta-6-saat-kacta-cikiyor.html"><small>Çıkış</small><b>Türkiye'de saat kaçta açılıyor?</b><span class="gcard__go">Oku →</span></a>
-    </div>
-  </section>
-
-  <div class="wrap"><div class="ad-slot" data-slot="home-mid" hidden><span class="ad-slot__label">Reklam</span></div></div>
-
-  <section class="wrap trailers" id="fragmanlar" aria-labelledby="tr-h">
-    <div class="sec-head"><h2 id="tr-h" class="sec-title">Fragmanlar</h2></div>
-    <div class="vcards">
-      <a class="vcard vcard--launch" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener"><span class="vcard__play" aria-hidden="true"></span><span class="vcard__txt"><small>İzle</small><b>Çıkış Fragmanı</b><em>15 Ekim 2026 · Rockstar'ın sitesinde</em></span></a>
-      <a class="vcard vcard--t2" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener"><span class="vcard__play" aria-hidden="true"></span><span class="vcard__txt"><small>İzle</small><b>Fragman 2</b><em>Mayıs 2025 · Rockstar'ın sitesinde</em></span></a>
-      <button type="button" class="vcard vcard--t1 yt" data-yt="QdBZY2fkU-0" aria-label="Fragman 1'i oynat (YouTube, Rockstar Games)"><img src="https://i.ytimg.com/vi/QdBZY2fkU-0/hqdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="vcard__play" aria-hidden="true"></span><span class="vcard__txt"><small>İzle</small><b>Fragman 1</b><em>Aralık 2023 · YouTube</em></span></button>
-    </div>
-    <p class="fine">Videolar Rockstar Games'in resmî kanallarından oynatılır.</p>
-  </section>
-
   <section class="wrap kit-sec" id="kit" aria-labelledby="kit-h" hidden>
     <div class="kit-sec__head">
       <p class="eyebrow">İşbirliği</p>
@@ -314,7 +314,7 @@
 <footer class="footer">
   <div class="wrap footer__in">
     <p>GTA VI Türkiye Bülteni bağımsız bir hayran bültenidir; Rockstar Games veya Take-Two Interactive ile bağlantılı değildir. Leonida haritası bu siteye ait özgün bir çizimdir; oyunun resmî haritası değildir. Haberler kısa özetlerdir; ayrıntılar için her zaman orijinal kaynağı okuyun.</p>
-    <p class="footer__small">GitHub Pages üzerinde statik olarak yayınlanır · Veri: <a href="data/feed.json">feed.json</a> · <a href="message_preview.html">Telegram simülasyonu</a> · <a href="rss.xml">RSS</a> · <a href="tr/rehber/index.html">Rehberler</a> · <a href="guides/index.html" hreflang="en">English</a> · <a href="tr/gizlilik.html">Gizlilik ve çerezler</a> · <a href="tr/hakkinda.html">Hakkında ve iletişim</a><span id="support-wrap" hidden> · <a id="support-link" target="_blank" rel="noopener"></a></span></p>
+    <p class="footer__small">GitHub Pages üzerinde statik olarak yayınlanır · Veri: <a href="data/feed.json">feed.json</a> · <a href="message_preview.html">Telegram simülasyonu</a> · <a href="rss.xml">RSS</a> · <a href="tr/rehber/index.html">Rehberler</a> · <a href="guides/index.html" hreflang="en">English</a> · <a href="tr/gizlilik.html">Gizlilik ve çerezler</a> · <a href="tr/hakkinda.html">Hakkında ve iletişim</a> · <button type="button" class="linkbtn" data-open="method" aria-haspopup="dialog">Bu site nasıl çalışıyor?</button><span id="support-wrap" hidden> · <a id="support-link" target="_blank" rel="noopener"></a></span></p>
   </div>
 </footer>
 

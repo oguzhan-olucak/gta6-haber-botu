@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-16T23:02:41Z",
-  "last_successful_fetch_at": "2026-11-16T23:02:41Z",
+  "last_run_at": "2026-11-17T05:01:55Z",
+  "last_successful_fetch_at": "2026-11-17T05:01:55Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -58,7 +58,7 @@
     },
     "8769ca2c09f395ccb7a2f11a": {
       "first_seen": "2026-11-16T06:35:35Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "27fa97f7f32882508d0cca63": {
@@ -363,7 +363,7 @@
     },
     "2bf96f3368c053fa5a1a898e": {
       "first_seen": "2026-11-16T23:02:41Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "reddit_gta6"
     },
     "f301f7b8142428a76ac7189f": {
@@ -390,11 +390,62 @@
       "first_seen": "2026-11-16T23:02:41Z",
       "status": "HELD",
       "source": "reddit_gta6"
+    },
+    "ada53198ea1a17769530729a": {
+      "first_seen": "2026-11-17T05:01:55Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "f5554d74a9f77adccbe4b68b": {
+      "first_seen": "2026-11-17T05:01:55Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "b012faf2f68df4c1bbaf8959": {
+      "first_seen": "2026-11-17T05:01:55Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "b7eef4fdf364e5a2cb2261d0": {
+      "first_seen": "2026-11-17T05:01:55Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "1edc6408354d8ba8770496bd": {
+      "first_seen": "2026-11-17T05:01:55Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "36a17a89e81f9fc09f735ca8": {
+      "first_seen": "2026-11-17T05:01:55Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "cfdd6035e8f3701692cfea30": {
+      "first_seen": "2026-11-17T05:01:55Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "0d5a9d07687e54abf512fe1f": {
+      "first_seen": "2026-11-17T05:01:55Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "1566fa0d6138ad993ee835b9": {
+      "first_seen": "2026-11-17T05:01:55Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "c233fd1f486eb0f262a75f69": {
+      "first_seen": "2026-11-17T05:01:55Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
     }
   },
   "digests_sent": [
     "2026-11-16T06",
-    "2026-11-16T18"
+    "2026-11-16T18",
+    "2026-11-17T06"
   ],
   "alerts_last_sent": {},
   "source_status": {
@@ -403,7 +454,7 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T23:02:41Z",
+      "checked_at": "2026-11-17T05:01:55Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
@@ -411,70 +462,70 @@
       "entries": 22,
       "relevant": 17,
       "new": 0,
-      "checked_at": "2026-11-16T23:02:41Z"
+      "checked_at": "2026-11-17T05:01:55Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T23:02:41Z"
+      "checked_at": "2026-11-17T05:01:55Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 4,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-16T23:02:41Z"
+      "checked_at": "2026-11-17T05:01:55Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
-      "relevant": 6,
-      "new": 0,
-      "checked_at": "2026-11-16T23:02:41Z"
+      "relevant": 8,
+      "new": 3,
+      "checked_at": "2026-11-17T05:01:55Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
       "relevant": 20,
       "new": 0,
-      "checked_at": "2026-11-16T23:02:41Z"
+      "checked_at": "2026-11-17T05:01:55Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
       "relevant": 8,
-      "new": 1,
-      "checked_at": "2026-11-16T23:02:41Z"
+      "new": 0,
+      "checked_at": "2026-11-17T05:01:55Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
       "relevant": 5,
-      "new": 2,
-      "checked_at": "2026-11-16T23:02:41Z"
+      "new": 0,
+      "checked_at": "2026-11-17T05:01:55Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 1,
       "new": 0,
-      "checked_at": "2026-11-16T23:02:41Z"
+      "checked_at": "2026-11-17T05:01:55Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
       "relevant": 1,
-      "new": 1,
-      "checked_at": "2026-11-16T23:02:41Z"
+      "new": 0,
+      "checked_at": "2026-11-17T05:01:55Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
-      "relevant": 15,
-      "new": 12,
-      "checked_at": "2026-11-16T23:02:41Z"
+      "relevant": 9,
+      "new": 7,
+      "checked_at": "2026-11-17T05:01:55Z"
     }
   },
   "run_log": [
@@ -561,6 +612,18 @@
         "NETWORK_TRANSIENT",
         "NETWORK_TRANSIENT",
         "NETWORK_TRANSIENT"
+      ]
+    },
+    {
+      "started_at": "2026-11-17T05:01:55Z",
+      "sources_ok": 11,
+      "new_items": 10,
+      "published": 0,
+      "gemini_calls": 3,
+      "error_classes": [
+        "NETWORK_TRANSIENT",
+        "NETWORK_TRANSIENT",
+        "RATE_LIMIT_QUOTA"
       ]
     }
   ],
@@ -783,7 +846,7 @@
         "raw_id": "8769ca2c09f395ccb7a2f11a"
       },
       "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "27fa97f7f32882508d0cca63": {
       "item": {
@@ -821,26 +884,6 @@
         "url_verified": false,
         "via": "rss",
         "raw_id": "112c1ad1b5e9188d93412b67"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "b0bf835cdba28c5cfc4e07a6": {
-      "item": {
-        "id": "b0bf835cdba28c5cfc4e07a6",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6 soundtrack leak confirmed accurate with new songs from Lana Del Rey, Playboi Carti, and Keith Richards",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-soundtrack-leak-confirmed-accurate-with-new-songs-from-lana-del-rey-playboi-carti-and-keith-richards",
-        "summary": "What, no Sideways Hank O'Mally?",
-        "published_at": "2026-11-15T04:52:26Z",
-        "content_hash": "5b616993fdbae4a54e070e0d",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "b0bf835cdba28c5cfc4e07a6"
       },
       "first_seen": "2026-11-16T06:35:35Z",
       "needs_eval": false
@@ -1922,7 +1965,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-16T23:02:41Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "f301f7b8142428a76ac7189f": {
       "item": {
@@ -2028,9 +2071,219 @@
       },
       "first_seen": "2026-11-16T23:02:41Z",
       "needs_eval": false
+    },
+    "ada53198ea1a17769530729a": {
+      "item": {
+        "id": "ada53198ea1a17769530729a",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Just realized that this server is officially going to be the GTA 6 discussion server",
+        "url": "https://reddit.com/r/GTA6/comments/1xyb42n/just_realized_that_this_server_is_officially",
+        "summary": "From countless hopium posts, official news, materials related to GTA 6 to finally becoming the place where we will actually discuss stuff related to the GTA 6 open world, the missions and every part of it. This is the last day of the anticipation era of this sub before GTA 6. submitted by /u/KGV007 [link] [comments]",
+        "published_at": "2026-11-17T04:30:23Z",
+        "content_hash": "f6bb7986581e1709bf32ab1d",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "ada53198ea1a17769530729a",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T05:01:55Z",
+      "needs_eval": false
+    },
+    "f5554d74a9f77adccbe4b68b": {
+      "item": {
+        "id": "f5554d74a9f77adccbe4b68b",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA VI tram stop at Flinders St, Melbourne",
+        "url": "https://reddit.com/r/GTA6/comments/1xy9mxp/gta_vi_tram_stop_at_flinders_st_melbourne",
+        "summary": "submitted by /u/RealMuffinsTheCat [link] [comments]",
+        "published_at": "2026-11-17T03:15:11Z",
+        "content_hash": "494562e67e22dc152ae6f3cf",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "f5554d74a9f77adccbe4b68b",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T05:01:55Z",
+      "needs_eval": false
+    },
+    "b012faf2f68df4c1bbaf8959": {
+      "item": {
+        "id": "b012faf2f68df4c1bbaf8959",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA 6 is the most pre ordered game of all time",
+        "url": "https://reddit.com/r/GTA6/comments/1xy866q/gta_6_is_the_most_pre_ordered_game_of_all_time",
+        "summary": "15 million copies already sold through pre orders. $1.45 billion dollars in revenue. These are the numbers of just past SUNDAY. I can only imagine how many copies the game will sell by this upcoming Sunday after reviews have convinced all the non believers to give it a shot with all the 9/10 scores the game will undoudtly get from everywhere. Insane just how far ahead of everyone else Rockstar actually is. Whatever IP they do next whether its RDR3 or Bully 2 or a whole new IP, its going to have alot to live up too! submitted by /u/DistinctAd9003 [link] [comments]",
+        "published_at": "2026-11-17T02:04:15Z",
+        "content_hash": "f2fcd2f312b3d7a8a74c40a7",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "b012faf2f68df4c1bbaf8959",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T05:01:55Z",
+      "needs_eval": false
+    },
+    "b7eef4fdf364e5a2cb2261d0": {
+      "item": {
+        "id": "b7eef4fdf364e5a2cb2261d0",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "How long is Miami gonna stay Vice City-ified?",
+        "url": "https://reddit.com/r/GTA6/comments/1xy5srz/how_long_is_miami_gonna_stay_vice_cityified",
+        "summary": "I've always wanted to Miami more than anywhere else in America (I'm from Ireland) and GTA Vice City is my favourite piece of media of all time. So, I originally thought my passport had expired but it's turned up and turns out it is still in date for a tiny bit longer - but it's extremely unlikely i'm gonna be able to get a flight over in time to soak up the GTA 6 marketing like I really wanted to, would have loved to go to that Basketball game on Wednesday at your stadium (I don't even like sports) My friends are like \"We can go next year\" but it's just not gonna be the same for me as it would have been now I see all the Vice City stuff - it looks insane over there at the minute, at least…",
+        "published_at": "2026-11-17T00:13:07Z",
+        "content_hash": "c65bf7685d47f7618b758af7",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "b7eef4fdf364e5a2cb2261d0",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T05:01:55Z",
+      "needs_eval": false
+    },
+    "1edc6408354d8ba8770496bd": {
+      "item": {
+        "id": "1edc6408354d8ba8770496bd",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Do you think The Weather Channel will actually add Leonida or Vice City to their app?",
+        "url": "https://reddit.com/r/GTA6/comments/1xy4vrt/do_you_think_the_weather_channel_will_actually",
+        "summary": "Since The Weather Channel partnered with Rockstar to post those custom Leonida and Vice City weather forecasts on social media, it got me wondering if they might actually add it as a temporary Easter egg inside the real weather app for launch week. Has anyone seen anything in the app yet, or do you think it's strictly just a social media promo? Would be pretty cool to pull up a live radar for Vice City or the Keys before the game drops. submitted by /u/costlesscomb48 [link] [comments]",
+        "published_at": "2026-11-16T23:34:06Z",
+        "content_hash": "d4603180a9fc1d3e23837b93",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "1edc6408354d8ba8770496bd",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T05:01:55Z",
+      "needs_eval": false
+    },
+    "36a17a89e81f9fc09f735ca8": {
+      "item": {
+        "id": "36a17a89e81f9fc09f735ca8",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Subway Is Releasing a GTA 6-Themed Sandwich, but There's a Catch",
+        "url": "https://ign.com/articles/subway-is-releasing-a-gta-6-themed-sandwich-but-theres-a-catch",
+        "summary": "Subway is getting on the GTA 6 hype train with a sandwich themed after the highly anticipated game.",
+        "published_at": "2026-11-16T23:30:01Z",
+        "content_hash": "48a92b3a5993915b2fa12da2",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "36a17a89e81f9fc09f735ca8",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/16/lucia-subway-1794871549836.jpg"
+      },
+      "first_seen": "2026-11-17T05:01:55Z",
+      "needs_eval": true
+    },
+    "cfdd6035e8f3701692cfea30": {
+      "item": {
+        "id": "cfdd6035e8f3701692cfea30",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "UK’s National Health Service Is Urging Gamers to Protect Their Hands Ahead of GTA 6 Launch",
+        "url": "https://ign.com/articles/uks-national-health-service-is-urging-gamers-to-protect-their-hands-ahead-of-gta-6-launch",
+        "summary": "The UK’s National Health Service is giving players advice to help them avoid straining their hands once GTA 6 finally releases on November 19.",
+        "published_at": "2026-11-16T22:55:25Z",
+        "content_hash": "f7135079f7d65edbdd9da01f",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "cfdd6035e8f3701692cfea30",
+        "image_url": "https://assets-prd.ignimgs.com/2026/10/28/jason-and-lucia-01-1793212840753.jpg"
+      },
+      "first_seen": "2026-11-17T05:01:55Z",
+      "needs_eval": true
+    },
+    "0d5a9d07687e54abf512fe1f": {
+      "item": {
+        "id": "0d5a9d07687e54abf512fe1f",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Will the PC version support all the DualSense features available on PS5 when it launches?",
+        "url": "https://reddit.com/r/GTA6/comments/1xy3iw5/will_the_pc_version_support_all_the_dualsense",
+        "summary": "With GTA 6 confirmed to support advanced DualSense features on PS5, including haptic feedback, adaptive triggers, and audio through the controller's built-in speaker, I'm wondering whether these features will eventually make their way to the PC version as well. I know some PlayStation games support these features on PC when using a DualSense controller, but I'm curious how likely it is that Rockstar will implement them. Has Rockstar said anything about this, or is there any reason to expect that some of these features might remain exclusive to PS5? submitted by /u/Maswithq1 [link] [comments]",
+        "published_at": "2026-11-16T22:36:20Z",
+        "content_hash": "c609c752fcaa5acad511b287",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "0d5a9d07687e54abf512fe1f",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T05:01:55Z",
+      "needs_eval": false
+    },
+    "1566fa0d6138ad993ee835b9": {
+      "item": {
+        "id": "1566fa0d6138ad993ee835b9",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 6 Gets New Screenshots Highlighting Leonida's Dynamic Weather",
+        "url": "https://ign.com/articles/gta-6-gets-new-screenshots-highlighting-leonidas-dynamic-weather",
+        "summary": "Rockstar has revealed a new batch of GTA 6 screenshots – and even a Weather Channel forecast – showcasing Leonida's dynamic weather.",
+        "published_at": "2026-11-16T22:26:10Z",
+        "content_hash": "0175670a4fdb075594542776",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "1566fa0d6138ad993ee835b9",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/16/gta-6-dynamic-weather-1794867806256.png"
+      },
+      "first_seen": "2026-11-17T05:01:55Z",
+      "needs_eval": true
+    },
+    "c233fd1f486eb0f262a75f69": {
+      "item": {
+        "id": "c233fd1f486eb0f262a75f69",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Any idea yet about character customization / sexuality in GTA6?",
+        "url": "https://reddit.com/r/GTA6/comments/1xy38xg/any_idea_yet_about_character_customization",
+        "summary": "Hi all. A quick question for those here because I haven't followed the build up to this release all that closely. I'm mostly a sword-type RPG girl but I remember enjoying San Andreas in the past, and the Floridian look and feel of the new game has me intrigued. I'm hoping to buy it, but I was wondering how much (if anything?) is known about the degree of character customization we'll have available? I know that these games have static main characters, but also I remember being able to affect things like clothing, hair, and body type in San Andreas. I'd love it if we could exercise a pretty significant degree of freedom over how the two main characters look in this one as (no offense to…",
+        "published_at": "2026-11-16T22:24:47Z",
+        "content_hash": "e15c250d007a6dc24182d7aa",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "c233fd1f486eb0f262a75f69",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T05:01:55Z",
+      "needs_eval": false
     }
   },
-  "persisted_at": "2026-11-16T23:02:41Z",
+  "persisted_at": "2026-11-17T05:01:55Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
-  "gemini_quota_blocked_until": null
+  "gemini_quota_blocked_until": "2026-11-17T06:01:55Z"
 }

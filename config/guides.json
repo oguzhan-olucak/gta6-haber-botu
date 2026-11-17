@@ -1,0 +1,538 @@
+{
+  "_comment": "Rehber sayfaları (EN + TR). Bot her çalışmada bu dosyadan docs/guides/ ve docs/tr/rehber/ sayfalarını üretir ve 'topics' kelimeleriyle eşleşen yeni haberleri 'Latest news / Son haberler' bölümüne otomatik ekler. Yalnızca kaynaklı bilgi yazın; doğrulanmamış şeyi 'not confirmed / doğrulanmadı' diye belirtin. updated: YYYY-AA-GG.",
+  "guides": [
+    {
+      "id": "file-size",
+      "updated": "2026-11-17",
+      "topics": [
+        "gb",
+        "file size",
+        "preload",
+        "pre-load",
+        "storage",
+        "download size",
+        "boyut",
+        "ön yükleme",
+        "on yukleme",
+        "depolama"
+      ],
+      "sources": [
+        {
+          "name": "PC Games Hardware",
+          "url": "https://www.pcgameshardware.de/GTA-6-Spiel-55239/News/Preload-Termin-212-GB-Speicherplatz-PS5-Xbox-1558835/"
+        },
+        {
+          "name": "Shacknews",
+          "url": "https://shacknews.com/article/151250/gta-6-pre-load-file-size"
+        },
+        {
+          "name": "Playnews",
+          "url": "https://www.playnews.gg/en/release-dates/gta-6-pre-load-starts-november-10-at-up-to-212-gb-with-boxed-codes-from-november-12"
+        }
+      ],
+      "en": {
+        "slug": "gta-6-file-size-preload",
+        "title": "GTA 6 file size and pre-load: how much space you need",
+        "description": "GTA 6 needs up to 212 GB on PS5 and Xbox Series X|S. Pre-load dates, times and how to free up space.",
+        "kicker": "Storage",
+        "answer": "Rockstar's FAQ lists GTA 6 at up to 212 GB on PS5 and Xbox Series X|S. Digital pre-orders could pre-load from November 10, 2026; boxed copies (download code) from November 12.",
+        "sections": [
+          {
+            "h": "Pre-load times",
+            "list": [
+              "PS5 digital: from midnight local time on November 10, 2026.",
+              "Xbox Series X|S digital: from 12 a.m. GMT on November 10, 2026.",
+              "Boxed edition: the box holds a download code, usable for pre-load from November 12.",
+              "The game stays locked until launch at midnight local time on November 19."
+            ]
+          },
+          {
+            "h": "How much free space to keep",
+            "p": [
+              "Plan for the full 212 GB plus room for a day-one patch. Rockstar has not announced the patch size, so keeping 230–250 GB free is the safe choice."
+            ]
+          },
+          {
+            "h": "Ways to free up space",
+            "list": [
+              "Move older games to an external USB drive (PS5 and Xbox can store last-gen titles there).",
+              "On PS5, add an M.2 NVMe SSD with a heatsink in the expansion slot.",
+              "On Xbox Series X|S, use an official storage expansion card.",
+              "Delete game captures and videos you no longer need."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is GTA 6 212 GB on every console?",
+            "a": "Rockstar says up to 212 GB depending on the device; the exact size can differ slightly between PS5 and Xbox."
+          },
+          {
+            "q": "Is there a PC version?",
+            "a": "Not at launch. Rockstar has not announced a PC release date."
+          }
+        ]
+      },
+      "tr": {
+        "slug": "gta-6-kac-gb-on-yukleme",
+        "title": "GTA 6 kaç GB? Ön yükleme ve depolama rehberi",
+        "description": "GTA 6, PS5 ve Xbox Series X|S'te en fazla 212 GB yer kaplıyor. Ön yükleme tarihleri, saatleri ve yer açma yolları.",
+        "kicker": "Depolama",
+        "answer": "Rockstar'ın SSS sayfasına göre GTA 6, PS5 ve Xbox Series X|S'te en fazla 212 GB yer kaplıyor. Dijital ön siparişlerde ön yükleme 10 Kasım 2026'da, kutulu sürümde (indirme kodu) 12 Kasım'da başladı.",
+        "sections": [
+          {
+            "h": "Ön yükleme saatleri",
+            "list": [
+              "PS5 dijital: 10 Kasım 2026, yerel saatle gece yarısı.",
+              "Xbox Series X|S dijital: 10 Kasım 2026, GMT 00.00 (Türkiye saatiyle 03.00).",
+              "Kutulu sürüm: kutudan indirme kodu çıkıyor; 12 Kasım'dan itibaren ön yüklemede kullanılabilir.",
+              "Oyun 19 Kasım'da yerel saatle gece yarısına kadar kilitli kalır."
+            ]
+          },
+          {
+            "h": "Ne kadar boş alan bırakmalı?",
+            "p": [
+              "212 GB'ın tamamına ek olarak ilk gün yaması için pay bırakın. Rockstar yama boyutunu açıklamadı; 230–250 GB boş alan güvenli tercih."
+            ]
+          },
+          {
+            "h": "Yer açmanın yolları",
+            "list": [
+              "Eski oyunları harici USB diske taşıyın (PS5 ve Xbox eski nesil oyunları orada saklayabilir).",
+              "PS5'te genişleme yuvasına soğutuculu bir M.2 NVMe SSD takın.",
+              "Xbox Series X|S'te resmî depolama genişletme kartı kullanın.",
+              "Gereksiz oyun içi kayıt ve videoları silin."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "GTA 6 her konsolda 212 GB mı?",
+            "a": "Rockstar cihaza göre en fazla 212 GB diyor; PS5 ile Xbox arasında küçük fark olabilir."
+          },
+          {
+            "q": "PC sürümü var mı?",
+            "a": "Çıkışta yok. Rockstar bir PC çıkış tarihi açıklamadı."
+          }
+        ]
+      }
+    },
+    {
+      "id": "release-time",
+      "updated": "2026-11-17",
+      "topics": [
+        "release time",
+        "unlock",
+        "launch time",
+        "midnight",
+        "çıkış saati",
+        "saat kaçta",
+        "açılış",
+        "gece yarısı"
+      ],
+      "sources": [
+        {
+          "name": "GTA Boom",
+          "url": "https://www.gtaboom.com/gta-6-release-times-when-it-unlocks-in-your-region-and-how-to-play-early-da2c"
+        },
+        {
+          "name": "God is a Geek",
+          "url": "https://godisageek.com/2026/09/gta-6-release-times-by-region/"
+        },
+        {
+          "name": "Stevivor",
+          "url": "https://stevivor.com/news/gta-6-ps5-unlock-schedule-shows-australia-among-the-first-in-hours-before-north/"
+        }
+      ],
+      "en": {
+        "slug": "gta-6-release-time",
+        "title": "GTA 6 release time: when it unlocks in your region",
+        "description": "GTA 6 unlocks at midnight local time on November 19, 2026. Unlock times for the US, UK, Europe, Turkey and more.",
+        "kicker": "Launch",
+        "answer": "GTA 6 unlocks at midnight local time on November 19, 2026, based on PlayStation Store listings. New Zealand goes first; the US unlocks at midnight Eastern (9 p.m. Pacific on November 18).",
+        "sections": [
+          {
+            "h": "Unlock times by region",
+            "list": [
+              "New Zealand: midnight NZDT (11:00 UTC, November 18) — first in the world.",
+              "Australia: midnight AEDT (13:00 UTC, November 18).",
+              "Turkey and Saudi Arabia: midnight UTC+3 (21:00 UTC, November 18).",
+              "Continental Europe: midnight CET (23:00 UTC, November 18).",
+              "UK and Ireland: midnight GMT (00:00 UTC, November 19).",
+              "USA and Canada: midnight Eastern (05:00 UTC, November 19); West Coast plays from 9 p.m. on November 18."
+            ]
+          },
+          {
+            "h": "What decides your unlock time",
+            "p": [
+              "Your account's store region, not your console clock. Changing the clock does not move the unlock."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Can I play early?",
+            "a": "Only by when midnight arrives in your store region. Pre-loading lets you play the moment it unlocks."
+          }
+        ]
+      },
+      "tr": {
+        "slug": "gta-6-saat-kacta-cikiyor",
+        "title": "GTA 6 saat kaçta açılıyor? Türkiye ve dünya açılış saatleri",
+        "description": "GTA 6, 19 Kasım 2026'da yerel saatle gece yarısı açılıyor. Türkiye'de 19 Kasım 00.00.",
+        "kicker": "Çıkış",
+        "answer": "PlayStation Store bilgilerine göre GTA 6, 19 Kasım 2026'da her bölgede yerel saatle gece yarısı açılıyor. Türkiye'de açılış 19 Kasım saat 00.00 (18 Kasım 21.00 UTC).",
+        "sections": [
+          {
+            "h": "Bölgelere göre açılış",
+            "list": [
+              "Yeni Zelanda: 18 Kasım 14.00 TSİ — dünyada ilk.",
+              "Avustralya: 18 Kasım 16.00 TSİ.",
+              "Türkiye ve Suudi Arabistan: 19 Kasım 00.00 TSİ.",
+              "Kıta Avrupası: 19 Kasım 02.00 TSİ.",
+              "İngiltere: 19 Kasım 03.00 TSİ.",
+              "ABD ve Kanada: 19 Kasım 08.00 TSİ (doğu yakası gece yarısı)."
+            ]
+          },
+          {
+            "h": "Açılışı ne belirliyor?",
+            "p": [
+              "Konsol saatiniz değil, hesabınızın mağaza bölgesi. Saati değiştirmek açılışı öne almaz."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Erken oynamak mümkün mü?",
+            "a": "Mağaza bölgenizde gece yarısı ne zaman geliyorsa o zaman. Ön yükleme yaptıysanız açıldığı anda oynayabilirsiniz."
+          }
+        ]
+      }
+    },
+    {
+      "id": "price",
+      "updated": "2026-11-17",
+      "topics": [
+        "price",
+        "cost",
+        "edition",
+        "ultimate",
+        "pre-order",
+        "fiyat",
+        "tl",
+        "ön sipariş",
+        "on siparis",
+        "sürüm"
+      ],
+      "sources": [
+        {
+          "name": "GTA Boom",
+          "url": "https://www.gtaboom.com/gta-6-price-by-country/"
+        },
+        {
+          "name": "Timesaver",
+          "url": "https://timesaver.gg/blog/gta-6-price-uk-europe-canada-australia"
+        },
+        {
+          "name": "Webtekno",
+          "url": "https://www.webtekno.com/gta-6-turkiye-fiyati-on-siparis-h219009.html"
+        }
+      ],
+      "en": {
+        "slug": "gta-6-price-editions",
+        "title": "GTA 6 price: Standard vs Ultimate Edition, by country",
+        "description": "GTA 6 costs $79.99 (Standard) and $99.99 (Ultimate) in the US. Prices for the UK, Turkey and the upgrade.",
+        "kicker": "Price",
+        "answer": "In the US, GTA 6 costs $79.99 for the Standard Edition and $99.99 for the Ultimate Edition. The UK price is £69.99 / £89.99, and the Ultimate upgrade for Standard owners is $20 / £20.",
+        "sections": [
+          {
+            "h": "Prices by region",
+            "list": [
+              "United States: $79.99 Standard, $99.99 Ultimate.",
+              "United Kingdom: £69.99 Standard, £89.99 Ultimate.",
+              "Turkey: 3,999 TL Standard, 4,999 TL Ultimate (one of the cheaper regions in dollar terms).",
+              "Ultimate Edition Upgrade: $20 / £20 / 1,000 TL."
+            ]
+          },
+          {
+            "h": "Pre-order bonuses",
+            "p": [
+              "Digital purchases by launch include the Vintage Vice City Pack and, on PlayStation, one month of GTA+."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is there a physical disc?",
+            "a": "The boxed Standard Edition contains a download code, not a disc."
+          }
+        ]
+      },
+      "tr": {
+        "slug": "gta-6-turkiye-fiyati",
+        "title": "GTA 6 Türkiye fiyatı: Standard ve Ultimate farkı",
+        "description": "GTA 6 Türkiye'de Standard 3.999 TL, Ultimate 4.999 TL. Yükseltme ücreti ve ön sipariş bonusları.",
+        "kicker": "Fiyat",
+        "answer": "GTA 6, PlayStation Store ve Xbox Store Türkiye'de Standard Edition 3.999 TL, Ultimate Edition 4.999 TL. Standard'dan Ultimate'e yükseltme 1.000 TL.",
+        "sections": [
+          {
+            "h": "Bölgelere göre fiyat",
+            "list": [
+              "Türkiye: Standard 3.999 TL, Ultimate 4.999 TL.",
+              "ABD: Standard 79,99 $, Ultimate 99,99 $.",
+              "İngiltere: Standard 69,99 £, Ultimate 89,99 £.",
+              "Yükseltme paketi: 1.000 TL / 20 $."
+            ]
+          },
+          {
+            "h": "Ön sipariş bonusları",
+            "p": [
+              "Çıkışa kadar yapılan dijital alımlarda Vintage Vice City Pack ve PlayStation'da bir aylık GTA+ veriliyor."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Kutulu sürümde disk var mı?",
+            "a": "Kutulu Standard Edition'da disk yerine indirme kodu bulunuyor."
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheats",
+      "updated": "2026-11-17",
+      "topics": [
+        "cheat",
+        "cheats",
+        "cheat code",
+        "hile",
+        "hile kodu",
+        "şifre"
+      ],
+      "sources": [
+        {
+          "name": "Rockstar Games",
+          "url": "https://www.rockstargames.com/VI"
+        }
+      ],
+      "en": {
+        "slug": "gta-6-cheat-codes",
+        "title": "GTA 6 cheat codes: every working code (updated at launch)",
+        "description": "Are there cheat codes in GTA 6? What is confirmed, how cheats worked in GTA V, and the codes as they are verified.",
+        "kicker": "Cheats",
+        "answer": "No GTA 6 cheat codes are confirmed yet; the game unlocks on November 19, 2026. This page adds codes only after they are verified in the game. Any list published before launch is guesswork.",
+        "sections": [
+          {
+            "h": "How cheats worked in GTA V",
+            "list": [
+              "Button combinations entered during gameplay.",
+              "Phone numbers dialled on the in-game phone.",
+              "Cheats disabled trophies and achievements for that session.",
+              "Cheats worked in story mode only, never online."
+            ]
+          },
+          {
+            "h": "Avoid online 'hacks'",
+            "p": [
+              "Mod menus and paid 'hacks' for online play break Rockstar's terms and can get your account banned. They are also a common source of malware. This page covers official in-game cheat codes only."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "When will GTA 6 cheats be known?",
+            "a": "Players usually find cheat codes within days of launch. Join the Telegram channel to get them as soon as they are verified."
+          }
+        ]
+      },
+      "tr": {
+        "slug": "gta-6-hile-kodlari",
+        "title": "GTA 6 hile kodları: çalışan tüm kodlar (çıkışta güncellenir)",
+        "description": "GTA 6'da hile kodu var mı? Doğrulanan bilgiler, GTA V'te hilelerin nasıl çalıştığı ve doğrulandıkça kodlar.",
+        "kicker": "Hileler",
+        "answer": "Henüz doğrulanmış bir GTA 6 hile kodu yok; oyun 19 Kasım 2026'da açılıyor. Bu sayfaya yalnızca oyunda doğrulanan kodlar eklenecek. Çıkıştan önce yayımlanan listeler tahminden ibaret.",
+        "sections": [
+          {
+            "h": "GTA V'te hileler nasıl çalışıyordu?",
+            "list": [
+              "Oyun sırasında girilen tuş kombinasyonları.",
+              "Oyun içi telefondan aranan numaralar.",
+              "Hile girilen oturumda kupa ve başarımlar kapanıyordu.",
+              "Hileler yalnızca hikâye modunda çalışıyordu, çevrim içi asla."
+            ]
+          },
+          {
+            "h": "Çevrim içi 'hile programlarından' uzak durun",
+            "p": [
+              "Çevrim içi mod menüleri ve ücretli hile programları Rockstar kurallarını ihlal eder ve hesabın kapatılmasına yol açabilir; ayrıca sık görülen bir virüs kaynağıdır. Bu sayfa yalnızca oyunun resmî hile kodlarını kapsar."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "GTA 6 hileleri ne zaman belli olur?",
+            "a": "Oyuncular hile kodlarını genelde çıkıştan sonraki birkaç gün içinde bulur. Doğrulandığı anda haberdar olmak için Telegram kanalına katılın."
+          }
+        ]
+      }
+    },
+    {
+      "id": "best-settings",
+      "updated": "2026-11-17",
+      "topics": [
+        "settings",
+        "performance mode",
+        "quality mode",
+        "fps",
+        "60fps",
+        "hdr",
+        "ayar",
+        "performans modu",
+        "grafik"
+      ],
+      "sources": [
+        {
+          "name": "Rockstar Games",
+          "url": "https://www.rockstargames.com/VI"
+        }
+      ],
+      "en": {
+        "slug": "gta-6-best-settings",
+        "title": "GTA 6 best settings for PS5 and Xbox Series X|S",
+        "description": "Console and TV settings to check before playing GTA 6: HDR calibration, 120 Hz, VRR and storage. In-game options added at launch.",
+        "kicker": "Settings",
+        "answer": "Rockstar has not published GTA 6's in-game graphics options yet; this page adds them at launch. Before you start, calibrate HDR in your console settings, enable 120 Hz and VRR if your TV supports them, and install the game on internal SSD storage.",
+        "sections": [
+          {
+            "h": "Console settings to check now",
+            "list": [
+              "Run the system HDR calibration (PS5: Settings › Screen and Video; Xbox: Settings › General › TV & display options).",
+              "Turn on 120 Hz output and VRR if your TV or monitor supports them.",
+              "Set your TV to Game Mode to cut input lag.",
+              "Install GTA 6 on the internal SSD or an NVMe expansion, not a USB drive."
+            ]
+          },
+          {
+            "h": "In-game options",
+            "p": [
+              "Graphics modes, aim assist and accessibility options will be listed here once the game is out and the menus can be checked."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Will GTA 6 have a performance mode?",
+            "a": "Not confirmed by Rockstar at the time of writing. We will update this page at launch."
+          }
+        ]
+      },
+      "tr": {
+        "slug": "gta-6-en-iyi-ayarlar",
+        "title": "GTA 6 için en iyi ayarlar: PS5 ve Xbox Series X|S",
+        "description": "GTA 6'ya başlamadan önce kontrol edilecek konsol ve TV ayarları: HDR ayarı, 120 Hz, VRR ve depolama. Oyun içi seçenekler çıkışta eklenir.",
+        "kicker": "Ayarlar",
+        "answer": "Rockstar oyun içi grafik seçeneklerini henüz açıklamadı; çıkışta bu sayfaya eklenecek. Başlamadan önce konsoldan HDR ayarını yapın, TV'niz destekliyorsa 120 Hz ve VRR'ı açın ve oyunu dahili SSD'ye kurun.",
+        "sections": [
+          {
+            "h": "Şimdi kontrol edilecek konsol ayarları",
+            "list": [
+              "Sistem HDR ayarını yapın (PS5: Ayarlar › Ekran ve Video; Xbox: Ayarlar › Genel › TV ve ekran seçenekleri).",
+              "TV veya monitörünüz destekliyorsa 120 Hz çıkışı ve VRR'ı açın.",
+              "Gecikmeyi azaltmak için TV'yi Oyun Moduna alın.",
+              "GTA 6'yı USB diske değil, dahili SSD'ye veya NVMe genişlemeye kurun."
+            ]
+          },
+          {
+            "h": "Oyun içi seçenekler",
+            "p": [
+              "Grafik modları, nişan yardımı ve erişilebilirlik seçenekleri oyun çıkıp menüler incelenince buraya eklenecek."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "GTA 6'da performans modu olacak mı?",
+            "a": "Bu yazı yazılırken Rockstar tarafından doğrulanmadı. Çıkışta güncelleyeceğiz."
+          }
+        ]
+      }
+    },
+    {
+      "id": "before-you-start",
+      "updated": "2026-11-17",
+      "topics": [
+        "day one",
+        "patch",
+        "update",
+        "embargo",
+        "spoiler",
+        "güncelleme",
+        "yama",
+        "spoiler"
+      ],
+      "sources": [
+        {
+          "name": "PC Games Hardware",
+          "url": "https://www.pcgameshardware.de/GTA-6-Spiel-55239/News/Preload-Termin-212-GB-Speicherplatz-PS5-Xbox-1558835/"
+        },
+        {
+          "name": "GTA Boom",
+          "url": "https://www.gtaboom.com/gta-6-release-times-when-it-unlocks-in-your-region-and-how-to-play-early-da2c"
+        }
+      ],
+      "en": {
+        "slug": "gta-6-before-you-start",
+        "title": "Don't start GTA 6 before doing these 6 things",
+        "description": "A launch-night checklist for GTA 6: pre-load, storage, updates, unlock time, spoilers and settings.",
+        "kicker": "Launch checklist",
+        "answer": "Pre-load the game, keep about 250 GB free, update your console, check your local unlock time, mute spoilers and set up HDR before November 19. Details below.",
+        "sections": [
+          {
+            "h": "Launch-night checklist",
+            "list": [
+              "Pre-load now: digital copies could pre-load from November 10.",
+              "Keep about 250 GB free: up to 212 GB for the game plus a day-one patch.",
+              "Update your console system software the day before.",
+              "Check your unlock time: midnight in your store region.",
+              "Mute 'GTA 6' keywords on social media to avoid story spoilers.",
+              "Calibrate HDR and switch your TV to Game Mode."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Will there be a day-one patch?",
+            "a": "Rockstar has not announced one officially. Keep extra space free just in case."
+          }
+        ]
+      },
+      "tr": {
+        "slug": "gta-6-baslamadan-once",
+        "title": "Bunları yapmadan GTA 6'ya başlama: 6 madde",
+        "description": "GTA 6 çıkış gecesi kontrol listesi: ön yükleme, depolama, güncellemeler, açılış saati, spoiler ve ayarlar.",
+        "kicker": "Çıkış listesi",
+        "answer": "19 Kasım'dan önce oyunu ön yükleyin, yaklaşık 250 GB boş alan bırakın, konsolu güncelleyin, açılış saatinizi kontrol edin, spoiler'ları susturun ve HDR ayarını yapın. Ayrıntılar aşağıda.",
+        "sections": [
+          {
+            "h": "Çıkış gecesi kontrol listesi",
+            "list": [
+              "Ön yükleyin: dijital kopyalarda ön yükleme 10 Kasım'da başladı.",
+              "Yaklaşık 250 GB boş alan bırakın: oyun için en fazla 212 GB, üstüne ilk gün yaması.",
+              "Bir gün önceden konsol sistem yazılımını güncelleyin.",
+              "Açılış saatini kontrol edin: Türkiye'de 19 Kasım 00.00.",
+              "Hikâye spoiler'ları için sosyal medyada 'GTA 6' kelimelerini susturun.",
+              "HDR ayarını yapın ve TV'yi Oyun Moduna alın."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "İlk gün yaması olacak mı?",
+            "a": "Rockstar resmî olarak açıklamadı. Her ihtimale karşı fazladan alan bırakın."
+          }
+        ]
+      }
+    }
+  ]
+}

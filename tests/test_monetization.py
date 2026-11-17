@@ -139,10 +139,13 @@ def test_article_page_has_seo_tags_and_escapes_everything(settings):
     item = feed.items[0]
     html = render_article(item, site_url=SITE, brand="GTA VI Türkiye Bülteni", offset_hours=3,
                           money=public_payload(_money(), TODAY))
-    assert "<script>alert" not in html and "<script" not in html.split("<body>")[1]
+    import re as _re
+    body_scripts = _re.findall(r"<script[^>]*>", html.split("<body>")[1])
+    assert "<script>alert" not in html
+    assert body_scripts == ['<script src="../data/monetization.js">', '<script src="../assets/ads.js">']
     assert f'<link rel="canonical" href="{SITE}haber/{item.id}.html">' in html
     assert '<meta property="og:image" content="https://ign.com/i.jpg">' in html
-    assert "script-src 'none'" in html and '"@type": "NewsArticle"' in html
+    assert "script-src &#x27;self&#x27; https://pagead2" in html and '"@type": "NewsArticle"' in html
     assert 'rel="sponsored noopener"' in html and "İşbirliği" in html     # bağlam içi kit, ibareli
     assert "Sponsor" in html and "t.me/gta6turkiye" in html
 

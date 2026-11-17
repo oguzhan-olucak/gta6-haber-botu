@@ -29,6 +29,19 @@ from .monetization import kit_for_text
 from .site_exporter import Feed, FeedItem
 from .storage import write_text_if_changed
 
+ADS_CSP = ("https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net "
+           "https://*.google.com https://*.gstatic.com https://*.adtrafficquality.google https://fundingchoicesmessages.google.com")
+
+
+def page_csp(with_ads: bool = True) -> str:
+    ads = f" {ADS_CSP}" if with_ads else ""
+    return ("default-src 'self'; "
+            f"script-src 'self'{ads}; "
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; "
+            f"img-src 'self' data: https:; connect-src 'self'{ads}; frame-src https://www.youtube-nocookie.com{ads}; "
+            "base-uri 'none'; form-action 'none'; object-src 'none'")
+
+
 ARTICLE_DIR = "haber"
 DEFAULT_OG = "assets/og-default.png"
 _ID_RE = re.compile(r"^[A-Za-z0-9_-]{4,64}$")
@@ -141,7 +154,7 @@ def render_article(item: FeedItem, *, site_url: str, brand: str, offset_hours: i
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="{_e(page_csp())}">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>{_e(item.title)} · {_e(brand)}</title>
 <meta name="description" content="{_e(desc)}">
@@ -169,6 +182,7 @@ def render_article(item: FeedItem, *, site_url: str, brand: str, offset_hours: i
 <h1>{_e(item.title)}</h1>
 <p class="art__meta"><time datetime="{_e(item.published_at)}">{_e(when)}</time></p>
 <p class="art__lead">{_e(item.summary)}</p>
+<div class="ad-slot" data-slot="article-mid" hidden><span class="ad-slot__label">Reklam</span></div>
 <div class="art__why"><b>Neden bu etiket?</b><p>{_e(item.why_this_label)}</p></div>
 <div class="art__src"><b>Kaynaklar</b><ul>{sources}</ul></div>
 <p class="art__actions"><a class="btn btn--glow" href="../#haber-{_e(item.id)}">Leonida haritasında aç</a>{tg_post}{f'<a class="btn" href="{share}" rel="noopener" target="_blank">Paylaş</a>' if share else ""}</p>
@@ -176,7 +190,8 @@ def render_article(item: FeedItem, *, site_url: str, brand: str, offset_hours: i
 {"".join(blocks)}
 </main>
 <footer class="foot"><p>{_e(brand)} bağımsız bir hayran bültenidir; Rockstar Games veya Take-Two Interactive ile bağlantılı değildir. Özet yapay zekâ ile kaynaklardan üretilir ve kural tabanlı denetimden geçer; ayrıntı için kaynak bağlantılarına bakın.</p>
-<p><a href="../">Ana sayfa</a> · <a href="../reklam.html">Reklam ve işbirliği</a> · <a href="../rss.xml">RSS</a></p></footer>
+<p><a href="../">Ana sayfa</a> · <a href="../tr/rehber/index.html">Rehberler</a> · <a href="../guides/index.html">English guides</a> · <a href="../tr/gizlilik.html">Gizlilik</a> · <a href="../rss.xml">RSS</a></p></footer>
+<script src="../data/monetization.js"></script><script src="../assets/ads.js"></script>
 </body>
 </html>
 """
@@ -226,7 +241,7 @@ def _write_if_different(path: Path, text: str) -> bool:
 
 
 def export_site_pages(feed: Feed, docs_dir: Path, *, site_url: str, brand: str, offset_hours: int,
-                      money: dict[str, Any], now: datetime) -> int:
+                      money: dict[str, Any], now: datetime, extra_paths: list[str] | None = None) -> int:
     """Haber sayfaları + sitemap + rss; değişen dosya sayısını döner. ``site_url`` yoksa yalnız sayfalar."""
     changed = 0
     if feed.demo:
@@ -242,6 +257,7 @@ def export_site_pages(feed: Feed, docs_dir: Path, *, site_url: str, brand: str, 
         if _ID_RE.fullmatch(f.stem):
             pages.append((article_path(f.stem), (known.get(f.stem) or "")[:10]))
     pages.sort(key=lambda p: p[1], reverse=True)
+    pages = [(p, "") for p in (extra_paths or [])] + pages
     changed += _write_if_different(docs_dir / "sitemap.xml", render_sitemap(site_url, pages))
     rss = render_rss(feed, site_url, brand, now)
     old = (docs_dir / "rss.xml").read_text(encoding="utf-8") if (docs_dir / "rss.xml").exists() else ""

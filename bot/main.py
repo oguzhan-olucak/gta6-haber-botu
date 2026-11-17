@@ -78,6 +78,7 @@ from .publisher import (
     should_alert,
 )
 from .site_exporter import build_feed, export_site_feed
+from .site_guides import all_paths, export_guides, load_guides
 from .site_pages import article_url, export_site_pages
 from .storage import (
     CorruptDataError,
@@ -122,6 +123,7 @@ class RunContext:
     started_mono: float = field(default_factory=time.monotonic)
     style_hints: dict[str, list[str]] = field(default_factory=dict)
     monetization: Monetization = field(default_factory=Monetization)
+    guides: list[Any] = field(default_factory=list)
 
     @property
     def state_path(self) -> Path:
@@ -190,6 +192,11 @@ def run(*, now: datetime | None = None, env: Mapping[str, str] | None = None,
         summary["notes"].append(money_err)
     if not monetization.telegram_channel and settings.public_channel_username:
         monetization = monetization.model_copy(update={"telegram_channel": settings.public_channel_username})
+    try:
+        guides = load_guides(config_dir / "guides.json")
+    except (OSError, ValueError) as exc:   # bozuk rehber dosyası haber yayınını asla durdurmaz
+        guides = []
+        summary["notes"].append(f"guides.json okunamadı: {type(exc).__name__}")
     lock = FileLock(data_dir / ".run.lock")
     try:
         lock.acquire()
@@ -198,7 +205,7 @@ def run(*, now: datetime | None = None, env: Mapping[str, str] | None = None,
         return 0, _finish(summary)
     try:
         return _run_locked(settings, sources, now, env, session, telegram, generator, data_dir, summary,
-                           url_verifier, monetization)
+                           url_verifier, monetization, guides)
     finally:
         lock.release()
 
@@ -237,12 +244,13 @@ def _load_data(summary: dict[str, Any], data_dir: Path) -> tuple[
 def _run_locked(settings: Settings, sources: list[Source], now: datetime, env: Mapping[str, str] | None,
                 session: requests.Session | None, telegram: MessageSender | None, generator: Generator | None,
                 data_dir: Path, summary: dict[str, Any], url_verifier: Verifier | None,
-                monetization: Monetization = MONETIZATION_OFF) -> tuple[int, dict[str, Any]]:
+                monetization: Monetization = MONETIZATION_OFF,
+                guides: list[Any] | None = None) -> tuple[int, dict[str, Any]]:
     state, history, safe_mode = _load_data(summary, data_dir)
     if state is None:
         return 2, _finish(summary)
     ctx = RunContext(settings, sources, now, data_dir, state, history, summary, safe_mode=safe_mode,
-                     monetization=monetization)
+                     monetization=monetization, guides=list(guides or []))
 
     secrets, missing = load_secrets(env)
     if secrets is None:
@@ -668,9 +676,14 @@ def _export_site(ctx: RunContext) -> None:
         if export_monetization(money, docs / "data"):
             ctx.summary["notes"].append("gelir bileşenleri güncellendi")
         pages = export_site_pages(feed, docs, site_url=ctx.settings.site_url, brand=feed.brand,
+                                  extra_paths=all_paths(ctx.guides),
                                   offset_hours=ctx.settings.display_utc_offset_hours, money=money, now=ctx.now)
         if pages:
             ctx.summary["notes"].append(f"{pages} site sayfası güncellendi")
+        if ctx.guides:
+            n = export_guides(feed, docs, ctx.guides, site_url=ctx.settings.site_url, money=money)
+            if n:
+                ctx.summary["notes"].append(f"{n} rehber/yasal sayfa güncellendi")
     except Exception as exc:  # site, botun asıl işini (yayın) asla durdurmaz
         ctx.summary["error_classes"].append(ErrorClass.UNEXPECTED_ERROR.value)
         log.warning("Site beslemesi üretilemedi: %s", type(exc).__name__)

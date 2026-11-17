@@ -100,6 +100,21 @@ class MediaKit(_M):
     price_note: str = Field("", max_length=200)
 
 
+class Ads(_M):
+    """Reklam ağı (AdSense). İstemci kimliği boşken hiçbir reklam kodu yüklenmez."""
+    adsense_client: str = Field("", pattern=r"^(ca-pub-\d{10,20})?$")
+    auto_ads: bool = True    # Google'ın otomatik yerleşimi (AdSense panelinde de açık olmalı)
+    # Elle yerleşim: yuva adı → AdSense reklam birimi kimliği (yalnızca rakam). Boş yuva gizli kalır.
+    slots: dict[str, str] = Field(default_factory=dict, max_length=20)
+
+    @field_validator("slots")
+    @classmethod
+    def _slot_ids(cls, v: dict[str, str]) -> dict[str, str]:
+        if any(not re.fullmatch(r"[a-z0-9-]{2,30}", k) or not re.fullmatch(r"\d{6,20}", s) for k, s in v.items()):
+            raise ValueError("geçersiz reklam yuvası")
+        return v
+
+
 class Monetization(_M):
     telegram_channel: str = Field("", pattern=_USERNAME)
     telegram_cta: str = Field("Her doğrulanmış GTA VI haberi ilk önce Telegram kanalımızda.", max_length=140)
@@ -107,6 +122,7 @@ class Monetization(_M):
     kit: Kit = Kit()
     support: Support = Support()
     media_kit: MediaKit = MediaKit()
+    ads: Ads = Ads()
 
     @property
     def channel(self) -> str:
@@ -155,6 +171,8 @@ def public_payload(m: Monetization, today: date) -> dict[str, Any]:
         }
     if m.support.enabled and m.support.url:
         out["support"] = {"text": _clean(m.support.text, 160) or "Bülteni destekle", "url": m.support.url}
+    if m.ads.adsense_client:
+        out["ads"] = {"client": m.ads.adsense_client, "auto": m.ads.auto_ads, "slots": dict(m.ads.slots)}
     if m.media_kit.enabled:
         contact: dict[str, str] = {}
         if m.media_kit.contact_telegram:

@@ -26,7 +26,16 @@
         "price_hint": "",
         "partner": "",
         "url": "",
-        "topics": ["boyut", "gb", "ön yükleme", "on yukleme", "depolama", "ssd", "indirme", "preload"]
+        "topics": [
+          "boyut",
+          "gb",
+          "ön yükleme",
+          "on yukleme",
+          "depolama",
+          "ssd",
+          "indirme",
+          "preload"
+        ]
       },
       {
         "id": "psn",
@@ -35,7 +44,14 @@
         "price_hint": "",
         "partner": "",
         "url": "",
-        "topics": ["fiyat", "ön sipariş", "on siparis", "playstation store", "ps store", "tl"]
+        "topics": [
+          "fiyat",
+          "ön sipariş",
+          "on siparis",
+          "playstation store",
+          "ps store",
+          "tl"
+        ]
       },
       {
         "id": "dualsense",
@@ -44,7 +60,13 @@
         "price_hint": "",
         "partner": "",
         "url": "",
-        "topics": ["kol", "dualsense", "kontrol", "oynanış", "oynanis"]
+        "topics": [
+          "kol",
+          "dualsense",
+          "kontrol",
+          "oynanış",
+          "oynanis"
+        ]
       },
       {
         "id": "headset",
@@ -53,7 +75,14 @@
         "price_hint": "",
         "partner": "",
         "url": "",
-        "topics": ["müzik", "muzik", "radyo", "soundtrack", "ses", "şarkı"]
+        "topics": [
+          "müzik",
+          "muzik",
+          "radyo",
+          "soundtrack",
+          "ses",
+          "şarkı"
+        ]
       },
       {
         "id": "xbox",
@@ -62,7 +91,9 @@
         "price_hint": "",
         "partner": "",
         "url": "",
-        "topics": ["xbox"]
+        "topics": [
+          "xbox"
+        ]
       }
     ]
   },
@@ -77,5 +108,11 @@
     "contact_telegram": "",
     "contact_email": "",
     "price_note": "Lansman dönemi için sabit kanal gönderisi, site sponsor şeridi ve haftalık paketler. Tüm sponsorlu içerik 'Sponsor' ibaresiyle ayrıştırılır."
+  },
+  "ads": {
+    "_comment": "Reklam: AdSense onayından sonra 'ca-pub-...' kimliğini buraya yazın. Boşken reklam kodu yüklenmez ve reklam yuvaları görünmez. ads.txt alan adının KÖKÜNDE olmalı; github.io alt yolunda çalışmaz, kendi alan adınızda çalışır. auto_ads=true iken Google reklamları kendisi yerleştirir (panelde Otomatik reklamlar açık olmalı). İsterseniz slots ile elle birim ekleyin: guide-top, guide-mid, guide-side, guide-end, hub-top, article-mid, home-mid.",
+    "adsense_client": "",
+    "auto_ads": true,
+    "slots": {}
   }
 }

@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-17T16:58:06Z",
-    "last_run_at": "2026-11-17T16:58:06Z",
-    "last_successful_fetch_at": "2026-11-17T16:58:06Z",
+    "generated_at": "2026-11-17T17:37:33Z",
+    "last_run_at": "2026-11-17T17:37:33Z",
+    "last_successful_fetch_at": "2026-11-17T17:37:33Z",
     "active_sources": 11,
     "sources_ok_last_run": 11,
-    "verified_total": 2,
+    "verified_total": 3,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,7 +19,7 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-17T16:58:06Z"
+        "checked_at": "2026-11-17T17:37:33Z"
       },
       {
         "id": "rockstar_google_news",
@@ -27,8 +27,8 @@
         "trust_class": "OFFICIAL",
         "state": "ok",
         "entries": 18,
-        "relevant": 14,
-        "checked_at": "2026-11-17T16:58:06Z"
+        "relevant": 13,
+        "checked_at": "2026-11-17T17:37:33Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-17T16:58:06Z"
+        "checked_at": "2026-11-17T17:37:33Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 3,
         "relevant": 0,
-        "checked_at": "2026-11-17T16:58:06Z"
+        "checked_at": "2026-11-17T17:37:33Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 8,
-        "checked_at": "2026-11-17T16:58:06Z"
+        "checked_at": "2026-11-17T17:37:33Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 23,
-        "checked_at": "2026-11-17T16:58:06Z"
+        "checked_at": "2026-11-17T17:37:33Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 9,
-        "checked_at": "2026-11-17T16:58:06Z"
+        "relevant": 10,
+        "checked_at": "2026-11-17T17:37:33Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 6,
-        "checked_at": "2026-11-17T16:58:06Z"
+        "checked_at": "2026-11-17T17:37:33Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 4,
-        "checked_at": "2026-11-17T16:58:06Z"
+        "relevant": 6,
+        "checked_at": "2026-11-17T17:37:33Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 5,
-        "checked_at": "2026-11-17T16:58:06Z"
+        "relevant": 4,
+        "checked_at": "2026-11-17T17:37:33Z"
       },
       {
         "id": "reddit_gta6",
@@ -108,16 +108,47 @@
         "trust_class": "COMMUNITY",
         "state": "ok",
         "entries": 25,
-        "relevant": 9,
-        "checked_at": "2026-11-17T16:58:06Z"
+        "relevant": 10,
+        "checked_at": "2026-11-17T17:37:33Z"
       }
     ]
   },
-  "hero_id": "2f9d46fce931c79e558174c2",
+  "hero_id": "d430abc1c7fa3c86443c6727",
   "featured_ids": [
+    "2f9d46fce931c79e558174c2",
     "43fbfb278a3dece919e783df"
   ],
   "items": [
+    {
+      "id": "d430abc1c7fa3c86443c6727",
+      "title": "GTA 6, Game Awards 2026'da en çok aday gösterilen oyun",
+      "summary": "Video Games Chronicle'e göre GTA 6, Game Awards 2026'da en çok aday gösterilen oyun olarak bildiriliyor. Ayrıca Nintendo'nun da adaylıklarda öne çıktığı belirtiliyor.",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "trust_group": "single",
+      "category": "INDUSTRY_BUSINESS",
+      "category_tr": "Analiz",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-17T17:37:33Z",
+      "why_this_label": "Tek yayın: Video Games Chronicle",
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/news/gta-6-is-the-most-nominated-game-at-the-game-awards-2026"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/4",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez",
+      "image": "https://www.videogameschronicle.com/files/2026/11/56601a04-2026_tga_keyart_16x9-copy-scaled-1.webp",
+      "image_credit": "Video Games Chronicle",
+      "title_en": "GTA 6 is the most nominated game at The Game Awards 2026",
+      "summary_en": "According to Video Games Chronicle, GTA 6 is reported as the most nominated game at The Game Awards 2026, with Nintendo also highlighted among the nominees."
+    },
     {
       "id": "43fbfb278a3dece919e783df",
       "title": "Metacritic, sahte GTA 6 kullanıcı yorumlarını kaldırdı",

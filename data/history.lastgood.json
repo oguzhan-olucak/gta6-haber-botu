@@ -531,6 +531,95 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-17T16:58:06Z",
       "message_id": 3
+    },
+    {
+      "content_id": "8da6f11b021ad4efc5e17397",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "FACTUAL",
+      "title_tr": "Manni L. Perez, GTA 6'da Lucia rolüyle onaylandı",
+      "summary_tr": "Video Games Chronicle ve GamesRadar+ haberlerine göre, Manni L. Perez'in GTA 6'da Lucia karakterini canlandıracağı bildiriliyor. Ancak bu bilgi Rockstar tarafından resmi olarak doğrulanmadı.",
+      "title_en": "Manni L. Perez confirmed as Lucia in GTA 6",
+      "summary_en": "According to Video Games Chronicle and GamesRadar+, Manni L. Perez is reported to be cast as Lucia in GTA 6. This casting has not been officially confirmed by Rockstar.",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, Video Games Chronicle",
+      "source_names": {
+        "https://videogameschronicle.com/news/lucia-actor-confirmed-as-gta-6-sweeps-the-game-awards-nominations": "Video Games Chronicle",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-lucia-actor-revealed-thanks-to-the-game-awards-best-performance-nomination-and-yes-its-exactly-who-everyone-expected": "GamesRadar+"
+      },
+      "source_strength": 75,
+      "editorial_priority": 90,
+      "publish_reason": "2 bağımsız yayın: GamesRadar+, Video Games Chronicle",
+      "independent_origins": [
+        "future_plc",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://videogameschronicle.com/news/lucia-actor-confirmed-as-gta-6-sweeps-the-game-awards-nominations",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-lucia-actor-revealed-thanks-to-the-game-awards-best-performance-nomination-and-yes-its-exactly-who-everyone-expected"
+      ],
+      "source_titles": [
+        "GTA 6 Lucia actor revealed thanks to The Game Awards Best Performance nomination, and it's exactly who everyone expected",
+        "Lucia actor confirmed as GTA 6 sweeps The Game Awards nominations"
+      ],
+      "content_hashes": [
+        "37c2d6e717b6d8720a029426",
+        "7cb6cb1a41c5f1a70814ed8c"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "publish_status": "REVIEW_HELD",
+      "publish_error": "Kanıtın izin vermediği kesinlik ifadesi",
+      "created_at": "2026-11-17T17:37:33Z"
+    },
+    {
+      "content_id": "d430abc1c7fa3c86443c6727",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6, Game Awards 2026'da en çok aday gösterilen oyun",
+      "summary_tr": "Video Games Chronicle'e göre GTA 6, Game Awards 2026'da en çok aday gösterilen oyun olarak bildiriliyor. Ayrıca Nintendo'nun da adaylıklarda öne çıktığı belirtiliyor.",
+      "title_en": "GTA 6 is the most nominated game at The Game Awards 2026",
+      "summary_en": "According to Video Games Chronicle, GTA 6 is reported as the most nominated game at The Game Awards 2026, with Nintendo also highlighted among the nominees.",
+      "why_this_label": "Tek yayın: Video Games Chronicle",
+      "source_names": {
+        "https://videogameschronicle.com/news/gta-6-is-the-most-nominated-game-at-the-game-awards-2026": "Video Games Chronicle"
+      },
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "publish_reason": "Tek yayın: Video Games Chronicle",
+      "independent_origins": [
+        "vgc"
+      ],
+      "source_urls": [
+        "https://videogameschronicle.com/news/gta-6-is-the-most-nominated-game-at-the-game-awards-2026"
+      ],
+      "source_titles": [
+        "GTA 6 is the most nominated game at The Game Awards 2026"
+      ],
+      "content_hashes": [
+        "d0099a57bf2a6e1f4b65b6e2"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://www.videogameschronicle.com/files/2026/11/56601a04-2026_tga_keyart_16x9-copy-scaled-1.webp",
+      "image_credit": "Video Games Chronicle",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-17T17:37:33Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-17T17:37:33Z",
+      "message_id": 4
     }
   ]
 }

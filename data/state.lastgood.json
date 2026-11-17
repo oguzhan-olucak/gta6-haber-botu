@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-17T16:58:06Z",
-  "last_successful_fetch_at": "2026-11-17T16:58:06Z",
+  "last_run_at": "2026-11-17T17:37:33Z",
+  "last_successful_fetch_at": "2026-11-17T17:37:33Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -660,6 +660,86 @@
       "first_seen": "2026-11-17T16:58:06Z",
       "status": "NEW",
       "source": "insider_gaming"
+    },
+    "be41892a8641a54c1fcfb2a6": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "9c8baaacf43a486538eaa05f": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "d430abc1c7fa3c86443c6727": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "USED",
+      "source": "vgc"
+    },
+    "ac08bef5e226a6e1c9995d6a": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "e5dcfdfa097c7277b13f6acb": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "df41f3477f84328852961103": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "24a0b8ecf1710340233327de": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "REVIEW_HELD",
+      "source": "gamesradar"
+    },
+    "e1cc4677ba2ed109f9693714": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "753a5c84e686363613d63ac6": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "8da6f11b021ad4efc5e17397": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "REVIEW_HELD",
+      "source": "vgc"
+    },
+    "7093c6b5eb269e19e10bd4a2": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "59dd8ae648b38f4a6cc06dd9": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "edf37d1bacb29f33b07346c3": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "4a639354360fb0abdef3dab6": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "NEW",
+      "source": "vgc"
+    },
+    "c24056e8de3779ab29dcb3c5": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "ad6cb26515dc58c02e1a5c66": {
+      "first_seen": "2026-11-17T17:37:33Z",
+      "status": "NEW",
+      "source": "ign"
     }
   },
   "digests_sent": [
@@ -678,78 +758,78 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T16:58:06Z",
+      "checked_at": "2026-11-17T17:37:33Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
       "entries": 18,
-      "relevant": 14,
+      "relevant": 13,
       "new": 0,
-      "checked_at": "2026-11-17T16:58:06Z"
+      "checked_at": "2026-11-17T17:37:33Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T16:58:06Z"
+      "checked_at": "2026-11-17T17:37:33Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 3,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T16:58:06Z"
+      "checked_at": "2026-11-17T17:37:33Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
       "relevant": 8,
-      "new": 0,
-      "checked_at": "2026-11-17T16:58:06Z"
+      "new": 3,
+      "checked_at": "2026-11-17T17:37:33Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
       "relevant": 23,
       "new": 0,
-      "checked_at": "2026-11-17T16:58:06Z"
+      "checked_at": "2026-11-17T17:37:33Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 9,
-      "new": 0,
-      "checked_at": "2026-11-17T16:58:06Z"
+      "relevant": 10,
+      "new": 3,
+      "checked_at": "2026-11-17T17:37:33Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
       "relevant": 6,
       "new": 0,
-      "checked_at": "2026-11-17T16:58:06Z"
+      "checked_at": "2026-11-17T17:37:33Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
-      "relevant": 4,
-      "new": 0,
-      "checked_at": "2026-11-17T16:58:06Z"
+      "relevant": 6,
+      "new": 3,
+      "checked_at": "2026-11-17T17:37:33Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 5,
-      "new": 1,
-      "checked_at": "2026-11-17T16:58:06Z"
+      "relevant": 4,
+      "new": 2,
+      "checked_at": "2026-11-17T17:37:33Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
-      "relevant": 9,
-      "new": 3,
-      "checked_at": "2026-11-17T16:58:06Z"
+      "relevant": 10,
+      "new": 5,
+      "checked_at": "2026-11-17T17:37:33Z"
     }
   },
   "run_log": [
@@ -896,6 +976,27 @@
       "error_classes": [],
       "llm_attempts": [
         "gemini:NETWORK_TRANSIENT",
+        "groq:ok"
+      ],
+      "llm_chain": [
+        "gemini",
+        "groq",
+        "github"
+      ]
+    },
+    {
+      "started_at": "2026-11-17T17:37:33Z",
+      "sources_ok": 11,
+      "new_items": 16,
+      "published": 1,
+      "gemini_calls": 3,
+      "error_classes": [
+        "UNEXPECTED_ERROR"
+      ],
+      "llm_attempts": [
+        "gemini:NETWORK_TRANSIENT",
+        "groq:ok",
+        "groq:UNEXPECTED_ERROR",
         "groq:ok"
       ],
       "llm_chain": [
@@ -3154,9 +3255,282 @@
       },
       "first_seen": "2026-11-17T16:58:06Z",
       "needs_eval": true
+    },
+    "be41892a8641a54c1fcfb2a6": {
+      "item": {
+        "id": "be41892a8641a54c1fcfb2a6",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "\"30fps makes sense\" for GTA 6, tech analyst says, and anything above that is \"asking for trouble\"",
+        "url": "https://gamesradar.com/games/grand-theft-auto/30fps-makes-sense-for-gta-6-tech-analyst-says-and-anything-above-that-would-be-asking-for-trouble-on-current-consoles",
+        "summary": "Rockstar's settled on its frame rate target for a reason",
+        "published_at": "2026-11-17T17:29:22Z",
+        "content_hash": "432891d0609c6d64b4d1ca99",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "be41892a8641a54c1fcfb2a6",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/do7gns8aaX5bUxLXn8uXwZ-1920-80.jpg"
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": true
+    },
+    "9c8baaacf43a486538eaa05f": {
+      "item": {
+        "id": "9c8baaacf43a486538eaa05f",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "I want to wish everyone in the community a very enjoyable GTA 6 launch day, make it one you never forget! It was quit a ride for the last 10+ years with lots of grain of salts, delays, leaks and ideas but that is over now. It's the end of an era, now a new one will start!",
+        "url": "https://reddit.com/r/GTA6/comments/1xyq8s3/i_want_to_wish_everyone_in_the_community_a_very",
+        "summary": "A new era begins! submitted by /u/TrevorTheSanta [link] [comments]",
+        "published_at": "2026-11-17T17:16:55Z",
+        "content_hash": "839268bbe0832ecb94a1ecd1",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "9c8baaacf43a486538eaa05f",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": false
+    },
+    "ac08bef5e226a6e1c9995d6a": {
+      "item": {
+        "id": "ac08bef5e226a6e1c9995d6a",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "‘Grand Theft Auto VI’ Has Been Nominated for 8 Awards at The Game Awards Including Game of the Year",
+        "url": "https://reddit.com/r/GTA6/comments/1xyq61e/grand_theft_auto_vi_has_been_nominated_for_8",
+        "summary": "+ Best Action / Adventure Game of the Year submitted by /u/yourfavchoom [link] [comments]",
+        "published_at": "2026-11-17T17:14:05Z",
+        "content_hash": "8c7616033b58fa463335a614",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "ac08bef5e226a6e1c9995d6a",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": false
+    },
+    "e5dcfdfa097c7277b13f6acb": {
+      "item": {
+        "id": "e5dcfdfa097c7277b13f6acb",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "We got GTA 6 nominated for Game of the Year at The Game Awards before GTA 6",
+        "url": "https://gamesradar.com/games/grand-theft-auto/we-got-gta-6-nominated-for-game-of-the-year-at-the-game-awards-before-gta-6",
+        "summary": "The Legend of Zelda: Ocarina of Time, Resident Evil Requiem join it in competition for the top award",
+        "published_at": "2026-11-17T17:12:57Z",
+        "content_hash": "35d6e2b1e65e90e8a564da1a",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "e5dcfdfa097c7277b13f6acb",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/N4D5ufALYqpsjWJqjtBi4J-1920-80.jpg"
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": true
+    },
+    "df41f3477f84328852961103": {
+      "item": {
+        "id": "df41f3477f84328852961103",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA 6 is nominated 8 times in GOTY",
+        "url": "https://reddit.com/r/GTA6/comments/1xyq4xg/gta_6_is_nominated_8_times_in_goty",
+        "summary": "Well, Its winning all 'em hundred percent submitted by /u/YYY31 [link] [comments]",
+        "published_at": "2026-11-17T17:12:56Z",
+        "content_hash": "2823b9b09fc75cd44b80f3bb",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "df41f3477f84328852961103",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": false
+    },
+    "e1cc4677ba2ed109f9693714": {
+      "item": {
+        "id": "e1cc4677ba2ed109f9693714",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Grand Theft Auto 6 has received 8 nominations at The Game Awards 2026, including Game of the Year",
+        "url": "https://reddit.com/r/GTA6/comments/1xyq3xq/grand_theft_auto_6_has_received_8_nominations_at",
+        "summary": "The game received the following 8 nominations: Manni L. Perez as Lucia for Best Performance Best Art Direction Best Score & Music Best Audio Design Best Narrative Best Action/Adventure Best Game Direction Game of the Year submitted by /u/poklane [link] [comments]",
+        "published_at": "2026-11-17T17:11:54Z",
+        "content_hash": "8c2daa3f1e3c806b4ad940b4",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "e1cc4677ba2ed109f9693714",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": false
+    },
+    "753a5c84e686363613d63ac6": {
+      "item": {
+        "id": "753a5c84e686363613d63ac6",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "WE GOT GTA 6 NOMINATED FOR GOTY BEFORE GTA 6",
+        "url": "https://reddit.com/r/GTA6/comments/1xyq2kn/we_got_gta_6_nominated_for_goty_before_gta_6",
+        "summary": "THE LAST BEFORE GTA 6 JOKE submitted by /u/Noctxx [link] [comments]",
+        "published_at": "2026-11-17T17:10:29Z",
+        "content_hash": "b55fa81584bf2209d05ee7ca",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "753a5c84e686363613d63ac6",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": false
+    },
+    "7093c6b5eb269e19e10bd4a2": {
+      "item": {
+        "id": "7093c6b5eb269e19e10bd4a2",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Grand Theft Auto 6 Lucia Actress Finally Revealed — And Yes, It's Who You Probably Suspected",
+        "url": "https://ign.com/articles/grand-theft-auto-6-lucia-actress-finally-revealed-and-yes-its-who-you-probably-suspected",
+        "summary": "On the eve of launching GTA 6, we finally now know who portrays main character Lucia Caminos.",
+        "published_at": "2026-11-17T17:07:50Z",
+        "content_hash": "5fb6957cd7fca9500b8772bb",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "7093c6b5eb269e19e10bd4a2",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/17/gta-6-spekulationen-beziehungssystem-1794933650291.jpg"
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": true
+    },
+    "59dd8ae648b38f4a6cc06dd9": {
+      "item": {
+        "id": "59dd8ae648b38f4a6cc06dd9",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "GTA 6 Lucia Actress Officially Revealed During 2026 Game Awards Nominations",
+        "url": "https://insider-gaming.com/gta-6-lucia-actress-officially-revealed-during-2026-game-awards-nominations",
+        "summary": "The actors for Jason and Lucia, the two protagonists for Grand Theft Auto 6, have finally been officially revealed. The post GTA 6 Lucia Actress Officially Revealed During 2026 Game Awards Nominations appeared first on Insider Gaming .",
+        "published_at": "2026-11-17T17:07:23Z",
+        "content_hash": "c1711bb085a8e5a08e105081",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "59dd8ae648b38f4a6cc06dd9",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": true
+    },
+    "edf37d1bacb29f33b07346c3": {
+      "item": {
+        "id": "edf37d1bacb29f33b07346c3",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "GTA 6 Receives Several Nominations at The Game Awards, Including Game of the Year",
+        "url": "https://insider-gaming.com/gta-6-the-game-awards-nominations",
+        "summary": "Grand Theft Auto 6 has received several nominations at this year's The Game Awards, representing a massive slate of potential wins. The post GTA 6 Receives Several Nominations at The Game Awards, Including Game of the Year appeared first on Insider Gaming .",
+        "published_at": "2026-11-17T17:04:52Z",
+        "content_hash": "b290e6a407cf978b9a5fcc2e",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "edf37d1bacb29f33b07346c3",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": true
+    },
+    "4a639354360fb0abdef3dab6": {
+      "item": {
+        "id": "4a639354360fb0abdef3dab6",
+        "source_id": "vgc",
+        "source_name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "vgc",
+        "title": "Take-Two has laid off a third of staff at Civilization and XCOM studio Firaxis",
+        "url": "https://videogameschronicle.com/news/take-two-lays-off-third-of-firaxis-staff",
+        "summary": "Days before GTA 6's launch, Take-Two has rolled out layoffs at Firaxis",
+        "published_at": "2026-11-17T17:00:25Z",
+        "content_hash": "32773c94b0d6343aa0fa5df9",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "4a639354360fb0abdef3dab6",
+        "image_url": "https://www.videogameschronicle.com/files/2026/11/Civilization-7.jpg"
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": true
+    },
+    "c24056e8de3779ab29dcb3c5": {
+      "item": {
+        "id": "c24056e8de3779ab29dcb3c5",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 5 Fans Make One Last Emotional Ride Through Los Santos Before Heading to Vice City",
+        "url": "https://ign.com/articles/gta-5-fans-make-one-last-emotional-ride-through-los-santos-before-heading-to-vice-city",
+        "summary": "Ahead of GTA 6's release, GTA 5 fans are reflecting on their 13 years of history with the beloved open-world crime game.",
+        "published_at": "2026-11-17T16:20:20Z",
+        "content_hash": "3dd421b51de7f5ff025b3c45",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "c24056e8de3779ab29dcb3c5",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/17/gta-5-1794932324419.jpg"
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": true
+    },
+    "ad6cb26515dc58c02e1a5c66": {
+      "item": {
+        "id": "ad6cb26515dc58c02e1a5c66",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Warnings, Encouragement, and Gift Cards: How Schools Are Preparing for Mass Absences on GTA 6 Launch Day",
+        "url": "https://ign.com/articles/warnings-encouragement-and-gift-cards-how-schools-are-preparing-for-mass-absences-on-gta-6-launch-day",
+        "summary": "As GTA 6 launch day nears, schools are preparing for mass absences among pupils by issuing warnings to parents — and offering children the chance to win gift cards just for turning up.",
+        "published_at": "2026-11-17T13:32:25Z",
+        "content_hash": "6bf8617f32606c35fd1413db",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "ad6cb26515dc58c02e1a5c66",
+        "image_url": "https://assets-prd.ignimgs.com/2026/10/29/gta-6-jason-and-lucia-drive-by-1793234705694.jpg"
+      },
+      "first_seen": "2026-11-17T17:37:33Z",
+      "needs_eval": true
     }
   },
-  "persisted_at": "2026-11-17T16:58:06Z",
+  "persisted_at": "2026-11-17T17:37:33Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": "2026-11-17T06:01:55Z"
 }

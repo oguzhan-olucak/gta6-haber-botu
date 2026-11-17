@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-17T15:59:48Z",
-  "last_successful_fetch_at": "2026-11-17T15:59:48Z",
+  "last_run_at": "2026-11-17T16:58:06Z",
+  "last_successful_fetch_at": "2026-11-17T16:58:06Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -618,7 +618,7 @@
     },
     "43fbfb278a3dece919e783df": {
       "first_seen": "2026-11-17T15:59:48Z",
-      "status": "NEW",
+      "status": "USED",
       "source": "vgc"
     },
     "c89154bd71083d083af14983": {
@@ -640,12 +640,33 @@
       "first_seen": "2026-11-17T15:59:48Z",
       "status": "HELD",
       "source": "reddit_gta6"
+    },
+    "1a7485c41d3c6b76eabe3484": {
+      "first_seen": "2026-11-17T16:58:06Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "da020320c2f42ea29dd9ea6e": {
+      "first_seen": "2026-11-17T16:58:06Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "8788ec5e8535eea8a4f819b4": {
+      "first_seen": "2026-11-17T16:58:06Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "cb284e779da86d298ea95713": {
+      "first_seen": "2026-11-17T16:58:06Z",
+      "status": "NEW",
+      "source": "insider_gaming"
     }
   },
   "digests_sent": [
     "2026-11-16T06",
     "2026-11-16T18",
-    "2026-11-17T06"
+    "2026-11-17T06",
+    "2026-11-17T18"
   ],
   "alerts_last_sent": {
     "GEMINI_MODEL": "2026-11-17T12:02:46Z",
@@ -657,78 +678,78 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T15:59:48Z",
+      "checked_at": "2026-11-17T16:58:06Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
-      "entries": 19,
-      "relevant": 13,
+      "entries": 18,
+      "relevant": 14,
       "new": 0,
-      "checked_at": "2026-11-17T15:59:48Z"
+      "checked_at": "2026-11-17T16:58:06Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T15:59:48Z"
+      "checked_at": "2026-11-17T16:58:06Z"
     },
     "take_two_google_news": {
       "ok": true,
-      "entries": 4,
+      "entries": 3,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T15:59:48Z"
+      "checked_at": "2026-11-17T16:58:06Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
       "relevant": 8,
       "new": 0,
-      "checked_at": "2026-11-17T15:59:48Z"
+      "checked_at": "2026-11-17T16:58:06Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
       "relevant": 23,
       "new": 0,
-      "checked_at": "2026-11-17T15:59:48Z"
+      "checked_at": "2026-11-17T16:58:06Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 10,
-      "new": 2,
-      "checked_at": "2026-11-17T15:59:48Z"
+      "relevant": 9,
+      "new": 0,
+      "checked_at": "2026-11-17T16:58:06Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
       "relevant": 6,
-      "new": 1,
-      "checked_at": "2026-11-17T15:59:48Z"
+      "new": 0,
+      "checked_at": "2026-11-17T16:58:06Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 4,
-      "new": 2,
-      "checked_at": "2026-11-17T15:59:48Z"
+      "new": 0,
+      "checked_at": "2026-11-17T16:58:06Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
       "relevant": 5,
       "new": 1,
-      "checked_at": "2026-11-17T15:59:48Z"
+      "checked_at": "2026-11-17T16:58:06Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
-      "relevant": 11,
-      "new": 5,
-      "checked_at": "2026-11-17T15:59:48Z"
+      "relevant": 9,
+      "new": 3,
+      "checked_at": "2026-11-17T16:58:06Z"
     }
   },
   "run_log": [
@@ -864,6 +885,23 @@
       "error_classes": [
         "GEMINI_SCHEMA_ERROR",
         "GEMINI_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "started_at": "2026-11-17T16:58:06Z",
+      "sources_ok": 11,
+      "new_items": 4,
+      "published": 1,
+      "gemini_calls": 1,
+      "error_classes": [],
+      "llm_attempts": [
+        "gemini:NETWORK_TRANSIENT",
+        "groq:ok"
+      ],
+      "llm_chain": [
+        "gemini",
+        "groq",
+        "github"
       ]
     }
   ],
@@ -2949,27 +2987,6 @@
       "first_seen": "2026-11-17T15:59:48Z",
       "needs_eval": false
     },
-    "43fbfb278a3dece919e783df": {
-      "item": {
-        "id": "43fbfb278a3dece919e783df",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "Metacritic has already had to remove fake GTA 6 user reviews",
-        "url": "https://videogameschronicle.com/news/metacritic-has-already-had-to-remove-fake-gta-6-user-reviews",
-        "summary": "Users were briefly able to leave GTA 6 reviews on Metacritic.",
-        "published_at": "2026-11-17T15:03:04Z",
-        "content_hash": "c12cd5d04e0a6cdae2c27755",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "43fbfb278a3dece919e783df",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/gta-grand-theft-auto-6-pic06.jpg"
-      },
-      "first_seen": "2026-11-17T15:59:48Z",
-      "needs_eval": true
-    },
     "c89154bd71083d083af14983": {
       "item": {
         "id": "c89154bd71083d083af14983",
@@ -3053,9 +3070,93 @@
       },
       "first_seen": "2026-11-17T15:59:48Z",
       "needs_eval": false
+    },
+    "1a7485c41d3c6b76eabe3484": {
+      "item": {
+        "id": "1a7485c41d3c6b76eabe3484",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Just one more sleep before gta 6",
+        "url": "https://reddit.com/r/GTA6/comments/1xyplrk/just_one_more_sleep_before_gta_6",
+        "summary": "submitted by /u/Vesunex [link] [comments]",
+        "published_at": "2026-11-17T16:53:36Z",
+        "content_hash": "8d73ecd24a375d9f4324626b",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "1a7485c41d3c6b76eabe3484",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T16:58:06Z",
+      "needs_eval": false
+    },
+    "da020320c2f42ea29dd9ea6e": {
+      "item": {
+        "id": "da020320c2f42ea29dd9ea6e",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "All GTA6 icons CONFIRMED from the trailers. Any new ones? Which one are you most excited to get?",
+        "url": "https://reddit.com/r/GTA6/comments/1xypiuw/all_gta6_icons_confirmed_from_the_trailers_any",
+        "summary": "submitted by /u/Slow_Gas_9313 [link] [comments]",
+        "published_at": "2026-11-17T16:50:33Z",
+        "content_hash": "e1fd22724757089a69631dfb",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "da020320c2f42ea29dd9ea6e",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T16:58:06Z",
+      "needs_eval": false
+    },
+    "8788ec5e8535eea8a4f819b4": {
+      "item": {
+        "id": "8788ec5e8535eea8a4f819b4",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Welcome to Miami bro 😎",
+        "url": "https://reddit.com/r/GTA6/comments/1xyowxu/welcome_to_miami_bro",
+        "summary": "I just had to get it off my chest! I been saying it since I was a kid: Miami is the coolest city on earth. It fills me with so much immense pride that a little piece of a city that has given me so much joy - you fellow gamers will get to share in some of that too! As an adult I’ve lived in NYC and even 2 years in Asakusa Tokyo. But I always found my way back here. The longer I was away - the more I missed it. The more experiences I gathered far away - the more I craved it. It’s truly a special place and has been impossible for me to detach myself from. GTA 6 I look at it as a love letter to this city and it’s just incredible to walk around at 40 and see everyone so doubled down on the…",
+        "published_at": "2026-11-17T16:27:29Z",
+        "content_hash": "1edeee6216821e210de9047c",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "8788ec5e8535eea8a4f819b4",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T16:58:06Z",
+      "needs_eval": false
+    },
+    "cb284e779da86d298ea95713": {
+      "item": {
+        "id": "cb284e779da86d298ea95713",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "All GTA 6 Guides, Walkthroughs, Best Tips & Tricks",
+        "url": "https://insider-gaming.com/gta-6-guides-walkthroughs",
+        "summary": "For everything you need for Rockstar's GTA 6, check out this hub, full of handy pre-release and post-launch guides and walkthroughs. The post All GTA 6 Guides, Walkthroughs, Best Tips & Tricks appeared first on Insider Gaming .",
+        "published_at": "2026-11-17T16:02:24Z",
+        "content_hash": "3e6a630243d68e4c7ea0dbb0",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "cb284e779da86d298ea95713",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T16:58:06Z",
+      "needs_eval": true
     }
   },
-  "persisted_at": "2026-11-17T15:59:48Z",
+  "persisted_at": "2026-11-17T16:58:06Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": "2026-11-17T06:01:55Z"
 }

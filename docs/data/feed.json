@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-17T15:59:48Z",
-    "last_run_at": "2026-11-17T15:59:48Z",
-    "last_successful_fetch_at": "2026-11-17T15:59:48Z",
+    "generated_at": "2026-11-17T16:58:06Z",
+    "last_run_at": "2026-11-17T16:58:06Z",
+    "last_successful_fetch_at": "2026-11-17T16:58:06Z",
     "active_sources": 11,
     "sources_ok_last_run": 11,
-    "verified_total": 1,
+    "verified_total": 2,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-17T15:59:48Z"
+        "checked_at": "2026-11-17T16:58:06Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 19,
-        "relevant": 13,
-        "checked_at": "2026-11-17T15:59:48Z"
+        "entries": 18,
+        "relevant": 14,
+        "checked_at": "2026-11-17T16:58:06Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,16 +37,16 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-17T15:59:48Z"
+        "checked_at": "2026-11-17T16:58:06Z"
       },
       {
         "id": "take_two_google_news",
         "name": "Take-Two Interactive",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 4,
+        "entries": 3,
         "relevant": 0,
-        "checked_at": "2026-11-17T15:59:48Z"
+        "checked_at": "2026-11-17T16:58:06Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 8,
-        "checked_at": "2026-11-17T15:59:48Z"
+        "checked_at": "2026-11-17T16:58:06Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 23,
-        "checked_at": "2026-11-17T15:59:48Z"
+        "checked_at": "2026-11-17T16:58:06Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 10,
-        "checked_at": "2026-11-17T15:59:48Z"
+        "relevant": 9,
+        "checked_at": "2026-11-17T16:58:06Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 6,
-        "checked_at": "2026-11-17T15:59:48Z"
+        "checked_at": "2026-11-17T16:58:06Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 4,
-        "checked_at": "2026-11-17T15:59:48Z"
+        "checked_at": "2026-11-17T16:58:06Z"
       },
       {
         "id": "insider_gaming",
@@ -100,7 +100,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 5,
-        "checked_at": "2026-11-17T15:59:48Z"
+        "checked_at": "2026-11-17T16:58:06Z"
       },
       {
         "id": "reddit_gta6",
@@ -108,14 +108,46 @@
         "trust_class": "COMMUNITY",
         "state": "ok",
         "entries": 25,
-        "relevant": 11,
-        "checked_at": "2026-11-17T15:59:48Z"
+        "relevant": 9,
+        "checked_at": "2026-11-17T16:58:06Z"
       }
     ]
   },
   "hero_id": "2f9d46fce931c79e558174c2",
-  "featured_ids": [],
+  "featured_ids": [
+    "43fbfb278a3dece919e783df"
+  ],
   "items": [
+    {
+      "id": "43fbfb278a3dece919e783df",
+      "title": "Metacritic, sahte GTA 6 kullanıcı yorumlarını kaldırdı",
+      "summary": "Video Games Chronicle'e göre, Metacritic'te kısa bir süre GTA 6 için kullanıcı yorumları bırakılabildiği ve ardından sahte olduğu tespit edilen yorumların kaldırıldığı bildiriliyor.",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "trust_group": "single",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-17T16:58:06Z",
+      "why_this_label": "Tek yayın: Video Games Chronicle",
+      "source_strength": 55,
+      "editorial_priority": 81,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/news/metacritic-has-already-had-to-remove-fake-gta-6-user-reviews"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/3",
+      "reactions_total": null,
+      "location_id": "grassrivers",
+      "region": "Grassrivers",
+      "image": "https://www.videogameschronicle.com/files/2026/11/gta-grand-theft-auto-6-pic06.jpg",
+      "image_credit": "Video Games Chronicle",
+      "title_en": "Metacritic removes fake GTA 6 user reviews",
+      "summary_en": "According to Video Games Chronicle, Metacritic briefly allowed users to post GTA 6 reviews, and later removed those identified as fake."
+    },
     {
       "id": "2f9d46fce931c79e558174c2",
       "title": "GTA 6 inceleme embargo tarihinin ortaya çıktığı bildirildi",
@@ -142,7 +174,9 @@
       "location_id": "mount_kalaga",
       "region": "Mount Kalaga · Genel Merkez",
       "image": "https://insider-gaming.com/wp-content/uploads/2026/05/Jason_Duval_01-scaled.jpg",
-      "image_credit": "Insider Gaming"
+      "image_credit": "Insider Gaming",
+      "title_en": null,
+      "summary_en": null
     }
   ]
 }

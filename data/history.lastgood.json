@@ -307,6 +307,186 @@
       "created_at": "2026-11-17T14:17:14Z",
       "chat_id": "@gta6_haberci_2026_bot",
       "publish_error": "AUTH_PERMISSION"
+    },
+    {
+      "content_id": "c6efa41456e8953a34b5627c",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "COMMUNITY_RUMOR",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6’yı Yeni Zelanda Zaman Dilimiyle Erken Oynamanın Yolu",
+      "summary_tr": "Bazı medya organları, GTA 6’nın bölgesel bir çıkış yapacağını ve Yeni Zelanda zaman dilimini kullanarak oyunu 13 saat önceden oynayabileceğinizi iddia ediyor. Bu yöntemin PS5 ve Xbox platformlarında nasıl uygulanacağına dair kısa rehberler yayınlandı. Ancak yöntemin resmi olarak doğrulanmadığı belirtiliyor.",
+      "why_this_label": "4 bağımsız yayın: GamesRadar+, IGN, Insider Gaming, Video Games Chronicle",
+      "source_names": {
+        "https://insider-gaming.com/how-to-gta-6-early-new-zealand-trick-playstation-5": "Insider Gaming",
+        "https://insider-gaming.com/how-to-play-gta-6-early-xbox-new-zealand-trick": "Insider Gaming",
+        "https://ign.com/articles/gta-6-new-zealand-trick-xbox-ps5-early-release-time": "IGN",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-play-early-new-zealand-trick": "GamesRadar+",
+        "https://videogameschronicle.com/guide/gta-6-new-zealand-trick-how-to-play-gta-6-early": "Video Games Chronicle"
+      },
+      "source_strength": 85,
+      "editorial_priority": 94,
+      "publish_reason": "4 bağımsız yayın: GamesRadar+, IGN, Insider Gaming, Video Games Chronicle",
+      "independent_origins": [
+        "future_plc",
+        "ign",
+        "insider_gaming",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://insider-gaming.com/how-to-gta-6-early-new-zealand-trick-playstation-5",
+        "https://insider-gaming.com/how-to-play-gta-6-early-xbox-new-zealand-trick",
+        "https://ign.com/articles/gta-6-new-zealand-trick-xbox-ps5-early-release-time",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-play-early-new-zealand-trick",
+        "https://videogameschronicle.com/guide/gta-6-new-zealand-trick-how-to-play-gta-6-early"
+      ],
+      "source_titles": [
+        "How to Play GTA 6 Early on XBOX With New Zealand Trick—All Time Zones, Explained",
+        "GTA 6 Global Release Times Confirmed: Here's How to Play Early Via the New Zealand Trick",
+        "GTA 6 New Zealand trick: How to play GTA 6 early",
+        "How to play GTA 6 early with the New Zealand trick",
+        "How to Play GTA 6 Early on PS5 With New Zealand Trick—All Time Zones, Explained"
+      ],
+      "content_hashes": [
+        "019b5aa891a8ef540c4549d5",
+        "16372bd308a5d47ee0e68dd1",
+        "645799e42f410a71270fad16",
+        "d44a5c78ff0cc8d41bedd191",
+        "f74e9997e0cf68c359fa1037"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "publish_status": "REVIEW_HELD",
+      "publish_error": "Kanıtın izin vermediği kesinlik ifadesi",
+      "created_at": "2026-11-17T15:59:48Z"
+    },
+    {
+      "content_id": "38cfa0788a0c2426d603fcd6",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": null,
+      "title_style": null,
+      "title_tr": null,
+      "summary_tr": null,
+      "why_this_label": "2 bağımsız yayın: Eurogamer, IGN",
+      "source_names": {
+        "https://ign.com/articles/sony-squeezes-in-last-minute-ps5-firmware-security-update-ahead-of-gta-6-release-date-amid-fresh-hacker-claim": "IGN",
+        "https://eurogamer.net/ps5-firmware-update-gta-6": "Eurogamer"
+      },
+      "source_strength": 75,
+      "editorial_priority": 86,
+      "publish_reason": "2 bağımsız yayın: Eurogamer, IGN",
+      "independent_origins": [
+        "eurogamer",
+        "ign"
+      ],
+      "source_urls": [
+        "https://ign.com/articles/sony-squeezes-in-last-minute-ps5-firmware-security-update-ahead-of-gta-6-release-date-amid-fresh-hacker-claim",
+        "https://eurogamer.net/ps5-firmware-update-gta-6"
+      ],
+      "source_titles": [
+        "Sony squeezes out a PlayStation 5 firmware update before the release of GTA 6",
+        "Sony Squeezes in Last-Minute PS5 Firmware Security Update Ahead of GTA 6 Release Date, Amid Fresh Hacker Claim"
+      ],
+      "content_hashes": [
+        "8bcdf7a16dcb8352d6a570b5",
+        "df4ca7531c0e4611945ee580"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "publish_status": "REJECTED",
+      "publish_error": "Şema hatası (1)",
+      "created_at": "2026-11-17T15:59:48Z"
+    },
+    {
+      "content_id": "ada9a5c8c869376fc487ed2d",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "category": null,
+      "title_style": null,
+      "title_tr": null,
+      "summary_tr": null,
+      "why_this_label": "Tek yayın: GamesRadar+",
+      "source_names": {
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-release-time": "GamesRadar+"
+      },
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "publish_reason": "Tek yayın: GamesRadar+",
+      "independent_origins": [
+        "future_plc"
+      ],
+      "source_urls": [
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-release-time"
+      ],
+      "source_titles": [
+        "GTA 6 release time in your region explained"
+      ],
+      "content_hashes": [
+        "38973223b418fe0f413faeb4"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "publish_status": "REJECTED",
+      "publish_error": "Şema hatası (1)",
+      "created_at": "2026-11-17T15:59:48Z"
+    },
+    {
+      "content_id": "2f9d46fce931c79e558174c2",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6 inceleme embargo tarihinin ortaya çıktığı bildirildi",
+      "summary_tr": "Insider Gaming, GTA 6 inceleme sürecine ilişkin bir embargo tarihinin belirlendiğini bildiriyor. Ancak yayınlanan haberde kesin tarih ve saat belirtilmemiş. Bu bilgi, resmi bir açıklama olmaksızın medyanın raporu olarak değerlendiriliyor.",
+      "why_this_label": "Tek yayın: Insider Gaming",
+      "source_names": {
+        "https://insider-gaming.com/grand-theft-auto-6-review-embargo": "Insider Gaming"
+      },
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "publish_reason": "Tek yayın: Insider Gaming",
+      "independent_origins": [
+        "insider_gaming"
+      ],
+      "source_urls": [
+        "https://insider-gaming.com/grand-theft-auto-6-review-embargo"
+      ],
+      "source_titles": [
+        "Grand Theft Auto 6 Review Embargo Date & Time Details"
+      ],
+      "content_hashes": [
+        "460a93793e1b2827b031c194"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://insider-gaming.com/wp-content/uploads/2026/05/Jason_Duval_01-scaled.jpg",
+      "image_credit": "Insider Gaming",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-17T15:59:48Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-17T15:59:48Z",
+      "message_id": 2
     }
   ]
 }

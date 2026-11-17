@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-17T14:17:14Z",
-  "last_successful_fetch_at": "2026-11-17T14:17:14Z",
+  "last_run_at": "2026-11-17T15:59:48Z",
+  "last_successful_fetch_at": "2026-11-17T15:59:48Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -158,12 +158,12 @@
     },
     "cd553b307f6d1efb6e994141": {
       "first_seen": "2026-11-16T13:31:49Z",
-      "status": "NEW",
+      "status": "REVIEW_HELD",
       "source": "insider_gaming"
     },
     "c6efa41456e8953a34b5627c": {
       "first_seen": "2026-11-16T13:31:49Z",
-      "status": "NEW",
+      "status": "REVIEW_HELD",
       "source": "insider_gaming"
     },
     "421d5a1c406962fabd6e329e": {
@@ -493,7 +493,7 @@
     },
     "18cf2cbbcae4163b2b27f65a": {
       "first_seen": "2026-11-17T12:02:46Z",
-      "status": "NEW",
+      "status": "REJECTED",
       "source": "eurogamer"
     },
     "4c6616e4122aa8f25de2d001": {
@@ -518,7 +518,7 @@
     },
     "d805648e220ba70296cfbed0": {
       "first_seen": "2026-11-17T12:02:46Z",
-      "status": "NEW",
+      "status": "REVIEW_HELD",
       "source": "ign"
     },
     "5b7523e40bf34b1e3617fce5": {
@@ -573,7 +573,7 @@
     },
     "38cfa0788a0c2426d603fcd6": {
       "first_seen": "2026-11-17T14:17:14Z",
-      "status": "NEW",
+      "status": "REJECTED",
       "source": "ign"
     },
     "de108e6c7fdc9919b2ab8147": {
@@ -583,6 +583,61 @@
     },
     "361d489ff0cb52c2dbbe8a83": {
       "first_seen": "2026-11-17T14:17:14Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "2b30dcac37f8560bbec4c1a1": {
+      "first_seen": "2026-11-17T15:59:48Z",
+      "status": "REVIEW_HELD",
+      "source": "vgc"
+    },
+    "b912fa387075da38b2377c14": {
+      "first_seen": "2026-11-17T15:59:48Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "9486fda07065678f58b35af1": {
+      "first_seen": "2026-11-17T15:59:48Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "968d10fa2cb2da1f0a374cec": {
+      "first_seen": "2026-11-17T15:59:48Z",
+      "status": "REVIEW_HELD",
+      "source": "gamesradar"
+    },
+    "ada9a5c8c869376fc487ed2d": {
+      "first_seen": "2026-11-17T15:59:48Z",
+      "status": "REJECTED",
+      "source": "gamesradar"
+    },
+    "2f9d46fce931c79e558174c2": {
+      "first_seen": "2026-11-17T15:59:48Z",
+      "status": "USED",
+      "source": "insider_gaming"
+    },
+    "43fbfb278a3dece919e783df": {
+      "first_seen": "2026-11-17T15:59:48Z",
+      "status": "NEW",
+      "source": "vgc"
+    },
+    "c89154bd71083d083af14983": {
+      "first_seen": "2026-11-17T15:59:48Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "ff1224b2642b1c43816e77f8": {
+      "first_seen": "2026-11-17T15:59:48Z",
+      "status": "NEW",
+      "source": "pcgamer"
+    },
+    "fd8a21a96b5fb1cf326c4d65": {
+      "first_seen": "2026-11-17T15:59:48Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "2f4ae2948fd4dcf23a06a52d": {
+      "first_seen": "2026-11-17T15:59:48Z",
       "status": "HELD",
       "source": "reddit_gta6"
     }
@@ -602,78 +657,78 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T14:17:14Z",
+      "checked_at": "2026-11-17T15:59:48Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
-      "entries": 21,
-      "relevant": 15,
+      "entries": 19,
+      "relevant": 13,
       "new": 0,
-      "checked_at": "2026-11-17T14:17:14Z"
+      "checked_at": "2026-11-17T15:59:48Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T14:17:14Z"
+      "checked_at": "2026-11-17T15:59:48Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 4,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T14:17:14Z"
+      "checked_at": "2026-11-17T15:59:48Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
       "relevant": 8,
-      "new": 1,
-      "checked_at": "2026-11-17T14:17:14Z"
+      "new": 0,
+      "checked_at": "2026-11-17T15:59:48Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
       "relevant": 23,
       "new": 0,
-      "checked_at": "2026-11-17T14:17:14Z"
+      "checked_at": "2026-11-17T15:59:48Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
       "relevant": 10,
       "new": 2,
-      "checked_at": "2026-11-17T14:17:14Z"
+      "checked_at": "2026-11-17T15:59:48Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
       "relevant": 6,
-      "new": 0,
-      "checked_at": "2026-11-17T14:17:14Z"
+      "new": 1,
+      "checked_at": "2026-11-17T15:59:48Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
-      "relevant": 2,
-      "new": 0,
-      "checked_at": "2026-11-17T14:17:14Z"
+      "relevant": 4,
+      "new": 2,
+      "checked_at": "2026-11-17T15:59:48Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 7,
-      "new": 3,
-      "checked_at": "2026-11-17T14:17:14Z"
+      "relevant": 5,
+      "new": 1,
+      "checked_at": "2026-11-17T15:59:48Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
-      "relevant": 9,
+      "relevant": 11,
       "new": 5,
-      "checked_at": "2026-11-17T14:17:14Z"
+      "checked_at": "2026-11-17T15:59:48Z"
     }
   },
   "run_log": [
@@ -798,6 +853,17 @@
         "TELEGRAM_API_ERROR",
         "TELEGRAM_API_ERROR",
         "TELEGRAM_API_ERROR"
+      ]
+    },
+    {
+      "started_at": "2026-11-17T15:59:48Z",
+      "sources_ok": 11,
+      "new_items": 11,
+      "published": 1,
+      "gemini_calls": 4,
+      "error_classes": [
+        "GEMINI_SCHEMA_ERROR",
+        "GEMINI_SCHEMA_ERROR"
       ]
     }
   ],
@@ -1161,46 +1227,6 @@
       },
       "first_seen": "2026-11-16T13:31:49Z",
       "needs_eval": false
-    },
-    "cd553b307f6d1efb6e994141": {
-      "item": {
-        "id": "cd553b307f6d1efb6e994141",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "How to Play GTA 6 Early on XBOX With New Zealand Trick—All Time Zones, Explained",
-        "url": "https://insider-gaming.com/how-to-play-gta-6-early-xbox-new-zealand-trick",
-        "summary": "If you want to get the earliest access possible to GTA 6 on XBOX, you'll want to make full use of the New Zealand trick. Here's how it works. The post How to Play GTA 6 Early on XBOX With New Zealand Trick—All Time Zones, Explained appeared first on Insider Gaming .",
-        "published_at": "2026-11-16T08:13:19Z",
-        "content_hash": "645799e42f410a71270fad16",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "cd553b307f6d1efb6e994141"
-      },
-      "first_seen": "2026-11-16T13:31:49Z",
-      "needs_eval": true
-    },
-    "c6efa41456e8953a34b5627c": {
-      "item": {
-        "id": "c6efa41456e8953a34b5627c",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "How to Play GTA 6 Early on PS5 With New Zealand Trick—All Time Zones, Explained",
-        "url": "https://insider-gaming.com/how-to-gta-6-early-new-zealand-trick-playstation-5",
-        "summary": "Learn how to play GTA 6 early on PS5 using the New Zealand trick with this super handy, short-form guide, complete with time zone breakdown. The post How to Play GTA 6 Early on PS5 With New Zealand Trick—All Time Zones, Explained appeared first on Insider Gaming .",
-        "published_at": "2026-11-16T08:13:15Z",
-        "content_hash": "16372bd308a5d47ee0e68dd1",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "c6efa41456e8953a34b5627c"
-      },
-      "first_seen": "2026-11-16T13:31:49Z",
-      "needs_eval": true
     },
     "421d5a1c406962fabd6e329e": {
       "item": {
@@ -2566,27 +2592,6 @@
       "first_seen": "2026-11-17T12:02:46Z",
       "needs_eval": true
     },
-    "18cf2cbbcae4163b2b27f65a": {
-      "item": {
-        "id": "18cf2cbbcae4163b2b27f65a",
-        "source_id": "eurogamer",
-        "source_name": "Eurogamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "eurogamer",
-        "title": "Sony squeezes out a PlayStation 5 firmware update before the release of GTA 6",
-        "url": "https://eurogamer.net/ps5-firmware-update-gta-6",
-        "summary": "Sony has managed to squeeze out another PlayStation 5 firmware update before the highly-anticipated release of Grand Theft Auto 6 . Read more",
-        "published_at": "2026-11-17T10:51:50Z",
-        "content_hash": "df4ca7531c0e4611945ee580",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "18cf2cbbcae4163b2b27f65a",
-        "image_url": "https://assetsio.gnwcdn.com/GTA6_5nov-(32).jpg?width=690&quality=85&format=jpg&auto=webp"
-      },
-      "first_seen": "2026-11-17T12:02:46Z",
-      "needs_eval": true
-    },
     "4c6616e4122aa8f25de2d001": {
       "item": {
         "id": "4c6616e4122aa8f25de2d001",
@@ -2670,27 +2675,6 @@
       },
       "first_seen": "2026-11-17T12:02:46Z",
       "needs_eval": false
-    },
-    "d805648e220ba70296cfbed0": {
-      "item": {
-        "id": "d805648e220ba70296cfbed0",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "GTA 6 Global Release Times Confirmed: Here's How to Play Early Via the New Zealand Trick",
-        "url": "https://ign.com/articles/gta-6-new-zealand-trick-xbox-ps5-early-release-time",
-        "summary": "GTA 6 will have a regional release, which means certain people can actually play it early thanks to what's called the New Zealand trick. Here's how it works.",
-        "published_at": "2026-11-17T09:47:08Z",
-        "content_hash": "d44a5c78ff0cc8d41bedd191",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "d805648e220ba70296cfbed0",
-        "image_url": "https://assets-prd.ignimgs.com/2026/11/17/vintage-vice-city-pack-01-1794908603556.jpg"
-      },
-      "first_seen": "2026-11-17T12:02:46Z",
-      "needs_eval": true
     },
     "330f72889ae36207ad9fb336": {
       "item": {
@@ -2881,27 +2865,6 @@
       "first_seen": "2026-11-17T14:17:14Z",
       "needs_eval": true
     },
-    "38cfa0788a0c2426d603fcd6": {
-      "item": {
-        "id": "38cfa0788a0c2426d603fcd6",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "Sony Squeezes in Last-Minute PS5 Firmware Security Update Ahead of GTA 6 Release Date, Amid Fresh Hacker Claim",
-        "url": "https://ign.com/articles/sony-squeezes-in-last-minute-ps5-firmware-security-update-ahead-of-gta-6-release-date-amid-fresh-hacker-claim",
-        "summary": "Sony has released a new PS5 firmware security update just a day before the release of GTA 6, and hot on the heels of a new claim from a prominent hacker around the console.",
-        "published_at": "2026-11-17T10:26:26Z",
-        "content_hash": "8bcdf7a16dcb8352d6a570b5",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "38cfa0788a0c2426d603fcd6",
-        "image_url": "https://assets-prd.ignimgs.com/2026/11/17/vintage-vice-city-pack-exclusive-looks-05-1794910948115.jpg"
-      },
-      "first_seen": "2026-11-17T14:17:14Z",
-      "needs_eval": true
-    },
     "de108e6c7fdc9919b2ab8147": {
       "item": {
         "id": "de108e6c7fdc9919b2ab8147",
@@ -2943,9 +2906,156 @@
       },
       "first_seen": "2026-11-17T14:17:14Z",
       "needs_eval": false
+    },
+    "b912fa387075da38b2377c14": {
+      "item": {
+        "id": "b912fa387075da38b2377c14",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Brave Search's page in honor of GTA VI",
+        "url": "https://reddit.com/r/GTA6/comments/1xynlua/brave_searchs_page_in_honor_of_gta_vi",
+        "summary": "submitted by /u/Carlos_Menezes [link] [comments]",
+        "published_at": "2026-11-17T15:38:49Z",
+        "content_hash": "28bd68018782773079f07e09",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "b912fa387075da38b2377c14",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T15:59:48Z",
+      "needs_eval": false
+    },
+    "9486fda07065678f58b35af1": {
+      "item": {
+        "id": "9486fda07065678f58b35af1",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "@alhan.fm on Instagram teasing a Vice City news podcast releasing at 8:30pm GMT 18/11",
+        "url": "https://reddit.com/r/GTA6/comments/1xynh7x/alhanfm_on_instagram_teasing_a_vice_city_news",
+        "summary": "Alhan was in the Grotti Cheetah driving around Miami and has been teasing GTA VI for months now. It’s heavily rumoured that he will be hosting one of the in-game podcasts. submitted by /u/JedGamesTV [link] [comments]",
+        "published_at": "2026-11-17T15:33:47Z",
+        "content_hash": "2ce7bf2729ce94f9da0b1f8e",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "9486fda07065678f58b35af1",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T15:59:48Z",
+      "needs_eval": false
+    },
+    "43fbfb278a3dece919e783df": {
+      "item": {
+        "id": "43fbfb278a3dece919e783df",
+        "source_id": "vgc",
+        "source_name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "vgc",
+        "title": "Metacritic has already had to remove fake GTA 6 user reviews",
+        "url": "https://videogameschronicle.com/news/metacritic-has-already-had-to-remove-fake-gta-6-user-reviews",
+        "summary": "Users were briefly able to leave GTA 6 reviews on Metacritic.",
+        "published_at": "2026-11-17T15:03:04Z",
+        "content_hash": "c12cd5d04e0a6cdae2c27755",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "43fbfb278a3dece919e783df",
+        "image_url": "https://www.videogameschronicle.com/files/2026/11/gta-grand-theft-auto-6-pic06.jpg"
+      },
+      "first_seen": "2026-11-17T15:59:48Z",
+      "needs_eval": true
+    },
+    "c89154bd71083d083af14983": {
+      "item": {
+        "id": "c89154bd71083d083af14983",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Thank you underpaid reddit mods, see you tomorrow Leonida!",
+        "url": "https://reddit.com/r/GTA6/comments/1xymbtj/thank_you_underpaid_reddit_mods_see_you_tomorrow",
+        "summary": "submitted by /u/BaconShadow [link] [comments]",
+        "published_at": "2026-11-17T14:48:26Z",
+        "content_hash": "1be75b8e24df07c72babfa20",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "c89154bd71083d083af14983",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T15:59:48Z",
+      "needs_eval": false
+    },
+    "ff1224b2642b1c43816e77f8": {
+      "item": {
+        "id": "ff1224b2642b1c43816e77f8",
+        "source_id": "pcgamer",
+        "source_name": "PC Gamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "Twitchers rejoice: GTA 6 will have 62 different species of birds, though that falls a bit short of the over 500 native species found in Florida",
+        "url": "https://pcgamer.com/games/grand-theft-auto/twitchers-rejoice-gta-6-will-have-62-different-species-of-birds-though-that-falls-a-bit-short-of-the-over-500-native-species-found-in-florida",
+        "summary": "They better have a Snowy Plover.",
+        "published_at": "2026-11-17T14:35:57Z",
+        "content_hash": "6b34b155b7b2a606bbe62e69",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "ff1224b2642b1c43816e77f8",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/qssUN2VdpiBrvmcfvqWGdK-1920-80.jpg"
+      },
+      "first_seen": "2026-11-17T15:59:48Z",
+      "needs_eval": true
+    },
+    "fd8a21a96b5fb1cf326c4d65": {
+      "item": {
+        "id": "fd8a21a96b5fb1cf326c4d65",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Last Hour Sub Closure until Release",
+        "url": "https://reddit.com/r/GTA6/comments/1xylow6/last_hour_sub_closure_until_release",
+        "summary": "Less than a day to go everyone, if you can believe it. The plan is that at the 1 hour to go mark on the countdown we will be closing the sub for posts until the game releases in NZ. During that time you can still comment on posts already up, but we'd encourage everyone to join us in the countdown thread for that last hour. It will be the last quiet moment before the next decade or more of GTA VI content fills the sub. All posts will be automatically rejected and you'll get a message with a link to the countdown post. When the game releases we will have a hub pinned with release day threads that we ask you to use for most discussions as the game unlocks worldwide over the course of the day.…",
+        "published_at": "2026-11-17T14:22:35Z",
+        "content_hash": "a6f6bab3c5e8c200f61e43be",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "fd8a21a96b5fb1cf326c4d65",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T15:59:48Z",
+      "needs_eval": false
+    },
+    "2f4ae2948fd4dcf23a06a52d": {
+      "item": {
+        "id": "2f4ae2948fd4dcf23a06a52d",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Finished Lucia from GTA VI before GTA VI",
+        "url": "https://reddit.com/r/GTA6/comments/1xyl1xf/finished_lucia_from_gta_vi_before_gta_vi",
+        "summary": "submitted by /u/Professional-Lake843 [link] [comments]",
+        "published_at": "2026-11-17T13:55:50Z",
+        "content_hash": "0bc7d5d64b5b8d933bdd69fc",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "2f4ae2948fd4dcf23a06a52d",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T15:59:48Z",
+      "needs_eval": false
     }
   },
-  "persisted_at": "2026-11-17T14:17:14Z",
+  "persisted_at": "2026-11-17T15:59:48Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": "2026-11-17T06:01:55Z"
 }

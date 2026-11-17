@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-17T17:37:33Z",
-    "last_run_at": "2026-11-17T17:37:33Z",
-    "last_successful_fetch_at": "2026-11-17T17:37:33Z",
+    "generated_at": "2026-11-17T22:30:35Z",
+    "last_run_at": "2026-11-17T22:30:35Z",
+    "last_successful_fetch_at": "2026-11-17T22:30:35Z",
     "active_sources": 11,
-    "sources_ok_last_run": 11,
-    "verified_total": 3,
+    "sources_ok_last_run": 10,
+    "verified_total": 4,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,7 +19,7 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-17T17:37:33Z"
+        "checked_at": "2026-11-17T22:30:35Z"
       },
       {
         "id": "rockstar_google_news",
@@ -28,7 +28,7 @@
         "state": "ok",
         "entries": 18,
         "relevant": 13,
-        "checked_at": "2026-11-17T17:37:33Z"
+        "checked_at": "2026-11-17T22:30:35Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,16 +37,16 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-17T17:37:33Z"
+        "checked_at": "2026-11-17T22:30:35Z"
       },
       {
         "id": "take_two_google_news",
         "name": "Take-Two Interactive",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 3,
+        "entries": 4,
         "relevant": 0,
-        "checked_at": "2026-11-17T17:37:33Z"
+        "checked_at": "2026-11-17T22:30:35Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 8,
-        "checked_at": "2026-11-17T17:37:33Z"
+        "checked_at": "2026-11-17T22:30:35Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 23,
-        "checked_at": "2026-11-17T17:37:33Z"
+        "relevant": 25,
+        "checked_at": "2026-11-17T22:30:35Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 10,
-        "checked_at": "2026-11-17T17:37:33Z"
+        "relevant": 9,
+        "checked_at": "2026-11-17T22:30:35Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 6,
-        "checked_at": "2026-11-17T17:37:33Z"
+        "relevant": 7,
+        "checked_at": "2026-11-17T22:30:35Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 6,
-        "checked_at": "2026-11-17T17:37:33Z"
+        "checked_at": "2026-11-17T22:30:35Z"
       },
       {
         "id": "insider_gaming",
@@ -99,26 +99,56 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 4,
-        "checked_at": "2026-11-17T17:37:33Z"
+        "relevant": 3,
+        "checked_at": "2026-11-17T22:30:35Z"
       },
       {
         "id": "reddit_gta6",
         "name": "r/GTA6",
         "trust_class": "COMMUNITY",
-        "state": "ok",
-        "entries": 25,
-        "relevant": 10,
-        "checked_at": "2026-11-17T17:37:33Z"
+        "state": "error",
+        "entries": 0,
+        "relevant": 0,
+        "checked_at": "2026-11-17T22:30:35Z"
       }
     ]
   },
-  "hero_id": "d430abc1c7fa3c86443c6727",
+  "hero_id": "4dfa387a3eccebff79b5bd2b",
   "featured_ids": [
-    "2f9d46fce931c79e558174c2",
-    "43fbfb278a3dece919e783df"
+    "d430abc1c7fa3c86443c6727",
+    "2f9d46fce931c79e558174c2"
   ],
   "items": [
+    {
+      "id": "4dfa387a3eccebff79b5bd2b",
+      "title": "Devolver Digital, GTA 6'yi silersen ücretsiz oyun kazanma fırsatı sunuyor",
+      "summary": "Video Games Chronicle'e göre Devolver Digital, GTA 6'yı silen oyunculara ücretsiz bir oyun hediye etmeyi teklif ediyor. Ancak bu teklifin resmi bir duyuru olmadığı ve detayların net olmadığı bildiriliyor.",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "trust_group": "single",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "CURIOSITY",
+      "published_at": "2026-11-17T22:30:35Z",
+      "why_this_label": "Tek yayın: Video Games Chronicle",
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/news/you-can-win-a-free-devolver-digital-game-if-you-delete-gta-6"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/5",
+      "reactions_total": null,
+      "location_id": "grassrivers",
+      "region": "Grassrivers",
+      "image": "https://www.videogameschronicle.com/files/2026/11/GTA-Volvy.jpg",
+      "image_credit": "Video Games Chronicle",
+      "title_en": "Devolver Digital offers free game to those who delete GTA 6",
+      "summary_en": "According to Video Games Chronicle, Devolver Digital is offering a free game to players who delete GTA 6. The claim is not backed by an official announcement and details remain unclear."
+    },
     {
       "id": "d430abc1c7fa3c86443c6727",
       "title": "GTA 6, Game Awards 2026'da en çok aday gösterilen oyun",

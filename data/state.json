@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-17T17:37:33Z",
-  "last_successful_fetch_at": "2026-11-17T17:37:33Z",
+  "last_run_at": "2026-11-17T22:30:35Z",
+  "last_successful_fetch_at": "2026-11-17T22:30:35Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -253,7 +253,7 @@
     },
     "5c46665d691b93b5043e3c9a": {
       "first_seen": "2026-11-16T17:17:16Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "b91a1127ebab1eeed192aadc": {
@@ -683,7 +683,7 @@
     },
     "e5dcfdfa097c7277b13f6acb": {
       "first_seen": "2026-11-17T17:37:33Z",
-      "status": "NEW",
+      "status": "DUPLICATE",
       "source": "gamesradar"
     },
     "df41f3477f84328852961103": {
@@ -713,7 +713,7 @@
     },
     "7093c6b5eb269e19e10bd4a2": {
       "first_seen": "2026-11-17T17:37:33Z",
-      "status": "NEW",
+      "status": "DUPLICATE",
       "source": "ign"
     },
     "59dd8ae648b38f4a6cc06dd9": {
@@ -740,6 +740,51 @@
       "first_seen": "2026-11-17T17:37:33Z",
       "status": "NEW",
       "source": "ign"
+    },
+    "4dfa387a3eccebff79b5bd2b": {
+      "first_seen": "2026-11-17T22:30:35Z",
+      "status": "USED",
+      "source": "vgc"
+    },
+    "f57fd61dc664aefd72766259": {
+      "first_seen": "2026-11-17T22:30:35Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "11d3cfb9e71e6c6e4901f806": {
+      "first_seen": "2026-11-17T22:30:35Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "b6eb37469cc4162b309783d3": {
+      "first_seen": "2026-11-17T22:30:35Z",
+      "status": "NEW",
+      "source": "vgc"
+    },
+    "67abb9bae62fb13de8e8eb6f": {
+      "first_seen": "2026-11-17T22:30:35Z",
+      "status": "DUPLICATE",
+      "source": "eurogamer"
+    },
+    "762a9a08574b73885160b570": {
+      "first_seen": "2026-11-17T22:30:35Z",
+      "status": "NEW",
+      "source": "pcgamer"
+    },
+    "50f3b99c6c47028f073743fd": {
+      "first_seen": "2026-11-17T22:30:35Z",
+      "status": "DUPLICATE",
+      "source": "eurogamer"
+    },
+    "7de7ab3016d41fee7b6aaa6e": {
+      "first_seen": "2026-11-17T22:30:35Z",
+      "status": "DUPLICATE",
+      "source": "ign"
+    },
+    "72bc446d4e578497d0e77c62": {
+      "first_seen": "2026-11-17T22:30:35Z",
+      "status": "DUPLICATE",
+      "source": "vgc"
     }
   },
   "digests_sent": [
@@ -749,7 +794,7 @@
     "2026-11-17T18"
   ],
   "alerts_last_sent": {
-    "GEMINI_MODEL": "2026-11-17T12:02:46Z",
+    "GEMINI_MODEL": "2026-11-17T22:30:35Z",
     "TELEGRAM_AUTH": "2026-11-17T12:02:46Z"
   },
   "source_status": {
@@ -758,7 +803,7 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T17:37:33Z",
+      "checked_at": "2026-11-17T22:30:35Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
@@ -766,70 +811,70 @@
       "entries": 18,
       "relevant": 13,
       "new": 0,
-      "checked_at": "2026-11-17T17:37:33Z"
+      "checked_at": "2026-11-17T22:30:35Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T17:37:33Z"
+      "checked_at": "2026-11-17T22:30:35Z"
     },
     "take_two_google_news": {
       "ok": true,
-      "entries": 3,
+      "entries": 4,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T17:37:33Z"
+      "checked_at": "2026-11-17T22:30:35Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
       "relevant": 8,
-      "new": 3,
-      "checked_at": "2026-11-17T17:37:33Z"
+      "new": 2,
+      "checked_at": "2026-11-17T22:30:35Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
-      "relevant": 23,
-      "new": 0,
-      "checked_at": "2026-11-17T17:37:33Z"
+      "relevant": 25,
+      "new": 2,
+      "checked_at": "2026-11-17T22:30:35Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 10,
-      "new": 3,
-      "checked_at": "2026-11-17T17:37:33Z"
+      "relevant": 9,
+      "new": 0,
+      "checked_at": "2026-11-17T22:30:35Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
-      "relevant": 6,
-      "new": 0,
-      "checked_at": "2026-11-17T17:37:33Z"
+      "relevant": 7,
+      "new": 1,
+      "checked_at": "2026-11-17T22:30:35Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 6,
       "new": 3,
-      "checked_at": "2026-11-17T17:37:33Z"
+      "checked_at": "2026-11-17T22:30:35Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 4,
-      "new": 2,
-      "checked_at": "2026-11-17T17:37:33Z"
+      "relevant": 3,
+      "new": 1,
+      "checked_at": "2026-11-17T22:30:35Z"
     },
     "reddit_gta6": {
-      "ok": true,
-      "entries": 25,
-      "relevant": 10,
-      "new": 5,
-      "checked_at": "2026-11-17T17:37:33Z"
+      "ok": false,
+      "error_class": "RSS_PARSE_ERROR",
+      "detail": "HTTP 404",
+      "http_status": 404,
+      "checked_at": "2026-11-17T22:30:35Z"
     }
   },
   "run_log": [
@@ -1004,6 +1049,25 @@
         "groq",
         "github"
       ]
+    },
+    {
+      "started_at": "2026-11-17T22:30:35Z",
+      "sources_ok": 10,
+      "new_items": 9,
+      "published": 1,
+      "gemini_calls": 1,
+      "error_classes": [
+        "RSS_PARSE_ERROR"
+      ],
+      "llm_attempts": [
+        "gemini:NETWORK_TRANSIENT",
+        "groq:ok"
+      ],
+      "llm_chain": [
+        "gemini",
+        "groq",
+        "github"
+      ]
     }
   ],
   "candidate_pool": {
@@ -1083,86 +1147,6 @@
         "url_verified": false,
         "via": "rss",
         "raw_id": "d679772e39c557e9b9452501"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "d86101e04c6aff5367841c74": {
-      "item": {
-        "id": "d86101e04c6aff5367841c74",
-        "source_id": "reddit_gta6",
-        "source_name": "r/GTA6",
-        "trust_class": "COMMUNITY",
-        "origin_group": "reddit",
-        "title": "3 insiders hyping GTA 6",
-        "url": "https://reddit.com/r/GTA6/comments/1xx7qum/3_insiders_hyping_gta_6",
-        "summary": "so Shinobi, a prominant insider on resetera originally predicted a 97-98 metacritic score. He then quoted that post a few days later saying \"Yeah im going with 98\" another resetera poster quoted that post with the eye emoji and said that \"hes heard many many great things in the last few days \" and went with a 97 score then NatetheHate responding to a question asking if he things Zelda or GTA 6 will win GOTY, a couple days later after revealing that he has heard impressions on the game said \" I havn't played GTA 6 yet but the odds are in its favor \" hes a big nintendo guy too Again take this as not definite or anything, but if you read between the lines it really tells what we are going to…",
-        "published_at": "2026-11-15T21:47:34Z",
-        "content_hash": "9c793d9a972506952ea44fc0",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "d86101e04c6aff5367841c74"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "57ff0c674424a3da8eb9aa37": {
-      "item": {
-        "id": "57ff0c674424a3da8eb9aa37",
-        "source_id": "reddit_gta6",
-        "source_name": "r/GTA6",
-        "trust_class": "COMMUNITY",
-        "origin_group": "reddit",
-        "title": "How are you planning to pace GTA 6 next week? (50h story vs. 200h for 100%)",
-        "url": "https://reddit.com/r/GTA6/comments/1xx6kys/how_are_you_planning_to_pace_gta_6_next_week_50h",
-        "summary": "With early reports saying the main story is around 50 hours and a full 100% run takes roughly 200 hours, I’m curious how everyone is approaching their first playthrough on November 19. Are you focusing straight on the main campaign to dodge spoilers, or taking your time exploring Leonida and knocking out side content along the way? Also, is anyone going straight for the Platinum/100% on their first run? submitted by /u/costlesscomb48 [link] [comments]",
-        "published_at": "2026-11-15T20:58:40Z",
-        "content_hash": "f5a9e0621beb114c9be4e583",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "57ff0c674424a3da8eb9aa37"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "dc8afa8a57b87a383f509743": {
-      "item": {
-        "id": "dc8afa8a57b87a383f509743",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "GTA 6's Jason and Lucia Will Start as Small-Time Criminals Who Have to Work Up to High-Value Jobs",
-        "url": "https://ign.com/articles/gta-6s-jason-and-lucia-will-start-as-small-time-criminals-who-have-to-work-up-to-high-value-jobs",
-        "summary": "GTA 6 will let Jason and Lucia pull off high-value jobs, but Rockstar Games asks players to work up from being small-time criminals first.",
-        "published_at": "2026-11-15T19:41:28Z",
-        "content_hash": "7865c706885e75fbc6975247",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "dc8afa8a57b87a383f509743"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "d3be7ca7db1f8950133ad5e8": {
-      "item": {
-        "id": "d3be7ca7db1f8950133ad5e8",
-        "source_id": "reddit_gta6",
-        "source_name": "r/GTA6",
-        "trust_class": "COMMUNITY",
-        "origin_group": "reddit",
-        "title": "On which radio station do you imagine each music from the GTA 6 trailers will be played in game?",
-        "url": "https://reddit.com/r/GTA6/comments/1xx4m38/on_which_radio_station_do_you_imagine_each_music",
-        "summary": "I remember what it felt like to hear Sleepwalking for the first time in GTA 5, and I hope to have the same feeling when I hear \"Love is a long road\" in GTA 6 submitted by /u/Puzzleheaded_Goal689 [link] [comments]",
-        "published_at": "2026-11-15T19:38:52Z",
-        "content_hash": "eb1779f80d9ed54cb5ff4010",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "d3be7ca7db1f8950133ad5e8"
       },
       "first_seen": "2026-11-16T06:35:35Z",
       "needs_eval": false
@@ -1742,7 +1726,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/09/09/untitled-design-1788967060376.png"
       },
       "first_seen": "2026-11-16T17:17:16Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "b91a1127ebab1eeed192aadc": {
       "item": {
@@ -3319,27 +3303,6 @@
       "first_seen": "2026-11-17T17:37:33Z",
       "needs_eval": false
     },
-    "e5dcfdfa097c7277b13f6acb": {
-      "item": {
-        "id": "e5dcfdfa097c7277b13f6acb",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "We got GTA 6 nominated for Game of the Year at The Game Awards before GTA 6",
-        "url": "https://gamesradar.com/games/grand-theft-auto/we-got-gta-6-nominated-for-game-of-the-year-at-the-game-awards-before-gta-6",
-        "summary": "The Legend of Zelda: Ocarina of Time, Resident Evil Requiem join it in competition for the top award",
-        "published_at": "2026-11-17T17:12:57Z",
-        "content_hash": "35d6e2b1e65e90e8a564da1a",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "e5dcfdfa097c7277b13f6acb",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/N4D5ufALYqpsjWJqjtBi4J-1920-80.jpg"
-      },
-      "first_seen": "2026-11-17T17:37:33Z",
-      "needs_eval": true
-    },
     "df41f3477f84328852961103": {
       "item": {
         "id": "df41f3477f84328852961103",
@@ -3402,27 +3365,6 @@
       },
       "first_seen": "2026-11-17T17:37:33Z",
       "needs_eval": false
-    },
-    "7093c6b5eb269e19e10bd4a2": {
-      "item": {
-        "id": "7093c6b5eb269e19e10bd4a2",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "Grand Theft Auto 6 Lucia Actress Finally Revealed — And Yes, It's Who You Probably Suspected",
-        "url": "https://ign.com/articles/grand-theft-auto-6-lucia-actress-finally-revealed-and-yes-its-who-you-probably-suspected",
-        "summary": "On the eve of launching GTA 6, we finally now know who portrays main character Lucia Caminos.",
-        "published_at": "2026-11-17T17:07:50Z",
-        "content_hash": "5fb6957cd7fca9500b8772bb",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "7093c6b5eb269e19e10bd4a2",
-        "image_url": "https://assets-prd.ignimgs.com/2026/11/17/gta-6-spekulationen-beziehungssystem-1794933650291.jpg"
-      },
-      "first_seen": "2026-11-17T17:37:33Z",
-      "needs_eval": true
     },
     "59dd8ae648b38f4a6cc06dd9": {
       "item": {
@@ -3528,9 +3470,93 @@
       },
       "first_seen": "2026-11-17T17:37:33Z",
       "needs_eval": true
+    },
+    "f57fd61dc664aefd72766259": {
+      "item": {
+        "id": "f57fd61dc664aefd72766259",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "INTERVIEW: GTA 4 Actor on GTA 6 Reviews: “It Needs To Succeed”",
+        "url": "https://insider-gaming.com/interview-gta-4-actor-on-gta-6-reviews-need-succeed",
+        "summary": "We sat down with Jason Zumwalt, the actor behind GTA 4's Roman Bellic, for a new episode of Access Granted, coming November 18. The post INTERVIEW: GTA 4 Actor on GTA 6 Reviews: “It Needs To Succeed” appeared first on Insider Gaming .",
+        "published_at": "2026-11-17T20:57:44Z",
+        "content_hash": "392439c4b80d6b3121e3b268",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "f57fd61dc664aefd72766259",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T22:30:35Z",
+      "needs_eval": true
+    },
+    "11d3cfb9e71e6c6e4901f806": {
+      "item": {
+        "id": "11d3cfb9e71e6c6e4901f806",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Nearly Half of Polled IGN Readers Are Taking Time Off to Play GTA 6",
+        "url": "https://ign.com/articles/nearly-half-of-polled-ign-readers-are-taking-time-off-to-play-gta-6",
+        "summary": "IGN has conducted a poll on if our readers would be taking time off to play GTA 6, and nearly half of them said yes.",
+        "published_at": "2026-11-17T20:01:07Z",
+        "content_hash": "1ca545f10db75c53e04abcc3",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "11d3cfb9e71e6c6e4901f806",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T22:30:35Z",
+      "needs_eval": true
+    },
+    "b6eb37469cc4162b309783d3": {
+      "item": {
+        "id": "b6eb37469cc4162b309783d3",
+        "source_id": "vgc",
+        "source_name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "vgc",
+        "title": "You can vote for GTA 6 to win GOTY before reviews are even out",
+        "url": "https://videogameschronicle.com/news/gta-6-reviews-vote",
+        "summary": "TGA opens voting to the public, despite GTA 6 not being out yet",
+        "published_at": "2026-11-17T19:59:00Z",
+        "content_hash": "7a343408fd7145ee3101698f",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "b6eb37469cc4162b309783d3",
+        "image_url": "https://www.videogameschronicle.com/files/2026/11/gta-grand-theft-auto-6-pic09.jpg"
+      },
+      "first_seen": "2026-11-17T22:30:35Z",
+      "needs_eval": true
+    },
+    "762a9a08574b73885160b570": {
+      "item": {
+        "id": "762a9a08574b73885160b570",
+        "source_id": "pcgamer",
+        "source_name": "PC Gamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "We got 8 Game Awards nominations for GTA 6 before GTA 6",
+        "url": "https://pcgamer.com/gaming-industry/events-conferences/we-got-8-game-awards-nominations-for-gta-6-before-gta-6",
+        "summary": "The Game Awards says its judges \"may be provided with advance or pre-release access to games for critical evaluation.\"",
+        "published_at": "2026-11-17T18:35:38Z",
+        "content_hash": "e6f2744cce9100cafcbeef07",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "762a9a08574b73885160b570",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/bcmYVV5Dhrt4d4a2BsvB3V-1920-80.jpg"
+      },
+      "first_seen": "2026-11-17T22:30:35Z",
+      "needs_eval": true
     }
   },
-  "persisted_at": "2026-11-17T17:37:33Z",
+  "persisted_at": "2026-11-17T22:30:35Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": "2026-11-17T06:01:55Z"
 }

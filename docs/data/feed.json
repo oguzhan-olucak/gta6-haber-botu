@@ -3,9 +3,9 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-17T05:01:55Z",
-    "last_run_at": "2026-11-17T05:01:55Z",
-    "last_successful_fetch_at": "2026-11-17T05:01:55Z",
+    "generated_at": "2026-11-17T12:02:46Z",
+    "last_run_at": "2026-11-17T12:02:46Z",
+    "last_successful_fetch_at": "2026-11-17T12:02:46Z",
     "active_sources": 11,
     "sources_ok_last_run": 11,
     "verified_total": 0,
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-17T05:01:55Z"
+        "checked_at": "2026-11-17T12:02:46Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 22,
-        "relevant": 17,
-        "checked_at": "2026-11-17T05:01:55Z"
+        "entries": 20,
+        "relevant": 16,
+        "checked_at": "2026-11-17T12:02:46Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-17T05:01:55Z"
+        "checked_at": "2026-11-17T12:02:46Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 4,
         "relevant": 0,
-        "checked_at": "2026-11-17T05:01:55Z"
+        "checked_at": "2026-11-17T12:02:46Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 8,
-        "checked_at": "2026-11-17T05:01:55Z"
+        "checked_at": "2026-11-17T12:02:46Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 20,
-        "checked_at": "2026-11-17T05:01:55Z"
+        "relevant": 23,
+        "checked_at": "2026-11-17T12:02:46Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 8,
-        "checked_at": "2026-11-17T05:01:55Z"
+        "relevant": 9,
+        "checked_at": "2026-11-17T12:02:46Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 5,
-        "checked_at": "2026-11-17T05:01:55Z"
+        "relevant": 6,
+        "checked_at": "2026-11-17T12:02:46Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 1,
-        "checked_at": "2026-11-17T05:01:55Z"
+        "relevant": 2,
+        "checked_at": "2026-11-17T12:02:46Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 1,
-        "checked_at": "2026-11-17T05:01:55Z"
+        "relevant": 4,
+        "checked_at": "2026-11-17T12:02:46Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,7 +109,7 @@
         "state": "ok",
         "entries": 25,
         "relevant": 9,
-        "checked_at": "2026-11-17T05:01:55Z"
+        "checked_at": "2026-11-17T12:02:46Z"
       }
     ]
   },

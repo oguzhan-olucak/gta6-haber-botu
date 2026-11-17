@@ -1,4 +1,130 @@
 {
   "schema_version": 1,
-  "posts": []
+  "posts": [
+    {
+      "content_id": "0b52d2076cd4fdf19ab12286",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": null,
+      "title_style": null,
+      "title_tr": null,
+      "summary_tr": null,
+      "why_this_label": "2 bağımsız yayın: Eurogamer, IGN",
+      "source_names": {
+        "https://ign.com/articles/ea-adds-dont-delete-message-to-madden-nfl-27-in-bid-to-keep-players-from-making-room-ahead-of-gta-6": "IGN",
+        "https://eurogamer.net/ea-madden-nfl-27-dont-delete-gta-6": "Eurogamer"
+      },
+      "source_strength": 75,
+      "editorial_priority": 88,
+      "publish_reason": "2 bağımsız yayın: Eurogamer, IGN",
+      "independent_origins": [
+        "eurogamer",
+        "ign"
+      ],
+      "source_urls": [
+        "https://ign.com/articles/ea-adds-dont-delete-message-to-madden-nfl-27-in-bid-to-keep-players-from-making-room-ahead-of-gta-6",
+        "https://eurogamer.net/ea-madden-nfl-27-dont-delete-gta-6"
+      ],
+      "source_titles": [
+        "EA Adds 'Don't Delete' Message to Madden NFL 27 in Bid to Keep Players From Making Room Ahead of GTA 6",
+        "EA really doesn't want you to delete Madden NFL 27 to make room for GTA 6"
+      ],
+      "content_hashes": [
+        "c5e7eb2aa49c7440946b0012",
+        "d6ef3b7464f7e9cfaffc27e7"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "publish_status": "REJECTED",
+      "publish_error": "Şema hatası (1)",
+      "created_at": "2026-11-17T12:02:46Z"
+    },
+    {
+      "content_id": "2134adbbb11febe08fbdd0d0",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6'ya rağmen bazı geliştiriciler fırsat görüyor",
+      "summary_tr": "Eurogamer, bazı geliştiricilerin Grand Theft Auto 6'ya karşı temkinli bir tutum sergilemek yerine fırsat gördüklerini bildiriyor. Bu geliştiricilerin, oyunun büyük bir oyuncu kitlesi çekme potansiyelini değerlendirmek için projelerine yöneldikleri iddia ediliyor. Ancak bu yaklaşımın ne kadar yaygın olduğu net değil.",
+      "why_this_label": "Tek yayın: Eurogamer",
+      "source_names": {
+        "https://eurogamer.net/grand-theft-auto-6-meet-the-developers-tackling-it-head-on": "Eurogamer"
+      },
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "publish_reason": "Tek yayın: Eurogamer",
+      "independent_origins": [
+        "eurogamer"
+      ],
+      "source_urls": [
+        "https://eurogamer.net/grand-theft-auto-6-meet-the-developers-tackling-it-head-on"
+      ],
+      "source_titles": [
+        "As blockbuster game releases run scared from GTA 6, meet the brave developers tackling Rockstar's behemoth head-on"
+      ],
+      "content_hashes": [
+        "8c599e1660880bddb9b411a3"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://assetsio.gnwcdn.com/gta-week-isaac-header.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+      "image_credit": "Eurogamer",
+      "publish_status": "FAILED",
+      "created_at": "2026-11-17T12:02:46Z",
+      "chat_id": "@gta6_haberci_2026_bot",
+      "publish_error": "AUTH_PERMISSION"
+    },
+    {
+      "content_id": "acef6c9ec64eb92b1fe03b51",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "CURIOSITY",
+      "title_tr": "Palworld’un 1.1 ve Palfarm Güncellemeleri GTA 6 Rekabeti Nedeniyle Askıya Alındı",
+      "summary_tr": "GamesRadar+ haberine göre, Palworld geliştiricisi Pocketpair, 1.1 sürümü ve Palfarm güncellemelerini GTA 6’nın çıkışıyla rekabet etmemek adına askıya aldığını bildiriyor. Ancak bu iddia resmi bir açıklama olmadan, sadece bir söylenti olarak değerlendiriliyor.",
+      "why_this_label": "Tek yayın: GamesRadar+",
+      "source_names": {
+        "https://gamesradar.com/games/survival/palworld-1-1-and-palfarm-updates-are-on-hold-and-gta-6-is-to-blame-because-pocketpair-knows-saying-anything-around-the-launch-of-rockstars-new-epic-is-not-the-best-idea": "GamesRadar+"
+      },
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "publish_reason": "Tek yayın: GamesRadar+",
+      "independent_origins": [
+        "future_plc"
+      ],
+      "source_urls": [
+        "https://gamesradar.com/games/survival/palworld-1-1-and-palfarm-updates-are-on-hold-and-gta-6-is-to-blame-because-pocketpair-knows-saying-anything-around-the-launch-of-rockstars-new-epic-is-not-the-best-idea"
+      ],
+      "source_titles": [
+        "Palworld 1.1 and Palfarm updates are on hold because competing with GTA 6 is \"not the best idea\""
+      ],
+      "content_hashes": [
+        "d9211c69aa88b3951961ba58"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/jU3HQtpVt8azFw4GmDC9f8-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "publish_status": "FAILED",
+      "created_at": "2026-11-17T12:02:46Z",
+      "chat_id": "@gta6_haberci_2026_bot",
+      "publish_error": "AUTH_PERMISSION"
+    }
+  ]
 }

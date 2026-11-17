@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-17T05:01:55Z",
-  "last_successful_fetch_at": "2026-11-17T05:01:55Z",
+  "last_run_at": "2026-11-17T12:02:46Z",
+  "last_successful_fetch_at": "2026-11-17T12:02:46Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -38,7 +38,7 @@
     },
     "dc8afa8a57b87a383f509743": {
       "first_seen": "2026-11-16T06:35:35Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "d3be7ca7db1f8950133ad5e8": {
@@ -48,7 +48,7 @@
     },
     "0b52d2076cd4fdf19ab12286": {
       "first_seen": "2026-11-16T06:35:35Z",
-      "status": "NEW",
+      "status": "REJECTED",
       "source": "ign"
     },
     "b20ff4ab7f1cc32d30653794": {
@@ -440,6 +440,96 @@
       "first_seen": "2026-11-17T05:01:55Z",
       "status": "HELD",
       "source": "reddit_gta6"
+    },
+    "2134adbbb11febe08fbdd0d0": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "NEW",
+      "source": "eurogamer"
+    },
+    "acef6c9ec64eb92b1fe03b51": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "fa14856f0d448939d6ee3297": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "958d16af30d8216cf54fa8b9": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "NEW",
+      "source": "vgc"
+    },
+    "bda77e14923c95145d5c35b5": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "092b66056220a644ae2b9806": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "NEW",
+      "source": "pcgamer"
+    },
+    "e86a2621c7d7d5251bd54031": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "6ee156d36e43662b1c14572e": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "7c0876423c9d6647ff6d40c2": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "NEW",
+      "source": "pcgamer"
+    },
+    "50bd761d489994597150e178": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "NEW",
+      "source": "eurogamer"
+    },
+    "18cf2cbbcae4163b2b27f65a": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "NEW",
+      "source": "eurogamer"
+    },
+    "4c6616e4122aa8f25de2d001": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "888bab8a417db71849d9097c": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "36416cbce9dfec4d153da368": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
+    },
+    "8f1b7b8a692ea3b56a392913": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "NEW",
+      "source": "reddit_gta6"
+    },
+    "d805648e220ba70296cfbed0": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "5b7523e40bf34b1e3617fce5": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "REJECTED",
+      "source": "eurogamer"
+    },
+    "330f72889ae36207ad9fb336": {
+      "first_seen": "2026-11-17T12:02:46Z",
+      "status": "HELD",
+      "source": "reddit_gta6"
     }
   },
   "digests_sent": [
@@ -447,85 +537,88 @@
     "2026-11-16T18",
     "2026-11-17T06"
   ],
-  "alerts_last_sent": {},
+  "alerts_last_sent": {
+    "GEMINI_MODEL": "2026-11-17T12:02:46Z",
+    "TELEGRAM_AUTH": "2026-11-17T12:02:46Z"
+  },
   "source_status": {
     "rockstar_newswire_html": {
       "ok": true,
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T05:01:55Z",
+      "checked_at": "2026-11-17T12:02:46Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
-      "entries": 22,
-      "relevant": 17,
+      "entries": 20,
+      "relevant": 16,
       "new": 0,
-      "checked_at": "2026-11-17T05:01:55Z"
+      "checked_at": "2026-11-17T12:02:46Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T05:01:55Z"
+      "checked_at": "2026-11-17T12:02:46Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 4,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T05:01:55Z"
+      "checked_at": "2026-11-17T12:02:46Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
       "relevant": 8,
-      "new": 3,
-      "checked_at": "2026-11-17T05:01:55Z"
+      "new": 1,
+      "checked_at": "2026-11-17T12:02:46Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
-      "relevant": 20,
-      "new": 0,
-      "checked_at": "2026-11-17T05:01:55Z"
+      "relevant": 23,
+      "new": 4,
+      "checked_at": "2026-11-17T12:02:46Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 8,
-      "new": 0,
-      "checked_at": "2026-11-17T05:01:55Z"
+      "relevant": 9,
+      "new": 1,
+      "checked_at": "2026-11-17T12:02:46Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
-      "relevant": 5,
-      "new": 0,
-      "checked_at": "2026-11-17T05:01:55Z"
+      "relevant": 6,
+      "new": 2,
+      "checked_at": "2026-11-17T12:02:46Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
-      "relevant": 1,
-      "new": 0,
-      "checked_at": "2026-11-17T05:01:55Z"
+      "relevant": 2,
+      "new": 1,
+      "checked_at": "2026-11-17T12:02:46Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 1,
+      "relevant": 4,
       "new": 0,
-      "checked_at": "2026-11-17T05:01:55Z"
+      "checked_at": "2026-11-17T12:02:46Z"
     },
     "reddit_gta6": {
       "ok": true,
       "entries": 25,
       "relevant": 9,
-      "new": 7,
-      "checked_at": "2026-11-17T05:01:55Z"
+      "new": 9,
+      "checked_at": "2026-11-17T12:02:46Z"
     }
   },
   "run_log": [
@@ -624,6 +717,19 @@
         "NETWORK_TRANSIENT",
         "NETWORK_TRANSIENT",
         "RATE_LIMIT_QUOTA"
+      ]
+    },
+    {
+      "started_at": "2026-11-17T12:02:46Z",
+      "sources_ok": 11,
+      "new_items": 18,
+      "published": 0,
+      "gemini_calls": 4,
+      "error_classes": [
+        "GEMINI_SCHEMA_ERROR",
+        "UNEXPECTED_ERROR",
+        "TELEGRAM_API_ERROR",
+        "TELEGRAM_API_ERROR"
       ]
     }
   ],
@@ -766,7 +872,7 @@
         "raw_id": "dc8afa8a57b87a383f509743"
       },
       "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "d3be7ca7db1f8950133ad5e8": {
       "item": {
@@ -787,26 +893,6 @@
       },
       "first_seen": "2026-11-16T06:35:35Z",
       "needs_eval": false
-    },
-    "0b52d2076cd4fdf19ab12286": {
-      "item": {
-        "id": "0b52d2076cd4fdf19ab12286",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "EA Adds 'Don't Delete' Message to Madden NFL 27 in Bid to Keep Players From Making Room Ahead of GTA 6",
-        "url": "https://ign.com/articles/ea-adds-dont-delete-message-to-madden-nfl-27-in-bid-to-keep-players-from-making-room-ahead-of-gta-6",
-        "summary": "EA has added a \"don't delete\" pop-up message to Madden NFL 27, and players can't help but feel the company is begging them not to make room for Grand Theft Auto 6.",
-        "published_at": "2026-11-15T17:22:20Z",
-        "content_hash": "d6ef3b7464f7e9cfaffc27e7",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "0b52d2076cd4fdf19ab12286"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": true
     },
     "b20ff4ab7f1cc32d30653794": {
       "item": {
@@ -844,46 +930,6 @@
         "url_verified": false,
         "via": "rss",
         "raw_id": "8769ca2c09f395ccb7a2f11a"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "27fa97f7f32882508d0cca63": {
-      "item": {
-        "id": "27fa97f7f32882508d0cca63",
-        "source_id": "eurogamer",
-        "source_name": "Eurogamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "eurogamer",
-        "title": "What's the best GTA?",
-        "url": "https://eurogamer.net/the-big-question-whats-the-best-gta",
-        "summary": "As we teeter on the brink of gaming's biggest launch of 2026 - perhaps even decade - so many questions swirl: which GTA 6 cars will make the best vrrrrm? Is it possible for me to be any more obsessed with that Justice theme song ? On a scale of one to ten, how many dongs ? Answers will inevitably come, but for now - as we crank up the Phil Collins and roar deeper into Eurogamer's GTA Week - there's only one question we're concerned with. Yes, it's the return of our irregular series The Big Question , in which we ponder another topical talking point before wafting it lovingly over to you. And this time around we're asking, what's the best GTA? Read more",
-        "published_at": "2026-11-15T10:00:00Z",
-        "content_hash": "34564740ae32ee51df259bc5",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "27fa97f7f32882508d0cca63"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "112c1ad1b5e9188d93412b67": {
-      "item": {
-        "id": "112c1ad1b5e9188d93412b67",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "Is GTA 6 Out Now? Grand Theft Auto 6 Launch Day Tracker",
-        "url": "https://insider-gaming.com/is-gta-6-out-now-launch-day-tracker",
-        "summary": "Is Grand Theft Auto 6 out yet? Good question. Find out the answer to everything you want to ask in this guide. The post Is GTA 6 Out Now? Grand Theft Auto 6 Launch Day Tracker appeared first on Insider Gaming .",
-        "published_at": "2026-11-15T08:14:07Z",
-        "content_hash": "91671b61d4ed0be03b9cd400",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "112c1ad1b5e9188d93412b67"
       },
       "first_seen": "2026-11-16T06:35:35Z",
       "needs_eval": false
@@ -2281,9 +2327,366 @@
       },
       "first_seen": "2026-11-17T05:01:55Z",
       "needs_eval": false
+    },
+    "2134adbbb11febe08fbdd0d0": {
+      "item": {
+        "id": "2134adbbb11febe08fbdd0d0",
+        "source_id": "eurogamer",
+        "source_name": "Eurogamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "eurogamer",
+        "title": "As blockbuster game releases run scared from GTA 6, meet the brave developers tackling Rockstar's behemoth head-on",
+        "url": "https://eurogamer.net/grand-theft-auto-6-meet-the-developers-tackling-it-head-on",
+        "summary": "Grand Theft Auto 6 . It's got cool cars, crime, a big new city to explore, and the potential to hoover up so much player time that many developers have chosen to give it the widest berth possible. It's led to an October uncommonly packed with big-hitters, and a November - ordinarily one of gaming's biggest months - that's near-barren. But not every developer is steering clear. Despite the potential risks, a select few have looked at GTA 6 and seen not a threat but an opportunity, so what's driving these brave souls? Read more",
+        "published_at": "2026-11-17T12:01:20Z",
+        "content_hash": "8c599e1660880bddb9b411a3",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "2134adbbb11febe08fbdd0d0",
+        "image_url": "https://assetsio.gnwcdn.com/gta-week-isaac-header.jpg?width=690&quality=85&format=jpg&auto=webp"
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": true
+    },
+    "acef6c9ec64eb92b1fe03b51": {
+      "item": {
+        "id": "acef6c9ec64eb92b1fe03b51",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "Palworld 1.1 and Palfarm updates are on hold because competing with GTA 6 is \"not the best idea\"",
+        "url": "https://gamesradar.com/games/survival/palworld-1-1-and-palfarm-updates-are-on-hold-and-gta-6-is-to-blame-because-pocketpair-knows-saying-anything-around-the-launch-of-rockstars-new-epic-is-not-the-best-idea",
+        "summary": "When half the waking world is playing something else, you have to take a hint",
+        "published_at": "2026-11-17T11:53:59Z",
+        "content_hash": "d9211c69aa88b3951961ba58",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "acef6c9ec64eb92b1fe03b51",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/jU3HQtpVt8azFw4GmDC9f8-1920-80.jpg"
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": true
+    },
+    "fa14856f0d448939d6ee3297": {
+      "item": {
+        "id": "fa14856f0d448939d6ee3297",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA 6 Available in 25 Mins in India",
+        "url": "https://reddit.com/r/GTA6/comments/1xyii32/gta_6_available_in_25_mins_in_india",
+        "summary": "submitted by /u/Atreus421boy [link] [comments]",
+        "published_at": "2026-11-17T11:53:05Z",
+        "content_hash": "eda251053bef075567d0b463",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "fa14856f0d448939d6ee3297",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": false
+    },
+    "958d16af30d8216cf54fa8b9": {
+      "item": {
+        "id": "958d16af30d8216cf54fa8b9",
+        "source_id": "vgc",
+        "source_name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "vgc",
+        "title": "GTA 6 Ultimate Edition vs Standard Edition: All Ultimate Edition & pre-order benefits",
+        "url": "https://videogameschronicle.com/guide/gta-6-ultimate-edition-vs-standard-edition-all-ultimate-edition-pre-order-benefits",
+        "summary": "Everything included in the GTA 6 Ultimate Edition",
+        "published_at": "2026-11-17T11:49:56Z",
+        "content_hash": "f820165d367eb08c4cb59787",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "958d16af30d8216cf54fa8b9",
+        "image_url": "https://www.videogameschronicle.com/files/2026/06/ULTIMATE_EDITION_01.jpg"
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": true
+    },
+    "bda77e14923c95145d5c35b5": {
+      "item": {
+        "id": "bda77e14923c95145d5c35b5",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Nice marketing coincidence (?)",
+        "url": "https://reddit.com/r/GTA6/comments/1xyieou/nice_marketing_coincidence",
+        "summary": "Release date of GTA6 in Leonida aligns with Leonid meteor showers… I just noticed this….very hard to think that this was a mere coincidence submitted by /u/Ok-Bad-7127 [link] [comments]",
+        "published_at": "2026-11-17T11:47:47Z",
+        "content_hash": "5491dee0f25964f702510559",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "bda77e14923c95145d5c35b5",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": false
+    },
+    "092b66056220a644ae2b9806": {
+      "item": {
+        "id": "092b66056220a644ae2b9806",
+        "source_id": "pcgamer",
+        "source_name": "PC Gamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "'They would never stop working on this game': GTA 6's development could've gone on for longer just because 'it's really hard to close it down'",
+        "url": "https://pcgamer.com/games/grand-theft-auto/they-would-never-stop-working-on-this-game-gta-6s-development-couldve-gone-on-for-longer-just-because-its-really-hard-to-close-it-down",
+        "summary": "There's always room for a bit more polish.",
+        "published_at": "2026-11-17T11:47:29Z",
+        "content_hash": "c6b70a871be48593fea84f50",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "092b66056220a644ae2b9806",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/cgsfct7LsSe3YLSHsKbAJF-1920-80.jpg"
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": true
+    },
+    "e86a2621c7d7d5251bd54031": {
+      "item": {
+        "id": "e86a2621c7d7d5251bd54031",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA VI reviews reportedly drop Wed, Nov 18 at 12:01 MEZ. Here’s the time in your city",
+        "url": "https://reddit.com/r/GTA6/comments/1xyi58s/gta_vi_reviews_reportedly_drop_wed_nov_18_at_1201",
+        "summary": "GTA VI reviews are reportedly going live on Wednesday, Nov 18 at 11:01 UTC , the day before launch (Thu, Nov 19 on PS5 and Xbox Series X|S). Wave 1: Wed, Nov 18 · 11:01 to 12:01 UTC (most outlets, Metacritic) Wave 2: Thu, Nov 19 · 05:01 UTC (some sites and YouTube channels) Reported, not confirmed by Rockstar. Treat it as a strong rumor until the first reviews actually show up. When wave 1 starts in your city: City Local time Los Angeles Wed 3:01 AM Mexico City Wed 5:01 AM New York Wed 6:01 AM São Paulo Wed 8:01 AM London Wed 11:01 AM Berlin · Paris Wed 12:01 PM Istanbul · Moscow Wed 2:01 PM Dubai Wed 3:01 PM Mumbai · Delhi Wed 4:31 PM Bangkok Wed 6:01 PM Singapore · Manila Wed 7:01 PM…",
+        "published_at": "2026-11-17T11:32:44Z",
+        "content_hash": "711d478179d99dbf65b9f5df",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "e86a2621c7d7d5251bd54031",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": false
+    },
+    "6ee156d36e43662b1c14572e": {
+      "item": {
+        "id": "6ee156d36e43662b1c14572e",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "GTA 6 is Officially 24 hours away",
+        "url": "https://reddit.com/r/GTA6/comments/1xyhsm2/gta_6_is_officially_24_hours_away",
+        "summary": "submitted by /u/Aggravating-Push-596 [link] [comments]",
+        "published_at": "2026-11-17T11:12:21Z",
+        "content_hash": "ebfe30188032dc02f0dd12c1",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "6ee156d36e43662b1c14572e",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": false
+    },
+    "7c0876423c9d6647ff6d40c2": {
+      "item": {
+        "id": "7c0876423c9d6647ff6d40c2",
+        "source_id": "pcgamer",
+        "source_name": "PC Gamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 release times: How far behind the first launch will GTA 6 unlock in your time zone?",
+        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-release-time-date",
+        "summary": "Grand Theft Auto 6 is on a rolling launch, which means everyone's getting access at different times.",
+        "published_at": "2026-11-17T11:00:00Z",
+        "content_hash": "b5a15305e4fcf8a0085d683d",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "7c0876423c9d6647ff6d40c2",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/caZdJisTVd6rVYy7STLcxV-1920-80.jpg"
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": true
+    },
+    "50bd761d489994597150e178": {
+      "item": {
+        "id": "50bd761d489994597150e178",
+        "source_id": "eurogamer",
+        "source_name": "Eurogamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "eurogamer",
+        "title": "After GTA 6's original soundtrack, Justice probably won't work on any other video game ever again",
+        "url": "https://eurogamer.net/gta-6-justice-ost-only-game",
+        "summary": "You've probably heard at least a little bit of the Grand Theft Auto 6 soundtrack from French electronic duo, Justice: a single taken from the act's original soundtrack has been released as a standalone track, and was the accompaniment to GTA 6's launch trailer . Featuring Tame Impala, SZA, and the fantastic King Gizzard and the Lizard Wizard, it's clear that the duo - and Rockstar - have spared no expense on the production of music for the game. Read more",
+        "published_at": "2026-11-17T10:57:50Z",
+        "content_hash": "4237ac3ee87e061daf7e4d18",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "50bd761d489994597150e178",
+        "image_url": "https://assetsio.gnwcdn.com/Justice-GTA6.jpg?width=690&quality=85&format=jpg&auto=webp"
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": true
+    },
+    "18cf2cbbcae4163b2b27f65a": {
+      "item": {
+        "id": "18cf2cbbcae4163b2b27f65a",
+        "source_id": "eurogamer",
+        "source_name": "Eurogamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "eurogamer",
+        "title": "Sony squeezes out a PlayStation 5 firmware update before the release of GTA 6",
+        "url": "https://eurogamer.net/ps5-firmware-update-gta-6",
+        "summary": "Sony has managed to squeeze out another PlayStation 5 firmware update before the highly-anticipated release of Grand Theft Auto 6 . Read more",
+        "published_at": "2026-11-17T10:51:50Z",
+        "content_hash": "df4ca7531c0e4611945ee580",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "18cf2cbbcae4163b2b27f65a",
+        "image_url": "https://assetsio.gnwcdn.com/GTA6_5nov-(32).jpg?width=690&quality=85&format=jpg&auto=webp"
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": true
+    },
+    "4c6616e4122aa8f25de2d001": {
+      "item": {
+        "id": "4c6616e4122aa8f25de2d001",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "Marketing for this game is next level, the tube station at St Pancras / Kings Cross in London had one of the tunnels covered in posters and painted the colours of GTA6",
+        "url": "https://reddit.com/r/GTA6/comments/1xyh8ce/marketing_for_this_game_is_next_level_the_tube",
+        "summary": "I’ve never ever seen any of the tube tunnels like this. Posters of the same thing sure but I’ve never seen a walkway tunnel painted like this before, that’s new. Most marketing I have seen for a game all over the place this game is already bigger than anyone think, even national news services such as BBC are mentioning the game submitted by /u/kj_gamer2614 [link] [comments]",
+        "published_at": "2026-11-17T10:39:19Z",
+        "content_hash": "0b040dc9a210f9b76407cd8a",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "4c6616e4122aa8f25de2d001",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": false
+    },
+    "888bab8a417db71849d9097c": {
+      "item": {
+        "id": "888bab8a417db71849d9097c",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "The last day",
+        "url": "https://reddit.com/r/GTA6/comments/1xygjlu/the_last_day",
+        "summary": "Today is officially the last day before GTA 6. submitted by /u/Puzzleheaded_Goal689 [link] [comments]",
+        "published_at": "2026-11-17T09:58:16Z",
+        "content_hash": "5f10cafa5036406d0b347ef9",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "888bab8a417db71849d9097c",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": false
+    },
+    "36416cbce9dfec4d153da368": {
+      "item": {
+        "id": "36416cbce9dfec4d153da368",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "How to dodge Day 1 spoliers?",
+        "url": "https://reddit.com/r/GTA6/comments/1xyghu2/how_to_dodge_day_1_spoliers",
+        "summary": "Hey guys! So I've preordered GTA 6 but I've decided to go to school on the day it comes out. However, I want to make sure that I dodge spoliers for the game until I actually play it for myself. Is there a turn-off spoliers thing I can do in Youtube or social media so I dont get recommended gta 6 content? submitted by /u/AdventurousGuest308 [link] [comments]",
+        "published_at": "2026-11-17T09:55:02Z",
+        "content_hash": "97b18330565d4324bd348bd1",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "36416cbce9dfec4d153da368",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": false
+    },
+    "8f1b7b8a692ea3b56a392913": {
+      "item": {
+        "id": "8f1b7b8a692ea3b56a392913",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "There is a new GTA6 Update on PS5 + New Firmware Update, Make sure to update both to play on release before servers collapse.",
+        "url": "https://reddit.com/r/GTA6/comments/1xyggzf/there_is_a_new_gta6_update_on_ps5_new_firmware",
+        "summary": "Its new, just got released you gotta check for updates manually to force it if its not up for you, don't forget to have your snacks ready and send your wife to her parents with the kids as well and take your sick leave from work in advance submitted by /u/pc9000 [link] [comments]",
+        "published_at": "2026-11-17T09:53:36Z",
+        "content_hash": "88067a3f2f4cfb8632e9ca6f",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "8f1b7b8a692ea3b56a392913",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": true
+    },
+    "d805648e220ba70296cfbed0": {
+      "item": {
+        "id": "d805648e220ba70296cfbed0",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 6 Global Release Times Confirmed: Here's How to Play Early Via the New Zealand Trick",
+        "url": "https://ign.com/articles/gta-6-new-zealand-trick-xbox-ps5-early-release-time",
+        "summary": "GTA 6 will have a regional release, which means certain people can actually play it early thanks to what's called the New Zealand trick. Here's how it works.",
+        "published_at": "2026-11-17T09:47:08Z",
+        "content_hash": "d44a5c78ff0cc8d41bedd191",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "d805648e220ba70296cfbed0",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/17/vintage-vice-city-pack-01-1794908603556.jpg"
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": true
+    },
+    "330f72889ae36207ad9fb336": {
+      "item": {
+        "id": "330f72889ae36207ad9fb336",
+        "source_id": "reddit_gta6",
+        "source_name": "r/GTA6",
+        "trust_class": "COMMUNITY",
+        "origin_group": "reddit",
+        "title": "The last 48 hours of \"before GTA 6\" jokes. Throw 'em all at once 🫡",
+        "url": "https://reddit.com/r/GTA6/comments/1xyekeu/the_last_48_hours_of_before_gta_6_jokes_throw_em",
+        "summary": "Gime all you've got..... submitted by /u/Tixer_01 [link] [comments]",
+        "published_at": "2026-11-17T07:51:39Z",
+        "content_hash": "400724f5a52d486e9017a3aa",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "330f72889ae36207ad9fb336",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-17T12:02:46Z",
+      "needs_eval": false
     }
   },
-  "persisted_at": "2026-11-17T05:01:55Z",
+  "persisted_at": "2026-11-17T12:02:46Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": "2026-11-17T06:01:55Z"
 }

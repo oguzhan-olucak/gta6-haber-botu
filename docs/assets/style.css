@@ -731,3 +731,13 @@ body { background: #15132E; color: #F4EEFF; }
   .pin__label { font-size: 17px; letter-spacing: .04em; }
 }
 @media (max-width: 480px) { .tgpill { display: none !important; } }
+/* 901–1100 px arası: harita üstte, kartlar haritanın altında (üst üste binmesin) */
+@media (max-width: 1100px) {
+  .stage { width: calc(100% - 32px); height: auto; display: flex; flex-direction: column; }
+  .stage__viewport { position: relative; inset: auto; height: clamp(420px, 64vw, 640px); }
+  .hud { position: relative; inset: auto; display: flex; flex-direction: column; gap: 12px; padding: 0 16px 16px; }
+  .hud__title, .hud__panel, .feature, .countdown { position: static; width: auto; max-width: none; }
+  .hud__dock { display: flex; flex-direction: column; gap: 12px; }
+  .hud__title { order: 2; } .hud__panel { order: 1; } .hud__dock { order: 3; }
+  .countdown { align-self: flex-start; }
+}

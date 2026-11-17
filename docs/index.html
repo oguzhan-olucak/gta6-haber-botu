@@ -9,6 +9,14 @@
 <meta name="theme-color" content="#05060f">
 <meta property="og:title" content="GTA VI Türkiye Bülteni · Leonida Komuta Merkezi">
 <meta property="og:description" content="Kaynağı doğrulanmış Türkçe GTA VI haberleri, Leonida haritasında.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:url" content="https://oguzhan-olucak.github.io/gta6-haber-botu/">
+<meta property="og:image" content="https://oguzhan-olucak.github.io/gta6-haber-botu/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://oguzhan-olucak.github.io/gta6-haber-botu/">
+<link rel="alternate" type="application/rss+xml" title="GTA VI Türkiye Bülteni" href="rss.xml">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <title>GTA VI Türkiye Bülteni · Leonida Komuta Merkezi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,59 +56,42 @@
     <path d="M17 15h6l5 20 5-20h6l-8.5 28h-5zM42 15h6v28h-6z" fill="#090b1c" stroke="url(#g-chrome)" stroke-width="1.6" stroke-linejoin="round"/>
   </symbol>
 
-  <!-- Kapak illüstrasyonları (özgün, bölgeye göre) -->
+  <!-- Yedek kapaklar: görseli olmayan haberler için sinematik ışık/atmosfer (çizim değil) -->
+  <filter id="f-grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .06 0"/></filter>
   <symbol id="cover-vice_city" viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice">
-    <rect width="320" height="140" fill="url(#g-dusk)"/>
-    <circle cx="232" cy="92" r="44" fill="url(#g-sun)"/>
-    <path d="M188 84h88M190 94h84M194 104h76" stroke="#4a1260" stroke-width="4"/>
-    <path d="M0 140V96h14V70h10v26h8V58h16v38h6V80h12v16h10V64l8-8 8 8v32h10V86h14v54zM300 140V90h8V74h12v66z" fill="#0b0618"/>
-    <path d="M24 70h10M40 60h8M78 64h12" stroke="#35f0e0" stroke-width="2" opacity=".8"/>
-    <rect y="118" width="320" height="22" fill="#0b0618" opacity=".85"/>
-    <path d="M0 122h320" stroke="#ff2e88" stroke-width="2" opacity=".7"/>
-    <path d="M150 140c2-24 4-40 10-60M160 80c-12-8-28-6-38 2m38-2c4-12 16-18 28-16m-28 16c14 0 24 8 28 18" stroke="#0b0618" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <linearGradient id="cg-vice_city" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a0f2e"/><stop offset=".62" stop-color="#5a1e4a"/><stop offset="1" stop-color="#1a0f2e"/></linearGradient>
+    <radialGradient id="cs-vice_city" cx=".72" cy=".64" r=".55"><stop offset="0" stop-color="#ffb36b" stop-opacity=".85"/><stop offset=".25" stop-color="#ff7a59" stop-opacity=".55"/><stop offset="1" stop-color="#ff7a59" stop-opacity="0"/></radialGradient>
+    <rect width="320" height="140" fill="url(#cg-vice_city)"/><rect width="320" height="140" fill="url(#cs-vice_city)"/>
+    <rect y="88" width="320" height="52" fill="#1a0f2e" opacity=".55"/><path d="M0 88.5h320" stroke="#ffb36b" stroke-opacity=".35"/>
+    <rect width="320" height="140" filter="url(#f-grain)"/>
   </symbol>
   <symbol id="cover-leonida_keys" viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice">
-    <rect width="320" height="140" fill="url(#g-sea)"/>
-    <rect width="320" height="62" fill="#ff8a4c" opacity=".25"/>
-    <circle cx="64" cy="54" r="22" fill="url(#g-sun)" opacity=".9"/>
-    <path d="M0 62h320" stroke="#ffc94a" stroke-width="1.5" opacity=".6"/>
-    <path d="M30 96c20-10 50-10 70 0zM140 84c18-8 40-8 58 0zM236 102c22-12 56-12 78 0z" fill="#0f3b3a"/>
-    <path d="M60 72h200" stroke="#35f0e0" stroke-width="2" stroke-dasharray="2 10" opacity=".6"/>
-    <path d="M178 118l40-6 24 6z" fill="#f4f2ff"/><path d="M190 112l18-26v24" fill="#f4f2ff" opacity=".85"/>
-    <path d="M150 124c30 4 70 4 110-4" stroke="#35f0e0" stroke-width="1.5" fill="none" opacity=".7"/>
+    <linearGradient id="cg-leonida_keys" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1d2e"/><stop offset=".62" stop-color="#12405a"/><stop offset="1" stop-color="#0b1d2e"/></linearGradient>
+    <radialGradient id="cs-leonida_keys" cx=".72" cy=".64" r=".55"><stop offset="0" stop-color="#ffd59a" stop-opacity=".85"/><stop offset=".25" stop-color="#4fd1d9" stop-opacity=".55"/><stop offset="1" stop-color="#4fd1d9" stop-opacity="0"/></radialGradient>
+    <rect width="320" height="140" fill="url(#cg-leonida_keys)"/><rect width="320" height="140" fill="url(#cs-leonida_keys)"/>
+    <rect y="88" width="320" height="52" fill="#0b1d2e" opacity=".55"/><path d="M0 88.5h320" stroke="#ffd59a" stroke-opacity=".35"/>
+    <rect width="320" height="140" filter="url(#f-grain)"/>
   </symbol>
   <symbol id="cover-grassrivers" viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice">
-    <rect width="320" height="140" fill="url(#g-night)"/>
-    <circle cx="250" cy="38" r="16" fill="#e9f7d8" opacity=".9"/>
-    <circle cx="256" cy="34" r="14" fill="#061024"/>
-    <rect y="96" width="320" height="44" fill="#0a2a24"/>
-    <path d="M0 104h320" stroke="#35f0e0" stroke-width="1" opacity=".35"/>
-    <g stroke="#123d2e" stroke-width="3" stroke-linecap="round">
-      <path d="M20 104V70M30 104V60M40 104V76M56 104V64M70 104V82M250 104V66M262 104V58M276 104V74M292 104V62M306 104V80"/>
-    </g>
-    <path d="M110 112c10-6 30-6 50-2 10 2 22 2 30-2" stroke="#2f6b4f" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <circle cx="186" cy="108" r="2" fill="#ffc94a"/><circle cx="194" cy="108" r="2" fill="#ffc94a"/>
+    <linearGradient id="cg-grassrivers" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1712"/><stop offset=".62" stop-color="#163626"/><stop offset="1" stop-color="#0a1712"/></linearGradient>
+    <radialGradient id="cs-grassrivers" cx=".72" cy=".64" r=".55"><stop offset="0" stop-color="#e9f2c9" stop-opacity=".85"/><stop offset=".25" stop-color="#7cc79a" stop-opacity=".55"/><stop offset="1" stop-color="#7cc79a" stop-opacity="0"/></radialGradient>
+    <rect width="320" height="140" fill="url(#cg-grassrivers)"/><rect width="320" height="140" fill="url(#cs-grassrivers)"/>
+    <rect y="88" width="320" height="52" fill="#0a1712" opacity=".55"/><path d="M0 88.5h320" stroke="#e9f2c9" stroke-opacity=".35"/>
+    <rect width="320" height="140" filter="url(#f-grain)"/>
   </symbol>
   <symbol id="cover-port_gellhorn" viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice">
-    <rect width="320" height="140" fill="url(#g-dusk)"/>
-    <rect y="100" width="320" height="40" fill="#0b1230"/>
-    <g fill="#0b0618">
-      <path d="M40 100V40h6v60zM20 40h60v5H20zM70 45v18"/>
-      <path d="M210 100V30h6v70zM180 30h70v5h-70zM244 35v22"/>
-      <rect x="100" y="78" width="70" height="22"/><rect x="110" y="66" width="22" height="12"/><rect x="250" y="84" width="60" height="16"/>
-    </g>
-    <path d="M70 45v18M244 35v22" stroke="#0b0618" stroke-width="2"/>
-    <circle cx="246" cy="58" r="3" fill="#ff2e88"/><circle cx="72" cy="64" r="3" fill="#ffc94a"/>
-    <path d="M0 110h320M0 120h320" stroke="#a99bff" stroke-width="1" opacity=".3"/>
+    <linearGradient id="cg-port_gellhorn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121427"/><stop offset=".62" stop-color="#2c2f52"/><stop offset="1" stop-color="#121427"/></linearGradient>
+    <radialGradient id="cs-port_gellhorn" cx=".72" cy=".64" r=".55"><stop offset="0" stop-color="#ffcf8a" stop-opacity=".85"/><stop offset=".25" stop-color="#9aa3ff" stop-opacity=".55"/><stop offset="1" stop-color="#9aa3ff" stop-opacity="0"/></radialGradient>
+    <rect width="320" height="140" fill="url(#cg-port_gellhorn)"/><rect width="320" height="140" fill="url(#cs-port_gellhorn)"/>
+    <rect y="88" width="320" height="52" fill="#121427" opacity=".55"/><path d="M0 88.5h320" stroke="#ffcf8a" stroke-opacity=".35"/>
+    <rect width="320" height="140" filter="url(#f-grain)"/>
   </symbol>
   <symbol id="cover-mount_kalaga" viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice">
-    <rect width="320" height="140" fill="#0b1230"/>
-    <rect width="320" height="140" fill="url(#g-dusk)" opacity=".55"/>
-    <path d="M0 140 80 62l30 22 50-56 60 52 30-20 70 80z" fill="#120a2e"/>
-    <path d="M160 28 176 46l-10-4-6 8-6-8-10 4z" fill="#e9ecff" opacity=".85"/>
-    <path d="M160 28v-18" stroke="#35f0e0" stroke-width="2"/><circle cx="160" cy="9" r="3" fill="#ff2e88"/>
-    <path d="M140 14a28 28 0 0 1 40 0M132 6a40 40 0 0 1 56 0" stroke="#35f0e0" stroke-width="1.5" fill="none" opacity=".6"/>
-    <path d="M0 118h320" stroke="#ffc94a" stroke-width="1" stroke-dasharray="4 6" opacity=".5"/>
+    <linearGradient id="cg-mount_kalaga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10121c"/><stop offset=".62" stop-color="#2a2340"/><stop offset="1" stop-color="#10121c"/></linearGradient>
+    <radialGradient id="cs-mount_kalaga" cx=".72" cy=".64" r=".55"><stop offset="0" stop-color="#fff1d0" stop-opacity=".85"/><stop offset=".25" stop-color="#d9b36a" stop-opacity=".55"/><stop offset="1" stop-color="#d9b36a" stop-opacity="0"/></radialGradient>
+    <rect width="320" height="140" fill="url(#cg-mount_kalaga)"/><rect width="320" height="140" fill="url(#cs-mount_kalaga)"/>
+    <rect y="88" width="320" height="52" fill="#10121c" opacity=".55"/><path d="M0 88.5h320" stroke="#fff1d0" stroke-opacity=".35"/>
+    <rect width="320" height="140" filter="url(#f-grain)"/>
   </symbol>
 </svg>
 
@@ -116,6 +107,7 @@
       <button type="button" class="mainnav__link" data-open="telegram" aria-haspopup="dialog">Telegram önizleme</button>
       <button type="button" class="mainnav__link" data-open="method" aria-haspopup="dialog">Nasıl doğruluyoruz</button>
     </nav>
+    <a class="tgpill" id="tg-pill" hidden target="_blank" rel="noopener"><span class="tgpill__ico" aria-hidden="true"></span><span>Kanala katıl</span></a>
     <div class="status" role="status" aria-live="polite">
       <span class="pulse" id="st-pulse" aria-hidden="true"></span>
       <b id="st-state">Bağlanıyor…</b>
@@ -135,46 +127,43 @@
     <div class="stage__viewport" id="map-viewport">
       <div class="stage__camera" id="map-camera">
         <svg class="map" id="map" viewBox="0 0 1000 700" role="img" aria-labelledby="map-title map-desc">
-          <title id="map-title">Leonida eyaletinin stilize haritası</title>
-          <desc id="map-desc">Beş bölge işaretli: Vice City, Leonida Keys, Grassrivers, Port Gellhorn ve Ambrosia, Mount Kalaga.</desc>
-          <defs>
-            <pattern id="p-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#35f0e0" stroke-opacity=".07"/></pattern>
-            <pattern id="p-swamp" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><path d="M0 7h7" stroke="#3fa77a" stroke-opacity=".45" stroke-width="1.4"/></pattern>
-            <pattern id="p-city" width="9" height="9" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#ff2e88" fill-opacity=".35"/></pattern>
-            <radialGradient id="g-land" cx=".55" cy=".35" r=".8">
-              <stop offset="0" stop-color="#1d1850"/><stop offset="1" stop-color="#0e0c2c"/>
-            </radialGradient>
-            <filter id="f-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter>
-          </defs>
-          <g class="map__coast-glow" filter="url(#f-glow)">
-            <path class="leonida" d="M48 132C120 112 220 104 330 108L470 98C522 94 556 108 574 140C600 196 616 262 640 328C664 392 698 444 714 498C726 540 718 580 690 604C664 624 630 622 606 600C582 578 566 548 548 512C524 466 498 420 478 372C466 342 462 306 452 274C442 246 420 222 392 210C340 196 280 198 220 204C160 210 100 212 52 202C36 192 32 148 48 132Z"/>
-          </g>
-          <path class="leonida leonida--land" d="M48 132C120 112 220 104 330 108L470 98C522 94 556 108 574 140C600 196 616 262 640 328C664 392 698 444 714 498C726 540 718 580 690 604C664 624 630 622 606 600C582 578 566 548 548 512C524 466 498 420 478 372C466 342 462 306 452 274C442 246 420 222 392 210C340 196 280 198 220 204C160 210 100 212 52 202C36 192 32 148 48 132Z" fill="url(#g-land)"/>
-          <!-- Bölge dokuları -->
-          <path d="M560 470C580 448 612 452 634 470C652 500 664 540 650 572C630 590 604 584 590 560C576 534 566 504 560 470Z" fill="url(#p-swamp)"/>
-          <path d="M662 444 698 470 708 528 684 540 664 500z" fill="url(#p-city)"/>
-          <ellipse cx="600" cy="392" rx="30" ry="22" fill="#0b2a52" stroke="#35f0e0" stroke-opacity=".4"/>
-          <g class="map__contour" fill="none" stroke="#a99bff" stroke-opacity=".35">
-            <ellipse cx="470" cy="150" rx="46" ry="26"/><ellipse cx="470" cy="150" rx="30" ry="16"/><ellipse cx="470" cy="150" rx="14" ry="8"/>
-          </g>
-          <!-- Takımadalar -->
-          <g class="map__keys" fill="#16163f" stroke="#35f0e0" stroke-opacity=".7">
-            <ellipse cx="640" cy="628" rx="14" ry="5" transform="rotate(-18 640 628)"/>
-            <ellipse cx="610" cy="642" rx="12" ry="4" transform="rotate(-12 610 642)"/>
-            <ellipse cx="578" cy="652" rx="13" ry="4" transform="rotate(-8 578 652)"/>
-            <ellipse cx="544" cy="660" rx="11" ry="4"/>
-            <ellipse cx="510" cy="664" rx="12" ry="4"/>
-            <ellipse cx="474" cy="664" rx="9" ry="3"/>
-          </g>
-          <path d="M650 622C600 650 540 664 470 664" fill="none" stroke="#ffc94a" stroke-opacity=".5" stroke-dasharray="3 6"/>
-          <!-- Otoyollar -->
-          <g class="map__roads" fill="none" stroke="#ffc94a" stroke-opacity=".28" stroke-width="2" stroke-dasharray="6 7">
-            <path d="M90 168C200 160 330 150 470 150"/><path d="M470 150C520 220 560 300 600 392C630 450 660 470 684 492"/>
-            <path d="M600 392C590 440 596 500 612 540"/>
-          </g>
-          <g class="map__labels" aria-hidden="true">
-            <text x="56" y="236">PANHANDLE</text><text x="410" y="300">LEONIDA</text><text x="760" y="320">ATLANTİK</text><text x="300" y="470">KÖRFEZ</text>
-          </g>
+          <title id="map-title">Leonida haritası (gerçek Florida kıyı çizgisine dayalı)</title>
+          <desc id="map-desc">Leonida, Florida'yı parodileyen kurgusal eyalettir. Harita gerçek Florida kıyı çizgisi, otoyolları ve şehir ışıklarıyla çizildi; beş bölge işaretli: Vice City (Miami), Leonida Keys (Florida Keys), Grassrivers (Everglades), Port Gellhorn ve Ambrosia (Panhandle), Mount Kalaga (kuzey).</desc>
+<defs>
+  <linearGradient id="g-ocean" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0a1420"/><stop offset=".55" stop-color="#07101a"/><stop offset="1" stop-color="#050b13"/>
+  </linearGradient>
+  <clipPath id="clip-land"><path d="M227.9 104.0 C229.8 106.0 241.5 102.9 246.8 102.1 C252.1 101.3 252.5 100.5 259.7 99.2 C266.9 97.9 280.5 95.3 289.8 94.3 C299.1 93.3 308.5 93.1 315.7 93.3 C322.9 93.5 325.7 93.5 332.9 95.3 C340.1 97.1 351.5 100.8 358.7 104.0 C365.9 107.2 370.4 111.8 375.9 114.7 C381.3 117.6 385.9 117.9 391.4 121.5 C396.8 125.1 404.2 131.2 408.6 136.1 C413.1 141.0 417.2 146.2 418.1 150.7 C419.0 155.2 412.5 161.4 413.8 163.3 C415.1 165.2 420.6 163.2 425.8 162.4 C431.0 161.6 439.5 157.7 444.8 158.5 C450.1 159.3 452.7 169.3 457.7 167.2 C462.7 165.1 468.1 150.5 474.9 145.8 C481.6 141.1 491.8 142.2 498.2 139.0 C504.6 135.8 507.4 127.7 513.6 126.4 C519.8 125.1 527.3 128.1 535.2 131.3 C543.1 134.5 553.0 140.5 561.0 145.8 C569.0 151.1 578.2 156.7 583.4 163.3 C588.6 170.0 587.9 179.2 592.0 185.7 C596.1 192.2 604.6 197.3 608.3 202.2 C612.0 207.1 610.1 210.5 614.4 214.9 C618.7 219.3 629.5 223.8 634.2 228.5 C638.9 233.2 640.8 236.6 642.8 243.1 C644.8 249.6 646.5 258.5 646.2 267.4 C645.9 276.3 643.0 289.2 641.0 296.5 C639.0 303.8 635.8 306.2 634.2 311.1 C632.6 316.0 631.6 320.0 631.6 325.7 C631.6 331.4 632.9 339.0 634.2 345.1 C635.5 351.2 636.7 361.8 639.3 362.6 C641.9 363.4 647.0 355.3 649.7 350.0 C652.4 344.7 653.3 330.6 655.7 330.6 C658.1 330.6 665.3 343.5 664.3 350.0 C663.3 356.5 651.6 362.6 649.7 369.4 C647.8 376.2 650.7 383.5 653.1 390.8 C655.5 398.1 661.0 407.0 664.3 413.2 C667.6 419.4 670.3 422.1 672.9 427.8 C675.5 433.5 675.5 447.2 679.8 447.2 C684.1 447.2 695.1 425.4 698.7 427.8 C702.3 430.2 699.9 453.7 701.3 461.8 C702.7 469.9 704.7 471.5 707.3 476.4 C709.9 481.3 714.6 486.0 716.8 491.0 C718.9 496.0 718.5 500.7 720.2 506.5 C721.9 512.3 721.2 521.5 727.1 526.0 C733.0 530.5 748.8 528.3 755.5 533.8 C762.2 539.3 764.1 550.8 767.6 559.0 C771.1 567.2 774.1 575.5 776.2 583.3 C778.4 591.1 777.2 602.3 780.5 605.7 C783.8 609.1 789.5 605.0 796.0 603.7 C802.5 602.4 812.5 600.2 819.2 597.9 C825.9 595.6 831.8 594.1 836.4 590.1 C841.0 586.1 844.6 579.1 846.8 573.6 C849.0 568.1 847.4 562.3 849.4 557.1 C851.4 551.9 856.4 544.9 858.8 542.5 C861.2 540.1 863.0 545.4 864.0 542.5 C865.0 539.6 864.5 530.7 864.9 525.0 C865.3 519.3 865.9 515.0 866.6 508.5 C867.3 502.0 868.2 495.5 869.2 486.1 C870.2 476.7 872.6 461.8 872.6 452.1 C872.6 442.4 871.2 435.9 869.2 427.8 C867.2 419.7 863.9 411.9 860.6 403.5 C857.3 395.1 852.1 384.3 849.4 377.2 C846.7 370.1 848.2 370.6 844.2 360.7 C840.2 350.8 828.8 330.2 825.3 317.9 C821.8 305.6 822.8 293.1 823.5 286.8 C824.2 280.5 830.8 284.9 829.6 280.0 C828.5 275.1 821.2 265.4 816.6 257.6 C812.0 249.8 806.6 241.4 802.0 233.3 C797.4 225.2 793.1 217.9 789.1 209.0 C785.1 200.1 782.1 191.2 777.9 179.9 C773.7 168.6 767.8 154.4 764.1 141.0 C760.4 127.5 757.8 112.2 755.5 99.2 C753.2 86.2 753.4 69.5 750.4 63.2 C747.4 56.9 745.7 58.1 737.5 61.3 C729.3 64.5 709.9 80.2 701.3 82.6 C692.7 85.0 692.1 77.4 685.8 75.8 C679.5 74.2 679.2 74.7 663.4 72.9 C647.6 71.1 613.2 66.7 591.1 65.1 C569.0 63.5 553.3 63.7 530.9 63.2 C508.5 62.7 471.1 67.1 456.8 62.2 C442.5 57.3 461.2 38.7 444.8 34.0 C428.4 29.3 396.0 34.0 358.7 34.0 C321.4 34.0 243.9 33.2 221.0 34.0 C198.1 34.8 218.1 33.2 221.0 38.9 C223.9 44.6 235.8 59.5 238.2 68.1 C240.6 76.7 237.3 84.4 235.6 90.4 C233.9 96.4 226.0 102.0 227.9 104.0Z"/></clipPath>
+  <filter id="f-relief" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency=".011 .014" numOctaves="5" seed="19" result="n"/>
+    <feDiffuseLighting in="n" surfaceScale="2.6" diffuseConstant="1.05" lighting-color="#cfe3d2" result="l">
+      <feDistantLight azimuth="235" elevation="38"/>
+    </feDiffuseLighting>
+    <feColorMatrix in="l" type="matrix" values="0.22 0 0 0 0.03  0 0.30 0 0 0.05  0 0 0.24 0 0.04  0 0 0 1 0"/>
+  </filter>
+  <pattern id="p-wet" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-20)">
+    <path d="M0 3.5h4" stroke="#5fae86" stroke-opacity=".38" stroke-width="1"/>
+  </pattern>
+  <radialGradient id="g-light"><stop offset="0" stop-color="#ffd9a0" stop-opacity=".9"/><stop offset="1" stop-color="#ff9b4a" stop-opacity="0"/></radialGradient>
+</defs>
+<g class="geo" aria-hidden="true">
+  <g class="geo__grat"><path d="M-1600 909.0H2600"/><text x="961.3" y="905.0">22°K</text><path d="M-1600 811.8H2600"/><text x="961.3" y="807.8">23°K</text><path d="M-1600 714.6H2600"/><text x="961.3" y="710.6">24°K</text><path d="M-1600 617.4H2600"/><text x="961.3" y="613.4">25°K</text><path d="M-1600 520.1H2600"/><text x="961.3" y="516.1">26°K</text><path d="M-1600 422.9H2600"/><text x="961.3" y="418.9">27°K</text><path d="M-1600 325.7H2600"/><text x="961.3" y="321.7">28°K</text><path d="M-1600 228.5H2600"/><text x="961.3" y="224.5">29°K</text><path d="M-1600 131.3H2600"/><text x="961.3" y="127.30000000000001">30°K</text><path d="M-1600 34.0H2600"/><text x="961.3" y="30.0">31°K</text><path d="M-1600 -63.2H2600"/><text x="961.3" y="-67.2">32°K</text><path d="M-1600 -160.4H2600"/><text x="961.3" y="-164.4">33°K</text><path d="M-1600 -257.6H2600"/><text x="961.3" y="-261.6">34°K</text><path d="M-1600 -354.9H2600"/><text x="961.3" y="-358.9">35°K</text><path d="M1391.7 -1200V1900"/><text x="1395.7" y="675.7">74°B</text><path d="M1305.6 -1200V1900"/><text x="1309.6" y="675.7">75°B</text><path d="M1219.5 -1200V1900"/><text x="1223.5" y="675.7">76°B</text><path d="M1133.4 -1200V1900"/><text x="1137.4" y="675.7">77°B</text><path d="M1047.3 -1200V1900"/><text x="1051.3" y="675.7">78°B</text><path d="M961.3 -1200V1900"/><text x="965.3" y="675.7">79°B</text><path d="M875.2 -1200V1900"/><text x="879.2" y="675.7">80°B</text><path d="M789.1 -1200V1900"/><text x="793.1" y="675.7">81°B</text><path d="M703.0 -1200V1900"/><text x="707.0" y="675.7">82°B</text><path d="M616.9 -1200V1900"/><text x="620.9" y="675.7">83°B</text><path d="M530.9 -1200V1900"/><text x="534.9" y="675.7">84°B</text><path d="M444.8 -1200V1900"/><text x="448.8" y="675.7">85°B</text><path d="M358.7 -1200V1900"/><text x="362.7" y="675.7">86°B</text><path d="M272.6 -1200V1900"/><text x="276.6" y="675.7">87°B</text><path d="M186.5 -1200V1900"/><text x="190.5" y="675.7">88°B</text><path d="M100.5 -1200V1900"/><text x="104.5" y="675.7">89°B</text><path d="M14.4 -1200V1900"/><text x="18.4" y="675.7">90°B</text><path d="M-71.7 -1200V1900"/><text x="-67.7" y="675.7">91°B</text><path d="M-157.8 -1200V1900"/><text x="-153.8" y="675.7">92°B</text><path d="M-243.9 -1200V1900"/><text x="-239.9" y="675.7">93°B</text><path d="M-329.9 -1200V1900"/><text x="-325.9" y="675.7">94°B</text><path d="M-416.0 -1200V1900"/><text x="-412.0" y="675.7">95°B</text></g>
+  <path class="geo__neighbor" d="M-416.0 -452.1 C-134.8 -559.1 991.5 -465.1 1271.2 -452.1 C1551.0 -439.1 1298.4 -406.7 1262.5 -374.3 C1226.6 -341.9 1110.5 -293.2 1056.0 -257.6 C1001.5 -222.0 978.4 -192.8 935.4 -160.4 C892.4 -128.0 827.8 -95.6 797.7 -63.2 C767.6 -30.8 762.6 12.9 754.7 34.0 C746.8 55.1 753.3 58.7 750.4 63.2 C747.5 67.8 745.7 58.1 737.5 61.3 C729.3 64.5 709.9 80.2 701.3 82.6 C692.7 85.0 692.1 77.4 685.8 75.8 C679.5 74.2 679.2 74.7 663.4 72.9 C647.6 71.1 613.2 66.7 591.1 65.1 C569.0 63.5 553.3 63.7 530.9 63.2 C508.5 62.7 471.1 67.1 456.8 62.2 C442.5 57.3 461.2 38.7 444.8 34.0 C428.4 29.3 396.0 34.0 358.7 34.0 C321.4 34.0 243.9 33.2 221.0 34.0 C198.1 34.8 218.1 33.2 221.0 38.9 C223.9 44.6 235.8 59.5 238.2 68.1 C240.6 76.7 237.3 84.4 235.6 90.4 C233.9 96.4 236.1 101.2 227.9 104.0 C219.7 106.8 202.0 108.0 186.5 106.9 C171.0 105.8 153.6 98.0 134.9 97.2 C116.2 96.4 97.5 94.8 74.6 102.1 C51.6 109.4 28.8 123.2 -2.8 141.0 C-34.4 158.8 -60.2 204.2 -114.7 209.0 C-169.2 213.8 -279.7 173.3 -329.9 170.1 C-380.1 166.9 -401.6 293.3 -416.0 189.6 C-430.4 85.9 -697.2 -345.2 -416.0 -452.1Z"/>
+  <path class="geo__shelf" d="M227.9 104.0 C229.8 106.0 241.5 102.9 246.8 102.1 C252.1 101.3 252.5 100.5 259.7 99.2 C266.9 97.9 280.5 95.3 289.8 94.3 C299.1 93.3 308.5 93.1 315.7 93.3 C322.9 93.5 325.7 93.5 332.9 95.3 C340.1 97.1 351.5 100.8 358.7 104.0 C365.9 107.2 370.4 111.8 375.9 114.7 C381.3 117.6 385.9 117.9 391.4 121.5 C396.8 125.1 404.2 131.2 408.6 136.1 C413.1 141.0 417.2 146.2 418.1 150.7 C419.0 155.2 412.5 161.4 413.8 163.3 C415.1 165.2 420.6 163.2 425.8 162.4 C431.0 161.6 439.5 157.7 444.8 158.5 C450.1 159.3 452.7 169.3 457.7 167.2 C462.7 165.1 468.1 150.5 474.9 145.8 C481.6 141.1 491.8 142.2 498.2 139.0 C504.6 135.8 507.4 127.7 513.6 126.4 C519.8 125.1 527.3 128.1 535.2 131.3 C543.1 134.5 553.0 140.5 561.0 145.8 C569.0 151.1 578.2 156.7 583.4 163.3 C588.6 170.0 587.9 179.2 592.0 185.7 C596.1 192.2 604.6 197.3 608.3 202.2 C612.0 207.1 610.1 210.5 614.4 214.9 C618.7 219.3 629.5 223.8 634.2 228.5 C638.9 233.2 640.8 236.6 642.8 243.1 C644.8 249.6 646.5 258.5 646.2 267.4 C645.9 276.3 643.0 289.2 641.0 296.5 C639.0 303.8 635.8 306.2 634.2 311.1 C632.6 316.0 631.6 320.0 631.6 325.7 C631.6 331.4 632.9 339.0 634.2 345.1 C635.5 351.2 636.7 361.8 639.3 362.6 C641.9 363.4 647.0 355.3 649.7 350.0 C652.4 344.7 653.3 330.6 655.7 330.6 C658.1 330.6 665.3 343.5 664.3 350.0 C663.3 356.5 651.6 362.6 649.7 369.4 C647.8 376.2 650.7 383.5 653.1 390.8 C655.5 398.1 661.0 407.0 664.3 413.2 C667.6 419.4 670.3 422.1 672.9 427.8 C675.5 433.5 675.5 447.2 679.8 447.2 C684.1 447.2 695.1 425.4 698.7 427.8 C702.3 430.2 699.9 453.7 701.3 461.8 C702.7 469.9 704.7 471.5 707.3 476.4 C709.9 481.3 714.6 486.0 716.8 491.0 C718.9 496.0 718.5 500.7 720.2 506.5 C721.9 512.3 721.2 521.5 727.1 526.0 C733.0 530.5 748.8 528.3 755.5 533.8 C762.2 539.3 764.1 550.8 767.6 559.0 C771.1 567.2 774.1 575.5 776.2 583.3 C778.4 591.1 777.2 602.3 780.5 605.7 C783.8 609.1 789.5 605.0 796.0 603.7 C802.5 602.4 812.5 600.2 819.2 597.9 C825.9 595.6 831.8 594.1 836.4 590.1 C841.0 586.1 844.6 579.1 846.8 573.6 C849.0 568.1 847.4 562.3 849.4 557.1 C851.4 551.9 856.4 544.9 858.8 542.5 C861.2 540.1 863.0 545.4 864.0 542.5 C865.0 539.6 864.5 530.7 864.9 525.0 C865.3 519.3 865.9 515.0 866.6 508.5 C867.3 502.0 868.2 495.5 869.2 486.1 C870.2 476.7 872.6 461.8 872.6 452.1 C872.6 442.4 871.2 435.9 869.2 427.8 C867.2 419.7 863.9 411.9 860.6 403.5 C857.3 395.1 852.1 384.3 849.4 377.2 C846.7 370.1 848.2 370.6 844.2 360.7 C840.2 350.8 828.8 330.2 825.3 317.9 C821.8 305.6 822.8 293.1 823.5 286.8 C824.2 280.5 830.8 284.9 829.6 280.0 C828.5 275.1 821.2 265.4 816.6 257.6 C812.0 249.8 806.6 241.4 802.0 233.3 C797.4 225.2 793.1 217.9 789.1 209.0 C785.1 200.1 782.1 191.2 777.9 179.9 C773.7 168.6 767.8 154.4 764.1 141.0 C760.4 127.5 757.8 112.2 755.5 99.2 C753.2 86.2 753.4 69.5 750.4 63.2 C747.4 56.9 745.7 58.1 737.5 61.3 C729.3 64.5 709.9 80.2 701.3 82.6 C692.7 85.0 692.1 77.4 685.8 75.8 C679.5 74.2 679.2 74.7 663.4 72.9 C647.6 71.1 613.2 66.7 591.1 65.1 C569.0 63.5 553.3 63.7 530.9 63.2 C508.5 62.7 471.1 67.1 456.8 62.2 C442.5 57.3 461.2 38.7 444.8 34.0 C428.4 29.3 396.0 34.0 358.7 34.0 C321.4 34.0 243.9 33.2 221.0 34.0 C198.1 34.8 218.1 33.2 221.0 38.9 C223.9 44.6 235.8 59.5 238.2 68.1 C240.6 76.7 237.3 84.4 235.6 90.4 C233.9 96.4 226.0 102.0 227.9 104.0Z"/>
+  <path class="geo__land" d="M227.9 104.0 C229.8 106.0 241.5 102.9 246.8 102.1 C252.1 101.3 252.5 100.5 259.7 99.2 C266.9 97.9 280.5 95.3 289.8 94.3 C299.1 93.3 308.5 93.1 315.7 93.3 C322.9 93.5 325.7 93.5 332.9 95.3 C340.1 97.1 351.5 100.8 358.7 104.0 C365.9 107.2 370.4 111.8 375.9 114.7 C381.3 117.6 385.9 117.9 391.4 121.5 C396.8 125.1 404.2 131.2 408.6 136.1 C413.1 141.0 417.2 146.2 418.1 150.7 C419.0 155.2 412.5 161.4 413.8 163.3 C415.1 165.2 420.6 163.2 425.8 162.4 C431.0 161.6 439.5 157.7 444.8 158.5 C450.1 159.3 452.7 169.3 457.7 167.2 C462.7 165.1 468.1 150.5 474.9 145.8 C481.6 141.1 491.8 142.2 498.2 139.0 C504.6 135.8 507.4 127.7 513.6 126.4 C519.8 125.1 527.3 128.1 535.2 131.3 C543.1 134.5 553.0 140.5 561.0 145.8 C569.0 151.1 578.2 156.7 583.4 163.3 C588.6 170.0 587.9 179.2 592.0 185.7 C596.1 192.2 604.6 197.3 608.3 202.2 C612.0 207.1 610.1 210.5 614.4 214.9 C618.7 219.3 629.5 223.8 634.2 228.5 C638.9 233.2 640.8 236.6 642.8 243.1 C644.8 249.6 646.5 258.5 646.2 267.4 C645.9 276.3 643.0 289.2 641.0 296.5 C639.0 303.8 635.8 306.2 634.2 311.1 C632.6 316.0 631.6 320.0 631.6 325.7 C631.6 331.4 632.9 339.0 634.2 345.1 C635.5 351.2 636.7 361.8 639.3 362.6 C641.9 363.4 647.0 355.3 649.7 350.0 C652.4 344.7 653.3 330.6 655.7 330.6 C658.1 330.6 665.3 343.5 664.3 350.0 C663.3 356.5 651.6 362.6 649.7 369.4 C647.8 376.2 650.7 383.5 653.1 390.8 C655.5 398.1 661.0 407.0 664.3 413.2 C667.6 419.4 670.3 422.1 672.9 427.8 C675.5 433.5 675.5 447.2 679.8 447.2 C684.1 447.2 695.1 425.4 698.7 427.8 C702.3 430.2 699.9 453.7 701.3 461.8 C702.7 469.9 704.7 471.5 707.3 476.4 C709.9 481.3 714.6 486.0 716.8 491.0 C718.9 496.0 718.5 500.7 720.2 506.5 C721.9 512.3 721.2 521.5 727.1 526.0 C733.0 530.5 748.8 528.3 755.5 533.8 C762.2 539.3 764.1 550.8 767.6 559.0 C771.1 567.2 774.1 575.5 776.2 583.3 C778.4 591.1 777.2 602.3 780.5 605.7 C783.8 609.1 789.5 605.0 796.0 603.7 C802.5 602.4 812.5 600.2 819.2 597.9 C825.9 595.6 831.8 594.1 836.4 590.1 C841.0 586.1 844.6 579.1 846.8 573.6 C849.0 568.1 847.4 562.3 849.4 557.1 C851.4 551.9 856.4 544.9 858.8 542.5 C861.2 540.1 863.0 545.4 864.0 542.5 C865.0 539.6 864.5 530.7 864.9 525.0 C865.3 519.3 865.9 515.0 866.6 508.5 C867.3 502.0 868.2 495.5 869.2 486.1 C870.2 476.7 872.6 461.8 872.6 452.1 C872.6 442.4 871.2 435.9 869.2 427.8 C867.2 419.7 863.9 411.9 860.6 403.5 C857.3 395.1 852.1 384.3 849.4 377.2 C846.7 370.1 848.2 370.6 844.2 360.7 C840.2 350.8 828.8 330.2 825.3 317.9 C821.8 305.6 822.8 293.1 823.5 286.8 C824.2 280.5 830.8 284.9 829.6 280.0 C828.5 275.1 821.2 265.4 816.6 257.6 C812.0 249.8 806.6 241.4 802.0 233.3 C797.4 225.2 793.1 217.9 789.1 209.0 C785.1 200.1 782.1 191.2 777.9 179.9 C773.7 168.6 767.8 154.4 764.1 141.0 C760.4 127.5 757.8 112.2 755.5 99.2 C753.2 86.2 753.4 69.5 750.4 63.2 C747.4 56.9 745.7 58.1 737.5 61.3 C729.3 64.5 709.9 80.2 701.3 82.6 C692.7 85.0 692.1 77.4 685.8 75.8 C679.5 74.2 679.2 74.7 663.4 72.9 C647.6 71.1 613.2 66.7 591.1 65.1 C569.0 63.5 553.3 63.7 530.9 63.2 C508.5 62.7 471.1 67.1 456.8 62.2 C442.5 57.3 461.2 38.7 444.8 34.0 C428.4 29.3 396.0 34.0 358.7 34.0 C321.4 34.0 243.9 33.2 221.0 34.0 C198.1 34.8 218.1 33.2 221.0 38.9 C223.9 44.6 235.8 59.5 238.2 68.1 C240.6 76.7 237.3 84.4 235.6 90.4 C233.9 96.4 226.0 102.0 227.9 104.0Z"/>
+  <g clip-path="url(#clip-land)">
+    <rect class="geo__relief" width="1000" height="700" filter="url(#f-relief)"/>
+    <path class="geo__wet" d="M784.8 495.8 C796.3 495.0 819.2 503.1 827.8 510.4 C836.4 517.7 835.4 529.1 836.4 539.6 C837.4 550.1 838.9 564.7 833.9 573.6 C828.9 582.5 815.2 590.7 806.3 593.1 C797.4 595.5 787.7 595.5 780.5 588.2 C773.3 580.9 766.9 561.4 763.3 549.3 C759.7 537.1 755.4 524.2 759.0 515.3 C762.6 506.4 773.3 496.6 784.8 495.8Z" fill="url(#p-wet)"/>
+    <path class="geo__wetglow" d="M784.8 495.8 C796.3 495.0 819.2 503.1 827.8 510.4 C836.4 517.7 835.4 529.1 836.4 539.6 C837.4 550.1 838.9 564.7 833.9 573.6 C828.9 582.5 815.2 590.7 806.3 593.1 C797.4 595.5 787.7 595.5 780.5 588.2 C773.3 580.9 766.9 561.4 763.3 549.3 C759.7 537.1 755.4 524.2 759.0 515.3 C762.6 506.4 773.3 496.6 784.8 495.8Z"/>
+  </g>
+  <path class="geo__coast" d="M227.9 104.0 C229.8 106.0 241.5 102.9 246.8 102.1 C252.1 101.3 252.5 100.5 259.7 99.2 C266.9 97.9 280.5 95.3 289.8 94.3 C299.1 93.3 308.5 93.1 315.7 93.3 C322.9 93.5 325.7 93.5 332.9 95.3 C340.1 97.1 351.5 100.8 358.7 104.0 C365.9 107.2 370.4 111.8 375.9 114.7 C381.3 117.6 385.9 117.9 391.4 121.5 C396.8 125.1 404.2 131.2 408.6 136.1 C413.1 141.0 417.2 146.2 418.1 150.7 C419.0 155.2 412.5 161.4 413.8 163.3 C415.1 165.2 420.6 163.2 425.8 162.4 C431.0 161.6 439.5 157.7 444.8 158.5 C450.1 159.3 452.7 169.3 457.7 167.2 C462.7 165.1 468.1 150.5 474.9 145.8 C481.6 141.1 491.8 142.2 498.2 139.0 C504.6 135.8 507.4 127.7 513.6 126.4 C519.8 125.1 527.3 128.1 535.2 131.3 C543.1 134.5 553.0 140.5 561.0 145.8 C569.0 151.1 578.2 156.7 583.4 163.3 C588.6 170.0 587.9 179.2 592.0 185.7 C596.1 192.2 604.6 197.3 608.3 202.2 C612.0 207.1 610.1 210.5 614.4 214.9 C618.7 219.3 629.5 223.8 634.2 228.5 C638.9 233.2 640.8 236.6 642.8 243.1 C644.8 249.6 646.5 258.5 646.2 267.4 C645.9 276.3 643.0 289.2 641.0 296.5 C639.0 303.8 635.8 306.2 634.2 311.1 C632.6 316.0 631.6 320.0 631.6 325.7 C631.6 331.4 632.9 339.0 634.2 345.1 C635.5 351.2 636.7 361.8 639.3 362.6 C641.9 363.4 647.0 355.3 649.7 350.0 C652.4 344.7 653.3 330.6 655.7 330.6 C658.1 330.6 665.3 343.5 664.3 350.0 C663.3 356.5 651.6 362.6 649.7 369.4 C647.8 376.2 650.7 383.5 653.1 390.8 C655.5 398.1 661.0 407.0 664.3 413.2 C667.6 419.4 670.3 422.1 672.9 427.8 C675.5 433.5 675.5 447.2 679.8 447.2 C684.1 447.2 695.1 425.4 698.7 427.8 C702.3 430.2 699.9 453.7 701.3 461.8 C702.7 469.9 704.7 471.5 707.3 476.4 C709.9 481.3 714.6 486.0 716.8 491.0 C718.9 496.0 718.5 500.7 720.2 506.5 C721.9 512.3 721.2 521.5 727.1 526.0 C733.0 530.5 748.8 528.3 755.5 533.8 C762.2 539.3 764.1 550.8 767.6 559.0 C771.1 567.2 774.1 575.5 776.2 583.3 C778.4 591.1 777.2 602.3 780.5 605.7 C783.8 609.1 789.5 605.0 796.0 603.7 C802.5 602.4 812.5 600.2 819.2 597.9 C825.9 595.6 831.8 594.1 836.4 590.1 C841.0 586.1 844.6 579.1 846.8 573.6 C849.0 568.1 847.4 562.3 849.4 557.1 C851.4 551.9 856.4 544.9 858.8 542.5 C861.2 540.1 863.0 545.4 864.0 542.5 C865.0 539.6 864.5 530.7 864.9 525.0 C865.3 519.3 865.9 515.0 866.6 508.5 C867.3 502.0 868.2 495.5 869.2 486.1 C870.2 476.7 872.6 461.8 872.6 452.1 C872.6 442.4 871.2 435.9 869.2 427.8 C867.2 419.7 863.9 411.9 860.6 403.5 C857.3 395.1 852.1 384.3 849.4 377.2 C846.7 370.1 848.2 370.6 844.2 360.7 C840.2 350.8 828.8 330.2 825.3 317.9 C821.8 305.6 822.8 293.1 823.5 286.8 C824.2 280.5 830.8 284.9 829.6 280.0 C828.5 275.1 821.2 265.4 816.6 257.6 C812.0 249.8 806.6 241.4 802.0 233.3 C797.4 225.2 793.1 217.9 789.1 209.0 C785.1 200.1 782.1 191.2 777.9 179.9 C773.7 168.6 767.8 154.4 764.1 141.0 C760.4 127.5 757.8 112.2 755.5 99.2 C753.2 86.2 753.4 69.5 750.4 63.2 C747.4 56.9 745.7 58.1 737.5 61.3 C729.3 64.5 709.9 80.2 701.3 82.6 C692.7 85.0 692.1 77.4 685.8 75.8 C679.5 74.2 679.2 74.7 663.4 72.9 C647.6 71.1 613.2 66.7 591.1 65.1 C569.0 63.5 553.3 63.7 530.9 63.2 C508.5 62.7 471.1 67.1 456.8 62.2 C442.5 57.3 461.2 38.7 444.8 34.0 C428.4 29.3 396.0 34.0 358.7 34.0 C321.4 34.0 243.9 33.2 221.0 34.0 C198.1 34.8 218.1 33.2 221.0 38.9 C223.9 44.6 235.8 59.5 238.2 68.1 C240.6 76.7 237.3 84.4 235.6 90.4 C233.9 96.4 226.0 102.0 227.9 104.0Z"/>
+  <ellipse class="geo__lake" cx="803.7" cy="427.8" rx="20.7" ry="19.4"/>
+  <g class="geo__keys"><ellipse cx="836.4" cy="607.6" rx="7" ry="2.6" transform="rotate(-28 836.4 607.6)"/><ellipse cx="823.5" cy="622.2" rx="7" ry="2.6" transform="rotate(-25 823.5 622.2)"/><ellipse cx="808.0" cy="632.9" rx="7" ry="2.6" transform="rotate(-22 808.0 632.9)"/><ellipse cx="790.8" cy="642.6" rx="7" ry="2.6" transform="rotate(-19 790.8 642.6)"/><ellipse cx="776.2" cy="646.5" rx="7" ry="2.6" transform="rotate(-16 776.2 646.5)"/><ellipse cx="759.0" cy="650.4" rx="7" ry="2.6" transform="rotate(-13 759.0 650.4)"/><ellipse cx="741.8" cy="656.2" rx="7" ry="2.6" transform="rotate(-10 741.8 656.2)"/><ellipse cx="722.0" cy="661.1" rx="6" ry="2.6" transform="rotate(-7 722.0 661.1)"/></g>
+  <g class="geo__roads"><path d="M246.8 84.6 C256.9 82.3 285.6 75.0 307.1 71.0 C328.6 67.0 351.5 58.0 375.9 60.3 C400.3 62.6 431.6 80.1 453.4 84.6 C475.2 89.1 485.3 87.0 506.8 87.5 C528.3 88.0 559.8 85.1 582.5 87.5 C605.2 89.9 617.8 100.1 642.8 102.1 C667.8 104.0 717.4 99.7 732.3 99.2"/><path d="M599.7 72.9 C607.7 79.6 635.7 97.4 647.9 112.8 C660.1 128.2 665.7 149.1 672.9 165.3 C680.1 181.5 689.6 192.2 691.0 210.0 C692.4 227.8 685.2 253.7 681.5 272.2 C677.8 290.7 671.5 302.2 668.6 320.8 C665.7 339.4 656.4 361.3 664.3 384.0 C672.2 406.7 705.9 436.6 715.9 456.9 C725.9 477.2 713.7 497.5 724.5 505.6 C735.3 513.7 759.7 505.1 780.5 505.6 C801.3 506.1 837.9 508.0 849.4 508.5"/><path d="M735.7 63.2 C735.1 69.2 729.1 86.2 732.3 99.2 C735.5 112.2 746.7 122.7 754.7 141.0 C762.7 159.3 772.6 187.1 780.5 209.0 C788.4 230.9 796.5 254.4 802.0 272.2 C807.5 290.0 806.7 298.2 813.2 316.0 C819.7 333.8 831.9 356.5 840.8 379.2 C849.7 401.9 863.3 430.6 866.6 452.1 C869.9 473.7 862.2 493.8 860.6 508.5 C859.0 523.2 857.7 535.2 857.1 540.6"/><path d="M833.9 573.6 C834.3 579.3 838.1 599.5 836.4 607.6 C834.7 615.7 828.2 618.0 823.5 622.2 C818.8 626.4 813.5 629.5 808.0 632.9 C802.5 636.3 796.1 640.3 790.8 642.6 C785.5 644.9 781.5 645.2 776.2 646.5 C770.9 647.8 764.7 648.8 759.0 650.4 C753.3 652.0 748.0 654.4 741.8 656.2 C735.6 658.0 725.3 660.3 722.0 661.1"/></g>
+  <g class="geo__lights"><circle cx="857.1" cy="541.5" r="13"/><circle cx="862.3" cy="508.5" r="9"/><circle cx="869.2" cy="452.1" r="7"/><circle cx="663.4" cy="329.6" r="11"/><circle cx="647.9" cy="348.1" r="8"/><circle cx="756.4" cy="273.2" r="11"/><circle cx="732.3" cy="99.2" r="9"/><circle cx="506.8" cy="88.5" r="6"/><circle cx="253.7" cy="90.4" r="6"/><circle cx="388.0" cy="115.7" r="4"/><circle cx="675.5" cy="165.3" r="5"/><circle cx="714.2" cy="457.9" r="6"/><circle cx="722.0" cy="660.1" r="3"/><circle cx="787.4" cy="208.1" r="5"/><circle cx="822.7" cy="317.9" r="5"/></g>
+  <g class="geo__lights-core"><circle cx="857.1" cy="541.5" r="2.6"/><circle cx="862.3" cy="508.5" r="1.8"/><circle cx="869.2" cy="452.1" r="1.4"/><circle cx="663.4" cy="329.6" r="2.2"/><circle cx="647.9" cy="348.1" r="1.6"/><circle cx="756.4" cy="273.2" r="2.2"/><circle cx="732.3" cy="99.2" r="1.8"/><circle cx="506.8" cy="88.5" r="1.2"/><circle cx="253.7" cy="90.4" r="1.2"/><circle cx="388.0" cy="115.7" r="1.2"/><circle cx="675.5" cy="165.3" r="1.2"/><circle cx="714.2" cy="457.9" r="1.2"/><circle cx="722.0" cy="660.1" r="1.2"/><circle cx="787.4" cy="208.1" r="1.2"/><circle cx="822.7" cy="317.9" r="1.2"/></g>
+  <g class="map__labels"><text class="map__lbl map__lbl--sea" x="367.3" y="403.5" text-anchor="middle">MEKSİKA KÖRFEZİ</text><text class="map__lbl map__lbl--sea" x="969.9" y="286.8" text-anchor="middle">ATLANTİK OKYANUSU</text><text class="map__lbl map__lbl--land" x="724.5" y="306.3" text-anchor="middle">LEONIDA</text></g>
+</g>
           <g id="pins"></g>
         </svg>
       </div>
@@ -259,6 +248,7 @@
   </section>
 
   <section id="akis" class="wrap feed" aria-label="Haber akışı">
+    <div id="sponsor-slot" class="sponsor-slot" hidden></div>
     <div class="feed__head">
       <div>
         <h2 id="feed-title" class="feed__title">Son haberler</h2>
@@ -295,6 +285,24 @@
     </div>
   </section>
 
+  <section class="wrap kit-sec" id="kit" aria-labelledby="kit-h" hidden>
+    <div class="kit-sec__head">
+      <p class="eyebrow">İşbirliği</p>
+      <h2 id="kit-h" class="kit-sec__title"></h2>
+      <p id="kit-lead" class="kit-sec__lead"></p>
+    </div>
+    <div id="kit-grid" class="kit-grid"></div>
+    <p id="kit-disc" class="fine kit-sec__disc"></p>
+  </section>
+
+  <section class="wrap tgband" id="tg-band" aria-labelledby="tgb-h" hidden>
+    <a class="tgband__in glass" id="tg-band-link" target="_blank" rel="noopener">
+      <span class="tgband__ico" aria-hidden="true"></span>
+      <span class="tgband__txt"><b id="tgb-h">Telegram kanalına katıl</b><small id="tg-band-cta"></small></span>
+      <span class="btn btn--glow" id="tg-band-handle"></span>
+    </a>
+  </section>
+
   <section class="wrap method-teaser" aria-labelledby="mt-h">
     <div class="glass method-teaser__in">
       <div>
@@ -308,8 +316,8 @@
 
 <footer class="footer">
   <div class="wrap footer__in">
-    <p>GTA VI Türkiye Bülteni bağımsız bir hayran bültenidir; Rockstar Games veya Take-Two Interactive ile bağlantılı değildir. Harita, bölge adlarından esinlenen özgün ve stilize bir çizimdir; oyundaki haritayı birebir göstermez. Haberler kısa özetlerdir; ayrıntılar için her zaman orijinal kaynağı okuyun.</p>
-    <p class="footer__small">GitHub Pages üzerinde statik olarak yayınlanır · Veri: <a href="data/feed.json">feed.json</a> · <a href="message_preview.html">Telegram simülasyonu</a></p>
+    <p>GTA VI Türkiye Bülteni bağımsız bir hayran bültenidir; Rockstar Games veya Take-Two Interactive ile bağlantılı değildir. Harita, Leonida'nın esinlendiği gerçek Florida kıyı çizgisi üzerine çizilmiştir; oyundaki haritayı birebir göstermez. Haberler kısa özetlerdir; ayrıntılar için her zaman orijinal kaynağı okuyun.</p>
+    <p class="footer__small">GitHub Pages üzerinde statik olarak yayınlanır · Veri: <a href="data/feed.json">feed.json</a> · <a href="message_preview.html">Telegram simülasyonu</a> · <a href="rss.xml">RSS</a> · <a href="reklam.html">Reklam ve işbirliği</a><span id="support-wrap" hidden> · <a id="support-link" target="_blank" rel="noopener"></a></span></p>
   </div>
 </footer>
 
@@ -341,7 +349,12 @@
       <h3>Kaynaklar</h3>
       <ul id="d-sources" class="sourcelist"></ul>
     </section>
+    <section class="sheet__block" id="d-kit" hidden>
+      <h3>Bu haberle ilgili <small class="ad-tag">İşbirliği</small></h3>
+      <div id="d-kit-list" class="kit-mini"></div>
+    </section>
     <div class="sheet__actions">
+      <a id="d-page" class="btn" hidden>Haber sayfası</a>
       <a id="d-telegram" class="btn btn--glow" target="_blank" rel="noopener noreferrer"></a>
       <button type="button" class="btn" id="d-copy">Bağlantıyı kopyala</button>
       <button type="button" class="btn" id="d-map">Haritada göster</button>
@@ -408,8 +421,10 @@
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
 <script src="data/feed.js"></script>
+<script src="data/monetization.js"></script>
 <script src="assets/milestones.js"></script>
 <script src="assets/leonida.js"></script>
+<script src="assets/money.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

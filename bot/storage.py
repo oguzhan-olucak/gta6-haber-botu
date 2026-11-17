@@ -115,6 +115,19 @@ def _atomic_write_text(path: Path, payload: str) -> None:
         raise
 
 
+def write_text_if_changed(path: Path | str, text: str) -> bool:
+    """Metin dosyasını (HTML/XML/JS) atomik yazar; içerik aynıysa dokunmaz. Değişti mi döner."""
+    path = Path(path)
+    try:
+        if path.read_text(encoding="utf-8") == text:
+            return False
+    except (OSError, UnicodeDecodeError):
+        pass
+    path.parent.mkdir(parents=True, exist_ok=True)
+    _atomic_write_text(path, text)
+    return True
+
+
 def write_json_atomic(path: Path | str, data: Any, *, keep_last_good: bool = False) -> None:
     """Geçici dosya + fsync + os.replace ile atomik yazım. ``keep_last_good`` ise aynı içerik
     ``<ad>.lastgood.json`` dosyasına da atomik yazılır (otomatik kurtarma kaynağı)."""

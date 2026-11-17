@@ -3,6 +3,7 @@
   "brand_name": "GTA VI Türkiye Bülteni",
   "display_utc_offset_hours": 3,
   "public_channel_username": "gta6turkiyebulteni",
+  "site_url": "https://oguzhan-olucak.github.io/gta6-haber-botu/",
   "export_site_feed": true,
   "site_max_items": 60,
   "max_rss_items_per_run": 60,

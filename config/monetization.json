@@ -1,0 +1,81 @@
+{
+  "_comment": "Gelir bileşenleri. Varsayılan KAPALI: bir bölümü açmak için enabled=true yapın ve url alanını doldurun. url'si boş ürün/sponsor hiçbir yerde görünmez. Satış ortaklığı (kit) bölümü 'disclosure' metni olmadan açılmaz. Değişiklik bir sonraki bot çalışmasında (en geç ~20 dk) siteye ve Telegram'a yansır. Yalnızca https:// bağlantılar kabul edilir.",
+  "telegram_channel": "",
+  "telegram_cta": "Lansman haftası: her doğrulanmış GTA VI haberi ilk önce Telegram kanalımızda.",
+  "sponsor": {
+    "_comment": "Tek sponsor şeridi: sitede akışın üstünde ve haber sayfalarında; telegram_line=true ise kanal gönderilerinin altında tek satır 'Sponsor:'. starts/ends YYYY-AA-GG (TSİ). Tarih dışında otomatik kapanır.",
+    "enabled": false,
+    "name": "",
+    "tagline": "",
+    "url": "",
+    "starts": null,
+    "ends": null,
+    "telegram_line": true
+  },
+  "kit": {
+    "_comment": "Lansman Kiti (satış ortaklığı). Her ürüne kendi affiliate bağlantınızı girin (Hepsiburada / Amazon.com.tr / Trendyol / e-pin sitesi ortaklık programı). topics: haber başlığında/özetinde geçerse ürün o haberin sayfasında da önerilir.",
+    "enabled": false,
+    "title": "Lansman Kiti",
+    "lead": "19 Kasım'a hazır mısın? Oyunun kendisi değil; deneyimi iyileştiren, gerçekten işe yarayan birkaç şey.",
+    "disclosure": "İşbirliği: Bu bölümdeki bağlantılar satış ortaklığı bağlantısıdır. Alışveriş yaparsanız bülten küçük bir komisyon kazanır; sizin için fiyat değişmez. Haberlerin etiketleri ve içeriği bu ortaklıklardan etkilenmez.",
+    "items": [
+      {
+        "id": "ssd",
+        "title": "PS5 için M.2 NVMe SSD (1–2 TB)",
+        "why": "Oyunun boyutunun yaklaşık 210 GB olacağı iddia ediliyor; PS5'in dahili alanı birkaç oyunla doluyor. Soğutuculu bir model seçin.",
+        "price_hint": "",
+        "partner": "",
+        "url": "",
+        "topics": ["boyut", "gb", "ön yükleme", "on yukleme", "depolama", "ssd", "indirme", "preload"]
+      },
+      {
+        "id": "psn",
+        "title": "PSN cüzdan kodu (TL)",
+        "why": "Kredi kartı kullanmadan PS Store'dan satın alma veya ön sipariş.",
+        "price_hint": "",
+        "partner": "",
+        "url": "",
+        "topics": ["fiyat", "ön sipariş", "on siparis", "playstation store", "ps store", "tl"]
+      },
+      {
+        "id": "dualsense",
+        "title": "DualSense kablosuz kol",
+        "why": "Uzun oturumlar ve iki kişilik aile kullanımı için yedek kol.",
+        "price_hint": "",
+        "partner": "",
+        "url": "",
+        "topics": ["kol", "dualsense", "kontrol", "oynanış", "oynanis"]
+      },
+      {
+        "id": "headset",
+        "title": "Oyuncu kulaklığı (3D ses)",
+        "why": "Vice City radyoları, şehir sesi ve yön duyusu için fark yaratır.",
+        "price_hint": "",
+        "partner": "",
+        "url": "",
+        "topics": ["müzik", "muzik", "radyo", "soundtrack", "ses", "şarkı"]
+      },
+      {
+        "id": "xbox",
+        "title": "Xbox hediye kartı (TL)",
+        "why": "Xbox Series X|S oyuncuları için mağaza bakiyesi.",
+        "price_hint": "",
+        "partner": "",
+        "url": "",
+        "topics": ["xbox"]
+      }
+    ]
+  },
+  "support": {
+    "enabled": false,
+    "text": "Bülteni destekle: sunucu yok, reklam az. Bir kahve ısmarlayın.",
+    "url": ""
+  },
+  "media_kit": {
+    "_comment": "reklam.html sayfası: canlı istatistikler bottan otomatik gelir. İletişim için en az birini doldurun.",
+    "enabled": true,
+    "contact_telegram": "",
+    "contact_email": "",
+    "price_note": "Lansman dönemi için sabit kanal gönderisi, site sponsor şeridi ve haftalık paketler. Tüm sponsorlu içerik 'Sponsor' ibaresiyle ayrıştırılır."
+  }
+}

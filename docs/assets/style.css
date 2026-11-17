@@ -94,7 +94,7 @@ button { font: inherit; color: inherit; }
 @keyframes sweep { from { transform: rotate(-24deg); } to { transform: rotate(20deg); } }
 .stage__viewport { position: absolute; inset: 0; z-index: 1; overflow: hidden; transform: translate3d(calc(var(--mx) * 10px), calc(var(--my) * 8px + var(--sy)), 0); }
 .stage__camera { position: absolute; inset: 0; transform-origin: 0 0; transition: transform 1.1s var(--ease); will-change: transform; --zoom: 1; }
-.map { width: 100%; height: 100%; }
+.map { width: 100%; height: 100%; overflow: visible; }
 .leonida { stroke: var(--mint); stroke-width: 2; fill: none; }
 .map__coast-glow .leonida { stroke-width: 8; stroke-opacity: .45; }
 .leonida--land { stroke-opacity: .9; fill: url(#g-land); }
@@ -450,3 +450,135 @@ dialog { color: var(--ink); }
   [data-reveal] { transform: none !important; }
   .stage__viewport, .stage__sky { transform: none !important; }
 }
+
+/* =====================================================================================
+   v2 · LIQUID GLASS KATMANI
+   Apple'ın ferah cam yüzeyleri + Rockstar VI'nın gün batımı paleti. Daha az neon, daha çok ışık:
+   doygunluğu düşük renkler, kalın bulanıklık, kenarda ince speküler parıltı, göz yormayan kontrast.
+   ===================================================================================== */
+:root {
+  --night: #07080D;
+  --sea: #060A11;
+  --pink: #FF4F8B;
+  --mint: #6FE3D6;
+  --violet: #B3A8FF;
+  --ink: #F5F3F7;
+  --ink-2: #CFCBD9;
+  --muted: #9A96A8;
+  --line: rgba(255, 255, 255, .08);
+  --line-2: rgba(255, 255, 255, .14);
+  --glass: linear-gradient(180deg, rgba(255, 255, 255, .085), rgba(255, 255, 255, .025)) , rgba(16, 17, 26, .52);
+  --blur: saturate(180%) blur(28px);
+  --spec: inset 0 1px 0 rgba(255, 255, 255, .22), inset 0 -1px 0 rgba(255, 255, 255, .04), inset 0 0 0 1px rgba(255, 255, 255, .06);
+}
+html, body { background: var(--night); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { letter-spacing: .002em; }
+a { color: #8FE9DF; }
+.glass { background: var(--glass); border: 1px solid rgba(255, 255, 255, .1);
+  box-shadow: var(--spec), 0 30px 80px -20px rgba(0, 0, 0, .65); }
+.topbar { background: rgba(8, 9, 14, .58); border-bottom-color: rgba(255, 255, 255, .06); box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .03); }
+.brand__mark { filter: drop-shadow(0 0 6px rgba(255, 79, 139, .25)); }
+.brand__text small { color: #FF8FB4; }
+.status { background: rgba(255, 255, 255, .04); box-shadow: var(--spec); }
+
+/* Sahne: tarama çizgisi ve ızgara kaldırıldı; tek, yumuşak gün batımı ışığı */
+.stage { background: var(--sea); }
+.stage__scan { display: none; }
+.stage__sky { background: radial-gradient(60% 45% at 78% -5%, rgba(255, 138, 76, .26), transparent 70%),
+  radial-gradient(50% 35% at 25% -5%, rgba(255, 79, 139, .14), transparent 70%),
+  linear-gradient(180deg, rgba(36, 18, 52, .65) 0%, rgba(6, 10, 17, 0) 42%); }
+.beam { opacity: .18; }
+.beam--b { opacity: .1; }
+.stage__vignette { background: radial-gradient(130% 95% at 60% 45%, transparent 58%, rgba(7, 8, 13, .8) 100%), linear-gradient(0deg, var(--night) 0%, transparent 16%); }
+.hud__h1 span:first-child { filter: drop-shadow(0 8px 34px rgba(255, 110, 80, .22)); }
+
+/* Harita: gerçek kıyı çizgisi, topografik doku, gece ışıkları */
+.geo__grat path { stroke: rgba(170, 200, 230, .055); stroke-width: 1; }
+.geo__grat text { font: 500 9.5px var(--mono); fill: rgba(170, 200, 230, .28); letter-spacing: .06em; }
+.geo__neighbor { fill: #0c1117; stroke: rgba(170, 200, 230, .08); stroke-width: 1; }
+.geo__shelf { fill: none; stroke: rgba(111, 227, 214, .1); stroke-width: 14; stroke-linejoin: round; filter: blur(5px); }
+.geo__land { fill: #17211c; }
+.geo__relief { fill: #fff; opacity: .9; mix-blend-mode: screen; }
+.geo__wetglow { fill: rgba(90, 170, 120, .08); }
+.geo__coast { fill: none; stroke: rgba(225, 240, 235, .55); stroke-width: 1.1; stroke-linejoin: round; }
+.geo__lake { fill: #0a1622; stroke: rgba(225, 240, 235, .35); stroke-width: .8; }
+.geo__keys ellipse { fill: #1b2721; stroke: rgba(225, 240, 235, .5); stroke-width: .7; }
+.geo__roads path { fill: none; stroke: rgba(255, 196, 120, .28); stroke-width: 1.1; stroke-linecap: round; stroke-dasharray: 1 0; }
+.geo__lights circle { fill: url(#g-light); opacity: .55; }
+.geo__lights-core circle { fill: #ffe7bf; opacity: .9; }
+.map__lbl { font: 600 12px var(--mono); letter-spacing: .32em; }
+.map__lbl--sea { fill: rgba(170, 200, 230, .3); font-style: italic; letter-spacing: .4em; }
+.map__lbl--land { fill: rgba(240, 236, 228, .22); font: 400 28px var(--display); letter-spacing: .5em; }
+.pin__label { stroke: #07080d; font-size: 17px; }
+.pin__core { stroke-width: 1.6; filter: drop-shadow(0 0 6px var(--c, var(--pink))); }
+.pin[data-region="vice_city"] { --c: #FF5E8F; }
+.pin[data-region="leonida_keys"] { --c: #6FE3D6; }
+.pin[data-region="grassrivers"] { --c: #8BD9A3; }
+.pin[data-region="port_gellhorn"] { --c: #B3A8FF; }
+.pin[data-region="mount_kalaga"] { --c: #FFCB6B; }
+@media (prefers-reduced-motion: reduce) { .geo__lights circle { opacity: .45; } }
+
+/* Kartlar: gerçek basın görseli öne çıksın */
+.card, .feature { border-color: rgba(255, 255, 255, .09); }
+.btn { border-radius: 999px; background: rgba(255, 255, 255, .06); box-shadow: var(--spec); }
+.btn--glow { background: linear-gradient(180deg, #FFD08A, #FF8A5B 55%, #FF5E8F); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 10px 30px -8px rgba(255, 110, 90, .55); }
+
+/* ---- Gelir bileşenleri (tasarımın parçası; her zaman "Sponsor"/"İşbirliği" ibareli) ---- */
+.eyebrow { margin: 0 0 6px; font: 600 11.5px var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.ad-tag { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 999px; font: 600 10.5px var(--mono); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); border: 1px solid var(--line-2); background: rgba(255, 255, 255, .03); vertical-align: middle; }
+.tgpill { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 10px; border-radius: 999px; text-decoration: none; color: #fff; font-weight: 700; font-size: 13.5px; flex: none;
+  background: linear-gradient(180deg, rgba(64, 170, 255, .9), rgba(34, 128, 220, .9)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 8px 24px -10px rgba(40, 150, 255, .8); }
+.tgpill:hover { color: #fff; filter: brightness(1.08); }
+.tgpill__ico, .tgband__ico, .tgcta__icon { width: 18px; height: 18px; flex: none; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M21.5 3.5 2.8 10.7c-1.2.5-1.2 1.2 0 1.6l4.8 1.5 1.8 5.6c.2.6.6.7 1 .3l2.7-2.4 5 3.7c.9.5 1.5.2 1.7-.8l3-14.3c.3-1.3-.5-1.9-1.3-1.4zM9 13.6l9.4-5.9-7.3 7-.3 3.4z'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M21.5 3.5 2.8 10.7c-1.2.5-1.2 1.2 0 1.6l4.8 1.5 1.8 5.6c.2.6.6.7 1 .3l2.7-2.4 5 3.7c.9.5 1.5.2 1.7-.8l3-14.3c.3-1.3-.5-1.9-1.3-1.4zM9 13.6l9.4-5.9-7.3 7-.3 3.4z'/%3E%3C/svg%3E") center / contain no-repeat; }
+
+.sponsor-slot { margin: 0 0 18px; }
+.sponsorbar { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-radius: 18px; text-decoration: none; color: var(--ink); }
+.sponsorbar b { font-weight: 700; }
+.sponsorbar__tag { color: var(--ink-2); font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sponsorbar__go { margin-left: auto; color: var(--muted); transition: transform .2s var(--ease); }
+.sponsorbar:hover { color: var(--ink); } .sponsorbar:hover .sponsorbar__go { transform: translateX(3px); color: var(--ink); }
+.sponsor-house { display: block; text-align: center; font: 500 12px var(--mono); letter-spacing: .06em; color: var(--muted); text-decoration: none; padding: 8px; border: 1px dashed var(--line-2); border-radius: 14px; }
+.sponsor-house:hover { color: var(--ink-2); border-color: rgba(255, 255, 255, .25); }
+
+.kit-sec { padding: 8px 0 40px; }
+.kit-sec__title { margin: 0; font: 400 clamp(30px, 3.4vw, 46px)/1 var(--display); text-transform: uppercase; }
+.kit-sec__lead { margin: 8px 0 18px; color: var(--ink-2); max-width: 70ch; }
+.kit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+.kitcard { display: grid; grid-template-columns: auto 1fr; grid-template-rows: 1fr auto; gap: 6px 14px; padding: 18px; text-decoration: none; color: var(--ink); border-radius: 22px; transition: transform .25s var(--ease), border-color .25s; }
+.kitcard:hover { color: var(--ink); transform: translate3d(0, -2px, 0); border-color: rgba(255, 255, 255, .22); }
+.kitcard__ico { grid-row: 1 / 3; width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(160deg, rgba(255, 208, 138, .9), rgba(255, 94, 143, .75)); box-shadow: var(--spec); }
+.kitcard__ico--psn, .kitcard__ico--xbox { background: linear-gradient(160deg, rgba(111, 227, 214, .9), rgba(64, 140, 255, .75)); }
+.kitcard__ico--headset, .kitcard__ico--dualsense { background: linear-gradient(160deg, rgba(179, 168, 255, .9), rgba(255, 94, 143, .6)); }
+.kitcard__body { display: grid; gap: 4px; }
+.kitcard__body b { font-size: 16px; }
+.kitcard__body span { color: var(--ink-2); font-size: 14px; line-height: 1.45; }
+.kitcard__body small { color: var(--muted); font: 500 11.5px var(--mono); }
+.kitcard__go { grid-column: 2; justify-self: start; font-size: 13px; font-weight: 700; color: #FFCB8A; }
+.kit-sec__disc { margin-top: 14px; max-width: 90ch; }
+.kit-mini { display: grid; gap: 8px; }
+.kit-mini__item { display: block; padding: 10px 14px; border-radius: 14px; border: 1px solid var(--line-2); text-decoration: none; color: var(--ink); background: rgba(255, 255, 255, .03); }
+.kit-mini__item span { display: block; display: grid; gap: 2px; }
+.kit-mini__item span span, .kit-mini__item small { color: var(--muted); font-size: 13px; }
+.sheet__block h3 .ad-tag { margin-left: 6px; }
+
+.tgband { padding: 0 0 28px; }
+.tgband__in { display: flex; align-items: center; gap: 16px; padding: 20px 24px; text-decoration: none; color: var(--ink); border-radius: 24px;
+  background: linear-gradient(120deg, rgba(64, 170, 255, .16), rgba(255, 94, 143, .08)), var(--glass); }
+.tgband__in:hover { color: var(--ink); }
+.tgband__ico { width: 40px; height: 40px; color: #5DB8FF; }
+.tgband__txt { display: grid; gap: 2px; }
+.tgband__txt b { font: 400 26px/1 var(--display); text-transform: uppercase; letter-spacing: .02em; }
+.tgband__txt small { color: var(--ink-2); font-size: 14.5px; }
+.tgband .btn { margin-left: auto; white-space: nowrap; }
+@media (max-width: 720px) {
+  .tgpill span:last-child { display: none; }
+  .tgpill { padding: 8px; }
+  .tgband__in { flex-wrap: wrap; }
+  .tgband .btn { margin-left: 0; }
+  .sponsorbar { flex-wrap: wrap; }
+  .sponsorbar__tag { white-space: normal; }
+}
+.stage { background: radial-gradient(90% 70% at 70% 55%, #0a1520 0%, #070d15 55%, var(--sea) 100%); }

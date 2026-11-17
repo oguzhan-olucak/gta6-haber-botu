@@ -1,0 +1,1 @@
+window.__GTA6_MONETIZATION__ = {"schema_version":1,"media_kit":{"contact":{},"price_note":"Lansman dönemi için sabit kanal gönderisi, site sponsor şeridi ve haftalık paketler. Tüm sponsorlu içerik 'Sponsor' ibaresiyle ayrıştırılır."}};

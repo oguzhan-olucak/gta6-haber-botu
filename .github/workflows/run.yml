@@ -13,7 +13,8 @@ on:
 # fork kaynaklı güvenilmeyen kod secret'lara erişemez.
 
 permissions:
-  contents: write   # yalnızca data/ değişikliklerini commit etmek için
+  contents: write   # yalnızca data/ ve docs/ (site beslemesi) değişikliklerini commit etmek için
+  models: read      # GitHub Models: anahtarsız, ücretsiz yedek LLM (GITHUB_TOKEN ile)
 
 concurrency:
   group: gta6-bot-run
@@ -56,6 +57,10 @@ jobs:
           GROQ_MODEL: ${{ vars.GROQ_MODEL }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
+          # Anahtarsız 4. yedek: GitHub Models (yalnızca models: read izniyle; GITHUB_MODELS=0 ile kapatılır)
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_MODELS: ${{ vars.GITHUB_MODELS }}
+          GITHUB_MODELS_MODEL: ${{ vars.GITHUB_MODELS_MODEL }}
         run: python -m bot.main
 
       - name: Veri değişikliklerini commit et
@@ -64,7 +69,8 @@ jobs:
           git config user.name "gta6-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/*.json
-          git add docs/data/feed.json docs/data/feed.js 2>/dev/null || true
+          git add docs/data/feed.json docs/data/feed.js docs/data/monetization.json docs/data/monetization.js 2>/dev/null || true
+          git add docs/haber docs/sitemap.xml docs/rss.xml 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "Veri değişikliği yok, commit atlanıyor."
             exit 0

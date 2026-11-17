@@ -83,7 +83,8 @@ def verification_note(label: Label, sources: list[dict[str, str]], independent_c
 
 
 def render_post(content: GeneratedContent, label: Label, sources: list[dict[str, str]], settings: Settings,
-                now: datetime, *, independent_count: int | None = None) -> str:
+                now: datetime, *, independent_count: int | None = None, site_link: str | None = None,
+                sponsor: tuple[str, str, str] | None = None) -> str:
     """Profesyonel bülten düzeni: tek rozet, etiket satırı, kalın başlık, özet, kaynak bloğu, imza.
 
     Telegram HTML parse_mode yalnızca sınırlı etiket destekler (b, i, a, code, blockquote...);
@@ -98,6 +99,13 @@ def render_post(content: GeneratedContent, label: Label, sources: list[dict[str,
     if label in (Label.LEAK_CLAIM, Label.COMMUNITY_CLAIM, Label.SINGLE_SOURCE):
         note = f"<i>{note}</i>"
 
+    extra: list[str] = []
+    if site_link and site_link.startswith("https://"):
+        extra.append(f'🗺 <a href="{_e(site_link)}">Leonida haritasında ve sitede oku</a>')
+    if sponsor and sponsor[2].startswith("https://"):
+        name, tagline, url = sponsor
+        extra.append(f'<i>Sponsor:</i> <a href="{_e(url)}">{_e(name)}</a>' + (f" — {_e(tagline)}" if tagline else ""))
+
     def build(summary: str, srcs: list[dict[str, str]]) -> str:
         return "\n".join([
             f"{BADGE[label]} <b>{_e(LABEL_TEXT[label])}</b>{category_part}",
@@ -108,6 +116,7 @@ def render_post(content: GeneratedContent, label: Label, sources: list[dict[str,
             "",
             f"<b>Kaynak:</b> {_source_links(srcs)}",
             f"<b>Doğrulama:</b> {note}",
+            *([""] + extra if extra else []),
             "",
             f"<i>{_e(settings.brand_name)} · {_e(format_local(now, settings.display_utc_offset_hours))}</i>",
             "#GTA6 #GTAVI",

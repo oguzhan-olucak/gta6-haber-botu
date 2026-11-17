@@ -103,7 +103,14 @@
     var words = (String(it.title || "") + " " + String(it.summary || "")).trim().split(/\s+/).length;
     return Math.max(1, Math.round(words / 180));
   }
-  function permalink(it) { return location.origin + location.pathname + "#haber-" + it.id; }
+  /* Gerçek akışta her haberin bot tarafından üretilmiş kalıcı sayfası var (haber/<id>.html): paylaşımda
+   * görsel önizleme ve arama motoru indeksi bu sayfadan gelir. Örnek bültende sayfa yok → harita bağlantısı. */
+  function pagePath(it) { return /^[A-Za-z0-9_-]{4,64}$/.test(it.id) ? "haber/" + it.id + ".html" : null; }
+  function permalink(it) {
+    var base = location.origin + location.pathname.replace(/[^/]*$/, "");
+    var p = !state.usingDemo && pagePath(it);
+    return p ? base + p : location.origin + location.pathname + "#haber-" + it.id;
+  }
   function shareUrl(it) {
     return "https://t.me/share/url?url=" + encodeURIComponent(permalink(it)) + "&text=" + encodeURIComponent(it.title || "");
   }
@@ -200,6 +207,7 @@
     renderMethodNote(f);
     if (state.region) renderRegionPanel(state.region);
     document.documentElement.classList.toggle("is-demo", state.usingDemo);
+    if (window.GTA6Money) window.GTA6Money.render(state.usingDemo);
     selftest(items);
     if (!state.routed) { state.routed = true; route(); }
   }
@@ -310,7 +318,7 @@
     REGIONS.forEach(function (r) {
       var b = el("button", "rchip"); b.type = "button";
       b.style.setProperty("--c", getComputedStyle(document.documentElement).getPropertyValue("--pink"));
-      var pinColor = { vice_city: "#FF2E88", leonida_keys: "#35F0E0", grassrivers: "#6BE38E", port_gellhorn: "#A99BFF", mount_kalaga: "#FFC94A" }[r.id];
+      var pinColor = { vice_city: "#FF5E8F", leonida_keys: "#6FE3D6", grassrivers: "#8BD9A3", port_gellhorn: "#B3A8FF", mount_kalaga: "#FFCB6B" }[r.id];
       if (pinColor) b.style.setProperty("--c", pinColor);
       b.setAttribute("aria-pressed", String(state.region === r.id));
       b.appendChild(el("i"));
@@ -332,12 +340,12 @@
     var g = geometry();
     var s, px, py, cx, cy;
     if (!regionId) {
-      // Genel görünüm: Leonida'nın tamamını (x 30–730, y 90–680) boş alana sığdır.
+      // Genel görünüm: gerçek Florida/Leonida sınırlarını (x ≈ 220–880, y ≈ 30–670) boş alana sığdır.
       // Masaüstünde boş alan başlığın sağı ve alt panellerin üstüdür.
-      var aw = g.wide ? g.W * 0.54 : g.W * 0.94, ah = g.wide ? g.H * 0.6 : g.H * 0.9;
-      s = Math.min(aw / (700 * g.k), ah / (590 * g.k), 1.15);
-      px = g.ox + 380 * g.k; py = g.oy + 385 * g.k;
-      cx = g.wide ? g.W * 0.68 : g.W * 0.5; cy = g.wide ? g.H * 0.37 : g.H * 0.5;
+      var aw = g.wide ? g.W * 0.5 : g.W * 0.8, ah = g.wide ? g.H * 0.56 : g.H * 0.86;
+      s = Math.min(aw / (660 * g.k), ah / (640 * g.k), 1.15);
+      px = g.ox + 550 * g.k; py = g.oy + 350 * g.k;
+      cx = g.wide ? g.W * 0.70 : g.W * 0.5; cy = g.wide ? g.H * 0.35 : g.H * 0.5;
     } else {
       var r = REGION[regionId];
       s = g.wide ? 2.1 : 1.9;
@@ -640,6 +648,9 @@
     var tg = $("#d-telegram"); var tgu = safeHttps(it.telegram_url);
     tg.href = tgu || shareUrl(it); tg.textContent = tgu ? "Telegram gönderisini aç" : "Telegram'da paylaş";
     $("#d-copy").onclick = function () { copy(permalink(it), $("#d-copy")); };
+    var dp = $("#d-page"), pp = !state.usingDemo && pagePath(it);
+    dp.hidden = !pp; if (pp) dp.href = pp;
+    if (window.GTA6Money) window.GTA6Money.fillRelated($("#d-kit"), $("#d-kit-list"), it.title + " " + (it.summary || ""));
     $("#d-map").onclick = function () { showOnMap(it._loc, false); };
     if (!fromHash) history.replaceState(null, "", "#haber-" + it.id);
     var panel = $("#drawer-panel"); panel.scrollTop = 0; $("#d-progress").style.transform = "scaleX(0)";

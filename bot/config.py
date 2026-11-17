@@ -23,7 +23,7 @@ DATA_DIR = ROOT / "data"
 TrustClass = Literal["OFFICIAL", "ESTABLISHED_MEDIA", "COMMUNITY", "UNKNOWN"]
 
 SECRET_ENV_NAMES = ("GEMINI_API_KEY", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "ADMIN_CHAT_ID",
-                    "GROQ_API_KEY", "OPENROUTER_API_KEY")
+                    "GROQ_API_KEY", "OPENROUTER_API_KEY", "GITHUB_TOKEN")
 # Telegram bot token biçimi: <sayı>:<35 civarı karakter>. Biçime uyan her şey maskelenir.
 _BOT_TOKEN_RE = re.compile(r"\b\d{6,12}:[A-Za-z0-9_-]{30,}\b")
 _BOT_URL_RE = re.compile(r"(api\.telegram\.org/bot)[^/\s]+")
@@ -121,6 +121,8 @@ class Settings(_Strict):
     state_heartbeat_minutes: int = Field(60, ge=0, le=1440)
     public_channel_username: str = Field("", pattern=r"^@?([A-Za-z][A-Za-z0-9_]{4,31})?$")
     site_max_items: int = Field(60, ge=1, le=500)
+    # Sitenin kök adresi (haber sayfaları, sitemap, rss ve Telegram'daki "sitede oku" bağlantısı için)
+    site_url: str = Field("", pattern=r"^(https://[A-Za-z0-9.-]+(/[A-Za-z0-9._~/-]*)?)?$")
     export_site_feed: bool = True
     http_timeout_seconds: float = Field(15, gt=0, le=120)
     http_max_retries: int = Field(3, ge=0, le=6)

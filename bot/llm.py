@@ -1,4 +1,4 @@
-"""Çoklu sağlayıcılı LLM katmanı: Gemini → Groq → OpenRouter.
+"""Çoklu sağlayıcılı LLM katmanı: Gemini → Groq → OpenRouter → GitHub Models.
 
 Özet üretimi tek bir sağlayıcıya bağlı kalmasın diye ``FallbackGenerator`` sağlayıcıları sırayla dener:
 
@@ -9,6 +9,15 @@
 3. **OpenRouter** — ``OPENROUTER_API_KEY`` varsa. Varsayılan ``openrouter/free`` (o an ücretsiz olan bir
    modeli seçen yönlendirici). ``OPENROUTER_MODEL`` yalnızca ``:free`` ile biten ya da ``openrouter/free``
    olan bir ad olabilir; aksi hâlde sağlayıcı devre dışı kalır (ücretli modele asla geçilmez).
+
+4. **GitHub Models** — GitHub Actions içinde ``GITHUB_TOKEN`` (workflow'da ``permissions: models: read``)
+   varsa; ayrı anahtar gerekmez. Varsayılan ``openai/gpt-4o-mini``; ``GITHUB_MODELS_MODEL`` ile değişir,
+   ``GITHUB_MODELS=0`` ile kapatılır. Ücretsiz katman günlük istek sınırlıdır; bot günde en fazla birkaç
+   özet ürettiği için yeterlidir. Hizmet erişilemezse (401/403/404) zincir sessizce devam eder.
+
+**Devre kesici:** Bir sağlayıcı bir çalışmada geçici hata (503/429/zaman aşımı) ya da yetki hatası
+verdiyse o çalışmanın kalan çağrılarında sıranın **sonuna** alınır; böylece Gemini 503 verdiğinde her
+haberde 45 sn bekleyip yeniden denenmez, doğrudan sağlıklı sağlayıcıya gidilir.
 
 Bir sonraki sağlayıcıya yalnızca **geçici** hatalarda geçilir: 503/500, 429 (kota), zaman aşımı. Yetki
 (401/403) hatası o sağlayıcı için son sözdür ama zincir yine devam eder; hepsi başarısız olursa ilk
@@ -38,6 +47,8 @@ GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 GROQ_DEFAULT_MODEL = "openai/gpt-oss-120b"
 OPENROUTER_DEFAULT_MODEL = "openrouter/free"
+GITHUB_MODELS_URL = "https://models.github.ai/inference/chat/completions"
+GITHUB_MODELS_DEFAULT_MODEL = "openai/gpt-4o-mini"
 _MODEL_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._/:-]{1,100}$")
 _FENCE_RE = re.compile(r"^```(?:json)?\s*|\s*```$")
 # Bir sonraki sağlayıcıya geçiren hata sınıfları (geçici: aşırı yük, kota, zaman aşımı)
@@ -151,7 +162,10 @@ def _message_text(data: Any) -> str:
 
 
 class FallbackGenerator:
-    """Sağlayıcıları sırayla dener; yalnızca geçici hatada bir sonrakine geçer."""
+    """Sağlayıcıları sırayla dener; yalnızca geçici/yetki hatasında bir sonrakine geçer.
+
+    Çalışma içi devre kesici: hata veren sağlayıcı sonraki çağrılarda sıranın sonuna alınır.
+    Hepsi başarısız olursa birincil sağlayıcının (Gemini) hatası yükseltilir; o denenmediyse ilk hata."""
 
     def __init__(self, providers: list[tuple[str, Generator]]):
         if not providers:
@@ -159,30 +173,46 @@ class FallbackGenerator:
         self.providers = providers
         self.last_provider: str | None = None
         self.attempts: list[str] = []   # son çağrıda denenen sağlayıcılar ve sonuçları (tanı için)
+        self.run_attempts: list[str] = []  # bu çalışmadaki tüm denemeler (run_log'a yazılır)
+        self.tripped: set[str] = set()
+
+    @property
+    def chain(self) -> list[str]:
+        return [n for n, _ in self.providers]
 
     @property
     def resolved_model(self) -> str | None:
         """Gemini'nin 404/503 sonrası seçtiği model (alarm için), varsa."""
         return getattr(self.providers[0][1], "resolved_model", None)
 
+    def _ordered(self) -> list[tuple[str, Generator]]:
+        healthy = [p for p in self.providers if p[0] not in self.tripped]
+        return healthy + [p for p in self.providers if p[0] in self.tripped]
+
     def generate(self, system_instruction: str, prompt: str, schema: dict[str, Any]) -> str:
+        errors: dict[str, GeminiError] = {}
         first_error: GeminiError | None = None
         self.attempts = []
-        for name, gen in self.providers:
+        for name, gen in self._ordered():
             try:
                 out = gen.generate(system_instruction, prompt, schema)
             except GeminiError as exc:
                 self.attempts.append(f"{name}:{exc.error_class.value}")
+                errors[name] = exc
                 first_error = first_error or exc
                 if exc.error_class not in FALLBACK_ON and exc.error_class != ErrorClass.AUTH_PERMISSION:
+                    self.run_attempts.extend(self.attempts)
                     raise
+                self.tripped.add(name)
                 log.warning("LLM sağlayıcısı %s başarısız (%s); sıradakine geçiliyor", name, exc.error_class.value)
                 continue
             self.attempts.append(f"{name}:ok")
+            self.run_attempts.extend(self.attempts)
             self.last_provider = name
             return out
+        self.run_attempts.extend(self.attempts)
         assert first_error is not None
-        raise first_error
+        raise errors.get(self.providers[0][0]) or first_error
 
 
 def build_generator(gemini: Generator, env: Mapping[str, str], *,
@@ -208,4 +238,12 @@ def build_generator(gemini: Generator, env: Mapping[str, str], *,
                     extra_headers={"X-Title": "GTA VI Turkiye Bulteni"})))
             except ValueError:
                 log.warning("OPENROUTER_MODEL geçersiz; OpenRouter devre dışı")
+    gh_token = (env.get("GITHUB_TOKEN") or "").strip()
+    if gh_token and (env.get("GITHUB_MODELS") or "").strip() != "0":
+        model = (env.get("GITHUB_MODELS_MODEL") or "").strip() or GITHUB_MODELS_DEFAULT_MODEL
+        try:
+            providers.append(("github", OpenAICompatGenerator("github", GITHUB_MODELS_URL, gh_token, model,
+                                                              session=session)))
+        except ValueError:
+            log.warning("GITHUB_MODELS_MODEL geçersiz; GitHub Models devre dışı")
     return FallbackGenerator(providers)

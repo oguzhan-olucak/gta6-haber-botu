@@ -141,3 +141,58 @@ def test_bot_records_provider_per_post(tmp_path):
     assert set(summary["llm_providers"].values()) == {"groq"}
     hist = json.loads((data / "history.json").read_text("utf-8"))
     assert {p.get("llm_provider") for p in hist["posts"] if p.get("publish_status") == "PUBLISHED"} == {"groq"}
+
+
+# ---- GitHub Models ve devre kesici -------------------------------------------------------------
+
+GH_TOKEN = "ghs_" + "F" * 36
+
+
+def test_github_models_added_from_actions_token_and_can_be_disabled():
+    from bot.llm import GITHUB_MODELS_DEFAULT_MODEL, GITHUB_MODELS_URL
+    g = build_generator(_Gen(GOOD), {"GITHUB_TOKEN": GH_TOKEN})
+    assert g.chain == ["gemini", "github"]
+    gen = g.providers[1][1]
+    assert gen.model == GITHUB_MODELS_DEFAULT_MODEL and gen._url == GITHUB_MODELS_URL
+    assert build_generator(_Gen(GOOD), {"GITHUB_TOKEN": GH_TOKEN, "GITHUB_MODELS": "0"}).chain == ["gemini"]
+    full = build_generator(_Gen(GOOD), {"GROQ_API_KEY": GROQ_KEY, "OPENROUTER_API_KEY": OR_KEY, "GITHUB_TOKEN": GH_TOKEN})
+    assert full.chain == ["gemini", "groq", "openrouter", "github"]
+
+
+def test_github_token_is_redacted_from_logs(monkeypatch):
+    monkeypatch.setenv("GITHUB_TOKEN", GH_TOKEN)
+    assert GH_TOKEN not in redact(f"hata: {GH_TOKEN}")
+
+
+def test_circuit_breaker_moves_failed_provider_to_the_end_for_the_rest_of_the_run():
+    gem, groq = _Gen(GeminiError(ErrorClass.NETWORK_TRANSIENT, "503")), _Gen(GOOD)
+    g = FallbackGenerator([("gemini", gem), ("groq", groq)])
+    for _ in range(3):
+        assert g.generate("s", "p", {}) == GOOD
+    assert gem.calls == 1 and groq.calls == 3            # 503 veren Gemini ikinci çağrıdan itibaren beklenmez
+    assert g.run_attempts == ["gemini:NETWORK_TRANSIENT", "groq:ok", "groq:ok", "groq:ok"]
+
+
+def test_tripped_primary_still_raised_when_everything_fails():
+    first = GeminiError(ErrorClass.NETWORK_TRANSIENT, "gemini 503")
+    g = FallbackGenerator([("gemini", _Gen(first)), ("groq", _Gen(GeminiError(ErrorClass.RATE_LIMIT_QUOTA, "q")))])
+    for _ in range(2):
+        with pytest.raises(GeminiError) as ei:
+            g.generate("s", "p", {})
+        assert ei.value is first                          # soğuma/alarm mantığı birincil hataya göre kalır
+
+
+def test_run_log_records_llm_chain_and_attempts(tmp_path):
+    from tests.test_publisher import FakeGenerator, FakeTelegram, go, items, make_env
+
+    class Busy:
+        def generate(self, s, p, schema):
+            raise GeminiError(ErrorClass.NETWORK_TRANSIENT, "Gemini HTTP 503 UNAVAILABLE")
+
+    cfg, data, session = make_env(tmp_path, items(1))
+    gen = FallbackGenerator([("gemini", Busy()), ("github", FakeGenerator())])
+    code, summary = go(cfg, data, session, FakeTelegram(), gen)
+    state = json.loads((data / "state.json").read_text(encoding="utf-8"))
+    last = state["run_log"][-1]
+    assert last["llm_attempts"][:2] == ["gemini:NETWORK_TRANSIENT", "github:ok"]
+    assert summary["published"] >= 1

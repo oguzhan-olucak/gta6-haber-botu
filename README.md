@@ -104,6 +104,39 @@ Farklı sitelerin aynı olayı farklı başlıklarla yazması `bot/clustering.py
 - **Telegram mesaj bağlantıları:** Kanal herkese açıksa `config/settings.json` → `"public_channel_username": "kanaladi"` yaz; sitedeki "Telegram'da aç" düğmesi gönderiye gider. Boşsa düğme paylaşım bağlantısına döner.
 - **Güvenlik:** CSP meta etiketi (yalnızca kendi betikleri), veriler yalnızca `textContent` ile basılır, bağlantılar https denetiminden geçer. Kuralların tamamı: `.claude/skills/static-site-guardian/SKILL.md`.
 
+## Kesintisiz LLM zinciri
+
+Özet sırasıyla **Gemini → Groq → OpenRouter → GitHub Models** ile denenir; tanımlı olmayan sağlayıcı atlanır, yalnızca ücretsiz modeller kullanılır.
+
+| Sağlayıcı | Ne gerekir | Not |
+|---|---|---|
+| Gemini | `GEMINI_API_KEY`, `GEMINI_MODEL` secret | Birincil |
+| Groq | `GROQ_API_KEY` secret (console.groq.com, ücretsiz) | Varsayılan `openai/gpt-oss-120b` |
+| OpenRouter | `OPENROUTER_API_KEY` secret | Yalnızca `:free` modeller |
+| GitHub Models | **Hiçbir şey** — workflow'da `models: read` izni var, `GITHUB_TOKEN` kullanılır | `GITHUB_MODELS=0` (repo variable) ile kapatılır |
+
+**Devre kesici:** bir sağlayıcı 503/429/zaman aşımı verirse o çalışmanın kalanında sıranın sonuna alınır (her haberde 45 sn beklenmez). Her çalışmanın `data/state.json → run_log` kaydında `llm_chain` (tanımlı zincir) ve `llm_attempts` (ör. `gemini:NETWORK_TRANSIENT`, `groq:ok`) tutulur; "neden yayın yok?" sorusu buradan yanıtlanır.
+
+## SEO ve paylaşım katmanı
+
+Bot her çalışmada yayınlanmış her haber için `docs/haber/<id>.html` (Open Graph görseli, canonical, `NewsArticle` JSON-LD, betiksiz CSP), `docs/sitemap.xml` ve `docs/rss.xml` üretir. Telegram gönderilerinin altına "Leonida haritasında ve sitede oku" bağlantısı eklenir. Adres `config/settings.json → site_url` alanından gelir. Google Search Console'a `sitemap.xml` bir kez eklenmelidir.
+
+## Gelir altyapısı (`config/monetization.json`)
+
+Her şey **varsayılan kapalı**; bir bölüm `enabled: true` ve dolu `url` olmadan görünmez. Değişiklik bir sonraki çalışmada siteye ve kanala yansır.
+
+| Bölüm | Nerede görünür | Açmak için |
+|---|---|---|
+| `telegram_channel` | Üst çubukta "Kanala katıl", akış altında kanal bandı, haber sayfaları | Kanalın herkese açık kullanıcı adı (ör. `@gta6turkiye`) |
+| `sponsor` | Akışın üstünde şerit, haber sayfaları, kanal gönderilerinin altında `Sponsor:` satırı | `enabled`, `name`, `url`, `starts`/`ends` (TSİ) |
+| `kit` (Lansman Kiti) | Ana sayfada kart ızgarası; konusu geçen haberin çekmecesinde ve sayfasında bağlam içi öneri | `enabled`, her ürüne affiliate `url`, `disclosure` metni zorunlu |
+| `support` | Altbilgi | `enabled`, `url` |
+| `media_kit` | `docs/reklam.html` (canlı istatistikler bottan) | `contact_telegram` veya `contact_email` |
+
+Sponsorlu her içerik "Sponsor" / "İşbirliği" ibaresi taşır; `rel="sponsored"` kullanılır. Bahis/kumar, kripto yatırım, hile/hesap satışı ve korsan içerik reklamı kabul edilmez (medya kitinde yazılı).
+
+Harita katmanı `tools/build_leonida_map.py` ile gerçek Florida kıyı çizgisinden üretilir.
+
 ## Kill switch
 
 `config/settings.json` içinde `"paused": true` yapıp commit edin. Bu durumda toplama, Gemini çağrısı ve kanal yayını yapılmaz. Reaksiyon ölçümü ve yönetici özeti sürer. Açmak için tekrar `false` yapın.

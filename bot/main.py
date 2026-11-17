@@ -14,6 +14,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 import sys
 import time
 from dataclasses import dataclass, field
@@ -53,6 +54,15 @@ from .gemini import (
 )
 from .labels import LABEL_TEXT, Assessment
 from .llm import build_generator
+from .monetization import DISABLED as MONETIZATION_OFF
+from .monetization import (
+    Monetization,
+    export_monetization,
+    load_monetization,
+    local_today,
+    public_payload,
+    sponsor_line,
+)
 from .processor import assess, cluster_items, is_duplicate_of_history
 from .publisher import (
     due_digest_key,
@@ -68,6 +78,7 @@ from .publisher import (
     should_alert,
 )
 from .site_exporter import build_feed, export_site_feed
+from .site_pages import article_url, export_site_pages
 from .storage import (
     CorruptDataError,
     FileLock,
@@ -110,6 +121,7 @@ class RunContext:
     remaining_posts: int = 0
     started_mono: float = field(default_factory=time.monotonic)
     style_hints: dict[str, list[str]] = field(default_factory=dict)
+    monetization: Monetization = field(default_factory=Monetization)
 
     @property
     def state_path(self) -> Path:
@@ -173,6 +185,11 @@ def run(*, now: datetime | None = None, env: Mapping[str, str] | None = None,
         summary["notes"].append(str(exc))
         log.error("Yapılandırma hatası: %s", exc)
         return 1, _finish(summary)
+    monetization, money_err = load_monetization(config_dir / "monetization.json")
+    if money_err:
+        summary["notes"].append(money_err)
+    if not monetization.telegram_channel and settings.public_channel_username:
+        monetization = monetization.model_copy(update={"telegram_channel": settings.public_channel_username})
     lock = FileLock(data_dir / ".run.lock")
     try:
         lock.acquire()
@@ -181,7 +198,7 @@ def run(*, now: datetime | None = None, env: Mapping[str, str] | None = None,
         return 0, _finish(summary)
     try:
         return _run_locked(settings, sources, now, env, session, telegram, generator, data_dir, summary,
-                           url_verifier)
+                           url_verifier, monetization)
     finally:
         lock.release()
 
@@ -219,11 +236,13 @@ def _load_data(summary: dict[str, Any], data_dir: Path) -> tuple[
 
 def _run_locked(settings: Settings, sources: list[Source], now: datetime, env: Mapping[str, str] | None,
                 session: requests.Session | None, telegram: MessageSender | None, generator: Generator | None,
-                data_dir: Path, summary: dict[str, Any], url_verifier: Verifier | None) -> tuple[int, dict[str, Any]]:
+                data_dir: Path, summary: dict[str, Any], url_verifier: Verifier | None,
+                monetization: Monetization = MONETIZATION_OFF) -> tuple[int, dict[str, Any]]:
     state, history, safe_mode = _load_data(summary, data_dir)
     if state is None:
         return 2, _finish(summary)
-    ctx = RunContext(settings, sources, now, data_dir, state, history, summary, safe_mode=safe_mode)
+    ctx = RunContext(settings, sources, now, data_dir, state, history, summary, safe_mode=safe_mode,
+                     monetization=monetization)
 
     secrets, missing = load_secrets(env)
     if secrets is None:
@@ -382,6 +401,10 @@ def _content_pipeline(ctx: RunContext) -> None:
         ctx.generator = build_generator(gemini, os.environ, session=ctx.session)
         names = [n for n, _ in ctx.generator.providers]
         log.info("LLM sağlayıcı sırası: %s", " → ".join(names))
+        ctx.summary["llm_chain"] = names
+        if len(names) == 1 and candidates:
+            note = "yedek LLM yok: GROQ_API_KEY / OPENROUTER_API_KEY tanımlayın ya da workflow'a 'models: read' izni verin"
+            ctx.summary["notes"].append(note)
     pool = ctx.state["candidate_pool"]
     for cluster, a in candidates:
         reason = _blocked_reason(ctx)
@@ -535,8 +558,12 @@ def _generate_and_publish(ctx: RunContext, cluster: list[Item], a: Assessment) -
     image, credit = _pick_image(ctx, used, sources_meta)
     if image:
         post["image_url"], post["image_credit"] = image, credit
+    page_id = re.sub(r"[^A-Za-z0-9_-]", "", str(post.get("content_id", "")))[:64]
     text = render_post(outcome.content, a.label, sources_meta, ctx.settings, ctx.now,
-                       independent_count=len(a.independent_origins))
+                       independent_count=len(a.independent_origins),
+                       site_link=article_url(ctx.settings.site_url, page_id),
+                       sponsor=sponsor_line(ctx.monetization,
+                                            local_today(ctx.now, ctx.settings.display_utc_offset_hours)))
     status = publish_post(post=post, text=text, history=ctx.history, chat_id=ctx.secrets.telegram_chat_id,
                           telegram=ctx.telegram, persist=ctx.persist_history, now=ctx.now)
     _after_publish(ctx, cluster, post, status)
@@ -588,8 +615,16 @@ def _maybe_digest(ctx: RunContext, insights: dict[str, Any]) -> None:
 def _save(ctx: RunContext) -> None:
     ctx.state["last_run_at"] = iso(ctx.now)
     _prune(ctx.state, ctx.history, ctx.settings, ctx.now)
-    ctx.state["run_log"].append({k: ctx.summary[k] for k in ("started_at", "sources_ok", "new_items", "published",
-                                                              "gemini_calls", "error_classes")})
+    entry = {k: ctx.summary[k] for k in ("started_at", "sources_ok", "new_items", "published",
+                                         "gemini_calls", "error_classes")}
+    # Tanı: hangi LLM sağlayıcıları tanımlıydı ve hangileri denendi (geriye uyumlu ek alanlar)
+    attempts = getattr(ctx.generator, "run_attempts", None)
+    if attempts:
+        entry["llm_attempts"] = list(attempts)[-12:]
+        ctx.summary["llm_attempts"] = entry["llm_attempts"]
+    if ctx.summary.get("llm_chain"):
+        entry["llm_chain"] = ctx.summary["llm_chain"]
+    ctx.state["run_log"].append(entry)
     if not ctx.safe_mode:
         write_if_changed(ctx.history_path, ctx.history, keep_last_good=True)
     if state_needs_write(ctx.state_path, ctx.state, ctx.now, ctx.settings.state_heartbeat_minutes):
@@ -625,8 +660,16 @@ def _export_site(ctx: RunContext) -> None:
     """Statik site beslemesini (docs/data/feed.json + feed.js) günceller; hata çalışmayı durdurmaz."""
     try:
         feed = build_feed(ctx.history, ctx.state, ctx.settings, ctx.sources, ctx.now)
-        if export_site_feed(feed, ctx.data_dir.parent / "docs" / "data"):
+        docs = ctx.data_dir.parent / "docs"
+        if export_site_feed(feed, docs / "data"):
             ctx.summary["notes"].append("site beslemesi güncellendi")
+        money = public_payload(ctx.monetization, local_today(ctx.now, ctx.settings.display_utc_offset_hours))
+        if export_monetization(money, docs / "data"):
+            ctx.summary["notes"].append("gelir bileşenleri güncellendi")
+        pages = export_site_pages(feed, docs, site_url=ctx.settings.site_url, brand=feed.brand,
+                                  offset_hours=ctx.settings.display_utc_offset_hours, money=money, now=ctx.now)
+        if pages:
+            ctx.summary["notes"].append(f"{pages} site sayfası güncellendi")
     except Exception as exc:  # site, botun asıl işini (yayın) asla durdurmaz
         ctx.summary["error_classes"].append(ErrorClass.UNEXPECTED_ERROR.value)
         log.warning("Site beslemesi üretilemedi: %s", type(exc).__name__)

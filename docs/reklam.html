@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Reklam ve işbirliği · GTA VI Türkiye Bülteni</title>
+<meta name="description" content="GTA VI Türkiye Bülteni medya kiti: canlı yayın istatistikleri, sponsorluk ve işbirliği seçenekleri.">
+<meta property="og:title" content="Reklam ve işbirliği · GTA VI Türkiye Bülteni">
+<meta property="og:image" content="https://oguzhan-olucak.github.io/gta6-haber-botu/assets/og-default.png">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="assets/article.css">
+</head>
+<body>
+<header class="bar"><a class="bar__brand" href="./">← <b>GTA VI</b> Türkiye Bülteni</a><a class="bar__map" href="./#harita">Leonida haritası</a></header>
+<main class="mk">
+  <section class="mk__hero glass">
+    <p class="eyebrow">Medya kiti · canlı veri</p>
+    <h1>Lansman haftasında<br>doğru kitleye ulaşın</h1>
+    <p>GTA VI Türkiye Bülteni; Rockstar, Take-Two ve büyük oyun basınını yaklaşık 20 dakikada bir tarayan, haberleri kaynak kurallarıyla etiketleyip Türkçe özetleyen otomatik bir haber kanalı ve etkileşimli Leonida haritasıdır. Kitlemiz: GTA VI'yı çıkış gününden itibaren oynayacak Türk oyuncular.</p>
+  </section>
+
+  <section class="mk__stats" aria-label="Canlı istatistikler">
+    <div class="mk__stat glass"><b id="s-total">–</b><span>doğrulanmış haber yayında</span></div>
+    <div class="mk__stat glass"><b id="s-week">–</b><span>son 7 günde yayınlanan</span></div>
+    <div class="mk__stat glass"><b id="s-sources">–</b><span>izlenen kaynak (resmî + basın)</span></div>
+    <div class="mk__stat glass"><b id="s-official">–</b><span>resmî / çoklu kaynak oranı</span></div>
+  </section>
+  <p class="fine" id="s-note">Kanal abone ve görüntülenme sayıları Telegram'ın kendi istatistik ekranından, görüşme sırasında ekran paylaşımıyla gösterilir (Bot API bu verileri sağlamaz; burada tahmin yazmıyoruz).</p>
+
+  <section class="mk__grid" aria-label="Paketler">
+    <article class="mk__card glass">
+      <p class="eyebrow">Kanal</p>
+      <h2>Sabit sponsorlu gönderi</h2>
+      <p>Kanalda "Sponsor" ibaresiyle tek gönderi; 24 saat sabitlenmiş. Görsel ve tek bağlantı.</p>
+    </article>
+    <article class="mk__card glass">
+      <p class="eyebrow">Site + kanal</p>
+      <h2>Haftalık sponsor şeridi</h2>
+      <p>Ana sayfada akışın üstünde, tüm haber sayfalarında ve kanal gönderilerinin altında tek satır.</p>
+    </article>
+    <article class="mk__card glass">
+      <p class="eyebrow">Lansman</p>
+      <h2>Çıkış haftası paketi</h2>
+      <p>Haftalık şerit + 2 sabit gönderi + Lansman Kiti'nde ürün kartı (ilgili haberlerin yanında).</p>
+    </article>
+  </section>
+
+  <section class="mk__card glass">
+    <h2>İlkelerimiz</h2>
+    <ul>
+      <li>Sponsorlu her içerik açıkça "Sponsor" ya da "İşbirliği" ibaresi taşır; haber etiketleri ve içerik sponsorluktan etkilenmez.</li>
+      <li>Kabul etmediklerimiz: yasa dışı bahis ve kumar, kripto yatırım tavsiyesi, hesap/hile/mod satışı, korsan içerik, kişisel veri toplayan kampanyalar.</li>
+      <li>Ayda sınırlı sayıda sponsor alanı açılır; kanalda haber akışı her zaman önceliklidir.</li>
+    </ul>
+    <p id="price-note"></p>
+  </section>
+
+  <section class="mk__contact glass" id="contact">
+    <b>İletişim</b>
+    <a class="btn btn--glow" id="c-tg" hidden target="_blank" rel="noopener">Telegram'dan yazın</a>
+    <a class="btn" id="c-mail" hidden>E-posta</a>
+    <span class="fine" id="c-none">İletişim bilgisi yakında eklenecek.</span>
+  </section>
+</main>
+<footer class="foot"><p>GTA VI Türkiye Bülteni bağımsız bir hayran bültenidir; Rockstar Games veya Take-Two Interactive ile bağlantılı değildir.</p><p><a href="./">Ana sayfa</a> · <a href="rss.xml">RSS</a></p></footer>
+<script src="data/feed.js"></script>
+<script src="data/monetization.js"></script>
+<script src="assets/mediakit.js"></script>
+</body>
+</html>

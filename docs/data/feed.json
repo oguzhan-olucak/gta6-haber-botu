@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-18T12:56:45Z",
-    "last_run_at": "2026-11-18T12:56:45Z",
-    "last_successful_fetch_at": "2026-11-18T12:56:45Z",
+    "generated_at": "2026-11-18T21:21:23Z",
+    "last_run_at": "2026-11-18T21:21:23Z",
+    "last_successful_fetch_at": "2026-11-18T21:21:23Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 6,
+    "verified_total": 7,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,7 +19,7 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-18T12:56:45Z"
+        "checked_at": "2026-11-18T21:21:23Z"
       },
       {
         "id": "rockstar_google_news",
@@ -28,7 +28,7 @@
         "state": "ok",
         "entries": 17,
         "relevant": 13,
-        "checked_at": "2026-11-18T12:56:45Z"
+        "checked_at": "2026-11-18T21:21:23Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-18T12:56:45Z"
+        "checked_at": "2026-11-18T21:21:23Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 2,
         "relevant": 0,
-        "checked_at": "2026-11-18T12:56:45Z"
+        "checked_at": "2026-11-18T21:21:23Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 15,
-        "checked_at": "2026-11-18T12:56:45Z"
+        "relevant": 14,
+        "checked_at": "2026-11-18T21:21:23Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 26,
-        "checked_at": "2026-11-18T12:56:45Z"
+        "relevant": 33,
+        "checked_at": "2026-11-18T21:21:23Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 16,
-        "checked_at": "2026-11-18T12:56:45Z"
+        "relevant": 25,
+        "checked_at": "2026-11-18T21:21:23Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 17,
-        "checked_at": "2026-11-18T12:56:45Z"
+        "relevant": 31,
+        "checked_at": "2026-11-18T21:21:23Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 10,
-        "checked_at": "2026-11-18T12:56:45Z"
+        "checked_at": "2026-11-18T21:21:23Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 9,
-        "checked_at": "2026-11-18T12:56:45Z"
+        "relevant": 6,
+        "checked_at": "2026-11-18T21:21:23Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-18T12:56:45Z"
+        "checked_at": "2026-11-18T21:21:23Z"
       }
     ]
   },
-  "hero_id": "dae4737f045e631d2a884b33",
+  "hero_id": "9560376f39cf98a1657c0c39",
   "featured_ids": [
-    "762a9a08574b73885160b570",
-    "4dfa387a3eccebff79b5bd2b"
+    "dae4737f045e631d2a884b33",
+    "762a9a08574b73885160b570"
   ],
   "items": [
+    {
+      "id": "9560376f39cf98a1657c0c39",
+      "title": "GTA 6, lansmanında akış izleyici rekoru kırdı",
+      "summary": "IGN ve Insider Gaming'e göre, GTA 6 henüz tam bir gün bile geçmeden akış izleyici rekoru kırdı. İlk dakikalarda 5,3 milyonun üzerinde izleyiciye ulaştığı bildiriliyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "INDUSTRY_BUSINESS",
+      "category_tr": "Analiz",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-18T21:21:23Z",
+      "why_this_label": "2 bağımsız yayın: IGN, Insider Gaming",
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/gta-6-shatters-streaming-records-before-it-even-launches-globally"
+        },
+        {
+          "name": "Insider Gaming",
+          "url": "https://insider-gaming.com/gta-6-streaming-launch-record"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/8",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez",
+      "image": "https://assets-prd.ignimgs.com/2026/11/18/gta-6-jason-aura-1795024506669.jpg?width=1280&format=jpg&auto=webp&quality=80",
+      "image_credit": "IGN",
+      "title_en": "GTA 6 breaks streaming viewership record at launch",
+      "summary_en": "According to IGN and Insider Gaming, GTA 6 set a new streaming viewership record within minutes of its release, reaching over 5.3 million viewers early on. The reports note that the record was achieved before the game had been out for a full day."
+    },
     {
       "id": "dae4737f045e631d2a884b33",
       "title": "GTA 6’da Birinci Şahıs Kamera Modu Olup Olmadığı Tartışılıyor",

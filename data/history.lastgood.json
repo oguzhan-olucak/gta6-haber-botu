@@ -473,7 +473,7 @@
       "content_hashes": [
         "460a93793e1b2827b031c194"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -517,7 +517,7 @@
       "content_hashes": [
         "c12cd5d04e0a6cdae2c27755"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -606,7 +606,7 @@
       "content_hashes": [
         "d0099a57bf2a6e1f4b65b6e2"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -811,6 +811,55 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-18T12:56:45Z",
       "message_id": 7
+    },
+    {
+      "content_id": "9560376f39cf98a1657c0c39",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6, lansmanında akış izleyici rekoru kırdı",
+      "summary_tr": "IGN ve Insider Gaming'e göre, GTA 6 henüz tam bir gün bile geçmeden akış izleyici rekoru kırdı. İlk dakikalarda 5,3 milyonun üzerinde izleyiciye ulaştığı bildiriliyor.",
+      "title_en": "GTA 6 breaks streaming viewership record at launch",
+      "summary_en": "According to IGN and Insider Gaming, GTA 6 set a new streaming viewership record within minutes of its release, reaching over 5.3 million viewers early on. The reports note that the record was achieved before the game had been out for a full day.",
+      "why_this_label": "2 bağımsız yayın: IGN, Insider Gaming",
+      "source_names": {
+        "https://ign.com/articles/gta-6-shatters-streaming-records-before-it-even-launches-globally": "IGN",
+        "https://insider-gaming.com/gta-6-streaming-launch-record": "Insider Gaming"
+      },
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "publish_reason": "2 bağımsız yayın: IGN, Insider Gaming",
+      "independent_origins": [
+        "ign",
+        "insider_gaming"
+      ],
+      "source_urls": [
+        "https://ign.com/articles/gta-6-shatters-streaming-records-before-it-even-launches-globally",
+        "https://insider-gaming.com/gta-6-streaming-launch-record"
+      ],
+      "source_titles": [
+        "GTA 6 Sets Streaming Launch Record Within Minutes",
+        "GTA 6 Shatters Streaming Records Before It Even Launches Globally"
+      ],
+      "content_hashes": [
+        "560ab9e655a751baf6434589",
+        "ee86223755460c00c65de271"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://assets-prd.ignimgs.com/2026/11/18/gta-6-jason-aura-1795024506669.jpg?width=1280&format=jpg&auto=webp&quality=80",
+      "image_credit": "IGN",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-18T21:21:23Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-18T21:21:23Z",
+      "message_id": 8
     }
   ]
 }

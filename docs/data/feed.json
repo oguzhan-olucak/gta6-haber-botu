@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-17T22:30:35Z",
-    "last_run_at": "2026-11-17T22:30:35Z",
-    "last_successful_fetch_at": "2026-11-17T22:30:35Z",
+    "generated_at": "2026-11-18T03:53:01Z",
+    "last_run_at": "2026-11-18T03:53:01Z",
+    "last_successful_fetch_at": "2026-11-18T03:53:01Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 4,
+    "verified_total": 5,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-17T22:30:35Z"
+        "checked_at": "2026-11-18T03:53:01Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 18,
+        "entries": 17,
         "relevant": 13,
-        "checked_at": "2026-11-17T22:30:35Z"
+        "checked_at": "2026-11-18T03:53:01Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,16 +37,16 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-17T22:30:35Z"
+        "checked_at": "2026-11-18T03:53:01Z"
       },
       {
         "id": "take_two_google_news",
         "name": "Take-Two Interactive",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 4,
+        "entries": 3,
         "relevant": 0,
-        "checked_at": "2026-11-17T22:30:35Z"
+        "checked_at": "2026-11-18T03:53:01Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 8,
-        "checked_at": "2026-11-17T22:30:35Z"
+        "checked_at": "2026-11-18T03:53:01Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 25,
-        "checked_at": "2026-11-17T22:30:35Z"
+        "checked_at": "2026-11-18T03:53:01Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 9,
-        "checked_at": "2026-11-17T22:30:35Z"
+        "relevant": 10,
+        "checked_at": "2026-11-18T03:53:01Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 7,
-        "checked_at": "2026-11-17T22:30:35Z"
+        "relevant": 8,
+        "checked_at": "2026-11-18T03:53:01Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 6,
-        "checked_at": "2026-11-17T22:30:35Z"
+        "checked_at": "2026-11-18T03:53:01Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 3,
-        "checked_at": "2026-11-17T22:30:35Z"
+        "relevant": 2,
+        "checked_at": "2026-11-18T03:53:01Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-17T22:30:35Z"
+        "checked_at": "2026-11-18T03:53:01Z"
       }
     ]
   },
-  "hero_id": "4dfa387a3eccebff79b5bd2b",
+  "hero_id": "762a9a08574b73885160b570",
   "featured_ids": [
-    "d430abc1c7fa3c86443c6727",
-    "2f9d46fce931c79e558174c2"
+    "4dfa387a3eccebff79b5bd2b",
+    "d430abc1c7fa3c86443c6727"
   ],
   "items": [
+    {
+      "id": "762a9a08574b73885160b570",
+      "title": "GTA 6'nın Game Awards'ta 8 adaylık aldığı iddia ediliyor",
+      "summary": "PC Gamer ve IGN, GTA 6'nın henüz çıkmadan Game Awards'ta sekiz adaylık aldığına dair haberler yayımladı. Game Awards jüri üyelerinin önceden erişim sağlayabileceği belirtiliyor, ancak bu adaylıkların resmi onayı bulunmuyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "INDUSTRY_BUSINESS",
+      "category_tr": "Analiz",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-18T03:53:01Z",
+      "why_this_label": "2 bağımsız yayın: PC Gamer, IGN",
+      "source_strength": 75,
+      "editorial_priority": 87,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "PC Gamer",
+          "url": "https://pcgamer.com/gaming-industry/events-conferences/we-got-8-game-awards-nominations-for-gta-6-before-gta-6"
+        },
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/gta-6-fans-baffled-after-jasons-actor-gets-left-out-of-game-awards-nominations"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/6",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez",
+      "image": "https://cdn.mos.cms.futurecdn.net/bcmYVV5Dhrt4d4a2BsvB3V-1920-80.jpg",
+      "image_credit": "PC Gamer",
+      "title_en": null,
+      "summary_en": null
+    },
     {
       "id": "4dfa387a3eccebff79b5bd2b",
       "title": "Devolver Digital, GTA 6'yi silersen ücretsiz oyun kazanma fırsatı sunuyor",

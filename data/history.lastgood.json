@@ -664,6 +664,55 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-17T22:30:35Z",
       "message_id": 5
+    },
+    {
+      "content_id": "762a9a08574b73885160b570",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6'nın Game Awards'ta 8 adaylık aldığı iddia ediliyor",
+      "summary_tr": "PC Gamer ve IGN, GTA 6'nın henüz çıkmadan Game Awards'ta sekiz adaylık aldığına dair haberler yayımladı. Game Awards jüri üyelerinin önceden erişim sağlayabileceği belirtiliyor, ancak bu adaylıkların resmi onayı bulunmuyor.",
+      "title_en": null,
+      "summary_en": null,
+      "why_this_label": "2 bağımsız yayın: PC Gamer, IGN",
+      "source_names": {
+        "https://pcgamer.com/gaming-industry/events-conferences/we-got-8-game-awards-nominations-for-gta-6-before-gta-6": "PC Gamer",
+        "https://ign.com/articles/gta-6-fans-baffled-after-jasons-actor-gets-left-out-of-game-awards-nominations": "IGN"
+      },
+      "source_strength": 75,
+      "editorial_priority": 87,
+      "publish_reason": "2 bağımsız yayın: PC Gamer, IGN",
+      "independent_origins": [
+        "future_plc",
+        "ign"
+      ],
+      "source_urls": [
+        "https://pcgamer.com/gaming-industry/events-conferences/we-got-8-game-awards-nominations-for-gta-6-before-gta-6",
+        "https://ign.com/articles/gta-6-fans-baffled-after-jasons-actor-gets-left-out-of-game-awards-nominations"
+      ],
+      "source_titles": [
+        "We got 8 Game Awards nominations for GTA 6 before GTA 6",
+        "GTA 6 Fans Baffled After Jason's Actor Gets Left Out of Game Awards Nominations"
+      ],
+      "content_hashes": [
+        "c0956ac49c9248d04ca83a95",
+        "e6f2744cce9100cafcbeef07"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/bcmYVV5Dhrt4d4a2BsvB3V-1920-80.jpg",
+      "image_credit": "PC Gamer",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-18T03:53:01Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-18T03:53:01Z",
+      "message_id": 6
     }
   ]
 }

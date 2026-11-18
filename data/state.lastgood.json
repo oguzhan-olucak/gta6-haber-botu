@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-17T22:30:35Z",
-  "last_successful_fetch_at": "2026-11-17T22:30:35Z",
+  "last_run_at": "2026-11-18T03:53:01Z",
+  "last_successful_fetch_at": "2026-11-18T03:53:01Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -118,17 +118,17 @@
     },
     "aa7447283c77ba008d208df0": {
       "first_seen": "2026-11-16T13:31:49Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "eurogamer"
     },
     "a2a76076e84ef1d04208696e": {
       "first_seen": "2026-11-16T13:31:49Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "f6d21a4be1f4a958c30f87b3": {
       "first_seen": "2026-11-16T13:31:49Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "5183b745d0d3874517e16918": {
@@ -248,7 +248,7 @@
     },
     "9b752e438c68fdc741d85f74": {
       "first_seen": "2026-11-16T17:17:16Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "5c46665d691b93b5043e3c9a": {
@@ -768,7 +768,7 @@
     },
     "762a9a08574b73885160b570": {
       "first_seen": "2026-11-17T22:30:35Z",
-      "status": "NEW",
+      "status": "USED",
       "source": "pcgamer"
     },
     "50f3b99c6c47028f073743fd": {
@@ -785,6 +785,46 @@
       "first_seen": "2026-11-17T22:30:35Z",
       "status": "DUPLICATE",
       "source": "vgc"
+    },
+    "e9308583a06dece4c88f2bac": {
+      "first_seen": "2026-11-18T03:53:01Z",
+      "status": "NEW",
+      "source": "pcgamer"
+    },
+    "479d1a27cf8cdb40fdc0ee69": {
+      "first_seen": "2026-11-18T03:53:01Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "43bcef22d3edc0a3641107f8": {
+      "first_seen": "2026-11-18T03:53:01Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "c60783579a3e2be4c3852631": {
+      "first_seen": "2026-11-18T03:53:01Z",
+      "status": "USED",
+      "source": "ign"
+    },
+    "517e185fca57c97aeb5446ce": {
+      "first_seen": "2026-11-18T03:53:01Z",
+      "status": "NEW",
+      "source": "pcgamer"
+    },
+    "3585fc8f709e39ccdefb3d9d": {
+      "first_seen": "2026-11-18T03:53:01Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "77fe5f2db1928be8bfbf3a13": {
+      "first_seen": "2026-11-18T03:53:01Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "f42ce5b3795b6e77e869f337": {
+      "first_seen": "2026-11-18T03:53:01Z",
+      "status": "NEW",
+      "source": "gamesradar"
     }
   },
   "digests_sent": [
@@ -803,78 +843,78 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T22:30:35Z",
+      "checked_at": "2026-11-18T03:53:01Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
-      "entries": 18,
+      "entries": 17,
       "relevant": 13,
       "new": 0,
-      "checked_at": "2026-11-17T22:30:35Z"
+      "checked_at": "2026-11-18T03:53:01Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T22:30:35Z"
+      "checked_at": "2026-11-18T03:53:01Z"
     },
     "take_two_google_news": {
       "ok": true,
-      "entries": 4,
+      "entries": 3,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-17T22:30:35Z"
+      "checked_at": "2026-11-18T03:53:01Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
       "relevant": 8,
-      "new": 2,
-      "checked_at": "2026-11-17T22:30:35Z"
+      "new": 3,
+      "checked_at": "2026-11-18T03:53:01Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
       "relevant": 25,
-      "new": 2,
-      "checked_at": "2026-11-17T22:30:35Z"
+      "new": 0,
+      "checked_at": "2026-11-18T03:53:01Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 9,
-      "new": 0,
-      "checked_at": "2026-11-17T22:30:35Z"
+      "relevant": 10,
+      "new": 2,
+      "checked_at": "2026-11-18T03:53:01Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
-      "relevant": 7,
-      "new": 1,
-      "checked_at": "2026-11-17T22:30:35Z"
+      "relevant": 8,
+      "new": 2,
+      "checked_at": "2026-11-18T03:53:01Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 6,
-      "new": 3,
-      "checked_at": "2026-11-17T22:30:35Z"
+      "new": 0,
+      "checked_at": "2026-11-18T03:53:01Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 3,
+      "relevant": 2,
       "new": 1,
-      "checked_at": "2026-11-17T22:30:35Z"
+      "checked_at": "2026-11-18T03:53:01Z"
     },
     "reddit_gta6": {
       "ok": false,
       "error_class": "RSS_PARSE_ERROR",
       "detail": "HTTP 404",
       "http_status": 404,
-      "checked_at": "2026-11-17T22:30:35Z"
+      "checked_at": "2026-11-18T03:53:01Z"
     }
   },
   "run_log": [
@@ -1068,89 +1108,28 @@
         "groq",
         "github"
       ]
+    },
+    {
+      "started_at": "2026-11-18T03:53:01Z",
+      "sources_ok": 10,
+      "new_items": 8,
+      "published": 1,
+      "gemini_calls": 1,
+      "error_classes": [
+        "RSS_PARSE_ERROR"
+      ],
+      "llm_attempts": [
+        "gemini:NETWORK_TRANSIENT",
+        "groq:ok"
+      ],
+      "llm_chain": [
+        "gemini",
+        "groq",
+        "github"
+      ]
     }
   ],
   "candidate_pool": {
-    "2b8b87d43a1be409a8067ab2": {
-      "item": {
-        "id": "2b8b87d43a1be409a8067ab2",
-        "source_id": "reddit_gta6",
-        "source_name": "r/GTA6",
-        "trust_class": "COMMUNITY",
-        "origin_group": "reddit",
-        "title": "Rockstar's marketing is on another level",
-        "url": "https://reddit.com/r/GTA6/comments/1xxens0/rockstars_marketing_is_on_another_level",
-        "summary": "A GTA6 artwork being painted in Miami, with a crocodile at the wheel and Vice City lettering. Only Rockstar could turn a random wall in Miami into massive GTA VI mural. Their marketing is unmatched, when compared with other studios. submitted by /u/A-Ghost-Cat [link] [comments]",
-        "published_at": "2026-11-16T03:10:17Z",
-        "content_hash": "b0a0e4973e5cdc1d9b9968d0",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "2b8b87d43a1be409a8067ab2"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "f729a2144f6f13176fbe526f": {
-      "item": {
-        "id": "f729a2144f6f13176fbe526f",
-        "source_id": "reddit_gta6",
-        "source_name": "r/GTA6",
-        "trust_class": "COMMUNITY",
-        "origin_group": "reddit",
-        "title": "GTA 6 Marketing in Cape Town, South Africa",
-        "url": "https://reddit.com/r/GTA6/comments/1xxcsly/gta_6_marketing_in_cape_town_south_africa",
-        "summary": "submitted by /u/panner1234 [link] [comments]",
-        "published_at": "2026-11-16T01:37:24Z",
-        "content_hash": "f7cd282e8d74f294cea11a03",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "f729a2144f6f13176fbe526f"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "4564061e2d248ceba56e3d6a": {
-      "item": {
-        "id": "4564061e2d248ceba56e3d6a",
-        "source_id": "reddit_gta6",
-        "source_name": "r/GTA6",
-        "trust_class": "COMMUNITY",
-        "origin_group": "reddit",
-        "title": "GTA 6 Marketing - Shoreditch (London)",
-        "url": "https://reddit.com/r/GTA6/comments/1xxa68o/gta_6_marketing_shoreditch_london",
-        "summary": "Finally seen GTA Marketing in person, driving through Shoreditch, London tonight. Told my wife to quickly grab the phone to get the shot. Feels like the perfect way to sign off my weekend before GTA 6 week! The excitement is real. submitted by /u/babagroovy [link] [comments]",
-        "published_at": "2026-11-15T23:34:25Z",
-        "content_hash": "ad24d570f6e2c53413652117",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "4564061e2d248ceba56e3d6a"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
-    "d679772e39c557e9b9452501": {
-      "item": {
-        "id": "d679772e39c557e9b9452501",
-        "source_id": "reddit_gta6",
-        "source_name": "r/GTA6",
-        "trust_class": "COMMUNITY",
-        "origin_group": "reddit",
-        "title": "GTA 6 popup coming to Shoreditch? 👀",
-        "url": "https://reddit.com/r/GTA6/comments/1xx95ii/gta_6_popup_coming_to_shoreditch",
-        "summary": "Spotted today, not seen anyone post about this yet... could this be another mw4 style immersive experience coming soon? submitted by /u/juicecarton8301 [link] [comments]",
-        "published_at": "2026-11-15T22:48:48Z",
-        "content_hash": "4e9fb235c720e164cd27eb53",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "d679772e39c557e9b9452501"
-      },
-      "first_seen": "2026-11-16T06:35:35Z",
-      "needs_eval": false
-    },
     "557a19b05a29533eaf9f5872": {
       "item": {
         "id": "557a19b05a29533eaf9f5872",
@@ -1209,7 +1188,7 @@
         "raw_id": "aa7447283c77ba008d208df0"
       },
       "first_seen": "2026-11-16T13:31:49Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "a2a76076e84ef1d04208696e": {
       "item": {
@@ -1229,7 +1208,7 @@
         "raw_id": "a2a76076e84ef1d04208696e"
       },
       "first_seen": "2026-11-16T13:31:49Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "f6d21a4be1f4a958c30f87b3": {
       "item": {
@@ -1249,7 +1228,7 @@
         "raw_id": "f6d21a4be1f4a958c30f87b3"
       },
       "first_seen": "2026-11-16T13:31:49Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "5183b745d0d3874517e16918": {
       "item": {
@@ -1705,7 +1684,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/12/vintage-vice-city-pack-exclusive-looks-01-1794487245980.jpg"
       },
       "first_seen": "2026-11-16T17:17:16Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "5c46665d691b93b5043e3c9a": {
       "item": {
@@ -3534,29 +3513,155 @@
       "first_seen": "2026-11-17T22:30:35Z",
       "needs_eval": true
     },
-    "762a9a08574b73885160b570": {
+    "e9308583a06dece4c88f2bac": {
       "item": {
-        "id": "762a9a08574b73885160b570",
+        "id": "e9308583a06dece4c88f2bac",
         "source_id": "pcgamer",
         "source_name": "PC Gamer",
         "trust_class": "ESTABLISHED_MEDIA",
         "origin_group": "future_plc",
-        "title": "We got 8 Game Awards nominations for GTA 6 before GTA 6",
-        "url": "https://pcgamer.com/gaming-industry/events-conferences/we-got-8-game-awards-nominations-for-gta-6-before-gta-6",
-        "summary": "The Game Awards says its judges \"may be provided with advance or pre-release access to games for critical evaluation.\"",
-        "published_at": "2026-11-17T18:35:38Z",
-        "content_hash": "e6f2744cce9100cafcbeef07",
+        "title": "Newzoo analyst expects Grand Theft Auto to turn around a rough year for console gaming: 'without GTA 6 the console market would likely be down year-over-year in 2026'",
+        "url": "https://pcgamer.com/games/grand-theft-auto/newzoo-analyst-expects-grand-theft-auto-to-turn-around-a-rough-year-for-console-gaming-without-gta-6-the-console-market-would-likely-be-down-year-over-year-in-2026",
+        "summary": "There's a lot riding on Jason and Lucia.",
+        "published_at": "2026-11-18T00:35:59Z",
+        "content_hash": "9c0a0d248bde25e88c32b271",
         "cited_origins": [],
         "url_verified": false,
         "via": "rss",
-        "raw_id": "762a9a08574b73885160b570",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/bcmYVV5Dhrt4d4a2BsvB3V-1920-80.jpg"
+        "raw_id": "e9308583a06dece4c88f2bac",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/FNno9bDjnxEfqkvXjc3KzY-1920-80.jpg"
       },
-      "first_seen": "2026-11-17T22:30:35Z",
+      "first_seen": "2026-11-18T03:53:01Z",
+      "needs_eval": true
+    },
+    "479d1a27cf8cdb40fdc0ee69": {
+      "item": {
+        "id": "479d1a27cf8cdb40fdc0ee69",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "New GTA 6 Screenshots Surface Online Showing New Weapons, Scenes",
+        "url": "https://insider-gaming.com/gta-6-screenshots-surface-social-media",
+        "summary": "On social media, six new GTA 6 screenshots have surfaced, reportedly having been datamined by a reputable Rockstar insider. The post New GTA 6 Screenshots Surface Online Showing New Weapons, Scenes appeared first on Insider Gaming .",
+        "published_at": "2026-11-17T23:55:25Z",
+        "content_hash": "3b6733b0ff365496648b4960",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "479d1a27cf8cdb40fdc0ee69",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-18T03:53:01Z",
+      "needs_eval": true
+    },
+    "43bcef22d3edc0a3641107f8": {
+      "item": {
+        "id": "43bcef22d3edc0a3641107f8",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 6 Vice City NBA Court Revealed by Miami Heat",
+        "url": "https://ign.com/articles/gta-6-vice-city-nba-court-revealed-by-miami-heat",
+        "summary": "The NBA's Miami Heat unveiled the special Vice City court they'll be playing on for one night only, tomorrow in a home game at the Kaseya Center against the Milwaukee Bucks.",
+        "published_at": "2026-11-17T23:51:09Z",
+        "content_hash": "fb1f3243c9592d82b29a0b16",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "43bcef22d3edc0a3641107f8",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/17/lucia-caminos-14-1794958825605.jpg"
+      },
+      "first_seen": "2026-11-18T03:53:01Z",
+      "needs_eval": true
+    },
+    "517e185fca57c97aeb5446ce": {
+      "item": {
+        "id": "517e185fca57c97aeb5446ce",
+        "source_id": "pcgamer",
+        "source_name": "PC Gamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "Miami Heat shows off its 'Vice City hardwood' ahead of the big Grand Theft Auto 6 basketball game",
+        "url": "https://pcgamer.com/games/grand-theft-auto/miami-heat-shows-off-its-vice-city-hardwood-ahead-of-the-big-grand-theft-auto-6-basketball-game",
+        "summary": "They've got new uniforms, too. They're pretty cool.",
+        "published_at": "2026-11-17T23:08:11Z",
+        "content_hash": "b8b88555e0710be33872a95a",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "517e185fca57c97aeb5446ce",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/29sQApQ46ucNntjpnWn88T-1920-80.jpg"
+      },
+      "first_seen": "2026-11-18T03:53:01Z",
+      "needs_eval": true
+    },
+    "3585fc8f709e39ccdefb3d9d": {
+      "item": {
+        "id": "3585fc8f709e39ccdefb3d9d",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Amazon and Best Buy's Black Friday Sales Will Be Competing With GTA 6",
+        "url": "https://ign.com/articles/amazon-and-best-buy-2026-black-friday-sales-will-be-competing-with-gta-6",
+        "summary": "The biggest video game release of all time is nearly upon us. GTA 6 is dropping on November 19, and the anticipation for the game has been absolutely bonkers. Tons of people are already planning to take time off of work to play, and some schools are even offering gift cards to kids to avoid mass absences. It's going to be a massive launch, to say the least. But there's also another event kicking off on that same day — Black Friday sales. Both Amazon and Best Buy have revealed that their official sales will be launching on November 19, well ahead of Thanksgiving. The GTA 6 release date is obviously a very big deal in the world of gaming. Other than Nintendo's Ocarina of Time Remake and that…",
+        "published_at": "2026-11-17T23:06:06Z",
+        "content_hash": "6d317f5c679059c4cd2289b3",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "3585fc8f709e39ccdefb3d9d",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/17/gta-6-black-friday-1794956536600.jpg"
+      },
+      "first_seen": "2026-11-18T03:53:01Z",
+      "needs_eval": true
+    },
+    "77fe5f2db1928be8bfbf3a13": {
+      "item": {
+        "id": "77fe5f2db1928be8bfbf3a13",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "This cozy game wants to be the \"lovely little underdog\" between Zelda: Ocarina of Time and GTA 6",
+        "url": "https://gamesradar.com/games/the-cozy-tanuki-game-that-stole-my-heart-is-all-grown-up-wants-to-be-the-lovely-little-underdog-between-zelda-ocarina-of-time-and-gta-6",
+        "summary": "Tanuki: Pon's Summer will steal your heart, too",
+        "published_at": "2026-11-17T22:46:02Z",
+        "content_hash": "9315b16a1ff7ac985f46859b",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "77fe5f2db1928be8bfbf3a13",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/iv2fHjpJushTSLZ2c2tn7f-1920-80.jpg"
+      },
+      "first_seen": "2026-11-18T03:53:01Z",
+      "needs_eval": true
+    },
+    "f42ce5b3795b6e77e869f337": {
+      "item": {
+        "id": "f42ce5b3795b6e77e869f337",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "Binding of Isaac DLC goes up against GTA 6: \"If it was a stupid idea, it's a funny stupid idea\"",
+        "url": "https://gamesradar.com/games/roguelike/legendary-roguelike-binding-of-isaac-puts-new-dlc-on-console-alongside-gta-6-if-it-was-a-stupid-idea-its-a-funny-stupid-idea",
+        "summary": "Edmund McMillen knows that when you release does matter, because everything was going great for Mewgenics until Slay the Spire 2 came along",
+        "published_at": "2026-11-17T22:45:47Z",
+        "content_hash": "78ab4fcd52f95f727d3b9f9a",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "f42ce5b3795b6e77e869f337",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/8nm9sSTCd3H2bvm46Dngb4-1920-80.jpg"
+      },
+      "first_seen": "2026-11-18T03:53:01Z",
       "needs_eval": true
     }
   },
-  "persisted_at": "2026-11-17T22:30:35Z",
+  "persisted_at": "2026-11-18T03:53:01Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": "2026-11-17T06:01:55Z"
 }

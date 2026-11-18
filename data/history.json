@@ -713,6 +713,104 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-18T03:53:01Z",
       "message_id": 6
+    },
+    {
+      "content_id": "4ba4a048c0aa191055e5873b",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "GAMEPLAY_TECH",
+      "title_style": "CURIOSITY",
+      "title_tr": "GTA 6’da Jason ve Lucia’nın karakter ve saç değişimi iddiaları",
+      "summary_tr": "PC Gamer ve Video Games Chronicle, GTA 6’da Jason ve Lucia karakterleri arasında geçiş yapmanın ve saçlarını değiştirmenin mümkün olduğunu iddia ediyor. Ancak bu iddiaların doğruluğu resmi olarak teyit edilmedi.",
+      "title_en": "Rumors about character and hair swapping for Jason and Lucia in GTA 6",
+      "summary_en": "PC Gamer and Video Games Chronicle claim that it is possible to switch between Jason and Lucia and change their hair in GTA 6. However, these claims have not been officially confirmed.",
+      "why_this_label": "2 bağımsız yayın: PC Gamer, Video Games Chronicle",
+      "source_names": {
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-romance-jason-lucia": "PC Gamer",
+        "https://videogameschronicle.com/guide/how-to-change-characters-in-gta-6": "Video Games Chronicle",
+        "https://videogameschronicle.com/guide/how-to-change-hair-in-gta-6": "Video Games Chronicle"
+      },
+      "source_strength": 75,
+      "editorial_priority": 90,
+      "publish_reason": "2 bağımsız yayın: PC Gamer, Video Games Chronicle",
+      "independent_origins": [
+        "future_plc",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-romance-jason-lucia",
+        "https://videogameschronicle.com/guide/how-to-change-characters-in-gta-6",
+        "https://videogameschronicle.com/guide/how-to-change-hair-in-gta-6"
+      ],
+      "source_titles": [
+        "How to change hair in GTA 6",
+        "How to change characters in GTA 6",
+        "GTA 6 romance guide: How Jason and Lucia's relationship actually works"
+      ],
+      "content_hashes": [
+        "2d7f48ced9c67da71f48ac63",
+        "d7453d28a7cfbad7ef1476a3",
+        "dab04b7f7c63c2c4cb087a3d"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "publish_status": "REVIEW_HELD",
+      "publish_error": "Kanıtın izin vermediği kesinlik ifadesi",
+      "created_at": "2026-11-18T12:56:45Z"
+    },
+    {
+      "content_id": "dae4737f045e631d2a884b33",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "GAMEPLAY_TECH",
+      "title_style": "QUESTION",
+      "title_tr": "GTA 6’da Birinci Şahıs Kamera Modu Olup Olmadığı Tartışılıyor",
+      "summary_tr": "Insider Gaming ve Video Games Chronicle, GTA 6’da birinci şahıs kamera modunun bulunup bulunmadığını inceliyor. Her iki kaynak da oyunun bu özelliği sunup sunmadığı konusunda net bir bilgi vermiyor ve konunun hâlâ belirsiz olduğunu belirtiyor.",
+      "title_en": "First-Person Camera Mode in GTA 6 Remains Unconfirmed",
+      "summary_en": "Insider Gaming and Video Games Chronicle examine whether GTA 6 includes a first-person camera mode. Both sources note that there is no definitive confirmation yet, keeping the matter uncertain.",
+      "why_this_label": "2 bağımsız yayın: Insider Gaming, Video Games Chronicle",
+      "source_names": {
+        "https://insider-gaming.com/how-to-switch-to-first-person-gta-6": "Insider Gaming",
+        "https://videogameschronicle.com/guide/gta-6-first-person-mode-explained-does-gta-6-have-a-first-person-mode": "Video Games Chronicle"
+      },
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "publish_reason": "2 bağımsız yayın: Insider Gaming, Video Games Chronicle",
+      "independent_origins": [
+        "insider_gaming",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://insider-gaming.com/how-to-switch-to-first-person-gta-6",
+        "https://videogameschronicle.com/guide/gta-6-first-person-mode-explained-does-gta-6-have-a-first-person-mode"
+      ],
+      "source_titles": [
+        "GTA 6 First-Person mode explained: Does GTA 6 have a first-person mode?",
+        "Can You Switch to First-Person in GTA 6? Camera Options, Explained"
+      ],
+      "content_hashes": [
+        "30b449d0fc7523af5ec43085",
+        "d7186d23b7de3b0360464b07"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://insider-gaming.com/wp-content/uploads/2026/11/first-person-gta-6-scaled.jpg",
+      "image_credit": "Insider Gaming",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-18T12:56:45Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-18T12:56:45Z",
+      "message_id": 7
     }
   ]
 }

@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-18T03:53:01Z",
-    "last_run_at": "2026-11-18T03:53:01Z",
-    "last_successful_fetch_at": "2026-11-18T03:53:01Z",
+    "generated_at": "2026-11-18T12:56:45Z",
+    "last_run_at": "2026-11-18T12:56:45Z",
+    "last_successful_fetch_at": "2026-11-18T12:56:45Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 5,
+    "verified_total": 6,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,7 +19,7 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-18T03:53:01Z"
+        "checked_at": "2026-11-18T12:56:45Z"
       },
       {
         "id": "rockstar_google_news",
@@ -28,7 +28,7 @@
         "state": "ok",
         "entries": 17,
         "relevant": 13,
-        "checked_at": "2026-11-18T03:53:01Z"
+        "checked_at": "2026-11-18T12:56:45Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,16 +37,16 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-18T03:53:01Z"
+        "checked_at": "2026-11-18T12:56:45Z"
       },
       {
         "id": "take_two_google_news",
         "name": "Take-Two Interactive",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 3,
+        "entries": 2,
         "relevant": 0,
-        "checked_at": "2026-11-18T03:53:01Z"
+        "checked_at": "2026-11-18T12:56:45Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 8,
-        "checked_at": "2026-11-18T03:53:01Z"
+        "relevant": 15,
+        "checked_at": "2026-11-18T12:56:45Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 25,
-        "checked_at": "2026-11-18T03:53:01Z"
+        "relevant": 26,
+        "checked_at": "2026-11-18T12:56:45Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 10,
-        "checked_at": "2026-11-18T03:53:01Z"
+        "relevant": 16,
+        "checked_at": "2026-11-18T12:56:45Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 8,
-        "checked_at": "2026-11-18T03:53:01Z"
+        "relevant": 17,
+        "checked_at": "2026-11-18T12:56:45Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 6,
-        "checked_at": "2026-11-18T03:53:01Z"
+        "relevant": 10,
+        "checked_at": "2026-11-18T12:56:45Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 2,
-        "checked_at": "2026-11-18T03:53:01Z"
+        "relevant": 9,
+        "checked_at": "2026-11-18T12:56:45Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-18T03:53:01Z"
+        "checked_at": "2026-11-18T12:56:45Z"
       }
     ]
   },
-  "hero_id": "762a9a08574b73885160b570",
+  "hero_id": "dae4737f045e631d2a884b33",
   "featured_ids": [
-    "4dfa387a3eccebff79b5bd2b",
-    "d430abc1c7fa3c86443c6727"
+    "762a9a08574b73885160b570",
+    "4dfa387a3eccebff79b5bd2b"
   ],
   "items": [
+    {
+      "id": "dae4737f045e631d2a884b33",
+      "title": "GTA 6’da Birinci Şahıs Kamera Modu Olup Olmadığı Tartışılıyor",
+      "summary": "Insider Gaming ve Video Games Chronicle, GTA 6’da birinci şahıs kamera modunun bulunup bulunmadığını inceliyor. Her iki kaynak da oyunun bu özelliği sunup sunmadığı konusunda net bir bilgi vermiyor ve konunun hâlâ belirsiz olduğunu belirtiyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "QUESTION",
+      "published_at": "2026-11-18T12:56:45Z",
+      "why_this_label": "2 bağımsız yayın: Insider Gaming, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "Insider Gaming",
+          "url": "https://insider-gaming.com/how-to-switch-to-first-person-gta-6"
+        },
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/guide/gta-6-first-person-mode-explained-does-gta-6-have-a-first-person-mode"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/7",
+      "reactions_total": null,
+      "location_id": "leonida_keys",
+      "region": "Leonida Keys",
+      "image": "https://insider-gaming.com/wp-content/uploads/2026/11/first-person-gta-6-scaled.jpg",
+      "image_credit": "Insider Gaming",
+      "title_en": "First-Person Camera Mode in GTA 6 Remains Unconfirmed",
+      "summary_en": "Insider Gaming and Video Games Chronicle examine whether GTA 6 includes a first-person camera mode. Both sources note that there is no definitive confirmation yet, keeping the matter uncertain."
+    },
     {
       "id": "762a9a08574b73885160b570",
       "title": "GTA 6'nın Game Awards'ta 8 adaylık aldığı iddia ediliyor",

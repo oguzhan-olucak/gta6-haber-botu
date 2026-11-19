@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-19T02:41:48Z",
-    "last_run_at": "2026-11-19T02:41:48Z",
-    "last_successful_fetch_at": "2026-11-19T02:41:48Z",
+    "generated_at": "2026-11-19T10:46:54Z",
+    "last_run_at": "2026-11-19T10:46:54Z",
+    "last_successful_fetch_at": "2026-11-19T10:46:54Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 8,
+    "verified_total": 9,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-19T02:41:48Z"
+        "checked_at": "2026-11-19T10:46:54Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 19,
-        "relevant": 17,
-        "checked_at": "2026-11-19T02:41:48Z"
+        "entries": 17,
+        "relevant": 15,
+        "checked_at": "2026-11-19T10:46:54Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-19T02:41:48Z"
+        "checked_at": "2026-11-19T10:46:54Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 3,
         "relevant": 0,
-        "checked_at": "2026-11-19T02:41:48Z"
+        "checked_at": "2026-11-19T10:46:54Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 14,
-        "checked_at": "2026-11-19T02:41:48Z"
+        "checked_at": "2026-11-19T10:46:54Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 33,
-        "checked_at": "2026-11-19T02:41:48Z"
+        "relevant": 35,
+        "checked_at": "2026-11-19T10:46:54Z"
       },
       {
         "id": "gamesradar",
@@ -73,7 +73,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 39,
-        "checked_at": "2026-11-19T02:41:48Z"
+        "checked_at": "2026-11-19T10:46:54Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 34,
-        "checked_at": "2026-11-19T02:41:48Z"
+        "relevant": 36,
+        "checked_at": "2026-11-19T10:46:54Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 9,
-        "checked_at": "2026-11-19T02:41:48Z"
+        "relevant": 10,
+        "checked_at": "2026-11-19T10:46:54Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 9,
-        "checked_at": "2026-11-19T02:41:48Z"
+        "relevant": 7,
+        "checked_at": "2026-11-19T10:46:54Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-19T02:41:48Z"
+        "checked_at": "2026-11-19T10:46:54Z"
       }
     ]
   },
   "hero_id": "958d16af30d8216cf54fa8b9",
   "featured_ids": [
-    "9560376f39cf98a1657c0c39",
-    "dae4737f045e631d2a884b33"
+    "600de629588b9d43672cdf23",
+    "9560376f39cf98a1657c0c39"
   ],
   "items": [
+    {
+      "id": "600de629588b9d43672cdf23",
+      "title": "GTA 6’da Jason ve Lucia arasındaki romantik ilişki nasıl geliştirilebilir?",
+      "summary": "GamesRadar+ ve Video Games Chronicle, GTA 6’da Jason ve Lucia arasındaki romantik ilişkiyi geliştirebileceğinizi ve ilişki durumunu değiştirebileceğinizi bildiriyor. İlişki seviyelerini yükseltmek için çeşitli etkileşimler ve seçimler gerektiği iddia ediliyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "QUESTION",
+      "published_at": "2026-11-19T10:46:54Z",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 90,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-relationship-status-romance"
+        },
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/guide/gta-6-jason-lucia-relationship-levels-explained-how-to-improve-jason-and-lucias-relationship"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/10",
+      "reactions_total": null,
+      "location_id": "port_gellhorn",
+      "region": "Port Gellhorn & Ambrosia",
+      "image": "https://cdn.mos.cms.futurecdn.net/2Koq4tnASC3dBJcxVeJtPP-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "title_en": "How to improve the romance between Jason and Lucia in GTA 6?",
+      "summary_en": "GamesRadar+ and Video Games Chronicle report that in GTA 6 you can develop the romance between Jason and Lucia and change their relationship status. They claim that raising the relationship level requires specific interactions and choices."
+    },
     {
       "id": "958d16af30d8216cf54fa8b9",
       "title": "GTA 6 Ultimate Edition içerikleri nasıl kullanılmalı?",

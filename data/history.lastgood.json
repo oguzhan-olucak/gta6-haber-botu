@@ -699,7 +699,7 @@
         "c0956ac49c9248d04ca83a95",
         "e6f2744cce9100cafcbeef07"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -927,6 +927,55 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-19T02:41:48Z",
       "message_id": 9
+    },
+    {
+      "content_id": "600de629588b9d43672cdf23",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "GAMEPLAY_TECH",
+      "title_style": "QUESTION",
+      "title_tr": "GTA 6’da Jason ve Lucia arasındaki romantik ilişki nasıl geliştirilebilir?",
+      "summary_tr": "GamesRadar+ ve Video Games Chronicle, GTA 6’da Jason ve Lucia arasındaki romantik ilişkiyi geliştirebileceğinizi ve ilişki durumunu değiştirebileceğinizi bildiriyor. İlişki seviyelerini yükseltmek için çeşitli etkileşimler ve seçimler gerektiği iddia ediliyor.",
+      "title_en": "How to improve the romance between Jason and Lucia in GTA 6?",
+      "summary_en": "GamesRadar+ and Video Games Chronicle report that in GTA 6 you can develop the romance between Jason and Lucia and change their relationship status. They claim that raising the relationship level requires specific interactions and choices.",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, Video Games Chronicle",
+      "source_names": {
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-relationship-status-romance": "GamesRadar+",
+        "https://videogameschronicle.com/guide/gta-6-jason-lucia-relationship-levels-explained-how-to-improve-jason-and-lucias-relationship": "Video Games Chronicle"
+      },
+      "source_strength": 75,
+      "editorial_priority": 90,
+      "publish_reason": "2 bağımsız yayın: GamesRadar+, Video Games Chronicle",
+      "independent_origins": [
+        "future_plc",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-relationship-status-romance",
+        "https://videogameschronicle.com/guide/gta-6-jason-lucia-relationship-levels-explained-how-to-improve-jason-and-lucias-relationship"
+      ],
+      "source_titles": [
+        "How to develop romances and change your relationship status in GTA 6",
+        "GTA 6 Jason & Lucia Relationship Levels explained: How to improve Jason and Lucia’s relationship"
+      ],
+      "content_hashes": [
+        "9f37446777dcbbeac2b45092",
+        "dab8edee4d6d326ef5f044ca"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/2Koq4tnASC3dBJcxVeJtPP-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-19T10:46:54Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-19T10:46:54Z",
+      "message_id": 10
     }
   ]
 }

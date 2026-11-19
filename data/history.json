@@ -650,7 +650,7 @@
       "content_hashes": [
         "6ad1b1ba017fefbbd2119d9e"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -860,6 +860,73 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-18T21:21:23Z",
       "message_id": 8
+    },
+    {
+      "content_id": "958d16af30d8216cf54fa8b9",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6 Ultimate Edition içerikleri nasıl kullanılmalı?",
+      "summary_tr": "Video Games Chronicle, IGN, PC Gamer ve GamesRadar+ gibi kaynaklar, GTA 6 Ultimate Edition’da bulunan ek içeriklerin belirli hikâye bölümlerinde kullanılabildiğini ve bu içeriklerin nasıl talep edileceğini açıklıyor. Rehberlerde, ekstra satıcılar, araçlar ve kozmetik öğelere ulaşmanın yolları anlatılıyor.",
+      "title_en": "How GTA 6 Ultimate Edition content can be accessed",
+      "summary_en": "Established outlets such as Video Games Chronicle, IGN, PC Gamer and GamesRadar+ report that certain GTA 6 Ultimate Edition bonuses are usable only in specific story chapters and explain how to claim them. Guides detail ways to obtain extra vendors, vehicles and cosmetic items.",
+      "why_this_label": "4 bağımsız yayın: PC Gamer, IGN, Insider Gaming, Video Games Chronicle",
+      "source_names": {
+        "https://videogameschronicle.com/guide/gta-6-ultimate-edition-vs-standard-edition-all-ultimate-edition-pre-order-benefits": "Video Games Chronicle",
+        "https://ign.com/articles/gta-6-how-the-ultimate-edition-content-works": "IGN",
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-ultimate-edition-bonuses": "PC Gamer",
+        "https://videogameschronicle.com/guide/gta-6-ultimate-edition-how-to-claim-your-ultimate-edition-benefits-in-gta-6": "Video Games Chronicle",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-ultimate-edition-pre-order-bonuses": "GamesRadar+",
+        "https://insider-gaming.com/gta-6-ultimate-edition-vintage-city": "Insider Gaming"
+      },
+      "source_strength": 85,
+      "editorial_priority": 93,
+      "publish_reason": "4 bağımsız yayın: PC Gamer, IGN, Insider Gaming, Video Games Chronicle",
+      "independent_origins": [
+        "future_plc",
+        "ign",
+        "insider_gaming",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://videogameschronicle.com/guide/gta-6-ultimate-edition-vs-standard-edition-all-ultimate-edition-pre-order-benefits",
+        "https://ign.com/articles/gta-6-how-the-ultimate-edition-content-works",
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-ultimate-edition-bonuses",
+        "https://videogameschronicle.com/guide/gta-6-ultimate-edition-how-to-claim-your-ultimate-edition-benefits-in-gta-6",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-ultimate-edition-pre-order-bonuses",
+        "https://insider-gaming.com/gta-6-ultimate-edition-vintage-city"
+      ],
+      "source_titles": [
+        "GTA 6 Ultimate Edition vs Standard Edition: All Ultimate Edition & pre-order benefits",
+        "GTA 6 Ultimate Edition: How to claim your Ultimate Edition benefits in GTA 6",
+        "GTA 6: How The Ultimate Edition Content Works",
+        "How to collect your GTA 6 Ultimate Edition bonuses",
+        "How to unlock all pre-order and Ultimate Edition bonuses in GTA 6",
+        "How to Get All GTA 6 Ultimate Edition Bonuses: Claim Vintage City Rewards"
+      ],
+      "content_hashes": [
+        "2248c77546b71d0a3ee920bd",
+        "a0b2bfc6ad7a64fb7c611ff8",
+        "be7d2756dd0e5d60e420f3fa",
+        "d146fdc5ca2bfcc69ede57e0",
+        "ee8b0beebd0ee80f044d5e87",
+        "f820165d367eb08c4cb59787"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://www.videogameschronicle.com/files/2026/06/ULTIMATE_EDITION_01.jpg",
+      "image_credit": "Video Games Chronicle",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-19T02:41:48Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-19T02:41:48Z",
+      "message_id": 9
     }
   ]
 }

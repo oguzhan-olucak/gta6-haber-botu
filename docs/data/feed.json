@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-18T21:21:23Z",
-    "last_run_at": "2026-11-18T21:21:23Z",
-    "last_successful_fetch_at": "2026-11-18T21:21:23Z",
+    "generated_at": "2026-11-19T02:41:48Z",
+    "last_run_at": "2026-11-19T02:41:48Z",
+    "last_successful_fetch_at": "2026-11-19T02:41:48Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 7,
+    "verified_total": 8,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-18T21:21:23Z"
+        "checked_at": "2026-11-19T02:41:48Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 17,
-        "relevant": 13,
-        "checked_at": "2026-11-18T21:21:23Z"
+        "entries": 19,
+        "relevant": 17,
+        "checked_at": "2026-11-19T02:41:48Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,16 +37,16 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-18T21:21:23Z"
+        "checked_at": "2026-11-19T02:41:48Z"
       },
       {
         "id": "take_two_google_news",
         "name": "Take-Two Interactive",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 2,
+        "entries": 3,
         "relevant": 0,
-        "checked_at": "2026-11-18T21:21:23Z"
+        "checked_at": "2026-11-19T02:41:48Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 14,
-        "checked_at": "2026-11-18T21:21:23Z"
+        "checked_at": "2026-11-19T02:41:48Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 33,
-        "checked_at": "2026-11-18T21:21:23Z"
+        "checked_at": "2026-11-19T02:41:48Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 25,
-        "checked_at": "2026-11-18T21:21:23Z"
+        "relevant": 39,
+        "checked_at": "2026-11-19T02:41:48Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 31,
-        "checked_at": "2026-11-18T21:21:23Z"
+        "relevant": 34,
+        "checked_at": "2026-11-19T02:41:48Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 10,
-        "checked_at": "2026-11-18T21:21:23Z"
+        "relevant": 9,
+        "checked_at": "2026-11-19T02:41:48Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 6,
-        "checked_at": "2026-11-18T21:21:23Z"
+        "relevant": 9,
+        "checked_at": "2026-11-19T02:41:48Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,62 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-18T21:21:23Z"
+        "checked_at": "2026-11-19T02:41:48Z"
       }
     ]
   },
-  "hero_id": "9560376f39cf98a1657c0c39",
+  "hero_id": "958d16af30d8216cf54fa8b9",
   "featured_ids": [
-    "dae4737f045e631d2a884b33",
-    "762a9a08574b73885160b570"
+    "9560376f39cf98a1657c0c39",
+    "dae4737f045e631d2a884b33"
   ],
   "items": [
+    {
+      "id": "958d16af30d8216cf54fa8b9",
+      "title": "GTA 6 Ultimate Edition içerikleri nasıl kullanılmalı?",
+      "summary": "Video Games Chronicle, IGN, PC Gamer ve GamesRadar+ gibi kaynaklar, GTA 6 Ultimate Edition’da bulunan ek içeriklerin belirli hikâye bölümlerinde kullanılabildiğini ve bu içeriklerin nasıl talep edileceğini açıklıyor. Rehberlerde, ekstra satıcılar, araçlar ve kozmetik öğelere ulaşmanın yolları anlatılıyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "INDUSTRY_BUSINESS",
+      "category_tr": "Analiz",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-19T02:41:48Z",
+      "why_this_label": "4 bağımsız yayın: PC Gamer, IGN, Insider Gaming, Video Games Chronicle",
+      "source_strength": 85,
+      "editorial_priority": 93,
+      "independent_origins": 4,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/guide/gta-6-ultimate-edition-vs-standard-edition-all-ultimate-edition-pre-order-benefits"
+        },
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/gta-6-how-the-ultimate-edition-content-works"
+        },
+        {
+          "name": "PC Gamer",
+          "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-ultimate-edition-bonuses"
+        },
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/guide/gta-6-ultimate-edition-how-to-claim-your-ultimate-edition-benefits-in-gta-6"
+        },
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-ultimate-edition-pre-order-bonuses"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/9",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez",
+      "image": "https://www.videogameschronicle.com/files/2026/06/ULTIMATE_EDITION_01.jpg",
+      "image_credit": "Video Games Chronicle",
+      "title_en": "How GTA 6 Ultimate Edition content can be accessed",
+      "summary_en": "Established outlets such as Video Games Chronicle, IGN, PC Gamer and GamesRadar+ report that certain GTA 6 Ultimate Edition bonuses are usable only in specific story chapters and explain how to claim them. Guides detail ways to obtain extra vendors, vehicles and cosmetic items."
+    },
     {
       "id": "9560376f39cf98a1657c0c39",
       "title": "GTA 6, lansmanında akış izleyici rekoru kırdı",

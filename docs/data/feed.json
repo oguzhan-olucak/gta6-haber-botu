@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-20T17:19:49Z",
-    "last_run_at": "2026-11-20T17:19:49Z",
-    "last_successful_fetch_at": "2026-11-20T17:19:49Z",
+    "generated_at": "2026-11-20T23:13:52Z",
+    "last_run_at": "2026-11-20T23:13:52Z",
+    "last_successful_fetch_at": "2026-11-20T23:13:52Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 13,
+    "verified_total": 14,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-20T17:19:49Z"
+        "checked_at": "2026-11-20T23:13:52Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 26,
+        "entries": 31,
         "relevant": 12,
-        "checked_at": "2026-11-20T17:19:49Z"
+        "checked_at": "2026-11-20T23:13:52Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,16 +37,16 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-20T17:19:49Z"
+        "checked_at": "2026-11-20T23:13:52Z"
       },
       {
         "id": "take_two_google_news",
         "name": "Take-Two Interactive",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 3,
-        "relevant": 1,
-        "checked_at": "2026-11-20T17:19:49Z"
+        "entries": 5,
+        "relevant": 3,
+        "checked_at": "2026-11-20T23:13:52Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 14,
-        "checked_at": "2026-11-20T17:19:49Z"
+        "relevant": 16,
+        "checked_at": "2026-11-20T23:13:52Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 48,
-        "checked_at": "2026-11-20T17:19:49Z"
+        "relevant": 50,
+        "checked_at": "2026-11-20T23:13:52Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 22,
-        "checked_at": "2026-11-20T17:19:49Z"
+        "relevant": 25,
+        "checked_at": "2026-11-20T23:13:52Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 32,
-        "checked_at": "2026-11-20T17:19:49Z"
+        "relevant": 33,
+        "checked_at": "2026-11-20T23:13:52Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 7,
-        "checked_at": "2026-11-20T17:19:49Z"
+        "relevant": 9,
+        "checked_at": "2026-11-20T23:13:52Z"
       },
       {
         "id": "insider_gaming",
@@ -100,7 +100,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 6,
-        "checked_at": "2026-11-20T17:19:49Z"
+        "checked_at": "2026-11-20T23:13:52Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,54 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-20T17:19:49Z"
+        "checked_at": "2026-11-20T23:13:52Z"
       }
     ]
   },
   "hero_id": "958d16af30d8216cf54fa8b9",
   "featured_ids": [
     "600de629588b9d43672cdf23",
-    "c14b2d1443465b4e3a472432"
+    "1730c5484b4e25d95fa0317f"
   ],
   "items": [
+    {
+      "id": "1730c5484b4e25d95fa0317f",
+      "title": "Florida Joker Olarak Bilinen Lawrence Sullivan'ın GTA 6'da Yer Aldığı Bildirildi",
+      "summary": "Rockstar Games'i benzerliğini izinsiz kullanmakla suçlayan 'Florida Joker' lakaplı Lawrence Sullivan'ın GTA 6 kadrosunda yer aldığı iddia ediliyor. Çeşitli kaynaklara göre Sullivan, oyunda özel bir seslendirme veya cameo rolü üstlenerek oyunun jeneriğine dahil edildi.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-20T23:13:52Z",
+      "why_this_label": "2 bağımsız yayın: Eurogamer, GamesRadar+",
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/after-accusing-rockstar-of-stealing-his-likeness-for-gta-6-florida-joker-gets-his-wish-of-a-cameo-and-a-spot-in-the-cast-gta-boys-for-life"
+        },
+        {
+          "name": "Eurogamer",
+          "url": "https://eurogamer.net/gta-6-credits-florida-joker-rockstar"
+        },
+        {
+          "name": "PC Gamer",
+          "url": "https://pcgamer.com/games/grand-theft-auto/florida-joker-gets-his-wish-hes-a-special-voice-actor-in-grand-theft-auto-6"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/15",
+      "reactions_total": null,
+      "location_id": "grassrivers",
+      "region": "Grassrivers",
+      "image": "https://cdn.mos.cms.futurecdn.net/zX3QQTvZ2TL7aDNHScKXA-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "title_en": "Lawrence Sullivan, Known as Florida Joker, Reportedly Features in GTA 6",
+      "summary_en": "Lawrence Sullivan, known online as the 'Florida Joker' after accusing Rockstar Games of using his likeness, is reportedly featured in GTA 6. According to multiple media reports, Sullivan appears in the game's credits with a cameo or voice role."
+    },
     {
       "id": "c14b2d1443465b4e3a472432",
       "title": "Niko Bellic, GTA 6’da yer alacak mı?",

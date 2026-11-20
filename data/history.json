@@ -1011,7 +1011,7 @@
         "1bc7dfef3a7dde8b52bb326b",
         "2503de049c2fe5a1b62227fa"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -1176,6 +1176,216 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-20T17:19:49Z",
       "message_id": 14
+    },
+    {
+      "content_id": "b6b7a37c3f366dc5d665b992",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": null,
+      "title_style": null,
+      "title_tr": null,
+      "summary_tr": null,
+      "title_en": null,
+      "summary_en": null,
+      "why_this_label": "4 bağımsız yayın: Eurogamer, PC Gamer, IGN, Video Games Chronicle",
+      "source_names": {
+        "https://ign.com/articles/gta-6-is-the-biggest-entertainment-launch-of-all-time-at-379-billion-on-day-one": "IGN",
+        "https://videogameschronicle.com/news/gta-6-earns-3-79-billion-in-one-day-as-the-biggest-entertainment-launch-in-history": "Video Games Chronicle",
+        "https://pcgamer.com/games/grand-theft-auto/grand-theft-auto-6-earned-usd3-79-billion-on-launch-day": "PC Gamer",
+        "https://eurogamer.net/gta-6-biggest-entertainment-launch": "Eurogamer",
+        "https://gamesradar.com/games/grand-theft-auto/lets-put-gta-6s-usd3-79-billion-launch-into-perspective-gta-5-made-usd800-million-at-launch-and-red-dead-redemption-2-made-usd725-million": "GamesRadar+"
+      },
+      "source_strength": 85,
+      "editorial_priority": 92,
+      "publish_reason": "4 bağımsız yayın: Eurogamer, PC Gamer, IGN, Video Games Chronicle",
+      "independent_origins": [
+        "eurogamer",
+        "future_plc",
+        "ign",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://ign.com/articles/gta-6-is-the-biggest-entertainment-launch-of-all-time-at-379-billion-on-day-one",
+        "https://videogameschronicle.com/news/gta-6-earns-3-79-billion-in-one-day-as-the-biggest-entertainment-launch-in-history",
+        "https://pcgamer.com/games/grand-theft-auto/grand-theft-auto-6-earned-usd3-79-billion-on-launch-day",
+        "https://eurogamer.net/gta-6-biggest-entertainment-launch",
+        "https://gamesradar.com/games/grand-theft-auto/lets-put-gta-6s-usd3-79-billion-launch-into-perspective-gta-5-made-usd800-million-at-launch-and-red-dead-redemption-2-made-usd725-million"
+      ],
+      "source_titles": [
+        "Let's put GTA 6's $3.79 billion launch into perspective: GTA 5 made $800 million at launch",
+        "GTA 6 is officially the biggest entertainment launch of all time, selling 32.5 million pre-sale copies and a bonkers $3.79 billion in its first day",
+        "Grand Theft Auto 6 earned $3.79 billion on launch day",
+        "GTA 6 earns $3.79 billion in one day as ‘the biggest entertainment launch in history’",
+        "GTA 6 Is the Biggest Entertainment Launch of All Time at $3.79 Billion on Day One"
+      ],
+      "content_hashes": [
+        "2ae1ef604500ff25640473e4",
+        "2d1cc5d74661c87060feb959",
+        "632f2e8eaa60f5a30f9ee8de",
+        "a831c0015be818095be41938",
+        "c8ecebdecf5d258e0233fef2"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "gemini",
+      "publish_status": "REJECTED",
+      "publish_error": "Model geçerli JSON döndürmedi",
+      "created_at": "2026-11-20T23:13:52Z"
+    },
+    {
+      "content_id": "512b004a5230320ede7ffa60",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": null,
+      "title_style": null,
+      "title_tr": null,
+      "summary_tr": null,
+      "title_en": null,
+      "summary_en": null,
+      "why_this_label": "2 bağımsız yayın: PC Gamer, Video Games Chronicle",
+      "source_names": {
+        "https://pcgamer.com/games/grand-theft-auto/im-counting-the-minutes-until-the-pc-version-fixes-the-weirdly-restrictive-cheats-in-gta-6": "PC Gamer",
+        "https://pcgamer.com/games/grand-theft-auto/modders-reckon-gta-6-will-be-playable-on-pc-within-a-week": "PC Gamer",
+        "https://videogameschronicle.com/guide/gta-6-pc-version": "Video Games Chronicle"
+      },
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "publish_reason": "2 bağımsız yayın: PC Gamer, Video Games Chronicle",
+      "independent_origins": [
+        "future_plc",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://pcgamer.com/games/grand-theft-auto/im-counting-the-minutes-until-the-pc-version-fixes-the-weirdly-restrictive-cheats-in-gta-6",
+        "https://pcgamer.com/games/grand-theft-auto/modders-reckon-gta-6-will-be-playable-on-pc-within-a-week",
+        "https://videogameschronicle.com/guide/gta-6-pc-version"
+      ],
+      "source_titles": [
+        "Cheats in GTA 6 are weirdly restrictive, and I'm counting the minutes until the PC version fixes them",
+        "GTA 6 PC release date: Is Grand Theft Auto 6 coming to PC?",
+        "Modders reckon GTA 6 will be playable on PC within a week"
+      ],
+      "content_hashes": [
+        "06998951067ec2fefcf8d974",
+        "317a4a7af45daf7a133c4615",
+        "e5aff0b2fb410edc02a3b0a6"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "gemini",
+      "publish_status": "REJECTED",
+      "publish_error": "Model geçerli JSON döndürmedi",
+      "created_at": "2026-11-20T23:13:52Z"
+    },
+    {
+      "content_id": "eb32a579638e754d1e4f630f",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": null,
+      "title_style": null,
+      "title_tr": null,
+      "summary_tr": null,
+      "title_en": null,
+      "summary_en": null,
+      "why_this_label": "2 bağımsız yayın: PC Gamer, IGN",
+      "source_names": {
+        "https://ign.com/articles/gta-6s-jason-and-lucia-actors-spotted-together-in-first-photo": "IGN",
+        "https://ign.com/articles/can-jason-and-lucia-get-naked-in-gta-6": "IGN",
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-movement-speed-setting-walk-faster": "PC Gamer"
+      },
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "publish_reason": "2 bağımsız yayın: PC Gamer, IGN",
+      "independent_origins": [
+        "future_plc",
+        "ign"
+      ],
+      "source_urls": [
+        "https://ign.com/articles/gta-6s-jason-and-lucia-actors-spotted-together-in-first-photo",
+        "https://ign.com/articles/can-jason-and-lucia-get-naked-in-gta-6",
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-movement-speed-setting-walk-faster"
+      ],
+      "source_titles": [
+        "GTA 6's Jason and Lucia Actors Spotted Together in First Photo",
+        "Can Jason and Lucia Get Naked in GTA 6?",
+        "Try this GTA 6 movement speed setting to make Jason and Lucia walk faster"
+      ],
+      "content_hashes": [
+        "925e7d94816b2a401de32d8f",
+        "a0e3c30c818f377a2c5a2a8d",
+        "b1a777a70df98e6a13bbdb0f"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "gemini",
+      "publish_status": "REJECTED",
+      "publish_error": "Model geçerli JSON döndürmedi",
+      "created_at": "2026-11-20T23:13:52Z"
+    },
+    {
+      "content_id": "1730c5484b4e25d95fa0317f",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "COMMUNITY_RUMOR",
+      "title_style": "FACTUAL",
+      "title_tr": "Florida Joker Olarak Bilinen Lawrence Sullivan'ın GTA 6'da Yer Aldığı Bildirildi",
+      "summary_tr": "Rockstar Games'i benzerliğini izinsiz kullanmakla suçlayan 'Florida Joker' lakaplı Lawrence Sullivan'ın GTA 6 kadrosunda yer aldığı iddia ediliyor. Çeşitli kaynaklara göre Sullivan, oyunda özel bir seslendirme veya cameo rolü üstlenerek oyunun jeneriğine dahil edildi.",
+      "title_en": "Lawrence Sullivan, Known as Florida Joker, Reportedly Features in GTA 6",
+      "summary_en": "Lawrence Sullivan, known online as the 'Florida Joker' after accusing Rockstar Games of using his likeness, is reportedly featured in GTA 6. According to multiple media reports, Sullivan appears in the game's credits with a cameo or voice role.",
+      "why_this_label": "2 bağımsız yayın: Eurogamer, GamesRadar+",
+      "source_names": {
+        "https://gamesradar.com/games/grand-theft-auto/after-accusing-rockstar-of-stealing-his-likeness-for-gta-6-florida-joker-gets-his-wish-of-a-cameo-and-a-spot-in-the-cast-gta-boys-for-life": "GamesRadar+",
+        "https://eurogamer.net/gta-6-credits-florida-joker-rockstar": "Eurogamer",
+        "https://pcgamer.com/games/grand-theft-auto/florida-joker-gets-his-wish-hes-a-special-voice-actor-in-grand-theft-auto-6": "PC Gamer"
+      },
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "publish_reason": "2 bağımsız yayın: Eurogamer, GamesRadar+",
+      "independent_origins": [
+        "eurogamer",
+        "future_plc"
+      ],
+      "source_urls": [
+        "https://gamesradar.com/games/grand-theft-auto/after-accusing-rockstar-of-stealing-his-likeness-for-gta-6-florida-joker-gets-his-wish-of-a-cameo-and-a-spot-in-the-cast-gta-boys-for-life",
+        "https://eurogamer.net/gta-6-credits-florida-joker-rockstar",
+        "https://pcgamer.com/games/grand-theft-auto/florida-joker-gets-his-wish-hes-a-special-voice-actor-in-grand-theft-auto-6"
+      ],
+      "source_titles": [
+        "Florida Joker gets his wish: He's a 'special voice actor' in Grand Theft Auto 6",
+        "After accusing Rockstar of stealing his likeness for GTA 6, Florida Joker gets his wish of a cameo and a spot in the cast",
+        "GTA 6 credits actually include 'Florida Joker', the viral internet personality who once demanded $10 million from Rockstar Games"
+      ],
+      "content_hashes": [
+        "7397f73c0eb859fd207d3ce9",
+        "9c336e6a4b9c1fc566b7fd04",
+        "f53bec56fb665c0d20a7a3fd"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "gemini",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/zX3QQTvZ2TL7aDNHScKXA-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-20T23:13:52Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-20T23:13:52Z",
+      "message_id": 15
     }
   ]
 }

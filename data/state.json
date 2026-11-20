@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-20T17:19:49Z",
-  "last_successful_fetch_at": "2026-11-20T17:19:49Z",
+  "last_run_at": "2026-11-20T23:13:52Z",
+  "last_successful_fetch_at": "2026-11-20T23:13:52Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -1128,7 +1128,7 @@
     },
     "106cd5ee467a1a3b980c4650": {
       "first_seen": "2026-11-18T21:21:23Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "eurogamer"
     },
     "ade51495e404ecea02d16e48": {
@@ -1153,7 +1153,7 @@
     },
     "ed3c951b2099493a5b2fe5f1": {
       "first_seen": "2026-11-18T21:21:23Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "c7ddeafd1f569ad09b3e9a4d": {
@@ -1703,7 +1703,7 @@
     },
     "b1e47b352a1539a956885a1e": {
       "first_seen": "2026-11-19T10:46:54Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "26403784d67f71243ee4dfd1": {
@@ -1713,17 +1713,17 @@
     },
     "fe02607de0ef60c9c86abec6": {
       "first_seen": "2026-11-19T10:46:54Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "29df9d6d7314082230fddd8d": {
       "first_seen": "2026-11-19T10:46:54Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "eurogamer"
     },
     "0cd20c79919e90a33085ef68": {
       "first_seen": "2026-11-19T10:46:54Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "eurogamer"
     },
     "dc91e220b7493414768a0ae1": {
@@ -1738,7 +1738,7 @@
     },
     "512b004a5230320ede7ffa60": {
       "first_seen": "2026-11-19T19:12:11Z",
-      "status": "NEW",
+      "status": "REJECTED",
       "source": "pcgamer"
     },
     "77fb1d257efbbebfb50e6d55": {
@@ -1923,7 +1923,7 @@
     },
     "eb32a579638e754d1e4f630f": {
       "first_seen": "2026-11-19T19:12:11Z",
-      "status": "NEW",
+      "status": "REJECTED",
       "source": "ign"
     },
     "7299192f91128d10804d221b": {
@@ -2393,7 +2393,7 @@
     },
     "0fae8aa3ce92380c2b8dd826": {
       "first_seen": "2026-11-20T17:19:49Z",
-      "status": "NEW",
+      "status": "REJECTED",
       "source": "ign"
     },
     "c55f2edfca0e99fde59b48fb": {
@@ -2478,7 +2478,7 @@
     },
     "c640e9256397e4be253ffa67": {
       "first_seen": "2026-11-20T17:19:49Z",
-      "status": "NEW",
+      "status": "REJECTED",
       "source": "pcgamer"
     },
     "240d9813aa918c36e14f2364": {
@@ -2495,6 +2495,211 @@
       "first_seen": "2026-11-20T17:19:49Z",
       "status": "NEW",
       "source": "vgc"
+    },
+    "b4f3325f91910ae6aa9ff6af": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "vgc"
+    },
+    "8e66f10d3efa35f04aaa619c": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "cb744bb3dba80eaa95ccb2d9": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "vgc"
+    },
+    "f81507540367f8c910629c59": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "pcgamer"
+    },
+    "dd9073de7b6d73bc35e6cf3e": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "REJECTED",
+      "source": "vgc"
+    },
+    "77c8b5c710edd9dfc7edc021": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "7d92347a243874923536fcd0": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "8722db4c894665ba7e47c49f": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "78b0105c14032247aa0ef46c": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "USED",
+      "source": "pcgamer"
+    },
+    "a6bdac61b9b3da13bf7ed7b7": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "1deeceebff3021e3d7c9ac4e": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "REJECTED",
+      "source": "pcgamer"
+    },
+    "0ec3bc6d1abb472b31c76c1a": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "2bd698bf4377a82279b13609": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "7c933a34413ba6dfcc666b97": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "vgc"
+    },
+    "a63fb904c48f1ba5f24d9a56": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "vgc"
+    },
+    "1a13e57f8ff57d91e37919a4": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "58652b0c1baff179a4febc89": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "pcgamer"
+    },
+    "d8df6f8f968db6308f5ba68e": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "REJECTED",
+      "source": "gamesradar"
+    },
+    "7b4160425044e1cbf7af99eb": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "4f2abbb67d0494c4d6d4b6d0": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "vgc"
+    },
+    "5f0dcdca5de0d094abd6f23b": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "7d7db0d94e94c9621ffdd013": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "REJECTED",
+      "source": "eurogamer"
+    },
+    "81c3dd2f4bc9b6dd397b4699": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "REJECTED",
+      "source": "pcgamer"
+    },
+    "c7cd891b735ce564a0a652a0": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "11a7b141507400e9c4caed91": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "REJECTED",
+      "source": "vgc"
+    },
+    "b6b7a37c3f366dc5d665b992": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "REJECTED",
+      "source": "ign"
+    },
+    "2dbc8833f328587494da37fe": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "vgc"
+    },
+    "577097bb5b8abdcdc8b242d6": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "d00956996cf3eaa387508d21": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "USED",
+      "source": "eurogamer"
+    },
+    "8e62ea9100949e71567901c7": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "d4eba378e54d4c6e27307568": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "a2499dc319fd50d6af9bd00c": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "1730c5484b4e25d95fa0317f": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "USED",
+      "source": "gamesradar"
+    },
+    "b00ecc79c2fb5ca715fb37a8": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "da37eaf921a2697da7fa90d7": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "6e3df28989ea6823a4d4424b": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "1eaf81a89dd203f8b397cca9": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "6c0658b9fee90abd281c3618": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "e5692fa1089d63b80738a33d": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "06d8ab42f78f7399b9e9b15c": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "f5d4224d08f42367d954aa38": {
+      "first_seen": "2026-11-20T23:13:52Z",
+      "status": "NEW",
+      "source": "ign"
     }
   },
   "digests_sent": [
@@ -2515,78 +2720,78 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-20T17:19:49Z",
+      "checked_at": "2026-11-20T23:13:52Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
-      "entries": 26,
+      "entries": 31,
       "relevant": 12,
       "new": 0,
-      "checked_at": "2026-11-20T17:19:49Z"
+      "checked_at": "2026-11-20T23:13:52Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-20T17:19:49Z"
+      "checked_at": "2026-11-20T23:13:52Z"
     },
     "take_two_google_news": {
       "ok": true,
-      "entries": 3,
-      "relevant": 1,
+      "entries": 5,
+      "relevant": 3,
       "new": 0,
-      "checked_at": "2026-11-20T17:19:49Z"
+      "checked_at": "2026-11-20T23:13:52Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
-      "relevant": 14,
-      "new": 9,
-      "checked_at": "2026-11-20T17:19:49Z"
+      "relevant": 16,
+      "new": 10,
+      "checked_at": "2026-11-20T23:13:52Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
-      "relevant": 48,
-      "new": 7,
-      "checked_at": "2026-11-20T17:19:49Z"
+      "relevant": 50,
+      "new": 2,
+      "checked_at": "2026-11-20T23:13:52Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 22,
-      "new": 18,
-      "checked_at": "2026-11-20T17:19:49Z"
+      "relevant": 25,
+      "new": 10,
+      "checked_at": "2026-11-20T23:13:52Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
-      "relevant": 32,
-      "new": 8,
-      "checked_at": "2026-11-20T17:19:49Z"
+      "relevant": 33,
+      "new": 5,
+      "checked_at": "2026-11-20T23:13:52Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
-      "relevant": 7,
-      "new": 4,
-      "checked_at": "2026-11-20T17:19:49Z"
+      "relevant": 9,
+      "new": 8,
+      "checked_at": "2026-11-20T23:13:52Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
       "relevant": 6,
       "new": 6,
-      "checked_at": "2026-11-20T17:19:49Z"
+      "checked_at": "2026-11-20T23:13:52Z"
     },
     "reddit_gta6": {
       "ok": false,
       "error_class": "RSS_PARSE_ERROR",
       "detail": "HTTP 404",
       "http_status": 404,
-      "checked_at": "2026-11-20T17:19:49Z"
+      "checked_at": "2026-11-20T23:13:52Z"
     }
   },
   "run_log": [
@@ -2954,828 +3159,33 @@
         "groq",
         "github"
       ]
+    },
+    {
+      "started_at": "2026-11-20T23:13:52Z",
+      "sources_ok": 10,
+      "new_items": 41,
+      "published": 1,
+      "gemini_calls": 4,
+      "error_classes": [
+        "RSS_PARSE_ERROR",
+        "GEMINI_SCHEMA_ERROR",
+        "GEMINI_SCHEMA_ERROR",
+        "GEMINI_SCHEMA_ERROR"
+      ],
+      "llm_attempts": [
+        "gemini:ok",
+        "gemini:ok",
+        "gemini:ok",
+        "gemini:ok"
+      ],
+      "llm_chain": [
+        "gemini",
+        "groq",
+        "github"
+      ]
     }
   ],
   "candidate_pool": {
-    "e97eb8a9f96a7e8f939fdccb": {
-      "item": {
-        "id": "e97eb8a9f96a7e8f939fdccb",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "A GTA 6 Location Was Teased by Rockstar All the Way Back in 2021 — And What's Inside Was Worth the Wait",
-        "url": "https://ign.com/articles/a-gta-6-location-was-teased-by-rockstar-all-the-way-back-in-2021-and-whats-inside-was-worth-the-wait",
-        "summary": "In 2021, Rockstar fans believed that a GTA 6 screenshot was snuck into the GTA trilogy collection, but there's more to this theory than meets the eye.",
-        "published_at": "2026-11-18T20:56:31Z",
-        "content_hash": "83c2495cfef00f9148c3c51f",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "e97eb8a9f96a7e8f939fdccb",
-        "image_url": "https://assets-prd.ignimgs.com/2026/11/18/gta-6-jason-house-1795034681860.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "bddee3917df3ed2aec02fd1e": {
-      "item": {
-        "id": "bddee3917df3ed2aec02fd1e",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "Republican Congressman says you’re a ‘bad parent’ if you let your child play GTA 6",
-        "url": "https://videogameschronicle.com/news/republican-congressman-says-youre-a-bad-parent-if-you-let-your-child-play-gta-6",
-        "summary": "Congressman Tim Burchett says GTA 6 \"desensitises\" children to violence",
-        "published_at": "2026-11-18T20:53:44Z",
-        "content_hash": "34c0a5993d490c7018fbae78",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "bddee3917df3ed2aec02fd1e",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/gta-grand-theft-auto-6-pic15.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "34f9b114abcd055f9f3c85bd": {
-      "item": {
-        "id": "34f9b114abcd055f9f3c85bd",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6 Bigfoot sightings already ramping up as Rockstar honors a 22-year-old Grand Theft Auto legend",
-        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-bigfoot-sightings-are-already-ramping-up-as-rockstar-honors-a-22-year-old-grand-theft-auto-legend",
-        "summary": "Things are already getting weird in Leonida",
-        "published_at": "2026-11-18T20:49:40Z",
-        "content_hash": "643fb3d60dfb7585efaa195b",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "34f9b114abcd055f9f3c85bd",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/dyCiDZPpGcJUQaYPk29kTP-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "13ea93541f2ed1ef3969e9bf": {
-      "item": {
-        "id": "13ea93541f2ed1ef3969e9bf",
-        "source_id": "eurogamer",
-        "source_name": "Eurogamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "eurogamer",
-        "title": "GTA 6's Japanese version only partially obscures male nudity by putting Jason in a thong, seemingly due to regional censorship",
-        "url": "https://eurogamer.net/gta-6-japanese-jason-thong-regional-censorship",
-        "summary": "GTA 6 is slowly rolling out across the globe. The crime epic's already available to play in countries such as South Korea and New Zealand , but Japanese players are finding out that male nudity is only partially obscured by a thin black thong that covers Jason and the other men in Leonida. Read more",
-        "published_at": "2026-11-18T20:40:20Z",
-        "content_hash": "a94f44b22920d0009e78507c",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "13ea93541f2ed1ef3969e9bf",
-        "image_url": "https://assetsio.gnwcdn.com/gta-6-jason-and-lucia.jpg?width=690&quality=85&format=jpg&auto=webp"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "7f69f76f7bdb3ad909532435": {
-      "item": {
-        "id": "7f69f76f7bdb3ad909532435",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "I finished GTA 6's main story: Ask me anything! (except for major spoilers)",
-        "url": "https://pcgamer.com/games/grand-theft-auto/i-finished-gta-6s-main-story-ask-me-anything-except-for-major-spoilers",
-        "summary": "Got some burning questions for someone who's already spent 100 hours in GTA 6? Drop queries in the comments and I'll answer them.",
-        "published_at": "2026-11-18T20:23:24Z",
-        "content_hash": "19b9782d1cbd9143214067ee",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "7f69f76f7bdb3ad909532435",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/syr3DfcBARgS5WGF5AkiNk-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "224606679c3a1b8ad68e6cdb": {
-      "item": {
-        "id": "224606679c3a1b8ad68e6cdb",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6 devs react to unprecedented reviews: \"I feel like a kid on Christmas morning\"",
-        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-devs-react-to-unprecedented-reviews-i-feel-like-a-kid-on-christmas-morning",
-        "summary": "Rockstar is celebrating, and it has every right to",
-        "published_at": "2026-11-18T20:13:16Z",
-        "content_hash": "ba0c3bbcb9a9bfc6892048df",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "224606679c3a1b8ad68e6cdb",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/DjHygAvVxq5SRXiCL2bj3i-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "7b7859d3035b39a1ec3a70c7": {
-      "item": {
-        "id": "7b7859d3035b39a1ec3a70c7",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "How to change the time of day in GTA 6",
-        "url": "https://videogameschronicle.com/guide/how-to-change-the-time-of-day-in-gta-6",
-        "summary": "Change the time of day in GTA 6 with this trick",
-        "published_at": "2026-11-18T20:04:17Z",
-        "content_hash": "eaaf42dca2529e44407e9800",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "7b7859d3035b39a1ec3a70c7",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/how-to-change-the-time-of-day-in-gta-6-4.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": true
-    },
-    "2f284f25dcd80680af9fa3ab": {
-      "item": {
-        "id": "2f284f25dcd80680af9fa3ab",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 players discover our real first look at the game was likely hidden in a 2021 remaster",
-        "url": "https://videogameschronicle.com/news/gta-6-players-discover-our-real-first-look-at-the-game-was-likely-hidden-in-a-2021-remaster",
-        "summary": "The image from 2021 may have been our first look at GTA 6",
-        "published_at": "2026-11-18T19:30:32Z",
-        "content_hash": "9faa835fdfb577c3d78c4389",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "2f284f25dcd80680af9fa3ab",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-house-in-San-Andreas.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "39745c3c33b7c223667e05db": {
-      "item": {
-        "id": "39745c3c33b7c223667e05db",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6 changes the way you steal cars: here's everything you need to know about slim jims, key cloners, and tracking devices",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-how-to-steal-cars",
-        "summary": "Cars have gotten smarter, but so have you.",
-        "published_at": "2026-11-18T19:22:44Z",
-        "content_hash": "e914874d88ed1c390d31a1b9",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "39745c3c33b7c223667e05db",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/MtZiBk2T3duW6pFEqnzNuW-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "d77f82d4f9b0b2fb9ee5fdb6": {
-      "item": {
-        "id": "d77f82d4f9b0b2fb9ee5fdb6",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "PS5 users report PlayStation Network errors as GTA 6 fever hits, some struggling to redeem codes",
-        "url": "https://gamesradar.com/games/grand-theft-auto/ps5-users-report-playstation-network-errors-as-gta-6-fever-hits-with-some-struggling-to-redeem-codes",
-        "summary": "Please no servers down on Grand Theft Auto day",
-        "published_at": "2026-11-18T18:55:12Z",
-        "content_hash": "ef4bd86213c97f7515f1e8ee",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "d77f82d4f9b0b2fb9ee5fdb6",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/DJ5yrctKvkVPiUUuSo36xg-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "106cd5ee467a1a3b980c4650": {
-      "item": {
-        "id": "106cd5ee467a1a3b980c4650",
-        "source_id": "eurogamer",
-        "source_name": "Eurogamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "eurogamer",
-        "title": "GTA 6 won't let you use cheats until you complete the main story, and locks progression when you do",
-        "url": "https://eurogamer.net/gta-6-no-cheats-until-completing-main-story",
-        "summary": "Here's a twist: you can't use cheats in Grand Theft Auto 6 until you complete the entire game's main story. Read more",
-        "published_at": "2026-11-18T18:42:20Z",
-        "content_hash": "9fabd640f179e10e377f2845",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "106cd5ee467a1a3b980c4650",
-        "image_url": "https://assetsio.gnwcdn.com/GTA-6-review-2.jpg?width=690&quality=85&format=jpg&auto=webp"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": true
-    },
-    "ade51495e404ecea02d16e48": {
-      "item": {
-        "id": "ade51495e404ecea02d16e48",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Clear Skies Mission Walkthrough",
-        "url": "https://videogameschronicle.com/guide/gta-6-clear-skies-mission-walkthrough",
-        "summary": "Jason and Donnie broker a deal in GTA 6's Clear Skies mission",
-        "published_at": "2026-11-18T18:33:47Z",
-        "content_hash": "0cfc40d765016d1a2518f236",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "ade51495e404ecea02d16e48",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Clear-Skies-Mission-Walkthrough-1.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "d32748c7aa19995be82031b7": {
-      "item": {
-        "id": "d32748c7aa19995be82031b7",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Swamped Mission Walkthrough",
-        "url": "https://videogameschronicle.com/guide/gta-6-swamped-mission-walkthrough",
-        "summary": "Battle the Kingfishers with Brian in Swamped",
-        "published_at": "2026-11-18T18:30:36Z",
-        "content_hash": "510bb2dce5eec412d11d0e0c",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "d32748c7aa19995be82031b7",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Swamped-Mission-Walkthrough-3.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "6502357ed5e82d128754e797": {
-      "item": {
-        "id": "6502357ed5e82d128754e797",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "How to get a snap gun in GTA 6",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-snap-gun",
-        "summary": "Forget lockpicks, it's all about the snap gun now.",
-        "published_at": "2026-11-18T18:29:10Z",
-        "content_hash": "4bfd9d4fc0cf8bff9f547c94",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "6502357ed5e82d128754e797",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/VJ2pSigR484FXXuUZNRLAM-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "484b79cffd8af6852dfa60ed": {
-      "item": {
-        "id": "484b79cffd8af6852dfa60ed",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "What's the first thing you're gonna do in GTA 6?",
-        "url": "https://pcgamer.com/games/grand-theft-auto/whats-the-first-thing-youre-gonna-do-in-gta-6",
-        "summary": "No wrong answers.",
-        "published_at": "2026-11-18T18:28:52Z",
-        "content_hash": "3413acf979d695876dddcc36",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "484b79cffd8af6852dfa60ed",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/5iophrGJYnJQaygxHowqp9-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "ed3c951b2099493a5b2fe5f1": {
-      "item": {
-        "id": "ed3c951b2099493a5b2fe5f1",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Day Release Mission Walkthrough",
-        "url": "https://videogameschronicle.com/guide/gta-6-day-release-mission-walkthrough",
-        "summary": "Take your first spin in Vice City in Day Release",
-        "published_at": "2026-11-18T18:27:57Z",
-        "content_hash": "c5a1b4661870ffd44b1e70cf",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "ed3c951b2099493a5b2fe5f1",
-        "image_url": ""
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": true
-    },
-    "c7ddeafd1f569ad09b3e9a4d": {
-      "item": {
-        "id": "c7ddeafd1f569ad09b3e9a4d",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "'I just hope GTA 6 is the last of its kind': Warren Spector congratulates Rockstar on its landmark accomplishment but says the industry can't keep this up",
-        "url": "https://pcgamer.com/games/grand-theft-auto/i-just-hope-gta-6-is-the-last-of-its-kind-warren-spector-congratulates-rockstar-on-its-landmark-accomplishment-but-says-the-industry-cant-keep-this-up",
-        "summary": "\"I'd rather have hundreds of games and full employment than one game no matter how amazing it is.\"",
-        "published_at": "2026-11-18T18:23:52Z",
-        "content_hash": "541dd20c818d45c07b6f7ed0",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "c7ddeafd1f569ad09b3e9a4d",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/m5LURxRUpGJUWXAXqXrBKF-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": true
-    },
-    "569cb8ee75b806f1080f331e": {
-      "item": {
-        "id": "569cb8ee75b806f1080f331e",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "How to clone keys in GTA 6",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-clone-keys",
-        "summary": "Trouble stealing a car? There's an app for that.",
-        "published_at": "2026-11-18T18:21:15Z",
-        "content_hash": "4d06574102468aaac7649cf2",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "569cb8ee75b806f1080f331e",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/7JnFQhcXfKXxucJNKQt3hS-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "82a6f3a6ca061c114d18a9f0": {
-      "item": {
-        "id": "82a6f3a6ca061c114d18a9f0",
-        "source_id": "eurogamer",
-        "source_name": "Eurogamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "eurogamer",
-        "title": "Even the PS5 Pro is \"not powerful enough\" to run GTA 6 at 60FPS or 40FPS, Rockstar says",
-        "url": "https://eurogamer.net/ps5-pro-not-powerful-enough-gta-6-60fps",
-        "summary": "Don't expect GTA 6 to get an update supporting higher framerate modes, at least, not on current-generation consoles. Rockstar has explained that even the most powerful console of the bunch, the PS5 Pro , isn't powerful enough to run the lavish game at 40FPS or 60FPS. Read more",
-        "published_at": "2026-11-18T18:17:50Z",
-        "content_hash": "892a6f0c4c59cae7a2fdbd84",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "82a6f3a6ca061c114d18a9f0",
-        "image_url": "https://assetsio.gnwcdn.com/gta-6-shirtless-jason-weightlifting.jpg?width=690&quality=85&format=jpg&auto=webp"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": true
-    },
-    "bed811e269975225506f96f8": {
-      "item": {
-        "id": "bed811e269975225506f96f8",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "How to enable classic controls in GTA 6",
-        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-classic-controls",
-        "summary": "Rockstar has made some big changes to the way GTA 6 handles, but you can switch some key buttons to go back to old controls",
-        "published_at": "2026-11-18T18:17:14Z",
-        "content_hash": "27b1e9ec5c1c9dd47c1b353b",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "bed811e269975225506f96f8",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/A4AqV3PJwXTm9hb4RHQrFW-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "49590ee5b3f6f5a5038bf5ef": {
-      "item": {
-        "id": "49590ee5b3f6f5a5038bf5ef",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "Where To Find Bigfoot In GTA 6",
-        "url": "https://insider-gaming.com/where-to-find-bigfoot-gta-6",
-        "summary": "It looks like Bigfoot has reappeared, this time in Grand Theft Auto 6: here's where to find the Sasquatch for yourself. The post Where To Find Bigfoot In GTA 6 appeared first on Insider Gaming .",
-        "published_at": "2026-11-18T18:06:25Z",
-        "content_hash": "5bf4873d17804a29040da5eb",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "49590ee5b3f6f5a5038bf5ef",
-        "image_url": ""
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "9185c55abebc8191a1fb52f9": {
-      "item": {
-        "id": "9185c55abebc8191a1fb52f9",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "Grand Theft Auto 6 is \"the smoothest GTA game in history\" despite 30fps, analysis finds",
-        "url": "https://gamesradar.com/games/grand-theft-auto/grand-theft-auto-6-is-the-smoothest-gta-game-in-history-despite-30fps-analysis-finds-but-ps5-pro-is-the-best-way-to-play-this-game-by-far",
-        "summary": "GTA 6's frame rate isn't flawless, but it's substantially better than how its predecessors launched",
-        "published_at": "2026-11-18T18:05:03Z",
-        "content_hash": "6aa050f41e1cbbd1fda6f953",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "9185c55abebc8191a1fb52f9",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/yWgqf6C3RVJiUGWsQcKoiA-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "9d646307ac5d6173147a49b9": {
-      "item": {
-        "id": "9d646307ac5d6173147a49b9",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "Rockstar’s ‘union busting’ tribunal comes to an end, pending verdict",
-        "url": "https://videogameschronicle.com/news/rockstars-union-busting-tribunal-comes-to-an-end-pending-verdict",
-        "summary": "Former Rockstar workers for the verdict on the eve of GTA 6's launch",
-        "published_at": "2026-11-18T18:04:00Z",
-        "content_hash": "12451cfa1b503d717a6afde7",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "9d646307ac5d6173147a49b9",
-        "image_url": "https://www.videogameschronicle.com/files/2025/11/Screenshot-2025-11-12-175145.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": true
-    },
-    "0ed4e0d113e0fbc30bd97875": {
-      "item": {
-        "id": "0ed4e0d113e0fbc30bd97875",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Down To Earth Mission Walkthrough",
-        "url": "https://videogameschronicle.com/guide/gta-6-down-to-earth-mission-walkthrough",
-        "summary": "Take to the skies in Down To Earth with Jason and Lucia",
-        "published_at": "2026-11-18T18:02:37Z",
-        "content_hash": "c90914e4776d68c5490c429c",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "0ed4e0d113e0fbc30bd97875",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Down-To-Earth-Walkthrough-4.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "196b61ebda71f6400554a1da": {
-      "item": {
-        "id": "196b61ebda71f6400554a1da",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6 studio head: \"Multiple characters was a leap of faith\" and Rockstar knew it \"might backfire\"",
-        "url": "https://gamesradar.com/games/grand-theft-auto/quote-of-the-day-by-gta-6-studio-head-multiple-characters-was-a-leap-of-faith-and-rockstar-knew-it-might-backfire",
-        "summary": "GTA 5's iconic trio had something to prove",
-        "published_at": "2026-11-18T18:00:00Z",
-        "content_hash": "7f627359bb7abd70b3df66f3",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "196b61ebda71f6400554a1da",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/WCUSnDP6CwC78uviCLYwfU-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "93ee8e56f7499db837c130e1": {
-      "item": {
-        "id": "93ee8e56f7499db837c130e1",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "How to reach 6 stars in GTA 6",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-six-stars",
-        "summary": "Plus what happens when you reach the new highest heat level.",
-        "published_at": "2026-11-18T18:00:00Z",
-        "content_hash": "708ae0369e81ee998a0dfb0a",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "93ee8e56f7499db837c130e1",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/a2EBYfsQCg3Z7cTSiCUoi3-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "03164f7f397e2cfbe03d56dc": {
-      "item": {
-        "id": "03164f7f397e2cfbe03d56dc",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "How to save game in GTA 6",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-save-game",
-        "summary": "Use your slots wisely.",
-        "published_at": "2026-11-18T18:00:00Z",
-        "content_hash": "d8370081e087da76e97aa47c",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "03164f7f397e2cfbe03d56dc",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/zYTGMKa5Yy92oP6w5igeLb-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "8a7374b282a23a8ab686eaf8": {
-      "item": {
-        "id": "8a7374b282a23a8ab686eaf8",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6 military base location: How to get into Mile Zero Air Station",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-military-base-location",
-        "summary": "Bust into the base to steal the fastest vehicles the government's money can buy.",
-        "published_at": "2026-11-18T18:00:00Z",
-        "content_hash": "a55bac218e06b220915e07aa",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "8a7374b282a23a8ab686eaf8",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/nkTuv8W9dvEdx56yb5eLEV-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": true
-    },
-    "f56859bcd8adbcb68a65d76a": {
-      "item": {
-        "id": "f56859bcd8adbcb68a65d76a",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "How to get a parachute in GTA 6: Buy before you fly",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-parachute-how-to-get",
-        "summary": "Take the real scenic route around Vice City.",
-        "published_at": "2026-11-18T18:00:00Z",
-        "content_hash": "7278c53f4ca6b7904dd30d67",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "f56859bcd8adbcb68a65d76a",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/mnt9JkyWF2kKne4zyqEG2n-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "5f773c40eb8f7c7c8d196050": {
-      "item": {
-        "id": "5f773c40eb8f7c7c8d196050",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6 fence locations: Everywhere you can sell your hot goods",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-fence-locations",
-        "summary": "Stolen goods and cash can pay off if you know which buyers to take them to.",
-        "published_at": "2026-11-18T18:00:00Z",
-        "content_hash": "8da78041e9d693f2960bd0f8",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "5f773c40eb8f7c7c8d196050",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/ehhtJ4zjCNwxiraXX986nD-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "4040f4eaba7fdacba76cdddb": {
-      "item": {
-        "id": "4040f4eaba7fdacba76cdddb",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6: The fastest ways to make money",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-how-to-make-money",
-        "summary": "Sometimes the best thing a criminal can do is steal from other criminals.",
-        "published_at": "2026-11-18T18:00:00Z",
-        "content_hash": "099140cfab17ec35ec6a47f0",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "4040f4eaba7fdacba76cdddb",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/dMuVMfRwWo2raGaXFzDHHD-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": true
-    },
-    "ddf9a01bc7bce4082e043a82": {
-      "item": {
-        "id": "ddf9a01bc7bce4082e043a82",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "How to get safe codes in GTA 6",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-safe-codes-combinations",
-        "summary": "Crack these vaults during a robbery to claim some cash.",
-        "published_at": "2026-11-18T18:00:00Z",
-        "content_hash": "577470f7a131503226b98797",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "ddf9a01bc7bce4082e043a82",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/uE22g2GL3U533yXMByfLZH-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "b63fdd154c8417ea854b0187": {
-      "item": {
-        "id": "b63fdd154c8417ea854b0187",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "How to get a slim jim in GTA 6",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-slim-jim",
-        "summary": "Breaking in without breaking anything.",
-        "published_at": "2026-11-18T18:00:00Z",
-        "content_hash": "8ed9f77796c58d885732d2fe",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "b63fdd154c8417ea854b0187",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/56BRYZarF8fzYxibbaoZbe-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "82c8e0ddcce177846fd5a8c9": {
-      "item": {
-        "id": "82c8e0ddcce177846fd5a8c9",
-        "source_id": "eurogamer",
-        "source_name": "Eurogamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "eurogamer",
-        "title": "PSA: Some GTA 6 Ultimate Edition content is only available for the first chapter, and you'll have to put in hard graft to unlock more",
-        "url": "https://eurogamer.net/gta-6-ultimate-edition-unlock-details-temporary-content",
-        "summary": "GTA 6's Ultimate Edition has proven enormously popular, despite its hefty $100 price tag. So much so that Strauss Zelnick, boss of Rockstar parent company Take-Two, recently confirmed it's the edition most people are buying - and that's despite a lack of specific information about how its unlockable content works. With GTA 6 just hours away from release, however - and out now in certain parts of the work - details are beginning to emerge, and the answer is perhaps a little surprising. Read more",
-        "published_at": "2026-11-18T17:42:30Z",
-        "content_hash": "5d7f308ccdf27a709e6c0252",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "82c8e0ddcce177846fd5a8c9",
-        "image_url": "https://assetsio.gnwcdn.com/ULTIMATE_EDITION_SAFEHOUSE_VEHICLES_03.jpg?width=690&quality=85&format=jpg&auto=webp"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "1543b9ec40a5cf2e6da79897": {
-      "item": {
-        "id": "1543b9ec40a5cf2e6da79897",
-        "source_id": "eurogamer",
-        "source_name": "Eurogamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "eurogamer",
-        "title": "Most, though not quite all, of the 34 fired Rockstar employees are named in the GTA 6 credits",
-        "url": "https://eurogamer.net/fired-rockstar-employees-named-gta-6-credits-tribunal",
-        "summary": "Eurogamer can confirm that at least 28 of the 34 employees fired by Rockstar roughly a year ago - in an action that directly led to the employment tribunal Rockstar is currently facing in Scotland - are named in the credits of Grand Theft Auto 6 . Read more",
-        "published_at": "2026-11-18T17:35:50Z",
-        "content_hash": "c3fa71335b3cb6465f37a59c",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "1543b9ec40a5cf2e6da79897",
-        "image_url": "https://assetsio.gnwcdn.com/brian-gta-6.jpg?width=690&quality=85&format=jpg&auto=webp"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "188a2b3fc3aa9b600e016f08": {
-      "item": {
-        "id": "188a2b3fc3aa9b600e016f08",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Buck Me Mission Walkthrough",
-        "url": "https://videogameschronicle.com/guide/gta-6-buck-me-mission-walkthrough",
-        "summary": "Here comes the money!",
-        "published_at": "2026-11-18T17:34:37Z",
-        "content_hash": "339cc5539155a5f7c0ea1be2",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "188a2b3fc3aa9b600e016f08",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Buck-Me-Walkthrough-4.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "4614b64c7efc343795c49f85": {
-      "item": {
-        "id": "4614b64c7efc343795c49f85",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Coming Home mission walkthrough",
-        "url": "https://videogameschronicle.com/guide/gta-6-coming-home-mission-walkthrough",
-        "summary": "Lucia is free, it's time to celebrate!",
-        "published_at": "2026-11-18T17:34:21Z",
-        "content_hash": "224cec83521bb2fa3ac9cef5",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "4614b64c7efc343795c49f85",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Coming-Home-Walkthrough-2.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
-    "f6c96485650e10bf892687b3": {
-      "item": {
-        "id": "f6c96485650e10bf892687b3",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6 didn't get as many Game Awards nominations as Clair Obscur: Expedition 33, but it never could",
-        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-didnt-get-as-many-game-awards-nominations-as-clair-obscur-expedition-33-but-it-was-never-going-to",
-        "summary": "Being a debut indie gives Sandfall the advantage",
-        "published_at": "2026-11-18T17:28:27Z",
-        "content_hash": "2f45f71a7dcbe382533a4619",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "f6c96485650e10bf892687b3",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/Ndx9Po2DyeMQk2zv6KgM6B-1920-80.jpg"
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": true
-    },
-    "d1ac3d910504668451ed0c08": {
-      "item": {
-        "id": "d1ac3d910504668451ed0c08",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "GTA 6 Money-Making Guide—Quickest Ways To Earn Money In GTA 6",
-        "url": "https://insider-gaming.com/gta-6-money-making",
-        "summary": "Here are the best and quickest ways to earn money in Grand Theft Auto 6, so you can have as much money as you'd ever need. The post GTA 6 Money-Making Guide—Quickest Ways To Earn Money In GTA 6 appeared first on Insider Gaming .",
-        "published_at": "2026-11-18T17:24:57Z",
-        "content_hash": "2be1e243e3e4875b6beb74f7",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "d1ac3d910504668451ed0c08",
-        "image_url": ""
-      },
-      "first_seen": "2026-11-18T21:21:23Z",
-      "needs_eval": false
-    },
     "6fb2ad2070bee208ed3378a1": {
       "item": {
         "id": "6fb2ad2070bee208ed3378a1",
@@ -4322,426 +3732,6 @@
       "first_seen": "2026-11-19T02:41:48Z",
       "needs_eval": false
     },
-    "ce1d78a36f6a761d6d843680": {
-      "item": {
-        "id": "ce1d78a36f6a761d6d843680",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Chapter 1 warning: Read this before finishing chapter 1 of GTA 6",
-        "url": "https://videogameschronicle.com/guide/gta-6-chapter-1-warning-read-this-before-finishing-chapter-1-of-gta-6",
-        "summary": "One of the game's early missions has massive consequences",
-        "published_at": "2026-11-18T23:13:45Z",
-        "content_hash": "d15ee14d2b416789ec28b3df",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "ce1d78a36f6a761d6d843680",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/gta-grand-theft-auto-6-pic31.jpg"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": true
-    },
-    "7978a2ea70bf216081f14c8e": {
-      "item": {
-        "id": "7978a2ea70bf216081f14c8e",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "Confirmed GTA 6 Voice Actors—Cast List",
-        "url": "https://insider-gaming.com/gta-6-voice-actors",
-        "summary": "Rockstar Games has assembled a hugely talented cast to act out the GTA 6 story, and the cast list is pieced together with many voice actors. The post Confirmed GTA 6 Voice Actors—Cast List appeared first on Insider Gaming .",
-        "published_at": "2026-11-18T23:08:31Z",
-        "content_hash": "339cdc474274baf6474a61c8",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "7978a2ea70bf216081f14c8e",
-        "image_url": ""
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "dbf611f14fd1a757876ec2e2": {
-      "item": {
-        "id": "dbf611f14fd1a757876ec2e2",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "GTA 6 Doesn't Let Players Pick Up Prostitutes, but Rockstar Has a Logical Reason for It",
-        "url": "https://ign.com/articles/gta-6-doesnt-let-players-pick-up-prostitutes-but-rockstar-has-a-logical-reason-for-it",
-        "summary": "Rockstar Games has revealed why they chose to forego the ability to pick up prostitutes in GTA 6.",
-        "published_at": "2026-11-18T23:07:23Z",
-        "content_hash": "864cce0ab3d1a8c482d487de",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "dbf611f14fd1a757876ec2e2",
-        "image_url": "https://assets-prd.ignimgs.com/2023/12/07/gta6-trailer-4k-00-00-38-29-still001-1701962524689.png"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "07035884fa6fb976be2c0e8c": {
-      "item": {
-        "id": "07035884fa6fb976be2c0e8c",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "One in Five Workers Taking Time Off for GTA 6, It’s Claimed",
-        "url": "https://insider-gaming.com/workers-taking-time-off-gta-6",
-        "summary": "Planning to take time off work to play GTA 6? According to new data, it seems you'll be in good company. Get a solid excuse ready. The post One in Five Workers Taking Time Off for GTA 6, It’s Claimed appeared first on Insider Gaming .",
-        "published_at": "2026-11-18T22:53:48Z",
-        "content_hash": "40e4097687f179b9ce31df78",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "07035884fa6fb976be2c0e8c",
-        "image_url": ""
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "a74dc8f78d1f18c2bb5ab305": {
-      "item": {
-        "id": "a74dc8f78d1f18c2bb5ab305",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "How to Take Drugs in Grand Theft Auto 6? Where to Find Drugs, Explained",
-        "url": "https://insider-gaming.com/how-to-take-drugs-in-gta-6",
-        "summary": "Grand Theft Auto 6 adds the ability to consume drugs at will. In this guide, you can learn how to do that. The post How to Take Drugs in Grand Theft Auto 6? Where to Find Drugs, Explained appeared first on Insider Gaming .",
-        "published_at": "2026-11-18T22:53:08Z",
-        "content_hash": "287c6ec23cd57f05b748878c",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "a74dc8f78d1f18c2bb5ab305",
-        "image_url": ""
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "04bca6ce82bf949043858ed8": {
-      "item": {
-        "id": "04bca6ce82bf949043858ed8",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6: Where to find your first plane and helicopter right away",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-first-plane-and-helicopter",
-        "summary": "Steal your first aircraft close to your GTA 6 starting point.",
-        "published_at": "2026-11-18T22:51:08Z",
-        "content_hash": "c1020e2c3706903af948ad4f",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "04bca6ce82bf949043858ed8",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/iWTjerdRXEaUkNM8qhZn87-1920-80.jpg"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "761d516f9962451f807f2271": {
-      "item": {
-        "id": "761d516f9962451f807f2271",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Discharge Time Mission Walkthrough",
-        "url": "https://videogameschronicle.com/guide/gta-6-discharge-time-mission-walkthrough",
-        "summary": "GTA 6 Chapter 1 ends with a bang in Discharge Time",
-        "published_at": "2026-11-18T22:50:33Z",
-        "content_hash": "3bfb77dc7183f7b78970a837",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "761d516f9962451f807f2271",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Discharge-Time-Mission-Walkthrough-3.jpg"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "6647ce251bd1ba3f46879c6b": {
-      "item": {
-        "id": "6647ce251bd1ba3f46879c6b",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Home Sweet Home Mission Walkthrough",
-        "url": "https://videogameschronicle.com/guide/gta-6-home-sweet-home-mission-walkthrough",
-        "summary": "Home Sweet Home is the second last mission of GTA 6 Chapter 1",
-        "published_at": "2026-11-18T22:50:24Z",
-        "content_hash": "a8281cc19f1c44ea7741e774",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "6647ce251bd1ba3f46879c6b",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Home-Sweet-Home-Mission-Walkthrough-1.jpg"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "d6b995b0794bd4529f4cb38d": {
-      "item": {
-        "id": "d6b995b0794bd4529f4cb38d",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Tourist Trap Mission Walkthrough",
-        "url": "https://videogameschronicle.com/guide/gta-6-tourist-trap-mission-walkthrough",
-        "summary": "The finale of GTA 6 Chapter 1 kicks off",
-        "published_at": "2026-11-18T22:50:10Z",
-        "content_hash": "e6b59d6e2aa3002e24f41111",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "d6b995b0794bd4529f4cb38d",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Tourist-Trap-Mission-Walkthrough-8.jpg"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "f887bb76bb53c2e64a20187a": {
-      "item": {
-        "id": "f887bb76bb53c2e64a20187a",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Recalibration Mission Walkthrough",
-        "url": "https://videogameschronicle.com/guide/gta-6-recalibration-mission-walkthrough",
-        "summary": "Recalibration sees Jason and Lucia get Cal back on his feet",
-        "published_at": "2026-11-18T22:50:03Z",
-        "content_hash": "cbb8ab60eea885729dfe9aa6",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "f887bb76bb53c2e64a20187a",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Recalibration-Mission-Walkthrough-5.jpg"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "83e34680ebbe973cee45733f": {
-      "item": {
-        "id": "83e34680ebbe973cee45733f",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "Who is Mandy in GTA 6? Pipework Mission and Serial Killer Theory, Explained",
-        "url": "https://insider-gaming.com/who-is-mandy-gta-6-when-do-you-meet-serial-killer",
-        "summary": "Mandy is one of the most eye-catching GTA 6 characters that you meet during the game's earliest segment, but when does she pop up? The post Who is Mandy in GTA 6? Pipework Mission and Serial Killer Theory, Explained appeared first on Insider Gaming .",
-        "published_at": "2026-11-18T22:41:36Z",
-        "content_hash": "39457fec7408f45a647c1357",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "83e34680ebbe973cee45733f",
-        "image_url": ""
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "4e29f5bf72498f3102356622": {
-      "item": {
-        "id": "4e29f5bf72498f3102356622",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "When Can You Switch To Lucia in GTA 6? Fastest Method, Explained",
-        "url": "https://insider-gaming.com/when-can-switch-lucia-gta-6-fastest-method",
-        "summary": "In this guide, learn how and when you can switch between Jason and Lucia in Grand Theft Auto 6, which is out now. The post When Can You Switch To Lucia in GTA 6? Fastest Method, Explained appeared first on Insider Gaming .",
-        "published_at": "2026-11-18T22:20:22Z",
-        "content_hash": "1fb796b11469214411f98184",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "4e29f5bf72498f3102356622",
-        "image_url": ""
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "e553844586b75ff32eb3c213": {
-      "item": {
-        "id": "e553844586b75ff32eb3c213",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "Devolver's not just launching a game on the same day as GTA 6, it's using a shot-by-shot remake of the GTA 6 launch trailer too",
-        "url": "https://pcgamer.com/games/grand-theft-auto/devolvers-not-just-launching-a-game-on-the-same-day-as-gta-6-its-using-a-shot-by-shot-remake-of-the-gta-6-launch-trailer-too",
-        "summary": "Ever see cartoon rodents get it on in the shower? Do you want to?",
-        "published_at": "2026-11-18T22:12:08Z",
-        "content_hash": "29bf4f038f40b7f7d8943aab",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "e553844586b75ff32eb3c213",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/BV5HRktLj5m2UsevuRmAUc-1920-80.jpg"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "fa0f74d800786edb8ce53146": {
-      "item": {
-        "id": "fa0f74d800786edb8ce53146",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "GTA 6’s Record MetaCritic Score Stays, Maintains GOAT Status",
-        "url": "https://insider-gaming.com/gta-6-metacritic-score-maintains-goat-status",
-        "summary": "After the review embargo for GTA 6 dropped and scores flooded in, it had the highest rating ever. Looks like that'll stick. The post GTA 6’s Record MetaCritic Score Stays, Maintains GOAT Status appeared first on Insider Gaming .",
-        "published_at": "2026-11-18T22:11:38Z",
-        "content_hash": "fe663402cff9c269a5459561",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "fa0f74d800786edb8ce53146",
-        "image_url": ""
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "9b3023d8c0888cc8dd4869dc": {
-      "item": {
-        "id": "9b3023d8c0888cc8dd4869dc",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Don Gone Mission Walkthrough",
-        "url": "https://videogameschronicle.com/guide/gta-6-don-gone-mission-walkthrough",
-        "summary": "Chapter one is coming to an end with GTA 6's Don Gone mission",
-        "published_at": "2026-11-18T22:02:04Z",
-        "content_hash": "a3f5c454bea2ca7278e795a4",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "9b3023d8c0888cc8dd4869dc",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Don-Gone-Walkthrough-4.jpg"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "dcda64505e09281777f467a7": {
-      "item": {
-        "id": "dcda64505e09281777f467a7",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6 airport location: Here's where to earn your wings less than legally",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-airport-location",
-        "summary": "Head to the VCIA runway to hop in the cockpit of your commercial jets and utility vehicles of choice.",
-        "published_at": "2026-11-18T21:52:44Z",
-        "content_hash": "4e89ae94fd2ec306c04cd4d2",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "dcda64505e09281777f467a7",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/dZxov54joa7TQG73D7XHxM-1920-80.png"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "932ec2fa913f2c6bd6dcc8bc": {
-      "item": {
-        "id": "932ec2fa913f2c6bd6dcc8bc",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "Rockstar says a PS5 Pro is simply 'not powerful enough' for 60 fps GTA 6, as I crack a smile at my 5090",
-        "url": "https://pcgamer.com/games/grand-theft-auto/rockstar-says-a-ps5-pro-is-simply-not-powerful-enough-for-60-fps-gta-6-as-i-crack-a-smile-at-my-5090",
-        "summary": "The consoles just aren't up to the task.",
-        "published_at": "2026-11-18T21:51:35Z",
-        "content_hash": "38cc240adcf45a1abd6d8888",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "932ec2fa913f2c6bd6dcc8bc",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/7Pa25Qo3r5gyVPMLAShidR-1920-80.jpg"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": true
-    },
-    "0f7cbd77acf08ed1d9a19da3": {
-      "item": {
-        "id": "0f7cbd77acf08ed1d9a19da3",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "Befuddled Japanese player fights GTA 6 controls, loses, becomes 'guy chugging two shakes I accidentally bought while walking around in a squat'",
-        "url": "https://pcgamer.com/games/grand-theft-auto/befuddled-japanese-player-fights-gta-6-controls-loses-becomes-guy-chugging-two-shakes-i-accidentally-bought-while-walking-around-in-a-squat",
-        "summary": "No matter how much money you spend, players will find a way to make your game look doofy.",
-        "published_at": "2026-11-18T21:48:24Z",
-        "content_hash": "06c0ec48a630646b48d74612",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "0f7cbd77acf08ed1d9a19da3",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/AY5PhkhnJoMBscu6wdLmKF-1920-80.jpg"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": false
-    },
-    "e17d2e70853acd33aa1db8d1": {
-      "item": {
-        "id": "e17d2e70853acd33aa1db8d1",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6 at 60fps on PS5 Pro isn't possible because the console \"is not powerful enough,\" Rockstar says",
-        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-at-60fps-on-ps5-pro-isnt-possible-because-the-console-is-not-powerful-enough-rockstar-says",
-        "summary": "We're stuck with 30fps for the time being",
-        "published_at": "2026-11-18T21:27:03Z",
-        "content_hash": "19212138de90af5b5218a8a8",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "e17d2e70853acd33aa1db8d1",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/3389mzUBT3d6BLYsdfWpWh-1920-80.jpg"
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": true
-    },
-    "67fbd7b94cf83b9655218823": {
-      "item": {
-        "id": "67fbd7b94cf83b9655218823",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "PS5 Pro’s CPU Upgrade Is Not Enough for GTA 6 at 60 FPS",
-        "url": "https://insider-gaming.com/ps5-pros-cpu-upgrade-is-not-enough-for-gta-6-at-60-fps",
-        "summary": "GTA 6 on PS5 Pro adds ray-traced shadows and PSSR improvements, but Rockstar says CPU limits prevent the game from reaching higher FPS. The post PS5 Pro’s CPU Upgrade Is Not Enough for GTA 6 at 60 FPS appeared first on Insider Gaming .",
-        "published_at": "2026-11-18T21:24:21Z",
-        "content_hash": "10732b3970faa5cb3947878c",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "67fbd7b94cf83b9655218823",
-        "image_url": ""
-      },
-      "first_seen": "2026-11-19T02:41:48Z",
-      "needs_eval": true
-    },
     "fc56de4776f92ad49217bdd7": {
       "item": {
         "id": "fc56de4776f92ad49217bdd7",
@@ -4950,7 +3940,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-19T10:46:54Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "26403784d67f71243ee4dfd1": {
       "item": {
@@ -4992,7 +3982,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Mandy-1.jpg"
       },
       "first_seen": "2026-11-19T10:46:54Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "29df9d6d7314082230fddd8d": {
       "item": {
@@ -5013,7 +4003,7 @@
         "image_url": "https://assetsio.gnwcdn.com/gta-6-launch-jason-lucia.jpg?width=690&quality=85&format=jpg&auto=webp"
       },
       "first_seen": "2026-11-19T10:46:54Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "0cd20c79919e90a33085ef68": {
       "item": {
@@ -5034,7 +4024,7 @@
         "image_url": "https://assetsio.gnwcdn.com/Xbox-crocodile.jpg?width=690&quality=85&format=jpg&auto=webp"
       },
       "first_seen": "2026-11-19T10:46:54Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "dc91e220b7493414768a0ae1": {
       "item": {
@@ -5074,27 +4064,6 @@
         "via": "rss",
         "raw_id": "2c8b47e4ffc75098195bc120",
         "image_url": "https://cdn.mos.cms.futurecdn.net/Ri7dx2AwWpjGDJXscrb4QX-1920-80.jpg"
-      },
-      "first_seen": "2026-11-19T19:12:11Z",
-      "needs_eval": true
-    },
-    "512b004a5230320ede7ffa60": {
-      "item": {
-        "id": "512b004a5230320ede7ffa60",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "Cheats in GTA 6 are weirdly restrictive, and I'm counting the minutes until the PC version fixes them",
-        "url": "https://pcgamer.com/games/grand-theft-auto/im-counting-the-minutes-until-the-pc-version-fixes-the-weirdly-restrictive-cheats-in-gta-6",
-        "summary": "Unlocking a cheats menu takes dozens of hours, and even then there are still heavy restrictions.",
-        "published_at": "2026-11-19T18:35:22Z",
-        "content_hash": "06998951067ec2fefcf8d974",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "512b004a5230320ede7ffa60",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/88bmYYeTdzTBy8hNsLoXrc-1920-80.jpg"
       },
       "first_seen": "2026-11-19T19:12:11Z",
       "needs_eval": true
@@ -5830,27 +4799,6 @@
         "via": "rss",
         "raw_id": "345782dc977fe0bbaaef1207",
         "image_url": "https://assetsio.gnwcdn.com/Easy-mode-gta.jpg?width=690&quality=85&format=jpg&auto=webp"
-      },
-      "first_seen": "2026-11-19T19:12:11Z",
-      "needs_eval": true
-    },
-    "eb32a579638e754d1e4f630f": {
-      "item": {
-        "id": "eb32a579638e754d1e4f630f",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "GTA 6's Jason and Lucia Actors Spotted Together in First Photo",
-        "url": "https://ign.com/articles/gta-6s-jason-and-lucia-actors-spotted-together-in-first-photo",
-        "summary": "The actors behind GTA 6 protagonists Jason and Lucia have finally been pictured together, after years of speculation regarding their identities.",
-        "published_at": "2026-11-19T14:38:41Z",
-        "content_hash": "a0e3c30c818f377a2c5a2a8d",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "eb32a579638e754d1e4f630f",
-        "image_url": "https://assets-prd.ignimgs.com/2026/11/19/screenshot-2026-11-19-143016-1795098701216.png"
       },
       "first_seen": "2026-11-19T19:12:11Z",
       "needs_eval": true
@@ -7682,27 +6630,6 @@
       "first_seen": "2026-11-20T17:19:49Z",
       "needs_eval": true
     },
-    "0fae8aa3ce92380c2b8dd826": {
-      "item": {
-        "id": "0fae8aa3ce92380c2b8dd826",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "Can Jason and Lucia Get Naked in GTA 6?",
-        "url": "https://ign.com/articles/can-jason-and-lucia-get-naked-in-gta-6",
-        "summary": "Let’s settle this once and for all. Can Jason and Lucia get naked in GTA 6?",
-        "published_at": "2026-11-20T12:53:10Z",
-        "content_hash": "925e7d94816b2a401de32d8f",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "0fae8aa3ce92380c2b8dd826",
-        "image_url": "https://assets-prd.ignimgs.com/2026/11/20/lucia-naked-1795178781165.jpg"
-      },
-      "first_seen": "2026-11-20T17:19:49Z",
-      "needs_eval": true
-    },
     "c55f2edfca0e99fde59b48fb": {
       "item": {
         "id": "c55f2edfca0e99fde59b48fb",
@@ -8018,27 +6945,6 @@
       "first_seen": "2026-11-20T17:19:49Z",
       "needs_eval": true
     },
-    "c640e9256397e4be253ffa67": {
-      "item": {
-        "id": "c640e9256397e4be253ffa67",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "Modders reckon GTA 6 will be playable on PC within a week",
-        "url": "https://pcgamer.com/games/grand-theft-auto/modders-reckon-gta-6-will-be-playable-on-pc-within-a-week",
-        "summary": "That's if Rockstar can't take it down first.",
-        "published_at": "2026-11-20T10:33:56Z",
-        "content_hash": "e5aff0b2fb410edc02a3b0a6",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "c640e9256397e4be253ffa67",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/uFTYVTAcEQq9dzQ7KuHtnf-1920-80.jpg"
-      },
-      "first_seen": "2026-11-20T17:19:49Z",
-      "needs_eval": true
-    },
     "240d9813aa918c36e14f2364": {
       "item": {
         "id": "240d9813aa918c36e14f2364",
@@ -8101,9 +7007,660 @@
       },
       "first_seen": "2026-11-20T17:19:49Z",
       "needs_eval": true
+    },
+    "b4f3325f91910ae6aa9ff6af": {
+      "item": {
+        "id": "b4f3325f91910ae6aa9ff6af",
+        "source_id": "vgc",
+        "source_name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "vgc",
+        "title": "GTA 6 Coffee Break walkthrough",
+        "url": "https://videogameschronicle.com/guide/gta-6-coffee-break-walkthrough",
+        "summary": "Coffee Break is a relatively straightforward mission, with just a handful of objectives to complete.",
+        "published_at": "2026-11-20T23:12:41Z",
+        "content_hash": "7a6e45a567a5641418fb4e27",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "b4f3325f91910ae6aa9ff6af",
+        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-coffee-break-walkthrough-3.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "8e66f10d3efa35f04aaa619c": {
+      "item": {
+        "id": "8e66f10d3efa35f04aaa619c",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "GTA 6 is Getting Review Bombed",
+        "url": "https://insider-gaming.com/gta-6-review-bombed",
+        "summary": "A day after the highly anticipated release, it seems GTA 6 is already becoming the next victim of review bombing from players. The post GTA 6 is Getting Review Bombed appeared first on Insider Gaming .",
+        "published_at": "2026-11-20T22:46:17Z",
+        "content_hash": "b12b91bcdc7d77afed4c87db",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "8e66f10d3efa35f04aaa619c",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "cb744bb3dba80eaa95ccb2d9": {
+      "item": {
+        "id": "cb744bb3dba80eaa95ccb2d9",
+        "source_id": "vgc",
+        "source_name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "vgc",
+        "title": "GTA 6 Breakfast Run walkthrough",
+        "url": "https://videogameschronicle.com/guide/gta-6-breakfast-run-walkthrough",
+        "summary": "It's time for Breakfast Run. Jason is back!",
+        "published_at": "2026-11-20T22:44:33Z",
+        "content_hash": "b0ccf39f848e510f06dd4922",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "cb744bb3dba80eaa95ccb2d9",
+        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-breakfast-run-walkthrough-4.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "f81507540367f8c910629c59": {
+      "item": {
+        "id": "f81507540367f8c910629c59",
+        "source_id": "pcgamer",
+        "source_name": "PC Gamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "Despite GTA 6's huge map, it only takes about 4 minutes to fly across it in a plane",
+        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-how-long-to-fly-across-map",
+        "summary": "Someone had to do it.",
+        "published_at": "2026-11-20T22:34:25Z",
+        "content_hash": "3a6ac2471b3aa0cddcffe687",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "f81507540367f8c910629c59",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/Lniqu8a87y9qE9LHy43r3F-1920-80.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "77c8b5c710edd9dfc7edc021": {
+      "item": {
+        "id": "77c8b5c710edd9dfc7edc021",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Best Graphics Settings To Use in GTA 6",
+        "url": "https://insider-gaming.com/gta-6-best-graphics-settings",
+        "summary": "Here's a detailed guide on the best graphics settings you can apply to GTA 6 to make your experience even better. The post Best Graphics Settings To Use in GTA 6 appeared first on Insider Gaming .",
+        "published_at": "2026-11-20T22:12:17Z",
+        "content_hash": "c66f71cc9cc65404144178a8",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "77c8b5c710edd9dfc7edc021",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "7d92347a243874923536fcd0": {
+      "item": {
+        "id": "7d92347a243874923536fcd0",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Best Aim & Controller Settings To Use in GTA 6",
+        "url": "https://insider-gaming.com/gta-6-best-aim-controller-settings",
+        "summary": "Here are all the aim/controller settings players can adjust to get the best possible experience in GTA 6. Check out more details. The post Best Aim & Controller Settings To Use in GTA 6 appeared first on Insider Gaming .",
+        "published_at": "2026-11-20T22:12:15Z",
+        "content_hash": "d0e5e0b0f7ac321d36379a62",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "7d92347a243874923536fcd0",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "8722db4c894665ba7e47c49f": {
+      "item": {
+        "id": "8722db4c894665ba7e47c49f",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Best Sound Settings To Use in GTA 6",
+        "url": "https://insider-gaming.com/gta-6-best-sound-settings",
+        "summary": "Here's a detailed guide to all the sound settings players can adjust to get the best experience in GTA 6. Check out the options here. The post Best Sound Settings To Use in GTA 6 appeared first on Insider Gaming .",
+        "published_at": "2026-11-20T22:11:57Z",
+        "content_hash": "1b5b17967b5f5008ecfbe258",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "8722db4c894665ba7e47c49f",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "a6bdac61b9b3da13bf7ed7b7": {
+      "item": {
+        "id": "a6bdac61b9b3da13bf7ed7b7",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 guides and walkthroughs",
+        "url": "https://gamesradar.com/games/grand-theft-auto/gta-guides-walkthroughs",
+        "summary": "Everything you need for discovering everything there is to see in GTA 6",
+        "published_at": "2026-11-20T21:58:32Z",
+        "content_hash": "9a1c78beb5090bcf74c676af",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "a6bdac61b9b3da13bf7ed7b7",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/Jphdtoi6xtqCca8opYAhkB-1920-80.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "0ec3bc6d1abb472b31c76c1a": {
+      "item": {
+        "id": "0ec3bc6d1abb472b31c76c1a",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 PC port could come from hackers before Rockstar, if Cyberleek makes good on its latest threat",
+        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-pc-port-could-come-from-hackers-before-rockstar-if-cyberleek-makes-good-on-its-latest-threat-this-community-will-have-it-emulated-inside-a-week",
+        "summary": "It could be \"running far past 30fps,\" too",
+        "published_at": "2026-11-20T21:49:49Z",
+        "content_hash": "4e18d7cea210da3ae1f7da6c",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "0ec3bc6d1abb472b31c76c1a",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/gMvYBKzqNGgwzXhZgvjq88-1920-80.png"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "2bd698bf4377a82279b13609": {
+      "item": {
+        "id": "2bd698bf4377a82279b13609",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Satoru Gojo's English Voice Actor Didn't Realize These Wild Lines He Recorded Were for GTA 6",
+        "url": "https://ign.com/articles/satoru-gojos-english-voice-actor-didnt-realize-these-wild-lines-he-recorded-were-for-gta-6",
+        "summary": "Kaiji Tang, the English voice actor behind iconic anime characters like Jujutsu Kaisen’s Satoru Gojo and Demon Slayer’s Sanemi Shinazugawa, was left stunned after learning that he had unknowingly recorded lines for GTA 6.",
+        "published_at": "2026-11-20T21:27:45Z",
+        "content_hash": "2e4f1210091ff8b3e933c5e5",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "2bd698bf4377a82279b13609",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/20/satoru-gojo-voice-actor-gta6-1795209301743.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "7c933a34413ba6dfcc666b97": {
+      "item": {
+        "id": "7c933a34413ba6dfcc666b97",
+        "source_id": "vgc",
+        "source_name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "vgc",
+        "title": "GTA 6 full cast confirmed – Every actor in Grand Theft Auto 6",
+        "url": "https://videogameschronicle.com/guide/gta-6-full-cast-confirmed-every-actor-in-grand-theft-auto-6",
+        "summary": "Here's every actor in GTA 6",
+        "published_at": "2026-11-20T21:24:43Z",
+        "content_hash": "7d2f95634678d8e52322f23b",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "7c933a34413ba6dfcc666b97",
+        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-full-cast-3.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "a63fb904c48f1ba5f24d9a56": {
+      "item": {
+        "id": "a63fb904c48f1ba5f24d9a56",
+        "source_id": "vgc",
+        "source_name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "vgc",
+        "title": "How to open the GTA 6 Kingpin Bowling Alley safe",
+        "url": "https://videogameschronicle.com/guide/how-to-open-the-gta-6-kingpin-bowling-alley-safe",
+        "summary": "Open the Kingpin Bowling Alley safe with this guide",
+        "published_at": "2026-11-20T20:52:16Z",
+        "content_hash": "425376f04fd1a3f5f9f2ac65",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "a63fb904c48f1ba5f24d9a56",
+        "image_url": "https://www.videogameschronicle.com/files/2026/11/Kingpin-bowling-alley-safe-code-2.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "1a13e57f8ff57d91e37919a4": {
+      "item": {
+        "id": "1a13e57f8ff57d91e37919a4",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Sexyy Red Had the Best Response to Her Viral GTA 6 Moment With Jason",
+        "url": "https://ign.com/articles/sexyy-red-had-the-best-response-to-her-viral-gta-6-moment-with-jason",
+        "summary": "Rapper Sexyy Red has given a hilarious response to her cameo in GTA 6 after a clip of famous streamer IShowSpeed playing the game went viral.",
+        "published_at": "2026-11-20T20:47:54Z",
+        "content_hash": "80cb27a369a9b3caf17071bb",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "1a13e57f8ff57d91e37919a4",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/20/sexyyred-cameo-gta6-1795205750675.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "58652b0c1baff179a4febc89": {
+      "item": {
+        "id": "58652b0c1baff179a4febc89",
+        "source_id": "pcgamer",
+        "source_name": "PC Gamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "21% of Rockstar staff have been employed by the company for over 10 years, which explains a lot about GTA 6's record-breaking launch",
+        "url": "https://pcgamer.com/games/grand-theft-auto/21-percent-of-rockstar-staff-have-been-employed-by-the-company-for-over-10-years-which-explains-a-lot-about-gta-6s-record-breaking-launch",
+        "summary": "It's easier to make successful games when you hold onto the people who know how.",
+        "published_at": "2026-11-20T20:41:34Z",
+        "content_hash": "b4d6ebb387043b21840225cc",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "58652b0c1baff179a4febc89",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/e3fPzBmapimeiWj59SBAiQ-1920-80.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "7b4160425044e1cbf7af99eb": {
+      "item": {
+        "id": "7b4160425044e1cbf7af99eb",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "When Do Your BuckMe Limits Increase in GTA 6? Banking App, Explained",
+        "url": "https://insider-gaming.com/gta-6-buckme-limits-when-increase",
+        "summary": "You've got your BuckMe account in GTA 6, but when do those pesky limits and restrictions lift? Find out how to get higher limits in BuckMe. The post When Do Your BuckMe Limits Increase in GTA 6? Banking App, Explained appeared first on Insider Gaming .",
+        "published_at": "2026-11-20T20:27:06Z",
+        "content_hash": "e0558a3db24de86c1a7748c5",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "7b4160425044e1cbf7af99eb",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "4f2abbb67d0494c4d6d4b6d0": {
+      "item": {
+        "id": "4f2abbb67d0494c4d6d4b6d0",
+        "source_id": "vgc",
+        "source_name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "vgc",
+        "title": "Podcast: GTA 6 Deep (ish) Dive with Jeff Gerstmann",
+        "url": "https://videogameschronicle.com/blog/podcast/podcast-gta-6-deep-ish-dive-with-jeff-gerstmann",
+        "summary": "This video contains a spoiler for the game's prologue",
+        "published_at": "2026-11-20T20:16:22Z",
+        "content_hash": "f143697c17dcd745e4885d37",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "4f2abbb67d0494c4d6d4b6d0",
+        "image_url": "https://www.videogameschronicle.com/files/2026/11/Jeff-Gerstmann-GTA-6.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "5f0dcdca5de0d094abd6f23b": {
+      "item": {
+        "id": "5f0dcdca5de0d094abd6f23b",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Grand Theft Auto 6 Breaks Sales Records In One Day",
+        "url": "https://insider-gaming.com/grand-theft-auto-6-breaks-sales-records-in-one-day",
+        "summary": "In just one day, Grand Theft Auto 6 (GTA 6) has broken sales records and exceeded early expectations. The post Grand Theft Auto 6 Breaks Sales Records In One Day appeared first on Insider Gaming .",
+        "published_at": "2026-11-20T20:09:39Z",
+        "content_hash": "1fe37e740ff9bed7169324eb",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "5f0dcdca5de0d094abd6f23b",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "c7cd891b735ce564a0a652a0": {
+      "item": {
+        "id": "c7cd891b735ce564a0a652a0",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 sold 32.5 million copies before it was even released – Elden Ring sold 30 million in 3 years",
+        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-sold-32-5-million-copies-before-it-was-even-released-for-comparison-elden-ring-sold-30-million-in-3-years",
+        "summary": "GTA 6 made $3.79 billion in launch day sales, setting \"a new record for entertainment across any medium\"",
+        "published_at": "2026-11-20T19:47:33Z",
+        "content_hash": "b204b8510581bb303c766308",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "c7cd891b735ce564a0a652a0",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/jfJ3BJCgScdgfNVeiu9YnF-1920-80.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "2dbc8833f328587494da37fe": {
+      "item": {
+        "id": "2dbc8833f328587494da37fe",
+        "source_id": "vgc",
+        "source_name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "vgc",
+        "title": "GTA 6 Slam Dunk Mission Walkthrough",
+        "url": "https://videogameschronicle.com/guide/gta-6-slam-dunk-mission-walkthrough",
+        "summary": "Slam Dunk sees Dunk nail another social interaction",
+        "published_at": "2026-11-20T18:45:30Z",
+        "content_hash": "3924543de9d659024d5ccbd9",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "2dbc8833f328587494da37fe",
+        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Slam-Dunk-mission-walkthrough-4.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "577097bb5b8abdcdc8b242d6": {
+      "item": {
+        "id": "577097bb5b8abdcdc8b242d6",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "As GTA 6 soars, Rockstar confirms about 1,000 employees have worked there for at least 10 years",
+        "url": "https://gamesradar.com/games/grand-theft-auto/as-gta-6-soars-rockstar-confirms-about-1-000-of-its-employees-have-worked-there-for-at-least-10-years-suggesting-not-firing-everyone-may-be-a-good-idea",
+        "summary": "Rockstar has hung onto its staff with, uh, 34 notable exceptions",
+        "published_at": "2026-11-20T18:28:00Z",
+        "content_hash": "5ea6127b339f811bef673827",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "577097bb5b8abdcdc8b242d6",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/9GZY2vm8WAgZWF5sXvyjrg-1920-80.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "8e62ea9100949e71567901c7": {
+      "item": {
+        "id": "8e62ea9100949e71567901c7",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "How to get a GTA 6 jet easily and cause chaos in the skies",
+        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-jet-how-to-get",
+        "summary": "You can fly a GTA 6 jet right at the start of the game by raiding the nearby military base, and here's how to do it",
+        "published_at": "2026-11-20T18:19:06Z",
+        "content_hash": "b6733d1af3ac273b26b89fd4",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "8e62ea9100949e71567901c7",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/5tYtEYemrUGZF5FrUXpMUH-1920-80.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "d4eba378e54d4c6e27307568": {
+      "item": {
+        "id": "d4eba378e54d4c6e27307568",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "99 Incredible Little Details in Grand Theft Auto 6",
+        "url": "https://ign.com/articles/99-incredible-little-details-in-grand-theft-auto-6",
+        "summary": "From gameplay quirks to secrets and Easter eggs, here are 99 incredible little details in Grand Theft Auto 6. Don’t worry, you’ll find no story spoilers here.",
+        "published_at": "2026-11-20T18:00:00Z",
+        "content_hash": "5cce4a97b55e25cc98bf0c8a",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "d4eba378e54d4c6e27307568",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/20/details-blog-1795190382176.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "a2499dc319fd50d6af9bd00c": {
+      "item": {
+        "id": "a2499dc319fd50d6af9bd00c",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 exec: \"Stop thinking in tasks, completion percentages, online guides\"",
+        "url": "https://gamesradar.com/games/grand-theft-auto/quote-of-the-day-by-gta-6-exec-stop-thinking-in-tasks-completion-percentages-online-guides-and-approach-leonida-like-a-new-kind-of-open-world",
+        "summary": "Rockstar's hoping to innovate with Vice City's newest iteration",
+        "published_at": "2026-11-20T18:00:00Z",
+        "content_hash": "087861d512aa55690420a528",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "a2499dc319fd50d6af9bd00c",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/QVcfoFs4wag5AjqUsoLxGi-1920-80.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "b00ecc79c2fb5ca715fb37a8": {
+      "item": {
+        "id": "b00ecc79c2fb5ca715fb37a8",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "Should you sell to Donnie or Brian in GTA 6?",
+        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-sell-to-donnie-or-brian",
+        "summary": "Choosing whether to sell to Donnie or Brian isn't just about who pays more.",
+        "published_at": "2026-11-20T17:23:00Z",
+        "content_hash": "a18644c9e25bf687cb94b203",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "b00ecc79c2fb5ca715fb37a8",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/yrQqEa29Lh6bjByKULqdrW-1920-80.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "da37eaf921a2697da7fa90d7": {
+      "item": {
+        "id": "da37eaf921a2697da7fa90d7",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "These 13 Black Friday deals will help you upgrade your GTA 6 setup",
+        "url": "https://gamesradar.com/games/grand-theft-auto/these-13-early-black-friday-deals-will-help-you-upgrade-your-gta-6-setup-from-game-discounts-to-controllers-headsets-and-more",
+        "summary": "GTA 6 is here, and so are early Black Friday deals. Here's how they can help you enhance your setup for hours of GTA gameplay.",
+        "published_at": "2026-11-20T17:18:27Z",
+        "content_hash": "0c930b3cdf174f237044b1cc",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "da37eaf921a2697da7fa90d7",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/bGBhUvqq7Jrh849K3v5CJR-1920-80.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "6e3df28989ea6823a4d4424b": {
+      "item": {
+        "id": "6e3df28989ea6823a4d4424b",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 6 Players Agree That Jason's Stash Needs a Major Tweak",
+        "url": "https://ign.com/articles/gta-6-players-agree-that-jasons-stash-needs-a-major-tweak",
+        "summary": "GTA 6 players can't help but agree that controlling Jason's stash is harder than it needs to be, and they're asking Rockstar Games for a fix.",
+        "published_at": "2026-11-20T17:15:44Z",
+        "content_hash": "cf56126b117fb7824766b4a7",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "6e3df28989ea6823a4d4424b",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/20/gta-6-jasons-stash-1795194400431.png"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "1eaf81a89dd203f8b397cca9": {
+      "item": {
+        "id": "1eaf81a89dd203f8b397cca9",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 6 Has Only Been Out For a Day and People Are Already Asking Take-Two's Boss About GTA 7",
+        "url": "https://ign.com/articles/gta-6-has-only-been-out-for-a-day-and-people-are-already-asking-take-twos-boss-about-gta-7",
+        "summary": "GTA 6 has finally arrived after more than a decade of waiting, but apparently that's not enough for some people. Less than 24 hours after Rockstar's long-awaited sequel launched, Take-Two CEO Strauss Zelnick is already being asked about GTA 7.",
+        "published_at": "2026-11-20T17:12:54Z",
+        "content_hash": "6a3ba585d222cd5e86c45d89",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "1eaf81a89dd203f8b397cca9",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/19/gtavi-16-1795106399624.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "6c0658b9fee90abd281c3618": {
+      "item": {
+        "id": "6c0658b9fee90abd281c3618",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 6 Display Settings Explained — Our Recommendations for Motion Blur, Brightness Reduction, and More",
+        "url": "https://ign.com/articles/gta-6-display-settings-explained-our-recommendations-for-motion-blur-brightness-reduction-and-more",
+        "summary": "While we'll have to wait a little while longer for a PC version of GTA 6 that you can tweak to your heart's content, there are still some visual dials you can tune to get Vice City looking just a little bit better.",
+        "published_at": "2026-11-20T16:56:06Z",
+        "content_hash": "975e79404fd47b0eba0e9604",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "6c0658b9fee90abd281c3618",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/20/ultimate-edition-saras-salon-03-1795193756470.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "e5692fa1089d63b80738a33d": {
+      "item": {
+        "id": "e5692fa1089d63b80738a33d",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 6 Doesn't Officially Have First-Person, but You Can Force It to — Here's How to Do It",
+        "url": "https://ign.com/articles/gta-6-doesnt-officially-have-first-person-but-you-can-force-it-to-heres-how-to-do-it",
+        "summary": "GTA 6 may not have launched with the option to play it entirely in first-person, but where there’s a will, there’s a way. Players have already worked out how to switch from the default third-person perspective, and it requires quite a few fiddly button presses.",
+        "published_at": "2026-11-20T16:38:18Z",
+        "content_hash": "f7eee6aae321f7a7a0b0b70d",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "e5692fa1089d63b80738a33d",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/20/screenshot-2026-11-20-163743-1795192684888.png"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "06d8ab42f78f7399b9e9b15c": {
+      "item": {
+        "id": "06d8ab42f78f7399b9e9b15c",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "GTA 6's No-Nonsense Cops Are Scaring Players Into Actually Following the Law",
+        "url": "https://ign.com/articles/gta-6-new-wanted-system-difficulty",
+        "summary": "GTA 6's cops are meaner and easier to provoke than ever before, leading many players to obey the law and keep their head down early doors.",
+        "published_at": "2026-11-20T16:14:14Z",
+        "content_hash": "83d81aaa74ae2b118283ebf6",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "06d8ab42f78f7399b9e9b15c",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/18/gtavi-missions-1794996224895.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
+    },
+    "f5d4224d08f42367d954aa38": {
+      "item": {
+        "id": "f5d4224d08f42367d954aa38",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "I’ve Played GTA 6 for 110 Hours, Here Are the Weirdest Things I’ve Seen",
+        "url": "https://ign.com/articles/ive-played-gta-6-for-110-hours-here-are-the-weirdest-things-ive-seen",
+        "summary": "From a robot sex freak to a rebellious furry, these are the seven weirdest strangers I've met in GTA 6.",
+        "published_at": "2026-11-20T16:00:00Z",
+        "content_hash": "22da595b7fe62928a2491aa7",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "f5d4224d08f42367d954aa38",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/20/gta-6-weirdos-1795180783178.jpg"
+      },
+      "first_seen": "2026-11-20T23:13:52Z",
+      "needs_eval": true
     }
   },
-  "persisted_at": "2026-11-20T17:19:49Z",
+  "persisted_at": "2026-11-20T23:13:52Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": "2026-11-17T06:01:55Z"
 }

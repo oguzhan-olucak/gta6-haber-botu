@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-20T08:43:06Z",
-    "last_run_at": "2026-11-20T08:43:06Z",
-    "last_successful_fetch_at": "2026-11-20T08:43:06Z",
+    "generated_at": "2026-11-20T17:19:49Z",
+    "last_run_at": "2026-11-20T17:19:49Z",
+    "last_successful_fetch_at": "2026-11-20T17:19:49Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 12,
+    "verified_total": 13,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-20T08:43:06Z"
+        "checked_at": "2026-11-20T17:19:49Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 28,
-        "relevant": 11,
-        "checked_at": "2026-11-20T08:43:06Z"
+        "entries": 26,
+        "relevant": 12,
+        "checked_at": "2026-11-20T17:19:49Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-20T08:43:06Z"
+        "checked_at": "2026-11-20T17:19:49Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 3,
         "relevant": 1,
-        "checked_at": "2026-11-20T08:43:06Z"
+        "checked_at": "2026-11-20T17:19:49Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 15,
-        "checked_at": "2026-11-20T08:43:06Z"
+        "relevant": 14,
+        "checked_at": "2026-11-20T17:19:49Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 42,
-        "checked_at": "2026-11-20T08:43:06Z"
+        "relevant": 48,
+        "checked_at": "2026-11-20T17:19:49Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 23,
-        "checked_at": "2026-11-20T08:43:06Z"
+        "relevant": 22,
+        "checked_at": "2026-11-20T17:19:49Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 32,
-        "checked_at": "2026-11-20T08:43:06Z"
+        "checked_at": "2026-11-20T17:19:49Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 6,
-        "checked_at": "2026-11-20T08:43:06Z"
+        "relevant": 7,
+        "checked_at": "2026-11-20T17:19:49Z"
       },
       {
         "id": "insider_gaming",
@@ -100,7 +100,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 6,
-        "checked_at": "2026-11-20T08:43:06Z"
+        "checked_at": "2026-11-20T17:19:49Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-20T08:43:06Z"
+        "checked_at": "2026-11-20T17:19:49Z"
       }
     ]
   },
   "hero_id": "958d16af30d8216cf54fa8b9",
   "featured_ids": [
     "600de629588b9d43672cdf23",
-    "1fec106c47ba87878a41016b"
+    "c14b2d1443465b4e3a472432"
   ],
   "items": [
+    {
+      "id": "c14b2d1443465b4e3a472432",
+      "title": "Niko Bellic, GTA 6’da yer alacak mı?",
+      "summary": "PC Gamer ve Insider Gaming, GTA 6’da ikonik karakter Niko Bellic’in bulunup bulunmadığını sorguluyor. Her iki yayın da karakterin oyunda yer alıp almayacağı ve hatta bowling gibi aktiviteler yapıp yapamayacağı konusunda spekülasyon yapıyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "QUESTION",
+      "published_at": "2026-11-20T17:19:49Z",
+      "why_this_label": "2 bağımsız yayın: PC Gamer, Insider Gaming",
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "PC Gamer",
+          "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-niko-bellic"
+        },
+        {
+          "name": "Insider Gaming",
+          "url": "https://insider-gaming.com/niko-bellic-gta-6"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/14",
+      "reactions_total": null,
+      "location_id": "grassrivers",
+      "region": "Grassrivers",
+      "image": "https://cdn.mos.cms.futurecdn.net/XFSosWKs2rcaNKExBQ5r7-1024-80.jpg",
+      "image_credit": "PC Gamer",
+      "title_en": "Is Niko Bellic in GTA 6?",
+      "summary_en": "PC Gamer and Insider Gaming both wonder whether the iconic GTA character Niko Bellic will appear in GTA 6. The articles speculate about his possible inclusion and even mention activities such as bowling."
+    },
     {
       "id": "57890459decccd8af6f62271",
       "title": "Sony, PS5 Firmware 14.23 Güncellemesinin GTA 6 İçin Zorunlu Olduğunu Bildirdi",

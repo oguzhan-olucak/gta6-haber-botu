@@ -962,7 +962,7 @@
         "9f37446777dcbbeac2b45092",
         "dab8edee4d6d326ef5f044ca"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -1127,6 +1127,55 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-20T08:43:06Z",
       "message_id": 13
+    },
+    {
+      "content_id": "c14b2d1443465b4e3a472432",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "COMMUNITY_RUMOR",
+      "title_style": "QUESTION",
+      "title_tr": "Niko Bellic, GTA 6’da yer alacak mı?",
+      "summary_tr": "PC Gamer ve Insider Gaming, GTA 6’da ikonik karakter Niko Bellic’in bulunup bulunmadığını sorguluyor. Her iki yayın da karakterin oyunda yer alıp almayacağı ve hatta bowling gibi aktiviteler yapıp yapamayacağı konusunda spekülasyon yapıyor.",
+      "title_en": "Is Niko Bellic in GTA 6?",
+      "summary_en": "PC Gamer and Insider Gaming both wonder whether the iconic GTA character Niko Bellic will appear in GTA 6. The articles speculate about his possible inclusion and even mention activities such as bowling.",
+      "why_this_label": "2 bağımsız yayın: PC Gamer, Insider Gaming",
+      "source_names": {
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-niko-bellic": "PC Gamer",
+        "https://insider-gaming.com/niko-bellic-gta-6": "Insider Gaming"
+      },
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "publish_reason": "2 bağımsız yayın: PC Gamer, Insider Gaming",
+      "independent_origins": [
+        "future_plc",
+        "insider_gaming"
+      ],
+      "source_urls": [
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-niko-bellic",
+        "https://insider-gaming.com/niko-bellic-gta-6"
+      ],
+      "source_titles": [
+        "Is Niko Bellic in GTA 6?",
+        "Is Niko Bellic in GTA 6?"
+      ],
+      "content_hashes": [
+        "8abfb7ea01a337c0f1a22f2f",
+        "8bfd31cdec36082038dd24d6"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/XFSosWKs2rcaNKExBQ5r7-1024-80.jpg",
+      "image_credit": "PC Gamer",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-20T17:19:49Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-20T17:19:49Z",
+      "message_id": 14
     }
   ]
 }

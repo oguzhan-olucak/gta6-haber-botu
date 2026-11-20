@@ -846,7 +846,7 @@
         "560ab9e655a751baf6434589",
         "ee86223755460c00c65de271"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -1025,6 +1025,59 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-19T19:12:11Z",
       "message_id": 11
+    },
+    {
+      "content_id": "1fec106c47ba87878a41016b",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "COMMUNITY_RUMOR",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6’nın tüm görev ve bölümleri listelendi",
+      "summary_tr": "PC Gamer, GamesRadar+ ve Video Games Chronicle, GTA 6’nın görev ve bölümlerine dair bir liste yayınladı. Listede Jason ve Lucia’nın macerasını kapsayan görevler yer alıyor, ancak içerik resmi bir açıklama olmadan derlenmiş.",
+      "title_en": "All GTA 6 missions and chapters listed",
+      "summary_en": "PC Gamer, GamesRadar+ and Video Games Chronicle have published a spoiler‑free list of GTA 6’s missions and chapters. The list follows the story of Jason and Lucia, but it is not based on an official announcement.",
+      "why_this_label": "2 bağımsız yayın: PC Gamer, Video Games Chronicle",
+      "source_names": {
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-mission-list": "PC Gamer",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-mission-list": "GamesRadar+",
+        "https://videogameschronicle.com/guide/gta-6-chapters-and-mission-list-how-many-chapters-in-gta-6-spoiler-free": "Video Games Chronicle"
+      },
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "publish_reason": "2 bağımsız yayın: PC Gamer, Video Games Chronicle",
+      "independent_origins": [
+        "future_plc",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-mission-list",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-mission-list",
+        "https://videogameschronicle.com/guide/gta-6-chapters-and-mission-list-how-many-chapters-in-gta-6-spoiler-free"
+      ],
+      "source_titles": [
+        "Here's every GTA 6 mission and chapter",
+        "Here's every GTA 6 mission and chapter",
+        "GTA 6 Chapters and Mission List: How many chapters in GTA 6? (Spoiler-Free)"
+      ],
+      "content_hashes": [
+        "3af2ec4d258c95548b0dfb01",
+        "3b01f691ec879d5729aafb1d",
+        "c10e8fc0c204768d9ac34814"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/8neHNYHhxRj7aR2GcKDRCV-2560-80.jpg",
+      "image_credit": "PC Gamer",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-20T01:22:13Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-20T01:22:13Z",
+      "message_id": 12
     }
   ]
 }

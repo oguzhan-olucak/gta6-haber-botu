@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-19T19:12:11Z",
-    "last_run_at": "2026-11-19T19:12:11Z",
-    "last_successful_fetch_at": "2026-11-19T19:12:11Z",
+    "generated_at": "2026-11-20T01:22:13Z",
+    "last_run_at": "2026-11-20T01:22:13Z",
+    "last_successful_fetch_at": "2026-11-20T01:22:13Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 10,
+    "verified_total": 11,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-19T19:12:11Z"
+        "checked_at": "2026-11-20T01:22:13Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 29,
+        "entries": 27,
         "relevant": 11,
-        "checked_at": "2026-11-19T19:12:11Z"
+        "checked_at": "2026-11-20T01:22:13Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-19T19:12:11Z"
+        "checked_at": "2026-11-20T01:22:13Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 3,
         "relevant": 1,
-        "checked_at": "2026-11-19T19:12:11Z"
+        "checked_at": "2026-11-20T01:22:13Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 18,
-        "checked_at": "2026-11-19T19:12:11Z"
+        "relevant": 15,
+        "checked_at": "2026-11-20T01:22:13Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 41,
-        "checked_at": "2026-11-19T19:12:11Z"
+        "relevant": 42,
+        "checked_at": "2026-11-20T01:22:13Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 24,
-        "checked_at": "2026-11-19T19:12:11Z"
+        "relevant": 23,
+        "checked_at": "2026-11-20T01:22:13Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 34,
-        "checked_at": "2026-11-19T19:12:11Z"
+        "relevant": 32,
+        "checked_at": "2026-11-20T01:22:13Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 7,
-        "checked_at": "2026-11-19T19:12:11Z"
+        "relevant": 6,
+        "checked_at": "2026-11-20T01:22:13Z"
       },
       {
         "id": "insider_gaming",
@@ -100,7 +100,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 5,
-        "checked_at": "2026-11-19T19:12:11Z"
+        "checked_at": "2026-11-20T01:22:13Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,54 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-19T19:12:11Z"
+        "checked_at": "2026-11-20T01:22:13Z"
       }
     ]
   },
   "hero_id": "958d16af30d8216cf54fa8b9",
   "featured_ids": [
     "600de629588b9d43672cdf23",
-    "9560376f39cf98a1657c0c39"
+    "1fec106c47ba87878a41016b"
   ],
   "items": [
+    {
+      "id": "1fec106c47ba87878a41016b",
+      "title": "GTA 6’nın tüm görev ve bölümleri listelendi",
+      "summary": "PC Gamer, GamesRadar+ ve Video Games Chronicle, GTA 6’nın görev ve bölümlerine dair bir liste yayınladı. Listede Jason ve Lucia’nın macerasını kapsayan görevler yer alıyor, ancak içerik resmi bir açıklama olmadan derlenmiş.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-20T01:22:13Z",
+      "why_this_label": "2 bağımsız yayın: PC Gamer, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "PC Gamer",
+          "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-mission-list"
+        },
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-mission-list"
+        },
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/guide/gta-6-chapters-and-mission-list-how-many-chapters-in-gta-6-spoiler-free"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/12",
+      "reactions_total": null,
+      "location_id": "port_gellhorn",
+      "region": "Port Gellhorn & Ambrosia",
+      "image": "https://cdn.mos.cms.futurecdn.net/8neHNYHhxRj7aR2GcKDRCV-2560-80.jpg",
+      "image_credit": "PC Gamer",
+      "title_en": "All GTA 6 missions and chapters listed",
+      "summary_en": "PC Gamer, GamesRadar+ and Video Games Chronicle have published a spoiler‑free list of GTA 6’s missions and chapters. The list follows the story of Jason and Lucia, but it is not based on an official announcement."
+    },
     {
       "id": "a9190015ee883f2cc2cbd2d0",
       "title": "43 asker, GTA 6 oynamak için yeniden kaydoldu",

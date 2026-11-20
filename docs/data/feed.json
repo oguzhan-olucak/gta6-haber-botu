@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-20T01:22:13Z",
-    "last_run_at": "2026-11-20T01:22:13Z",
-    "last_successful_fetch_at": "2026-11-20T01:22:13Z",
+    "generated_at": "2026-11-20T08:43:06Z",
+    "last_run_at": "2026-11-20T08:43:06Z",
+    "last_successful_fetch_at": "2026-11-20T08:43:06Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 11,
+    "verified_total": 12,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-20T01:22:13Z"
+        "checked_at": "2026-11-20T08:43:06Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 27,
+        "entries": 28,
         "relevant": 11,
-        "checked_at": "2026-11-20T01:22:13Z"
+        "checked_at": "2026-11-20T08:43:06Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-20T01:22:13Z"
+        "checked_at": "2026-11-20T08:43:06Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 3,
         "relevant": 1,
-        "checked_at": "2026-11-20T01:22:13Z"
+        "checked_at": "2026-11-20T08:43:06Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 15,
-        "checked_at": "2026-11-20T01:22:13Z"
+        "checked_at": "2026-11-20T08:43:06Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 42,
-        "checked_at": "2026-11-20T01:22:13Z"
+        "checked_at": "2026-11-20T08:43:06Z"
       },
       {
         "id": "gamesradar",
@@ -73,7 +73,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 23,
-        "checked_at": "2026-11-20T01:22:13Z"
+        "checked_at": "2026-11-20T08:43:06Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 32,
-        "checked_at": "2026-11-20T01:22:13Z"
+        "checked_at": "2026-11-20T08:43:06Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 6,
-        "checked_at": "2026-11-20T01:22:13Z"
+        "checked_at": "2026-11-20T08:43:06Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 5,
-        "checked_at": "2026-11-20T01:22:13Z"
+        "relevant": 6,
+        "checked_at": "2026-11-20T08:43:06Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,7 +109,7 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-20T01:22:13Z"
+        "checked_at": "2026-11-20T08:43:06Z"
       }
     ]
   },
@@ -119,6 +119,40 @@
     "1fec106c47ba87878a41016b"
   ],
   "items": [
+    {
+      "id": "57890459decccd8af6f62271",
+      "title": "Sony, PS5 Firmware 14.23 Güncellemesinin GTA 6 İçin Zorunlu Olduğunu Bildirdi",
+      "summary": "IGN ve PC Gamer, Sony'nin yeni PS5 firmware 14.23 güncellemesinin GTA 6'yı oynamak için gerekli olduğunu sosyal medya üzerinden duyurduğunu bildiriyor. Bu güncellemenin zorunlu olduğu iddia ediliyor ve PS5 kontrolörünün oyunda yeni özellikler sunduğu belirtiliyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "INDUSTRY_BUSINESS",
+      "category_tr": "Analiz",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-20T08:43:06Z",
+      "why_this_label": "2 bağımsız yayın: PC Gamer, IGN",
+      "source_strength": 75,
+      "editorial_priority": 83,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/sony-issues-official-ps5-firmware-update-warning-confirms-gta-6-requirement"
+        },
+        {
+          "name": "PC Gamer",
+          "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-has-the-best-use-of-the-ps5-controller-ive-ever-seen"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/13",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez",
+      "image": "https://assets-prd.ignimgs.com/2025/02/26/ps5console-1740609475402.jpeg?width=1280&format=jpg&auto=webp&quality=80",
+      "image_credit": "IGN",
+      "title_en": "Sony Says PS5 Firmware 14.23 Update Is Required for GTA 6",
+      "summary_en": "IGN and PC Gamer report that Sony announced via social media that the new PS5 firmware 14.23 update is required to play GTA 6. The requirement is claimed to be mandatory, and the PS5 controller is said to offer new features in the game."
+    },
     {
       "id": "1fec106c47ba87878a41016b",
       "title": "GTA 6’nın tüm görev ve bölümleri listelendi",

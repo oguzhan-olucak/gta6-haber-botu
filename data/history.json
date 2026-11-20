@@ -913,7 +913,7 @@
         "ee8b0beebd0ee80f044d5e87",
         "f820165d367eb08c4cb59787"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -1078,6 +1078,55 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-20T01:22:13Z",
       "message_id": 12
+    },
+    {
+      "content_id": "57890459decccd8af6f62271",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "FACTUAL",
+      "title_tr": "Sony, PS5 Firmware 14.23 Güncellemesinin GTA 6 İçin Zorunlu Olduğunu Bildirdi",
+      "summary_tr": "IGN ve PC Gamer, Sony'nin yeni PS5 firmware 14.23 güncellemesinin GTA 6'yı oynamak için gerekli olduğunu sosyal medya üzerinden duyurduğunu bildiriyor. Bu güncellemenin zorunlu olduğu iddia ediliyor ve PS5 kontrolörünün oyunda yeni özellikler sunduğu belirtiliyor.",
+      "title_en": "Sony Says PS5 Firmware 14.23 Update Is Required for GTA 6",
+      "summary_en": "IGN and PC Gamer report that Sony announced via social media that the new PS5 firmware 14.23 update is required to play GTA 6. The requirement is claimed to be mandatory, and the PS5 controller is said to offer new features in the game.",
+      "why_this_label": "2 bağımsız yayın: PC Gamer, IGN",
+      "source_names": {
+        "https://ign.com/articles/sony-issues-official-ps5-firmware-update-warning-confirms-gta-6-requirement": "IGN",
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-has-the-best-use-of-the-ps5-controller-ive-ever-seen": "PC Gamer"
+      },
+      "source_strength": 75,
+      "editorial_priority": 83,
+      "publish_reason": "2 bağımsız yayın: PC Gamer, IGN",
+      "independent_origins": [
+        "future_plc",
+        "ign"
+      ],
+      "source_urls": [
+        "https://ign.com/articles/sony-issues-official-ps5-firmware-update-warning-confirms-gta-6-requirement",
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-has-the-best-use-of-the-ps5-controller-ive-ever-seen"
+      ],
+      "source_titles": [
+        "Sony Issues Official PS5 Firmware Update Warning, Confirms GTA 6 Requirement",
+        "GTA 6 has the best use of the PS5 controller I've ever seen"
+      ],
+      "content_hashes": [
+        "2a88f763887202a33dc16d75",
+        "9fc431537319e315af560e4e"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://assets-prd.ignimgs.com/2025/02/26/ps5console-1740609475402.jpeg?width=1280&format=jpg&auto=webp&quality=80",
+      "image_credit": "IGN",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-20T08:43:06Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-20T08:43:06Z",
+      "message_id": 13
     }
   ]
 }

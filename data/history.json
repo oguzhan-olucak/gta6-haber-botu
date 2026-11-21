@@ -1162,7 +1162,7 @@
         "8abfb7ea01a337c0f1a22f2f",
         "8bfd31cdec36082038dd24d6"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -1484,6 +1484,105 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-21T12:33:46Z",
       "message_id": 17
+    },
+    {
+      "content_id": "bd39d35bb278f74dc7b956ec",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "GAMEPLAY_TECH",
+      "title_style": "QUESTION",
+      "title_tr": "GTA 6 Brooks Boatworks soygununda kasa kodu nerede?",
+      "summary_tr": "Insider Gaming, PC Gamer ve Video Games Chronicle gibi kaynaklar, GTA 6’nın Chapter Two bölümünde yer alan Brooks Boatworks soygununda bulunan kasanın kodunun konumunu ve nasıl bulunacağını açıklıyor. Ancak kodun kesinliği ve doğruluğu resmi olarak teyit edilmemiş.",
+      "title_en": "Where is the safe code in GTA 6’s Brooks Boatworks?",
+      "summary_en": "Sources such as Insider Gaming, PC Gamer and Video Games Chronicle describe how to locate and open the safe in the Brooks Boatworks robbery in GTA 6’s Chapter Two. The exact code has not been officially confirmed.",
+      "why_this_label": "3 bağımsız yayın: PC Gamer, Insider Gaming, Video Games Chronicle",
+      "source_names": {
+        "https://insider-gaming.com/gta-6-brooks-boatworks-location-and-safe-code": "Insider Gaming",
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-brooks-boatworks-safe-code": "PC Gamer",
+        "https://videogameschronicle.com/guide/gta-6-brooks-boatworks-safe-code-and-location-how-to-find-and-open-the-safe": "Video Games Chronicle"
+      },
+      "source_strength": 80,
+      "editorial_priority": 90,
+      "publish_reason": "3 bağımsız yayın: PC Gamer, Insider Gaming, Video Games Chronicle",
+      "independent_origins": [
+        "future_plc",
+        "insider_gaming",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://insider-gaming.com/gta-6-brooks-boatworks-location-and-safe-code",
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-brooks-boatworks-safe-code",
+        "https://videogameschronicle.com/guide/gta-6-brooks-boatworks-safe-code-and-location-how-to-find-and-open-the-safe"
+      ],
+      "source_titles": [
+        "How To Complete Brooks Boatworks in GTA 6—Safe Code Location, Explained",
+        "GTA 6 Brooks Boatworks safe code and location: How to find and open the safe",
+        "How to unlock the Brooks Boatworks safe in GTA 6"
+      ],
+      "content_hashes": [
+        "ab2760a9db4e88ff83fa0cdc",
+        "b85f752da942a9876d80512a",
+        "dca2f114d2f9d9bd951e57f8"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "publish_status": "REVIEW_HELD",
+      "publish_error": "Kanıtın izin vermediği kesinlik ifadesi",
+      "created_at": "2026-11-21T19:48:55Z"
+    },
+    {
+      "content_id": "d193af451d277718f4956f76",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "GAMEPLAY_TECH",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6’da Para Kazanma ve Soygun Tekrarı İpuçları",
+      "summary_tr": "Video Games Chronicle ve Insider Gaming, GTA 6’da para kazanma yöntemleri ve soyunların tekrarlanıp tekrarlanamayacağı konusunda ipuçları sunduğunu bildiriyor. Makalelerde, tekrar edilebilen soyunların daha fazla para kazandırabileceği öne sürülüyor, ancak bu konuda resmi bir teyit bulunmadığı belirtiliyor.",
+      "title_en": "Tips for Earning Money and Repeating Heists in GTA 6",
+      "summary_en": "Video Games Chronicle and Insider Gaming report tips on how to earn money in GTA 6 and whether heists can be repeated. The articles suggest that repeating heists may yield additional cash, but no official confirmation is provided.",
+      "why_this_label": "2 bağımsız yayın: Insider Gaming, Video Games Chronicle",
+      "source_names": {
+        "https://videogameschronicle.com/guide/how-to-make-money-in-gta-6": "Video Games Chronicle",
+        "https://insider-gaming.com/can-you-repeat-robberies-in-gta-6-make-more-money-fast": "Insider Gaming"
+      },
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "publish_reason": "2 bağımsız yayın: Insider Gaming, Video Games Chronicle",
+      "independent_origins": [
+        "insider_gaming",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://videogameschronicle.com/guide/how-to-make-money-in-gta-6",
+        "https://insider-gaming.com/can-you-repeat-robberies-in-gta-6-make-more-money-fast"
+      ],
+      "source_titles": [
+        "How to make money in GTA 6",
+        "Can You Repeat Robberies in GTA 6? Make More Money, Fast"
+      ],
+      "content_hashes": [
+        "a978b107abe3a113f6e5d191",
+        "bac16fff2788bb4e214aa678"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://www.videogameschronicle.com/files/2026/11/How-to-make-money-in-GTA-6-4.jpg",
+      "image_credit": "Video Games Chronicle",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-21T19:48:55Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-21T19:48:55Z",
+      "message_id": 18
     }
   ]
 }

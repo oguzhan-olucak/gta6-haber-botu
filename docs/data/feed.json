@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-21T12:33:46Z",
-    "last_run_at": "2026-11-21T12:33:46Z",
-    "last_successful_fetch_at": "2026-11-21T12:33:46Z",
+    "generated_at": "2026-11-21T19:48:55Z",
+    "last_run_at": "2026-11-21T19:48:55Z",
+    "last_successful_fetch_at": "2026-11-21T19:48:55Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 16,
+    "verified_total": 17,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-21T12:33:46Z"
+        "checked_at": "2026-11-21T19:48:55Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 37,
-        "relevant": 9,
-        "checked_at": "2026-11-21T12:33:46Z"
+        "entries": 31,
+        "relevant": 11,
+        "checked_at": "2026-11-21T19:48:55Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,16 +37,16 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-21T12:33:46Z"
+        "checked_at": "2026-11-21T19:48:55Z"
       },
       {
         "id": "take_two_google_news",
         "name": "Take-Two Interactive",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 5,
+        "entries": 6,
         "relevant": 3,
-        "checked_at": "2026-11-21T12:33:46Z"
+        "checked_at": "2026-11-21T19:48:55Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 16,
-        "checked_at": "2026-11-21T12:33:46Z"
+        "checked_at": "2026-11-21T19:48:55Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 51,
-        "checked_at": "2026-11-21T12:33:46Z"
+        "relevant": 52,
+        "checked_at": "2026-11-21T19:48:55Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 26,
-        "checked_at": "2026-11-21T12:33:46Z"
+        "relevant": 31,
+        "checked_at": "2026-11-21T19:48:55Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 34,
-        "checked_at": "2026-11-21T12:33:46Z"
+        "relevant": 32,
+        "checked_at": "2026-11-21T19:48:55Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 10,
-        "checked_at": "2026-11-21T12:33:46Z"
+        "checked_at": "2026-11-21T19:48:55Z"
       },
       {
         "id": "insider_gaming",
@@ -100,7 +100,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 6,
-        "checked_at": "2026-11-21T12:33:46Z"
+        "checked_at": "2026-11-21T19:48:55Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-21T12:33:46Z"
+        "checked_at": "2026-11-21T19:48:55Z"
       }
     ]
   },
-  "hero_id": "03ad5b45d08f27e9bc24f72b",
+  "hero_id": "d193af451d277718f4956f76",
   "featured_ids": [
-    "1730c5484b4e25d95fa0317f",
-    "c14b2d1443465b4e3a472432"
+    "03ad5b45d08f27e9bc24f72b",
+    "1730c5484b4e25d95fa0317f"
   ],
   "items": [
+    {
+      "id": "d193af451d277718f4956f76",
+      "title": "GTA 6’da Para Kazanma ve Soygun Tekrarı İpuçları",
+      "summary": "Video Games Chronicle ve Insider Gaming, GTA 6’da para kazanma yöntemleri ve soyunların tekrarlanıp tekrarlanamayacağı konusunda ipuçları sunduğunu bildiriyor. Makalelerde, tekrar edilebilen soyunların daha fazla para kazandırabileceği öne sürülüyor, ancak bu konuda resmi bir teyit bulunmadığı belirtiliyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-21T19:48:55Z",
+      "why_this_label": "2 bağımsız yayın: Insider Gaming, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/guide/how-to-make-money-in-gta-6"
+        },
+        {
+          "name": "Insider Gaming",
+          "url": "https://insider-gaming.com/can-you-repeat-robberies-in-gta-6-make-more-money-fast"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/18",
+      "reactions_total": null,
+      "location_id": "leonida_keys",
+      "region": "Leonida Keys",
+      "image": "https://www.videogameschronicle.com/files/2026/11/How-to-make-money-in-GTA-6-4.jpg",
+      "image_credit": "Video Games Chronicle",
+      "title_en": "Tips for Earning Money and Repeating Heists in GTA 6",
+      "summary_en": "Video Games Chronicle and Insider Gaming report tips on how to earn money in GTA 6 and whether heists can be repeated. The articles suggest that repeating heists may yield additional cash, but no official confirmation is provided."
+    },
     {
       "id": "03ad5b45d08f27e9bc24f72b",
       "title": "Xbox, GTA 6 otomatik yüklemelerinde yasaklama yapabilir mi?",

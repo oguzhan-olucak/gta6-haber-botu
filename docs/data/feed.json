@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-20T23:13:52Z",
-    "last_run_at": "2026-11-20T23:13:52Z",
-    "last_successful_fetch_at": "2026-11-20T23:13:52Z",
+    "generated_at": "2026-11-21T04:06:24Z",
+    "last_run_at": "2026-11-21T04:06:24Z",
+    "last_successful_fetch_at": "2026-11-21T04:06:24Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 14,
+    "verified_total": 15,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-20T23:13:52Z"
+        "checked_at": "2026-11-21T04:06:24Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 31,
+        "entries": 33,
         "relevant": 12,
-        "checked_at": "2026-11-20T23:13:52Z"
+        "checked_at": "2026-11-21T04:06:24Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-20T23:13:52Z"
+        "checked_at": "2026-11-21T04:06:24Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 5,
         "relevant": 3,
-        "checked_at": "2026-11-20T23:13:52Z"
+        "checked_at": "2026-11-21T04:06:24Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 16,
-        "checked_at": "2026-11-20T23:13:52Z"
+        "checked_at": "2026-11-21T04:06:24Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 50,
-        "checked_at": "2026-11-20T23:13:52Z"
+        "checked_at": "2026-11-21T04:06:24Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 25,
-        "checked_at": "2026-11-20T23:13:52Z"
+        "relevant": 24,
+        "checked_at": "2026-11-21T04:06:24Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 33,
-        "checked_at": "2026-11-20T23:13:52Z"
+        "relevant": 34,
+        "checked_at": "2026-11-21T04:06:24Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 9,
-        "checked_at": "2026-11-20T23:13:52Z"
+        "relevant": 10,
+        "checked_at": "2026-11-21T04:06:24Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 6,
-        "checked_at": "2026-11-20T23:13:52Z"
+        "relevant": 7,
+        "checked_at": "2026-11-21T04:06:24Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-20T23:13:52Z"
+        "checked_at": "2026-11-21T04:06:24Z"
       }
     ]
   },
-  "hero_id": "958d16af30d8216cf54fa8b9",
+  "hero_id": "600de629588b9d43672cdf23",
   "featured_ids": [
-    "600de629588b9d43672cdf23",
-    "1730c5484b4e25d95fa0317f"
+    "1730c5484b4e25d95fa0317f",
+    "c14b2d1443465b4e3a472432"
   ],
   "items": [
+    {
+      "id": "5a6bbaa0b2ba5d8fd00e03f0",
+      "title": "GTA 6'da Kingpin Bowling Alley Kasasının Kodu Nasıl Bulunur?",
+      "summary": "GamesRadar+ ve Video Games Chronicle, GTA 6'da Kingpin Bowling Alley adlı mekânda bulunan kasanın kodunun oyunun içinde bulunabileceğini ve bu kodun kasayı açmanın en kolay yolu olduğunu bildiriyor. Ancak kodun tam içeriği ve elde edilme yöntemi hakkında detaylar paylaşılmadı.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "CURIOSITY",
+      "published_at": "2026-11-21T04:06:24Z",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 85,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-bowling-alley-safe-code"
+        },
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/guide/how-to-open-the-gta-6-kingpin-bowling-alley-safe"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/16",
+      "reactions_total": null,
+      "location_id": "leonida_keys",
+      "region": "Leonida Keys",
+      "image": "https://cdn.mos.cms.futurecdn.net/oWf9Vr4xgqVdXE6tRFencG-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "title_en": "How to Find the Kingpin Bowling Alley Safe Code in GTA 6",
+      "summary_en": "GamesRadar+ and Video Games Chronicle report that the safe in GTA 6’s Kingpin Bowling Alley can be opened by finding a code, which they claim is the easiest way to access the safe. The exact code and how to obtain it are not disclosed."
+    },
     {
       "id": "1730c5484b4e25d95fa0317f",
       "title": "Florida Joker Olarak Bilinen Lawrence Sullivan'ın GTA 6'da Yer Aldığı Bildirildi",

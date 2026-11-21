@@ -1064,7 +1064,7 @@
         "3b01f691ec879d5729aafb1d",
         "c10e8fc0c204768d9ac34814"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -1386,6 +1386,55 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-20T23:13:52Z",
       "message_id": 15
+    },
+    {
+      "content_id": "5a6bbaa0b2ba5d8fd00e03f0",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "GAMEPLAY_TECH",
+      "title_style": "CURIOSITY",
+      "title_tr": "GTA 6'da Kingpin Bowling Alley Kasasının Kodu Nasıl Bulunur?",
+      "summary_tr": "GamesRadar+ ve Video Games Chronicle, GTA 6'da Kingpin Bowling Alley adlı mekânda bulunan kasanın kodunun oyunun içinde bulunabileceğini ve bu kodun kasayı açmanın en kolay yolu olduğunu bildiriyor. Ancak kodun tam içeriği ve elde edilme yöntemi hakkında detaylar paylaşılmadı.",
+      "title_en": "How to Find the Kingpin Bowling Alley Safe Code in GTA 6",
+      "summary_en": "GamesRadar+ and Video Games Chronicle report that the safe in GTA 6’s Kingpin Bowling Alley can be opened by finding a code, which they claim is the easiest way to access the safe. The exact code and how to obtain it are not disclosed.",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, Video Games Chronicle",
+      "source_names": {
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-bowling-alley-safe-code": "GamesRadar+",
+        "https://videogameschronicle.com/guide/how-to-open-the-gta-6-kingpin-bowling-alley-safe": "Video Games Chronicle"
+      },
+      "source_strength": 75,
+      "editorial_priority": 85,
+      "publish_reason": "2 bağımsız yayın: GamesRadar+, Video Games Chronicle",
+      "independent_origins": [
+        "future_plc",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-bowling-alley-safe-code",
+        "https://videogameschronicle.com/guide/how-to-open-the-gta-6-kingpin-bowling-alley-safe"
+      ],
+      "source_titles": [
+        "GTA 6 Bowling Alley safe code",
+        "How to open the GTA 6 Kingpin Bowling Alley safe"
+      ],
+      "content_hashes": [
+        "0016e06ed54d1454e3544ad0",
+        "425376f04fd1a3f5f9f2ac65"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/oWf9Vr4xgqVdXE6tRFencG-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-21T04:06:24Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-21T04:06:24Z",
+      "message_id": 16
     }
   ]
 }

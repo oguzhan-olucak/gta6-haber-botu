@@ -1113,7 +1113,7 @@
         "2a88f763887202a33dc16d75",
         "9fc431537319e315af560e4e"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -1435,6 +1435,55 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-21T04:06:24Z",
       "message_id": 16
+    },
+    {
+      "content_id": "03ad5b45d08f27e9bc24f72b",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "QUESTION",
+      "title_tr": "Xbox, GTA 6 otomatik yüklemelerinde yasaklama yapabilir mi?",
+      "summary_tr": "İki ayrı haber, Xbox Network’te GTA 6 kliplerinin otomatik olarak yüklenmesinin cinsellik ve çıplaklık içermesi durumunda hesabın yasaklanabileceğini bildiriyor. Ancak bu konuda resmi bir açıklama bulunmadığı belirtiliyor.",
+      "title_en": "Can Xbox Ban You for GTA 6 Auto-Uploads?",
+      "summary_en": "Two separate outlets report that automatically uploading GTA 6 clips containing sex or nudity to the Xbox Network could result in a ban, though no official statement confirming this policy has been released. The reports suggest the risk exists but the details remain unclear.",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, Insider Gaming",
+      "source_names": {
+        "https://insider-gaming.com/gta-6-xbox-auto-upload-ban-explained": "Insider Gaming",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-xbox-auto-uploads": "GamesRadar+"
+      },
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "publish_reason": "2 bağımsız yayın: GamesRadar+, Insider Gaming",
+      "independent_origins": [
+        "future_plc",
+        "insider_gaming"
+      ],
+      "source_urls": [
+        "https://insider-gaming.com/gta-6-xbox-auto-upload-ban-explained",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-xbox-auto-uploads"
+      ],
+      "source_titles": [
+        "How to turn off GTA 6 auto uploads on Xbox",
+        "GTA 6 Auto Upload Bans—Can Sex and Nudity Get You Banned From XBOX?"
+      ],
+      "content_hashes": [
+        "48edddfccdac7fde44c12c1e",
+        "50e0b31e5eddd689c6112e85"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://insider-gaming.com/wp-content/uploads/2026/11/5fbbc6e9-9cc5-4916-a556-09a66777da83-1-1024x576.png",
+      "image_credit": "Insider Gaming",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-21T12:33:46Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-21T12:33:46Z",
+      "message_id": 17
     }
   ]
 }

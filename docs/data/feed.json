@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-21T04:06:24Z",
-    "last_run_at": "2026-11-21T04:06:24Z",
-    "last_successful_fetch_at": "2026-11-21T04:06:24Z",
+    "generated_at": "2026-11-21T12:33:46Z",
+    "last_run_at": "2026-11-21T12:33:46Z",
+    "last_successful_fetch_at": "2026-11-21T12:33:46Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 15,
+    "verified_total": 16,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-21T04:06:24Z"
+        "checked_at": "2026-11-21T12:33:46Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 33,
-        "relevant": 12,
-        "checked_at": "2026-11-21T04:06:24Z"
+        "entries": 37,
+        "relevant": 9,
+        "checked_at": "2026-11-21T12:33:46Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-21T04:06:24Z"
+        "checked_at": "2026-11-21T12:33:46Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 5,
         "relevant": 3,
-        "checked_at": "2026-11-21T04:06:24Z"
+        "checked_at": "2026-11-21T12:33:46Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 16,
-        "checked_at": "2026-11-21T04:06:24Z"
+        "checked_at": "2026-11-21T12:33:46Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 50,
-        "checked_at": "2026-11-21T04:06:24Z"
+        "relevant": 51,
+        "checked_at": "2026-11-21T12:33:46Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 24,
-        "checked_at": "2026-11-21T04:06:24Z"
+        "relevant": 26,
+        "checked_at": "2026-11-21T12:33:46Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 34,
-        "checked_at": "2026-11-21T04:06:24Z"
+        "checked_at": "2026-11-21T12:33:46Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 10,
-        "checked_at": "2026-11-21T04:06:24Z"
+        "checked_at": "2026-11-21T12:33:46Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 7,
-        "checked_at": "2026-11-21T04:06:24Z"
+        "relevant": 6,
+        "checked_at": "2026-11-21T12:33:46Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-21T04:06:24Z"
+        "checked_at": "2026-11-21T12:33:46Z"
       }
     ]
   },
-  "hero_id": "600de629588b9d43672cdf23",
+  "hero_id": "03ad5b45d08f27e9bc24f72b",
   "featured_ids": [
     "1730c5484b4e25d95fa0317f",
     "c14b2d1443465b4e3a472432"
   ],
   "items": [
+    {
+      "id": "03ad5b45d08f27e9bc24f72b",
+      "title": "Xbox, GTA 6 otomatik yüklemelerinde yasaklama yapabilir mi?",
+      "summary": "İki ayrı haber, Xbox Network’te GTA 6 kliplerinin otomatik olarak yüklenmesinin cinsellik ve çıplaklık içermesi durumunda hesabın yasaklanabileceğini bildiriyor. Ancak bu konuda resmi bir açıklama bulunmadığı belirtiliyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "INDUSTRY_BUSINESS",
+      "category_tr": "Analiz",
+      "title_style": "QUESTION",
+      "published_at": "2026-11-21T12:33:46Z",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, Insider Gaming",
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "Insider Gaming",
+          "url": "https://insider-gaming.com/gta-6-xbox-auto-upload-ban-explained"
+        },
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-xbox-auto-uploads"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/17",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez",
+      "image": "https://insider-gaming.com/wp-content/uploads/2026/11/5fbbc6e9-9cc5-4916-a556-09a66777da83-1-1024x576.png",
+      "image_credit": "Insider Gaming",
+      "title_en": "Can Xbox Ban You for GTA 6 Auto-Uploads?",
+      "summary_en": "Two separate outlets report that automatically uploading GTA 6 clips containing sex or nudity to the Xbox Network could result in a ban, though no official statement confirming this policy has been released. The reports suggest the risk exists but the details remain unclear."
+    },
     {
       "id": "5a6bbaa0b2ba5d8fd00e03f0",
       "title": "GTA 6'da Kingpin Bowling Alley Kasasının Kodu Nasıl Bulunur?",

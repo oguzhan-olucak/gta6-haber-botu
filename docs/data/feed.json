@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-22T00:16:15Z",
-    "last_run_at": "2026-11-22T00:16:15Z",
-    "last_successful_fetch_at": "2026-11-22T00:16:15Z",
+    "generated_at": "2026-11-22T07:10:11Z",
+    "last_run_at": "2026-11-22T07:10:11Z",
+    "last_successful_fetch_at": "2026-11-22T07:10:11Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 18,
+    "verified_total": 19,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-22T00:16:15Z"
+        "checked_at": "2026-11-22T07:10:11Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 33,
-        "relevant": 11,
-        "checked_at": "2026-11-22T00:16:15Z"
+        "entries": 34,
+        "relevant": 10,
+        "checked_at": "2026-11-22T07:10:11Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-22T00:16:15Z"
+        "checked_at": "2026-11-22T07:10:11Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 6,
         "relevant": 3,
-        "checked_at": "2026-11-22T00:16:15Z"
+        "checked_at": "2026-11-22T07:10:11Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 15,
-        "checked_at": "2026-11-22T00:16:15Z"
+        "relevant": 14,
+        "checked_at": "2026-11-22T07:10:11Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 52,
-        "checked_at": "2026-11-22T00:16:15Z"
+        "checked_at": "2026-11-22T07:10:11Z"
       },
       {
         "id": "gamesradar",
@@ -73,7 +73,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 31,
-        "checked_at": "2026-11-22T00:16:15Z"
+        "checked_at": "2026-11-22T07:10:11Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 32,
-        "checked_at": "2026-11-22T00:16:15Z"
+        "relevant": 31,
+        "checked_at": "2026-11-22T07:10:11Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 10,
-        "checked_at": "2026-11-22T00:16:15Z"
+        "checked_at": "2026-11-22T07:10:11Z"
       },
       {
         "id": "insider_gaming",
@@ -100,7 +100,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 8,
-        "checked_at": "2026-11-22T00:16:15Z"
+        "checked_at": "2026-11-22T07:10:11Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,7 +109,7 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-22T00:16:15Z"
+        "checked_at": "2026-11-22T07:10:11Z"
       }
     ]
   },
@@ -119,6 +119,44 @@
     "1730c5484b4e25d95fa0317f"
   ],
   "items": [
+    {
+      "id": "57af9b76aa4fc174c4cf4ec7",
+      "title": "GTA 6 Avery Piyon Dükkanı Kasasının Şifresi Nasıl Bulunur",
+      "summary": "GamesRadar+, PC Gamer ve Video Games Chronicle gibi birkaç güvenilir medya, GTA 6'da Avery Piyon Dükkanı'ndaki kasanın şifresini bulmak için izlenebilecek adımları paylaştı. Kaynaklar, görevin \"Hit Avery Pawn\" adlı bölümde gerçekleştiğini ve belirli ipuçlarını takip ederek güvenliğin açılabileceğini belirtiyor. Ancak bu bilgiler resmi bir açıklama olmaktan ziyade topluluk rehberleri olarak sunuluyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-22T07:10:11Z",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 82,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-pawn-shop-safe-code"
+        },
+        {
+          "name": "PC Gamer",
+          "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-pawn-shop-safe-code"
+        },
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/guide/gta-6-avery-pawn-shop-safe-code-how-to-find-and-open-the-safe"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/20",
+      "reactions_total": null,
+      "location_id": "leonida_keys",
+      "region": "Leonida Keys",
+      "image": "https://cdn.mos.cms.futurecdn.net/LKyCmnN6THXp5mPVGr7rGg-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "title_en": "How to Find the Avery Pawn Shop Safe Code in GTA 6",
+      "summary_en": "Several reputable outlets such as GamesRadar+, PC Gamer and Video Games Chronicle have shared steps to locate the safe code in GTA 6's Avery Pawn Shop. They note that the task occurs in the \"Hit Avery Pawn\" mission and can be solved by following specific clues. However, this information is presented as a community guide rather than an official announcement."
+    },
     {
       "id": "09b86bf51d462add46eeba80",
       "title": "PS5'te GTA 6'ya CE-108255-1 hatası rapor edildi",

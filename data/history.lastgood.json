@@ -1421,7 +1421,7 @@
         "0016e06ed54d1454e3544ad0",
         "425376f04fd1a3f5f9f2ac65"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -1632,6 +1632,59 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-22T00:16:15Z",
       "message_id": 19
+    },
+    {
+      "content_id": "57af9b76aa4fc174c4cf4ec7",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "GAMEPLAY_TECH",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6 Avery Piyon Dükkanı Kasasının Şifresi Nasıl Bulunur",
+      "summary_tr": "GamesRadar+, PC Gamer ve Video Games Chronicle gibi birkaç güvenilir medya, GTA 6'da Avery Piyon Dükkanı'ndaki kasanın şifresini bulmak için izlenebilecek adımları paylaştı. Kaynaklar, görevin \"Hit Avery Pawn\" adlı bölümde gerçekleştiğini ve belirli ipuçlarını takip ederek güvenliğin açılabileceğini belirtiyor. Ancak bu bilgiler resmi bir açıklama olmaktan ziyade topluluk rehberleri olarak sunuluyor.",
+      "title_en": "How to Find the Avery Pawn Shop Safe Code in GTA 6",
+      "summary_en": "Several reputable outlets such as GamesRadar+, PC Gamer and Video Games Chronicle have shared steps to locate the safe code in GTA 6's Avery Pawn Shop. They note that the task occurs in the \"Hit Avery Pawn\" mission and can be solved by following specific clues. However, this information is presented as a community guide rather than an official announcement.",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, Video Games Chronicle",
+      "source_names": {
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-pawn-shop-safe-code": "GamesRadar+",
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-pawn-shop-safe-code": "PC Gamer",
+        "https://videogameschronicle.com/guide/gta-6-avery-pawn-shop-safe-code-how-to-find-and-open-the-safe": "Video Games Chronicle"
+      },
+      "source_strength": 75,
+      "editorial_priority": 82,
+      "publish_reason": "2 bağımsız yayın: GamesRadar+, Video Games Chronicle",
+      "independent_origins": [
+        "future_plc",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-pawn-shop-safe-code",
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-pawn-shop-safe-code",
+        "https://videogameschronicle.com/guide/gta-6-avery-pawn-shop-safe-code-how-to-find-and-open-the-safe"
+      ],
+      "source_titles": [
+        "How to find the Avery Pawn Shop safe code in GTA 6",
+        "GTA 6 Pawn Shop safe code",
+        "GTA 6 Avery Pawn Shop Safe Code: How to Find and Open the Safe"
+      ],
+      "content_hashes": [
+        "3732a3b9ddede30c9eadd09f",
+        "9adafe859750587153d10336",
+        "d78c1184d5e37c3f504e3896"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/LKyCmnN6THXp5mPVGr7rGg-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-22T07:10:11Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-22T07:10:11Z",
+      "message_id": 20
     }
   ]
 }

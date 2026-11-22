@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-21T19:48:55Z",
-    "last_run_at": "2026-11-21T19:48:55Z",
-    "last_successful_fetch_at": "2026-11-21T19:48:55Z",
+    "generated_at": "2026-11-22T00:16:15Z",
+    "last_run_at": "2026-11-22T00:16:15Z",
+    "last_successful_fetch_at": "2026-11-22T00:16:15Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 17,
+    "verified_total": 18,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-21T19:48:55Z"
+        "checked_at": "2026-11-22T00:16:15Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 31,
+        "entries": 33,
         "relevant": 11,
-        "checked_at": "2026-11-21T19:48:55Z"
+        "checked_at": "2026-11-22T00:16:15Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-21T19:48:55Z"
+        "checked_at": "2026-11-22T00:16:15Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 6,
         "relevant": 3,
-        "checked_at": "2026-11-21T19:48:55Z"
+        "checked_at": "2026-11-22T00:16:15Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 16,
-        "checked_at": "2026-11-21T19:48:55Z"
+        "relevant": 15,
+        "checked_at": "2026-11-22T00:16:15Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 52,
-        "checked_at": "2026-11-21T19:48:55Z"
+        "checked_at": "2026-11-22T00:16:15Z"
       },
       {
         "id": "gamesradar",
@@ -73,7 +73,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 31,
-        "checked_at": "2026-11-21T19:48:55Z"
+        "checked_at": "2026-11-22T00:16:15Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 32,
-        "checked_at": "2026-11-21T19:48:55Z"
+        "checked_at": "2026-11-22T00:16:15Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 10,
-        "checked_at": "2026-11-21T19:48:55Z"
+        "checked_at": "2026-11-22T00:16:15Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 6,
-        "checked_at": "2026-11-21T19:48:55Z"
+        "relevant": 8,
+        "checked_at": "2026-11-22T00:16:15Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,7 +109,7 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-21T19:48:55Z"
+        "checked_at": "2026-11-22T00:16:15Z"
       }
     ]
   },
@@ -119,6 +119,40 @@
     "1730c5484b4e25d95fa0317f"
   ],
   "items": [
+    {
+      "id": "09b86bf51d462add46eeba80",
+      "title": "PS5'te GTA 6'ya CE-108255-1 hatası rapor edildi",
+      "summary": "PlayStation 5 kullanıcıları, GTA 6 oynarken CE-108255-1 kodlu bir hatanın sık sık çöküşlere yol açtığını bildiriyor. Bu sorun oyunun hikaye ilerlemesini engelliyor ve hem Rockstar hem de Sony'dan henüz bir çözüm bekleniyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-22T00:16:15Z",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, IGN",
+      "source_strength": 75,
+      "editorial_priority": 88,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/ps5-error-ce-108255-1-is-ruining-gta-6-for-some-players-and-rockstar-and-sony-arent-very-helpful-try-updating-your-game"
+        },
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/gta-6-players-report-crashes-on-ps5-with-error-ce-108255-1"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/19",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez",
+      "image": "https://cdn.mos.cms.futurecdn.net/7GMWduYvHNCyQpEDcNjMch-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "title_en": "PS5 error CE-108255-1 reported in GTA 6",
+      "summary_en": "PlayStation 5 users report that error code CE-108255-1 frequently causes crashes in GTA 6, hindering story progression. The issue remains unresolved, with both Rockstar and Sony yet to provide a fix."
+    },
     {
       "id": "d193af451d277718f4956f76",
       "title": "GTA 6’da Para Kazanma ve Soygun Tekrarı İpuçları",

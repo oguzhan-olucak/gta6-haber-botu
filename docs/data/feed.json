@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-22T07:10:11Z",
-    "last_run_at": "2026-11-22T07:10:11Z",
-    "last_successful_fetch_at": "2026-11-22T07:10:11Z",
+    "generated_at": "2026-11-22T15:29:14Z",
+    "last_run_at": "2026-11-22T15:29:14Z",
+    "last_successful_fetch_at": "2026-11-22T15:29:14Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 19,
+    "verified_total": 20,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-22T07:10:11Z"
+        "checked_at": "2026-11-22T15:29:14Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 34,
+        "entries": 32,
         "relevant": 10,
-        "checked_at": "2026-11-22T07:10:11Z"
+        "checked_at": "2026-11-22T15:29:14Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-22T07:10:11Z"
+        "checked_at": "2026-11-22T15:29:14Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 6,
         "relevant": 3,
-        "checked_at": "2026-11-22T07:10:11Z"
+        "checked_at": "2026-11-22T15:29:14Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 14,
-        "checked_at": "2026-11-22T07:10:11Z"
+        "relevant": 13,
+        "checked_at": "2026-11-22T15:29:14Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 52,
-        "checked_at": "2026-11-22T07:10:11Z"
+        "relevant": 54,
+        "checked_at": "2026-11-22T15:29:14Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 31,
-        "checked_at": "2026-11-22T07:10:11Z"
+        "relevant": 33,
+        "checked_at": "2026-11-22T15:29:14Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 31,
-        "checked_at": "2026-11-22T07:10:11Z"
+        "checked_at": "2026-11-22T15:29:14Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 10,
-        "checked_at": "2026-11-22T07:10:11Z"
+        "checked_at": "2026-11-22T15:29:14Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 8,
-        "checked_at": "2026-11-22T07:10:11Z"
+        "relevant": 5,
+        "checked_at": "2026-11-22T15:29:14Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,7 +109,7 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-22T07:10:11Z"
+        "checked_at": "2026-11-22T15:29:14Z"
       }
     ]
   },
@@ -119,6 +119,40 @@
     "1730c5484b4e25d95fa0317f"
   ],
   "items": [
+    {
+      "id": "e10a9f1bbc3beccb5abb9f6f",
+      "title": "GTA 6'da Bahçe Güreşi Nasıl Bulunur?",
+      "summary": "Video Games Chronicle ve Insider Gaming, GTA 6'da bahçe güreşi etkinliğinin bulunduğunu ve bu etkinlikte The Gentrifier adlı rakibi yenerek Luchador maskesi elde edilebileceğini bildiriyor. Ancak bu bilgiler resmi bir açıklama olmadan, oyun içinde keşfedilen bir içerik olarak aktarılıyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "QUESTION",
+      "published_at": "2026-11-22T15:29:14Z",
+      "why_this_label": "2 bağımsız yayın: Insider Gaming, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 88,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/guide/gta-6-wrestling-how-to-become-a-backyard-wrestler-in-gta-6"
+        },
+        {
+          "name": "Insider Gaming",
+          "url": "https://insider-gaming.com/backyard-wrestling-gta-6"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/21",
+      "reactions_total": null,
+      "location_id": "leonida_keys",
+      "region": "Leonida Keys",
+      "image": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Backyard-Wrestling-6.jpg",
+      "image_credit": "Video Games Chronicle",
+      "title_en": "How to Find Backyard Wrestling in GTA 6",
+      "summary_en": "Video Games Chronicle and Insider Gaming report that GTA 6 includes a backyard wrestling activity, and that defeating the opponent known as The Gentrifier yields a Luchador mask. These details are presented without an official announcement, suggesting they stem from in‑game discovery."
+    },
     {
       "id": "57af9b76aa4fc174c4cf4ec7",
       "title": "GTA 6 Avery Piyon Dükkanı Kasasının Şifresi Nasıl Bulunur",

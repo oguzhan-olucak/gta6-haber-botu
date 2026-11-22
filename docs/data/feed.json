@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-22T15:29:14Z",
-    "last_run_at": "2026-11-22T15:29:14Z",
-    "last_successful_fetch_at": "2026-11-22T15:29:14Z",
+    "generated_at": "2026-11-22T21:17:26Z",
+    "last_run_at": "2026-11-22T21:17:26Z",
+    "last_successful_fetch_at": "2026-11-22T21:17:26Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 20,
+    "verified_total": 21,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-22T15:29:14Z"
+        "checked_at": "2026-11-22T21:17:26Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 32,
-        "relevant": 10,
-        "checked_at": "2026-11-22T15:29:14Z"
+        "entries": 34,
+        "relevant": 9,
+        "checked_at": "2026-11-22T21:17:26Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,16 +37,16 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-22T15:29:14Z"
+        "checked_at": "2026-11-22T21:17:26Z"
       },
       {
         "id": "take_two_google_news",
         "name": "Take-Two Interactive",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 6,
+        "entries": 7,
         "relevant": 3,
-        "checked_at": "2026-11-22T15:29:14Z"
+        "checked_at": "2026-11-22T21:17:26Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 13,
-        "checked_at": "2026-11-22T15:29:14Z"
+        "relevant": 12,
+        "checked_at": "2026-11-22T21:17:26Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 54,
-        "checked_at": "2026-11-22T15:29:14Z"
+        "relevant": 55,
+        "checked_at": "2026-11-22T21:17:26Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 33,
-        "checked_at": "2026-11-22T15:29:14Z"
+        "relevant": 36,
+        "checked_at": "2026-11-22T21:17:26Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 31,
-        "checked_at": "2026-11-22T15:29:14Z"
+        "relevant": 32,
+        "checked_at": "2026-11-22T21:17:26Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 10,
-        "checked_at": "2026-11-22T15:29:14Z"
+        "checked_at": "2026-11-22T21:17:26Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 5,
-        "checked_at": "2026-11-22T15:29:14Z"
+        "relevant": 6,
+        "checked_at": "2026-11-22T21:17:26Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-22T15:29:14Z"
+        "checked_at": "2026-11-22T21:17:26Z"
       }
     ]
   },
-  "hero_id": "d193af451d277718f4956f76",
+  "hero_id": "516bb94f6177d496ce8d607b",
   "featured_ids": [
-    "03ad5b45d08f27e9bc24f72b",
-    "1730c5484b4e25d95fa0317f"
+    "d193af451d277718f4956f76",
+    "03ad5b45d08f27e9bc24f72b"
   ],
   "items": [
+    {
+      "id": "516bb94f6177d496ce8d607b",
+      "title": "Arthur Morgan’ın Şapkası GTA 6’da Nerede?",
+      "summary": "GamesRadar+ ve Video Games Chronicle, Arthur Morgan’ın gerçek kovboy şapkasının GTA 6’da bir bahçe satışında bulunabileceğini bildiriyor. Ancak bu bilgi resmi bir açıklama olmadan söylendiği için kesinliği belirsiz.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "CURIOSITY",
+      "published_at": "2026-11-22T21:17:26Z",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-arthur-morgans-hat"
+        },
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/guide/gta-6-arthur-morgan-hat-location"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/22",
+      "reactions_total": null,
+      "location_id": "grassrivers",
+      "region": "Grassrivers",
+      "image": "https://cdn.mos.cms.futurecdn.net/aQWDkgBrh8tKTurLixHgC5-2560-80.jpg",
+      "image_credit": "GamesRadar+",
+      "title_en": "Where is Arthur Morgan’s Hat in GTA 6?",
+      "summary_en": "GamesRadar+ and Video Games Chronicle claim that Arthur Morgan’s authentic cowboy hat can be found at a yard sale in GTA 6. Since there is no official announcement, the claim remains uncertain."
+    },
     {
       "id": "e10a9f1bbc3beccb5abb9f6f",
       "title": "GTA 6'da Bahçe Güreşi Nasıl Bulunur?",

@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-23T10:40:02Z",
-    "last_run_at": "2026-11-23T10:40:02Z",
-    "last_successful_fetch_at": "2026-11-23T10:40:02Z",
+    "generated_at": "2026-11-23T22:15:00Z",
+    "last_run_at": "2026-11-23T22:15:00Z",
+    "last_successful_fetch_at": "2026-11-23T22:15:00Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 23,
+    "verified_total": 24,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-23T10:40:02Z"
+        "checked_at": "2026-11-23T22:15:00Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 31,
-        "relevant": 8,
-        "checked_at": "2026-11-23T10:40:02Z"
+        "entries": 34,
+        "relevant": 7,
+        "checked_at": "2026-11-23T22:15:00Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,16 +37,16 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-23T10:40:02Z"
+        "checked_at": "2026-11-23T22:15:00Z"
       },
       {
         "id": "take_two_google_news",
         "name": "Take-Two Interactive",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 7,
+        "entries": 6,
         "relevant": 3,
-        "checked_at": "2026-11-23T10:40:02Z"
+        "checked_at": "2026-11-23T22:15:00Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 13,
-        "checked_at": "2026-11-23T10:40:02Z"
+        "relevant": 15,
+        "checked_at": "2026-11-23T22:15:00Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 55,
-        "checked_at": "2026-11-23T10:40:02Z"
+        "relevant": 57,
+        "checked_at": "2026-11-23T22:15:00Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 36,
-        "checked_at": "2026-11-23T10:40:02Z"
+        "relevant": 20,
+        "checked_at": "2026-11-23T22:15:00Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 30,
-        "checked_at": "2026-11-23T10:40:02Z"
+        "checked_at": "2026-11-23T22:15:00Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 9,
-        "checked_at": "2026-11-23T10:40:02Z"
+        "relevant": 8,
+        "checked_at": "2026-11-23T22:15:00Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 4,
-        "checked_at": "2026-11-23T10:40:02Z"
+        "relevant": 7,
+        "checked_at": "2026-11-23T22:15:00Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,54 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-23T10:40:02Z"
+        "checked_at": "2026-11-23T22:15:00Z"
       }
     ]
   },
-  "hero_id": "516bb94f6177d496ce8d607b",
+  "hero_id": "c15feda560e4400eaf885b2f",
   "featured_ids": [
-    "d193af451d277718f4956f76",
-    "03ad5b45d08f27e9bc24f72b"
+    "516bb94f6177d496ce8d607b",
+    "e10a9f1bbc3beccb5abb9f6f"
   ],
   "items": [
+    {
+      "id": "c15feda560e4400eaf885b2f",
+      "title": "GTA 6'da Key Cloner Nasıl Edinilir?",
+      "summary": "GamesRadar+, IGN ve Insider Gaming, GTA 6'da pahalı araçları çalmak için gerekli olduğu söylenen Key Cloner aracının nasıl temin edilebileceğini açıklıyor. Ancak bu bilgiler resmi bir açıklama olmadan sızdırılmış gibi görünüyor ve doğruluğu kesin değil.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-23T22:15:00Z",
+      "why_this_label": "3 bağımsız yayın: GamesRadar+, IGN, Insider Gaming",
+      "source_strength": 80,
+      "editorial_priority": 91,
+      "independent_origins": 3,
+      "sources": [
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-key-cloner-how-to-get"
+        },
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/key-cloner-gta-6"
+        },
+        {
+          "name": "Insider Gaming",
+          "url": "https://insider-gaming.com/how-to-get-key-cloner-gta-6-advanced-trackers"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/25",
+      "reactions_total": null,
+      "location_id": "leonida_keys",
+      "region": "Leonida Keys",
+      "image": "https://cdn.mos.cms.futurecdn.net/DAQCUviKWBZyfkaQ7rtC2Z-2560-80.jpg",
+      "image_credit": "GamesRadar+",
+      "title_en": null,
+      "summary_en": null
+    },
     {
       "id": "e60eab828d72bb1222d34608",
       "title": "GTA 6'da George R.R. Martin’e iki gönderme olduğu iddia ediliyor",

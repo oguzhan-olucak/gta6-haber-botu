@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-22T21:17:26Z",
-    "last_run_at": "2026-11-22T21:17:26Z",
-    "last_successful_fetch_at": "2026-11-22T21:17:26Z",
+    "generated_at": "2026-11-23T01:51:49Z",
+    "last_run_at": "2026-11-23T01:51:49Z",
+    "last_successful_fetch_at": "2026-11-23T01:51:49Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 21,
+    "verified_total": 22,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,7 +19,7 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-22T21:17:26Z"
+        "checked_at": "2026-11-23T01:51:49Z"
       },
       {
         "id": "rockstar_google_news",
@@ -28,7 +28,7 @@
         "state": "ok",
         "entries": 34,
         "relevant": 9,
-        "checked_at": "2026-11-22T21:17:26Z"
+        "checked_at": "2026-11-23T01:51:49Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-22T21:17:26Z"
+        "checked_at": "2026-11-23T01:51:49Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 7,
         "relevant": 3,
-        "checked_at": "2026-11-22T21:17:26Z"
+        "checked_at": "2026-11-23T01:51:49Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 12,
-        "checked_at": "2026-11-22T21:17:26Z"
+        "checked_at": "2026-11-23T01:51:49Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 55,
-        "checked_at": "2026-11-22T21:17:26Z"
+        "checked_at": "2026-11-23T01:51:49Z"
       },
       {
         "id": "gamesradar",
@@ -73,7 +73,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 36,
-        "checked_at": "2026-11-22T21:17:26Z"
+        "checked_at": "2026-11-23T01:51:49Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 32,
-        "checked_at": "2026-11-22T21:17:26Z"
+        "relevant": 30,
+        "checked_at": "2026-11-23T01:51:49Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 10,
-        "checked_at": "2026-11-22T21:17:26Z"
+        "checked_at": "2026-11-23T01:51:49Z"
       },
       {
         "id": "insider_gaming",
@@ -100,7 +100,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 6,
-        "checked_at": "2026-11-22T21:17:26Z"
+        "checked_at": "2026-11-23T01:51:49Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,7 +109,7 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-22T21:17:26Z"
+        "checked_at": "2026-11-23T01:51:49Z"
       }
     ]
   },
@@ -119,6 +119,40 @@
     "03ad5b45d08f27e9bc24f72b"
   ],
   "items": [
+    {
+      "id": "e6f04f194564aebb5c37c3db",
+      "title": "GTA 6'da Moses için Declasse Vamos aracını çalmak üzere kapı kodu",
+      "summary": "Video Games Chronicle ve PC Gamer, GTA 6'da Moses görevinde Declasse Vamos aracını çalmak için bir kapı kodu bulunduğunu bildiriyor. Kodun garajı açtığı ve aracı çalmak için kullanılabileceği iddia ediliyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-23T01:51:49Z",
+      "why_this_label": "2 bağımsız yayın: PC Gamer, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 84,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/guide/gta-6-moses-declasse-vamos-door-code"
+        },
+        {
+          "name": "PC Gamer",
+          "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-declasse-vamos-code"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/23",
+      "reactions_total": null,
+      "location_id": "leonida_keys",
+      "region": "Leonida Keys",
+      "image": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Door-code-for-Moses-Declasse-Vamos-vehicle-mission-1.jpg",
+      "image_credit": "Video Games Chronicle",
+      "title_en": "GTA 6: Door code to steal Declasse Vamos for Moses",
+      "summary_en": "Video Games Chronicle and PC Gamer report that a door code exists to steal the Declasse Vamos in the Moses mission of GTA 6. The code is said to unlock a garage and enable the vehicle theft."
+    },
     {
       "id": "516bb94f6177d496ce8d607b",
       "title": "Arthur Morgan’ın Şapkası GTA 6’da Nerede?",

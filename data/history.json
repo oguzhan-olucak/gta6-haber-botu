@@ -1671,7 +1671,7 @@
         "9adafe859750587153d10336",
         "d78c1184d5e37c3f504e3896"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -1877,6 +1877,50 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-23T01:51:49Z",
       "message_id": 23
+    },
+    {
+      "content_id": "e60eab828d72bb1222d34608",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "category": "COMMUNITY_RUMOR",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6'da George R.R. Martin’e iki gönderme olduğu iddia ediliyor",
+      "summary_tr": "GamesRadar+ sitesinde, GTA 6’nın oyunda Game of Thrones yaratıcısı George R.R. Martin’e iki gönderme içerdiği iddia ediliyor. Bu iddia resmi bir açıklama olmadan, sadece bir söylenti olarak paylaşılmış.",
+      "title_en": "GTA 6 reportedly includes two shoutouts to George R.R. Martin",
+      "summary_en": "GamesRadar+ reports that GTA 6 is said to contain two references to Game of Thrones creator George R.R. Martin. This claim is presented without any official confirmation, remaining a rumor.",
+      "why_this_label": "Tek yayın: GamesRadar+",
+      "source_names": {
+        "https://gamesradar.com/entertainment/fantasy-shows/we-got-gta-6-before-winds-of-winter-and-now-the-game-features-two-shoutouts-to-game-of-thrones-creator-george-r-r-martin": "GamesRadar+"
+      },
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "publish_reason": "Tek yayın: GamesRadar+",
+      "independent_origins": [
+        "future_plc"
+      ],
+      "source_urls": [
+        "https://gamesradar.com/entertainment/fantasy-shows/we-got-gta-6-before-winds-of-winter-and-now-the-game-features-two-shoutouts-to-game-of-thrones-creator-george-r-r-martin"
+      ],
+      "source_titles": [
+        "We got GTA 6 before Winds of Winter, and now the game features two shoutouts to Game of Thrones creator George RR Martin"
+      ],
+      "content_hashes": [
+        "0ede475894dee54063291f46"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/kDR6MSXp4HvJEhogLrUZDk-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-23T10:40:02Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-23T10:40:02Z",
+      "message_id": 24
     }
   ]
 }

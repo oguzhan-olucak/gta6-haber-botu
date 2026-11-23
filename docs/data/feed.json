@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-23T01:51:49Z",
-    "last_run_at": "2026-11-23T01:51:49Z",
-    "last_successful_fetch_at": "2026-11-23T01:51:49Z",
+    "generated_at": "2026-11-23T10:40:02Z",
+    "last_run_at": "2026-11-23T10:40:02Z",
+    "last_successful_fetch_at": "2026-11-23T10:40:02Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 22,
+    "verified_total": 23,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-23T01:51:49Z"
+        "checked_at": "2026-11-23T10:40:02Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 34,
-        "relevant": 9,
-        "checked_at": "2026-11-23T01:51:49Z"
+        "entries": 31,
+        "relevant": 8,
+        "checked_at": "2026-11-23T10:40:02Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-23T01:51:49Z"
+        "checked_at": "2026-11-23T10:40:02Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 7,
         "relevant": 3,
-        "checked_at": "2026-11-23T01:51:49Z"
+        "checked_at": "2026-11-23T10:40:02Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 12,
-        "checked_at": "2026-11-23T01:51:49Z"
+        "relevant": 13,
+        "checked_at": "2026-11-23T10:40:02Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 55,
-        "checked_at": "2026-11-23T01:51:49Z"
+        "checked_at": "2026-11-23T10:40:02Z"
       },
       {
         "id": "gamesradar",
@@ -73,7 +73,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 36,
-        "checked_at": "2026-11-23T01:51:49Z"
+        "checked_at": "2026-11-23T10:40:02Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 30,
-        "checked_at": "2026-11-23T01:51:49Z"
+        "checked_at": "2026-11-23T10:40:02Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 10,
-        "checked_at": "2026-11-23T01:51:49Z"
+        "relevant": 9,
+        "checked_at": "2026-11-23T10:40:02Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 6,
-        "checked_at": "2026-11-23T01:51:49Z"
+        "relevant": 4,
+        "checked_at": "2026-11-23T10:40:02Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,7 +109,7 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-23T01:51:49Z"
+        "checked_at": "2026-11-23T10:40:02Z"
       }
     ]
   },
@@ -119,6 +119,36 @@
     "03ad5b45d08f27e9bc24f72b"
   ],
   "items": [
+    {
+      "id": "e60eab828d72bb1222d34608",
+      "title": "GTA 6'da George R.R. Martin’e iki gönderme olduğu iddia ediliyor",
+      "summary": "GamesRadar+ sitesinde, GTA 6’nın oyunda Game of Thrones yaratıcısı George R.R. Martin’e iki gönderme içerdiği iddia ediliyor. Bu iddia resmi bir açıklama olmadan, sadece bir söylenti olarak paylaşılmış.",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "trust_group": "single",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-23T10:40:02Z",
+      "why_this_label": "Tek yayın: GamesRadar+",
+      "source_strength": 55,
+      "editorial_priority": 82,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/entertainment/fantasy-shows/we-got-gta-6-before-winds-of-winter-and-now-the-game-features-two-shoutouts-to-game-of-thrones-creator-george-r-r-martin"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/24",
+      "reactions_total": null,
+      "location_id": "grassrivers",
+      "region": "Grassrivers",
+      "image": "https://cdn.mos.cms.futurecdn.net/kDR6MSXp4HvJEhogLrUZDk-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "title_en": "GTA 6 reportedly includes two shoutouts to George R.R. Martin",
+      "summary_en": "GamesRadar+ reports that GTA 6 is said to contain two references to Game of Thrones creator George R.R. Martin. This claim is presented without any official confirmation, remaining a rumor."
+    },
     {
       "id": "e6f04f194564aebb5c37c3db",
       "title": "GTA 6'da Moses için Declasse Vamos aracını çalmak üzere kapı kodu",

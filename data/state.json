@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-23T01:51:49Z",
-  "last_successful_fetch_at": "2026-11-23T01:51:49Z",
+  "last_run_at": "2026-11-23T10:40:02Z",
+  "last_successful_fetch_at": "2026-11-23T10:40:02Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
@@ -2748,7 +2748,7 @@
     },
     "449bef766d2f2a86cc3edba8": {
       "first_seen": "2026-11-21T12:33:46Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "d99ba6bc8c0ab65efd92e712": {
@@ -2793,12 +2793,12 @@
     },
     "cf6eb961e3a77386d4629a5b": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "73aa01804230f07c83272586": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "ac3dc6dc006ebd02959a14ef": {
@@ -2808,32 +2808,32 @@
     },
     "67839eff726c18fd2d8cec18": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "3aa9d525c09809b4e8547c25": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "c294adf65a10e16f20e04ce5": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "b767f18e39bb36e873489c98": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "pcgamer"
     },
     "0a9305860de5337d5c7134bd": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "b370b81d02761a6eefc05d76": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "8d726ba202ba341c17e1c4f4": {
@@ -2848,7 +2848,7 @@
     },
     "701356b64dd82bde5ecf3b28": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "b96f5852cc8b8d4618c6c198": {
@@ -2858,27 +2858,27 @@
     },
     "07fc2aed5a747d9fc476a23d": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "419e09a8f711b8c273613586": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "c15feda560e4400eaf885b2f": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "3d809fe8f4b546f650061d86": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "d238067db97a04f86288f66d": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "pcgamer"
     },
     "57af9b76aa4fc174c4cf4ec7": {
@@ -2898,17 +2898,17 @@
     },
     "579ca11056d44d090f60caf9": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "92d62b026233a9fd57642b49": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "06fae00b6eda30eb53a55ad5": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "2a49a57d2984dc4eb7aebc6e": {
@@ -2918,7 +2918,7 @@
     },
     "e449036970ef24ed067dae45": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "eurogamer"
     },
     "749596210747c4678cfe2da3": {
@@ -2928,17 +2928,17 @@
     },
     "e0c2e4cbba3001de2c0da761": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "pcgamer"
     },
     "64ce2d2438a2f2b1dea7cbc7": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "e6358f8414b583eba0556618": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "eurogamer"
     },
     "f0ed86097a00d64fe5424f4b": {
@@ -2948,22 +2948,22 @@
     },
     "3dead238fea8349de0ed4ddd": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "pcgamer"
     },
     "08a6dd1e61c96485734da4d4": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "980136eebd24d6f42a00cbeb": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "eurogamer"
     },
     "d4f44799a7f243f343d888c8": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "e6f04f194564aebb5c37c3db": {
@@ -2973,12 +2973,12 @@
     },
     "8ca7bebaa0abd29250b58fe1": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "12705a9b40965778374d0cf4": {
       "first_seen": "2026-11-21T19:48:55Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "860b63a033bc52c6e7265e9c": {
@@ -3038,17 +3038,17 @@
     },
     "25f8d79dcda80921595dc6d1": {
       "first_seen": "2026-11-22T00:16:15Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "pcgamer"
     },
     "ab469a50be776de09b242bea": {
       "first_seen": "2026-11-22T00:16:15Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "748f799440579824507735b7": {
       "first_seen": "2026-11-22T00:16:15Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "2a39263237f1eea0334e9bc7": {
@@ -3168,7 +3168,7 @@
     },
     "f43abc6ba7c63f22352e9953": {
       "first_seen": "2026-11-22T15:29:14Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "eurogamer"
     },
     "da6cba3566eac567f908e454": {
@@ -3330,6 +3330,26 @@
       "first_seen": "2026-11-23T01:51:49Z",
       "status": "NEW",
       "source": "ign"
+    },
+    "e60eab828d72bb1222d34608": {
+      "first_seen": "2026-11-23T10:40:02Z",
+      "status": "USED",
+      "source": "gamesradar"
+    },
+    "18181e7b5117cab7849ec8a6": {
+      "first_seen": "2026-11-23T10:40:02Z",
+      "status": "NEW",
+      "source": "eurogamer"
+    },
+    "3f58360d7ff6e6bc7dc950c5": {
+      "first_seen": "2026-11-23T10:40:02Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "e4b542fafc4b456a770d157c": {
+      "first_seen": "2026-11-23T10:40:02Z",
+      "status": "NEW",
+      "source": "ign"
     }
   },
   "digests_sent": [
@@ -3342,7 +3362,7 @@
     "2026-11-22T06"
   ],
   "alerts_last_sent": {
-    "GEMINI_MODEL": "2026-11-23T01:51:49Z",
+    "GEMINI_MODEL": "2026-11-23T10:40:02Z",
     "TELEGRAM_AUTH": "2026-11-17T12:02:46Z"
   },
   "source_status": {
@@ -3351,78 +3371,78 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-23T01:51:49Z",
+      "checked_at": "2026-11-23T10:40:02Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
-      "entries": 34,
-      "relevant": 9,
+      "entries": 31,
+      "relevant": 8,
       "new": 0,
-      "checked_at": "2026-11-23T01:51:49Z"
+      "checked_at": "2026-11-23T10:40:02Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-23T01:51:49Z"
+      "checked_at": "2026-11-23T10:40:02Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 7,
       "relevant": 3,
       "new": 0,
-      "checked_at": "2026-11-23T01:51:49Z"
+      "checked_at": "2026-11-23T10:40:02Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
-      "relevant": 12,
+      "relevant": 13,
       "new": 2,
-      "checked_at": "2026-11-23T01:51:49Z"
+      "checked_at": "2026-11-23T10:40:02Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
       "relevant": 55,
-      "new": 0,
-      "checked_at": "2026-11-23T01:51:49Z"
+      "new": 1,
+      "checked_at": "2026-11-23T10:40:02Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
       "relevant": 36,
-      "new": 0,
-      "checked_at": "2026-11-23T01:51:49Z"
+      "new": 1,
+      "checked_at": "2026-11-23T10:40:02Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
       "relevant": 30,
-      "new": 2,
-      "checked_at": "2026-11-23T01:51:49Z"
+      "new": 0,
+      "checked_at": "2026-11-23T10:40:02Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
-      "relevant": 10,
-      "new": 5,
-      "checked_at": "2026-11-23T01:51:49Z"
+      "relevant": 9,
+      "new": 0,
+      "checked_at": "2026-11-23T10:40:02Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 6,
+      "relevant": 4,
       "new": 0,
-      "checked_at": "2026-11-23T01:51:49Z"
+      "checked_at": "2026-11-23T10:40:02Z"
     },
     "reddit_gta6": {
       "ok": false,
       "error_class": "RSS_PARSE_ERROR",
       "detail": "HTTP 404",
       "http_status": 404,
-      "checked_at": "2026-11-23T01:51:49Z"
+      "checked_at": "2026-11-23T10:40:02Z"
     }
   },
   "run_log": [
@@ -3968,6 +3988,25 @@
         "groq",
         "github"
       ]
+    },
+    {
+      "started_at": "2026-11-23T10:40:02Z",
+      "sources_ok": 10,
+      "new_items": 4,
+      "published": 1,
+      "gemini_calls": 1,
+      "error_classes": [
+        "RSS_PARSE_ERROR"
+      ],
+      "llm_attempts": [
+        "gemini:NETWORK_TRANSIENT",
+        "groq:ok"
+      ],
+      "llm_chain": [
+        "gemini",
+        "groq",
+        "github"
+      ]
     }
   ],
   "candidate_pool": {
@@ -3990,7 +4029,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/7GKLvfHyNh9cXxWFVLB7Zg-1920-80.jpg"
       },
       "first_seen": "2026-11-21T12:33:46Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "d99ba6bc8c0ab65efd92e712": {
       "item": {
@@ -4055,48 +4094,6 @@
       "first_seen": "2026-11-21T12:33:46Z",
       "needs_eval": false
     },
-    "7245a21259ea1a237e515264": {
-      "item": {
-        "id": "7245a21259ea1a237e515264",
-        "source_id": "eurogamer",
-        "source_name": "Eurogamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "eurogamer",
-        "title": "What we've been playing - \"It's slow, it's awkward, it's weird, and it's hard\"",
-        "url": "https://eurogamer.net/what-weve-been-playing-its-slow-its-awkward-its-weird-and-its-hard",
-        "summary": "Did anything notable happen this week? Not that I can remember. The weather was quite rainy - will that do? I'm just being silly, of course. We've had - and I suppose are still having - an historic week in video games, as Grand Theft Auto 6 arrives. It's dominated everything and I fear it's going to dominate this article too. But a reminder: next week is our \"Not-GTA Week\", so we'll be making a concerted effort to talk about games, probably smaller games, that aren't Godzilla blockbusters. Read more",
-        "published_at": "2026-11-21T08:00:00Z",
-        "content_hash": "4b6577edf6b0fc085aed48c7",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "7245a21259ea1a237e515264",
-        "image_url": "https://assetsio.gnwcdn.com/gta-6-headline-launch-gallery-4.jpg?width=690&quality=85&format=jpg&auto=webp"
-      },
-      "first_seen": "2026-11-21T12:33:46Z",
-      "needs_eval": false
-    },
-    "eb3c7a7e711a30775d4e80bd": {
-      "item": {
-        "id": "eb3c7a7e711a30775d4e80bd",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "How a $6 Beer in GTA 6 Sent Me Into a Spiral of Crime and Anxiety",
-        "url": "https://ign.com/articles/how-a-6-beer-in-gta-6-sent-me-into-a-spiral-of-crime-and-anxiety",
-        "summary": "I'm relationship-maxxing GTA 6. Forget the money, the cars, or building a criminal empire. My main aim is to make Jason and Lucia so disgustingly loved up that NPCs violently vomit as we walk past being all cute together. I want them to be the perfect couple. I want romance. I want devotion. I want the sort of relationship that makes everyone else in Vice City feel deeply inadequate. Unfortunately, the nuanced way GTA 6 tracks even the smallest actions has turned me into a paranoid lunatic, constantly worrying that one wrong move will destroy my carefully cultivated romance. Case in point: a $6 beer that sent me into a cascade of disasters, petty crime, and emotional turmoil, eventually…",
-        "published_at": "2026-11-21T06:00:00Z",
-        "content_hash": "5d09c02ef4b769b0a574a450",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "eb3c7a7e711a30775d4e80bd",
-        "image_url": "https://assets-prd.ignimgs.com/2026/11/20/1a1f9e1ef3b55-screenshoturl-1-1795194452766.jpg"
-      },
-      "first_seen": "2026-11-21T12:33:46Z",
-      "needs_eval": false
-    },
     "ab6d84da73db3e2f483b7463": {
       "item": {
         "id": "ab6d84da73db3e2f483b7463",
@@ -4137,7 +4134,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "73aa01804230f07c83272586": {
       "item": {
@@ -4158,7 +4155,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/17/gta-6-spekulationen-beziehungssystem-1794933650291.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "67839eff726c18fd2d8cec18": {
       "item": {
@@ -4179,7 +4176,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/EZNjtCKEFBt687outDzKCH-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "3aa9d525c09809b4e8547c25": {
       "item": {
@@ -4200,7 +4197,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Chapter-3-Laptop-Password-2.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "c294adf65a10e16f20e04ce5": {
       "item": {
@@ -4221,7 +4218,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Welcome-to-Vice-City-4.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "b767f18e39bb36e873489c98": {
       "item": {
@@ -4242,7 +4239,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/j3r6wPqXaPSUDLSeUfq6w9-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "0a9305860de5337d5c7134bd": {
       "item": {
@@ -4263,7 +4260,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/pTdNkh2uBj8pTUrQkDk67Y-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "b370b81d02761a6eefc05d76": {
       "item": {
@@ -4284,7 +4281,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/S76E64vh7F6uSbqRdhT3LJ-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "8d726ba202ba341c17e1c4f4": {
       "item": {
@@ -4326,7 +4323,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/pedj59HZkpoTirtzBk7V6g-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "07fc2aed5a747d9fc476a23d": {
       "item": {
@@ -4347,7 +4344,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/W3C7JHXd6B5GE8L9wnz32L-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "419e09a8f711b8c273613586": {
       "item": {
@@ -4368,7 +4365,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/mQXGcfLNQdeWPJzDx5BVzD-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "c15feda560e4400eaf885b2f": {
       "item": {
@@ -4389,7 +4386,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/DAQCUviKWBZyfkaQ7rtC2Z-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "3d809fe8f4b546f650061d86": {
       "item": {
@@ -4410,7 +4407,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/zJPPJbcAFVuCHETeaeB9VU-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "d238067db97a04f86288f66d": {
       "item": {
@@ -4431,7 +4428,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/UXEEfJQmgZiEK3gAaNSDGb-1920-80.png"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "ee2aef34dd611b7b7186f19e": {
       "item": {
@@ -4473,7 +4470,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/aG5Gy6FH2VYMi8Y6KoHDT8-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "92d62b026233a9fd57642b49": {
       "item": {
@@ -4494,7 +4491,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Xbox-bans-5.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "06fae00b6eda30eb53a55ad5": {
       "item": {
@@ -4515,7 +4512,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "2a49a57d2984dc4eb7aebc6e": {
       "item": {
@@ -4557,7 +4554,7 @@
         "image_url": "https://assetsio.gnwcdn.com/Screenshot-2026-11-21-at-14.55.00.png?width=690&quality=85&format=jpg&auto=webp"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "749596210747c4678cfe2da3": {
       "item": {
@@ -4599,7 +4596,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/Zsq8XcWVvA37H4bJYN6Lbi-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "64ce2d2438a2f2b1dea7cbc7": {
       "item": {
@@ -4620,7 +4617,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/kGEXiHAq26NnTAEHVZURQj-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "e6358f8414b583eba0556618": {
       "item": {
@@ -4641,7 +4638,7 @@
         "image_url": "https://assetsio.gnwcdn.com/GTA-6-Radio-Station-Hosts-Tracks-Header.jpg?width=690&quality=85&format=jpg&auto=webp"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "3dead238fea8349de0ed4ddd": {
       "item": {
@@ -4662,7 +4659,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/7rrKZFvVzmmHCPprp36VhD-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "08a6dd1e61c96485734da4d4": {
       "item": {
@@ -4683,7 +4680,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/20/gta-6-cow-story-blogroll-1795184902367.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "980136eebd24d6f42a00cbeb": {
       "item": {
@@ -4704,7 +4701,7 @@
         "image_url": "https://assetsio.gnwcdn.com/gta-6-launch-jason-lucia.jpg?width=690&quality=85&format=jpg&auto=webp"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "d4f44799a7f243f343d888c8": {
       "item": {
@@ -4725,7 +4722,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/t7ohaBNA6uY2mdgi4ooCT8-1920-80.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "8ca7bebaa0abd29250b58fe1": {
       "item": {
@@ -4746,7 +4743,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/Grand-Theft-Auto-VI_20261120183422.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "12705a9b40965778374d0cf4": {
       "item": {
@@ -4767,7 +4764,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/21/gtavi-56-1795263173286.jpg"
       },
       "first_seen": "2026-11-21T19:48:55Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "860b63a033bc52c6e7265e9c": {
       "item": {
@@ -4977,7 +4974,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/7KiM9WgPTcRophKnNZkU8k-1920-80.jpg"
       },
       "first_seen": "2026-11-22T00:16:15Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "ab469a50be776de09b242bea": {
       "item": {
@@ -4998,7 +4995,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Dealers-Choice-walkthrough-pure-or-cut-4.jpg"
       },
       "first_seen": "2026-11-22T00:16:15Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "748f799440579824507735b7": {
       "item": {
@@ -5019,7 +5016,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/gta-grand-theft-auto-6-pic09.jpg"
       },
       "first_seen": "2026-11-22T00:16:15Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "2a39263237f1eea0334e9bc7": {
       "item": {
@@ -5460,7 +5457,7 @@
         "image_url": "https://assetsio.gnwcdn.com/GTA-6-review-10.jpg?width=690&quality=85&format=jpg&auto=webp"
       },
       "first_seen": "2026-11-22T15:29:14Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "da6cba3566eac567f908e454": {
       "item": {
@@ -6070,9 +6067,72 @@
       },
       "first_seen": "2026-11-23T01:51:49Z",
       "needs_eval": true
+    },
+    "18181e7b5117cab7849ec8a6": {
+      "item": {
+        "id": "18181e7b5117cab7849ec8a6",
+        "source_id": "eurogamer",
+        "source_name": "Eurogamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "eurogamer",
+        "title": "Why can't you play darts in GTA 6 when you could in previous games? Because Rockstar \"didn't have the resources\" to do it to a standard it'd be happy with",
+        "url": "https://eurogamer.net/grand-theft-auto-6-no-darts-didnt-have-resources",
+        "summary": "If you've been a fan of Grand Theft Auto for a while, you might have noticed a strange absence in GTA 6 . While the game is packed full of different activities, the recurring pastime of darts is missing, having been present in GTA 5 , GTA Online , and GTA 4. Read more",
+        "published_at": "2026-11-23T09:50:30Z",
+        "content_hash": "d263e63a7d6a6fd88e18cf98",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "18181e7b5117cab7849ec8a6",
+        "image_url": "https://assetsio.gnwcdn.com/grand-theft-auto-6-drinking.png?width=690&quality=85&format=jpg&auto=webp"
+      },
+      "first_seen": "2026-11-23T10:40:02Z",
+      "needs_eval": true
+    },
+    "3f58360d7ff6e6bc7dc950c5": {
+      "item": {
+        "id": "3f58360d7ff6e6bc7dc950c5",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Naughty Dog Dev: GTA 6 Appears to Him ‘as a Bugatti Veyron Would to a Nervous Victorian Child’",
+        "url": "https://ign.com/articles/naughty-dog-dev-gta-6-appears-to-him-as-as-a-bugatti-veyron-would-to-a-nervous-victorian-child",
+        "summary": "Developers are stunned at how dramatically advanced GTA 6 is.",
+        "published_at": "2026-11-23T07:58:42Z",
+        "content_hash": "b6788d24eb3113c8672debde",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "3f58360d7ff6e6bc7dc950c5",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/18/g-blog-6-1795002008156.jpg"
+      },
+      "first_seen": "2026-11-23T10:40:02Z",
+      "needs_eval": true
+    },
+    "e4b542fafc4b456a770d157c": {
+      "item": {
+        "id": "e4b542fafc4b456a770d157c",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Robbing Banks is a Blast, But I Wish There Were More Houses to Repair in GTA 6",
+        "url": "https://ign.com/articles/robbing-banks-is-a-blast-but-i-wish-there-were-more-houses-to-repair-in-gta-6",
+        "summary": "Forget sticking things up with a shotgun, I want to fix things up with a nailgun.",
+        "published_at": "2026-11-23T06:50:14Z",
+        "content_hash": "13a8890c66c8316af5882b9f",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "e4b542fafc4b456a770d157c",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/23/gta6-roofrepair-blogroll-1795414510325.jpg"
+      },
+      "first_seen": "2026-11-23T10:40:02Z",
+      "needs_eval": true
     }
   },
-  "persisted_at": "2026-11-23T01:51:49Z",
+  "persisted_at": "2026-11-23T10:40:02Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": "2026-11-17T06:01:55Z"
 }

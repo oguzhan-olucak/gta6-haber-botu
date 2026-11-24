@@ -1863,7 +1863,7 @@
         "657e6124850ee7e56bbdd1dc",
         "6b1bb40e72396e80a9d8979d"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -1975,6 +1975,60 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-23T22:15:00Z",
       "message_id": 25
+    },
+    {
+      "content_id": "8e3049974fd12660139c4e7e",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6, PlayStation tarihindeki en büyük lansmanı oldu",
+      "summary_tr": "Video Games Chronicle, IGN ve PC Gamer, GTA 6'nın PlayStation tarihindeki en büyük lansman olduğunu ve 39 milyon oyuncuya ulaştığını bildiriyor. Ayrıca oyunun aynı platformda en yüksek eşzamanlı oyuncu sayısını kırdığı iddia ediliyor.",
+      "title_en": "GTA 6 marks the biggest PlayStation launch in history",
+      "summary_en": "Video Games Chronicle, IGN and PC Gamer report that GTA 6 achieved the largest PlayStation launch ever, reaching 39 million players. They also claim the game set the highest concurrent player count on the platform.",
+      "why_this_label": "3 bağımsız yayın: PC Gamer, IGN, Video Games Chronicle",
+      "source_names": {
+        "https://videogameschronicle.com/news/gta-6-was-the-biggest-launch-in-playstation-history-with-over-39-million-players": "Video Games Chronicle",
+        "https://ign.com/articles/gta-6-was-biggest-launch-in-playstation-history": "IGN",
+        "https://pcgamer.com/games/grand-theft-auto/sony-gta-6-set-record-for-highest-number-of-concurrent-players-for-any-game-on-playstation-ever": "PC Gamer"
+      },
+      "source_strength": 80,
+      "editorial_priority": 88,
+      "publish_reason": "3 bağımsız yayın: PC Gamer, IGN, Video Games Chronicle",
+      "independent_origins": [
+        "future_plc",
+        "ign",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://videogameschronicle.com/news/gta-6-was-the-biggest-launch-in-playstation-history-with-over-39-million-players",
+        "https://ign.com/articles/gta-6-was-biggest-launch-in-playstation-history",
+        "https://pcgamer.com/games/grand-theft-auto/sony-gta-6-set-record-for-highest-number-of-concurrent-players-for-any-game-on-playstation-ever"
+      ],
+      "source_titles": [
+        "Sony: GTA 6 set record for 'highest number of concurrent players for any game on PlayStation' ever",
+        "GTA 6 Was Biggest Launch in PlayStation History",
+        "GTA 6 was the ‘biggest launch in PlayStation history’ with over 39 million players"
+      ],
+      "content_hashes": [
+        "6f8d7bde06decac0c224442a",
+        "c96f9359cb12606d866ccd22",
+        "fe5115aadbc01242b57019a1"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://www.videogameschronicle.com/files/2026/11/HXl7aGxXcAAHEti.jpg",
+      "image_credit": "Video Games Chronicle",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-24T06:11:09Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-24T06:11:09Z",
+      "message_id": 26
     }
   ]
 }

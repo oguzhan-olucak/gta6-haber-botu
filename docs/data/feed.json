@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-23T22:15:00Z",
-    "last_run_at": "2026-11-23T22:15:00Z",
-    "last_successful_fetch_at": "2026-11-23T22:15:00Z",
+    "generated_at": "2026-11-24T06:11:09Z",
+    "last_run_at": "2026-11-24T06:11:09Z",
+    "last_successful_fetch_at": "2026-11-24T06:11:09Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 24,
+    "verified_total": 25,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-23T22:15:00Z"
+        "checked_at": "2026-11-24T06:11:09Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 34,
-        "relevant": 7,
-        "checked_at": "2026-11-23T22:15:00Z"
+        "entries": 38,
+        "relevant": 8,
+        "checked_at": "2026-11-24T06:11:09Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-23T22:15:00Z"
+        "checked_at": "2026-11-24T06:11:09Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 6,
         "relevant": 3,
-        "checked_at": "2026-11-23T22:15:00Z"
+        "checked_at": "2026-11-24T06:11:09Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 15,
-        "checked_at": "2026-11-23T22:15:00Z"
+        "relevant": 16,
+        "checked_at": "2026-11-24T06:11:09Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 57,
-        "checked_at": "2026-11-23T22:15:00Z"
+        "checked_at": "2026-11-24T06:11:09Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 20,
-        "checked_at": "2026-11-23T22:15:00Z"
+        "relevant": 19,
+        "checked_at": "2026-11-24T06:11:09Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 30,
-        "checked_at": "2026-11-23T22:15:00Z"
+        "relevant": 29,
+        "checked_at": "2026-11-24T06:11:09Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 8,
-        "checked_at": "2026-11-23T22:15:00Z"
+        "relevant": 9,
+        "checked_at": "2026-11-24T06:11:09Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 7,
-        "checked_at": "2026-11-23T22:15:00Z"
+        "relevant": 9,
+        "checked_at": "2026-11-24T06:11:09Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,54 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-23T22:15:00Z"
+        "checked_at": "2026-11-24T06:11:09Z"
       }
     ]
   },
   "hero_id": "c15feda560e4400eaf885b2f",
   "featured_ids": [
     "516bb94f6177d496ce8d607b",
-    "e10a9f1bbc3beccb5abb9f6f"
+    "8e3049974fd12660139c4e7e"
   ],
   "items": [
+    {
+      "id": "8e3049974fd12660139c4e7e",
+      "title": "GTA 6, PlayStation tarihindeki en büyük lansmanı oldu",
+      "summary": "Video Games Chronicle, IGN ve PC Gamer, GTA 6'nın PlayStation tarihindeki en büyük lansman olduğunu ve 39 milyon oyuncuya ulaştığını bildiriyor. Ayrıca oyunun aynı platformda en yüksek eşzamanlı oyuncu sayısını kırdığı iddia ediliyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "INDUSTRY_BUSINESS",
+      "category_tr": "Analiz",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-24T06:11:09Z",
+      "why_this_label": "3 bağımsız yayın: PC Gamer, IGN, Video Games Chronicle",
+      "source_strength": 80,
+      "editorial_priority": 88,
+      "independent_origins": 3,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/news/gta-6-was-the-biggest-launch-in-playstation-history-with-over-39-million-players"
+        },
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/gta-6-was-biggest-launch-in-playstation-history"
+        },
+        {
+          "name": "PC Gamer",
+          "url": "https://pcgamer.com/games/grand-theft-auto/sony-gta-6-set-record-for-highest-number-of-concurrent-players-for-any-game-on-playstation-ever"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/26",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez",
+      "image": "https://www.videogameschronicle.com/files/2026/11/HXl7aGxXcAAHEti.jpg",
+      "image_credit": "Video Games Chronicle",
+      "title_en": "GTA 6 marks the biggest PlayStation launch in history",
+      "summary_en": "Video Games Chronicle, IGN and PC Gamer report that GTA 6 achieved the largest PlayStation launch ever, reaching 39 million players. They also claim the game set the highest concurrent player count on the platform."
+    },
     {
       "id": "c15feda560e4400eaf885b2f",
       "title": "GTA 6'da Key Cloner Nasıl Edinilir?",

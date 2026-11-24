@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-24T06:11:09Z",
-    "last_run_at": "2026-11-24T06:11:09Z",
-    "last_successful_fetch_at": "2026-11-24T06:11:09Z",
+    "generated_at": "2026-11-24T17:59:38Z",
+    "last_run_at": "2026-11-24T17:59:38Z",
+    "last_successful_fetch_at": "2026-11-24T17:59:38Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 25,
+    "verified_total": 26,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-24T06:11:09Z"
+        "checked_at": "2026-11-24T17:59:38Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 38,
-        "relevant": 8,
-        "checked_at": "2026-11-24T06:11:09Z"
+        "entries": 32,
+        "relevant": 7,
+        "checked_at": "2026-11-24T17:59:38Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-24T06:11:09Z"
+        "checked_at": "2026-11-24T17:59:38Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 6,
         "relevant": 3,
-        "checked_at": "2026-11-24T06:11:09Z"
+        "checked_at": "2026-11-24T17:59:38Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 16,
-        "checked_at": "2026-11-24T06:11:09Z"
+        "relevant": 13,
+        "checked_at": "2026-11-24T17:59:38Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 57,
-        "checked_at": "2026-11-24T06:11:09Z"
+        "relevant": 59,
+        "checked_at": "2026-11-24T17:59:38Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 19,
-        "checked_at": "2026-11-24T06:11:09Z"
+        "relevant": 15,
+        "checked_at": "2026-11-24T17:59:38Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 29,
-        "checked_at": "2026-11-24T06:11:09Z"
+        "checked_at": "2026-11-24T17:59:38Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 9,
-        "checked_at": "2026-11-24T06:11:09Z"
+        "relevant": 7,
+        "checked_at": "2026-11-24T17:59:38Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 9,
-        "checked_at": "2026-11-24T06:11:09Z"
+        "relevant": 6,
+        "checked_at": "2026-11-24T17:59:38Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-24T06:11:09Z"
+        "checked_at": "2026-11-24T17:59:38Z"
       }
     ]
   },
   "hero_id": "c15feda560e4400eaf885b2f",
   "featured_ids": [
-    "516bb94f6177d496ce8d607b",
-    "8e3049974fd12660139c4e7e"
+    "a54a27009f9a0771700981d0",
+    "516bb94f6177d496ce8d607b"
   ],
   "items": [
+    {
+      "id": "a54a27009f9a0771700981d0",
+      "title": "Rockstar, GTA 6 PC port projesi Project Leonida’yı kapattı; liderler projeden ayrıldı",
+      "summary": "Eurogamer ve PC Gamer, Rockstar’ın Project Leonida adlı topluluk tabanlı GTA 6 PC port projesini kapattığını bildirdi. Projenin liderlerinin projeden ayrıldığı ve bazı katılımcıların devam etmeye çalıştığı iddia ediliyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-24T17:59:38Z",
+      "why_this_label": "2 bağımsız yayın: Eurogamer, PC Gamer",
+      "source_strength": 75,
+      "editorial_priority": 90,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "Eurogamer",
+          "url": "https://eurogamer.net/grand-theft-auto-6-project-leonida-discord-github-vanish"
+        },
+        {
+          "name": "PC Gamer",
+          "url": "https://pcgamer.com/games/grand-theft-auto/gta-6-recomp-leaders-bail-out-as-take-two-cracks-down-on-illicit-efforts-to-get-the-game-running-on-pc"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/27",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez",
+      "image": "https://assetsio.gnwcdn.com/gta-6-hackers.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+      "image_credit": "Eurogamer",
+      "title_en": "Rockstar shuts down Project Leonida GTA 6 PC port, leaders quit",
+      "summary_en": "Eurogamer and PC Gamer report that Rockstar has taken down the community-driven Project Leonida, an effort to bring GTA 6 to PC. The project’s leaders are said to have left, while some contributors continue working on it."
+    },
     {
       "id": "8e3049974fd12660139c4e7e",
       "title": "GTA 6, PlayStation tarihindeki en büyük lansmanı oldu",

@@ -1907,7 +1907,7 @@
       "content_hashes": [
         "0ede475894dee54063291f46"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -2029,6 +2029,55 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-24T06:11:09Z",
       "message_id": 26
+    },
+    {
+      "content_id": "a54a27009f9a0771700981d0",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "COMMUNITY_RUMOR",
+      "title_style": "FACTUAL",
+      "title_tr": "Rockstar, GTA 6 PC port projesi Project Leonida’yı kapattı; liderler projeden ayrıldı",
+      "summary_tr": "Eurogamer ve PC Gamer, Rockstar’ın Project Leonida adlı topluluk tabanlı GTA 6 PC port projesini kapattığını bildirdi. Projenin liderlerinin projeden ayrıldığı ve bazı katılımcıların devam etmeye çalıştığı iddia ediliyor.",
+      "title_en": "Rockstar shuts down Project Leonida GTA 6 PC port, leaders quit",
+      "summary_en": "Eurogamer and PC Gamer report that Rockstar has taken down the community-driven Project Leonida, an effort to bring GTA 6 to PC. The project’s leaders are said to have left, while some contributors continue working on it.",
+      "why_this_label": "2 bağımsız yayın: Eurogamer, PC Gamer",
+      "source_names": {
+        "https://eurogamer.net/grand-theft-auto-6-project-leonida-discord-github-vanish": "Eurogamer",
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-recomp-leaders-bail-out-as-take-two-cracks-down-on-illicit-efforts-to-get-the-game-running-on-pc": "PC Gamer"
+      },
+      "source_strength": 75,
+      "editorial_priority": 90,
+      "publish_reason": "2 bağımsız yayın: Eurogamer, PC Gamer",
+      "independent_origins": [
+        "eurogamer",
+        "future_plc"
+      ],
+      "source_urls": [
+        "https://eurogamer.net/grand-theft-auto-6-project-leonida-discord-github-vanish",
+        "https://pcgamer.com/games/grand-theft-auto/gta-6-recomp-leaders-bail-out-as-take-two-cracks-down-on-illicit-efforts-to-get-the-game-running-on-pc"
+      ],
+      "source_titles": [
+        "GTA 6 recomp leaders bail out as Take-Two cracks down on illicit efforts to get the game running on PC",
+        "Unofficial GTA 6 PC port effort suffers setback as Rockstar seemingly takes down Project Leonida, one of the internet's biggest recompilation projects"
+      ],
+      "content_hashes": [
+        "a71e4e91d583940bf995223d",
+        "c53a853139e557bc214e11ed"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://assetsio.gnwcdn.com/gta-6-hackers.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+      "image_credit": "Eurogamer",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-24T17:59:38Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-24T17:59:38Z",
+      "message_id": 27
     }
   ]
 }

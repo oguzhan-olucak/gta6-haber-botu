@@ -1961,7 +1961,7 @@
         "6151fe3e6135c661f13eb365",
         "faad659e6610c26f3e362e4d"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -2078,6 +2078,60 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-24T17:59:38Z",
       "message_id": 27
+    },
+    {
+      "content_id": "a115d0cef3fed94181d7ad47",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "FACTUAL",
+      "title_tr": "CD Projekt Red, Witcher 4'ün GTA 5‑6 sıçramasına benzer bir atılım olacağını belirtti",
+      "summary_tr": "CD Projekt Red, The Witcher 4'ün kalite ve teknoloji açısından The Witcher 3'ten GTA 5 ile GTA 6 arasındaki sıçramaya benzer bir atılım sunacağını söylediği bildiriliyor. Bu yorum, şirketin son çeyrek kazanç raporunda yer almış ve Eurogamer, IGN ve PC Gamer gibi birkaç medya organı tarafından aktarılmış.",
+      "title_en": "CD Projekt Red says Witcher 4 will have a leap comparable to GTA 5‑6",
+      "summary_en": "CD Projekt Red is reported to have said that The Witcher 4 will deliver a quality and technology jump similar to the leap observed between GTA 5 and GTA 6. The comment appeared in the company's Q3 earnings report and was relayed by Eurogamer, IGN and PC Gamer.",
+      "why_this_label": "3 bağımsız yayın: Eurogamer, PC Gamer, IGN",
+      "source_names": {
+        "https://eurogamer.net/cd-projekt-red-cdpr-witcher-3-4-gta-5-6": "Eurogamer",
+        "https://ign.com/articles/the-witcher-4-will-have-a-comparable-leap-from-gta-5-to-gta-6-says-cd-projekt-red": "IGN",
+        "https://pcgamer.com/games/the-witcher/the-difference-between-the-witcher-3-and-witcher-4-will-be-comparable-to-that-of-gta-5-and-gta-6-cd-projekt-boss-says-i-mean-its-been-11-years": "PC Gamer"
+      },
+      "source_strength": 80,
+      "editorial_priority": 90,
+      "publish_reason": "3 bağımsız yayın: Eurogamer, PC Gamer, IGN",
+      "independent_origins": [
+        "eurogamer",
+        "future_plc",
+        "ign"
+      ],
+      "source_urls": [
+        "https://eurogamer.net/cd-projekt-red-cdpr-witcher-3-4-gta-5-6",
+        "https://ign.com/articles/the-witcher-4-will-have-a-comparable-leap-from-gta-5-to-gta-6-says-cd-projekt-red",
+        "https://pcgamer.com/games/the-witcher/the-difference-between-the-witcher-3-and-witcher-4-will-be-comparable-to-that-of-gta-5-and-gta-6-cd-projekt-boss-says-i-mean-its-been-11-years"
+      ],
+      "source_titles": [
+        "The difference between The Witcher 3 and Witcher 4 will be 'comparable' to that of GTA 5 and GTA 6, CD Projekt boss says: 'I mean, it's been 11 years'",
+        "The Witcher 4 Will Have a Comparable Leap From GTA 5 to GTA 6, Says CD Projekt Red",
+        "You can expect a similar leap between The Witcher 3 and The Witcher 4 as there is between GTA 5 and GTA 6, CD Projekt Red says"
+      ],
+      "content_hashes": [
+        "0dc6b76976d4d70b56626b87",
+        "59ea10db96e3582f77a1953c",
+        "e42b8ec8c7180914cc704c3b"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://assetsio.gnwcdn.com/ciri-the-witcher-4.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+      "image_credit": "Eurogamer",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-25T02:17:09Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-25T02:17:09Z",
+      "message_id": 28
     }
   ]
 }

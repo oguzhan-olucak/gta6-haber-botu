@@ -2015,7 +2015,7 @@
         "c96f9359cb12606d866ccd22",
         "fe5115aadbc01242b57019a1"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -2132,6 +2132,55 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-25T02:17:09Z",
       "message_id": 28
+    },
+    {
+      "content_id": "4c2ad4ec7692184abf5fe3e1",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "GAMEPLAY_TECH",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6, Xbox Series X'te PS5'ten Daha İyi Çalışıyor",
+      "summary_tr": "Digital Foundry tarafından yapılan testlerde, GTA 6'nın Xbox Series X sürümünün temel PS5 sürümüne göre daha iyi performans gösterdiği bildiriliyor. İki bağımsız medya kuruluşu bu bulguyu rapor etti.",
+      "title_en": "GTA 6 Performs Better on Xbox Series X Than Base PS5",
+      "summary_en": "Tests by Digital Foundry indicate that GTA 6 runs better on Xbox Series X than on the base PS5, according to reports. Two independent media outlets have published this finding.",
+      "why_this_label": "2 bağımsız yayın: IGN, Insider Gaming",
+      "source_names": {
+        "https://insider-gaming.com/gta-6-runs-better-xbox-series-x": "Insider Gaming",
+        "https://ign.com/articles/gta-6-analysis-shows-ps5-version-suffers-substantially-more-frequent-frame-rate-drops-than-xbox-series-x-version-sparking-debate-about-sonys-plays-best-on-ps5-marketing": "IGN"
+      },
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "publish_reason": "2 bağımsız yayın: IGN, Insider Gaming",
+      "independent_origins": [
+        "ign",
+        "insider_gaming"
+      ],
+      "source_urls": [
+        "https://insider-gaming.com/gta-6-runs-better-xbox-series-x",
+        "https://ign.com/articles/gta-6-analysis-shows-ps5-version-suffers-substantially-more-frequent-frame-rate-drops-than-xbox-series-x-version-sparking-debate-about-sonys-plays-best-on-ps5-marketing"
+      ],
+      "source_titles": [
+        "GTA 6 Runs Better On Xbox Series X Than Base PS5",
+        "GTA 6 Analysis Shows PS5 Version Suffers 'Substantially' More Frequent Frame Rate Drops Than Xbox Series X Version, Sparking Debate About Sony's 'Plays Best on PS5' Marketing"
+      ],
+      "content_hashes": [
+        "28e64341da52e412320e9007",
+        "bdd8c2a5b0cfc56ed7019871"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://insider-gaming.com/wp-content/uploads/2026/11/IMG_9386.jpeg",
+      "image_credit": "Insider Gaming",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-25T11:29:53Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-25T11:29:53Z",
+      "message_id": 29
     }
   ]
 }

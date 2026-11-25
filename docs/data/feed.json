@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-25T02:17:09Z",
-    "last_run_at": "2026-11-25T02:17:09Z",
-    "last_successful_fetch_at": "2026-11-25T02:17:09Z",
+    "generated_at": "2026-11-25T11:29:53Z",
+    "last_run_at": "2026-11-25T11:29:53Z",
+    "last_successful_fetch_at": "2026-11-25T11:29:53Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 27,
+    "verified_total": 28,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-25T02:17:09Z"
+        "checked_at": "2026-11-25T11:29:53Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 29,
+        "entries": 39,
         "relevant": 7,
-        "checked_at": "2026-11-25T02:17:09Z"
+        "checked_at": "2026-11-25T11:29:53Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,16 +37,16 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-25T02:17:09Z"
+        "checked_at": "2026-11-25T11:29:53Z"
       },
       {
         "id": "take_two_google_news",
         "name": "Take-Two Interactive",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 6,
+        "entries": 7,
         "relevant": 3,
-        "checked_at": "2026-11-25T02:17:09Z"
+        "checked_at": "2026-11-25T11:29:53Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 11,
-        "checked_at": "2026-11-25T02:17:09Z"
+        "relevant": 13,
+        "checked_at": "2026-11-25T11:29:53Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 59,
-        "checked_at": "2026-11-25T02:17:09Z"
+        "relevant": 60,
+        "checked_at": "2026-11-25T11:29:53Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 18,
-        "checked_at": "2026-11-25T02:17:09Z"
+        "relevant": 15,
+        "checked_at": "2026-11-25T11:29:53Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 26,
-        "checked_at": "2026-11-25T02:17:09Z"
+        "checked_at": "2026-11-25T11:29:53Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 9,
-        "checked_at": "2026-11-25T02:17:09Z"
+        "relevant": 6,
+        "checked_at": "2026-11-25T11:29:53Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 4,
-        "checked_at": "2026-11-25T02:17:09Z"
+        "relevant": 2,
+        "checked_at": "2026-11-25T11:29:53Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,7 +109,7 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-25T02:17:09Z"
+        "checked_at": "2026-11-25T11:29:53Z"
       }
     ]
   },
@@ -119,6 +119,40 @@
     "a54a27009f9a0771700981d0"
   ],
   "items": [
+    {
+      "id": "4c2ad4ec7692184abf5fe3e1",
+      "title": "GTA 6, Xbox Series X'te PS5'ten Daha İyi Çalışıyor",
+      "summary": "Digital Foundry tarafından yapılan testlerde, GTA 6'nın Xbox Series X sürümünün temel PS5 sürümüne göre daha iyi performans gösterdiği bildiriliyor. İki bağımsız medya kuruluşu bu bulguyu rapor etti.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-25T11:29:53Z",
+      "why_this_label": "2 bağımsız yayın: IGN, Insider Gaming",
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "Insider Gaming",
+          "url": "https://insider-gaming.com/gta-6-runs-better-xbox-series-x"
+        },
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/gta-6-analysis-shows-ps5-version-suffers-substantially-more-frequent-frame-rate-drops-than-xbox-series-x-version-sparking-debate-about-sonys-plays-best-on-ps5-marketing"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/29",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez",
+      "image": "https://insider-gaming.com/wp-content/uploads/2026/11/IMG_9386.jpeg",
+      "image_credit": "Insider Gaming",
+      "title_en": "GTA 6 Performs Better on Xbox Series X Than Base PS5",
+      "summary_en": "Tests by Digital Foundry indicate that GTA 6 runs better on Xbox Series X than on the base PS5, according to reports. Two independent media outlets have published this finding."
+    },
     {
       "id": "a115d0cef3fed94181d7ad47",
       "title": "CD Projekt Red, Witcher 4'ün GTA 5‑6 sıçramasına benzer bir atılım olacağını belirtti",

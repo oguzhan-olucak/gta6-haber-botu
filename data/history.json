@@ -2064,7 +2064,7 @@
         "a71e4e91d583940bf995223d",
         "c53a853139e557bc214e11ed"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -2181,6 +2181,100 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-25T11:29:53Z",
       "message_id": 29
+    },
+    {
+      "content_id": "59e396bec5d74d3ed59e0d45",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "GAMEPLAY_TECH",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6'da kulaklık mekaniği, Vice City'de planlanmıştı",
+      "summary_tr": "İki ayrı medya kuruluşu, GTA 6'da kulaklık mekaniğinin Rockstar'ın 24 yıl önce Vice City'de eklemeye çalıştığı bir özellik olduğunu belirtti. Bu iddia, eski bir Rockstar teknik lideri ve eski bir Rockstar geliştiricisinin açıklamalarına dayanıyor.",
+      "title_en": "GTA 6's headphone mechanic was originally planned for Vice City",
+      "summary_en": "Two independent media outlets report that the headphone mechanic in GTA 6 was a feature Rockstar attempted to include in Vice City 24 years ago. The claim is based on statements from a former Rockstar tech lead and a former Rockstar developer.",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, IGN",
+      "source_names": {
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-features-something-rockstar-tried-to-pull-off-in-grand-theft-auto-vice-city-24-years-ago-former-tech-lead-says": "GamesRadar+",
+        "https://ign.com/articles/one-of-gta-6s-best-features-was-actually-planned-for-gta-vice-city-reveals-ex-rockstar-dev": "IGN"
+      },
+      "source_strength": 75,
+      "editorial_priority": 88,
+      "publish_reason": "2 bağımsız yayın: GamesRadar+, IGN",
+      "independent_origins": [
+        "future_plc",
+        "ign"
+      ],
+      "source_urls": [
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-features-something-rockstar-tried-to-pull-off-in-grand-theft-auto-vice-city-24-years-ago-former-tech-lead-says",
+        "https://ign.com/articles/one-of-gta-6s-best-features-was-actually-planned-for-gta-vice-city-reveals-ex-rockstar-dev"
+      ],
+      "source_titles": [
+        "One of GTA 6's Best Features Was Actually Planned for GTA: Vice City, Reveals Ex-Rockstar Dev",
+        "GTA 6 features something Rockstar tried to add in Grand Theft Auto: Vice City, former tech lead says"
+      ],
+      "content_hashes": [
+        "1c4634cd21e4cfbba6b33937",
+        "3080af350e0c040663acfd78"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "publish_status": "REVIEW_HELD",
+      "publish_error": "Kaynakta olmayan sayı/tarih: 24",
+      "created_at": "2026-11-25T20:40:39Z"
+    },
+    {
+      "content_id": "d4e18e5f5f0fe3a84e54dfe0",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "GAMEPLAY_TECH",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6 Chapter 2 görev listesi ve final görevi hakkında bilgiler",
+      "summary_tr": "Insider Gaming, GTA 6 Chapter 2'deki görevlerin tam listesini yayınladığını bildiriyor. GamesRadar+ ise Chapter 2'nin son görevinin nasıl işlediğini açıklıyor. Bu bilgiler resmi bir açıklama olmaktan ziyade medyanın raporlarıdır.",
+      "title_en": "Details on GTA 6 Chapter 2 mission list and final mission",
+      "summary_en": "Insider Gaming reports a complete list of missions for GTA 6 Chapter 2. GamesRadar+ explains how the chapter's final mission works. These details come from media reports rather than an official announcement.",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, Insider Gaming",
+      "source_names": {
+        "https://insider-gaming.com/gta-6-chapter-2-mission-list-in-order": "Insider Gaming",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-chapter-2-final-mission": "GamesRadar+"
+      },
+      "source_strength": 75,
+      "editorial_priority": 87,
+      "publish_reason": "2 bağımsız yayın: GamesRadar+, Insider Gaming",
+      "independent_origins": [
+        "future_plc",
+        "insider_gaming"
+      ],
+      "source_urls": [
+        "https://insider-gaming.com/gta-6-chapter-2-mission-list-in-order",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-chapter-2-final-mission"
+      ],
+      "source_titles": [
+        "GTA 6 Chapter 2 Mission List – Every Mission in GTA 6 Chapter 2 in Order",
+        "Everything you should do before the final mission of Chapter 2 in GTA 6"
+      ],
+      "content_hashes": [
+        "1c5dc23567cde3b447b0958f",
+        "497aeadd406725ee62113afa"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://insider-gaming.com/wp-content/uploads/2026/11/gta-6-chapter-2-miission-list-in-order-scaled.webp",
+      "image_credit": "Insider Gaming",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-25T20:40:39Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-25T20:40:39Z",
+      "message_id": 30
     }
   ]
 }

@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-25T11:29:53Z",
-    "last_run_at": "2026-11-25T11:29:53Z",
-    "last_successful_fetch_at": "2026-11-25T11:29:53Z",
+    "generated_at": "2026-11-25T20:40:39Z",
+    "last_run_at": "2026-11-25T20:40:39Z",
+    "last_successful_fetch_at": "2026-11-25T20:40:39Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 28,
+    "verified_total": 29,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-25T11:29:53Z"
+        "checked_at": "2026-11-25T20:40:39Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 39,
+        "entries": 32,
         "relevant": 7,
-        "checked_at": "2026-11-25T11:29:53Z"
+        "checked_at": "2026-11-25T20:40:39Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-25T11:29:53Z"
+        "checked_at": "2026-11-25T20:40:39Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 7,
         "relevant": 3,
-        "checked_at": "2026-11-25T11:29:53Z"
+        "checked_at": "2026-11-25T20:40:39Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 13,
-        "checked_at": "2026-11-25T11:29:53Z"
+        "relevant": 9,
+        "checked_at": "2026-11-25T20:40:39Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 60,
-        "checked_at": "2026-11-25T11:29:53Z"
+        "checked_at": "2026-11-25T20:40:39Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 15,
-        "checked_at": "2026-11-25T11:29:53Z"
+        "relevant": 16,
+        "checked_at": "2026-11-25T20:40:39Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 26,
-        "checked_at": "2026-11-25T11:29:53Z"
+        "relevant": 27,
+        "checked_at": "2026-11-25T20:40:39Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 6,
-        "checked_at": "2026-11-25T11:29:53Z"
+        "checked_at": "2026-11-25T20:40:39Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 2,
-        "checked_at": "2026-11-25T11:29:53Z"
+        "relevant": 7,
+        "checked_at": "2026-11-25T20:40:39Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,7 +109,7 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-25T11:29:53Z"
+        "checked_at": "2026-11-25T20:40:39Z"
       }
     ]
   },
@@ -119,6 +119,40 @@
     "a54a27009f9a0771700981d0"
   ],
   "items": [
+    {
+      "id": "d4e18e5f5f0fe3a84e54dfe0",
+      "title": "GTA 6 Chapter 2 görev listesi ve final görevi hakkında bilgiler",
+      "summary": "Insider Gaming, GTA 6 Chapter 2'deki görevlerin tam listesini yayınladığını bildiriyor. GamesRadar+ ise Chapter 2'nin son görevinin nasıl işlediğini açıklıyor. Bu bilgiler resmi bir açıklama olmaktan ziyade medyanın raporlarıdır.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-25T20:40:39Z",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, Insider Gaming",
+      "source_strength": 75,
+      "editorial_priority": 87,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "Insider Gaming",
+          "url": "https://insider-gaming.com/gta-6-chapter-2-mission-list-in-order"
+        },
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-chapter-2-final-mission"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/30",
+      "reactions_total": null,
+      "location_id": "port_gellhorn",
+      "region": "Port Gellhorn & Ambrosia",
+      "image": "https://insider-gaming.com/wp-content/uploads/2026/11/gta-6-chapter-2-miission-list-in-order-scaled.webp",
+      "image_credit": "Insider Gaming",
+      "title_en": "Details on GTA 6 Chapter 2 mission list and final mission",
+      "summary_en": "Insider Gaming reports a complete list of missions for GTA 6 Chapter 2. GamesRadar+ explains how the chapter's final mission works. These details come from media reports rather than an official announcement."
+    },
     {
       "id": "4c2ad4ec7692184abf5fe3e1",
       "title": "GTA 6, Xbox Series X'te PS5'ten Daha İyi Çalışıyor",

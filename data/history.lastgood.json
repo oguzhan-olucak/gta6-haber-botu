@@ -2118,7 +2118,7 @@
         "59ea10db96e3582f77a1953c",
         "e42b8ec8c7180914cc704c3b"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -2275,6 +2275,140 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-25T20:40:39Z",
       "message_id": 30
+    },
+    {
+      "content_id": "50fcdbfdf2231b4e3797904f",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "OTHER",
+      "title_style": "QUESTION",
+      "title_tr": "Jason’ın Evine Geri Dönmek Ne Anlama Geliyor?",
+      "summary_tr": "Insider Gaming ve IGN, GTA 6’da Jason’ın evine geri dönmenin olası sonuçlarını ele alıyor. İddialara göre, evin tekrar ziyaret edilmesi farklı olayları tetikleyebilir ya da belirli avantajlar sağlayabilir, ancak bu bilgiler resmi olarak doğrulanmamış.",
+      "title_en": "What Does Returning to Jason’s House Mean?",
+      "summary_en": "Insider Gaming and IGN discuss the possible outcomes of returning to Jason's house in GTA 6. They claim that revisiting the location may trigger different events or provide certain benefits, but these details have not been officially confirmed.",
+      "why_this_label": "2 bağımsız yayın: IGN, Insider Gaming",
+      "source_names": {
+        "https://insider-gaming.com/jasons-house-gta-6-what-happens-return": "Insider Gaming",
+        "https://ign.com/articles/gta-6-heres-why-you-should-go-back-to-jasons-house-after-chapter-1": "IGN"
+      },
+      "source_strength": 75,
+      "editorial_priority": 82,
+      "publish_reason": "2 bağımsız yayın: IGN, Insider Gaming",
+      "independent_origins": [
+        "ign",
+        "insider_gaming"
+      ],
+      "source_urls": [
+        "https://insider-gaming.com/jasons-house-gta-6-what-happens-return",
+        "https://ign.com/articles/gta-6-heres-why-you-should-go-back-to-jasons-house-after-chapter-1"
+      ],
+      "source_titles": [
+        "What Happens If You Go Back to Jason’s House in GTA 6?",
+        "GTA 6: Here's Why You Should Go Back to Jason's House After Chapter 1"
+      ],
+      "content_hashes": [
+        "389e2e47bc8b0fa0d0120efb",
+        "65e7ef86a4cdb8391a765cba"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "publish_status": "REVIEW_HELD",
+      "publish_error": "Kanıtın izin vermediği kesinlik ifadesi",
+      "created_at": "2026-11-26T03:09:57Z"
+    },
+    {
+      "content_id": "17f695937de1dc0b44e7e718",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "COMMUNITY_RUMOR",
+      "title_style": "FACTUAL",
+      "title_tr": "Max Verstappen, Las Vegas Grand Prix zaferi öncesi GTA 6'da 40 saat geçirdi",
+      "summary_tr": "IGN ve PC Gamer, Hollanda‑Belçikalı yarış pilotu Max Verstappen'in Las Vegas Grand Prix zaferi öncesi hafta sonunu GTA 6'da geçirdiğini ve oyunu 40 saatten fazla oynadığını iddia ettiğini bildirdi. Ancak bu iddiaların doğruluğu resmi olarak teyit edilmedi.",
+      "title_en": "Max Verstappen reportedly spent 40 hours playing GTA 6 before his Las Vegas Grand Prix win",
+      "summary_en": "IGN and PC Gamer reported that Dutch‑Belgian racing driver Max Verstappen spent the weekend before his Las Vegas Grand Prix victory playing GTA 6 for over 40 hours. The claim has not been officially confirmed.",
+      "why_this_label": "2 bağımsız yayın: PC Gamer, IGN",
+      "source_names": {
+        "https://ign.com/articles/max-verstappen-spent-40-hours-playing-gta-6-and-still-won-the-las-vegas-grand-prix": "IGN",
+        "https://pcgamer.com/games/grand-theft-auto/even-max-verstappen-has-succumbed-to-gta-6-fever-squeezing-in-40-hours-around-his-las-vegas-grand-prix-win": "PC Gamer"
+      },
+      "source_strength": 75,
+      "editorial_priority": 81,
+      "publish_reason": "2 bağımsız yayın: PC Gamer, IGN",
+      "independent_origins": [
+        "future_plc",
+        "ign"
+      ],
+      "source_urls": [
+        "https://ign.com/articles/max-verstappen-spent-40-hours-playing-gta-6-and-still-won-the-las-vegas-grand-prix",
+        "https://pcgamer.com/games/grand-theft-auto/even-max-verstappen-has-succumbed-to-gta-6-fever-squeezing-in-40-hours-around-his-las-vegas-grand-prix-win"
+      ],
+      "source_titles": [
+        "Max Verstappen Spent 40 Hours Playing GTA 6 and Still Won the Las Vegas Grand Prix",
+        "Even Max Verstappen has succumbed to GTA 6 fever, squeezing in 40 hours around his Las Vegas Grand Prix win"
+      ],
+      "content_hashes": [
+        "4ce2d32688c12aff17f52cf8",
+        "991a1064db27453d546bd8f0"
+      ],
+      "measurement_status": "UNAVAILABLE",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "publish_status": "REVIEW_HELD",
+      "publish_error": "Kanıtın izin vermediği kesinlik ifadesi",
+      "created_at": "2026-11-26T03:09:57Z"
+    },
+    {
+      "content_id": "29ce4481c5e8cd7300b0363a",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "category": "INDUSTRY_BUSINESS",
+      "title_style": "FACTUAL",
+      "title_tr": "Spotify, GTA 6'da yer alan müziklerin dinlenme sayısında büyük artış olduğunu açıkladı",
+      "summary_tr": "Spotify, GTA 6'da kullanılan müziklerin dinlenme sayısında büyük bir artış olduğunu gösteren verileri yayımladı. Raporda, on yıldan daha eski bir Carly Rae Jepsen şarkısının da yer aldığı belirtiliyor.",
+      "title_en": "Spotify reports massive spike in streams for music featured in GTA 6",
+      "summary_en": "Spotify has released data showing a huge increase in streams for music featured in GTA 6. The report notes that a Carly Rae Jepsen song from over a decade ago is among the tracks.",
+      "why_this_label": "Tek yayın: IGN",
+      "source_names": {
+        "https://ign.com/articles/spotify-reveals-massive-spike-in-streams-for-music-featured-in-gta-6": "IGN"
+      },
+      "source_strength": 55,
+      "editorial_priority": 79,
+      "publish_reason": "Tek yayın: IGN",
+      "independent_origins": [
+        "ign"
+      ],
+      "source_urls": [
+        "https://ign.com/articles/spotify-reveals-massive-spike-in-streams-for-music-featured-in-gta-6"
+      ],
+      "source_titles": [
+        "Spotify Reveals Massive Spike in Streams for Music Featured in GTA 6"
+      ],
+      "content_hashes": [
+        "6599ee6070432d99737a9ccb"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://assets-prd.ignimgs.com/2026/11/25/eb1fd55d-3234-4275-bf63-9d4b3c91e9d7-1795648223400.png?width=1280&format=jpg&auto=webp&quality=80",
+      "image_credit": "IGN",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-26T03:09:57Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-26T03:09:57Z",
+      "message_id": 31
     }
   ]
 }

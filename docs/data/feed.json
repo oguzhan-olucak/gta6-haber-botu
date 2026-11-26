@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-25T20:40:39Z",
-    "last_run_at": "2026-11-25T20:40:39Z",
-    "last_successful_fetch_at": "2026-11-25T20:40:39Z",
+    "generated_at": "2026-11-26T03:09:57Z",
+    "last_run_at": "2026-11-26T03:09:57Z",
+    "last_successful_fetch_at": "2026-11-26T03:09:57Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 29,
+    "verified_total": 30,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-25T20:40:39Z"
+        "checked_at": "2026-11-26T03:09:57Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 32,
-        "relevant": 7,
-        "checked_at": "2026-11-25T20:40:39Z"
+        "entries": 39,
+        "relevant": 8,
+        "checked_at": "2026-11-26T03:09:57Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-25T20:40:39Z"
+        "checked_at": "2026-11-26T03:09:57Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 7,
         "relevant": 3,
-        "checked_at": "2026-11-25T20:40:39Z"
+        "checked_at": "2026-11-26T03:09:57Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 9,
-        "checked_at": "2026-11-25T20:40:39Z"
+        "checked_at": "2026-11-26T03:09:57Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 60,
-        "checked_at": "2026-11-25T20:40:39Z"
+        "checked_at": "2026-11-26T03:09:57Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 16,
-        "checked_at": "2026-11-25T20:40:39Z"
+        "relevant": 15,
+        "checked_at": "2026-11-26T03:09:57Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 27,
-        "checked_at": "2026-11-25T20:40:39Z"
+        "relevant": 25,
+        "checked_at": "2026-11-26T03:09:57Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 6,
-        "checked_at": "2026-11-25T20:40:39Z"
+        "relevant": 5,
+        "checked_at": "2026-11-26T03:09:57Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 7,
-        "checked_at": "2026-11-25T20:40:39Z"
+        "relevant": 4,
+        "checked_at": "2026-11-26T03:09:57Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,46 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-25T20:40:39Z"
+        "checked_at": "2026-11-26T03:09:57Z"
       }
     ]
   },
-  "hero_id": "c15feda560e4400eaf885b2f",
+  "hero_id": "a115d0cef3fed94181d7ad47",
   "featured_ids": [
-    "a115d0cef3fed94181d7ad47",
-    "a54a27009f9a0771700981d0"
+    "a54a27009f9a0771700981d0",
+    "4c2ad4ec7692184abf5fe3e1"
   ],
   "items": [
+    {
+      "id": "29ce4481c5e8cd7300b0363a",
+      "title": "Spotify, GTA 6'da yer alan müziklerin dinlenme sayısında büyük artış olduğunu açıkladı",
+      "summary": "Spotify, GTA 6'da kullanılan müziklerin dinlenme sayısında büyük bir artış olduğunu gösteren verileri yayımladı. Raporda, on yıldan daha eski bir Carly Rae Jepsen şarkısının da yer aldığı belirtiliyor.",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "trust_group": "single",
+      "category": "INDUSTRY_BUSINESS",
+      "category_tr": "Analiz",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-26T03:09:57Z",
+      "why_this_label": "Tek yayın: IGN",
+      "source_strength": 55,
+      "editorial_priority": 79,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/spotify-reveals-massive-spike-in-streams-for-music-featured-in-gta-6"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/31",
+      "reactions_total": null,
+      "location_id": "vice_city",
+      "region": "Vice City",
+      "image": "https://assets-prd.ignimgs.com/2026/11/25/eb1fd55d-3234-4275-bf63-9d4b3c91e9d7-1795648223400.png?width=1280&format=jpg&auto=webp&quality=80",
+      "image_credit": "IGN",
+      "title_en": "Spotify reports massive spike in streams for music featured in GTA 6",
+      "summary_en": "Spotify has released data showing a huge increase in streams for music featured in GTA 6. The report notes that a Carly Rae Jepsen song from over a decade ago is among the tracks."
+    },
     {
       "id": "d4e18e5f5f0fe3a84e54dfe0",
       "title": "GTA 6 Chapter 2 görev listesi ve final görevi hakkında bilgiler",

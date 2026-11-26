@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-26T12:55:49Z",
-    "last_run_at": "2026-11-26T12:55:49Z",
-    "last_successful_fetch_at": "2026-11-26T12:55:49Z",
+    "generated_at": "2026-11-26T22:15:18Z",
+    "last_run_at": "2026-11-26T22:15:18Z",
+    "last_successful_fetch_at": "2026-11-26T22:15:18Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 31,
+    "verified_total": 32,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-26T12:55:49Z"
+        "checked_at": "2026-11-26T22:15:18Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 29,
-        "relevant": 8,
-        "checked_at": "2026-11-26T12:55:49Z"
+        "entries": 35,
+        "relevant": 18,
+        "checked_at": "2026-11-26T22:15:18Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-26T12:55:49Z"
+        "checked_at": "2026-11-26T22:15:18Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 6,
         "relevant": 3,
-        "checked_at": "2026-11-26T12:55:49Z"
+        "checked_at": "2026-11-26T22:15:18Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 9,
-        "checked_at": "2026-11-26T12:55:49Z"
+        "relevant": 12,
+        "checked_at": "2026-11-26T22:15:18Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 58,
-        "checked_at": "2026-11-26T12:55:49Z"
+        "relevant": 52,
+        "checked_at": "2026-11-26T22:15:18Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 15,
-        "checked_at": "2026-11-26T12:55:49Z"
+        "relevant": 14,
+        "checked_at": "2026-11-26T22:15:18Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 25,
-        "checked_at": "2026-11-26T12:55:49Z"
+        "relevant": 22,
+        "checked_at": "2026-11-26T22:15:18Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 5,
-        "checked_at": "2026-11-26T12:55:49Z"
+        "relevant": 6,
+        "checked_at": "2026-11-26T22:15:18Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 3,
-        "checked_at": "2026-11-26T12:55:49Z"
+        "relevant": 4,
+        "checked_at": "2026-11-26T22:15:18Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-26T12:55:49Z"
+        "checked_at": "2026-11-26T22:15:18Z"
       }
     ]
   },
   "hero_id": "a115d0cef3fed94181d7ad47",
   "featured_ids": [
-    "a54a27009f9a0771700981d0",
+    "7610287a26eaadbf9641133b",
     "4c2ad4ec7692184abf5fe3e1"
   ],
   "items": [
+    {
+      "id": "7610287a26eaadbf9641133b",
+      "title": "Manni L. Perez, GTA 6'da neredeyse on yıl çalıştığını iddia ediyor",
+      "summary": "Oyuncu Manni L. Perez, GTA 6'da neredeyse on yıl çalıştığını ve Lucia karakterini canlandırdığını söylüyor. İddiaları, Video Games Chronicle ve IGN gibi iki bağımsız kaynaktan bildirildi.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-26T22:15:18Z",
+      "why_this_label": "2 bağımsız yayın: IGN, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 89,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/news/lucia-actress-manni-l-perez-claims-she-worked-on-gta-6-for-almost-a-decade"
+        },
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/lucia-actress-manni-l-perez-issues-first-statement-since-gta-6-launch"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/33",
+      "reactions_total": null,
+      "location_id": "port_gellhorn",
+      "region": "Port Gellhorn & Ambrosia",
+      "image": "https://www.videogameschronicle.com/files/2026/11/Lucia-actor-GTA-6.jpg",
+      "image_credit": "Video Games Chronicle",
+      "title_en": "Manni L. Perez claims she worked on GTA 6 for almost a decade",
+      "summary_en": "Actress Manni L. Perez says she spent nearly ten years working on GTA 6 and portrays the character Lucia. The claim was reported by Video Games Chronicle and IGN."
+    },
     {
       "id": "aea6c1981891bdfa108be973",
       "title": "GTA 6, PS5'te Xbox Series X'e göre daha fazla kare düşüşü gösteriyor",

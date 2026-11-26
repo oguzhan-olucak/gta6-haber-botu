@@ -2167,7 +2167,7 @@
         "28e64341da52e412320e9007",
         "bdd8c2a5b0cfc56ed7019871"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -2409,6 +2409,59 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-26T03:09:57Z",
       "message_id": 31
+    },
+    {
+      "content_id": "aea6c1981891bdfa108be973",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "GAMEPLAY_TECH",
+      "title_style": "FACTUAL",
+      "title_tr": "GTA 6, PS5'te Xbox Series X'e göre daha fazla kare düşüşü gösteriyor",
+      "summary_tr": "Video Games Chronicle ve Eurogamer'ın yaptığı analizlere göre, GTA 6 Xbox Series X'te 30 fps hedefini daha istikrarlı tutarken, PlayStation 5'te daha sık kare düşüşleri yaşanıyor. Bu durum, PS5 Pro sahibi olmayan oyuncular için Xbox Series X'in daha iyi bir deneyim sunabileceğini gösteriyor.",
+      "title_en": "GTA 6 shows more frame‑rate drops on PS5 than on Xbox Series X",
+      "summary_en": "According to analyses by Video Games Chronicle and Eurogamer, GTA 6 maintains its 30 fps target more consistently on Xbox Series X, while the PlayStation 5 experiences more frequent frame‑rate drops. This suggests that, for players without a PS5 Pro, Xbox Series X may provide a smoother experience.",
+      "why_this_label": "2 bağımsız yayın: Eurogamer, Video Games Chronicle",
+      "source_names": {
+        "https://videogameschronicle.com/news/gta-6-has-more-framerate-drops-on-ps5-than-xbox-series-x-according-to-analysis": "Video Games Chronicle",
+        "https://eurogamer.net/grand-theft-auto-6-frame-rate-xbox-series-x-ps5": "Eurogamer",
+        "https://eurogamer.net/playstation-5-xbox-series-s-x-console-hardware-sales-gta-6": "Eurogamer"
+      },
+      "source_strength": 75,
+      "editorial_priority": 88,
+      "publish_reason": "2 bağımsız yayın: Eurogamer, Video Games Chronicle",
+      "independent_origins": [
+        "eurogamer",
+        "vgc"
+      ],
+      "source_urls": [
+        "https://videogameschronicle.com/news/gta-6-has-more-framerate-drops-on-ps5-than-xbox-series-x-according-to-analysis",
+        "https://eurogamer.net/grand-theft-auto-6-frame-rate-xbox-series-x-ps5",
+        "https://eurogamer.net/playstation-5-xbox-series-s-x-console-hardware-sales-gta-6"
+      ],
+      "source_titles": [
+        "GTA 6 has more framerate drops on PS5 than Xbox Series X, according to analysis",
+        "Performance analysis reveals GTA 6 has a more stable frame-rate on Xbox Series X compared to PlayStation 5",
+        "GTA 6 reinvigorates PlayStation 5 and Xbox Series S/X console sales in the US, even at their inflated prices"
+      ],
+      "content_hashes": [
+        "5db0306fb6e902381865b87a",
+        "b9e2a67178707807112370fa",
+        "bafccc929f088285bd2da5be"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Xbox.jpg",
+      "image_credit": "Video Games Chronicle",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-26T12:55:49Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-26T12:55:49Z",
+      "message_id": 32
     }
   ]
 }

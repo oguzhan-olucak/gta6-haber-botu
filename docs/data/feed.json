@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-26T03:09:57Z",
-    "last_run_at": "2026-11-26T03:09:57Z",
-    "last_successful_fetch_at": "2026-11-26T03:09:57Z",
+    "generated_at": "2026-11-26T12:55:49Z",
+    "last_run_at": "2026-11-26T12:55:49Z",
+    "last_successful_fetch_at": "2026-11-26T12:55:49Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 30,
+    "verified_total": 31,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-26T03:09:57Z"
+        "checked_at": "2026-11-26T12:55:49Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 39,
+        "entries": 29,
         "relevant": 8,
-        "checked_at": "2026-11-26T03:09:57Z"
+        "checked_at": "2026-11-26T12:55:49Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,16 +37,16 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-26T03:09:57Z"
+        "checked_at": "2026-11-26T12:55:49Z"
       },
       {
         "id": "take_two_google_news",
         "name": "Take-Two Interactive",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 7,
+        "entries": 6,
         "relevant": 3,
-        "checked_at": "2026-11-26T03:09:57Z"
+        "checked_at": "2026-11-26T12:55:49Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 9,
-        "checked_at": "2026-11-26T03:09:57Z"
+        "checked_at": "2026-11-26T12:55:49Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 60,
-        "checked_at": "2026-11-26T03:09:57Z"
+        "relevant": 58,
+        "checked_at": "2026-11-26T12:55:49Z"
       },
       {
         "id": "gamesradar",
@@ -73,7 +73,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 15,
-        "checked_at": "2026-11-26T03:09:57Z"
+        "checked_at": "2026-11-26T12:55:49Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "ok",
         "entries": 50,
         "relevant": 25,
-        "checked_at": "2026-11-26T03:09:57Z"
+        "checked_at": "2026-11-26T12:55:49Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 5,
-        "checked_at": "2026-11-26T03:09:57Z"
+        "checked_at": "2026-11-26T12:55:49Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 4,
-        "checked_at": "2026-11-26T03:09:57Z"
+        "relevant": 3,
+        "checked_at": "2026-11-26T12:55:49Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,7 +109,7 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-26T03:09:57Z"
+        "checked_at": "2026-11-26T12:55:49Z"
       }
     ]
   },
@@ -119,6 +119,44 @@
     "4c2ad4ec7692184abf5fe3e1"
   ],
   "items": [
+    {
+      "id": "aea6c1981891bdfa108be973",
+      "title": "GTA 6, PS5'te Xbox Series X'e göre daha fazla kare düşüşü gösteriyor",
+      "summary": "Video Games Chronicle ve Eurogamer'ın yaptığı analizlere göre, GTA 6 Xbox Series X'te 30 fps hedefini daha istikrarlı tutarken, PlayStation 5'te daha sık kare düşüşleri yaşanıyor. Bu durum, PS5 Pro sahibi olmayan oyuncular için Xbox Series X'in daha iyi bir deneyim sunabileceğini gösteriyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-26T12:55:49Z",
+      "why_this_label": "2 bağımsız yayın: Eurogamer, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 88,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/news/gta-6-has-more-framerate-drops-on-ps5-than-xbox-series-x-according-to-analysis"
+        },
+        {
+          "name": "Eurogamer",
+          "url": "https://eurogamer.net/grand-theft-auto-6-frame-rate-xbox-series-x-ps5"
+        },
+        {
+          "name": "Eurogamer",
+          "url": "https://eurogamer.net/playstation-5-xbox-series-s-x-console-hardware-sales-gta-6"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/32",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez",
+      "image": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Xbox.jpg",
+      "image_credit": "Video Games Chronicle",
+      "title_en": "GTA 6 shows more frame‑rate drops on PS5 than on Xbox Series X",
+      "summary_en": "According to analyses by Video Games Chronicle and Eurogamer, GTA 6 maintains its 30 fps target more consistently on Xbox Series X, while the PlayStation 5 experiences more frequent frame‑rate drops. This suggests that, for players without a PS5 Pro, Xbox Series X may provide a smoother experience."
+    },
     {
       "id": "29ce4481c5e8cd7300b0363a",
       "title": "Spotify, GTA 6'da yer alan müziklerin dinlenme sayısında büyük artış olduğunu açıkladı",

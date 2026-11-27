@@ -1,151 +1,11 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-27T04:21:53Z",
-  "last_successful_fetch_at": "2026-11-27T04:21:53Z",
+  "last_run_at": "2026-11-27T14:04:20Z",
+  "last_successful_fetch_at": "2026-11-27T14:04:20Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
   "seen_items": {
-    "ada53198ea1a17769530729a": {
-      "first_seen": "2026-11-17T05:01:55Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "f5554d74a9f77adccbe4b68b": {
-      "first_seen": "2026-11-17T05:01:55Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "b012faf2f68df4c1bbaf8959": {
-      "first_seen": "2026-11-17T05:01:55Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "b7eef4fdf364e5a2cb2261d0": {
-      "first_seen": "2026-11-17T05:01:55Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "1edc6408354d8ba8770496bd": {
-      "first_seen": "2026-11-17T05:01:55Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "36a17a89e81f9fc09f735ca8": {
-      "first_seen": "2026-11-17T05:01:55Z",
-      "status": "HELD",
-      "source": "ign"
-    },
-    "cfdd6035e8f3701692cfea30": {
-      "first_seen": "2026-11-17T05:01:55Z",
-      "status": "HELD",
-      "source": "ign"
-    },
-    "0d5a9d07687e54abf512fe1f": {
-      "first_seen": "2026-11-17T05:01:55Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "1566fa0d6138ad993ee835b9": {
-      "first_seen": "2026-11-17T05:01:55Z",
-      "status": "NEW",
-      "source": "ign"
-    },
-    "c233fd1f486eb0f262a75f69": {
-      "first_seen": "2026-11-17T05:01:55Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "2134adbbb11febe08fbdd0d0": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "eurogamer"
-    },
-    "acef6c9ec64eb92b1fe03b51": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "gamesradar"
-    },
-    "fa14856f0d448939d6ee3297": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "958d16af30d8216cf54fa8b9": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "USED",
-      "source": "vgc"
-    },
-    "bda77e14923c95145d5c35b5": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "092b66056220a644ae2b9806": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "pcgamer"
-    },
-    "e86a2621c7d7d5251bd54031": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "6ee156d36e43662b1c14572e": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "7c0876423c9d6647ff6d40c2": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "pcgamer"
-    },
-    "50bd761d489994597150e178": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "eurogamer"
-    },
-    "18cf2cbbcae4163b2b27f65a": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "REJECTED",
-      "source": "eurogamer"
-    },
-    "4c6616e4122aa8f25de2d001": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "888bab8a417db71849d9097c": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "36416cbce9dfec4d153da368": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "8f1b7b8a692ea3b56a392913": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
-    "d805648e220ba70296cfbed0": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "REVIEW_HELD",
-      "source": "ign"
-    },
-    "5b7523e40bf34b1e3617fce5": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "REJECTED",
-      "source": "eurogamer"
-    },
-    "330f72889ae36207ad9fb336": {
-      "first_seen": "2026-11-17T12:02:46Z",
-      "status": "HELD",
-      "source": "reddit_gta6"
-    },
     "96d464a30c53d9bcb4d7aa11": {
       "first_seen": "2026-11-17T14:17:14Z",
       "status": "HELD",
@@ -3773,22 +3633,22 @@
     },
     "397cc7453312fb7a699b931f": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "c61ace80f9ccf05f0fe5a936": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "a07d831269707182be33d685": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "7efcc61313d2c793109cd493": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "a644d416f5c2e2b50b4ac948": {
@@ -3798,97 +3658,97 @@
     },
     "8995ddb4c10d61690f70516d": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "3e796f0c3b17df1a3a76b76a": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "8bf9180eb4647496fa0a505a": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "ddba0938c4da02de7caf86b0": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "24b642a6a9e247aa542775c0": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "7a68e2d6d36d34caddfec0db": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "fbf0ed3806b4ac23a66d8a58": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "b7d2f75ff274d998cf7735cc": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "ff96ee66797be156b4100699": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "20e4e211fcb289ef61ddb237": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "214d4abad7496a08398b835a": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "3a085e60f898ef2f80daf781": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "7c6f10c6d0769588905aceee": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "59d7136499c55dd2f6c01927": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "eurogamer"
     },
     "31cdaf7e14fc098f273572a8": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "5fd4a893cfee481be2a48154": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "5f443e9b686f5d7527a18e83": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "pcgamer"
     },
     "3241cfc160caf1454ae5c462": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "pcgamer"
     },
     "9d59a2a426aa281073c940b2": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "7928f88b3a8ad26112f9e0ac": {
@@ -3898,7 +3758,7 @@
     },
     "566738bb32186228f82a3da4": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "85d1175c40d822e0c308048a": {
@@ -3908,22 +3768,22 @@
     },
     "d8c09c6dd998a303bd1e6718": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "22ea32cdbee1b88f97a7e991": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "eurogamer"
     },
     "2bb7e78c2f009761232d0b85": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "cb2bf57bc17af0fcb852b217": {
       "first_seen": "2026-11-25T20:40:39Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "fa944de3c092f46f448fb757": {
@@ -4003,32 +3863,32 @@
     },
     "0fd83c291b66a5931d859e76": {
       "first_seen": "2026-11-26T03:09:57Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "pcgamer"
     },
     "7cb36b56dd70f3a3c6872bc2": {
       "first_seen": "2026-11-26T03:09:57Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "2cf60d8faa3f575e4b22b103": {
       "first_seen": "2026-11-26T03:09:57Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "pcgamer"
     },
     "ac4adbd108d037de0038d9f2": {
       "first_seen": "2026-11-26T03:09:57Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "ce67e59d1817287ab8f15668": {
       "first_seen": "2026-11-26T03:09:57Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "574ba9e9ab97e71fda8140ac": {
       "first_seen": "2026-11-26T03:09:57Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "834e9b4b7d4997cfdc788eb2": {
@@ -4088,7 +3948,7 @@
     },
     "c84424d4501ca8bdebf39637": {
       "first_seen": "2026-11-26T22:15:18Z",
-      "status": "NEW",
+      "status": "USED",
       "source": "gamesradar"
     },
     "9b7186a4638aa068a9b62ca3": {
@@ -4260,6 +4120,81 @@
       "first_seen": "2026-11-27T04:21:53Z",
       "status": "NEW",
       "source": "pcgamer"
+    },
+    "61e597f8a96aaf324b0b86d3": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "vgc"
+    },
+    "fda3f862115d4e4cb2835438": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "fa8bfde33d9ae96ec7801a89": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "900df1f46e4e6cb5e03d7141": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "10b4f0d405516e8fe94bfc70": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "c90149dd3e3cb44d4beb4807": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "15468ed6c853beb69376153d": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "HELD",
+      "source": "gamesradar"
+    },
+    "49991341941f580d14f5ea8d": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "ign"
+    },
+    "41a33bcefbef93070e8d404b": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "17f36ff125de08b3b363dd73": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "34ecbfdc0469f27421385e7a": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "eurogamer"
+    },
+    "0155d5c3dae44e13586ca912": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "40a4b3b4c875a72c8b8c87f6": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "insider_gaming"
+    },
+    "e4ba00e7acc2ed3728dacc8c": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "NEW",
+      "source": "gamesradar"
+    },
+    "e64ac512dd66f8940e136638": {
+      "first_seen": "2026-11-27T14:04:20Z",
+      "status": "USED",
+      "source": "ign"
     }
   },
   "digests_sent": [
@@ -4274,7 +4209,7 @@
     "2026-11-24T18"
   ],
   "alerts_last_sent": {
-    "GEMINI_MODEL": "2026-11-27T04:21:53Z",
+    "GEMINI_MODEL": "2026-11-27T14:04:20Z",
     "TELEGRAM_AUTH": "2026-11-17T12:02:46Z"
   },
   "source_status": {
@@ -4283,78 +4218,78 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-27T04:21:53Z",
+      "checked_at": "2026-11-27T14:04:20Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
-      "entries": 34,
-      "relevant": 20,
+      "entries": 32,
+      "relevant": 17,
       "new": 0,
-      "checked_at": "2026-11-27T04:21:53Z"
+      "checked_at": "2026-11-27T14:04:20Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-27T04:21:53Z"
+      "checked_at": "2026-11-27T14:04:20Z"
     },
     "take_two_google_news": {
       "ok": true,
-      "entries": 6,
+      "entries": 7,
       "relevant": 3,
       "new": 0,
-      "checked_at": "2026-11-27T04:21:53Z"
+      "checked_at": "2026-11-27T14:04:20Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
       "relevant": 12,
-      "new": 0,
-      "checked_at": "2026-11-27T04:21:53Z"
+      "new": 4,
+      "checked_at": "2026-11-27T14:04:20Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
-      "relevant": 52,
-      "new": 0,
-      "checked_at": "2026-11-27T04:21:53Z"
+      "relevant": 50,
+      "new": 1,
+      "checked_at": "2026-11-27T14:04:20Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 13,
-      "new": 0,
-      "checked_at": "2026-11-27T04:21:53Z"
+      "relevant": 14,
+      "new": 3,
+      "checked_at": "2026-11-27T14:04:20Z"
     },
     "pcgamer": {
       "ok": true,
       "entries": 50,
-      "relevant": 23,
-      "new": 1,
-      "checked_at": "2026-11-27T04:21:53Z"
+      "relevant": 21,
+      "new": 0,
+      "checked_at": "2026-11-27T14:04:20Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
-      "relevant": 6,
+      "relevant": 5,
       "new": 1,
-      "checked_at": "2026-11-27T04:21:53Z"
+      "checked_at": "2026-11-27T14:04:20Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 4,
-      "new": 0,
-      "checked_at": "2026-11-27T04:21:53Z"
+      "relevant": 8,
+      "new": 6,
+      "checked_at": "2026-11-27T14:04:20Z"
     },
     "reddit_gta6": {
       "ok": false,
       "error_class": "RSS_PARSE_ERROR",
       "detail": "HTTP 404",
       "http_status": 404,
-      "checked_at": "2026-11-27T04:21:53Z"
+      "checked_at": "2026-11-27T14:04:20Z"
     }
   },
   "run_log": [
@@ -5114,114 +5049,28 @@
         "groq",
         "github"
       ]
+    },
+    {
+      "started_at": "2026-11-27T14:04:20Z",
+      "sources_ok": 10,
+      "new_items": 15,
+      "published": 1,
+      "gemini_calls": 1,
+      "error_classes": [
+        "RSS_PARSE_ERROR"
+      ],
+      "llm_attempts": [
+        "gemini:NETWORK_TRANSIENT",
+        "groq:ok"
+      ],
+      "llm_chain": [
+        "gemini",
+        "groq",
+        "github"
+      ]
     }
   ],
   "candidate_pool": {
-    "df27d95e9e3757cbe7db79f5": {
-      "item": {
-        "id": "df27d95e9e3757cbe7db79f5",
-        "source_id": "pcgamer",
-        "source_name": "PC Gamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "GTA 6's best lore drops happen when you're chilling with your partner, so stop leaving them at home all the time",
-        "url": "https://pcgamer.com/games/grand-theft-auto/gta-6s-best-lore-drops-happen-when-youre-chilling-with-your-partner-so-stop-leaving-them-at-home-all-the-time",
-        "summary": "Learning things about your partner by spending time with them? Say it ain't so.",
-        "published_at": "2026-11-25T11:14:42Z",
-        "content_hash": "f05f503619eb95eb5e2db910",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "df27d95e9e3757cbe7db79f5",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/MybRDJeCE4mrHokyi4PpA5-1920-80.png"
-      },
-      "first_seen": "2026-11-25T11:29:53Z",
-      "needs_eval": false
-    },
-    "8729dadeb25cad6ff7ccd278": {
-      "item": {
-        "id": "8729dadeb25cad6ff7ccd278",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Company Property walkthrough: How to save the weapons cargo",
-        "url": "https://videogameschronicle.com/guide/gta-6-company-property-walkthrough-how-to-save-the-weapons-cargo",
-        "summary": "How to complete Company Property in GTA 6",
-        "published_at": "2026-11-25T10:53:37Z",
-        "content_hash": "3acefda70392a7f6369cbc8f",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "8729dadeb25cad6ff7ccd278",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/gta-6-company-property-walkthrough-6.jpg"
-      },
-      "first_seen": "2026-11-25T11:29:53Z",
-      "needs_eval": false
-    },
-    "801479cd886aa5b9b4d28ab4": {
-      "item": {
-        "id": "801479cd886aa5b9b4d28ab4",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6: How to flip a car in Grand Theft Auto 6",
-        "url": "https://videogameschronicle.com/guide/gta-6-how-to-flip-car-grand-theft-auto",
-        "summary": "How to flip a car in the open world and reset your car in races in Grand Theft Auto 6",
-        "published_at": "2026-11-25T10:51:12Z",
-        "content_hash": "56c1508730827e55017bb82c",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "801479cd886aa5b9b4d28ab4",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-How-to-flip-a-car-in-Grand-Theft-Auto-6-2.jpg"
-      },
-      "first_seen": "2026-11-25T11:29:53Z",
-      "needs_eval": false
-    },
-    "a77a4de8ad7514d1fe68f0d1": {
-      "item": {
-        "id": "a77a4de8ad7514d1fe68f0d1",
-        "source_id": "vgc",
-        "source_name": "Video Games Chronicle",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "vgc",
-        "title": "GTA 6 Caught Slipping walkthrough: How to catch both thieves",
-        "url": "https://videogameschronicle.com/guide/gta-6-caught-slipping-walkthrough",
-        "summary": "Here's how to complete Caught Slipping in GTA 6",
-        "published_at": "2026-11-25T09:58:00Z",
-        "content_hash": "0160d6971547169caba37a0f",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "a77a4de8ad7514d1fe68f0d1",
-        "image_url": "https://www.videogameschronicle.com/files/2026/11/gta-6-caught-slipping-walkthrough-9.jpg"
-      },
-      "first_seen": "2026-11-25T11:29:53Z",
-      "needs_eval": false
-    },
-    "d87118d33b65b58ffbfadce7": {
-      "item": {
-        "id": "d87118d33b65b58ffbfadce7",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "Yes, There Was One Thing Cut from GTA 6 for Australia, NZ",
-        "url": "https://ign.com/articles/yes-there-was-one-thing-cut-from-gta-6-for-australia-nz",
-        "summary": "Rockstar chopped out a temporary stat buff from GTA 6, although players down under may not ever really notice it.",
-        "published_at": "2026-11-25T06:55:24Z",
-        "content_hash": "d7dfea053c8623678fd1fd38",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "d87118d33b65b58ffbfadce7",
-        "image_url": "https://assets-prd.ignimgs.com/2026/11/23/gta-6-secret-blogroll-1795445757736.jpg"
-      },
-      "first_seen": "2026-11-25T11:29:53Z",
-      "needs_eval": false
-    },
     "397cc7453312fb7a699b931f": {
       "item": {
         "id": "397cc7453312fb7a699b931f",
@@ -5241,7 +5090,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/WXcVqu7yt4KSLhe4AgGHGA-1920-80.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "c61ace80f9ccf05f0fe5a936": {
       "item": {
@@ -5262,7 +5111,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/gta-6-cooties-walkthrough-12.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "a07d831269707182be33d685": {
       "item": {
@@ -5283,7 +5132,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Marbelle-Hotel-Silent-Hill-3.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "7efcc61313d2c793109cd493": {
       "item": {
@@ -5304,7 +5153,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "8995ddb4c10d61690f70516d": {
       "item": {
@@ -5325,7 +5174,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/gta-6-hidden-charges-ask-for-help-3.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "3e796f0c3b17df1a3a76b76a": {
       "item": {
@@ -5346,7 +5195,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/YStK3kAiQWgxho33L4VjMA-1920-80.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "8bf9180eb4647496fa0a505a": {
       "item": {
@@ -5367,7 +5216,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/gta-6-hidden-charges-walkthrough-11.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "ddba0938c4da02de7caf86b0": {
       "item": {
@@ -5388,7 +5237,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "24b642a6a9e247aa542775c0": {
       "item": {
@@ -5409,7 +5258,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "7a68e2d6d36d34caddfec0db": {
       "item": {
@@ -5430,7 +5279,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Aunties-Place-location-in-LaPerle-2.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "fbf0ed3806b4ac23a66d8a58": {
       "item": {
@@ -5451,7 +5300,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/25/gta61-1795626092844.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "b7d2f75ff274d998cf7735cc": {
       "item": {
@@ -5472,7 +5321,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "ff96ee66797be156b4100699": {
       "item": {
@@ -5493,7 +5342,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/25/bank-blog-1795626263101.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "20e4e211fcb289ef61ddb237": {
       "item": {
@@ -5514,7 +5363,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/gta-6-how-to-autodrive-1.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "214d4abad7496a08398b835a": {
       "item": {
@@ -5535,7 +5384,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "3a085e60f898ef2f80daf781": {
       "item": {
@@ -5556,7 +5405,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/g7DZnKtLHnoD9tAEJbpd4A-1920-80.png"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "7c6f10c6d0769588905aceee": {
       "item": {
@@ -5577,7 +5426,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/QkVrvYdazxdPY89GYg4nYm-1920-80.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "59d7136499c55dd2f6c01927": {
       "item": {
@@ -5598,7 +5447,7 @@
         "image_url": "https://assetsio.gnwcdn.com/GTA-6-review-14.jpg?width=690&quality=85&format=jpg&auto=webp"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "31cdaf7e14fc098f273572a8": {
       "item": {
@@ -5619,7 +5468,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "5fd4a893cfee481be2a48154": {
       "item": {
@@ -5640,7 +5489,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/3389mzUBT3d6BLYsdfWpWh-1920-80.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "5f443e9b686f5d7527a18e83": {
       "item": {
@@ -5661,7 +5510,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/X5bwnU4v3okUuzcqFbJz63-1920-80.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "3241cfc160caf1454ae5c462": {
       "item": {
@@ -5682,7 +5531,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/cSMhCzgd23bambkhDRa2C3-1920-80.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "9d59a2a426aa281073c940b2": {
       "item": {
@@ -5703,7 +5552,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/20/gta-6-ps5-xbox-early-black-friday-deals-shopto-1795209707407.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "566738bb32186228f82a3da4": {
       "item": {
@@ -5724,7 +5573,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/93JwRtLJ4oem84zumGXt2o-1920-80.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "d8c09c6dd998a303bd1e6718": {
       "item": {
@@ -5745,7 +5594,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/24/1a20f72012888-screenshoturl-1-1795555585310.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "22ea32cdbee1b88f97a7e991": {
       "item": {
@@ -5766,7 +5615,7 @@
         "image_url": "https://assetsio.gnwcdn.com/gta-6-vice-city-car-interior-1.jpeg?width=690&quality=85&format=jpg&auto=webp"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "2bb7e78c2f009761232d0b85": {
       "item": {
@@ -5787,7 +5636,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/xGxGeRQBdD4HrZMZfXwjth-1920-80.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "cb2bf57bc17af0fcb852b217": {
       "item": {
@@ -5808,7 +5657,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/VN2gVwqfJLyPHiQu2F2ZNA-1920-80.jpg"
       },
       "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "fa944de3c092f46f448fb757": {
       "item": {
@@ -5848,195 +5697,6 @@
         "via": "rss",
         "raw_id": "2f2343cf19c3a4e0d007e412",
         "image_url": "https://assetsio.gnwcdn.com/gta-lucia-psycho.jpg?width=690&quality=85&format=jpg&auto=webp"
-      },
-      "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": false
-    },
-    "e0aa46130fa79561431192eb": {
-      "item": {
-        "id": "e0aa46130fa79561431192eb",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "Unable to buy gas, I feel broke in GTA 6 – for the first time, money matters",
-        "url": "https://gamesradar.com/games/grand-theft-auto/unable-to-buy-gas-i-feel-broke-in-gta-6-for-the-first-time-money-matters",
-        "summary": "And yet, the game is gas",
-        "published_at": "2026-11-25T14:00:00Z",
-        "content_hash": "4216de030eae09d99c3f056e",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "e0aa46130fa79561431192eb",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/MKUkdiRfSFxmTuRKJJUcpW-1920-80.jpg"
-      },
-      "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": false
-    },
-    "c0bdb4588675799d237e99f1": {
-      "item": {
-        "id": "c0bdb4588675799d237e99f1",
-        "source_id": "eurogamer",
-        "source_name": "Eurogamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "eurogamer",
-        "title": "Tired of GTA 6? Here's 23 lesser-known gems that might beat it at its own game",
-        "url": "https://eurogamer.net/gta-6-23-lesser-known-gems-that-might-beat-it-at-its-own-game",
-        "summary": "You can do a lot of things in GTA 6 : fishing, golfing, running, jumping, dancing, racing, roaming, shopping. It goes on! There's romancing, birdwatching, DIY, and even more besides. It really is an everything game. But GTA 6 isn't for every one . Read more",
-        "published_at": "2026-11-25T13:41:40Z",
-        "content_hash": "fd09721f98ef78d9268c7f47",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "c0bdb4588675799d237e99f1",
-        "image_url": "https://assetsio.gnwcdn.com/not-gta-header-resize.jpg?width=690&quality=85&format=jpg&auto=webp"
-      },
-      "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": false
-    },
-    "ea5f2d096c38a17e50a20d63": {
-      "item": {
-        "id": "ea5f2d096c38a17e50a20d63",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "How to get the fastest cars in GTA 6",
-        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-fastest-cars",
-        "summary": "The three fastest cars are Andrew Node's Thrax Truffade, the Seaspray Emerus and the Honeycomb Emerus",
-        "published_at": "2026-11-25T13:09:24Z",
-        "content_hash": "33e84d5c081b3e1c317a35db",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "ea5f2d096c38a17e50a20d63",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/aM4dWhNE9LPMp9VdGHq93E-1920-80.jpg"
-      },
-      "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": false
-    },
-    "615c570ac23117ee6cbb4cae": {
-      "item": {
-        "id": "615c570ac23117ee6cbb4cae",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "How to get abducted and find aliens in GTA 6",
-        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-alien-mission-abduction",
-        "summary": "How to get abducted and find aliens in GTA 6",
-        "published_at": "2026-11-25T13:09:14Z",
-        "content_hash": "71267f001376397d108bcdee",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "615c570ac23117ee6cbb4cae",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/NBC5vFqpMjWPkVRngr8rBa-1920-80.jpg"
-      },
-      "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": true
-    },
-    "0e824c78e64b706d3b2e8412": {
-      "item": {
-        "id": "0e824c78e64b706d3b2e8412",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "Take-Two Appears to Be Trying to Scrub GTA 6 PC Ports From the Internet, as Vibecoders Race Toward Controversial World First",
-        "url": "https://ign.com/articles/take-two-appears-to-be-trying-to-scrub-gta-6-pc-ports-from-the-internet-as-vibecoders-race-toward-controversial-world-first",
-        "summary": "Take-Two appears to be taking on the many GTA 6 PC ports currently in the works following Cyberleek’s alleged release of an unauthorized Xbox build of the game.",
-        "published_at": "2026-11-25T12:44:11Z",
-        "content_hash": "07c472ac36a81eedce7c8882",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "0e824c78e64b706d3b2e8412",
-        "image_url": "https://assets-prd.ignimgs.com/2026/11/25/gtavi-10-1795610461067.jpg"
-      },
-      "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": false
-    },
-    "8509fce054f2fc12ea01eb77": {
-      "item": {
-        "id": "8509fce054f2fc12ea01eb77",
-        "source_id": "eurogamer",
-        "source_name": "Eurogamer",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "eurogamer",
-        "title": "Players discover over 1,500 individual buildings you can enter in GTA 6, nearly 28% of all buildings on the map",
-        "url": "https://eurogamer.net/gta-6-over-1500-buildings-you-can-enter",
-        "summary": "One GTA 6 player has put in the legwork and found that a shocking number of buildings across Leonida are freely accessible. Read more",
-        "published_at": "2026-11-25T12:42:00Z",
-        "content_hash": "595780333b0e75eae888262d",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "8509fce054f2fc12ea01eb77",
-        "image_url": "https://assetsio.gnwcdn.com/boobie-gta-6.jpg?width=690&quality=85&format=jpg&auto=webp"
-      },
-      "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": false
-    },
-    "7cc3841b2dbdfb29f538e89a": {
-      "item": {
-        "id": "7cc3841b2dbdfb29f538e89a",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "How to get the GTA 6 Ocelot Jugular",
-        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-ocelot-jugular",
-        "summary": "Once Randy gets you to work, you need to hunt down specific cars, including the GTA 6 Ocelot Jugular",
-        "published_at": "2026-11-25T12:25:34Z",
-        "content_hash": "3a5ccb840886910311728641",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "7cc3841b2dbdfb29f538e89a",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/EwUsuFwPWBxyXLqKQkJyQb-1920-80.jpg"
-      },
-      "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": false
-    },
-    "c757db63b50531e7ddb9fe43": {
-      "item": {
-        "id": "c757db63b50531e7ddb9fe43",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "How to use NOS in GTA 6",
-        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-nos-nitrous-boost",
-        "summary": "Here's how you can get NOS boost for your cars in GTA 6 and how to use it",
-        "published_at": "2026-11-25T12:03:56Z",
-        "content_hash": "2f2a93835138c7c770923b36",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "c757db63b50531e7ddb9fe43",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/zrnrjkMA7hGmDgn6LwQ3aj-1920-80.jpg"
-      },
-      "first_seen": "2026-11-25T20:40:39Z",
-      "needs_eval": false
-    },
-    "e8b39b42fb3fb66d96beb5ec": {
-      "item": {
-        "id": "e8b39b42fb3fb66d96beb5ec",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "Raul Bautista Actor Manny Perez Bought a PS5 So He Could Play GTA 6",
-        "url": "https://ign.com/articles/raul-bautista-actor-manny-perez-playing-gta-6",
-        "summary": "The actor behind one of the best GTA characters of all time has started working his way through GTA 6. Manny Perez, who plays Raul Bautista, bought a PS5 just so he could play.",
-        "published_at": "2026-11-25T11:51:09Z",
-        "content_hash": "1570f9893516b6673e5628cb",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "e8b39b42fb3fb66d96beb5ec",
-        "image_url": ""
       },
       "first_seen": "2026-11-25T20:40:39Z",
       "needs_eval": false
@@ -6081,7 +5741,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/qP2t3NgyYc4YTtxyNnMSoK-1920-80.jpg"
       },
       "first_seen": "2026-11-26T03:09:57Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "7cb36b56dd70f3a3c6872bc2": {
       "item": {
@@ -6102,7 +5762,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-26T03:09:57Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "2cf60d8faa3f575e4b22b103": {
       "item": {
@@ -6123,7 +5783,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/he79YK28p3viRdnY2Hduej-1920-80.jpg"
       },
       "first_seen": "2026-11-26T03:09:57Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "ac4adbd108d037de0038d9f2": {
       "item": {
@@ -6144,7 +5804,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-26T03:09:57Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "ce67e59d1817287ab8f15668": {
       "item": {
@@ -6165,7 +5825,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/25/gta-6-item-animations-1795640541926.jpg"
       },
       "first_seen": "2026-11-26T03:09:57Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "574ba9e9ab97e71fda8140ac": {
       "item": {
@@ -6186,7 +5846,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/25/gta-6-car-1795637243504.jpg"
       },
       "first_seen": "2026-11-26T03:09:57Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "834e9b4b7d4997cfdc788eb2": {
       "item": {
@@ -6352,27 +6012,6 @@
         "via": "rss",
         "raw_id": "84355b1dd70d81bfedd65b9e",
         "image_url": ""
-      },
-      "first_seen": "2026-11-26T22:15:18Z",
-      "needs_eval": true
-    },
-    "c84424d4501ca8bdebf39637": {
-      "item": {
-        "id": "c84424d4501ca8bdebf39637",
-        "source_id": "gamesradar",
-        "source_name": "GamesRadar+",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "future_plc",
-        "title": "Rockstar boss knew some GTA 6 players would \"reject\" the criminal profile system",
-        "url": "https://gamesradar.com/games/grand-theft-auto/rockstar-boss-knew-some-gta-6-players-would-reject-the-criminal-profile-system-but-assures-you-can-still-do-whatever-you-wanted-to-do-before",
-        "summary": "Grand Theft Auto 6 \"opens a new range of choices and decisions\"",
-        "published_at": "2026-11-26T18:00:00Z",
-        "content_hash": "1d9b03d6e186982d53124a7e",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "c84424d4501ca8bdebf39637",
-        "image_url": "https://cdn.mos.cms.futurecdn.net/qrbcWpiXwQczg2ARoHrCDA-1920-80.jpg"
       },
       "first_seen": "2026-11-26T22:15:18Z",
       "needs_eval": true
@@ -7048,9 +6687,303 @@
       },
       "first_seen": "2026-11-27T04:21:53Z",
       "needs_eval": true
+    },
+    "61e597f8a96aaf324b0b86d3": {
+      "item": {
+        "id": "61e597f8a96aaf324b0b86d3",
+        "source_id": "vgc",
+        "source_name": "Video Games Chronicle",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "vgc",
+        "title": "GTA 6 President’s Bunker questline walkthrough: All Locations, Codes, Puzzles and Rewards",
+        "url": "https://videogameschronicle.com/guide/gta-6-presidents-bunker-questline-walkthrough-all-locations-codes-puzzles-and-rewards",
+        "summary": "How to complete the President's Bunker mission in GTA 6",
+        "published_at": "2026-11-27T13:50:40Z",
+        "content_hash": "1f62f59e9eaf5ccd8083ac92",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "61e597f8a96aaf324b0b86d3",
+        "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-President-Bunker-mission-3.jpg"
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
+    },
+    "fda3f862115d4e4cb2835438": {
+      "item": {
+        "id": "fda3f862115d4e4cb2835438",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Sneakthief Trophy & Achievement Walkthrough in GTA 6—How to Rob Stores Without Being Detected",
+        "url": "https://insider-gaming.com/sneakthief-walkthrough-gta-6",
+        "summary": "Trying to do the Sneakthief trophy and achievement might seem impossible in GTA 6, but you're likely missing one crucial part of the puzzle. The post Sneakthief Trophy & Achievement Walkthrough in GTA 6—How to Rob Stores Without Being Detected appeared first on Insider Gaming .",
+        "published_at": "2026-11-27T13:40:22Z",
+        "content_hash": "2fc1acdcd52580458aa68ad0",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "fda3f862115d4e4cb2835438",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
+    },
+    "fa8bfde33d9ae96ec7801a89": {
+      "item": {
+        "id": "fa8bfde33d9ae96ec7801a89",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Catch Me If You Can Walkthrough in GTA 6—Trophy & Achievement Location & Solution, Explained",
+        "url": "https://insider-gaming.com/catch-me-if-you-can-trophy-gta-6",
+        "summary": "One of the many trophies in GTA 6 is the 'Catch Me If You Can' trophy and achievement, and this guide has a full walkthrough. The post Catch Me If You Can Walkthrough in GTA 6—Trophy & Achievement Location & Solution, Explained appeared first on Insider Gaming .",
+        "published_at": "2026-11-27T13:06:04Z",
+        "content_hash": "49894650da2da248f268a584",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "fa8bfde33d9ae96ec7801a89",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
+    },
+    "900df1f46e4e6cb5e03d7141": {
+      "item": {
+        "id": "900df1f46e4e6cb5e03d7141",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "It Turns Out Jason Might Have a History With Mandy in GTA 6 After All",
+        "url": "https://ign.com/articles/it-turns-out-jason-might-have-a-history-with-mandy-in-gta-6-after-all",
+        "summary": "Mandy is obsessed with Jason in GTA 6, but there's dialogue that suggests they hooked up at least once.",
+        "published_at": "2026-11-27T12:53:26Z",
+        "content_hash": "f115817fcdf5b77bdf341b4f",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "900df1f46e4e6cb5e03d7141",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/27/mandymain-1795783965057.jpg"
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
+    },
+    "10b4f0d405516e8fe94bfc70": {
+      "item": {
+        "id": "10b4f0d405516e8fe94bfc70",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Former Gran Turismo World Series Competitor Helped Tune GTA 6 Car Physics",
+        "url": "https://ign.com/articles/former-gran-turismo-world-series-competitor-helped-tune-gta-6-car-physics",
+        "summary": "A former Gran Turismo World Series competitor helped Rockstar tune GTA 6's car physics.",
+        "published_at": "2026-11-27T12:34:14Z",
+        "content_hash": "82dba5250de1b22d14053c81",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "10b4f0d405516e8fe94bfc70",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/27/vintage-vice-city-pack-vapid-stanier-02-1795782728767.jpg"
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
+    },
+    "c90149dd3e3cb44d4beb4807": {
+      "item": {
+        "id": "c90149dd3e3cb44d4beb4807",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "Should you participate or not as the pool boy in GTA 6?",
+        "url": "https://gamesradar.com/games/grand-theft-auto/all-pool-boy-choices-in-the-gta-6-safe-word-mission",
+        "summary": "Should you participate as the pool boy in GTA 6?",
+        "published_at": "2026-11-27T12:27:14Z",
+        "content_hash": "4e27da1a13f7a1ed38ed4539",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "c90149dd3e3cb44d4beb4807",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/3D98L9ZNXVa5uWhhxhrnqW-1920-80.jpg"
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
+    },
+    "15468ed6c853beb69376153d": {
+      "item": {
+        "id": "15468ed6c853beb69376153d",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "GTA 6 multiplayer reportedly running on PC as unofficial ports near completion",
+        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-multiplayer-reportedly-running-on-pc-as-unofficial-ports-near-completion-but-its-certainly-no-grand-theft-auto-online",
+        "summary": "There are apparently mods now, too",
+        "published_at": "2026-11-27T11:53:08Z",
+        "content_hash": "29466f9ddcd070e58d315dbf",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "15468ed6c853beb69376153d",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/ruB3Hrjv4rqSN9d38kkzEV-1920-80.jpg"
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": false
+    },
+    "49991341941f580d14f5ea8d": {
+      "item": {
+        "id": "49991341941f580d14f5ea8d",
+        "source_id": "ign",
+        "source_name": "IGN",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "ign",
+        "title": "Despite Take-Two Takedown, Vibecoding Teen Behind Nuked GTA 6 PC Port Project 'Leonida' Vows to Continue",
+        "url": "https://ign.com/articles/despite-take-two-takedown-vibecoding-teen-behind-nuked-gta-6-pc-port-project-leonida-vows-to-continue",
+        "summary": "The 15-year-old vibecoder behind a GTA 6 PC port project Take-Two recently shut down has vowed to continue their work despite the potential for further action from the company.",
+        "published_at": "2026-11-27T11:51:13Z",
+        "content_hash": "1a9d6271a985cbf2d1d90153",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "49991341941f580d14f5ea8d",
+        "image_url": "https://assets-prd.ignimgs.com/2026/11/27/gtavi-35-1795780213314.jpg"
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
+    },
+    "41a33bcefbef93070e8d404b": {
+      "item": {
+        "id": "41a33bcefbef93070e8d404b",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Where To Find Nagasaki Hung Carbon RS In GTA 6—Fastest Motorcycles Location & Stats",
+        "url": "https://insider-gaming.com/nagasaki-hung-carbon-rs-gta-6",
+        "summary": "Here’s where to find the Nagasaki Hung Carbon RS in Grand Theft Auto 6, as well as a detailed look at the motorcycle’s stats. The post Where To Find Nagasaki Hung Carbon RS In GTA 6—Fastest Motorcycles Location & Stats appeared first on Insider Gaming .",
+        "published_at": "2026-11-27T11:46:46Z",
+        "content_hash": "8ee98be557912e08736e7d66",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "41a33bcefbef93070e8d404b",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
+    },
+    "17f36ff125de08b3b363dd73": {
+      "item": {
+        "id": "17f36ff125de08b3b363dd73",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Where To Find Nagasaki Smokescreen Carbon RS In GTA 6—Fastest Motorcycles Location & Stats",
+        "url": "https://insider-gaming.com/nagasaki-smokescreen-carbon-rs-gta-6",
+        "summary": "Here’s where to find the Nagasaki Smokescreen Carbon RS in Grand Theft Auto 6, as well as a detailed look at the motorcycle’s stats. The post Where To Find Nagasaki Smokescreen Carbon RS In GTA 6—Fastest Motorcycles Location & Stats appeared first on Insider Gaming .",
+        "published_at": "2026-11-27T11:37:15Z",
+        "content_hash": "bc294d6620213614191bc090",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "17f36ff125de08b3b363dd73",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
+    },
+    "34ecbfdc0469f27421385e7a": {
+      "item": {
+        "id": "34ecbfdc0469f27421385e7a",
+        "source_id": "eurogamer",
+        "source_name": "Eurogamer",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "eurogamer",
+        "title": "Rockstar boss \"so grateful\" to have kept GTA 6's big prologue twist a secret - and reveals Tomás' story could have been very different",
+        "url": "https://eurogamer.net/gta-6-rockstar-debated-changing-jason-lucias-big-secret",
+        "summary": "If you've played the first 20 minutes or so of Grand Theft Auto 6 , you'll know there's a hugely significant plot revelation there - one Rockstar somehow managed to keep entirely secret until the game's launch. Read more",
+        "published_at": "2026-11-27T11:31:00Z",
+        "content_hash": "3179d135d46a94b38b767443",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "34ecbfdc0469f27421385e7a",
+        "image_url": "https://assetsio.gnwcdn.com/GTA-6-review-21.jpg?width=690&quality=85&format=jpg&auto=webp"
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
+    },
+    "0155d5c3dae44e13586ca912": {
+      "item": {
+        "id": "0155d5c3dae44e13586ca912",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Where To Find Principe Emilio’s Lectro In GTA 6—Fastest Motorcycles Location & Stats",
+        "url": "https://insider-gaming.com/principe-emilios-lectro-gta-6",
+        "summary": "Here’s where to find the Principe Emilio's Lectro in Grand Theft Auto 6, as well as a detailed look at the motorcycle’s stats. The post Where To Find Principe Emilio’s Lectro In GTA 6—Fastest Motorcycles Location & Stats appeared first on Insider Gaming .",
+        "published_at": "2026-11-27T11:25:48Z",
+        "content_hash": "cd102451469db7cfef0f28d1",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "0155d5c3dae44e13586ca912",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
+    },
+    "40a4b3b4c875a72c8b8c87f6": {
+      "item": {
+        "id": "40a4b3b4c875a72c8b8c87f6",
+        "source_id": "insider_gaming",
+        "source_name": "Insider Gaming",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "insider_gaming",
+        "title": "Where To Find Principe Burnished Alvino In GTA 6—Fastest Motorcycles Location & Stats",
+        "url": "https://insider-gaming.com/principe-burnished-alvino-gta-6",
+        "summary": "Here's where to find the Principe Burnished Alvino in Grand Theft Auto 6, as well as a detailed look at the motorcycle's stats. The post Where To Find Principe Burnished Alvino In GTA 6—Fastest Motorcycles Location & Stats appeared first on Insider Gaming .",
+        "published_at": "2026-11-27T10:57:17Z",
+        "content_hash": "9e829f444cd7eafcfe33b152",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "40a4b3b4c875a72c8b8c87f6",
+        "image_url": ""
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
+    },
+    "e4ba00e7acc2ed3728dacc8c": {
+      "item": {
+        "id": "e4ba00e7acc2ed3728dacc8c",
+        "source_id": "gamesradar",
+        "source_name": "GamesRadar+",
+        "trust_class": "ESTABLISHED_MEDIA",
+        "origin_group": "future_plc",
+        "title": "All the GTA 6 stat boost missions we've found",
+        "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-increase-stats-missions",
+        "summary": "All the GTA 6 stat boost missions we've found",
+        "published_at": "2026-11-27T10:55:53Z",
+        "content_hash": "22c00bc40349956fd3428066",
+        "cited_origins": [],
+        "url_verified": false,
+        "via": "rss",
+        "raw_id": "e4ba00e7acc2ed3728dacc8c",
+        "image_url": "https://cdn.mos.cms.futurecdn.net/fKmh2mWfQSVESSE9bPK88d-1920-80.jpg"
+      },
+      "first_seen": "2026-11-27T14:04:20Z",
+      "needs_eval": true
     }
   },
-  "persisted_at": "2026-11-27T04:21:53Z",
+  "persisted_at": "2026-11-27T14:04:20Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": "2026-11-17T06:01:55Z"
 }

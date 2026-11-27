@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-27T04:21:53Z",
-    "last_run_at": "2026-11-27T04:21:53Z",
-    "last_successful_fetch_at": "2026-11-27T04:21:53Z",
+    "generated_at": "2026-11-27T14:04:20Z",
+    "last_run_at": "2026-11-27T14:04:20Z",
+    "last_successful_fetch_at": "2026-11-27T14:04:20Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 33,
+    "verified_total": 34,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-27T04:21:53Z"
+        "checked_at": "2026-11-27T14:04:20Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 34,
-        "relevant": 20,
-        "checked_at": "2026-11-27T04:21:53Z"
+        "entries": 32,
+        "relevant": 17,
+        "checked_at": "2026-11-27T14:04:20Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,16 +37,16 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-27T04:21:53Z"
+        "checked_at": "2026-11-27T14:04:20Z"
       },
       {
         "id": "take_two_google_news",
         "name": "Take-Two Interactive",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 6,
+        "entries": 7,
         "relevant": 3,
-        "checked_at": "2026-11-27T04:21:53Z"
+        "checked_at": "2026-11-27T14:04:20Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 12,
-        "checked_at": "2026-11-27T04:21:53Z"
+        "checked_at": "2026-11-27T14:04:20Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 52,
-        "checked_at": "2026-11-27T04:21:53Z"
+        "relevant": 50,
+        "checked_at": "2026-11-27T14:04:20Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 13,
-        "checked_at": "2026-11-27T04:21:53Z"
+        "relevant": 14,
+        "checked_at": "2026-11-27T14:04:20Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 23,
-        "checked_at": "2026-11-27T04:21:53Z"
+        "relevant": 21,
+        "checked_at": "2026-11-27T14:04:20Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 6,
-        "checked_at": "2026-11-27T04:21:53Z"
+        "relevant": 5,
+        "checked_at": "2026-11-27T14:04:20Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 4,
-        "checked_at": "2026-11-27T04:21:53Z"
+        "relevant": 8,
+        "checked_at": "2026-11-27T14:04:20Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-27T04:21:53Z"
+        "checked_at": "2026-11-27T14:04:20Z"
       }
     ]
   },
   "hero_id": "7610287a26eaadbf9641133b",
   "featured_ids": [
-    "4c2ad4ec7692184abf5fe3e1",
-    "aea6c1981891bdfa108be973"
+    "aea6c1981891bdfa108be973",
+    "c84424d4501ca8bdebf39637"
   ],
   "items": [
+    {
+      "id": "c84424d4501ca8bdebf39637",
+      "title": "Rockstar North yöneticisi, GTA 6 oyuncularının suç profili sistemini reddedebileceğini belirtti",
+      "summary": "Rockstar North'un ortak stüdyo başkanı Rob Nelson, bazı GTA 6 oyuncularının yeni suç profili sistemini kabul etmeyebileceğini söyledi. Ancak, bu sistemin varlığını onaylamasa da, oyuncuların istedikleri gibi hareket edebileceklerini iddia ediyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-27T14:04:20Z",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, IGN",
+      "source_strength": 75,
+      "editorial_priority": 87,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/rockstar-boss-knew-some-gta-6-players-would-reject-the-criminal-profile-system-but-assures-you-can-still-do-whatever-you-wanted-to-do-before"
+        },
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/rockstar-north-boss-knew-some-gta-6-players-would-reject-new-systems-like-criminal-profiles-but-insists-you-can-still-do-whatever-you-wanted-to-do-before"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/35",
+      "reactions_total": null,
+      "location_id": "leonida_keys",
+      "region": "Leonida Keys",
+      "image": "https://cdn.mos.cms.futurecdn.net/qrbcWpiXwQczg2ARoHrCDA-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "title_en": "Rockstar North executive says GTA 6 players may reject criminal profile system",
+      "summary_en": "Rockstar North co‑studio head Rob Nelson reportedly stated that some GTA 6 players might reject the new criminal profile system. He added that, despite this, players would still be able to do whatever they wanted in the game."
+    },
     {
       "id": "9015a4261bf9735d174d930a",
       "title": "PS5'te GTA 6 Yağmur ve Fırtına İçin Çözüm Bulunduğu İddia Ediliyor",

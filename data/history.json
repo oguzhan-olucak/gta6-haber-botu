@@ -2448,7 +2448,7 @@
         "b9e2a67178707807112370fa",
         "bafccc929f088285bd2da5be"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -2560,6 +2560,55 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-27T04:21:53Z",
       "message_id": 34
+    },
+    {
+      "content_id": "c84424d4501ca8bdebf39637",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "GAMEPLAY_TECH",
+      "title_style": "FACTUAL",
+      "title_tr": "Rockstar North yöneticisi, GTA 6 oyuncularının suç profili sistemini reddedebileceğini belirtti",
+      "summary_tr": "Rockstar North'un ortak stüdyo başkanı Rob Nelson, bazı GTA 6 oyuncularının yeni suç profili sistemini kabul etmeyebileceğini söyledi. Ancak, bu sistemin varlığını onaylamasa da, oyuncuların istedikleri gibi hareket edebileceklerini iddia ediyor.",
+      "title_en": "Rockstar North executive says GTA 6 players may reject criminal profile system",
+      "summary_en": "Rockstar North co‑studio head Rob Nelson reportedly stated that some GTA 6 players might reject the new criminal profile system. He added that, despite this, players would still be able to do whatever they wanted in the game.",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, IGN",
+      "source_names": {
+        "https://gamesradar.com/games/grand-theft-auto/rockstar-boss-knew-some-gta-6-players-would-reject-the-criminal-profile-system-but-assures-you-can-still-do-whatever-you-wanted-to-do-before": "GamesRadar+",
+        "https://ign.com/articles/rockstar-north-boss-knew-some-gta-6-players-would-reject-new-systems-like-criminal-profiles-but-insists-you-can-still-do-whatever-you-wanted-to-do-before": "IGN"
+      },
+      "source_strength": 75,
+      "editorial_priority": 87,
+      "publish_reason": "2 bağımsız yayın: GamesRadar+, IGN",
+      "independent_origins": [
+        "future_plc",
+        "ign"
+      ],
+      "source_urls": [
+        "https://gamesradar.com/games/grand-theft-auto/rockstar-boss-knew-some-gta-6-players-would-reject-the-criminal-profile-system-but-assures-you-can-still-do-whatever-you-wanted-to-do-before",
+        "https://ign.com/articles/rockstar-north-boss-knew-some-gta-6-players-would-reject-new-systems-like-criminal-profiles-but-insists-you-can-still-do-whatever-you-wanted-to-do-before"
+      ],
+      "source_titles": [
+        "Rockstar boss knew some GTA 6 players would \"reject\" the criminal profile system",
+        "Rockstar North Boss Knew Some GTA 6 Players Would 'Reject' New Systems Like Criminal Profiles, but Insists 'You Can Still Do Whatever You Wanted to Do Before'"
+      ],
+      "content_hashes": [
+        "1d9b03d6e186982d53124a7e",
+        "38efedb227818b066209117d"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/qrbcWpiXwQczg2ARoHrCDA-1920-80.jpg",
+      "image_credit": "GamesRadar+",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-27T14:04:20Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-27T14:04:20Z",
+      "message_id": 35
     }
   ]
 }

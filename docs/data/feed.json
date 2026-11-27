@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-27T14:04:20Z",
-    "last_run_at": "2026-11-27T14:04:20Z",
-    "last_successful_fetch_at": "2026-11-27T14:04:20Z",
+    "generated_at": "2026-11-27T22:39:34Z",
+    "last_run_at": "2026-11-27T22:39:34Z",
+    "last_successful_fetch_at": "2026-11-27T22:39:34Z",
     "active_sources": 11,
-    "sources_ok_last_run": 10,
-    "verified_total": 34,
+    "sources_ok_last_run": 9,
+    "verified_total": 35,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-27T14:04:20Z"
+        "checked_at": "2026-11-27T22:39:34Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 32,
-        "relevant": 17,
-        "checked_at": "2026-11-27T14:04:20Z"
+        "entries": 28,
+        "relevant": 23,
+        "checked_at": "2026-11-27T22:39:34Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-27T14:04:20Z"
+        "checked_at": "2026-11-27T22:39:34Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 7,
         "relevant": 3,
-        "checked_at": "2026-11-27T14:04:20Z"
+        "checked_at": "2026-11-27T22:39:34Z"
       },
       {
         "id": "ign",
@@ -54,8 +54,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 20,
-        "relevant": 12,
-        "checked_at": "2026-11-27T14:04:20Z"
+        "relevant": 6,
+        "checked_at": "2026-11-27T22:39:34Z"
       },
       {
         "id": "eurogamer",
@@ -63,8 +63,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 100,
-        "relevant": 50,
-        "checked_at": "2026-11-27T14:04:20Z"
+        "relevant": 45,
+        "checked_at": "2026-11-27T22:39:34Z"
       },
       {
         "id": "gamesradar",
@@ -73,16 +73,16 @@
         "state": "ok",
         "entries": 50,
         "relevant": 14,
-        "checked_at": "2026-11-27T14:04:20Z"
+        "checked_at": "2026-11-27T22:39:34Z"
       },
       {
         "id": "pcgamer",
         "name": "PC Gamer",
         "trust_class": "ESTABLISHED_MEDIA",
-        "state": "ok",
-        "entries": 50,
-        "relevant": 21,
-        "checked_at": "2026-11-27T14:04:20Z"
+        "state": "error",
+        "entries": 0,
+        "relevant": 0,
+        "checked_at": "2026-11-27T22:39:34Z"
       },
       {
         "id": "vgc",
@@ -90,8 +90,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 5,
-        "checked_at": "2026-11-27T14:04:20Z"
+        "relevant": 6,
+        "checked_at": "2026-11-27T22:39:34Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 8,
-        "checked_at": "2026-11-27T14:04:20Z"
+        "relevant": 6,
+        "checked_at": "2026-11-27T22:39:34Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-27T14:04:20Z"
+        "checked_at": "2026-11-27T22:39:34Z"
       }
     ]
   },
   "hero_id": "7610287a26eaadbf9641133b",
   "featured_ids": [
-    "aea6c1981891bdfa108be973",
-    "c84424d4501ca8bdebf39637"
+    "20e4e211fcb289ef61ddb237",
+    "aea6c1981891bdfa108be973"
   ],
   "items": [
+    {
+      "id": "20e4e211fcb289ef61ddb237",
+      "title": "GTA 6'da Otomatik Sürüş ve Hard Disk Sonu İpuçları",
+      "summary": "Video Games Chronicle, GTA 6'da otomatik sürüş özelliğinin nasıl kullanılacağını anlatıyor. Insider Gaming ise oyunun hard diskindeki içeriklerin olası son sahneyi nasıl açıklayabileceğine dair bir analiz sunuyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "GAMEPLAY_TECH",
+      "category_tr": "Oynanış",
+      "title_style": "CURIOSITY",
+      "published_at": "2026-11-27T22:39:34Z",
+      "why_this_label": "2 bağımsız yayın: Insider Gaming, Video Games Chronicle",
+      "source_strength": 75,
+      "editorial_priority": 88,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "Video Games Chronicle",
+          "url": "https://videogameschronicle.com/guide/how-to-auto-drive-in-gta-6"
+        },
+        {
+          "name": "Insider Gaming",
+          "url": "https://insider-gaming.com/gta-6-hard-drive-ending"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/36",
+      "reactions_total": null,
+      "location_id": "leonida_keys",
+      "region": "Leonida Keys",
+      "image": "https://www.videogameschronicle.com/files/2026/11/gta-6-how-to-autodrive-1.jpg",
+      "image_credit": "Video Games Chronicle",
+      "title_en": "Auto Drive and Hard Drive Ending Tips in GTA 6",
+      "summary_en": "Video Games Chronicle explains how to use the auto‑drive feature in GTA 6. Insider Gaming provides an analysis of what the game's hard‑drive content might reveal about its ending."
+    },
     {
       "id": "c84424d4501ca8bdebf39637",
       "title": "Rockstar North yöneticisi, GTA 6 oyuncularının suç profili sistemini reddedebileceğini belirtti",

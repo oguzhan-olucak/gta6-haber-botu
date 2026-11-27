@@ -2395,7 +2395,7 @@
       "content_hashes": [
         "6599ee6070432d99737a9ccb"
       ],
-      "measurement_status": "PENDING",
+      "measurement_status": "UNAVAILABLE",
       "metrics": {
         "views": "unavailable",
         "forwards": "unavailable",
@@ -2511,6 +2511,55 @@
       "chat_id": "-1004361630560",
       "published_at": "2026-11-26T22:15:18Z",
       "message_id": 33
+    },
+    {
+      "content_id": "9015a4261bf9735d174d930a",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "category": "COMMUNITY_RUMOR",
+      "title_style": "FACTUAL",
+      "title_tr": "PS5'te GTA 6 Yağmur ve Fırtına İçin Çözüm Bulunduğu İddia Ediliyor",
+      "summary_tr": "Rockstar, GTA 6 için ilk yama yayınladı ve hava çeşitliliği sorununu giderdiği bildirildi. Ancak bazı PS5 oyuncuları hâlâ aynı problemi yaşıyor ve bir yöntemle yağmur ve fırtınaların etkinleştirilebileceğini söylüyor.",
+      "title_en": "PS5 Players Claim to Have Found a Fix for GTA 6 Weather",
+      "summary_en": "Rockstar released its first post‑launch patch for GTA 6, which was said to address the lack of weather variety. Yet some PS5 players report still experiencing the issue and claim a method exists to trigger rain and thunderstorms.",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, IGN",
+      "source_names": {
+        "https://ign.com/articles/ps5-workaround-weather-gta-6": "IGN",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-players-fix-the-weather-system-themselves-after-rockstars-latest-patch-left-them-hanging-its-super-easy-and-takes-like-two-minutes": "GamesRadar+"
+      },
+      "source_strength": 75,
+      "editorial_priority": 82,
+      "publish_reason": "2 bağımsız yayın: GamesRadar+, IGN",
+      "independent_origins": [
+        "future_plc",
+        "ign"
+      ],
+      "source_urls": [
+        "https://ign.com/articles/ps5-workaround-weather-gta-6",
+        "https://gamesradar.com/games/grand-theft-auto/gta-6-players-fix-the-weather-system-themselves-after-rockstars-latest-patch-left-them-hanging-its-super-easy-and-takes-like-two-minutes"
+      ],
+      "source_titles": [
+        "GTA 6 players fix the weather system themselves after Rockstar's latest patch left them hanging",
+        "GTA 6 Weather Still Not Varied Even After the Patch? PS5 Players Are Sharing a Method That May Help Rain and Thunderstorms Kick In"
+      ],
+      "content_hashes": [
+        "5f474a383ec9091839543820",
+        "bf548f88dcda20705bda44ad"
+      ],
+      "measurement_status": "PENDING",
+      "metrics": {
+        "views": "unavailable",
+        "forwards": "unavailable",
+        "reaction_snapshots": []
+      },
+      "llm_provider": "groq",
+      "image_url": "https://assets-prd.ignimgs.com/2026/11/26/gtavi-55-1795692345300.jpg?width=1280&format=jpg&auto=webp&quality=80",
+      "image_credit": "IGN",
+      "publish_status": "PUBLISHED",
+      "created_at": "2026-11-27T04:21:53Z",
+      "chat_id": "-1004361630560",
+      "published_at": "2026-11-27T04:21:53Z",
+      "message_id": 34
     }
   ]
 }

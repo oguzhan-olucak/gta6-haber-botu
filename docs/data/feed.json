@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-26T22:15:18Z",
-    "last_run_at": "2026-11-26T22:15:18Z",
-    "last_successful_fetch_at": "2026-11-26T22:15:18Z",
+    "generated_at": "2026-11-27T04:21:53Z",
+    "last_run_at": "2026-11-27T04:21:53Z",
+    "last_successful_fetch_at": "2026-11-27T04:21:53Z",
     "active_sources": 11,
     "sources_ok_last_run": 10,
-    "verified_total": 32,
+    "verified_total": 33,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-26T22:15:18Z"
+        "checked_at": "2026-11-27T04:21:53Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 35,
-        "relevant": 18,
-        "checked_at": "2026-11-26T22:15:18Z"
+        "entries": 34,
+        "relevant": 20,
+        "checked_at": "2026-11-27T04:21:53Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-26T22:15:18Z"
+        "checked_at": "2026-11-27T04:21:53Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 6,
         "relevant": 3,
-        "checked_at": "2026-11-26T22:15:18Z"
+        "checked_at": "2026-11-27T04:21:53Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 12,
-        "checked_at": "2026-11-26T22:15:18Z"
+        "checked_at": "2026-11-27T04:21:53Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 52,
-        "checked_at": "2026-11-26T22:15:18Z"
+        "checked_at": "2026-11-27T04:21:53Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 14,
-        "checked_at": "2026-11-26T22:15:18Z"
+        "relevant": 13,
+        "checked_at": "2026-11-27T04:21:53Z"
       },
       {
         "id": "pcgamer",
@@ -81,8 +81,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 22,
-        "checked_at": "2026-11-26T22:15:18Z"
+        "relevant": 23,
+        "checked_at": "2026-11-27T04:21:53Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 6,
-        "checked_at": "2026-11-26T22:15:18Z"
+        "checked_at": "2026-11-27T04:21:53Z"
       },
       {
         "id": "insider_gaming",
@@ -100,7 +100,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 4,
-        "checked_at": "2026-11-26T22:15:18Z"
+        "checked_at": "2026-11-27T04:21:53Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,16 +109,50 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-26T22:15:18Z"
+        "checked_at": "2026-11-27T04:21:53Z"
       }
     ]
   },
-  "hero_id": "a115d0cef3fed94181d7ad47",
+  "hero_id": "7610287a26eaadbf9641133b",
   "featured_ids": [
-    "7610287a26eaadbf9641133b",
-    "4c2ad4ec7692184abf5fe3e1"
+    "4c2ad4ec7692184abf5fe3e1",
+    "aea6c1981891bdfa108be973"
   ],
   "items": [
+    {
+      "id": "9015a4261bf9735d174d930a",
+      "title": "PS5'te GTA 6 Yağmur ve Fırtına İçin Çözüm Bulunduğu İddia Ediliyor",
+      "summary": "Rockstar, GTA 6 için ilk yama yayınladı ve hava çeşitliliği sorununu giderdiği bildirildi. Ancak bazı PS5 oyuncuları hâlâ aynı problemi yaşıyor ve bir yöntemle yağmur ve fırtınaların etkinleştirilebileceğini söylüyor.",
+      "label": "MULTI_SOURCE",
+      "label_text": "ÇOKLU KAYNAK",
+      "trust_group": "multi",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-27T04:21:53Z",
+      "why_this_label": "2 bağımsız yayın: GamesRadar+, IGN",
+      "source_strength": 75,
+      "editorial_priority": 82,
+      "independent_origins": 2,
+      "sources": [
+        {
+          "name": "IGN",
+          "url": "https://ign.com/articles/ps5-workaround-weather-gta-6"
+        },
+        {
+          "name": "GamesRadar+",
+          "url": "https://gamesradar.com/games/grand-theft-auto/gta-6-players-fix-the-weather-system-themselves-after-rockstars-latest-patch-left-them-hanging-its-super-easy-and-takes-like-two-minutes"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/34",
+      "reactions_total": null,
+      "location_id": "mount_kalaga",
+      "region": "Mount Kalaga · Genel Merkez",
+      "image": "https://assets-prd.ignimgs.com/2026/11/26/gtavi-55-1795692345300.jpg?width=1280&format=jpg&auto=webp&quality=80",
+      "image_credit": "IGN",
+      "title_en": "PS5 Players Claim to Have Found a Fix for GTA 6 Weather",
+      "summary_en": "Rockstar released its first post‑launch patch for GTA 6, which was said to address the lack of weather variety. Yet some PS5 players report still experiencing the issue and claim a method exists to trigger rain and thunderstorms."
+    },
     {
       "id": "7610287a26eaadbf9641133b",
       "title": "Manni L. Perez, GTA 6'da neredeyse on yıl çalıştığını iddia ediyor",

@@ -1,51 +1,11 @@
 {
   "schema_version": 1,
-  "last_run_at": "2026-11-27T22:39:34Z",
-  "last_successful_fetch_at": "2026-11-27T22:39:34Z",
+  "last_run_at": "2026-11-28T04:16:08Z",
+  "last_successful_fetch_at": "2026-11-28T04:16:08Z",
   "first_run_at": "2026-11-16T06:35:35Z",
   "telegram_update_offset": null,
   "reaction_pipeline_verified": false,
   "seen_items": {
-    "e9308583a06dece4c88f2bac": {
-      "first_seen": "2026-11-18T03:53:01Z",
-      "status": "HELD",
-      "source": "pcgamer"
-    },
-    "479d1a27cf8cdb40fdc0ee69": {
-      "first_seen": "2026-11-18T03:53:01Z",
-      "status": "HELD",
-      "source": "insider_gaming"
-    },
-    "43bcef22d3edc0a3641107f8": {
-      "first_seen": "2026-11-18T03:53:01Z",
-      "status": "NEW",
-      "source": "ign"
-    },
-    "c60783579a3e2be4c3852631": {
-      "first_seen": "2026-11-18T03:53:01Z",
-      "status": "USED",
-      "source": "ign"
-    },
-    "517e185fca57c97aeb5446ce": {
-      "first_seen": "2026-11-18T03:53:01Z",
-      "status": "NEW",
-      "source": "pcgamer"
-    },
-    "3585fc8f709e39ccdefb3d9d": {
-      "first_seen": "2026-11-18T03:53:01Z",
-      "status": "HELD",
-      "source": "ign"
-    },
-    "77fe5f2db1928be8bfbf3a13": {
-      "first_seen": "2026-11-18T03:53:01Z",
-      "status": "NEW",
-      "source": "gamesradar"
-    },
-    "f42ce5b3795b6e77e869f337": {
-      "first_seen": "2026-11-18T03:53:01Z",
-      "status": "HELD",
-      "source": "gamesradar"
-    },
     "3412e7ace1b6652af61f5afd": {
       "first_seen": "2026-11-18T12:56:45Z",
       "status": "HELD",
@@ -3643,17 +3603,17 @@
     },
     "6a4baa3c26b43c23adeb5671": {
       "first_seen": "2026-11-26T12:55:49Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "9f1a57a0b97ff19da1194446": {
       "first_seen": "2026-11-26T12:55:49Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "16a0cbb84d3e5ebb98adead6": {
       "first_seen": "2026-11-26T12:55:49Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "insider_gaming"
     },
     "fa44a68f79c4175efe1563b6": {
@@ -3803,17 +3763,17 @@
     },
     "cd7653ec967a2ff7d2ac7abd": {
       "first_seen": "2026-11-26T22:15:18Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "4f884cf3391a3cee32bd1078": {
       "first_seen": "2026-11-26T22:15:18Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "vgc"
     },
     "09797d6c9d4a807e778b0f28": {
       "first_seen": "2026-11-26T22:15:18Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "fbb1e158a11fa19a6819eca8": {
@@ -3823,22 +3783,22 @@
     },
     "49f4b11c6c8e62decec94a00": {
       "first_seen": "2026-11-26T22:15:18Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "eurogamer"
     },
     "3326f92b6b2a31b18197f1e3": {
       "first_seen": "2026-11-26T22:15:18Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "41a9389fe4a12334cf05277b": {
       "first_seen": "2026-11-26T22:15:18Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "a002dbfada8b9f8ff35e5429": {
       "first_seen": "2026-11-26T22:15:18Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "ign"
     },
     "402fca4a21d110eb567f11eb": {
@@ -3848,7 +3808,7 @@
     },
     "409874a36e8d257017cf1205": {
       "first_seen": "2026-11-26T22:15:18Z",
-      "status": "NEW",
+      "status": "HELD",
       "source": "gamesradar"
     },
     "9015a4261bf9735d174d930a": {
@@ -3943,12 +3903,12 @@
     },
     "f44aa50c926475e2984714f6": {
       "first_seen": "2026-11-27T22:39:34Z",
-      "status": "NEW",
+      "status": "REVIEW_HELD",
       "source": "insider_gaming"
     },
     "42dfdbc90f5ef373db130101": {
       "first_seen": "2026-11-27T22:39:34Z",
-      "status": "NEW",
+      "status": "USED",
       "source": "insider_gaming"
     },
     "69a64b71d4876e64348a212c": {
@@ -4065,6 +4025,11 @@
       "first_seen": "2026-11-27T22:39:34Z",
       "status": "NEW",
       "source": "gamesradar"
+    },
+    "ced032024bd1fb80afaea798": {
+      "first_seen": "2026-11-28T04:16:08Z",
+      "status": "REVIEW_HELD",
+      "source": "insider_gaming"
     }
   },
   "digests_sent": [
@@ -4088,78 +4053,78 @@
       "entries": 0,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-27T22:39:34Z",
+      "checked_at": "2026-11-28T04:16:08Z",
       "warning": "kaynak boş döndü (istemci tarafında çizilen sayfa veya yanlış adres?)"
     },
     "rockstar_google_news": {
       "ok": true,
-      "entries": 28,
-      "relevant": 23,
+      "entries": 34,
+      "relevant": 20,
       "new": 0,
-      "checked_at": "2026-11-27T22:39:34Z"
+      "checked_at": "2026-11-28T04:16:08Z"
     },
     "take_two_ir_html": {
       "ok": true,
       "entries": 1,
       "relevant": 0,
       "new": 0,
-      "checked_at": "2026-11-27T22:39:34Z"
+      "checked_at": "2026-11-28T04:16:08Z"
     },
     "take_two_google_news": {
       "ok": true,
       "entries": 7,
       "relevant": 3,
       "new": 0,
-      "checked_at": "2026-11-27T22:39:34Z"
+      "checked_at": "2026-11-28T04:16:08Z"
     },
     "ign": {
       "ok": true,
       "entries": 20,
       "relevant": 6,
-      "new": 4,
-      "checked_at": "2026-11-27T22:39:34Z"
+      "new": 0,
+      "checked_at": "2026-11-28T04:16:08Z"
     },
     "eurogamer": {
       "ok": true,
       "entries": 100,
       "relevant": 45,
-      "new": 1,
-      "checked_at": "2026-11-27T22:39:34Z"
+      "new": 0,
+      "checked_at": "2026-11-28T04:16:08Z"
     },
     "gamesradar": {
       "ok": true,
       "entries": 50,
-      "relevant": 14,
-      "new": 10,
-      "checked_at": "2026-11-27T22:39:34Z"
+      "relevant": 13,
+      "new": 0,
+      "checked_at": "2026-11-28T04:16:08Z"
     },
     "pcgamer": {
       "ok": false,
       "error_class": "RSS_PARSE_ERROR",
       "detail": "yanıt boyut sınırını aştı",
       "http_status": null,
-      "checked_at": "2026-11-27T22:39:34Z"
+      "checked_at": "2026-11-28T04:16:08Z"
     },
     "vgc": {
       "ok": true,
       "entries": 10,
       "relevant": 6,
-      "new": 4,
-      "checked_at": "2026-11-27T22:39:34Z"
+      "new": 0,
+      "checked_at": "2026-11-28T04:16:08Z"
     },
     "insider_gaming": {
       "ok": true,
       "entries": 10,
-      "relevant": 6,
-      "new": 6,
-      "checked_at": "2026-11-27T22:39:34Z"
+      "relevant": 5,
+      "new": 1,
+      "checked_at": "2026-11-28T04:16:08Z"
     },
     "reddit_gta6": {
       "ok": false,
       "error_class": "RSS_PARSE_ERROR",
       "detail": "HTTP 404",
       "http_status": 404,
-      "checked_at": "2026-11-27T22:39:34Z"
+      "checked_at": "2026-11-28T04:16:08Z"
     }
   },
   "run_log": [
@@ -4958,30 +4923,31 @@
         "groq",
         "github"
       ]
+    },
+    {
+      "started_at": "2026-11-28T04:16:08Z",
+      "sources_ok": 9,
+      "new_items": 1,
+      "published": 1,
+      "gemini_calls": 3,
+      "error_classes": [
+        "RSS_PARSE_ERROR",
+        "RSS_PARSE_ERROR"
+      ],
+      "llm_attempts": [
+        "gemini:NETWORK_TRANSIENT",
+        "groq:ok",
+        "groq:ok",
+        "groq:ok"
+      ],
+      "llm_chain": [
+        "gemini",
+        "groq",
+        "github"
+      ]
     }
   ],
   "candidate_pool": {
-    "3ef51eda0e8514b97ee2d9e9": {
-      "item": {
-        "id": "3ef51eda0e8514b97ee2d9e9",
-        "source_id": "ign",
-        "source_name": "IGN",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "ign",
-        "title": "Rockstar Explains Why it Added Consequences to GTA 6's Violence and Crimes",
-        "url": "https://ign.com/articles/rockstar-explains-why-it-added-consequences-to-gta-6s-violence-and-crimes",
-        "summary": "Rockstar Games boss Rob Nelson has explained why the studio added the divisive criminal profile system to GTA 6.",
-        "published_at": "2026-11-26T00:36:48Z",
-        "content_hash": "c746d829211fb12baac08bb4",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "3ef51eda0e8514b97ee2d9e9",
-        "image_url": "https://assets-prd.ignimgs.com/2026/11/25/hx3b1flw8aaoimi-1795649255097.jpeg"
-      },
-      "first_seen": "2026-11-26T03:09:57Z",
-      "needs_eval": false
-    },
     "834e9b4b7d4997cfdc788eb2": {
       "item": {
         "id": "834e9b4b7d4997cfdc788eb2",
@@ -5022,7 +4988,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/WCUSnDP6CwC78uviCLYwfU-1920-80.jpg"
       },
       "first_seen": "2026-11-26T12:55:49Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "9f1a57a0b97ff19da1194446": {
       "item": {
@@ -5043,7 +5009,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-26T12:55:49Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "16a0cbb84d3e5ebb98adead6": {
       "item": {
@@ -5064,7 +5030,7 @@
         "image_url": ""
       },
       "first_seen": "2026-11-26T12:55:49Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "caf7be8f62447de97ddde9a2": {
       "item": {
@@ -5589,7 +5555,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/26/gta-6-cool-fits-1795683417625.jpg"
       },
       "first_seen": "2026-11-26T22:15:18Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "4f884cf3391a3cee32bd1078": {
       "item": {
@@ -5610,7 +5576,7 @@
         "image_url": "https://www.videogameschronicle.com/files/2026/11/GTA-6-Find-the-Cursed-Knife-and-Ghost-Ship-easter-egg-walkthrough-1.jpg"
       },
       "first_seen": "2026-11-26T22:15:18Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "09797d6c9d4a807e778b0f28": {
       "item": {
@@ -5631,7 +5597,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/iG8Sh9FuAEz5oHsN7RFSKo-1920-80.jpg"
       },
       "first_seen": "2026-11-26T22:15:18Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "fbb1e158a11fa19a6819eca8": {
       "item": {
@@ -5673,7 +5639,7 @@
         "image_url": "https://assetsio.gnwcdn.com/cat-gta-6.jpg?width=690&quality=85&format=jpg&auto=webp"
       },
       "first_seen": "2026-11-26T22:15:18Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "3326f92b6b2a31b18197f1e3": {
       "item": {
@@ -5694,7 +5660,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/38dFMrtxrziEumiDGTPJ97-1920-80.png"
       },
       "first_seen": "2026-11-26T22:15:18Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "41a9389fe4a12334cf05277b": {
       "item": {
@@ -5715,7 +5681,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/25/mixcollage-25-nov-2026-04-48-pm-3970-1795644000393.jpg"
       },
       "first_seen": "2026-11-26T22:15:18Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "a002dbfada8b9f8ff35e5429": {
       "item": {
@@ -5736,7 +5702,7 @@
         "image_url": "https://assets-prd.ignimgs.com/2026/11/26/heist-blog-1795698388839.jpg"
       },
       "first_seen": "2026-11-26T22:15:18Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "402fca4a21d110eb567f11eb": {
       "item": {
@@ -5778,7 +5744,7 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/24JyKBmokGVJm4K2VQmq3h-1920-80.jpg"
       },
       "first_seen": "2026-11-26T22:15:18Z",
-      "needs_eval": true
+      "needs_eval": false
     },
     "af8d778ee82aa7d1d678f89c": {
       "item": {
@@ -6114,48 +6080,6 @@
         "image_url": "https://cdn.mos.cms.futurecdn.net/fKmh2mWfQSVESSE9bPK88d-1920-80.jpg"
       },
       "first_seen": "2026-11-27T14:04:20Z",
-      "needs_eval": true
-    },
-    "f44aa50c926475e2984714f6": {
-      "item": {
-        "id": "f44aa50c926475e2984714f6",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "GTA 6 Chapter 5 Mission List – Every Mission in GTA 6 Chapter 5 in Order",
-        "url": "https://insider-gaming.com/gta-6-chapter-5-mission-list-every-mission-in-gta-6-chapter-5-in-order",
-        "summary": "A complete mission list for GTA 6 Chapter 5 The post GTA 6 Chapter 5 Mission List – Every Mission in GTA 6 Chapter 5 in Order appeared first on Insider Gaming .",
-        "published_at": "2026-11-27T22:26:01Z",
-        "content_hash": "3f8275c2f44c167f16619f44",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "f44aa50c926475e2984714f6",
-        "image_url": ""
-      },
-      "first_seen": "2026-11-27T22:39:34Z",
-      "needs_eval": true
-    },
-    "42dfdbc90f5ef373db130101": {
-      "item": {
-        "id": "42dfdbc90f5ef373db130101",
-        "source_id": "insider_gaming",
-        "source_name": "Insider Gaming",
-        "trust_class": "ESTABLISHED_MEDIA",
-        "origin_group": "insider_gaming",
-        "title": "How to Enter Cheat Codes in GTA 6—GTA 6 Cheat Code Guide",
-        "url": "https://insider-gaming.com/how-to-enter-cheats-in-gta-6",
-        "summary": "This is a guide on how to enter cheats in GTA 6. The post How to Enter Cheat Codes in GTA 6—GTA 6 Cheat Code Guide appeared first on Insider Gaming .",
-        "published_at": "2026-11-27T21:50:16Z",
-        "content_hash": "c367d44d9473fda83ce4e839",
-        "cited_origins": [],
-        "url_verified": false,
-        "via": "rss",
-        "raw_id": "42dfdbc90f5ef373db130101",
-        "image_url": ""
-      },
-      "first_seen": "2026-11-27T22:39:34Z",
       "needs_eval": true
     },
     "69a64b71d4876e64348a212c": {
@@ -6621,7 +6545,7 @@
       "needs_eval": true
     }
   },
-  "persisted_at": "2026-11-27T22:39:34Z",
+  "persisted_at": "2026-11-28T04:16:08Z",
   "gemini_client_rev": "rest-v1beta-xgoog-2",
   "gemini_quota_blocked_until": "2026-11-17T06:01:55Z"
 }

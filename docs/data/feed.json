@@ -3,12 +3,12 @@
   "demo": false,
   "brand": "GTA VI Türkiye Bülteni",
   "status": {
-    "generated_at": "2026-11-27T22:39:34Z",
-    "last_run_at": "2026-11-27T22:39:34Z",
-    "last_successful_fetch_at": "2026-11-27T22:39:34Z",
+    "generated_at": "2026-11-28T04:16:08Z",
+    "last_run_at": "2026-11-28T04:16:08Z",
+    "last_successful_fetch_at": "2026-11-28T04:16:08Z",
     "active_sources": 11,
     "sources_ok_last_run": 9,
-    "verified_total": 35,
+    "verified_total": 36,
     "paused": false,
     "measurement_note": "Görüntülenme/iletilme sayıları Telegram Bot API ile ölçülemez; gösterilmez.",
     "sources": [
@@ -19,16 +19,16 @@
         "state": "empty",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-27T22:39:34Z"
+        "checked_at": "2026-11-28T04:16:08Z"
       },
       {
         "id": "rockstar_google_news",
         "name": "Rockstar Games",
         "trust_class": "OFFICIAL",
         "state": "ok",
-        "entries": 28,
-        "relevant": 23,
-        "checked_at": "2026-11-27T22:39:34Z"
+        "entries": 34,
+        "relevant": 20,
+        "checked_at": "2026-11-28T04:16:08Z"
       },
       {
         "id": "take_two_ir_html",
@@ -37,7 +37,7 @@
         "state": "ok",
         "entries": 1,
         "relevant": 0,
-        "checked_at": "2026-11-27T22:39:34Z"
+        "checked_at": "2026-11-28T04:16:08Z"
       },
       {
         "id": "take_two_google_news",
@@ -46,7 +46,7 @@
         "state": "ok",
         "entries": 7,
         "relevant": 3,
-        "checked_at": "2026-11-27T22:39:34Z"
+        "checked_at": "2026-11-28T04:16:08Z"
       },
       {
         "id": "ign",
@@ -55,7 +55,7 @@
         "state": "ok",
         "entries": 20,
         "relevant": 6,
-        "checked_at": "2026-11-27T22:39:34Z"
+        "checked_at": "2026-11-28T04:16:08Z"
       },
       {
         "id": "eurogamer",
@@ -64,7 +64,7 @@
         "state": "ok",
         "entries": 100,
         "relevant": 45,
-        "checked_at": "2026-11-27T22:39:34Z"
+        "checked_at": "2026-11-28T04:16:08Z"
       },
       {
         "id": "gamesradar",
@@ -72,8 +72,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 50,
-        "relevant": 14,
-        "checked_at": "2026-11-27T22:39:34Z"
+        "relevant": 13,
+        "checked_at": "2026-11-28T04:16:08Z"
       },
       {
         "id": "pcgamer",
@@ -82,7 +82,7 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-27T22:39:34Z"
+        "checked_at": "2026-11-28T04:16:08Z"
       },
       {
         "id": "vgc",
@@ -91,7 +91,7 @@
         "state": "ok",
         "entries": 10,
         "relevant": 6,
-        "checked_at": "2026-11-27T22:39:34Z"
+        "checked_at": "2026-11-28T04:16:08Z"
       },
       {
         "id": "insider_gaming",
@@ -99,8 +99,8 @@
         "trust_class": "ESTABLISHED_MEDIA",
         "state": "ok",
         "entries": 10,
-        "relevant": 6,
-        "checked_at": "2026-11-27T22:39:34Z"
+        "relevant": 5,
+        "checked_at": "2026-11-28T04:16:08Z"
       },
       {
         "id": "reddit_gta6",
@@ -109,7 +109,7 @@
         "state": "error",
         "entries": 0,
         "relevant": 0,
-        "checked_at": "2026-11-27T22:39:34Z"
+        "checked_at": "2026-11-28T04:16:08Z"
       }
     ]
   },
@@ -119,6 +119,36 @@
     "aea6c1981891bdfa108be973"
   ],
   "items": [
+    {
+      "id": "42dfdbc90f5ef373db130101",
+      "title": "Insider Gaming, GTA 6’da Hile Kodları Girişi İçin Rehber Yayınladı",
+      "summary": "Insider Gaming, GTA 6’da hile kodlarını nasıl gireceğinize dair bir rehber yayınladı. Makalede, oyunda kullanılabilecek hile kodlarının nasıl girileceği anlatılıyor; resmi bir doğrulama bulunmadığı belirtiliyor.",
+      "label": "SINGLE_SOURCE",
+      "label_text": "TEK KAYNAK",
+      "trust_group": "single",
+      "category": "COMMUNITY_RUMOR",
+      "category_tr": "Sızıntı",
+      "title_style": "FACTUAL",
+      "published_at": "2026-11-28T04:16:08Z",
+      "why_this_label": "Tek yayın: Insider Gaming",
+      "source_strength": 55,
+      "editorial_priority": 77,
+      "independent_origins": 1,
+      "sources": [
+        {
+          "name": "Insider Gaming",
+          "url": "https://insider-gaming.com/how-to-enter-cheats-in-gta-6"
+        }
+      ],
+      "telegram_url": "https://t.me/gta6turkiyebulteni/37",
+      "reactions_total": null,
+      "location_id": "grassrivers",
+      "region": "Grassrivers",
+      "image": "https://insider-gaming.com/wp-content/uploads/2026/11/gta-6-how-to-enter-cheats.jpg",
+      "image_credit": "Insider Gaming",
+      "title_en": "Insider Gaming Publishes Guide on Entering Cheat Codes in GTA 6",
+      "summary_en": "Insider Gaming released a guide on how to enter cheat codes in GTA 6. The article explains the steps to input cheat codes in the game, but no official confirmation of these codes is provided."
+    },
     {
       "id": "20e4e211fcb289ef61ddb237",
       "title": "GTA 6'da Otomatik Sürüş ve Hard Disk Sonu İpuçları",
